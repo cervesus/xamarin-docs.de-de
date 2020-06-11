@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsEin
-description: In diesem Artikel wird erläutert, wie Sie mit der Xamarin.Forms Entry-Klasse einzeilige Text-oder Kenn Wort Eingaben in einer Anwendung akzeptieren.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5c17d6a106474c4c5b183bd41923533ffc95789b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136200"
+Title: " Xamarin.Forms Eintrag" Description: "in diesem Artikel wird erläutert, wie Sie mit der Xamarin.Forms Entry-Klasse einzeilige Text-oder Kenn Wort Eingaben in einer Anwendung akzeptieren."
+ms. Prod: xamarin ms. assetid: 9923c541-3c10-4d14-bab5-c4d6c514spb1e ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/25/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-entry"></a>Xamarin.FormsEin
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
@@ -200,14 +186,14 @@ Die folgenden Screenshots zeigen eine, [`Entry`](xref:Xamarin.Forms.Entry) bei d
 
 Die Tastatur, die angezeigt wird, wenn Benutzer mit einer interagieren [`Entry`](xref:Xamarin.Forms.Entry) , kann Programm gesteuert über die- [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard) Eigenschaft auf eine der folgenden Eigenschaften der-Klasse festgelegt werden [`Keyboard`](xref:Xamarin.Forms.Keyboard) :
 
-- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat)– wird für SMS und Orte verwendet, an denen Emoji nützlich ist.
-- [`Default`](xref:Xamarin.Forms.Keyboard.Default)– die Standardtastatur.
-- [`Email`](xref:Xamarin.Forms.Keyboard.Email)– wird beim Eingeben von e-Mail-Adressen verwendet.
-- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric)– wird beim Eingeben von Zahlen verwendet.
-- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain)– wird bei der Eingabe von Text ohne Angabe eines [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) angegeben.
-- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone)– wird bei der Eingabe von Telefonnummern verwendet.
-- [`Text`](xref:Xamarin.Forms.Keyboard.Text)– wird bei der Eingabe von Text verwendet.
-- [`Url`](xref:Xamarin.Forms.Keyboard.Url)– wird zum Eingeben von Dateipfaden & Webadressen verwendet.
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat): Wird zum Schreiben von Texten verwendet und in Situationen, in denen Emojis nützlich sind.
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default): die Standardtastatur.
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email): Wird beim Eingeben von E-Mail-Adressen verwendet.
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric): Wird beim Eingeben von Zahlen verwendet.
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain): Wird beim Eingeben von Text verwendet, ohne Angabe von [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags).
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone): Wird beim Eingeben von Telefonnummern verwendet.
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text): Wird beim Eingeben von Text verwendet.
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url): Wird beim Eingeben von Dateipfaden und Webadressen verwendet.
 
 Dies kann in XAML folgendermaßen erfüllt werden:
 
@@ -223,18 +209,18 @@ var entry = new Entry { Keyboard = Keyboard.Chat };
 
 Beispiele für jede Tastatur finden Sie in unserem [Rezepte](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry) -Repository.
 
-Die- [`Keyboard`](xref:Xamarin.Forms.Keyboard) Klasse verfügt auch über eine Factorymethode [`Create`](xref:Xamarin.Forms.Keyboard.Create*) , mit der eine Tastatur angepasst werden kann, indem Sie die Groß-/Kleinschreibung, Rechtschreibprüfung und das Vorschlags Verhalten [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags)Enumerationswerte werden als Argumente für die-Methode angegeben, wobei eine angepasste `Keyboard` zurückgegeben wird. Die `KeyboardFlags`-Enumeration verfügt über folgende Werte:
+Die [`Keyboard`](xref:Xamarin.Forms.Keyboard)-Klasse verfügt auch über eine [`Create`](xref:Xamarin.Forms.Keyboard.Create*)-Factorymethode, die zum Anpassen einer Tastatur durch Festlegen des Verhaltens für Groß-/Kleinschreibung, Rechtschreibprüfung und Vorschläge verwendet werden kann. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags)-Enumerationswerte werden als Argumente der Methode festgelegt, wobei das benutzerdefinierte `Keyboard` zurückgegeben wird. Die `KeyboardFlags`-Enumeration verfügt über folgende Werte:
 
-- [`None`](xref:Xamarin.Forms.KeyboardFlags.None)– der Tastatur werden keine Funktionen hinzugefügt.
-- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence)– Gibt an, dass der erste Buchstabe des ersten Worts jedes eingegebenen Satzes automatisch groß geschrieben wird.
-- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck)– Gibt an, dass die Rechtschreibprüfung für eingegebenen Text ausgeführt wird.
-- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions)– Gibt an, dass Wort Vervollständigungen für eingegebenen Text angeboten werden.
-- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord)– Gibt an, dass der erste Buchstabe jedes Worts automatisch groß geschrieben wird.
-- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter)– Gibt an, dass jedes Zeichen automatisch groß geschrieben wird.
-- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone)– Gibt an, dass keine automatische groß Schreibung auftritt.
-- [`All`](xref:Xamarin.Forms.KeyboardFlags.All)– Gibt an, dass die Rechtschreibprüfung, die Wortvervollständigung und die Satz-groß Schreibung für eingegebenen Text auftreten.
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None): Der Tastatur werden keine Features hinzugefügt.
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence): Gibt an, dass der erste Buchstabe des ersten Worts jedes Satzes automatisch groß geschrieben wird.
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck): Gibt an, dass die Rechtschreibprüfung für den eingegebenen Text durchgeführt wird.
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions): Gibt an, dass Wortvervollständigungen für den eingegebenen Text angeboten werden.
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord): Gibt an, dass der erste Buchstabe von jedem Wort automatisch groß geschrieben wird.
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter): Gibt an, dass jedes Zeichen automatisch groß geschrieben wird.
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone): Gibt an, dass keine automatische Großschreibung erfolgt.
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All): Gibt an, dass für den eingegebenen Text die Rechtschreibprüfung, die Vervollständigung von Wörtern und die Großschreibung am Satzanfang erfolgen.
 
-Im folgenden XAML-Codebeispiel wird veranschaulicht, wie Sie die Standardeinstellung anpassen [`Keyboard`](xref:Xamarin.Forms.Keyboard) , um Wort Vervollständigungen zu bieten und jedes eingegebene Zeichen groß zu schreiben:
+Das folgende XAML-Codebeispiel zeigt, wie Sie den Standardwert für [`Keyboard`](xref:Xamarin.Forms.Keyboard) anpassen können, um Wortvervollständigungen anzubieten und jedes eingegebene Zeichen groß zu schreiben:
 
 ```xaml
 <Entry Placeholder="Enter text here">

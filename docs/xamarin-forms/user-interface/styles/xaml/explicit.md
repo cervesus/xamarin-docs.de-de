@@ -1,22 +1,8 @@
 ---
-title: Explizite Stile inXamarin.Forms
-description: Ein explizites Format ist ein Element, das selektiv durch Festlegen der Stileigenschaften auf Steuerelemente angewendet wird. In diesem Artikel wird erläutert, wie explizite Stile in einer-Anwendung verwendet werden Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 62b84a5028c17c28a69a887a832028c2064fa78d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136265"
+Title: "explizite Stile in Xamarin.Forms " Description: "ein expliziter Stil ist ein Wert, der selektiv auf Steuerelemente angewendet wird, indem seine Stileigenschaften festgelegt werden. In diesem Artikel wird erläutert, wie explizite Stile in einer-Anwendung verwendet werden Xamarin.Forms . "
+ms. Prod: xamarin ms. assetid: C0DF9F8F-B431-4374-A574-325BC3C41A3B ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/17/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="explicit-styles-in-xamarinforms"></a>Explizite Stile inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
@@ -190,5 +176,5 @@ Der-Konstruktor definiert drei *explizite* Stile, die auf die-Instanzen der Seit
 - [Grundlegende Stile (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 - [Arbeiten mit Stilen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
-- [Stil](xref:Xamarin.Forms.Style)
+- [style](xref:Xamarin.Forms.Style)
 - [Trend](xref:Xamarin.Forms.Setter)

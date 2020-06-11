@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8698bacd7257df431b12166c749f5826e8d6fd3c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138449"
+Title: "Punkte und Bindestriche in skiasharp" Description: "in diesem Artikel wird erläutert, wie Sie die Feinheiten von Zeichnungs gepunkteten und gestrichelten Linien in skiasharp beherrschen und dies mit Beispielcode veranschaulichen."
+ms. Prod: xamarin ms. assetid: 8e9bcc13-830C-458c-9fc8-ecb4eae66078 ms. Technology: xamarin-skiasharp Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="dots-and-dashes-in-skiasharp"></a>Punkte und Bindestriche in skiasharp
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

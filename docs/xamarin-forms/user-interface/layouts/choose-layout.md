@@ -1,22 +1,8 @@
 ---
-title: Layout auswählen Xamarin.Forms
-description: Xamarin.Formsmit layoutklassen können Sie UI-Steuerelemente in Ihrer Anwendung anordnen und gruppieren.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138501"
+Title: "Layout auswählen Xamarin.Forms " Beschreibung: " Xamarin.Forms layoutklassen ermöglichen das Anordnen und Gruppieren von UI-Steuerelementen in der Anwendung."
+ms. Prod: xamarin ms. assetid: 05a39752-a174-447e-A30D-3cc9ef98cb96 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/21/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="choose-a-xamarinforms-layout"></a>Layout auswählen Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -203,7 +189,7 @@ Eine [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) wird verwendet, um El
 Ein [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) sollte als ein spezielles Layout angesehen werden, das nur verwendet werden kann, wenn Sie eine Größe für untergeordnete Elemente festlegen können, oder wenn die Größe des Elements die Positionierung anderer untergeordneter Elemente nicht beeinträchtigt. Standardmäßig wird dieses Layout verwendet, um eine Überlagerung zu erstellen, die die Seite mit anderen Steuerelementen abdeckt, um den Benutzer vor der Interaktion mit den normalen Steuerelementen auf der Seite zu schützen.
 
 > [!IMPORTANT]
-> Die `HorizontalOptions` -Eigenschaft und die-Eigenschaft `VerticalOptions` haben keine Auswirkung auf untergeordnete Elemente eines `AbsoluteLayout` .
+> Die Eigenschaften `HorizontalOptions` und `VerticalOptions` haben keinen Effekt auf untergeordnete Elemente eines `AbsoluteLayout`.
 
 Innerhalb [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) von wird die angefügte-Eigenschaft verwendet, um die horizontale Position, die vertikale Position, die Breite und die Höhe eines Elements anzugeben. Außerdem [`AbsoluteLayout.LayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty) gibt die angefügte-Eigenschaft an, wie die layoutbegrenzungen interpretiert werden.
 
@@ -257,5 +243,5 @@ Außerdem kann die Seiten Rendering-Leistung mithilfe der layoutkomprimierung ve
 - [Xamarin.FormsFlexlayout](flex-layout.md)
 - [Xamarin.FormsAbsoluteLayout](absolute-layout.md)
 - [Xamarin.FormsRelativeLayout](relative-layout.md)
-- [Optimieren der layoutleistung](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
+- [Optimieren der Layoutleistung](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [Layoutkomprimierung](layout-compression.md)

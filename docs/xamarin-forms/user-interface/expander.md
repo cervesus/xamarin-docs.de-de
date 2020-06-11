@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsExpander
-description: Das Xamarin.Forms Expander-Steuerelement stellt einen erweiterbaren Container zum Hosten beliebiger Inhalte bereit. Der Inhalt wird durch Tippen auf den Expander-Header angezeigt oder ausgeblendet.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5e9afa0f6d27003891963af5715d5721e3129306
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129532"
+Title: " Xamarin.Forms Expander" Description: "das Xamarin.Forms Expander-Steuerelement stellt einen erweiterbaren Container zum Hosten beliebiger Inhalte bereit. Der Inhalt wird durch Tippen auf den Expander-Header angezeigt oder ausgeblendet.
+ms. Prod: xamarin ms. assetid: 381dcb55-522d-4414-B45B-E8DD70AA9985 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/15/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-expander"></a>Xamarin.FormsExpander
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
@@ -376,5 +362,5 @@ Eine Anwendung kann einen Status eingeben, in dem die Erweiterung eines `Expande
 
 - [Expander-Demos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
 - [Xamarin.FormsBeschleunigungsfunktionen](~/xamarin-forms/user-interface/animation/easing.md)
-- [Xamarin.FormsAuslöst](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms-Trigger](~/xamarin-forms/app-fundamentals/triggers.md)
 - [Xamarin.FormsBindbare Layouts](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)

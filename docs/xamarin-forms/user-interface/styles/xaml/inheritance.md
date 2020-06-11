@@ -1,22 +1,8 @@
 ---
-title: Stil Vererbung inXamarin.Forms
-description: Stile können von anderen Formaten erben, um Duplizierungen zu verringern und die Wiederverwendung zu ermöglichen. In diesem Artikel wird erläutert, wie Sie die Stil Vererbung in einer- Xamarin.Forms Anwendung ausführen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 80cc419ae098f4a0cbbd782785c0ec5ba03fa703
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138956"
+Title: "Format Vererbung in Xamarin.Forms " Beschreibung: "Stile können von anderen Stilen erben, um die Duplizierung zu reduzieren und die Wiederverwendung zu ermöglichen. In diesem Artikel wird erläutert, wie Sie die Stil Vererbung in einer- Xamarin.Forms Anwendung ausführen.
+ms. Prod: xamarin ms. assetid: 67a3a39c-8cc0-446d-8162-FFA73582D3B8 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/17/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="style-inheritance-in-xamarinforms"></a>Stil Vererbung inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
@@ -164,5 +150,5 @@ Die `baseStyle` Ziel [`View`](xref:Xamarin.Forms.View) Instanzen und legt die-Ei
 - [Grundlegende Stile (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 - [Arbeiten mit Stilen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
-- [Stil](xref:Xamarin.Forms.Style)
+- [style](xref:Xamarin.Forms.Style)
 - [Trend](xref:Xamarin.Forms.Setter)

@@ -52,7 +52,7 @@ Befolgen Sie diese Anweisungen zum Hinzufügen einer GTK #-APP, die auf dem Wind
 
     ![Verweisen auf das freigegebene Projekt](gtk-images/win/reference-shared-project.png "Verweisen auf das freigegebene Projekt")
 
-8. Klicken Sie im Dialogfeld **Verweis-Manager** auf die Schaltfläche **Durchsuchen** , navigieren Sie zum Ordner **c:\Program Files (x86) \gtksharp\2.12\lib** , und wählen Sie die Dateien **ATK-Sharp. dll**, **gdk-Sharp. dll**, **glade-Sharp. dll**, **glib-sharp. dll**, **gtk-dotnet. dll**, **gtk-sharp. dll** aus.
+8. Klicken Sie im Dialogfeld **Verweis-Manager** auf die Schaltfläche **Durchsuchen** , navigieren Sie zum Ordner **c:\Programme (x86) \gtksharp\2.12\lib** , und wählen Sie die **atk-sharp.dll**, **gdk-sharp.dll**, **glade-sharp.dll**, **glib-sharp.dll**, **gtk-dotnet.dll** **gtk-sharp.dllDateien aus** .
 
     ![Verweisen auf die GTK #-Bibliotheken](gtk-images/win/reference-gtk-libraries.png "Verweisen auf die GTK #-Bibliotheken")
 

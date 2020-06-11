@@ -1,22 +1,8 @@
 ---
-title: ''
-description: In diesem Artikel wird erläutert, wie Sie skiasharp zum Rendering von kubischen, quadratischen und in-Anwendungen in- Xamarin.Forms Anwendungen verwenden, und dies mit Beispielcode veranschaulicht.
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1ad548846500ccbacc2a3d117919bfb4df1a1d79
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138683"
+Title: "drei Typen von Bézier-Kurven" Beschreibung: "in diesem Artikel wird erläutert, wie Sie skiasharp zum Rendering von kubischen, quadratischen und konischen Bézier-Kurven in Xamarin.Forms Anwendungen verwenden und dies mit Beispielcode veranschaulichen."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 8fe0f6dc-16bc-435f-9626-DD1790C0145A Author: davidbritch ms. Author: dabritch ms. Date: 05/25/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="three-types-of-bzier-curves"></a>Drei Typen von Bézier-Kurven
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

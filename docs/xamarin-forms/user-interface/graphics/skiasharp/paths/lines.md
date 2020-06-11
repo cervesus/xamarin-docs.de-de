@@ -1,22 +1,8 @@
 ---
-title: ''
-description: In diesem Artikel wird erläutert, wie Sie skiasharp zum Zeichnen von Linien mit unterschiedlichen Strich Strichen in Xamarin.Forms Anwendungen verwenden, und dies mit Beispielcode veranschaulicht.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 87b97ad913e08c42d16bbf055f168c07b9bd60e8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137204"
+Title: "Linien und Strich Striche" Beschreibung: "in diesem Artikel wird erläutert, wie Sie skiasharp zum Zeichnen von Linien mit unterschiedlichen Strich Strichen in Xamarin.Forms Anwendungen verwenden, und dies mit Beispielcode veranschaulicht."
+ms. Prod: xamarin ms. assetid: 1f854ddd-5d1b-4de4-bd2d-584439429fdb ms. Technology: xamarin-skiasharp Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="lines-and-stroke-caps"></a>Linien und Strichenden
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

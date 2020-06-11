@@ -1,23 +1,9 @@
 ---
-title: Xamarin.FormsContentView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 46d2abf895ffe31bd1dc1c22caf36440c54b331c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130116"
+Title: " Xamarin.Forms contentview" Description: "in diesem Artikel wird erläutert, wie die contentview-Klasse verwendet wird, um ein benutzerdefiniertes Steuerelement zu erstellen, wie z. b. CardView."
+ms. Prod: xamarin ms. assetid: 638402e7-CA44-456b-863b-791s6b6b561d ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 08/14/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-contentview"></a>Xamarin.FormsContentView
+
+# <a name="xamarinforms-contentview"></a>Xamarin.Forms-ContentView
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
@@ -121,7 +107,7 @@ Die benutzerdefinierte Steuerelement-Benutzeroberfläche verwendet einen `Conten
 
 Das- `ContentView` Element legt die- `x:Name` Eigenschaft auf **diese**fest, die verwendet werden kann, um auf das Objekt zuzugreifen, das an die Instanz gebunden ist `CardView` . Elemente im Layout legen Bindungen an ihren Eigenschaften auf Werte fest, die für das gebundene Objekt definiert sind.
 
-Weitere Informationen zur Datenbindung finden Sie unter [ Xamarin.Forms Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+Weitere Informationen zur Datenbindung finden Sie unter [Xamarin.Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
 > [!NOTE]
 > Die- `FallbackValue` Eigenschaft stellt einen Standardwert für den Fall bereit, dass die Bindung ist `null` . Dadurch kann der [XAML-Previewer](~/xamarin-forms/xaml/xaml-previewer/index.md) in Visual Studio das Steuerelement auch Rendering `CardView` .
@@ -207,11 +193,11 @@ Die folgenden Screenshots zeigen eine Standard `CardView` Instanz, `CardView` de
 
 [![Bildschirm Abbildung von CardView ControlTemplate](contentview-images/cardview-controltemplates-cropped.png)](contentview-images/cardview-controltemplates.png#lightbox)
 
-Weitere Informationen zu Steuerelement Vorlagen finden Sie unter [ Xamarin.Forms Steuerelement Vorlagen](~/xamarin-forms/app-fundamentals/templates/control-template.md).
+Weitere Informationen zu Steuerelementvorlagen finden Sie unter [Xamarin.Forms-Steuerelementvorlagen](~/xamarin-forms/app-fundamentals/templates/control-template.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
 * [Contentview-Beispielanwendung](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
-* [Xamarin.FormsDatenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+* [Xamarin.Forms-Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * [Bindbare Eigenschaften](~/xamarin-forms/xaml/bindable-properties.md).
-* [Xamarin.FormsSteuerelement Vorlagen](~/xamarin-forms/app-fundamentals/templates/control-template.md)
+* [Xamarin.Forms-Steuerelementvorlagen](~/xamarin-forms/app-fundamentals/templates/control-template.md)

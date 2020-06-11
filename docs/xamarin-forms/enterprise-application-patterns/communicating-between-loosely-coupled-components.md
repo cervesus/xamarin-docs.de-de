@@ -1,22 +1,7 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c35cd6e30e7843cda0431581025aa7440a21cc29
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140048"
+Title: "Kommunikation zwischen lose gekoppelten Komponenten" Beschreibung: "in diesem Kapitel wird erläutert, wie die eshoponcontainers-Mobile App das Veröffentlichen-Abonnieren-Muster implementiert, sodass Nachrichten basierte Kommunikation zwischen Komponenten ermöglicht wird, die für die Verknüpfung durch Objekt-und Typverweise ungeeignet sind" MS. Prod: xamarin ms. assetid: 1194af33-8a91-48d2-88b5-B84 d77f 2ce69 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="communicating-between-loosely-coupled-components"></a>Kommunikation zwischen lose gekoppelten Komponenten
 
 Das Veröffentlichen-Abonnieren-Muster ist ein Messagingmuster, bei dem Herausgeber Nachrichten senden, ohne über Kenntnisse zu Empfängern zu verfügen, die als Abonnenten bezeichnet werden. Auf ähnliche Weise lauschen Abonnenten auf bestimmte Nachrichten, ohne dass sie über Kenntnisse zu Herausgebern verfügen.
@@ -25,17 +10,17 @@ Ereignisse in .NET implementieren das Veröffentlichen-Abonnieren-Muster und sin
 
 ## <a name="introduction-to-messagingcenter"></a>Einführung in messagingcenter
 
-Die Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) -Klasse implementiert das Veröffentlichen-Abonnieren-Muster und ermöglicht die Nachrichten basierte Kommunikation zwischen Komponenten, die für die Verknüpfung über Objekt-und Typverweise ungeeignet sind. Dieser Mechanismus ermöglicht es Verlegern und Abonnenten, ohne einen Verweis aufeinander zu kommunizieren, sodass Abhängigkeiten zwischen Komponenten reduziert werden können, während Komponenten unabhängig entwickelt und getestet werden können.
+Die Xamarin.Forms-Klasse [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) implementiert das Veröffentlichen-Abonnieren-Muster und ermöglicht so eine nachrichtenbasierte Kommunikation zwischen Komponenten, für die eine Verknüpfung über Objekt- und Typverweise ungünstig ist. Dieser Mechanismus ermöglicht es Verlegern und Abonnenten, ohne einen Verweis aufeinander zu kommunizieren, sodass Abhängigkeiten zwischen Komponenten reduziert werden können, während Komponenten unabhängig entwickelt und getestet werden können.
 
-Die [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) -Klasse bietet Multicast-Funktionen zum Veröffentlichen und abonnieren. Dies bedeutet, dass mehrere Verleger vorhanden sein können, die eine einzelne Nachricht veröffentlichen, und es kann mehrere Abonnenten geben, die dieselbe Nachricht überwachen. In Abbildung 4-1 wird diese Beziehung veranschaulicht:
+Die [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)-Klasse bietet Multicast-Funktionen zum Veröffentlichen und Abonnieren. Dies bedeutet, dass mehrere Verleger vorhanden sein können, die eine einzelne Nachricht veröffentlichen, und es kann mehrere Abonnenten geben, die dieselbe Nachricht überwachen. In Abbildung 4-1 wird diese Beziehung veranschaulicht:
 
 ![](communicating-between-loosely-coupled-components-images/messagingcenter.png "Multicast publish-subscribe functionality")
 
 **Abbildung 4-1:** Multicast Veröffentlichung: Abonnieren von Funktionen
 
-Verleger senden Nachrichten mithilfe der- [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) Methode, während Abonnenten mithilfe der-Methode auf Nachrichten lauschen [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) . Darüber hinaus können Abonnenten bei Bedarf auch mit der-Methode Abonnements für Nachrichten Abonnements kündigen [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) .
+Herausgeber senden Nachrichten mithilfe der [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*)-Methode, während Abonnenten mithilfe der [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*)-Methode auf Nachrichten lauschen. Darüber hinaus können Abonnenten bei Bedarf mit der [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)-Methode auch Nachrichtenabonnements kündigen.
 
-Intern verwendet die- [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) Klasse schwache Verweise. Dies bedeutet, dass Objekte nicht aktiv bleiben und Garbage Collection ermöglicht wird. Daher sollte es nur erforderlich sein, eine Nachricht zu kündigen, wenn eine Klasse die Nachricht nicht mehr empfangen möchte.
+Intern verwendet die [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)-Klasse schwache Verweise. Dies bedeutet, dass Objekte nicht aktiv bleiben und Garbage Collection ermöglicht wird. Daher sollte es nur erforderlich sein, eine Nachricht zu kündigen, wenn eine Klasse die Nachricht nicht mehr empfangen möchte.
 
 Der eshoponcontainers-Mobile App verwendet die- [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) Klasse, um zwischen lose gekoppelten Komponenten zu kommunizieren. Die APP definiert drei Nachrichten:
 
@@ -75,7 +60,7 @@ In diesem Beispiel werden Nachrichten mithilfe von Konstanten definiert. Der Vor
 
 ## <a name="publishing-a-message"></a>Veröffentlichen einer Nachricht
 
-Verleger Benachrichtigen Abonnenten einer Nachricht mit einer der [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) über Ladungen. Im folgenden Codebeispiel wird das Veröffentlichen der `AddProduct` Nachricht veranschaulicht:
+Herausgeber benachrichtigen Abonnenten einer Nachricht mit einer der [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*)-Überladungen. Im folgenden Codebeispiel wird das Veröffentlichen der `AddProduct` Nachricht veranschaulicht:
 
 ```csharp
 MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
@@ -94,7 +79,7 @@ In diesem Beispiel gibt die- [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 
 
 ## <a name="subscribing-to-a-message"></a>Abonnieren einer Nachricht
 
-Abonnenten können sich registrieren, um eine Nachricht mit einer der- [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) über Ladungen zu empfangen. Im folgenden Codebeispiel wird veranschaulicht, wie der eshoponcontainers-Mobile App die Nachricht abonniert und verarbeitet `AddProduct` :
+Abonnenten können sich registrieren, um eine Nachricht mit einer der [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*)-Überladungen zu empfangen. Im folgenden Codebeispiel wird veranschaulicht, wie der eshoponcontainers-Mobile App die Nachricht abonniert und verarbeitet `AddProduct` :
 
 ```csharp
 MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
@@ -111,7 +96,7 @@ In diesem Beispiel [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 
 > [!TIP]
 > Verwenden Sie ggf. unveränderliche Nutzlastdaten. Versuchen Sie nicht, die Nutzlastdaten innerhalb eines Rückruf Delegaten zu ändern, da mehrere Threads gleichzeitig auf die empfangenen Daten zugreifen können. In diesem Szenario sollten die Nutzlastdaten unveränderlich sein, um Parallelitäts Fehler zu vermeiden.
 
-Ein Abonnent muss möglicherweise nicht jede Instanz einer veröffentlichten Nachricht verarbeiten, und dies kann durch die generischen Typargumente gesteuert werden, die für die Methode angegeben werden [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) . In diesem Beispiel empfängt der Abonnent nur `AddProduct` Nachrichten, die von der-Klasse gesendet werden `CatalogViewModel` , deren Nutzlastdaten eine- `CatalogItem` Instanz ist.
+Ein Abonnent muss möglicherweise nicht jede Instanz einer veröffentlichten Nachricht verarbeiten, und dies kann durch die generischen Typargumente gesteuert werden, die für die [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*)-Methode angegeben werden. In diesem Beispiel empfängt der Abonnent nur `AddProduct` Nachrichten, die von der-Klasse gesendet werden `CatalogViewModel` , deren Nutzlastdaten eine- `CatalogItem` Instanz ist.
 
 ## <a name="unsubscribing-from-a-message"></a>Aufheben des Abonnements für eine Nachricht
 
@@ -125,7 +110,7 @@ In diesem Beispiel gibt die [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.U
 
 ## <a name="summary"></a>Zusammenfassung
 
-Die Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) -Klasse implementiert das Veröffentlichen-Abonnieren-Muster und ermöglicht die Nachrichten basierte Kommunikation zwischen Komponenten, die für die Verknüpfung über Objekt-und Typverweise ungeeignet sind. Dieser Mechanismus ermöglicht es Verlegern und Abonnenten, ohne einen Verweis aufeinander zu kommunizieren, sodass Abhängigkeiten zwischen Komponenten reduziert werden können, während Komponenten unabhängig entwickelt und getestet werden können.
+Die Xamarin.Forms-Klasse [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) implementiert das Veröffentlichen-Abonnieren-Muster und ermöglicht so eine nachrichtenbasierte Kommunikation zwischen Komponenten, für die eine Verknüpfung über Objekt- und Typverweise ungünstig ist. Dieser Mechanismus ermöglicht es Verlegern und Abonnenten, ohne einen Verweis aufeinander zu kommunizieren, sodass Abhängigkeiten zwischen Komponenten reduziert werden können, während Komponenten unabhängig entwickelt und getestet werden können.
 
 ## <a name="related-links"></a>Verwandte Links
 

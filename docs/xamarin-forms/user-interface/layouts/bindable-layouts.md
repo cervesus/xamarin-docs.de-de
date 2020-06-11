@@ -1,22 +1,8 @@
 ---
-title: Bindbare Layouts inXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9d0497c0c0593b54f69bac84307976c4050e9c95
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138241"
+Title: "bindbare Layouts in Xamarin.Forms " Description: "bindbare Layouts ermöglichen layoutklassen das Generieren ihres Inhalts durch Binden an eine Auflistung von Elementen, mit der Option, die Darstellung der einzelnen Elemente mit einem DataTemplate festzulegen."
+ms. Prod: xamarin ms. assetid: 824c3319-20A0-42d0-8632-cdecd98349c3 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/09/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="bindable-layouts-in-xamarinforms"></a>Bindbare Layouts inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
@@ -32,8 +18,8 @@ Bindbare Layouts ermöglichen es allen layoutklassen, die von der-Klasse abgelei
 
 Außerdem macht die- `BindableLayout` Klasse die folgenden bindbaren Eigenschaften verfügbar:
 
-- `EmptyView`– Gibt die- `string` oder-Ansicht an, die angezeigt wird, wenn die- `ItemsSource` Eigenschaft ist `null` , oder wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Standardwert: `null`.
-- `EmptyViewTemplate`– Gibt den [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) an, der angezeigt wird, wenn die- `ItemsSource` Eigenschaft ist `null` , oder wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Standardwert: `null`.
+- `EmptyView`– Gibt die- `string` oder-Ansicht an, die angezeigt wird, wenn die- `ItemsSource` Eigenschaft ist `null` , oder wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Der Standardwert ist `null`.
+- `EmptyViewTemplate`– Gibt den [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) an, der angezeigt wird, wenn die- `ItemsSource` Eigenschaft ist `null` , oder wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Der Standardwert ist `null`.
 
 > [!NOTE]
 > Die `EmptyViewTemplate` -Eigenschaft hat Vorrang, wenn die `EmptyView` -Eigenschaft und die-Eigenschaft `EmptyViewTemplate` festgelegt sind.
@@ -98,7 +84,7 @@ In diesem Beispiel wird jedes Element in der Auflistung `TopFollowers` von einer
 
 ![Bindable Layout mit einem DataTemplate](bindable-layouts-images/top-followers.png "Bindable Layout mit einer Daten Vorlage")
 
-Weitere Informationen zu Datenvorlagen finden Sie unter [ Xamarin.Forms Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
+Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
 ## <a name="choose-item-appearance-at-runtime"></a>Auswählen der Element Darstellung zur Laufzeit
 

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Obwohl ListView eine leistungsstarke Ansicht für die Anzeige von Daten ist, bestehen einige Einschränkungen. In diesem Artikel wird erläutert, wie Sie mit einer Xamarin.Forms ListView in einer Anwendung eine hohe Leistung sicherstellen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e2b8e057d9687cd0a472451fc73cc578f9358277
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139879"
+Title: "ListView Performance" Description: "ListView ist eine leistungsstarke Ansicht für die Anzeige von Daten. es gelten jedoch einige Einschränkungen. In diesem Artikel wird erläutert, wie Sie mit einer Xamarin.Forms ListView in einer Anwendung eine hohe Leistung sicherstellen. "
+ms. Prod: xamarin ms. assetid: 1b085639-652C-4862-86eb-5d55d32b9395 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 12/11/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="listview-performance"></a>ListView-Leistung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)

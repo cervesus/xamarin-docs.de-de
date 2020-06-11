@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsKarten Pins
-description: In diesem Artikel wird erläutert, wie Pins auf einer Karte erstellt werden Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5e22888291a430863b8e45ee21d359a5acec750f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138436"
+Title: " Xamarin.Forms Karten Pins" Beschreibung: "in diesem Artikel wird erläutert, wie Pins auf einer Karte erstellt werden Xamarin.Forms ."
+ms. Prod: xamarin ms. assetid: F8FC081B-A811-4FBB-B8F8-30D6FD36BD40 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/23/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-map-pins"></a>Xamarin.FormsKarten Pins
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

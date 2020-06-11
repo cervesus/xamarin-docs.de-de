@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Eine Beschreibung aller Benutzeroberflächen Elemente, die zum Erstellen einer- Xamarin.Forms Anwendung verwendet werden. In diesem Artikel werden die Steuerelement Gruppen aufgelistet, aus denen sich die Benutzeroberfläche einer- Xamarin.Forms Anwendung besteht.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e843f0e42f4f66a6ce4e60c2f5d8a233d19f1df6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136395"
+Title: "Controls Reference" Description: "eine Beschreibung aller Benutzeroberflächen Elemente, die zum Erstellen einer Anwendung verwendet werden Xamarin.Forms . In diesem Artikel werden die Steuerelement Gruppen aufgelistet, aus denen sich die Benutzeroberfläche einer- Xamarin.Forms Anwendung besteht.
+ms. Prod: xamarin ms. assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/08/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="controls-reference"></a>Steuerelementreferenz
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -27,7 +13,7 @@ Die vier Haupt Steuerungsgruppen, die zum Erstellen der Benutzeroberfläche eine
 
 - [**Seiten**](pages.md)
 - [**Layouts**](layouts.md)
-- [**Sichten**](views.md)
+- [**Ansichten**](views.md)
 - [**Zellen**](cells.md)
 
 Eine Xamarin.Forms Seite nimmt in der Regel den gesamten Bildschirm ein. Die Seite enthält normalerweise ein Layout, das Sichten und möglicherweise andere Layouts enthält. Zellen sind spezialisierte Komponenten, die in Verbindung mit und verwendet werden [`TableView`](views.md#tableview) [`ListView`](views.md#listview) . Ein Klassendiagramm, das die Hierarchie von Typen anzeigt, die in der Regel zum Erstellen einer Benutzeroberfläche in verwendet werden, finden Sie Xamarin.Forms unter Steuer [ Xamarin.Forms Elemente-Klassenhierarchie](~/xamarin-forms/internals/class-hierarchy.md).

@@ -1,22 +1,8 @@
 ---
-title: Implizite Stile inXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3fb6ea40ced93103ec9cc92fa707f68c674d7826
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139008"
+Title: "implizite Stile in Xamarin.Forms " Description: "ein impliziter Stil ist ein Wert, der von allen Steuerelementen desselben TargetType verwendet wird, ohne dass jedes Steuerelement auf den Stil verweist."
+ms. Prod: xamarin ms. assetid: 02a75f 3B-4389-49d4-a2f 4-afd473a4a161 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/30/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="implicit-styles-in-xamarinforms"></a>Implizite Stile inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
@@ -163,5 +149,5 @@ Resources = new ResourceDictionary { buttonStyle };
 - [Grundlegende Stile (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 - [Arbeiten mit Stilen (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
-- [Stil](xref:Xamarin.Forms.Style)
+- [style](xref:Xamarin.Forms.Style)
 - [Trend](xref:Xamarin.Forms.Setter)

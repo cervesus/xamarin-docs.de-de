@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsBindbare Eigenschaften
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 33b3763075b64ea8af615465825313a527d20db2
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138176"
+Title: " Xamarin.Forms bindbare Eigenschaften" Beschreibung: "dieser Artikel enthält eine Einführung in bindbare Eigenschaften und zeigt, wie Sie erstellt und genutzt werden."
+ms. Prod: xamarin ms. assetid: 1ee869d8-6fe1-45CA-a0ad-26ec7d032ad7 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/16/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-bindable-properties"></a>Xamarin.FormsBindbare Eigenschaften
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
@@ -120,7 +106,7 @@ listView.Behaviors.Add (new EventToCommandBehavior
 });
 ```
 
-## <a name="advanced-scenarios"></a>Erweiterte Szenarios
+## <a name="advanced-scenarios"></a>Erweiterte Szenarien
 
 Wenn Sie eine- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Instanz erstellen, gibt es eine Reihe optionaler Parameter, die festgelegt werden können, um erweiterte bindbare Eigenschafts Szenarios zu aktivieren. In diesem Abschnitt werden diese Szenarios erläutert.
 

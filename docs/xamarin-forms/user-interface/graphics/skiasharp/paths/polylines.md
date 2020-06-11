@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b435e99180791b64e0a8ad975527fb3cb5316b7d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140217"
+Title: "Polylines and parametrische Gleichungen" Description: "in diesem Artikel wird erläutert, wie Sie skiasharp zum Rendering beliebiger Zeilen verwenden können, die Sie mit parametrischen Gleichungen definieren können, und dies mit Beispielcode veranschaulicht."
+ms. Prod: xamarin ms. assetid: 85aebb33-E954-4364-a6e1-808fab197bee ms. Technology: xamarin-skiasharp Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="polylines-and-parametric-equations"></a>Polylinien und parametrische Formeln
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

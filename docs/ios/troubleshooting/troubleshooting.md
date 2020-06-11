@@ -7,13 +7,13 @@ ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
-ms.date: 05/22/2018
-ms.openlocfilehash: 6368c3a4b128c06687b23b965b308ad6a788188b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.date: 06/10/2020
+ms.openlocfilehash: 1b3eb61bf08eb006890b8b879c560163bd131844
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574486"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84655086"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Tipps zur Problembehandlung für xamarin. IOS
 
@@ -48,7 +48,7 @@ Der Member wurde wahrscheinlich vom Linker entfernt und ist daher zur Laufzeit n
 - Fügen Sie dem-Element das- [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) Attribut hinzu.  Dies hindert den Linker daran, ihn zu entfernen.
 - Wenn Sie [**Mink**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)aufrufen, verwenden Sie die Optionen " **-nolink** " oder " **-linksdkonly** ":
   - **-nolink** deaktiviert alle Verknüpfungen.
-  - **-linksdkonly** verknüpft nur von xamarin. IOS bereitgestellte Assemblys, z. b. **xamarin. IOS. dll**, während alle Typen in vom Benutzer erstellten Assemblys (d. a. ihren App-Projekten) beibehalten werden.
+  - **-linksdkonly** verknüpft nur von xamarin. IOS bereitgestellte Assemblys, wie z. b. **xamarin.ios.dll**, wobei alle Typen in vom Benutzer erstellten Assemblys (d.h. Ihre APP-Projekte) beibehalten werden.
 
 Beachten Sie, dass Assemblys verknüpft sind, sodass die resultierende ausführbare Datei kleiner ist. Folglich kann das Deaktivieren der Verknüpfung zu einer größeren ausführbaren Datei führen als erwünscht.
 
@@ -166,7 +166,7 @@ Die beliebten Mac-Hilfsprogramme Quicksilver, Google Toolbar und Launchbar verf�
 
 ## <a name="visual-studio-for-mac-complains-about-mono-24-required"></a>Visual Studio für Mac über die erforderlichen mono-2,4-Informationen
 
-Wenn Sie Visual Studio für Mac aufgrund eines aktuellen Updates aktualisiert haben, und wenn Sie versuchen, es erneut zu starten, werden Sie sich darüber beschweren, dass mono 2,4 nicht vorhanden ist. Sie müssen lediglich [die mono 2,4-Installation aktualisieren](http://www.go-mono.com/mono-downloads/download.html).  
+Wenn Sie Visual Studio für Mac aufgrund eines aktuellen Updates aktualisiert haben, und wenn Sie versuchen, es erneut zu starten, werden Sie sich darüber beschweren, dass mono 2,4 nicht vorhanden ist. Sie müssen lediglich [die mono 2,4-Installation aktualisieren](http://www.go-mono.com/mono-downloads/download.html).
 
 Mono 2.4.2.3 _6 korrigiert einige wichtige Probleme, die eine zuverlässige Ausführung von Visual Studio für Mac verhindert haben, manchmal Visual Studio für Mac beim Start nicht reagiert oder das Generieren der Code Vervollständigungs Datenbank verhindert.
 
@@ -186,7 +186,7 @@ Stacktrace:
 
 Dies bedeutet, dass Sie eine mit Thumb-Code kompilierte statische Bibliothek in Ihr Projekt verknüpfen. Seit der iPhone SDK-Version 3,1 (oder höher zum Zeitpunkt der Erstellung dieses Dokuments) hat Apple einen Fehler in seinen Linker eingeführt, als nicht Thumb-Code (xamarin. IOS) mit Thumb-Code (Ihre statische Bibliothek) zu verknüpfen. Sie müssen eine Verknüpfung mit einer nicht-Thumb-Version ihrer statischen Bibliothek herstellen, um dieses Problem zu beheben.
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System. ExecutionEngineException: Versuch der JIT-Kompilierungs Methode (Wrapper von verwaltetem zu verwaltetem) foo []: System. Collections. Generic. ICollection ' 1. get_Count ()
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System.Executionengineexception: Versuch der JIT-Kompilierungs Methode (Wrapper von verwaltetem zu verwaltetem) foo []: System. Collections. Generic. ICollection ' 1. get_Count ()
 
 Das Suffix [] gibt an, dass Sie oder die Klassenbibliothek eine Methode für ein Array über eine generische Auflistung aufrufen, z. b. IEnumerable<>, ICollection<> oder IList<>. Um dieses Problem zu umgehen, können Sie explizit erzwingen, dass der AOT-Compiler diese Methode einschließt, indem Sie die Methode selbst aufrufen und sicherstellen, dass dieser Code vor dem Aufruf ausgeführt wird, der die Ausnahme ausgelöst hat. In diesem Fall können Sie Folgendes schreiben:
 
@@ -217,7 +217,7 @@ Fügen Sie die XS-Protokolle **~/Library/Logs/XamarinStudio-{Version}/IDE-{Times
 
 Zum unterstützen des Debuggens enthalten Debugbuilds zusätzlichen Code. Im Releasemodus integrierte Projekte sind ein Bruchteil der Größe.
 
-Ab xamarin. IOS 1,3 enthielt die Debug-Builds Debuggingunterstützung für jede einzelne Komponente von Mono (jede Methode in jeder Klasse des Frameworks).  
+Ab xamarin. IOS 1,3 enthielt die Debug-Builds Debuggingunterstützung für jede einzelne Komponente von Mono (jede Methode in jeder Klasse des Frameworks).
 
 Mit xamarin. IOS 1,4 stellen wir eine präzisere Methode für das Debuggen bereit. Standardmäßig wird nur die Debuginstrumentation für Ihren Code und Ihre Bibliotheken bereitgestellt. Dies geschieht nicht für alle [Mono](~/cross-platform/internals/available-assemblies.md) -Assemblys (Dies ist zwar immer noch möglich, aber Sie müssen sich dafür entscheiden, diese Assemblys zu Debuggen).
 
@@ -226,33 +226,6 @@ Mit xamarin. IOS 1,4 stellen wir eine präzisere Methode für das Debuggen berei
 Mono-und xamarin. IOS-Installationsprogramme hängen nicht aus, wenn der iPhone-Simulator ausgeführt wird. Dieses Problem ist nicht auf Mono oder xamarin. IOS beschränkt. Dies ist ein konsistentes Problem für jede Software, die versucht, Software auf MacOS snowleopard zu installieren, wenn der iPhone-Simulator zum Installations Zeitpunkt ausgeführt wird.
 
 Stellen Sie sicher, dass Sie den iPhone-Simulator beenden, und wiederholen Sie die Installation.
-
-<a name="trampolines"></a>
-
-## <a name="ran-out-of-trampolines-of-type-0"></a>Nicht genügend neusprung des Typs 0
-
-Wenn Sie diese Meldung erhalten, während das Gerät ausgeführt wird, können Sie weitere Typ 0-Trampolines (typspezifisch) erstellen, indem Sie den Abschnitt "iPhone Build" der Projektoptionen ändern.  Sie möchten zusätzliche Argumente für die gerätebuildziele hinzufügen:
-
- `-aot "ntrampolines=2048"`
-
-Die Standard Anzahl der Trampoline ist 1024. Versuchen Sie, diese Zahl zu erhöhen, bis Sie für Ihre Anwendung ausreichend sind.
-
-## <a name="ran-out-of-trampolines-of-type-1"></a>Nicht genügend neusprung des Typs 1.
-
-Wenn Sie rekursive Generika stark verwenden, erhalten Sie diese Meldung möglicherweise auf dem Gerät.  Sie können weitere Type 1-neuteschlangen (Typ rgctx) erstellen, indem Sie den Abschnitt "iPhone Build" der Projektoptionen ändern.  Sie möchten zusätzliche Argumente für die gerätebuildziele hinzufügen:
-
- `-aot "nrgctx-trampolines=2048"`
-
-Die Standard Anzahl der Trampoline ist 1024. Versuchen Sie, diese Zahl zu erhöhen, bis Sie für die Verwendung von Generika ausreichend sind.
-
-## <a name="ran-out-of-trampolines-of-type-2"></a>Aus dem Typ 2 wurden keine neuwerte entfernt.
-
-Wenn Sie hohe Verwendungs Schnittstellen verwenden, erhalten Sie diese Meldung möglicherweise auf dem Gerät.
-Durch Ändern der Projektoptionen "iPhone Build" können Sie weitere Typ-2-Trampolines (IMT-thunkttente) erstellen.  Sie möchten zusätzliche Argumente für die gerätebuildziele hinzufügen:
-
- `-aot "nimt-trampolines=512"`
-
-Die Standard Anzahl von IMT-Thunk-Trampoline ist 128. Versuchen Sie, diese Zahl zu erhöhen, bis Sie für die Verwendung von Schnittstellen ausreichend sind.
 
 ## <a name="debugger-is-unable-to-connect-with-the-device"></a>Der Debugger kann keine Verbindung mit dem Gerät herstellen.
 
@@ -384,7 +357,7 @@ Wenn Sie einen Lauf Zeit Absturz (SIGSEGV) im Simulator zusammen mit einer Stape
   at (wrapper runtime-invoke) <Module>.runtime_invoke_void_object (object,intptr,intptr,intptr)
 ```
 
-... Anschließend verfügen Sie wahrscheinlich über eine (oder mehrere) veraltete Assembly in Ihrem simulatoranwendungsverzeichnis. Solche Assemblys können vorhanden sein, da der Apple IOS-Simulator Dateien hinzufügt und aktualisiert, Sie aber nie löscht. Wenn dies der Fall ist, besteht die einfachste Lösung darin, "zurücksetzen und Inhalt und Einstellungen..." auszuwählen. im Menü Simulator.   
+... Anschließend verfügen Sie wahrscheinlich über eine (oder mehrere) veraltete Assembly in Ihrem simulatoranwendungsverzeichnis. Solche Assemblys können vorhanden sein, da der Apple IOS-Simulator Dateien hinzufügt und aktualisiert, Sie aber nie löscht. Wenn dies der Fall ist, besteht die einfachste Lösung darin, "zurücksetzen und Inhalt und Einstellungen..." auszuwählen. im Menü Simulator.
 
 > [!WARNING]
 > Dadurch werden alle Dateien, Anwendungen und Daten aus dem Simulator entfernt.   Wenn Sie die Anwendung das nächste Mal ausführen, wird Visual Studio für Mac im Simulator bereitgestellt, und es gibt keine alte, veraltete Assembly, die den Absturz verursacht.
@@ -413,3 +386,18 @@ Um die Buildaktion zu überprüfen, klicken Sie mit der rechten Maustaste auf di
 Wenn Sie Drittanbieterbibliotheken in Ihre xamarin. IOS-App einschließen, erhalten Sie möglicherweise einen Fehler im Format "System. NotSupportedException: Es sind keine Daten für die Codierung 437 verfügbar", wenn Sie versuchen, die APP zu kompilieren und auszuführen. Beispielsweise können Bibliotheken, z `Ionic.Zip.ZipFile` . b., diese Ausnahme während des Vorgangs auslösen.
 
 Dies kann behoben werden, indem Sie die Optionen für das xamarin. IOS-Projekt öffnen, zu der **IOS**  >  -**buildinternationalisierung** navigieren und die **West** Internationalisierung überprüfen.
+
+## <a name="could-not-launch-xamarinlauncher-could-not-find-the-executable-mlaunchexe"></a>Xamarin konnte nicht gestartet werden. die ausführbare Datei ' mlaunch.exe ' wurde nicht gefunden.
+
+In einigen Fällen kann Antivirussoftware das xamarin. IOS SDK fälschlicherweise als Malware markieren und erforderliche Dateien entfernen, was das SDK beschädigt. Dies führt zu Fehlern, z. b. "xamarin konnte nicht gestartet werden. Start Programm konnte die ausführbare Datei ' mlaunch.exe ' nicht finden".
+
+Wenn Sie betroffen sind, schließen Sie mlaunch.exe von Ihrem Antivirenscanner aus, um eine erneute Ausführung zu verhindern. Weitere Informationen finden Sie unter [How to Create a Application Exception in der Symantex-Endpoint Protection-Manager](https://knowledge.broadcom.com/external/article/180778/how-to-create-an-application-exception-i.html) für Symantec und [Ausschließen von Dateien und Ordnern aus den Überprüfungen für den automatischen Schutz, Sonar und Download von](https://support.norton.com/sp/en/uk/home/current/solutions/v3672136) cloudanwendungen für Norton. Außerdem sollten Sie die Meldung "falsch positiv" an [Symantec](https://symsubmit.symantec.com) oder [Norton](https://submit.norton.com/?type=FP)melden.
+
+Nachdem Sie einen Ausschluss für mlaunch.exe hinzugefügt haben, ist eine Neuinstallation erforderlich, um die fehlenden Dateien wiederherzustellen. Der einfachste Ansatz hierfür ist das Wechseln von Kanälen in der Updater:
+
+- Das **Visual Studio** -Menü > **nach Updates suchen**.
+- Wählen Sie in der Dropdown Liste einen anderen Aktualisierungs Kanal aus, und klicken Sie auf die Schaltfläche zum **wechseln**
+- Warten Sie, bis Updates heruntergeladen wurden.
+- Wechseln Sie zurück zum ursprünglichen Channel, und installieren Sie Updates.
+
+Wenn das Problem durch diese Anweisungen nicht behoben werden kann, fügen Sie einen Kommentar zum folgenden GitHub-Problem hinzu: [8736](https://github.com/xamarin/xamarin-macios/issues/8736).

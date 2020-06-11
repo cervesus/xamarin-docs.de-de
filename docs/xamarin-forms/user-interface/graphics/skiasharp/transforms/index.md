@@ -1,22 +1,8 @@
 ---
-title: ''
-description: In diesem Artikel werden Transformationen zum Anzeigen von skiasharp Xamarin.Forms -Grafiken in-Anwendungen erläutert und mit Beispielcode veranschaulicht.
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e20ea5d1d3f813b04a927601fbe1180ff39ed176
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140191"
+Title: "skiasharp-Transformationen" Beschreibung: "dieser Artikel untersucht Transformationen zum Anzeigen von skiasharp-Grafiken in Xamarin.Forms Anwendungen und veranschaulicht dies mit Beispielcode."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551 Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-transforms"></a>SkiaSharp-Transformationen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -40,9 +26,9 @@ Skiasharp unterstützt auch nicht affine Transformationen (auch als *Projective*
 
 Xamarin.Formsunterstützt auch Transformationen, die denen in skiasharp ähneln. Die- Xamarin.Forms [`VisualElement`](xref:Xamarin.Forms.VisualElement) Klasse definiert die folgenden Transformations Eigenschaften:
 
-- [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX)immer[`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)
+- [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) und [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)
 - [`Scale`](xref:Xamarin.Forms.VisualElement.Scale)
-- [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation), [`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX) und[`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY)
+- [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation), [`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX) und [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY)
 
 Die `RotationX` `RotationY` Eigenschaften und sind Perspektiven Transformationen, die quasi 3D-Effekte erstellen.
 
@@ -60,7 +46,7 @@ Alle Beispiel Programme in diesem Abschnitt werden im skiasharp [**formsdemos**]
 
 Erfahren Sie, wie Sie die Transform-Transformation verwenden, um skiasharp-Grafiken zu verschieben.
 
-## <a name="the-scale-transform"></a>[Die Skalierungstransformation](scale.md)
+## <a name="the-scale-transform"></a>[Die Skalierungs Transformation](scale.md)
 
 Entdecken Sie die skiasharp-Skalierungs Transformation zum Skalieren von Objekten auf verschiedene Größen.
 

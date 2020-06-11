@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsund Azure-Dienste
-description: In diesem Artikel wird erläutert, wie Sie Azure Notification Hubs verwenden, um plattformübergreifende Pushbenachrichtigungen an Anwendungen zu senden Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a63b6329b9e8f4bcdc18a973b538e1e2e44bca67
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130974"
+Title: " Xamarin.Forms und Azure-Dienste" Beschreibung: in diesem Artikel wird erläutert, wie Sie Azure Notification Hubs verwenden, um plattformübergreifende Pushbenachrichtigungen an Anwendungen zu senden Xamarin.Forms .
+ms. Prod: xamarin ms. assetid: 07c60a42-a9e1-4dd0-8874-bd9487dc3ea2 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 06/28/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-and-azure-services"></a>Xamarin.Formsund Azure-Dienste
 
 ## <a name="consume-an-azure-cosmos-db-document-database-in-xamarinformsazure-cosmosdbmd"></a>[Verwenden einer Azure Cosmos DB-dokumentdatenbank inXamarin.Forms](azure-cosmosdb.md)

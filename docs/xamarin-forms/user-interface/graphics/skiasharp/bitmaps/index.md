@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1d21fc199dd67471440ca0e3eeaf9a140e7a1967
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140230"
+Title: "skiasharp Bitmaps" Description: "erfahren Sie, wie die Bits von skiasharp-Bitmaps geladen, gespeichert, angezeigt, erstellt, gezeichnet, animiert und auf Sie zugegriffen wird."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 70c19370-157A-4b1b-9532-F77E32AC21BC Author: davidbritch ms. Author: dabritch ms. Date: 07/17/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-bitmaps"></a>Skiasharp-Bitmaps
 
 Eine Bitmap ist ein rechteckiges Array von Daten, das den Pixeln eines Anzeige Geräts entspricht. Der Bereich der Grafik Programmierung, der Bitmaps zugeordnet ist, wird im Gegensatz zu den _Vektorgrafiken_ von Linien und Kurven auch als _Rastergrafik_ (nach den Überprüfungs Zeilen der frühen Videoanzeige benannt) bezeichnet. 

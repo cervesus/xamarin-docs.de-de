@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131052"
+Title: "Porter-Duff-Blend-Modi" Description: "verwenden Sie die" Porter-Duff Blend "-Modi, um Szenen basierend auf Quell-und Ziel Images zu verfassen.
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 57f172 F8-ba03-43ec-A215-ed6b78696bb5 Author: davidbritch ms. Author: dabritch ms. Date: 08/23/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="porter-duff-blend-modes"></a>Porter-Duff-Blend-Modi
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -72,59 +58,21 @@ Skia fügt einen 14. Modus mit dem Namen hinzu `Modulate` , der sehr ähnlich is
 Hier sind die 14 "Porter-Duff"-Modi, wie in skiasharp definiert. Die Tabelle zeigt, wie Sie die einzelnen drei nicht leeren Bereiche in der obigen Abbildung färben:
 
 | Mode       | Destination | Kreuz | `Source` |
-| ---
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------|:---Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-------:|:---Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-------:|:---Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----:| | `Clear`    |             |              |        | | `Src`      |             | Quelle | X | | `Dst`      | X | Ziel |        | | `SrcOver`  | X | Quelle | X | | `DstOver`  | X | Ziel | X | | `SrcIn`    |             | Quelle |        | | `DstIn`    |             | Ziel |        | | `SrcOut`   |             |              | X | | `DstOut`   | X |              |        | | `SrcATop`  | X | Quelle |        | | `DstATop`  |             | Ziel | X | | `Xor`      | X |              | X | | `Plus`     | X | Summe | X | | `Modulate` |             | Produkt |        | 
+| ---------- |:-----------:|:------------:|:------:|
+| `Clear`    |             |              |        |
+| `Src`      |             | `Source`       | X      |
+| `Dst`      | X           | Destination  |        |
+| `SrcOver`  | X           | `Source`       | X      |
+| `DstOver`  | X           | Destination  | X      |
+| `SrcIn`    |             | `Source`       |        |
+| `DstIn`    |             | Destination  |        |
+| `SrcOut`   |             |              | X      |
+| `DstOut`   | X           |              |        |
+| `SrcATop`  | X           | `Source`       |        |
+| `DstATop`  |             | Destination  | X      |
+| `Xor`      | X           |              | X      |
+| `Plus`     | X           | SUM          | X      |
+| `Modulate` |             | Produkt      |        | 
 
 Diese Blend-Modi sind symmetrisch. Quelle und Ziel können ausgetauscht werden, und alle Modi sind immer noch verfügbar.
 
@@ -298,7 +246,7 @@ public class PorterDuffGridPage : ContentPage
 }
 ```
 
-Das Ergebnis lautet wie folgt:
+So sieht das Ergebnis aus:
 
 [![Porter-Duff-Raster](porter-duff-images/PorterDuffGrid.png "Porter-Duff-Raster")](porter-duff-images/PorterDuffGrid-Large.png#lightbox)
 
@@ -320,11 +268,11 @@ Möglicherweise besteht eine Versuchung, die Bitmaps in der " **Porter-Duff"-Ras
 
 ## <a name="using-mattes-with-porter-duff"></a>Verwenden von mattes mit Porter-Duff
 
-Die zusammengesetzte Seite " **Brick-Wall Zusammensetzung** " zeigt ein Beispiel für eine klassische Zusammensetzung-Aufgabe: ein Bild muss aus mehreren Teilen zusammengestellt werden, einschließlich einer Bitmap mit einem Hintergrund, der entfernt werden muss. Hier ist die Bitmap " **seatedmonkey. jpg** " mit dem problematischen Hintergrund:
+Die zusammengesetzte Seite " **Brick-Wall Zusammensetzung** " zeigt ein Beispiel für eine klassische Zusammensetzung-Aufgabe: ein Bild muss aus mehreren Teilen zusammengestellt werden, einschließlich einer Bitmap mit einem Hintergrund, der entfernt werden muss. Im folgenden finden Sie die **SeatedMonkey.jpg** Bitmap mit dem problematischen Hintergrund:
 
 ![Sitzender Affe](porter-duff-images/SeatedMonkey.jpg "Sitzender Affe")
 
-Als Vorbereitung für die Zusammensetzung wurde eine entsprechende _Matte_ erstellt, bei der es sich um eine weitere Bitmap handelt, bei der es sich um eine andere Bitmap handelt. Diese Datei trägt den Namen " **SeatedMonkeyMatte. png** " und befindet sich im Beispiel " [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) " unter den Ressourcen im Ordner " **Media** ":
+Als Vorbereitung für die Zusammensetzung wurde eine entsprechende _Matte_ erstellt, bei der es sich um eine weitere Bitmap handelt, bei der es sich um eine andere Bitmap handelt. Diese Datei hat den Namen **SeatedMonkeyMatte.png** und befindet sich im Beispiel " [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) " unter den Ressourcen im Ordner " **Media** ":
 
 ![Sitzender affmatt](porter-duff-images/SeatedMonkeyMatte.png "Sitzender affmatt")
 
@@ -406,7 +354,7 @@ Wenn das Programm zum ersten Mal ausgeführt wird, ist nur Folgendes sichtbar `B
 
 [![Zusammengesetzte Brick-Wall-Zusammensetzung (Schritt 0)](porter-duff-images/BrickWallCompositing0.png "Zusammengesetzte Brick-Wall-Zusammensetzung (Schritt 0)")](porter-duff-images/BrickWallCompositing0-Large.png#lightbox)
 
-Wenn Sie die `Button` einmal `step` -Taste drücken, wird zu 1 erhöht, und der `PaintSurface` Handler zeigt nun " **seatedmonkey. jpg**" an:
+Wenn Sie die `Button` einmal `step` -Taste drücken, wird zu 1 erhöht, und der `PaintSurface` Handler zeigt nun **SeatedMonkey.jpg**an:
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -432,7 +380,7 @@ Es gibt kein- `SKPaint` Objekt und daher keinen Blend-Modus. Die Bitmap wird unt
 
 [![Schritt 1: zusammengesetzte Brick-Wall-Zusammensetzung](porter-duff-images/BrickWallCompositing1.png "Schritt 1: zusammengesetzte Brick-Wall-Zusammensetzung")](porter-duff-images/BrickWallCompositing1-Large.png#lightbox)
 
-Drücken `Button` `step` Sie erneut, und Inkrementen zu 2. Dies ist der entscheidende Schritt beim Anzeigen der Datei **SeatedMonkeyMatte. png** :
+Drücken `Button` `step` Sie erneut, und Inkrementen zu 2. Dies ist der entscheidende Schritt beim Anzeigen der **SeatedMonkeyMatte.png** Datei:
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -551,31 +499,21 @@ Die RGB-Farben werden vorab mit dem Alpha-Wert multipliziert. Wenn **SC** z. b. 
 Das Ergebnis wird in eckigen Klammern angezeigt, wobei der Alphakanal und die RGB-Farbe durch ein Komma getrennt sind: **[alpha, Color]**. Für die Farbe wird die Berechnung separat für die roten, grünen und blauen Komponenten durchgeführt:
 
 | Mode       | Vorgang |
-| ---
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | ---Titel: Description: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | | `Clear`    | [0,0] | | `Src`      | [SA, SC] | | `Dst`      | [Da, DC] | | `SrcOver`  | [SA + da (1 – SA), SC + DC (1 – SA) | | `DstOver`  | [Da + SA = (1 – da), DC + SC (1 – da) | | `SrcIn`    | SAS Da, SC · Da] | | `DstIn`    | De Sa, DC SA] | | `SrcOut`   | SAS (1 – da), SC (1 – da)] | | `DstOut`   | De (1 – SA), DC (1 – SA)] | | `SrcATop`  | [Da, SC Da + DC (1 – SA)] | | `DstATop`  | [SA, DC Sa + SC (1 – da)] | | `Xor`      | [SA + da – 2 SAS Da, SC · (1 – da) + DC (1 – SA)] | | `Plus`     | [SA + da, SC + DC] | | `Modulate` | SAS Da, SC · DC] | 
+| ---------- | --------- |
+| `Clear`    | [0,0]    |
+| `Src`      | [SA, SC]  |
+| `Dst`      | [Da, DC]  |
+| `SrcOver`  | [SA + da (1 – SA), SC + DC (1 – SA) | 
+| `DstOver`  | [Da + SA = (1 – da), DC + SC (1 – da) |
+| `SrcIn`    | SAS Da, SC · De |
+| `DstIn`    | De Sa, DC SAS |
+| `SrcOut`   | SAS (1 – da), SC (1 – da)] |
+| `DstOut`   | De (1 – SA), DC (1 – SA)] |
+| `SrcATop`  | [Da, SC Da + DC (1 – SA)] |
+| `DstATop`  | [SA, DC Sa + SC (1 – da)] |
+| `Xor`      | [SA + da – 2 SAS Da, SC · (1 – da) + DC (1 – SA)] |
+| `Plus`     | [SA + da, SC + DC] |
+| `Modulate` | SAS Da, SC · DC | 
 
 Diese Vorgänge sind einfacher zu analysieren, wenn **da** und **sa** entweder 0 oder 1 sind. Wenn z. b. für den Standardmodus der Wert für "SA" den Wert "0" hat, `SrcOver` ist " **SC** " ebenfalls 0, und das Ergebnis ist **[da, DC]**, das zielalpha und die Farbe. **Sa** Wenn **sa** den Wert 1 hat, ist das Ergebnis **[SA, SC]**, Alpha und Farbe der Quelle oder **[1, SC]**.
 

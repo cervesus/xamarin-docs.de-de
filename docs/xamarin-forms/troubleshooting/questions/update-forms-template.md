@@ -1,22 +1,8 @@
 ---
-title: Kann ich die Xamarin.Forms Standardvorlage auf ein neueres nuget-Paket aktualisieren?
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bdead80671a1ae6539de6614441df7e86863a5a6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137474"
+Title: "kann ich die Xamarin.Forms Standardvorlage auf ein neueres nuget-Paket aktualisieren?"
+ms. Topic: Problembehandlung bei MS. Prod: xamarin ms. assetid: 160ebe13-26eb-4b4f-9248-A5CBE58FDD7F ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/25/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>Kann ich die Xamarin.Forms Standardvorlage auf ein neueres nuget-Paket aktualisieren?
 
 In dieser Anleitung Xamarin.Forms wird die Vorlage für die .NET Standard-Bibliothek als Beispiel verwendet, aber dieselbe allgemeine Methode funktioniert auch für die Vorlage für frei Xamarin.Forms gegebene Projekte. Dieses Handbuch ist mit einem Beispiel für die Aktualisierung von Xamarin.Forms 1.5.1.6471 auf 2.1.0.6529 geschrieben, aber es ist möglich, stattdessen andere Versionen als Standard festzulegen.

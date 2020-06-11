@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsNot
-description: Der- Xamarin.Forms Schalter ist ein Typ von Schaltfläche, der vom Benutzer geändert werden kann, um zwischen den Zuständen "ein" und "aus" zu wechseln. In diesem Artikel wird erläutert, wie Sie die Switch-Klasse verwenden, um ein umschlendes Benutzeroberflächen Element anzuzeigen.
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a5c2583b7632acdfa7d8439dc96b3964fa3cfcab
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136239"
+Title: " Xamarin.Forms Switch" Description: "der Xamarin.Forms Schalter ist eine Art von Schaltfläche, die vom Benutzer geändert werden kann, um zwischen den Zuständen" ein "und" aus "zu wechseln. In diesem Artikel wird erläutert, wie Sie die Switch-Klasse verwenden, um ein umschlendes Benutzeroberflächen Element anzuzeigen.
+ms. Prod: xamarin ms. assetid: B2F9CC65-481B-4323-8E77-C6BE29C90DE9 ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 07/18/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-switch"></a>Xamarin.FormsNot
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
@@ -130,4 +116,4 @@ Eine Anwendung kann einen Status eingeben, in dem ein-/ausgeschaltet `Switch` is
 ## <a name="related-links"></a>Verwandte Links
 
 * [Switchdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
-* [Xamarin.FormsAuslöst](~/xamarin-forms/app-fundamentals/triggers.md)
+* [Xamarin.Forms-Trigger](~/xamarin-forms/app-fundamentals/triggers.md)

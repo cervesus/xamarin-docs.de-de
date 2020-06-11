@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsEinführung in carouselview
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2e67acd0188e1147481005502ad9ccdaada645d9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140269"
+Title: " Xamarin.Forms carouselview Introduction" Description: "carouselview ist eine Ansicht für die Darstellung von Daten in einem Bild lauffähigen Layout, in dem Benutzer zum Durchlaufen einer Auflistung von Elementen schwenken können."
+ms. Prod: xamarin ms. assetid: 2a96e4bd-c29b-4658-bb4c-ab00872b0f8f ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/08/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-introduction"></a>Xamarin.FormsEinführung in carouselview
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

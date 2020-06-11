@@ -1,22 +1,8 @@
 ---
-title: Benutzerdefinierte XAML-Namespace Schemas inXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 41a95b1a82ab8aa1f6938e5a2bcdebcef368e72d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138163"
+Title: "XAML Custom Namespace Schemas in Xamarin.Forms " Description: "ein benutzerdefiniertes XAML-Namespace Schema kann mit der XmlnsDefinitionAttribute-Klasse definiert werden, die eine Zuordnung zwischen einer benutzerdefinierten URL und einem oder mehreren CLR-Namespaces angibt. Das benutzerdefinierte Namespace Schema kann dann in XAML-Namespace Deklarationen verwendet werden. "
+ms. Prod: xamarin ms. assetid: FDF201A1-8C35-4569-A728-F9B0A0C5B31A ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 12/21/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>Benutzerdefinierte XAML-Namespace Schemas inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)

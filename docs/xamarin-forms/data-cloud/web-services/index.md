@@ -1,25 +1,11 @@
 ---
-title: Xamarin.Formsund Webdienste
-description: In diesem Handbuch wird erläutert, wie Sie mit verschiedenen Webdiensten kommunizieren, um eine Funktion zum Erstellen, lesen, aktualisieren und löschen (CRUD) für eine-Anwendung bereitzustellen Xamarin.Forms . Die behandelten Themen umfassen die Kommunikation mit ASMX-Diensten, WCF-Diensten und Rest-Diensten.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5b2613b94d2c347d9bc6a94086f869b07ab8a55b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131884"
+Title: " Xamarin.Forms und Webdienste" Beschreibung: "in diesem Handbuch wird erläutert, wie Sie mit verschiedenen Webdiensten kommunizieren, um die Funktionen zum Erstellen, lesen, aktualisieren und löschen (CRUD) für eine-Anwendung bereitzustellen Xamarin.Forms . Die behandelten Themen umfassen die Kommunikation mit ASMX-Diensten, WCF-Diensten und Rest-Diensten.
+ms. Prod: xamarin ms. assetid: 8b360bda-e4e3-4 A3b-9004-0e35362l49f 8 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 06/27/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-and-web-services"></a>Xamarin.Formsund Webdienste
 
-## <a name="introduction"></a>[Einführung](introduction.md)
+## <a name="introduction"></a>[Introduction (Einführung)](introduction.md)
 
 Dieser Artikel enthält eine exemplarische Vorgehensweise für die Xamarin.Forms Beispielanwendung, die die Kommunikation mit verschiedenen Webdiensten veranschaulicht. Zu den behandelten Themen gehören die Anatomie der Anwendung, die Seiten, das Datenmodell und das Aufrufen von Webdienst Vorgängen.
 

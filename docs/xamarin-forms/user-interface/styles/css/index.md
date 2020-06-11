@@ -1,22 +1,6 @@
 ---
-title: Formatieren von Xamarin.Forms apps mit Cascading Stylesheets (CSS)
-description: Xamarin.Formsunterstützt das Formatieren visueller Elemente mithilfe Cascading Stylesheets (CSS).
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3e333fcdca12a6bd2f71a1ecbeeb1fd3d5f5be13
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140139"
+Title: "Formatieren von Xamarin.Forms apps mit Cascading Stylesheets (CSS)" Description: "unterstützt das Formatieren Xamarin.Forms visueller Elemente mithilfe Cascading Stylesheets (CSS)".
+ms. Prod: xamarin ms. assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2 ms. Technology: xamarin-Forms ms. Custom: xamu-Video Author: davidbritch ms. Author: dabritch ms. Date: 04/17/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Formatieren von Xamarin.Forms apps mit Cascading Stylesheets (CSS)
 
@@ -77,7 +61,7 @@ stacklayout>image {
 In Xamarin.Forms werden CSS-Stylesheets analysiert und zur Laufzeit ausgewertet, nicht als Kompilierzeit, und Stylesheets werden bei Verwendung erneut analysiert.
 
 > [!NOTE]
-> Derzeit kann die gesamte Formatierung, die mit XAML-Formaten möglich ist, nicht mit CSS durchgeführt werden. Allerdings können XAML-Stile verwendet werden, um CSS für Eigenschaften zu ergänzen, die derzeit nicht von unterstützt werden Xamarin.Forms . Weitere Informationen zu XAML-Formaten finden Sie unter Formatieren von [ Xamarin.Forms apps mit XAML-Stilen](~/xamarin-forms/user-interface/styles/xaml/index.md).
+> Derzeit kann die gesamte Formatierung, die mit XAML-Formaten möglich ist, nicht mit CSS durchgeführt werden. Allerdings können XAML-Stile verwendet werden, um CSS für Eigenschaften zu ergänzen, die derzeit nicht von unterstützt werden Xamarin.Forms . Weitere Informationen zu XAML-Formatvorlagen finden Sie unter [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md).
 
 Das [monkeyappcss](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss) -Beispiel veranschaulicht die Verwendung von CSS zum Formatieren einer einfachen APP und ist in den folgenden Screenshots dargestellt:
 
@@ -328,7 +312,7 @@ Dieser Selektor identifiziert alle [`Image`](xref:Xamarin.Forms.Image) Elemente,
 
 Folgende CSS-Selektoren werden von unterstützt Xamarin.Forms :
 
-|Auswahl|Beispiel|Beschreibung|
+|Auswahl|Beispiel|BESCHREIBUNG|
 |---|---|---|
 |`.class`|`.header`|Wählt alle-Elemente mit der-Eigenschaft aus, die `StyleClass` ' Header ' enthält. Beachten Sie, dass bei dieser Auswahl zwischen Groß-und klein|
 |`#id`|`#email`|Wählt alle-Elemente aus `StyleId` , deren auf festgelegt ist `email` . Wenn `StyleId` nicht festgelegt ist, Fall Back auf `x:Name` . Bei Verwendung von XAML `x:Name` wird von bevorzugt `StyleId` . Beachten Sie, dass bei dieser Auswahl zwischen Groß-und klein|
@@ -365,49 +349,49 @@ Die folgenden CSS-Eigenschaften werden von unterstützt Xamarin.Forms : (in der 
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_Farbe_ \|`initial` |`background-color: springgreen;`|
-|`background-image`|`Page`|_Zeichenfolge_ \| `initial` |`background-image: bg.png;`|
+|`background-image`|`Page`|_Zeichenfolge_ \|`initial` |`background-image: bg.png;`|
 |`border-color`|`Button`, `Frame`, `ImageButton`|_Farbe_ \|`initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_Double_ \|`initial` |`border-radius: 10;`|
-|`border-width`|`Button`, `ImageButton`|_Double_ \|`initial` |`border-width: .5;`|
+|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \| `initial` |`border-radius: 10;`|
+|`border-width`|`Button`, `ImageButton`|_double_ \| `initial` |`border-width: .5;`|
 |`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_Farbe_ \|`initial` |`color: rgba(255, 0, 0, 0.3);`|
-|`column-gap`|`Grid`|_Double_ \|`initial`|`column-gap: 9;`|
+|`column-gap`|`Grid`|_double_ \| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
 |`flex-basis`|`VisualElement`|_float_ \| `auto` \| `initial`. Außerdem kann ein Prozentsatz im Bereich von 0% bis 100% mit dem Vorzeichen angegeben werden `%` .|`flex-basis: 25%;`|
-|`flex-grow`|`VisualElement`|_float_ \|`initial`|`flex-grow: 1.5;`|
-|`flex-shrink`|`VisualElement`|_float_ \|`initial`|`flex-shrink: 1;`|
+|`flex-grow`|`VisualElement`|_float_ \| `initial`|`flex-grow: 1.5;`|
+|`flex-shrink`|`VisualElement`|_float_ \| `initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Zeichenfolge_ \| `initial` |`font-family: Consolas;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Zeichenfolge_ \|`initial` |`font-family: Consolas;`|
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Double_ \| _namedsize_ \|  `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
-|`height`|`VisualElement`|_Double_ \|`initial` |`min-height: 250;`|
+|`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
-|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_Double_ \|`initial`|`letter-spacing: 2.5;`|
-|`line-height`|`Label`, `Span`|_Double_ \|`initial` |`line-height: 1.8;`|
+|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_double_ \| `initial`|`letter-spacing: 2.5;`|
+|`line-height`|`Label`, `Span`|_double_ \| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_Stärke_ \|`initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_Stärke_ \|`initial` |`margin-left: 3;`|
 |`margin-top`|`View`|_Stärke_ \|`initial` |`margin-top: 2;`|
 |`margin-right`|`View`|_Stärke_ \|`initial` |`margin-right: 1;`|
 |`margin-bottom`|`View`|_Stärke_ \|`initial` |`margin-bottom: 6;`|
 |`max-lines`|`Label`|_INT_ \| `initial`|`max-lines: 2;`|
-|`min-height`|`VisualElement`|_Double_ \|`initial` |`min-height: 50;`|
-|`min-width`|`VisualElement`|_Double_ \|`initial` |`min-width: 112;`|
-|`opacity`|`VisualElement`|_Double_ \|`initial` |`opacity: .3;`|
+|`min-height`|`VisualElement`|_double_ \| `initial` |`min-height: 50;`|
+|`min-width`|`VisualElement`|_double_ \| `initial` |`min-width: 112;`|
+|`opacity`|`VisualElement`|_double_ \| `initial` |`opacity: .3;`|
 |`order`|`VisualElement`|_INT_ \| `initial`|`order: -1;`|
 |`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_Stärke_ \|`initial` |`padding: 6 12 12;`|
-|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_Double_ \|`initial`|`padding-left: 3;`|
-|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _Double_ \|`initial` |`padding-top: 4;`|
-|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _Double_ \|`initial` |`padding-right: 2;`|
-|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _Double_ \|`initial` |`padding-bottom: 6;`|
+|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \| `initial`|`padding-left: 3;`|
+|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-top: 4;`|
+|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-right: 2;`|
+|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-bottom: 6;`|
 |`position`|`FlexLayout`| `relative` \| `absolute` \| `initial`|`position: absolute;`|
-|`row-gap`|`Grid`| _Double_ \|`initial`|`row-gap: 12;`|
+|`row-gap`|`Grid`| _double_ \| `initial`|`row-gap: 12;`|
 |`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`. `left`und `right` sollten in Umgebungen mit von rechts nach links vermieden werden.| `text-align: right;`|
 |`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
 |`transform-origin`|`VisualElement`| _Double_, _Double_ \|`initial` |`transform-origin: 7.5, 12.5;`|
 |`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial`|`visibility: hidden;`|
-|`width`|`VisualElement`|_Double_ \|`initial`|`min-width: 320;`|
+|`width`|`VisualElement`|_double_ \| `initial`|`min-width: 320;`|
 
 > [!NOTE]
 > `initial`ist ein gültiger Wert für alle Eigenschaften. Der Wert (wird auf den Standardwert zurückgesetzt), der aus einem anderen Format festgelegt wurde, wird gelöscht.
@@ -437,11 +421,11 @@ Die folgenden Xamarin.Forms spezifischen CSS-Eigenschaften werden ebenfalls unte
 |`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both`wird nur für einen unterstützt `ScrollView` . |`-xf-orientation: horizontal;`|
 |`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|Text in Anführungszeichen _quoted text_ \|`initial` |`-xf-placeholder: Enter name;`|
 |`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_Farbe_ \|`initial` |`-xf-placeholder-color: green;`|
-|`-xf-spacing`|`StackLayout`|_Double_ \|`initial` |`-xf-spacing: 8;`|
+|`-xf-spacing`|`StackLayout`|_double_ \| `initial` |`-xf-spacing: 8;`|
 |`-xf-thumb-color`|`Slider`, `Switch`|_Farbe_ \|`initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
-|`-xf-visual`|`VisualElement`|_Zeichenfolge_ \| `initial` |`-xf-visual: material;`|
+|`-xf-visual`|`VisualElement`|_Zeichenfolge_ \|`initial` |`-xf-visual: material;`|
 
 ### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.FormsShellspezifische Eigenschaften
 
@@ -505,5 +489,5 @@ Die genaue Bedeutung der einzelnen `namedsize` Werte ist plattformabhängig und 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Monkeyappcss (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
-- [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Formatieren von Xamarin.Forms apps mit XAML-Stilen](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md)

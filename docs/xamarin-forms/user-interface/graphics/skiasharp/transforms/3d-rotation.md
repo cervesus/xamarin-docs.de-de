@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3706139a2c15d01af67203c2bd09b281de80ed52
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140204"
+Title: "3D-Drehungen in skiasharp" Description: "in diesem Artikel wird erläutert, wie Sie nicht-affine Transformationen verwenden, um 2D-Objekte im 3D-Raum zu drehen, und dies mit Beispielcode veranschaulicht."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9 Author: davidbritch ms. Author: dabritch ms. Date: 04/14/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="3d-rotations-in-skiasharp"></a>3D-Drehungen in skiasharp
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsAnsichten
-description: Xamarin.FormsAnsichten sind die Bausteine von plattformübergreifenden mobilen Benutzeroberflächen. Dieser Artikel listet die Ansichten auf, die in enthalten sind Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8c15626e405645d28a785c32d276860f9751ea25
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132378"
+Title: " Xamarin.Forms views" Description: " Xamarin.Forms Views sind die Bausteine von plattformübergreifenden mobilen Benutzeroberflächen. Dieser Artikel listet die Ansichten auf, die in enthalten sind Xamarin.Forms .
+ms. Prod: xamarin ms. assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/16/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-views"></a>Xamarin.FormsAnsichten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -48,14 +34,14 @@ Sichten sind Benutzeroberflächen Objekte, wie z. b. Bezeichnungen, Schaltfläch
 | [`Label`](xref:Xamarin.Forms.Label)zeigt einzeilige Text Zeichenfolgen oder mehrzeilige Textblöcke an, entweder mit konstanter oder variabler Formatierung. Legen Sie die- [`Text`](xref:Xamarin.Forms.Label.Text) Eigenschaft auf eine Zeichenfolge für die Konstante Formatierung fest, oder legen Sie die- [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) Eigenschaft auf ein- [`FormattedString`](xref:Xamarin.Forms.FormattedString) Objekt zur Variablen Formatierung fest<br /><br />[API-Dokumentation](xref:Xamarin.Forms.Label)  /  [Leitfaden](~/xamarin-forms/user-interface/text/label.md)  /  [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text) | [![Beispiel für eine Bezeichnung](views-images/Label.png "Beispiel für eine Bezeichnung")](views-images/Label-Large.png#lightbox "Beispiel für eine Bezeichnung")<br /> [C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/LabelDemoPage.cs)  /  [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/LabelDemoPage.xaml) |
 |     |     |
 
-### <a name="image"></a>Image
+### <a name="image"></a>Bild
 
 |     |     |
 | --- | --- |
 | [`Image`](xref:Xamarin.Forms.Image)zeigt eine Bitmap an. Bitmaps können über das Internet heruntergeladen, als Ressourcen in die gängigen Projekt-oder Platt Form Projekte eingebettet oder mithilfe eines .NET-Objekts erstellt werden `Stream` .<br /><br />[API-Dokumentation](xref:Xamarin.Forms.Image)  /  [Leitfaden](~/xamarin-forms/user-interface/images.md)  /  [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages) | [![Bildbeispiel](views-images/Image.png "Bildbeispiel")](views-images/Image-Large.png#lightbox "Bildbeispiel")<br />[C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageDemoPage.cs)  /  [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageDemoPage.xaml) |
 |     |     |
 
-### <a name="map"></a>Zuordnung
+### <a name="map"></a>Karte
 
 |     |     |
 | --- | --- |
@@ -252,5 +238,5 @@ Diese beiden Klassen werden von der- [`InputView`](xref:Xamarin.Forms.InputView)
 ## <a name="related-links"></a>Verwandte Links
 
 - [Xamarin.FormsFormsgallery-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.FormsStich](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Xamarin.FormsAPI-Dokumentation](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

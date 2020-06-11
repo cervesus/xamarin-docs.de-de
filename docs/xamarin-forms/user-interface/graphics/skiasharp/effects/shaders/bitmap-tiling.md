@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6a28dd20eb8978334365ac217df1241e5288fd28
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137422"
+Title: "skiasharp Bitmap tiult" Description: "Kachel ein Bereich mit Bitmaps, der horizontal und vertikal wiederholt wird."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 9ed14e07-4dc8-4b03-8a33-772838bf51ea Author: davidbritch ms. Author: dabritch ms. Date: 08/23/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-bitmap-tiling"></a>Skiasharp-Bitmap-tiult
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -250,7 +236,7 @@ public class AlgorithmicBrickWallPage : ContentPage
 }
 ```
 
-Das Ergebnis lautet wie folgt:
+So sieht das Ergebnis aus:
 
 [![Algorithmische Ziegelwand](bitmap-tiling-images/AlgorithmicBrickWall.png "Algorithmische Ziegelwand")](bitmap-tiling-images/AlgorithmicBrickWall-Large.png#lightbox)
 

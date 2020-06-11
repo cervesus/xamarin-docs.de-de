@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 01f4fcf1953658af44d2a8996913860a3b605abf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138657"
+Title: "Speichern von skiasharp-Bitmaps in Dateien" Beschreibung: "untersuchen Sie die verschiedenen Dateiformate, die von skiasharp für das Speichern von Bitmaps in der Fotobibliothek des Benutzers unterstützt werden."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 2d696cb6-b31b-42bc-8d3b-11d63b1e7d9c Author: davidbritch ms. Author: dabritch ms. Date: 07/10/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="saving-skiasharp-bitmaps-to-files"></a>Speichern von skiasharp-Bitmaps in Dateien
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -176,7 +162,7 @@ public class PhotoLibrary : IPhotoLibrary
 
 Der-Befehl `MediaScannerConnection.ScanFile` ist nicht unbedingt erforderlich. Wenn Sie das Programm jedoch durch sofortige Überprüfung der Fotobibliothek testen, ist es sehr hilfreich, indem Sie die Bibliothekskatalog Ansicht aktualisieren.
 
-Die Datei " **androidmanifest. XML** " erfordert das folgende Berechtigungs Kennzeichen:
+Die **AndroidManifest.xml** Datei erfordert das folgende Berechtigungs Kennzeichen:
 
 ```xml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -457,16 +443,14 @@ Für alle anderen Formate `Encode` schreibt die-Methode nichts in den Stream, un
 Die Bitmap, die die Seite " **Dateiformate speichern** " speichert, ist 600-Pixel-Quadrat. Bei 4 Bytes pro Pixel beträgt der Arbeitsspeicher insgesamt 1.440.000 Bytes. In der folgenden Tabelle wird die Dateigröße für verschiedene Kombinationen aus Dateiformat und Qualität angezeigt:
 
 |Format|Qualität|Size|
-|---
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----|---Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----:|---:| | PNG | nicht zutreffend | 492k | | JPEG | 0 | 2,95 KB | |      | 50 | 22,1 k | |      | 100 | 206k | | Webp | 0 | 2,71 KB | |      | 50 | 11,9 KB | |      | 100 | 101 KB |
+|------|------:|---:|
+| PNG | – | 492k |
+| JPEG | 0 | 2,95 KB |
+|      | 50 | 22,1 k |
+|      | 100 | 206k |
+| Webp | 0 | 2,71 KB |
+|      | 50 | 11.9 KB |
+|      | 100 | 101 KB |
 
 Sie können mit verschiedenen Qualitätseinstellungen experimentieren und die Ergebnisse untersuchen.
 

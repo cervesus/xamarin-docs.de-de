@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView-Gruppierung
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 51661d6573d78386f4ca8bfea0063b752295c2d8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136460"
+Title: " Xamarin.Forms CollectionView-Gruppierung" Beschreibung: "CollectionView kann ordnungsgemäß gruppierte Daten anzeigen, indem die isgroupeigenschaft auf true festgelegt wird."
+ms. Prod: xamarin ms. assetid: 7e494245-bdbd-49d6-b7fa-cef976eb59bb ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/17/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-grouping"></a>Xamarin.FormsCollectionView-Gruppierung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -35,7 +21,7 @@ Die folgenden Screenshots zeigen, wie [`CollectionView`](xref:Xamarin.Forms.Coll
 
 [![Screenshot von gruppierten Daten in einer CollectionView unter IOS und Android](grouping-images/grouped-data.png "CollectionView mit gruppierten Daten")](grouping-images/grouped-data-large.png#lightbox "CollectionView mit gruppierten Daten")
 
-Weitere Informationen zu Datenvorlagen finden Sie unter [ Xamarin.Forms Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
+Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
 ## <a name="group-data"></a>Gruppieren von Daten
 

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: In diesem Artikel wird erläutert, wie Sie die Azure Speech Service-API verwenden, um die Sprache in Text in einer-Anwendung zu schreiben Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 171ecc02fda304135e5f535c3e798067595d7047
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139320"
+Title: "Spracherkennung mithilfe der Sprachdienst-API" Beschreibung: "in diesem Artikel wird erläutert, wie Sie die Azure Speech Service-API verwenden, um Sprache in Text in einer-Anwendung zu schreiben Xamarin.Forms ."
+ms. Prod: xamarin ms. assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1 ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 01/14/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="speech-recognition-using-azure-speech-service"></a>Spracherkennung mit Azure Speech Service
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
@@ -347,7 +333,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 Die- `MainActivity` Klasse definiert einen statischen Verweis `Instance` mit dem Namen, der für das-Objekt erforderlich ist, `AndroidMicrophoneService` Wenn Berechtigungen angefordert werden. Er überschreibt die- `OnRequestPermissionsResult` Methode, um das Objekt zu aktualisieren, `AndroidMicrophoneService` Wenn die Berechtigungs Anforderung vom Benutzer genehmigt oder verweigert wird.
 
-Schließlich muss die Android-Anwendung die Berechtigung zum Aufzeichnen von Audiodaten in der Datei " **androidmanifest. XML** " enthalten:
+Schließlich muss die Android-Anwendung die Berechtigung zum Aufzeichnen von Audiodaten in der **AndroidManifest.xml** Datei enthalten:
 
 ```xml
 <manifest ...>

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsund Azure Cognitive Services Introduction
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7c2a63c40d1006c7d83c9dde871e17d4b194bdca
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129713"
+Title: " Xamarin.Forms und Azure Cognitive Services Introduction" Description: Dieser Artikel bietet eine Einführung in eine Beispielanwendung, die veranschaulicht, wie einige der Microsoft Cognitive Service-APIs aufgerufen werden.
+ms. Prod: xamarin ms. assetid: 74121adb-1322-4c1e-A103-f 37257bc7cb0 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/08/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Formsund Azure Cognitive Services Introduction
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

@@ -73,7 +73,7 @@ image.Source = Device.RuntimePlatform == Device.Android
 ```
 
 > [!IMPORTANT]
-> Um denselben Bilddateinamen auf allen Plattformen zu verwenden, muss der Name auf allen Plattformen gültig sein. Für Android-drawables gelten Benennungs Einschränkungen – nur Kleinbuchstaben, Ziffern, Unterstriche und Ziffern sind zulässig – und für die plattformübergreifende Kompatibilität muss dieser auf allen anderen Plattformen befolgt werden. Der Beispiel Dateiname **Waterfront. png** folgt den Regeln. Beispiele für ungültige Dateinamen sind z. b. "Water Front. png", "Waterfront. png", "Water-Front. png" und "wåterfront. png".
+> Um denselben Bilddateinamen auf allen Plattformen zu verwenden, muss der Name auf allen Plattformen gültig sein. Für Android-drawables gelten Benennungs Einschränkungen – nur Kleinbuchstaben, Ziffern, Unterstriche und Ziffern sind zulässig – und für die plattformübergreifende Kompatibilität muss dieser auf allen anderen Plattformen befolgt werden. Der Beispiel Dateiname **waterfront.png** folgt den Regeln, aber Beispiele für ungültige Dateinamen sind "Wasser front.png", "WaterFront.png", "water-front.png" und "wåterfront.png".
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>Native Auflösungen (Retina und High-dpi)
 
@@ -87,7 +87,7 @@ Images alternativer Android-Auflösung sollten in [speziell benannten Verzeichni
 
 [![Android-Image Speicherort mit mehreren Auflösungen](images-images/xs-highdpisolution-sml.png)](images-images/xs-highdpisolution.png#lightbox)
 
-UWP-Bilddateinamen [können `.scale-xxx` vor der Dateierweiterung angehängt werden](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), wobei `xxx` der Prozentsatz der Skalierung ist, die auf das Medienobjekt angewendet wird, z. b. **myImage. Scale-200. png**. Auf Bilder kann dann in Code oder XAML ohne den Skalierungsmodifizierer verwiesen werden, z. b. nur **myImage. png**. Die Plattform wählt die nächstgelegene geeignete Ressourcen Skala basierend auf dem aktuellen dpi-Wert der Anzeige aus.
+UWP-Bilddateinamen [können `.scale-xxx` vor der Dateierweiterung angehängt werden](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), wobei `xxx` der Prozentsatz der Skalierung ist, die auf das Medienobjekt angewendet wird, z. b. **myimage.scale-200.png**. Auf Bilder kann dann in Code oder XAML ohne den Skalierungsmodifizierer verwiesen werden, z. b. nur **myimage.png**. Die Plattform wählt die nächstgelegene geeignete Ressourcen Skala basierend auf dem aktuellen dpi-Wert der Anzeige aus.
 
 ### <a name="additional-controls-that-display-images"></a>Weitere Steuerelemente, die Bilder anzeigen
 
@@ -116,7 +116,7 @@ Wenn Sie ein Bild in ein Projekt einbetten möchten, klicken Sie mit der rechten
 
 Die **Buildaktion** kann im **Eigenschaften** Fenster für eine Datei angezeigt und geändert werden.
 
-In diesem Beispiel ist die Ressourcen-ID **workingwithimages. Beach. jpg**.
+In diesem Beispiel ist die Ressourcen-ID **WorkingWithImages.beach.jpg**.
 Die IDE hat diesen Standardwert generiert, indem der **Standard Namespace** für dieses Projekt mit dem Dateinamen verkettet wird, wobei ein Zeitraum (.) zwischen den einzelnen Werten verwendet wird.
 <!-- https://msdn.microsoft.com/library/ms950960.aspx -->
 
@@ -125,15 +125,15 @@ Die IDE hat diesen Standardwert generiert, indem der **Standard Namespace** für
 ![](images-images/xs-buildaction.png "Set Build Action: EmbeddedResource")
 
 **Buildaktion** kann auch im eigenschaftenpad **Properties** für eine Datei angezeigt und geändert werden.
-Dieser Pad zeigt die **Ressourcen-ID** , die verwendet wird, um im Code auf die Ressource zu verweisen. Im folgenden Screenshot ist die **Ressourcen-ID** **workingwithimages. Beach. jpg**.
+Dieser Pad zeigt die **Ressourcen-ID** , die verwendet wird, um im Code auf die Ressource zu verweisen. Im folgenden Screenshot ist die **Ressourcen-ID** **WorkingWithImages.beach.jpg**.
 Die IDE hat diesen Standardwert generiert, indem der **Standard Namespace** für dieses Projekt mit dem Dateinamen verkettet wird, wobei ein Zeitraum (.) zwischen den einzelnen Werten verwendet wird.
-Diese ID kann im **eigenschaftenpad** bearbeitet werden, aber für diese Beispiele wird der Wert **workingwithimages. Beach. jpg** verwendet.
+Diese ID kann im **eigenschaftenpad** bearbeitet werden, aber in diesen Beispielen wird der Wert **WorkingWithImages.beach.jpg** verwendet.
 
 [![Eigenschaften-Pad für eingebettete Ressourcen](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
 
 -----
 
-Wenn Sie eingebettete Bilder in Ordner innerhalb Ihres Projekts platzieren, werden die Ordnernamen in der Ressourcen-ID auch durch Punkte (.) getrennt. Wenn Sie das Image "Image **. jpg** " in einen Ordner mit dem Namen " **myImages** " verschieben, wird eine Ressourcen-ID von **workingwithimages. myImages. Beach. jpg** angezeigt.
+Wenn Sie eingebettete Bilder in Ordner innerhalb Ihres Projekts platzieren, werden die Ordnernamen in der Ressourcen-ID auch durch Punkte (.) getrennt. Das Verschieben des **beach.jpg** Bilds in einen Ordner mit dem Namen **myImages** führt zu einer Ressourcen-ID **WorkingWithImages.MyImages.beach.jpg**
 
 Der Code zum Laden eines eingebetteten Bilds übergibt einfach die **Ressourcen-ID** an die-Methode, [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) wie unten dargestellt:
 

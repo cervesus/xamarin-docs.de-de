@@ -1,22 +1,8 @@
 ---
-title: ''
-description: In diesem Artikel werden die Grundlagen der skiasharp-Zeichnung erläutert, einschließlich der canvasen und der Paint-Objekte in Xamarin.Forms Anwendungen, und es wird ein Beispielcode veranschaulicht.
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: fb873102bfb8568b8298a39ea2429fb6c27af175
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137721"
+Title: "Drawing a Simple Circle in skiasharp" Description: "in diesem Artikel werden die Grundlagen der skiasharp-Zeichnung erläutert, einschließlich der canvasen und Zeichnungsobjekte in Xamarin.Forms Anwendungen, und es wird ein Beispielcode veranschaulicht."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8 Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>Zeichnen eines einfachen Kreises in skiasharp
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -63,8 +49,8 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Das [`SKPaintSurfaceEventArgs`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs) Objekt, das das Ereignis begleitet, verfügt über zwei Eigenschaften:
 
-- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info)vom Typ[`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
-- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface)vom Typ[`SKSurface`](xref:SkiaSharp.SKSurface)
+- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info) vom Typ [`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
+- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface) vom Typ [`SKSurface`](xref:SkiaSharp.SKSurface)
 
 Die `SKImageInfo` Struktur enthält Informationen über die Zeichen Oberfläche, vor allem deren Breite und Höhe in Pixel. Das- `SKSurface` Objekt stellt die Zeichen Oberfläche selbst dar. In diesem Programm ist die Zeichen Oberfläche eine Videoanzeige, aber in anderen Programmen kann ein `SKSurface` Objekt auch eine Bitmap darstellen, die Sie zum Zeichnen von skiasharp verwenden.
 
@@ -109,7 +95,7 @@ Die- [`Style`](xref:SkiaSharp.SKPaint.Style) Eigenschaft gibt an, dass Sie eine 
 - [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
 - [`StrokeAndFill`](xref:SkiaSharp.SKPaintStyle.StrokeAndFill)
 
-Der Standardwert lautet `Fill`. Verwenden Sie die dritte Option, um die Zeile zu zeichnen, und füllen Sie das Innere mit der gleichen Farbe aus.
+Der Standardwert ist `Fill`. Verwenden Sie die dritte Option, um die Zeile zu zeichnen, und füllen Sie das Innere mit der gleichen Farbe aus.
 
 Legen Sie die- [`Color`](xref:SkiaSharp.SKPaint.Color) Eigenschaft auf einen Wert vom Typ fest [`SKColor`](xref:SkiaSharp.SKColor) . Eine Möglichkeit, einen-Wert zu erhalten, `SKColor` besteht darin, einen Xamarin.Forms `Color` Wert `SKColor` mithilfe der-Erweiterungsmethode in einen-Wert umzuwandeln [`ToSKColor`](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*) . Die- [`Extensions`](xref:SkiaSharp.Views.Forms.Extensions) Klasse im- `SkiaSharp.Views.Forms` Namespace enthält andere Methoden, die zwischen Xamarin.Forms Werten und skiasharp-Werten konvertieren.
 

@@ -1,22 +1,8 @@
 ---
-title: Design einer- Xamarin.Forms Anwendung
-description: Design kann in Anwendungen implementiert werden Xamarin.Forms , indem für jedes Design ein ResourceDictionary erstellt und dann die Ressourcen mit der DynamicResource-Markup Erweiterung geladen werden.
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3341ada6c5605917eeec79aac96e38cb99b40fc4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138202"
+Title: "Design a Xamarin.Forms Application" Description: "Design" kann in Anwendungen implementiert werden Xamarin.Forms , indem für jedes Design ein ResourceDictionary erstellt und anschließend die Ressourcen mit der DynamicResource-Markup Erweiterung geladen werden.
+ms. Prod: xamarin ms. assetid: B7B17F66-4E37-4B50-9A57-351B62BE4FED ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="theme-a-xamarinforms-application"></a>Design einer- Xamarin.Forms Anwendung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
@@ -227,6 +213,6 @@ void OnPickerSelectionChanged(object sender, EventArgs e)
 
 - [Design (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 - [Reagieren auf Systemdesignänderungen](system-theme-changes.md)
-- [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Dynamische Stile inXamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
-- [Formatieren von Xamarin.Forms apps mit XAML-Stilen](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md)

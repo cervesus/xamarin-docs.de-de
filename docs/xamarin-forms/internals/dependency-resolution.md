@@ -1,12 +1,9 @@
 ---
-Title: "Abhängigkeitsauflösung in Xamarin.Forms " Beschreibung: "in diesem Artikel wird erläutert, wie eine Abhängigkeits Auflösungsmethode in eingefügt Xamarin.Forms wird, damit der Abhängigkeits Injection-Container einer Anwendung die Erstellung und Lebensdauer von benutzerdefinierten Renderers, Effekten und dependencyservice-Implementierungen steuern kann."
-ms. Prod: ms. assetid: ms. Technology: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+Title: "Abhängigkeitsauflösung in Xamarin.Forms " Beschreibung: "in diesem Artikel wird erläutert, wie eine Abhängigkeits Auflösungsmethode in eingefügt Xamarin.Forms wird, damit der Abhängigkeits Injection-Container einer Anwendung die Erstellung und die Lebensdauer von benutzerdefinierten Renderers, Effekten und dependencyservice-Implementierungen steuern kann."
+ms. Prod: xamarin ms. assetid: 491b87dc-14cb-4adc-ac6c-40a7627b2524 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 07/27/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
-# <a name="dependency-resolution-in-xamarinforms"></a>Abhängigkeitsauflösung inXamarin.Forms
+# <a name="dependency-resolution-in-xamarinforms"></a>Abhängigkeitsauflösung in Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 
@@ -294,7 +291,7 @@ Wenn die- [`DependencyService.Resolve<T>`](xref:Xamarin.Forms.DependencyService.
 ## <a name="related-links"></a>Verwandte Links
 
 - [Abhängigkeitsauflösung mithilfe von Containern (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
-- [Abhängigkeitsinjektion](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
+- [Dependency Injection](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [Implementieren eines Videoplayers](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [Aufrufen von Ereignissen aus Effekten](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
 - [Auswählen eines Fotos aus der Bildbibliothek](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

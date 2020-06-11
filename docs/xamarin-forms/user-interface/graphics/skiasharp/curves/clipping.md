@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a4bb6c30ada13691146d00d2094df8f13ca453b9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140256"
+Title: "Abschneiden mit Pfaden und Regionen" Beschreibung: "in diesem Artikel wird erläutert, wie Sie skiasharp-Pfade verwenden können, um Grafiken in bestimmte Bereiche zu schneiden und um Regionen zu erstellen, und dies mit Beispielcode veranschaulicht."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 8022fbf9-2208-43DB-94d8-0a4e9a5da07f Author: davidbritch ms. Author: dabritch ms. Date: 06/16/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="clipping-with-paths-and-regions"></a>Schneiden mit Pfaden und Regionen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

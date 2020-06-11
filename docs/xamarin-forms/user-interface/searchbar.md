@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsSuchleiste
-description: Die Xamarin.Forms Suchleiste ist ein Benutzereingabe-Steuerelement, das zum Initiieren einer Suche verwendet wird. Das Searchbar-Steuerelement unterstützt Platzhalter Text, Abfrage Eingabe, Ausführung und Abbruch. In diesem Artikel wird erläutert, wie Sie eine Suchleiste in XAML und Code verwenden.
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d8ceb139b1b9cd77aa922f98c80884d5c3e1a474
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127542"
+Title: " Xamarin.Forms Searchbar" Description: "die Xamarin.Forms Suchleiste ist ein Benutzereingabe-Steuerelement, das zum Initiieren einer Suche verwendet wird. Das Searchbar-Steuerelement unterstützt Platzhalter Text, Abfrage Eingabe, Ausführung und Abbruch. In diesem Artikel wird erläutert, wie Sie eine Suchleiste in XAML und Code verwenden.
+ms. Prod: xamarin ms. assetid: F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 11/04/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-searchbar"></a>Xamarin.FormsSuchleiste
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)

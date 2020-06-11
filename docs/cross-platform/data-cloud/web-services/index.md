@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 4012b648bd451907bdb91221aba13df5ed3d34e3
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 06a3197cfcd3b49538cfa5fa97e40a9f50c7a244
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571024"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84655098"
 ---
 # <a name="introduction-to-web-services"></a>Einführung in Webdienste
 
@@ -190,7 +190,7 @@ Rest-Webdienste verwenden normalerweise JSON-Nachrichten, um Daten an den Client
 
 <a name="Using_System.JSON"></a>
 
-### <a name="systemjson"></a>System. JSON
+### <a name="systemjson"></a>System.JS
 
 Die xamarin-Plattform bietet standardmäßig Unterstützung für JSON. Mithilfe eines `JsonObject` können Ergebnisse abgerufen werden, wie im folgenden Codebeispiel gezeigt:
 
@@ -301,7 +301,7 @@ Dadurch wird der Proxy im Web-oder Dienst Verweis Ordner des Projekts generiert.
 
 #### <a name="manually-adding-a-proxy-to-a-project"></a>Manuelles Hinzufügen eines Proxys zu einem Projekt
 
-Wenn Sie über einen vorhandenen Proxy verfügen, der mit kompatiblen Tools generiert wurde, kann diese Ausgabe genutzt werden, wenn Sie als Teil des Projekts enthalten ist. Verwenden Sie in Visual Studio für Mac die **Dateien hinzufügen...** Menüoption zum Hinzufügen des Proxys. Außerdem erfordert dies die explizite referenzierte Verwendung von " *System. Web. Services. dll* " mithilfe der **Add-Verweise...** hinzu.
+Wenn Sie über einen vorhandenen Proxy verfügen, der mit kompatiblen Tools generiert wurde, kann diese Ausgabe genutzt werden, wenn Sie als Teil des Projekts enthalten ist. Verwenden Sie in Visual Studio für Mac die **Dateien hinzufügen...** Menüoption zum Hinzufügen des Proxys. Außerdem erfordert dies, dass auf *System.Web.Services.dll* explizit verwiesen wird, indem Sie **Verweise hinzufügen...** hinzu.
 
 ### <a name="consuming-the-proxy"></a>Verwenden des Proxys
 
@@ -352,7 +352,7 @@ Es gibt Unterschiede zwischen ASP.NET-Webdiensten (ASMX) und WCF, aber es ist wi
 
 Ein *Proxy* muss generiert werden, um einen WCF-Dienst zu nutzen, mit dem die Anwendung eine Verbindung mit dem Dienst herstellen kann. Der Proxy wird erstellt, indem Dienst Metadaten genutzt werden, die die Methoden und die zugehörige Dienst Konfiguration definieren. Diese Metadaten werden in Form eines Web Services Description Language (WSDL)-Dokuments verfügbar gemacht, das vom Webdienst generiert wird. Der Proxy kann erstellt werden, indem der Microsoft WCF Web Service Reference Provider in Visual Studio 2017 verwendet wird, um einer .NET Standard Bibliothek einen Dienst Verweis für den Webdienst hinzuzufügen.
 
-Eine Alternative zum Erstellen des Proxys mithilfe des Microsoft WCF Web Service Reference Provider in Visual Studio 2017 ist die Verwendung des Service Model Metadata Utility Tool (Svcutil. exe). Weitere Informationen finden Sie unter [Service Model Metadata Utility-Tool (Svcutil. exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
+Eine Alternative zum Erstellen des Proxys mithilfe des Microsoft WCF Web Service Reference Provider in Visual Studio 2017 ist die Verwendung des Service Model Metadata Utility Tool (svcutil.exe). Weitere Informationen finden Sie unter [Service Model Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security"></a>
 
@@ -438,12 +438,10 @@ client.ClientCredentials.UserName.UserName = @"foo";
 client.ClientCredentials.UserName.Password = @"mrsnuggles";
 ```
 
-Wenn Sie im obigen Beispiel die Meldung "Out of Trampolines of type 0" erhalten, können Sie die Anzahl der basolines vom Typ 0 erhöhen, indem Sie das `–aot “trampolines={number of trampolines}”` Argument zum Build hinzufügen. Weitere Informationen finden Sie unter [Problembehandlung](~/ios/troubleshooting/troubleshooting.md#trampolines).
-
 Weitere Informationen zur http-Standard Authentifizierung, obwohl im Kontext eines Rest-Webdiensts, finden Sie unter [Authentifizieren eines Rest-Webdiensts](~/xamarin-forms/data-cloud/authentication/rest.md).
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Webdienste in xamarin. Forms](~/xamarin-forms/data-cloud/index.yml)
-- [Service Model Metadata Utility-Tool (Svcutil. exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [Service Model Metadata Utility-Tool (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
 - [BasicHttpBinding](https://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

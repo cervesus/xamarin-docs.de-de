@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselview emptyview
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a9f952da75e68e9ad39e0a15f57fbd0379233d7e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137396"
+Title: " Xamarin.Forms carouselview emptyview" Description: "in carouselview kann eine leere Ansicht angegeben werden, die dem Benutzer Feedback liefert, wenn keine Daten zur Anzeige verfügbar sind. Die leere Ansicht kann eine Zeichenfolge, eine Ansicht oder mehrere Ansichten sein. "
+ms. Prod: xamarin ms. assetid: C6DEE1A9-63fc-4889-BC77-F401D5D7DF32 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/03/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-emptyview"></a>Xamarin.FormsCarouselview emptyview
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -25,8 +11,8 @@ ms.locfileid: "84137396"
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)definiert die folgenden Eigenschaften, die verwendet werden können, um Benutzer Feedback bereitzustellen, wenn keine anzuzeigenden Daten vorhanden sind:
 
-- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView), vom Typ `object` , der Zeichenfolge, der Bindung oder der Ansicht, die angezeigt wird, wenn die- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) Eigenschaft ist `null` , oder, wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Standardwert: `null`.
-- [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate), vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , die Vorlage, die zum Formatieren des angegebenen verwendet werden soll `EmptyView` . Standardwert: `null`.
+- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView), vom Typ `object` , der Zeichenfolge, der Bindung oder der Ansicht, die angezeigt wird, wenn die- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) Eigenschaft ist `null` , oder, wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Der Standardwert ist `null`.
+- [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate), vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , die Vorlage, die zum Formatieren des angegebenen verwendet werden soll `EmptyView` . Der Standardwert ist `null`.
 
 Diese Eigenschaften werden von- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekten unterstützt. Dies bedeutet, dass die Eigenschaften Ziele von Daten Bindungen sein können.
 
@@ -35,7 +21,7 @@ Die wichtigsten Verwendungs Szenarien für das Festlegen der- [`EmptyView`](xref
 > [!NOTE]
 > Die- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) Eigenschaft kann auf eine Ansicht festgelegt werden, die bei Bedarf interaktiven Inhalt enthält.
 
-Weitere Informationen zu Datenvorlagen finden Sie unter [ Xamarin.Forms Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
+Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
 ## <a name="display-a-string-when-data-is-unavailable"></a>Zeigt eine Zeichenfolge an, wenn Daten nicht verfügbar sind.
 
@@ -323,5 +309,5 @@ Weitere Informationen zu Datenvorlagen Selektoren finden Sie unter [Create a Xam
 
 - [Carouselview (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [Xamarin.FormsDatenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [Xamarin.FormsRessourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Ressourcenverzeichnisse in Xamarin.Forms](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Erstellen eines Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

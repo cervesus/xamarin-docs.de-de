@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsexperimentelle Flags
-description: Xamarin.Formsdurch experimentelle Flags kann das Engineering-Team neue Features schneller an die Benutzer senden, während Sie weiterhin Funktions-APIs ändern können, bevor Sie zu einer stabilen Version wechseln.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b548323330ccdce6fb01e83c7e8ab7c2d5307125
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139060"
+Title: " Xamarin.Forms experimentelle Flags": " Xamarin.Forms experimentelle Flags ermöglichen es dem Engineering-Team, neue Features schneller an Benutzer zu senden, während Sie weiterhin Funktions-APIs ändern können, bevor Sie zu einer stabilen Version wechseln."
+ms. Prod: xamarin ms. assetid: AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/14/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-experimental-flags"></a>Xamarin.Formsexperimentelle Flags
 
 Wenn eine neue Xamarin.Forms Funktion implementiert ist, wird Sie manchmal hinter einem experimentellen Flag abgelegt. Dies ermöglicht es dem Engineering-Team, neue Features schneller bereitzustellen, während Sie weiterhin Funktions-APIs ändern können, bevor Sie zu einer stabilen Version wechseln. Das experimentelle Flag wird dann entfernt, sobald das Feature in eine stabile Version wechselt.

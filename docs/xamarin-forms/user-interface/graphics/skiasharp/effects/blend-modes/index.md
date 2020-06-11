@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b5b03779b9f0847621456b25582fb8ea04f8386d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131702"
+Title: "skiasharp Blend Mode" Description: "Blend-Modi verwenden, um zu definieren, was geschieht, wenn grafische Objekte aufeinander gestapelt werden."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B Author: davidbritch ms. Author: dabritch ms. Date: 08/23/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-blend-modes"></a>Skiasharp-Blend-Modi
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -32,60 +18,20 @@ Die skiasharp-Blend-Modi entsprechen den Funktionen, die in der Spezifikation de
 Die 29 Member der- `SKBlendMode` Enumeration können in drei Kategorien unterteilt werden:
 
 | Porter-Duff | Trennbarer    | Nicht trennbar |
-| ---
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- | ---Titel: Description: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- | ---Titel: Description: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-Title: Beschreibung: ms. Prod: ms. Technology: ms. assetid: Author: ms. Author: ms. Date: NO-LOC:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-------- | | `Clear`     | `Modulate`   | `Hue`         | | `Src`       | `Screen`     | `Saturation`  | | `Dst`       | `Overlay`    | `Color`       | | `SrcOver`   | `Darken`     | `Luminosity`  | | `DstOver`   | `Lighten`    |               | | `SrcIn`     | `ColorDodge` |               | | `DstIn`     | `ColorBurn`  |               | | `SrcOut`    | `HardLight`  |               | | `DstOut`    | `SoftLight`  |               | | `SrcATop`   | `Difference` |               | | `DstATop`   | `Exclusion`  |               | | `Xor`       | `Multiply`   |               | | `Plus`      |              |               |
+| ----------- | ------------ | ------------- |
+| `Clear`     | `Modulate`   | `Hue`         |
+| `Src`       | `Screen`     | `Saturation`  |
+| `Dst`       | `Overlay`    | `Color`       |
+| `SrcOver`   | `Darken`     | `Luminosity`  |
+| `DstOver`   | `Lighten`    |               |
+| `SrcIn`     | `ColorDodge` |               |
+| `DstIn`     | `ColorBurn`  |               |
+| `SrcOut`    | `HardLight`  |               |
+| `DstOut`    | `SoftLight`  |               |
+| `SrcATop`   | `Difference` |               |
+| `DstATop`   | `Exclusion`  |               |
+| `Xor`       | `Multiply`   |               |
+| `Plus`      |              |               |
 
 Die Namen dieser drei Kategorien sind in den nachfolgenden Diskussionen besser gemeint. Die Reihenfolge, in der die Member aufgeführt sind, entspricht der Definition der- `SKBlendMode` Enumeration. Die 13 Enumerationsmember in der ersten Spalte weisen die ganzzahligen Werte 0 bis 12 auf. Die zweite Spalte sind Enumerationsmember, die den ganzen Zahlen 13 bis 24 entsprechen, und die Elemente in der dritten Spalte haben die Werte 25 bis 28.
 

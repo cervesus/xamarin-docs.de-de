@@ -1,23 +1,9 @@
 ---
-title: Xamarin.FormsStil Klassen
-description: Xamarin.FormsStil Klassen ermöglichen das Anwenden mehrerer Stile auf ein Steuerelement, ohne dass auf eine Format Vererbung zurückgegriffen wird.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2afb06c2d97e6f15c2041b9c2e9cad092b13d90d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138761"
+Title: " Xamarin.Forms Style Classes" Description: " Xamarin.Forms Style Classes ermöglichen das Anwenden mehrerer Stile auf ein Steuerelement, ohne dass auf eine Format Vererbung zurückgegriffen wird."
+ms. Prod: xamarin ms. assetid: 4762401e-2b48-48f 1-b6e4-61ar7af8aa46f ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/30/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-style-classes"></a>Xamarin.FormsStil Klassen
+
+# <a name="xamarinforms-style-classes"></a>Xamarin.Forms-Formatklassen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 

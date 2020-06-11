@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsin nativen xamarin-Projekten
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9fb741a03d1c8dd2a8754120d0b46567d8889a0b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132274"
+Title: " Xamarin.Forms in xamarin Native Projects" Description: "in diesem Artikel wird erläutert, wie von ContentPage abgeleitete Seiten genutzt werden, die direkt xamarin-Projekten hinzugefügt werden, und wie zwischen ihnen navigiert wird."
+ms. Prod: xamarin ms. assetid: f343fc21-dfb1-4364-a332-9da6705d36bc ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/19/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Formsin nativen xamarin-Projekten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
@@ -27,7 +13,7 @@ Der Prozess für die Verwendung einer von Xamarin.Forms [`ContentPage`](xref:Xam
 
 1. Fügen Sie dem systemeigenen Xamarin.Forms Projekt das nuget-Paket hinzu.
 1. Fügen Sie die [`ContentPage`](xref:Xamarin.Forms.ContentPage) von abgeleitete Seite und alle Abhängigkeiten dem systemeigenen Projekt hinzu.
-1. Rufen Sie die `Forms.Init` -Methode auf.
+1. Rufen Sie die `Forms.Init`-Methode auf.
 1. Erstellen Sie eine Instanz der von [`ContentPage`](xref:Xamarin.Forms.ContentPage) abgeleiteten Seite, und konvertieren Sie Sie mithilfe einer der folgenden Erweiterungs Methoden in den entsprechenden systemeigenen Typ: `CreateViewController` für IOS, `CreateSupportFragment` für Android oder `CreateFrameworkElement` für UWP.
 1. Navigieren Sie mit der nativen Navigations-API zur systemeigenen Typdarstellung der von [`ContentPage`](xref:Xamarin.Forms.ContentPage) abgeleiteten Seite.
 

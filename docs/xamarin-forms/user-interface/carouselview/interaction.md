@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselview-Interaktion
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 57c501c0f789ce448d8381cbbccb46666cf06305
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137409"
+Title: " Xamarin.Forms carouselview-Interaktion" Beschreibung: "der Zugriff auf das aktuell angezeigte Element in einer" carouselview "ist über die Eigenschaften" "und" Position "möglich."
+ms. Prod: xamarin ms. assetid: 854d97e5-D119-4be2-AE7C-bd428792c992 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/11/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-interaction"></a>Xamarin.FormsCarouselview-Interaktion
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
@@ -26,8 +12,8 @@ ms.locfileid: "84137409"
 - `CurrentItem`, vom Typ `object` , das aktuelle Element, das angezeigt wird. Diese Eigenschaft verfügt über einen Standard Bindungs Modus von `TwoWay` und verfügt über einen `null` Wert, wenn keine anzuzeigenden Daten vorhanden sind.
 - `CurrentItemChangedCommand`vom Typ `ICommand` , der ausgeführt wird, wenn sich das aktuelle Element ändert.
 - `CurrentItemChangedCommandParameter` vom Typ `object`: der Parameter, der an `CurrentItemChangedCommand` übergeben wird.
-- `IsBounceEnabled`vom Typ `bool` , der angibt, ob das `CarouselView` an einer Inhalts Grenze springt. Standardwert: `true`.
-- `IsSwipeEnabled`vom Typ `bool` , der bestimmt, ob das angezeigte Element durch eine Schwenkbewegung geändert wird. Standardwert: `true`.
+- `IsBounceEnabled`vom Typ `bool` , der angibt, ob das `CarouselView` an einer Inhalts Grenze springt. Der Standardwert ist `true`.
+- `IsSwipeEnabled`vom Typ `bool` , der bestimmt, ob das angezeigte Element durch eine Schwenkbewegung geändert wird. Der Standardwert ist `true`.
 - `Position`, vom Typ `int` , der Index des aktuellen Elements in der zugrunde liegenden Auflistung. Diese Eigenschaft verfügt über einen Standard Bindungs Modus von `TwoWay` und verfügt über einen Wert von 0, wenn keine anzuzeigenden Daten vorhanden sind.
 - `PositionChangedCommand`vom Typ `ICommand` , der ausgeführt wird, wenn sich die Position ändert.
 - `PositionChangedCommandParameter` vom Typ `object`: der Parameter, der an `PositionChangedCommand` übergeben wird.
@@ -346,7 +332,7 @@ Die folgenden Screenshots zeigen die `CurrentItem` `PreviousItem` `NextItem` vis
 
 [![Screenshot einer carouselview mit visuellen Zuständen unter IOS und Android](interaction-images/visual-states.png "Visuelle Zustände von carouselview")](interaction-images/visual-states-large.png#lightbox "Visuelle Zustände von carouselview")
 
-Weitere Informationen zu visuellen Zuständen finden Sie unter [ Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
+Weitere Informationen zu visuellen Zuständen finden Sie unter [Xamarin.Forms: Visual State-Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 ## <a name="clear-the-current-item"></a>Aktuelles Element löschen
 
@@ -363,4 +349,4 @@ Standardmäßig [`CarouselView`](xref:Xamarin.Forms.CarouselView) ermöglicht es
 ## <a name="related-links"></a>Verwandte Links
 
 - [Carouselview (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
-- [Xamarin.FormsVisual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms: Visual State-Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

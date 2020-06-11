@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6ae4116be99f076a7afd5ed9c2823bc12f445e18
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137987"
+Title: "Margin und Padding" Description: "die Rand-und Padding-Eigenschaften steuern das Layoutverhalten, wenn ein Element in der Benutzeroberfläche gerendert wird. In diesem Artikel wird der Unterschied zwischen den beiden Eigenschaften und deren Festlegung veranschaulicht.
+ms. Prod: xamarin ms. assetid: BEB096BB-51DF-410F-B0F1-D235287B0F4A ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/27/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="margin-and-padding"></a>Ränder und Abstände
 
 _Die Eigenschaften Margin und Padding steuern das Layoutverhalten, wenn ein Element in der Benutzeroberfläche gerendert wird. In diesem Artikel wird der Unterschied zwischen den beiden Eigenschaften und deren Festlegung veranschaulicht._

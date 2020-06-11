@@ -1,21 +1,6 @@
 ---
-title: Xamarin.FormsDr
-description: Die Xamarin.Forms Frame-Klasse ist ein Layout, das verwendet wird, um eine Ansicht oder ein Layout mit einem Rahmen zu umschließen, der mit Farbe, Schatten und anderen Optionen konfiguriert werden kann.
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 42192111befbefda7e0f62b7691a8392c2828818
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137188"
+Title: " Xamarin.Forms Frame" Description: "die Xamarin.Forms Frame-Klasse ist ein Layout, das verwendet wird, um eine Ansicht oder ein Layout mit einem Rahmen zu umschließen, der mit Farbe, Schatten und anderen Optionen konfiguriert werden kann."
+ms. Prod: xamarin ms. assetid: 4e074714-0928-41C8-A468-b60e23236a8c ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 08/06/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 # <a name="xamarinforms-frame"></a>Xamarin.FormsDr
 
@@ -189,7 +174,7 @@ Frame circleImageFrame = new Frame
 };
 ```
 
-Das Image " **Outdoor. jpg** " muss jedem Platt Form Projekt hinzugefügt werden, und wie dies erreicht wird, hängt von der Plattform ab. Weitere Informationen finden Sie unter [Images in Xamarin.Forms ](~/xamarin-forms/user-interface/images.md).
+Das **outdoors.jpg** Abbild muss jedem Platt Form Projekt hinzugefügt werden, und wie dies erreicht wird, hängt von der Plattform ab. Weitere Informationen finden Sie unter [Images in Xamarin.Forms ](~/xamarin-forms/user-interface/images.md).
 
 > [!NOTE]
 > Abgerundete Ecken Verhalten sich über Plattformen hinweg etwas anders. Der Wert des `Image` -Objekts `Margin` sollte der Hälfte der Differenz zwischen der Bildbreite und der übergeordneten Rahmenbreite liegen und sollte negativ sein, um das Bild gleichmäßig innerhalb des Objekts zentrieren zu können `Frame` . Die angeforderten Breite und Höhe werden jedoch nicht garantiert, sodass die `Margin` Eigenschaften, `HeightRequest` und `WidthRequest` möglicherweise basierend auf der Bildgröße und anderen Layoutoptionen geändert werden müssen.

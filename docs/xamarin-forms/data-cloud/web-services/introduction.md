@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsEinführung in Webdienste
-description: Dieses Handbuch enthält eine exemplarische Vorgehensweise für die Xamarin.Forms Beispielanwendung, die die Kommunikation mit verschiedenen Webdiensten veranschaulicht. Obwohl jeder Webdienst eine separate Beispielanwendung verwendet, sind Sie funktionell ähnlich und teilen allgemeine Klassen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d714b4c9d598d8cca26ae992abf3f15df703d11b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139177"
+Title: " Xamarin.Forms Einführung in die Webdienste" Beschreibung: "dieses Handbuch enthält eine exemplarische Vorgehensweise für die Xamarin.Forms Beispielanwendung, die die Kommunikation mit verschiedenen Webdiensten veranschaulicht. Obwohl jeder Webdienst eine separate Beispielanwendung verwendet, sind Sie funktionell ähnlich und weisen gemeinsame Klassen auf. "
+ms. Prod: xamarin ms. assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/28/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsEinführung in Webdienste
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsIndikator Ansicht
-description: ''
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a6bf11fd80dd5226ae26dd392e80f784a9b296bf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131988"
+Title: " Xamarin.Forms indikatorview" Description: "der Wert von" sichorview "ist ein Steuerelement, das Indikatoren anzeigt, die die Anzahl der Elemente und die aktuelle Position in einer" carouselview "darstellen.
+ms. Prod: xamarin ms. assetid: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/27/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-indicatorview"></a>Xamarin.FormsIndikator Ansicht
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -36,14 +22,14 @@ Forms.SetFlags("IndicatorView_Experimental");
 `IndicatorView` definiert die folgenden Eigenschaften:
 
 - `Count`, vom Typ `int` , die Anzahl der Indikatoren.
-- `HideSingle`Gibt an, `bool` ob der Indikator ausgeblendet werden soll, wenn nur ein solcher vorhanden ist. Standardwert: `true`.
+- `HideSingle`Gibt an, `bool` ob der Indikator ausgeblendet werden soll, wenn nur ein solcher vorhanden ist. Der Standardwert ist `true`.
 - `IndicatorColor`, vom Typ `Color` , die Farbe der Indikatoren.
 - `IndicatorSize`, vom Typ `double` , die Größe der Indikatoren. Der Standardwert ist 6,0.
 - `IndicatorLayout``Layout<View>`definiert die zum Rendering von verwendete Layoutklasse des Typs `IndicatorView` . Diese Eigenschaft wird von festgelegt Xamarin.Forms und muss in der Regel nicht von Entwicklern festgelegt werden.
 - `IndicatorTemplate`, vom Typ `DataTemplate` , die Vorlage, die die Darstellung der einzelnen Indikatoren definiert.
 - `IndicatorsShape`, vom Typ `IndicatorShape` , die Form jedes Indikators.
 - `ItemsSource`, vom Typ `IEnumerable` , der Auflistung, für die Indikatoren angezeigt werden. Diese Eigenschaft wird automatisch festgelegt, wenn die- `CarouselView.IndicatorView` Eigenschaft festgelegt wird.
-- `MaximumVisible`, vom Typ `int` , die maximale Anzahl sichtbarer Indikatoren. Standardwert: `int.MaxValue`.
+- `MaximumVisible`, vom Typ `int` , die maximale Anzahl sichtbarer Indikatoren. Der Standardwert ist `int.MaxValue`.
 - `Position`, vom Typ `int` , der derzeit ausgewählte Indikator Index. Diese Eigenschaft verwendet eine- `TwoWay` Bindung. Diese Eigenschaft wird automatisch festgelegt, wenn die- `CarouselView.IndicatorView` Eigenschaft festgelegt wird.
 - `SelectedIndicatorColor`, vom Typ `Color` , die Farbe des Indikators, der das aktuelle Element in der darstellt `CarouselView` .
 

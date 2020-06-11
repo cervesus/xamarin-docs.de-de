@@ -23,7 +23,7 @@ Starten Sie in Windows Visual Studio 2019, und klicken Sie im Startfenster auf *
 
 ![Neues projektmappenfenster](get-started-with-xaml-images/win/new-solution-2019.png)
 
-Wählen Sie im Fenster **Neues Projekt erstellen** in der Dropdown-Dropdown-Dropdown-Datei den **Typ** **Mobil** aus, wählen **Sie die Vorlage** **Mobile App ( Xamarin.Forms )** aus, und klicken Sie auf die Schaltfläche
+Klicken Sie im Fenster **Neues Projekt erstellen** in der Dropdownliste **Projekttyp** auf **Mobil**, wählen Sie die Vorlage **Mobile App (Xamarin.Forms)** aus, und klicken Sie auf **Weiter**:
 
 ![Fenster "Neues Projekt"](get-started-with-xaml-images/win/new-project-2019.png)
 
@@ -232,7 +232,7 @@ Mit zwei anderen Formaten können Sie nur eine einzelne hexadezimal Ziffer für 
 
 In diesen Fällen wird die Ziffer wiederholt, um den Wert zu bilden. #CF3 ist beispielsweise die RGB-Farbe CC-FF-33.
 
-## <a name="page-navigation"></a>Seitennavigation
+## <a name="page-navigation"></a>Seiten Navigation
 
 Wenn Sie das **xamlsamples** -Programm ausführen, `MainPage` wird das angezeigt. Um den neuen anzuzeigen `HelloXamlPage` , können Sie diesen entweder als neue Startseite in der **app.XAML.cs** -Datei festlegen, oder Sie können von zur neuen Seite navigieren `MainPage` .
 

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bdf33f499bf43d99436cef815c03d35b27866b80
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140178"
+Title: "die Skalierungs Transformation" Beschreibung: "der Artikel untersucht die skiasharp-Skalierungs Transformation zum Skalieren von Objekten auf verschiedene Größen und veranschaulicht dies mit Beispielcode."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 54a43f3d-9da8-44a7-9ae4-7e3025129a0b Author: davidbritch ms. Author: dabritch ms. Date: 03/23/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="the-scale-transform"></a>Die Skalierungstransformation
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,23 +1,8 @@
 ---
-title: Xamarin.FormsGrundlagen zu XAML
-description: In dieser Anleitung wird erläutert, wie Sie plattformübergreifende XAML für mobile Geräte starten. Mit XAML können Entwickler Benutzeroberflächen in Xamarin.Forms Anwendungen mit Markup anstelle von Code definieren.
-ms.prod: ''
-ms.custom: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8f5f69038f7d5cfe7ad46f013acb1519c4e9569f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138618"
+Title: " Xamarin.Forms XAML-Grundlagen" Beschreibung: "in diesem Handbuch wird erläutert, wie Sie plattformübergreifende XAML für mobile Geräte starten. Mit XAML können Entwickler Benutzeroberflächen in Xamarin.Forms Anwendungen mit Markup anstelle von Code definieren. "
+ms. Prod: xamarin ms. Custom: Video ms. assetid: 67cc2cd6-d10a-4b14-9696-1d3a410effbf ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/25/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.FormsGrundlagen zu XAML
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
@@ -52,7 +37,7 @@ XAML ist im Grunde XML, aber XAML verfügt über einige eindeutige Syntax Funkti
 
 Diese Funktionen sind *keine* XML-Erweiterungen. XAML ist vollständig gültiger XML-Code. Diese XAML-Syntax Funktionen verwenden jedoch XML auf besondere Weise. Sie werden in den folgenden Artikeln ausführlich erläutert, die eine Einführung in die Verwendung von XAML zum Implementieren von MVVM haben.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 In diesem Artikel wird davon ausgegangen, dass Sie mit Arbeiten Xamarin.Forms . Außerdem wird in diesem Artikel eine gewisse Vertrautheit mit XML vorausgesetzt, einschließlich der Verwendung von XML-Namespace Deklarationen und den Begriffen *Element*, *Tag*und *Attribut*.
 
@@ -62,7 +47,7 @@ Wenn Sie mit und XML vertraut sind, beginnen Sie mit dem Xamarin.Forms Lesen von
 
 - [Xamlsamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Erstellen Mobile Apps Buchs](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
-- [Xamarin.FormsStich](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 
 ## <a name="related-video"></a>Zugehörige Videos
 

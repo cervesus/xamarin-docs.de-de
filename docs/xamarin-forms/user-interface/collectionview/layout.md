@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView-Layout
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 425eb7abc14fb941dbfc28219907d98558cbfabb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137433"
+Title: " Xamarin.Forms CollectionView Layout" Description: "in einem CollectionView-Objekt werden seine Elemente standardmäßig in einer vertikalen Liste angezeigt. Es können jedoch vertikale und horizontale Listen und Raster angegeben werden. "
+ms. Prod: xamarin ms. assetid: 5fe78207-1bd6-4706-91ef-b13932321fc9 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/22/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView-Layout
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

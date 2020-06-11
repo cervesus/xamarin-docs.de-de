@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4f20a0586aee998c10372c60c96577321e697aad
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137266"
+Title: "Rendering von benutzerdefinierten Steuerelementen im XAML-Previewer" Description: "in diesem Artikel wird beschrieben, wie Sie Ihre benutzerdefinierten Steuerelemente im XAML-Previewer anzeigen."
+ms. Prod: xamarin ms. assetid: 4d795372-cb8f -48f 4-b63d-845e44b261f 7 ms. Technology: xamarin-Forms Author: maddyleger1 ms. Author: maleger ms. Date: 03/27/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="render-custom-controls-in-the-xaml-previewer"></a>Rendering von benutzerdefinierten Steuerelementen im XAML-Previewer
 
 _Benutzerdefinierte Steuerelemente funktionieren manchmal nicht wie erwartet im XAML-Previewer. Verwenden Sie die Anleitungen in diesem Artikel, um die Einschränkungen der Vorschau der benutzerdefinierten Steuerelemente zu verstehen._

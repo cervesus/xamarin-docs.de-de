@@ -1,23 +1,8 @@
 ---
-title: ''
-description: Auf alle in definierten Sichten Xamarin.Forms kann in XAML-Dateien verwiesen werden.
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 445ef85f661d945bda25203f35dea787e64dc9b0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138423"
+Title: "XAML-Steuerelemente" Beschreibung: "alle in definierten Sichten Xamarin.Forms können von XAML-Dateien referenziert werden."
+ms. Topic: article ms. Prod: xamarin ms. assetid: 639bd392-1496-41bb-bb09-7652273ac9d8 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/17/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xaml-controls"></a>XAML-Steuerelemente
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
@@ -32,9 +17,9 @@ Auf alle in definierten Sichten Xamarin.Forms kann in XAML-Dateien verwiesen wer
 | --- | --- |
 | <h3>BoxView</h3>Zeigt ein Rechteck einer bestimmten Farbe an.<p align="center">![Screenshot einer boxview](xaml-controls-images/BoxView.png "BoxView")</p>[API](xref:Xamarin.Forms.BoxView)  /  [Leitfaden](~/xamarin-forms/user-interface/boxview.md) | <pre valign="center">&lt;BoxView Color="Accent"<br />         WidthRequest="150"<br />         HeightRequest="150"<br />         HorizontalOptions="Center"&gt;</pre></p> |
 | <h3>Expander</h3>Stellt einen erweiterbaren Container bereit, um beliebige Inhalte zu hosten.<p align="center">![Screenshot eines Expander](xaml-controls-images/Expander.png "Expander")</p>[Lenken](~/xamarin-forms/user-interface/expander.md) | <pre>&lt;Expander&gt;<br />    &lt;Expander.Header&gt;<br />        &lt;Label Text=&quot;Baboon&quot; /&gt;<br />    &lt;/Expander.Header&gt;<br />    &lt;Image Source=&quot;Baboon.png&quot;<br />           Aspect=&quot;AspectFill&quot; /&gt;<br />&lt;/Expander&gt;</pre></p> |
-| <h3>Image</h3>Zeigt eine Bitmap an.<p align="center">![Screenshot eines Bilds](xaml-controls-images/Image.png "Bild")</p>[API](xref:Xamarin.Forms.Image)  /  [Leitfaden](~/xamarin-forms/user-interface/images.md) | <pre>&lt;Image Source="https://aka.ms/campus.jpg"<br />       Aspect="AspectFit"<br />       HorizontalOptions="Center" /&gt;</pre></p> |
+| <h3>Bild</h3>Zeigt eine Bitmap an.<p align="center">![Screenshot eines Bilds](xaml-controls-images/Image.png "Bild")</p>[API](xref:Xamarin.Forms.Image)  /  [Leitfaden](~/xamarin-forms/user-interface/images.md) | <pre>&lt;Image Source="https://aka.ms/campus.jpg"<br />       Aspect="AspectFit"<br />       HorizontalOptions="Center" /&gt;</pre></p> |
 | <h3>Bezeichnung</h3>Zeigt eine oder mehrere Textzeilen an.<p align="center">![Screenshot einer Bezeichnung](xaml-controls-images/Label.png "Bezeichnung")</p>[API](xref:Xamarin.Forms.Label)  /  [Leitfaden](~/xamarin-forms/user-interface/text/label.md) | <p valign="center"><pre>&lt;Label Text="Hello, Xamarin.Forms!"<br />       FontSize="Large"<br />       FontAttributes="Italic"<br />       HorizontalTextAlignment="Center" /&gt;</pre></p> |
-| <h3>Zuordnung</h3>Zeigt eine Karte an.<p align="center">![Screenshot einer Karte](xaml-controls-images/Map.png "Zuordnung")</p>[API](xref:Xamarin.Forms.Maps.Map)  /  [Leitfaden](~/xamarin-forms/user-interface/map/index.md) | <p valign="center"><pre>&lt;maps:Map ItemsSource="{Binding Locations}" /&gt;</pre></p> |
+| <h3>Karte</h3>Zeigt eine Karte an.<p align="center">![Screenshot einer Karte](xaml-controls-images/Map.png "Zuordnung")</p>[API](xref:Xamarin.Forms.Maps.Map)  /  [Leitfaden](~/xamarin-forms/user-interface/map/index.md) | <p valign="center"><pre>&lt;maps:Map ItemsSource="{Binding Locations}" /&gt;</pre></p> |
 | <h3>MediaElement</h3>Abspielen von Videos oder Audiodaten.<p align="center">![Screenshot eines Media Element-Elements](xaml-controls-images/MediaElement.png "Media Element")</p>[API](xref:Xamarin.Forms.MediaElement)  /  [Leitfaden](~/xamarin-forms/user-interface/mediaelement.md) | <p valign="center"><pre>&lt;MediaElement Source="https://sec.ch9.ms/ch9/XamarinShow_mid.mp4"<br />              AutoPlay="True"<br />              ShowsPlaybackControls="True" /&gt;</pre></p> |
 | <h3>WebView</h3>Zeigt Webseiten oder HTML-Inhalte an.<p align="center">![Screenshot einer WebView](xaml-controls-images/WebView.png "WebView")</p>[API](xref:Xamarin.Forms.WebView)  /  [Leitfaden](~/xamarin-forms/user-interface/webview.md) | <p valign="center"><pre>&lt;WebView Source="https://docs.microsoft.com/xamarin/"<br/>         VerticalOptions="FillAndExpand" /&gt;</pre></p> |
 |     |     |
@@ -94,5 +79,5 @@ Auf alle in definierten Sichten Xamarin.Forms kann in XAML-Dateien verwiesen wer
 ## <a name="related-links"></a>Verwandte Links
 
 - [Xamarin.FormsFormsgallery-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.FormsStich](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Xamarin.FormsAPI-Dokumentation](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

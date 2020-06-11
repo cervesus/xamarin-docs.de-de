@@ -1,29 +1,15 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139047"
+Title: "die Pfad Füll Typen" Beschreibung: "in diesem Artikel werden die unterschiedlichen möglichen Effekte mit skiasharp-Pfad Füll Typen untersucht, und dies wird mit Beispielcode veranschaulicht."
+ms. Prod: xamarin ms. assetid: 57103a7a-49a2-46AE-894c-7c2664682644 ms. Technology: xamarin-skiasharp Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="the-path-fill-types"></a>Die Fülltypen für Pfade
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Entdecken Sie die verschiedenen Effekte, die mit skiasharp-Pfad Füll Typen möglich sind._
 
-Zwei Kontur in einem Pfad können sich überlappen, und die Linien, die eine einzelne Kontur bilden, können sich überlappen. Alle eingeschlossenen Bereiche können möglicherweise ausgefüllt werden, Sie möchten jedoch möglicherweise nicht alle eingeschlossenen Bereiche ausfüllen. Hier sehen Sie ein Beispiel:
+Zwei Kontur in einem Pfad können sich überlappen, und die Linien, die eine einzelne Kontur bilden, können sich überlappen. Alle eingeschlossenen Bereiche können möglicherweise ausgefüllt werden, Sie möchten jedoch möglicherweise nicht alle eingeschlossenen Bereiche ausfüllen. Im Folgenden ein Beispiel:
 
 ![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 

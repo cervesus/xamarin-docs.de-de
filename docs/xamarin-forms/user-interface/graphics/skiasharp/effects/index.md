@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d9fa710f5dfc61c2892b8fc409a39b37cf449018
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136304"
+Title: "skiasharp Effects" Description: "erfahren Sie, wie Sie die normale Darstellung von Grafiken mit Farbverläufen, Bitmap-tiult, Blend-Modi, weich Zeichen und anderen Effekten ändern."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: B3E06572-8E2A-49FA-90D1-444C394CD516 Author: davidbritch ms. Author: dabritch ms. Date: 08/22/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-effects"></a>Skiasharp-Effekte
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

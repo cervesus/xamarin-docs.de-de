@@ -1,23 +1,8 @@
 ---
-title: Quelllink mitXamarin.Forms
-description: In diesem Artikel wird erläutert, wie Sie den quelllink zum Debuggen in verwenden Xamarin.Forms .
-zone_pivot_groups: ''
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 57db314538c42ef9d58691ba16ab68371ff092b7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138304"
+Title: "quelllink mit Xamarin.Forms " Beschreibung: "in diesem Artikel wird erläutert, wie der quelllink zum Debuggen in verwendet wird Xamarin.Forms ."
+zone_pivot_groups: "Platform" MS. Prod: xamarin ms. assetid: 1e13b389beb ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 09/26/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="source-link-with-xamarinforms"></a>Quelllink mitXamarin.Forms
 
 Xamarin.FormsNuget-Pakete enthalten Zuordnungen von Quell Verknüpfungen. Mit der Quell Verknüpfung werden kompilierte Bibliotheken, die in einem nuget-Paket enthalten sind, einem Quellcoderepository zugeordnet. Visual Studio lädt Quell Code Dateien während des Debuggens herunter und ermöglicht es Entwicklern, Code schrittweise zu durchlaufen und so das Debuggen von Paketen zu ermöglichen, ohne

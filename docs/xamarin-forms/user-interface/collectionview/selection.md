@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView-Auswahl
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 39f118d7073fc551923f891681c8c6cf6a4c5ddd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137383"
+Title: " Xamarin.Forms CollectionView Selection" Description: "die CollectionView-Auswahl ist standardmäßig deaktiviert. Die Auswahl von "einfach" und "Mehrfachauswahl" kann jedoch aktiviert werden.
+ms. Prod: xamarin ms. assetid: 423d91c7-1E58-4735-9e80-58b11cdfd953 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 05/06/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin.FormsCollectionView-Auswahl
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -310,7 +296,7 @@ In diesem Beispiel wird der- [`Style.TargetType`](xref:Xamarin.Forms.Style.Targe
 
 [![Screenshot einer vertikalen CollectionView-Liste mit einer benutzerdefinierten Auswahl Farbe unter IOS und Android](selection-images/single-selection-color.png "Auflistungs Ansicht (vertikal) mit einer benutzerdefinierten Auswahl Farbe")](selection-images/single-selection-color-large.png#lightbox "Auflistungs Ansicht (vertikal) mit einer benutzerdefinierten Auswahl Farbe")
 
-Weitere Informationen zu visuellen Zuständen finden Sie unter [ Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
+Weitere Informationen zu visuellen Zuständen finden Sie unter [Xamarin.Forms: Visual State-Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 ## <a name="disable-selection"></a>Auswahl deaktivieren
 
@@ -339,4 +325,4 @@ Wenn die- [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode
 ## <a name="related-links"></a>Verwandte Links
 
 - [CollectionView (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [Xamarin.FormsVisual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms: Visual State-Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

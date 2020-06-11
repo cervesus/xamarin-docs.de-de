@@ -1,22 +1,8 @@
 ---
-title: Reagieren auf Änderungen des Systemdesigns in Xamarin.Forms Anwendungen
-description: Xamarin.FormsAnwendungen können auf Änderungen des Betriebssystem Designs reagieren, indem Sie den Typ "onapptheme" und die dynamikresource-Markup Erweiterung verwenden.
-ms.assetid: ''
-ms.prod: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2bb83f4ad5c30adccfc961938df64dda9cef1f6b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140061"
+Title: "reagieren auf Systemdesign Änderungen in Xamarin.Forms Anwendungen" Beschreibung: " Xamarin.Forms Anwendungen können auf Änderungen des Betriebssystem Designs reagieren, indem Sie den Typ" onapptheme "und die dynamikresource-Markup Erweiterung verwenden.
+ms. assetid: D10506DD-BAA0-437F-A4AD-882D16E7B60D ms. Prod: xamarin ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/22/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>Reagieren auf Änderungen des Systemdesigns in Xamarin.Forms Anwendungen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
@@ -193,6 +179,6 @@ Das- `AppThemeChangedEventArgs` Objekt, das das- `RequestedThemeChanged` Ereigni
 
 - [Systemdesigns (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 - [OnAppTheme-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onapptheme-markup-extension)
-- [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Dynamische Stile inXamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
-- [Formatieren von Xamarin.Forms apps mit XAML-Stilen](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: In diesem Artikel Xamarin.Forms wird erläutert, wie ListView mit Daten aufgefüllt wird und wie die Datenbindung mit einem ListView-Steuer Punkt verwendet wird.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 38a895c9064fc012aec35b37eac78bb16ff009a9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131507"
+Title: "ListView Data Sources" Description: "in diesem Artikel wird erläutert, wie die Xamarin.Forms ListView mit Daten aufgefüllt und die Datenbindung mit einem ListView-Steuer Punkt verwendet wird."
+ms. Prod: xamarin ms. assetid: B5571660-1E82-4379-95C3-0725288CF5D9 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/23/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="listview-data-sources"></a>ListView-Datenquellen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)

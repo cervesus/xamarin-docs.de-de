@@ -1,22 +1,8 @@
 ---
-title: ''
-description: In diesem Artikel wird erläutert, wie ListViews in Xamarin.Forms Anwendungen mithilfe von Kopfzeilen, Fußzeilen, Gruppen und Zellen mit variabler Höhe angepasst werden.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c7fdecdb0ce209c88dbe9e6f4e6e6588ec4fd3fd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139918"
+Title: "ListView-Darstellung" Beschreibung: "in diesem Artikel wird erläutert, wie ListViews in Xamarin.Forms Anwendungen mithilfe von Kopfzeilen, Fußzeilen, Gruppen und Variablen Höhen Zellen angepasst wird."
+ms. Prod: xamarin ms. assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 12/13/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="listview-appearance"></a>ListView-Darstellung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
@@ -276,7 +262,7 @@ XAML:
 
 Alle Zeilen in einem ListView-Steuer Punkt haben standardmäßig dieselbe Höhe. ListView verfügt über zwei Eigenschaften, die verwendet werden können, um dieses Verhalten zu ändern:
 
-- `HasUnevenRows`&ndash; `true`/`false` Wert: Zeilen haben unterschiedliche Höhen, wenn auf festgelegt `true` . Dies ist standardmäßig `false`.
+- `HasUnevenRows`&ndash; `true`/`false` Wert: Zeilen haben unterschiedliche Höhen, wenn auf festgelegt `true` . Wird standardmäßig auf `false` festgelegt.
 - `RowHeight`&ndash;legt die Höhe der einzelnen Zeilen fest, wenn den Wert hat `HasUnevenRows` `false` .
 
 Sie können die Höhe aller Zeilen festlegen, indem Sie die- `RowHeight` Eigenschaft auf festlegen `ListView` .

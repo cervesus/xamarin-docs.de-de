@@ -1,22 +1,8 @@
 ---
-title: Grafiken inXamarin.Forms
-description: In diesem Handbuch wird erläutert, wie Grafik-und Spiel-Engine Xamarin.Forms -Visualisierungen mithilfe von cocossharp, skiashap und urhusharp in eine-Anwendung integriert werden.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 227bb3f0971bb8e3ceef7015f8fffb9994ccc36b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129323"
+Title: "Grafiken in Xamarin.Forms " Beschreibung: "in diesem Handbuch wird erläutert, wie Grafik-und Spiel-Engine-Visualisierungen Xamarin.Forms mithilfe von cocossharp, skiashap und urhusharp in eine Anwendung integriert werden."
+ms. Prod: xamarin ms. assetid: 167ec01a-b9e-431e-a44d-a10eaf62bf. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/01/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="graphics-in-xamarinforms"></a>Grafiken inXamarin.Forms
 
 _Integrieren von Grafik-und Spiel-Engine-Visuals in eine- Xamarin.Forms Anwendung._

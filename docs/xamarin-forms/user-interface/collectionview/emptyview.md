@@ -1,30 +1,16 @@
 ---
-title: Xamarin.FormsCollectionView emptyview
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d35e39e55d66452e47c7a3e3faf86a7a7d6adaca
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136489"
+Title: " Xamarin.Forms CollectionView emptyview" Description: "in CollectionView kann eine leere Ansicht angegeben werden, die dem Benutzer Feedback bietet, wenn keine Daten zur Anzeige verfügbar sind. Die leere Ansicht kann eine Zeichenfolge, eine Ansicht oder mehrere Ansichten sein. "
+ms. Prod: xamarin ms. assetid: 6cebcfe6-5577-4f 68-9709-431062609153 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 05/06/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-emptyview"></a>Xamarin.FormsCollectionView emptyview
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)definiert die folgenden Eigenschaften, die verwendet werden können, um Benutzer Feedback bereitzustellen, wenn keine anzuzeigenden Daten vorhanden sind:
 
-- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView), vom Typ `object` , der Zeichenfolge, der Bindung oder der Ansicht, die angezeigt wird, wenn die- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) Eigenschaft ist `null` , oder, wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Standardwert: `null`.
-- [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate), vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , die Vorlage, die zum Formatieren des angegebenen verwendet werden soll `EmptyView` . Standardwert: `null`.
+- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView), vom Typ `object` , der Zeichenfolge, der Bindung oder der Ansicht, die angezeigt wird, wenn die- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) Eigenschaft ist `null` , oder, wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Der Standardwert ist `null`.
+- [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate), vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , die Vorlage, die zum Formatieren des angegebenen verwendet werden soll `EmptyView` . Der Standardwert ist `null`.
 
 Diese Eigenschaften werden von- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekten unterstützt. Dies bedeutet, dass die Eigenschaften Ziele von Daten Bindungen sein können.
 
@@ -33,7 +19,7 @@ Die wichtigsten Verwendungs Szenarien für das Festlegen der- [`EmptyView`](xref
 > [!NOTE]
 > Die- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) Eigenschaft kann auf eine Ansicht festgelegt werden, die bei Bedarf interaktiven Inhalt enthält.
 
-Weitere Informationen zu Datenvorlagen finden Sie unter [ Xamarin.Forms Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
+Weitere Informationen zu Datenvorlagen finden Sie unter [Xamarin.Forms-Datenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
 ## <a name="display-a-string-when-data-is-unavailable"></a>Zeigt eine Zeichenfolge an, wenn Daten nicht verfügbar sind.
 
@@ -332,5 +318,5 @@ Weitere Informationen zu Datenvorlagen Selektoren finden Sie unter [Create a Xam
 
 - [CollectionView (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [Xamarin.FormsDatenvorlagen](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [Xamarin.FormsRessourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Ressourcenverzeichnisse in Xamarin.Forms](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Erstellen eines Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

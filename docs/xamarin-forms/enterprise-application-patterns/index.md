@@ -1,23 +1,9 @@
 ---
-title: Unternehmens Anwendungs Muster mit e- Xamarin.Forms Book
-description: Dieses e-Book bietet Architektur Anleitungen zum entwickeln anpassbarer, verwaltebarer und testbarer Xamarin.Forms Unternehmensanwendungen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139398"
+Title: "Unternehmens Anwendungs Muster mit e- Xamarin.Forms Book" Description: "dieses e-Book bietet Architektur Anleitungen zum entwickeln anpassbarer, verwaltebarer und testbarer Xamarin.Forms Unternehmensanwendungen."
+ms. Prod: xamarin ms. assetid: 28cfed6c-6175-4223-a8cc-798d40bf 0832 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Unternehmens Anwendungs Muster mit e- Xamarin.Forms Book
+
+# <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>E-Book zu Mustern von Unternehmensanwendungen mithilfe von Xamarin.Forms
 
 _Architektur Leit Faden für die Entwicklung anpassbarer, verwaltebarer und testbarer Xamarin.Forms Unternehmensanwendungen_
 
@@ -29,7 +15,7 @@ Dieses e-Book enthält Anleitungen dazu, wie das Model-View-ViewModel (MVVM)-Mus
 
 In diesem Kapitel werden Zweck und Umfang des Handbuchs erläutert.
 
-## <a name="introduction"></a>[Einführung](introduction.md)
+## <a name="introduction"></a>[Introduction (Einführung)](introduction.md)
 
 Entwickler von Unternehmens-apps stellen verschiedene Herausforderungen dar, die die Architektur der APP während der Entwicklung ändern können. Daher ist es wichtig, eine APP zu erstellen, damit Sie im Laufe der Zeit geändert oder erweitert werden kann. Der Entwurf für diese Anpassbarkeit kann schwierig sein, aber es umfasst in der Regel die Partitionierung einer APP in diskrete, lose gekoppelte Komponenten, die problemlos in eine APP integriert werden können.
 
@@ -45,7 +31,7 @@ Abhängigkeits einschleusungs Container reduzieren die Kopplung zwischen Objekte
 
 ## <a name="communicating-between-loosely-coupled-components"></a>[Kommunikation zwischen lose gekoppelten Komponenten](communicating-between-loosely-coupled-components.md)
 
-Die Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) -Klasse implementiert das Veröffentlichen-Abonnieren-Muster und ermöglicht die Nachrichten basierte Kommunikation zwischen Komponenten, die für die Verknüpfung über Objekt-und Typverweise ungeeignet sind. Dieser Mechanismus ermöglicht es Verlegern und Abonnenten, ohne einen Verweis aufeinander zu kommunizieren, sodass Abhängigkeiten zwischen Komponenten reduziert werden können, während Komponenten unabhängig entwickelt und getestet werden können.
+Die Xamarin.Forms-Klasse [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) implementiert das Veröffentlichen-Abonnieren-Muster und ermöglicht so eine nachrichtenbasierte Kommunikation zwischen Komponenten, für die eine Verknüpfung über Objekt- und Typverweise ungünstig ist. Dieser Mechanismus ermöglicht es Verlegern und Abonnenten, ohne einen Verweis aufeinander zu kommunizieren, sodass Abhängigkeiten zwischen Komponenten reduziert werden können, während Komponenten unabhängig entwickelt und getestet werden können.
 
 ## <a name="navigation"></a>[Navigation](navigation.md)
 

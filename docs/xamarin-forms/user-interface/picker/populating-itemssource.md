@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8c4fc732082a77a2e471465af448a487862b513c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136291"
+Title: "Festlegen der ItemsSource-Eigenschaft einer Auswahl" Beschreibung: "die Auswahl Ansicht ist ein Steuerelement zum Auswählen eines Text Elements aus einer Datenliste. In diesem Artikel wird erläutert, wie eine Auswahl mit Daten aufgefüllt wird, indem die ItemsSource-Eigenschaft festgelegt wird und wie auf die Elementauswahl durch den Benutzer reagiert wird. "
+ms. Prod: xamarin ms. assetid: 8ecf 390c-9db2-4441-b9a3-101ae7e5aec5 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/26/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="setting-a-pickers-itemssource-property"></a>Festlegen der ItemsSource-Eigenschaft einer Auswahl
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)

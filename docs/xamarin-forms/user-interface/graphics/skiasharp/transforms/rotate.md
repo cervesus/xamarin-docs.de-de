@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 520c4c3b61049bf17c2c964523714db196da6839
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132183"
+Title: "The Transform Transform" Description: "in diesem Artikel werden die Auswirkungen und Animationen erläutert, die mit der skiasharp Rotation-Transformation möglich sind, und dies wird mit Beispielcode veranschaulicht."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2 Author: davidbritch ms. Author: dabritch ms. Date: 03/23/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="the-rotate-transform"></a>Die Drehungstransformation
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

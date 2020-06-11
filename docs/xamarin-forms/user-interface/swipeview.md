@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsSwidansicht
-description: Die Xamarin.Forms swipeer View ist ein Container Steuerelement, das ein Inhalts Element umschließt und Kontextmenü Elemente bereitstellt, die durch eine Schwenkbewegung angezeigt werden.
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9c9d0621cdd5bb85690771d8bdfd0060b6a352cb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136252"
+Title: " Xamarin.Forms swidanview" Description: " Xamarin.Forms swipeer View ist ein Container Steuerelement, das ein Inhalts Element umschließt und Kontextmenü Elemente bereitstellt, die durch eine Schwenkbewegung angezeigt werden."
+ms. Prod: xamarin ms. assetid: 602456b5-701b-4948-B454-B1F31283F1CF ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/26/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-swipeview"></a>Xamarin.FormsSwidansicht
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

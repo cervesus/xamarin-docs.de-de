@@ -1,22 +1,8 @@
 ---
-title: Empfohlene Präfixe für den XAML-Namespace inXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 71ae523f40f3f7529c12f853778404e224fbae30
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138137"
+Title: "Empfohlene Präfixe für XAML-Namespace in Xamarin.Forms " Beschreibung: "die xmlnspree fixattribute-Klasse kann von Steuerelement Autoren verwendet werden, um ein empfohlenes Präfix anzugeben, das einem XAML-Namespace für die XAML-Verwendung zugeordnet werden soll."
+ms. Prod: xamarin ms. assetid: 7b315bec-7A35-48b4-a9c7-ef40255e95ff ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/28/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xaml-namespace-recommended-prefixes-in-xamarinforms"></a>Empfohlene Präfixe für den XAML-Namespace inXamarin.Forms
 
 Die- `XmlnsPrefixAttribute` Klasse kann von Steuerelement Autoren verwendet werden, um ein empfohlenes Präfix anzugeben, das einem XAML-Namespace für die XAML-Verwendung zugeordnet werden soll. Das Präfix ist nützlich, wenn die objektstrukturserialisierung in XAML unterstützt wird, oder wenn mit einer Entwurfs Umgebung interagiert wird, die XAML-Bearbeitungsfunktionen hat. Beispiel:

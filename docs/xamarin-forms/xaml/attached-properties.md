@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1f26a4415a75b2b02fd7d6893e366ef81156f077
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138189"
+Title: "angefügte Eigenschaften" Beschreibung: "dieser Artikel enthält eine Einführung in angefügte Eigenschaften und zeigt, wie Sie erstellt und genutzt werden."
+ms. Prod: xamarin ms. assetid: 6e9dcdc3-a0e4-46a6-baa9-4feb6df8a5a8 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 06/02/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="attached-properties"></a>Angefügte Eigenschaften
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
@@ -134,7 +120,7 @@ Die [`Style`](xref:Xamarin.Forms.Style)-Klasse kann auf eine [`Label`](xref:Xama
 
 Weitere Informationen zu Formatvorlagen finden Sie unter [Styles (Formatvorlagen)](~/xamarin-forms/user-interface/styles/index.md).
 
-## <a name="advanced-scenarios"></a>Erweiterte Szenarios
+## <a name="advanced-scenarios"></a>Erweiterte Szenarien
 
 Beim Erstellen einer angefügten Eigenschaft gibt es eine Reihe optionaler Parameter, die festgelegt werden können, um erweiterte angefügte Eigenschafts Szenarios zu aktivieren. Dies umfasst das Erkennen von Eigenschafts Änderungen, das Überprüfen von Eigenschafts Werten und das Umwandeln von Eigenschafts Werten. Weitere Informationen finden Sie unter [Advanced Szenarios](~/xamarin-forms/xaml/bindable-properties.md#advanced-scenarios).
 

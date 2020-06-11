@@ -108,7 +108,7 @@ Außerdem werden Komponententests für einige der Klassen in den eshoponcontaine
 
 Die eshoponcontainers-Mobile App Lösung organisiert den Quellcode und andere Ressourcen in-Projekten. Alle Projekte verwenden Ordner, um den Quellcode und andere Ressourcen in Kategorien zu organisieren. In der folgenden Tabelle werden die Projekte beschrieben, aus denen sich die eshoponcontainers-Mobile App zusammenführen:
 
-|Projekt|Beschreibung|
+|Projekt|BESCHREIBUNG|
 |--- |--- |
 |eshoponcontainers. Core|Dieses Projekt ist das Projekt der portablen Klassenbibliothek (Portable Class Library, PCL), das den freigegebenen und den freigegebenen Benutzeroberflächen|
 |eshoponcontainers. Droid|Dieses Projekt enthält Android-spezifischen Code und ist der Einstiegspunkt für die Android-App.|
@@ -125,7 +125,7 @@ Die Klassen aus dem eshoponcontainers-Mobile App können in jeder Xamarin.Forms 
 
 Das PCL-Projekt "eshoponcontainers. Core" enthält die folgenden Ordner:
 
-|Ordner|Beschreibung|
+|Ordner|BESCHREIBUNG|
 |--- |--- |
 |Animationen|Enthält Klassen, die die Verwendung von Animationen in XAML ermöglichen.|
 |Verhalten|Enthält Verhalten, die für Ansichts Klassen verfügbar gemacht werden.|

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsNetz
-description: Das Xamarin.Forms Raster ist ein Layout, das seine untergeordneten Elemente in Zeilen und Spalten von Zellen organisiert.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c4e63d6c1701d9eb247ecb7c52188e5dbc045934
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138072"
+Title: " Xamarin.Forms Raster" Beschreibung: "das Xamarin.Forms Raster ist ein Layout, das seine untergeordneten Elemente in Zeilen und Spalten von Zellen organisiert."
+ms. Prod: xamarin ms. assetid: 762b1802-d185-494c-b643-74eed55882fe ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 05/15/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-grid"></a>Xamarin.FormsNetz
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)

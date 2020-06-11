@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsKarten Polygone, Polylines und Kreise
-description: In diesem Artikel wird erläutert, wie Polygone, Polylines und Kreise auf einer Xamarin.Forms Karten Instanz erstellt werden.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ca813f9f0f75aeaf4a2502faa7cb96d1fbead471
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138410"
+Title: " Xamarin.Forms Karten Polygone, Polylines und Kreise" Beschreibung: "in diesem Artikel wird erläutert, wie Polygone, Polylines und Kreise auf einer Xamarin.Forms Karten Instanz erstellt werden."
+ms. Prod: xamarin ms. assetid: CDAF0B02-1AA8-4AD6-94A7-ABFC18006A2D ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin.FormsKarten Polygone und Polylines
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

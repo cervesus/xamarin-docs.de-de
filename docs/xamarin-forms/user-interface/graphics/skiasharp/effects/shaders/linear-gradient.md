@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 43aa429046c1b0f72a1cbe6a5b921da9b8907a49
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132222"
+Title: "The skiasharp Linear Gradient" Description: "Discover line to Stroke Lines or Fill Areas with Gradienten, bestehend aus einer schrittweisen Mischung aus zwei Farben."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 20a2a8c4-feb7-478d-bf57-c92e26117b6a Author: davidbritch ms. Author: dabritch ms. Date: 08/23/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="the-skiasharp-linear-gradient"></a>Der lineare skiasharp-Farbverlauf
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -103,7 +89,7 @@ Die Farbverlaufslinie wird von den beiden Punkten definiert, die als die ersten 
 
 Das Array von `float` Werten, die als viertes Argument angegeben sind, hat eine eins-zu-eins-Entsprechung mit dem Array von Farben. Die Werte geben die relative Position entlang der Farbverlaufslinie an, in der diese Farben vorkommen. Hier bedeutet das 0, dass `Red` am Anfang der Farbverlaufslinie auftritt, und 1 bedeutet, dass `Blue` am Ende der Zeile auftritt. Die Zahlen müssen aufsteigend sein und müssen im Bereich zwischen 0 und 1 liegen. Wenn Sie sich nicht in diesem Bereich befinden, werden Sie so angepasst, dass Sie in diesem Bereich liegen.
 
-Die beiden Werte im-Array können auf einen anderen Wert als 0 und 1 festgelegt werden. Testen Sie Folgendes:
+Die beiden Werte im-Array können auf einen anderen Wert als 0 und 1 festgelegt werden. Versuchen Sie Folgendes:
 
 ```csharp
 new float[] { 0.25f, 0.75f }
@@ -620,7 +606,7 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-Die zwei Farbverlaufs Punkte in der `CreateLinearGradient` Methode basieren auf zwei der Punkte, die diesen Pfad definieren: beide Punkte befinden sich in der Nähe der oberen linken Ecke. Der erste befindet sich am oberen Rand des Zeichen Bereichs, und der zweite befindet sich am linken Rand der Canvas. Das Ergebnis lautet wie folgt:
+Die zwei Farbverlaufs Punkte in der `CreateLinearGradient` Methode basieren auf zwei der Punkte, die diesen Pfad definieren: beide Punkte befinden sich in der Nähe der oberen linken Ecke. Der erste befindet sich am oberen Rand des Zeichen Bereichs, und der zweite befindet sich am linken Rand der Canvas. So sieht das Ergebnis aus:
 
 [![Fehler beim Regenbogen Verlauf](linear-gradient-images/RainbowGradientFaulty.png "Fehler beim Regenbogen Verlauf")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
 

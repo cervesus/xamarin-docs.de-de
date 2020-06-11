@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsC#-Markup
-description: C#-Markup ist ein Opt-in-Satz von fließenden Hilfsmethoden und-Klassen, um den Prozess des Ersatzes von deklarativen Xamarin.Forms Benutzeroberflächen in c# zu vereinfachen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137747"
+Title: " Xamarin.Forms c# Markup" Description: "c# Markup ist ein Satz von fließenden Hilfsmethoden und-Klassen, um den Prozess des Ersatzes von deklarativen Xamarin.Forms Benutzeroberflächen in c# zu vereinfachen."
+ms. Prod: xamarin ms. assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 05/15/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-c-markup"></a>Xamarin.FormsC#-Markup
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -357,7 +343,7 @@ new Grid
 }
 ```
 
-## <a name="fonts"></a>Fonts
+## <a name="fonts"></a>Schriftarten
 
 Mit den Steuerelementen in der folgenden Liste können `FontSize` die `Bold` `Italic` -,-,-und-Erweiterungs Methoden aufgerufen werden, `Font` um die Darstellung des vom-Steuerelement angezeigten Texts festzulegen:
 

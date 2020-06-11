@@ -1,22 +1,8 @@
 ---
-title: ''
-description: In diesem Artikel wird erläutert, wie vorhandene Xamarin.Forms Android-Apps für die Verwendung von AppCompat und Material Design konvertiert werden.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135706"
+Title: "Hinzufügen von AppCompat und Material Design" Beschreibung: "in diesem Artikel wird erläutert, wie vorhandene Xamarin.Forms Android-Apps für die Verwendung von AppCompat und Material Design konvertiert werden."
+ms. Prod: xamarin ms. assetid: 045f-9911-BD3938C87D58 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 06/27/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="adding-appcompat-and-material-design"></a>Hinzufügen von AppCompat und Material Design
 
 _Gehen Sie folgendermaßen vor, um vorhandene Xamarin.Forms Android-Apps zur Verwendung von AppCompat und Material Design zu konvertieren._
@@ -43,7 +29,7 @@ Stellen Sie sicher, dass das Ziel Framework des Android-Projekts Android 6,0 (Ma
 
 Erstellen Sie die folgenden drei Dateien in Ihrem Android-Projekt, und fügen Sie den folgenden Inhalt ein. Google stellt einen [Stil Leit Faden](https://www.google.com/design/spec/style/color.html#color-color-palette) und einen [Farbpalette-Generator](https://www.materialpalette.com/) bereit, um Sie bei der Auswahl eines alternativen Farbschemas für das angegebene zu unterstützen.
 
-**Resources/Values/Colors. XML**
+**Ressourcen/Werte/colors.xml**
 
 ```xml
 <resources>
@@ -54,7 +40,7 @@ Erstellen Sie die folgenden drei Dateien in Ihrem Android-Projekt, und fügen Si
 </resources>
 ```
 
-**Resources/Values/Style. XML**
+**Ressourcen/Werte/style.xml**
 
 ```xml
 <resources>
@@ -72,7 +58,7 @@ Erstellen Sie die folgenden drei Dateien in Ihrem Android-Projekt, und fügen Si
 
 Im Ordner **Values-V21** muss ein zusätzlicher Stil enthalten sein, um bestimmte Eigenschaften bei der Ausführung unter Android Lollipop und neuer zu verwenden.
 
-**Resources/Values-V21/Style. XML**
+**Ressourcen/Werte-V21/style.xml**
 
 ```xml
 <resources>
@@ -84,11 +70,11 @@ Im Ordner **Values-V21** muss ein zusätzlicher Stil enthalten sein, um bestimmt
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4. Aktualisieren von "androidmanifest. xml"
+### <a name="4-update-androidmanifestxml"></a>4. Update AndroidManifest.xml
 
 Um sicherzustellen, dass diese neuen Design Informationen verwendet werden, legen Sie Design in der Datei **androidmanifest** fest, indem Sie hinzufügen `android:theme="@style/MyTheme"` (belassen Sie den Rest des XML-Codes unverändert).
 
-**Properties/androidmanifest. XML**
+**Eigenschaften/AndroidManifest.xml**
 
 ```xml
 ...

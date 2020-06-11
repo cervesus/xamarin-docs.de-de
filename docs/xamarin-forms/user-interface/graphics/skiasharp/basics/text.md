@@ -1,22 +1,8 @@
 ---
-title: ''
-description: In diesem Artikel wird erläutert, wie Sie die Größe der gerenderten Text Zeichenfolge für die Integration von Text mit skiasharp-Grafiken in Xamarin.Forms Anwendungen ermitteln und dies mit Beispielcode veranschaulichen.
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ee97ee2aae11e4e54a0d25e80ffd7bce301fa2f3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137682"
+Title: "integrieren von Text und Grafiken" Beschreibung: "in diesem Artikel wird erläutert, wie Sie die Größe der gerenderten Text Zeichenfolge für die Integration von Text mit skiasharp-Grafiken in Xamarin.Forms Anwendungen bestimmen und dies mit Beispielcode veranschaulichen."
+ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="integrating-text-and-graphics"></a>Integrieren von Text und Grafiken
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

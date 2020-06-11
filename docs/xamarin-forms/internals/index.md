@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsErweiterte Konzepte & Interna
-description: Hier finden Sie Informationen zu erweiterten Konzepten und den Internalen von Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 410aadcb885ed66283eb306cb9aa4c5e764fa8ec
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139034"
+Title: " Xamarin.Forms Erweiterte Konzepte & Interna" Beschreibung: "erfahren Sie mehr über erweiterte Konzepte und die internale von Xamarin.Forms ".
+ms. Prod: xamarin ms. assetid: 2273a31c-4022-42ba-befe-0d23ce2ff3b5 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/20/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-advanced-concepts--internals"></a>Xamarin.FormsErweiterte Konzepte & Interna
 
 _Hier finden Sie Informationen zu erweiterten Konzepten und den Internalen von Xamarin.Forms ._
@@ -37,6 +23,6 @@ Xamarin.Formsdurch experimentelle Flags kann das Engineering-Team neue Features 
 
 Erfahren Sie mehr über schnelle Renderer, die die Inflations-und renderingkosten eines Xamarin.Forms Steuer Elements auf Android verringern, indem Sie die resultierende Native Steuerelement Hierarchie vereinfachen.
 
-## <a name="source-link"></a>[SourceLink](sourcelink.md)
+## <a name="source-link"></a>[Quelllink](sourcelink.md)
 
 Erfahren Sie, wie Sie Ihre Anwendung in den Quellcode debuggen Xamarin.Forms .
