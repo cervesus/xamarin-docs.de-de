@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: 73c4e992fae1a2d525670604d98f277fe4fde794
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ee8ff58566732c6a86a339d3080c7243be4b4a4e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303600"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572194"
 ---
 # <a name="app-store-distribution"></a>App Store-Verteilung
 
@@ -30,7 +30,7 @@ Das Verteilen einer Anwendung erfordert genau wie das Entwickeln einer Anwendung
 > [!IMPORTANT]
 > Um iTunes Connect verwenden und somit eine App im App Store veröffentlichen zu können, **müssen** Sie an einem Apple Developer Program für Einzelpersonen oder Organisationen teilnehmen. Wenn Sie Mitglied eines Apple Developer **Enterprise** Programs sind, können Sie die Schritte auf dieser Seite nicht ausführen.
 
-<a name="provisioning" />
+<a name="provisioning"></a>
 
 ## <a name="provisioning-an-app-for-app-store-distribution"></a>Bereitstellen einer App für die Verteilung über den App Store
 
@@ -44,7 +44,7 @@ Sie können dieselbe **App-ID** und dieselben **Geräte** wie für das Entwicklu
 > [!NOTE]
 > Nur Team-Agents und Administratoren können Verteilungszertifikate und Bereitstellungsprofile erstellen.
 
-<a name="creatingcertificate" />
+<a name="creatingcertificate"></a>
 
 ## <a name="creating-a-distribution-certificate"></a>Erstellen eines Verteilungszertifikats
 
@@ -73,11 +73,11 @@ Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Preferences�
 
 3. Die Signierungsidentität wird wie unten dargestellt abhängig von Ihren Teamprivilegien generiert, oder Sie müssen warten, bis ein Team-Agent oder Administrator diese genehmigt: [![](images/generated.png "Die Signieridentität wird generiert und ein Dialogfeld angezeigt")](images/generated.png#lightbox).
 
-<a name="creatingprofile" />
+<a name="creatingprofile"></a>
 
 ## <a name="creating-a-distribution-profile"></a>Erstellen eines Verteilungsprofils
 
-<a name="creatingappid" />
+<a name="creatingappid"></a>
 
 ### <a name="creating-an-app-id"></a>Erstellen einer App-ID
 
@@ -131,7 +131,7 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
 
 -----
 
-<a name="selectprofile" />
+<a name="selectprofile"></a>
 
 ## <a name="selecting-a-distribution-profile-in-a-xamarinios-project"></a>Auswählen eines Verteilungsprofils in einem Xamarin.iOS-Projekt
 
@@ -171,7 +171,7 @@ Wenn Sie bereit sind, den endgültigen Build einer Xamarin.iOS-Anwendung für de
 
 -----
 
-<a name="itunesconnect" />
+<a name="itunesconnect"></a>
 
 ## <a name="configuring-your-application-in-itunes-connect"></a>Konfigurieren der Anwendung in iTunes Connect
 
@@ -181,7 +181,7 @@ Ihre Xamarin.iOS-Anwendung muss ordnungsgemäß in iTunes Connect eingerichtet u
 
 Weitere Informationen finden Sie in der Dokumentation unter [Konfigurieren einer App in iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md).
 
-<a name="submitting" />
+<a name="submitting"></a>
 
 ## <a name="submitting-an-app-to-itunes-connect"></a>Übermitteln einer App an iTunes Connect
 
@@ -189,7 +189,7 @@ Sobald die Anwendung mithilfe des Verteilungsbereitstellungsprofils signiert und
 
 Weitere Informationen zum Veröffentlichen von Anwendungen im App Store finden Sie unter [Veröffentlichen im App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md).
 
-<a name="windows" />
+<a name="windows"></a>
 
 ## <a name="automatically-copy-app-bundles-back-to-windows"></a>Automatisches Zurückkopieren von App Bundles nach Windows
 

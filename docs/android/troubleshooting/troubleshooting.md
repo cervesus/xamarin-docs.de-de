@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: 6d83afa47c459633506736b2497a82c444352c90
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 8855c80dd7478813408abaf2cfec68d48eced3bc
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303516"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571830"
 ---
 # <a name="troubleshooting-tips"></a>Hinweise zur Fehlerbehebung
 
@@ -25,7 +25,7 @@ Dazu gehören:
 2. Gerätebereitstellungsprotokolle
 3. Android-Debugprotokollausgabe
 
-<a name="Diagnostic_MSBuild_Output" />
+<a name="Diagnostic_MSBuild_Output"></a>
 
 ## <a name="diagnostic-msbuild-output"></a>Diagnoseausgabe von MSBuild
 

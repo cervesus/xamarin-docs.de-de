@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: 5f0b72772a386aa71d4ceec25b88546930b06f4f
-ms.sourcegitcommit: 51006a4eed7bf99b563df6fc1cea9074d0218448
+ms.openlocfilehash: 2676565a62b4b9d4414e9a69737b287bcc992c0b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82166338"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572012"
 ---
 # <a name="preparing-an-application-for-release"></a>Preparing an Application for Release (Vorbereiten einer Anwendung auf die Veröffentlichung)
 
@@ -35,7 +35,7 @@ Führen Sie die folgenden Schritte aus, um die App zur Veröffentlichung zu erst
 
 Jeder dieser Schritte wird unten genauer beschrieben.
 
-<a name="Specify_the_Application_Icon" />
+<a name="Specify_the_Application_Icon"></a>
 
 ## <a name="specify-the-application-icon"></a>Angeben des Anwendungssymbols
 
@@ -65,7 +65,7 @@ In diesen Beispielen bezieht sich `@drawable/icon` auf eine Symboldatei, die sic
 
 In der Regel wird `using Android.App` am oberen Rand von **AssemblyInfo.cs** deklariert (der Namespace des `Application`-Attributs ist `Android.App`). Dennoch müssen Sie diese `using`-Anweisung hinzufügen, falls sie noch nicht vorhanden ist.
 
-<a name="Versioning" />
+<a name="Versioning"></a>
 
 ## <a name="version-the-application"></a>Versionieren der Anwendung
 
@@ -89,7 +89,7 @@ Diese Werte können über den Bereich **Erstellen > Android-Anwendung** der **Pr
 
 -----
 
-<a name="shrink_apk" />
+<a name="shrink_apk"></a>
 
 ## <a name="shrink-the-apk"></a>Verkleinern der APK
 
@@ -158,11 +158,11 @@ ProGuard ist standardmäßig deaktiviert. Die Option **ProGuard aktivieren** ist
 
 Ausführlichere Informationen zur Verwendung des ProGuard-Tools finden Sie unter [ProGuard](~/android/deploy-test/release-prep/proguard.md).
 
-<a name="protect_app" />
+<a name="protect_app"></a>
 
 ## <a name="protect-the-application"></a>Schützen der Anwendung
 
-<a name="Disable_Debugging" />
+<a name="Disable_Debugging"></a>
 
 ### <a name="disable-debugging"></a>Deaktivieren des Debuggens
 
@@ -183,7 +183,7 @@ Das Android-Manifest enthält das `android:debuggable`-Attribut, das steuert, ob
 
 Beachten Sie, dass Debugbuilds automatisch manche Berechtigungen festlegen, um das Debuggen zu erleichtern (z.B. **Internet** und **ReadExternalStorage**). Releasebuilds verwenden jedoch nur die Berechtigungen, die sie explizit konfigurieren. Wenn Sie feststellen, dass Ihre App durch den Wechsel zum Releasebuild eine Berechtigung verliert, die im Debugbuild verfügbar war, überprüfen Sie, dass Sie diese Berechtigung wie in [Berechtigungen](~/android/app-fundamentals/permissions.md) beschrieben explizit in der Liste **Erforderliche Berechtigungen** aktiviert haben. 
 
-<a name="dotfuscator" id="dotfuscator" />
+<a name="dotfuscator" id="dotfuscator"></a>
 
 ### <a name="application-protection-with-dotfuscator"></a>Schützen der Anwendung mit Dotfuscator
 
@@ -208,7 +208,7 @@ Nach der Konfiguration schützt Dotfuscator CE automatisch jeden erstellten Buil
 
 -----
 
-<a name="bundle" />
+<a name="bundle"></a>
 
 ### <a name="bundle-assemblies-into-native-code"></a>Bündeln von Assemblys in nativem Code
 
@@ -218,7 +218,7 @@ Diese Option erfordert eine Unternehmenslizenz und ist nur verfügbar, wenn **Fa
 
 Beachten Sie, dass die Option **Assemblys in nativem Code bündeln** *nicht* bedeutet, dass die Assemblys in nativen Code kompiliert werden. Es ist nicht möglich, die [**AOT-Kompilierung**](#aot) zum Kompilieren von Assemblys in nativen Code zu verwenden.
 
-<a name="aot" />
+<a name="aot"></a>
 
 ### <a name="aot-compilation"></a>AOT-Kompilierung
 
@@ -233,7 +233,7 @@ Der _LLVM-Optimierungscompiler_ erstellt kürzeren und schneller kompilierbaren 
 > [!NOTE]
 > Für die Option **LLVM-Optimierungscompiler** ist eine Enterprise-Lizenz erforderlich.  
 
-<a name="Set_Packaging_Properties" />
+<a name="Set_Packaging_Properties"></a>
 
 ## <a name="set-packaging-properties"></a>Festlegen von Paketeigenschaften
 
@@ -279,7 +279,7 @@ Sie können nun ein App Bundle erstellen, indem Sie den [Archivierungsflow](#arc
 
 Weitere Informationen zu Android-App Bundles finden Sie unter [Informationen zu Android-App Bundles](https://developer.android.com/guide/app-bundle/).
 
-<a name="Compile" />
+<a name="Compile"></a>
 
 ## <a name="compile"></a>Compile
 
@@ -295,7 +295,7 @@ Nachdem alle oben aufgeführten Schritte abgeschlossen wurden, kompilieren Sie d
 
 -----
 
-<a name="archive" />
+<a name="archive"></a>
 
 ## <a name="archive-for-publishing"></a>Archivieren zur Veröffentlichung
 

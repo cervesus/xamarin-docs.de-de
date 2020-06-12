@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: aefd649fe1859306e5499addc1c08f4e42b2b424
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 172fd6a8c7ac1cfc0cfdaa428809a173b4999301
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026683"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570088"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Konfigurieren einer App in iTunes Connect
 
@@ -51,7 +51,7 @@ Anschließend können Sie Folgendes tun:
 
 Diese Informationen _müssen unbedingt_ korrekt und ordnungsgemäß eingegeben werden, bevor eine iOS-Anwendung zur Überprüfung und Veröffentlichung an iTunes Connect übermittelt werden kann. Weitere Informationen finden Sie in der Apple-Dokumentation unter [Vereinbarungen, Steuern und Bankverbindungen verwalten](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/ManagingContractsandBanking.html#//apple_ref/doc/uid/TP40011225-CH21-SW1).
 
-<a name="creating" />
+<a name="creating"></a>
 
 ## <a name="creating-an-itunes-connect-record"></a>Erstellen eines iTunes Connect-Datensatzes
 
@@ -80,7 +80,7 @@ Die neue Anwendung wird in iTunes Connect erstellt. Anschließend können Sie di
 
 [![](itunesconnect-images/add04.png "The new application will be created in iTunes Connect")](itunesconnect-images/add04.png#lightbox)
 
-<a name="managing" />
+<a name="managing"></a>
 
 ## <a name="managing-app-videos-and-screenshots"></a>Verwalten von App-Videos und -Screenshots
 
@@ -119,7 +119,7 @@ Führen Sie folgende Schritte in [iTunes Connect](https://itunesconnect.apple.co
 > [!NOTE]
 > Hinweis: Apple lehnt Ihre Anwendung ab, wenn die Screenshots oder das Vorschauvideo für die App nicht mit den aktuellen Funktionen Ihrer Anwendung übereinstimmen.
 
-<a name="metadata" />
+<a name="metadata"></a>
 
 ## <a name="managing-name-description-whats-new-keywords-and-urls"></a>Verwalten des Namens, der Felder „Description“ (Beschreibung) und „What's New“ (Neues in dieser Version) sowie der Schlüsselwörter und URLs
 
@@ -191,7 +191,7 @@ Führen Sie folgende Schritte in [iTunes Connect](https://itunesconnect.apple.co
 > [!IMPORTANT]
 > Hinweis: Apple lehnt Ihre Anwendung ab, wenn der Name, die Beschreibung, die Neuigkeiten, die Schlüsselwörter oder die URLs nicht mit den aktuellen Funktionen Ihrer App übereinstimmen.
 
-<a name="general" />
+<a name="general"></a>
 
 ## <a name="maintaining-general-app-information"></a>Verwalten des Bereichs „General App Information“ (Allgemeine Informationen zur App)
 
@@ -259,7 +259,7 @@ Führen Sie folgende Schritte in [iTunes Connect](https://itunesconnect.apple.co
 > [!NOTE]
 > Hinweis: Apple lehnt Ihre Übermittlung ab, wenn die Kategorien oder die Altersfreigabe nicht mit den aktuellen Funktionen Ihrer Anwendung übereinstimmen.
 
-<a name="game-center" />
+<a name="game-center"></a>
 
 ## <a name="maintaining-game-center-information"></a>Verwalten von Informationen im Game Center
 
@@ -336,7 +336,7 @@ Führen Sie folgende Schritte in [iTunes Connect](https://itunesconnect.apple.co
 7. Definieren Sie die Anwendung optional als eine **Custom B2B Application** (Anpassbare B2B-Anwendung).
 8. Klicken Sie auf **Save** (Speichern), um die Änderungen zu speichern.
 
-<a name="iap" />
+<a name="iap"></a>
 
 ## <a name="maintaining-in-app-purchase-information"></a>Verwalten des Bereichs „In-App Purchases“ (In-App-Käufe)
 

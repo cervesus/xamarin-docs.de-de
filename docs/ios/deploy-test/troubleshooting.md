@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: 1c8eddcf16c8513852c21babf34d81c9a3290406
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: b27608642ed04216b10767d37d26699a0aef7f3e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028438"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573767"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Tests und Bereitstellung für Xamarin.iOS: Problembehandlung
 
@@ -60,7 +60,7 @@ In manchen Fällen verlaufen Tests nicht problemlos.  Mit den folgenden Schritte
 
 - Pro Tag können höchstens zwei Builds für einen Review eingereicht werden. Da eine Versionsänderung einen Review erzwingt, können Versionsnummern maximal zweimal pro Tag geändert werden.
 
-<a name="Automatically_copy_app_bundles_back_to_Windows" />
+<a name="Automatically_copy_app_bundles_back_to_Windows"></a>
 
 ## <a name="automatically-copy-app-bundles-back-to-windows"></a>Automatisches Zurückkopieren von App Bundles nach Windows
 

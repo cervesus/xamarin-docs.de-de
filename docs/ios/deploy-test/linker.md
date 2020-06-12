@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 284705973f9c0ec606572170f7e927ed4745ddd1
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 263c48c5006ba0060756e1050497c38dfb7c8eae
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73030222"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567774"
 ---
 # <a name="linking-xamarinios-apps"></a>Verknüpfen von Xamarin.iOS-Apps
 
@@ -22,7 +22,7 @@ Der Linker verwendet eine statische Analyse, um die verschiedenen Codepfade zu b
 
 Da der Linker ein statisches Tool ist, kann er nicht für Inklusionstypen und -methoden markiert werden, die durch Reflektion aufgerufen oder dynamisch instanziiert werden. Es gibt zur Umgehung der Einschränkung mehrere Optionen.
 
-<a name="Linker_Behavior" />
+<a name="Linker_Behavior"></a>
 
 ## <a name="linker-behavior"></a>Linkerverhalten
 
@@ -56,7 +56,7 @@ Das Deaktivieren von Verknüpfungen stellt sicher, dass keine Assemblys verände
 
 Dies entspricht der Option *-nolink* bei Verwendung des Befehlszeilentools mtouch.
 
-<a name="Link_SDK_assemblies_only" />
+<a name="Link_SDK_assemblies_only"></a>
 
 ### <a name="link-sdk-assemblies-only"></a>Nur SDK-Assemblys verknüpfen
 
@@ -66,7 +66,7 @@ Dies ist die einfachste Option, da keine Änderungen an Ihrem Code erforderlich 
 
 Dies entspricht der Option *-linksdk* bei Verwendung des Befehlszeilentools mtouch.
 
-<a name="Link_all_assemblies" />
+<a name="Link_all_assemblies"></a>
 
 ### <a name="link-all-assemblies"></a>Alle Assemblys verknüpfen
 
@@ -74,13 +74,13 @@ Beim Verknüpfen von allem kann der Linker alle seine Optimierungen nutzen, um d
 
 Dies entspricht der Option *-linkall* bei Verwendung des Befehlszeilentools **mtouch**.
 
-<a name="Controlling_the_Linker" />
+<a name="Controlling_the_Linker"></a>
 
 ## <a name="controlling-the-linker"></a>Steuern des Linkers
 
 Bei Verwendung des Linkers wird mitunter Code entfernt, den Sie möglicherweise dynamisch, auch indirekt, aufgerufen haben. Um diese Fälle abzudecken, bietet der Linker einige Funktionen und Optionen, die Ihnen eine bessere Steuerung seiner Aktionen ermöglichen.
 
-<a name="Preserving_Code" />
+<a name="Preserving_Code"></a>
 
 ### <a name="preserving-code"></a>Beibehalten von Code
 
@@ -108,7 +108,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 Es spielt keine Rolle, in welchem Namespace dies definiert ist, denn der Linker sucht dieses Attribut nach Typnamen.
 
- <a name="Skipping_Assemblies" />
+ <a name="Skipping_Assemblies"></a>
 
 ### <a name="skipping-assemblies"></a>Überspringen von Assemblys
 
@@ -130,7 +130,7 @@ Wenn Sie möchten, dass der Linker mehrere Assemblys überspringt, fügen Sie me
 
 Es gibt keine Benutzeroberfläche für diese Option, aber sie kann im Visual Studio für Mac-Dialogfeld „Projektoptionen“ oder im Visual Studio-Bereich „Projekteigenschaften“ im Textfeld **Weitere mtouch-Argumente** angegeben werden. (z. B. verknüpft *--linkskip=mscorlib* „mscorlib.dll“ nicht, andere Assemblys in der Projektmappe dagegen schon).
 
-<a name="Disabling_Link_Away" />
+<a name="Disabling_Link_Away"></a>
 
 ### <a name="disabling-link-away"></a>Deaktivieren von „LinkAway“
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: f744f4ed5619e4e7f4a9d85897c4451bf7e5b9bc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 314c94fc9208a63e2f9305511df262327df921a5
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022346"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84565069"
 ---
 # <a name="nsstring-in-xamarinios-and-xamarinmac"></a>NSString in Xamarin.iOS und Xamarin.Mac
 
@@ -38,7 +38,7 @@ Hinter den Kulissen führt die Implementierung dieser Eigenschaft zum Marshallin
 
 Es gibt eine Handvoll Objective-C-APIs von Drittanbietern, die anstelle von `NSString` eine C-Zeichenfolge (ein *char*) nutzen. In diesen Fällen können Sie weiterhin den C#-Zeichenfolgendatentyp verwenden, aber Sie müssen den Bindungsgenerator mit dem [[PlainString]](~/cross-platform/macios/binding/objective-c-libraries.md)-Attribut darüber informieren, dass für diese Zeichenfolge kein Marshalling in einen `NSString`, sondern stattdessen in eine C-Zeichenfolge durchgeführt werden muss.
 
- <a name="Exceptions_to_the_Rule" />
+ <a name="Exceptions_to_the_Rule"></a>
 
 ## <a name="exceptions-to-the-rule"></a>Ausnahmen von der Regel
 

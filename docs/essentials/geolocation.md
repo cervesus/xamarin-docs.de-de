@@ -179,7 +179,7 @@ In der folgenden Tabelle ist die Genauigkeit bei den einzelnen Plattformen aufge
 | iOS | ~0 |
 | UWP | <=10 |
 
-<a name="calculate-distance" />
+<a name="calculate-distance"></a>
 
 ## <a name="detecting-mock-locations"></a>Ermitteln verfälschter Standorte
 Einige Geräte geben möglicherweise einen verfälschten Standort über den Anbieter oder mithilfe einer Anwendung zurück, die das Verfälschen des Standorts ermöglicht. Mithilfe von `IsFromMockProvider` können Sie dies für jede [`Location`](xref:Xamarin.Essentials.Location)-Klasse ermitteln.

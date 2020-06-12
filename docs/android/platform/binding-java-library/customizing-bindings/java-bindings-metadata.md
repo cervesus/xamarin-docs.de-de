@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 25a5d79084f7caa78eec4011c047bd19a63ef748
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2a88888b2306589930ad6386fb69bbd3b48924b7
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75487788"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571375"
 ---
 # <a name="java-bindings-metadata"></a>Metadaten für Java-Bindungen
 
@@ -158,7 +158,7 @@ Um den verwalteten Namen eines Wrappertyps (oder einer Wrappermethode) ordnungsg
     name="managedName">NewName</attr>
 ```
 
-<a name="Renaming_EventArg_Wrapper_Classes" />
+<a name="Renaming_EventArg_Wrapper_Classes"></a>
 
 #### <a name="renaming-eventarg-wrapper-classes"></a>Umbenennen von `EventArg`-Wrapperklassen
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 16ae440ec2fe3b5898c8f92d993279ef5e7e9794
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ae3c60699f7e31c66893723ac73248ced9a2d72a
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75607918"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567969"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Ad-Hoc-Verteilung für Xamarin.iOS-Apps
 
@@ -30,7 +30,7 @@ Bei der Ad-hoc-Verteilung müssen Anwendungen mit einem *Ad-hoc-Bereitstellungsp
 
 In dieser Anleitung erhalten Sie Informationen zur Bereitstellung für die Ad-hoc-Verteilung und zur Verteilung einer Xamarin.iOS-App.
 
-<a name="setup" />
+<a name="setup"></a>
 
 ## <a name="setting-up-for-distribution"></a>Einrichten der Verteilung
 
@@ -41,7 +41,7 @@ Im nächste Abschnitt wird die Erstellung eines Verteilungszertifikats und eines
 > [!NOTE]
 > Nur Team-Agents und Administratoren können Verteilungszertifikate und Bereitstellungsprofile erstellen.
 
-<a name="createcertificate" />
+<a name="createcertificate"></a>
 
 ## <a name="create-a-distribution-certificate"></a>Erstellen eines Verteilungszertifikats
 
@@ -70,11 +70,11 @@ Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Preferences�
 
 2. Klicken Sie anschließend auf die Schaltfläche **plus (+)** , und wählen Sie **iOS App Store** aus:  [![Auswählen von iOS App Store](ad-hoc-distribution-images/selectcert.png)](ad-hoc-distribution-images/selectcert.png#lightbox)
 
-<a name="createprofile" />
+<a name="createprofile"></a>
 
 ## <a name="create-a-distribution-provisioning-profile"></a>Erstellen eines Verteilungsbereitstellungsprofils
 
-<a name="createappid" />
+<a name="createappid"></a>
 
 ### <a name="create-an-app-id"></a>Erstellen einer App-ID
 Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich, um die Anwendung zu identifizieren, die an das Gerät des Benutzers verteilt wird. Wenn Sie die App-ID noch nicht erstellt haben, führen Sie die folgenden Schritte aus:
@@ -119,7 +119,7 @@ Möglicherweise müssen Sie Visual Studio beenden und durch Xcode (auf dem Mac d
 
 -----
 
-<a name="selectprofile" />
+<a name="selectprofile"></a>
 
 ## <a name="selecting-a-distribution-profile-in-a-xamarinios-project"></a>Auswählen eines Verteilungsprofils in einem Xamarin.iOS-Projekt
 
@@ -158,7 +158,7 @@ Wenn Sie den endgültigen Build einer Xamarin.iOS-Anwendung erstellen möchten, 
 
 -----
 
-<a name="adhoc" />
+<a name="adhoc"></a>
 
 ## <a name="ad-hoc-distribution"></a>Ad-hoc-Verteilung
 
@@ -166,7 +166,7 @@ Wenn Sie den endgültigen Build einer Xamarin.iOS-Anwendung erstellen möchten, 
 
 Durch die Ad-hoc-Verteilung können Entwickler auf vielen unterschiedlichen Geräten Betatests für Apps durchführen, wenn iTunes Connect keine Option ist. Die Ad-hoc-Verteilung funktioniert ähnlich wie die interne Verteilung und erfordert die Erstellung einer IPA-Datei, die anschließend entweder drahtlos oder manuell über iTunes verteilt werden kann.
 
-<a name="IPA_Creation" />
+<a name="IPA_Creation"></a>
 
 ### <a name="ipa-support-for-ad-hoc-deployment"></a>IPA-Unterstützung für Ad-hoc-Bereitstellung
 

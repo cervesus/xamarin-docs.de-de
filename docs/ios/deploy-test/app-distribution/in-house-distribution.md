@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 9b9db3e6ae081a02d2b2297e70c216015dceade6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 854fecd7945c1090b475b3571678388b8e1cf127
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026551"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573234"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Interne Verteilung für Xamarin.iOS-Apps
 
@@ -31,13 +31,13 @@ Es ist auch wichtig zu beachten, dass die Enterprise-Anwendung
 
 Alle Anwendungen müssen von Apple signiert sein.
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-your-application"></a>Testen der Anwendung
 
 Das Testen der Anwendung erfolgt mithilfe der Ad-hoc-Verteilung. Weitere Informationen zum Testen finden Sie im Leitfaden [Ad-hoc-Verteilung](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md). Denken Sie daran, dass Sie nur maximal auf 100 Geräten testen können.
 
-<a name="setup" />
+<a name="setup"></a>
 
 ## <a name="getting-set-up-for-distribution"></a>Einrichten für die Verteilung
 
@@ -47,7 +47,7 @@ Zertifikate von Apple Developer Enterprise Program sind drei Jahre gültig, und 
 
 Es ist wichtig, zu beachten, dass abgelaufene Zertifikate nicht erneuert werden können, und Sie stattdessen – wie [unten](#certificate) ausführlich beschrieben – das abgelaufene Zertifikat durch ein neues ersetzen müssen.
 
-<a name="certificate" />
+<a name="certificate"></a>
 
 ## <a name="creating-a-distribution-certificate"></a>Erstellen eines Verteilungszertifikats
 
@@ -84,11 +84,11 @@ Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Einstellungen
 
    [![](in-house-distribution-images/selectcert.png "Select iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
 
-<a name="profile" />
+<a name="profile"></a>
 
 ## <a name="creating-a-distribution-provisioning-profile"></a>Erstellen eines Verteilungsbereitstellungsprofils
 
-<a name="appid" />
+<a name="appid"></a>
 
 ### <a name="creating-an-app-id"></a>Erstellen einer App-ID
 
@@ -134,7 +134,7 @@ Möglicherweise müssen Sie Visual Studio beenden und durch Xcode (auf dem Mac d
 
 -----
 
-<a name="inhouse" />
+<a name="inhouse"></a>
 
 ## <a name="distributing-your-app-in-house"></a>Verteilen Ihrer Anwendung intern
 

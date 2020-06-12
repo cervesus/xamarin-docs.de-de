@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 0caea0c31275a7459286c143cc92ca90731dd93b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 20e75914699a60496860d906c74046f9057dd78f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303576"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84568281"
 ---
 # <a name="windows-installation"></a>Windows-Installation
 
@@ -85,7 +85,7 @@ Weitere Informationen zum Android-Emulator und zu Hyper-V und HAXM finden Sie im
 > [!NOTE]
 > In Versionen von Windows vor dem April-Update 2018 von Windows 10, ist HAXM nicht mit Hyper-V kompatibel. In diesem Szenario ist es erforderlich, entweder [Hyper-V zu deaktivieren](~/android/get-started/installation/android-emulator/troubleshooting.md#disable-hyperv) oder die langsameren Emulator-Images ohne x86-Optimierungen zu verwenden.
 
-<a name="device" />
+<a name="device"></a>
 
 ### <a name="android-device"></a>Android-Gerät
 

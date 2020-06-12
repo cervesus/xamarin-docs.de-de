@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: faab613d88a7f59d1095021d2b21faf9223ae33b
-ms.sourcegitcommit: 3fb407841dbe46b8b23573f08591228b7c0e2726
+ms.openlocfilehash: a776dbb2ecfaf0942d79c2b403c13f98cdc7c2e2
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81488909"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571973"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Hardwarebeschleunigung für verbesserte Leistung des Emulators (Hyper-V und HAXM)
 
@@ -53,7 +53,7 @@ Für die beste Benutzererfahrung unter Windows empfiehlt es sich, WHPX zum Besch
 
 Weitere Informationen zum Starten und Debuggen von Apps mit dem Android-Emulator finden Sie unter [Debuggen auf dem Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md).
 
-<a name="hyper-v-win" />
+<a name="hyper-v-win"></a>
 
 ## <a name="accelerating-with-hyper-v"></a>Beschleunigen mit Hyper-V
 
@@ -138,7 +138,7 @@ Wenn Ihre Hardware HAXM unterstützt, können Sie überprüfen, ob HAXM bereits 
 
 Wenn Ihr Computer HAXM unterstützen kann, aber HAXM nicht installiert ist, führen Sie die Schritte im nächsten Abschnitt aus, um HAXM zu installieren.
 
-<a name="install-haxm-win" />
+<a name="install-haxm-win"></a>
 
 ### <a name="installing-haxm"></a>Installieren von HAXM
 
@@ -181,7 +181,7 @@ Es empfiehlt sich, das Hypervisor-Framework zum Beschleunigen des Android-Emulat
 
 Weitere Informationen zum Starten und Debuggen von Apps mit dem Android-Emulator finden Sie unter [Debuggen auf dem Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md).
 
-<a name="hypervisor" />
+<a name="hypervisor"></a>
 
 ## <a name="accelerating-with-the-hypervisor-framework"></a>Beschleunigen mit dem Hypervisor-Framework
 
@@ -195,7 +195,7 @@ Wenn Ihr Mac die Kriterien erfüllt, verwendet der Android-Emulator automatisch 
 
 Wenn Ihr Mac das Hypervisor-Framework nicht unterstützt, können Sie HAXM zur Beschleunigung des Android-Emulators verwenden (wird im Folgenden beschrieben).
 
-<a name="haxm-mac" />
+<a name="haxm-mac"></a>
 
 ## <a name="accelerating-with-haxm"></a>Beschleunigen mit HAXM
 
@@ -229,7 +229,7 @@ Sie können überprüfen, ob HAXM bereits installiert ist, indem Sie die folgend
 
 Wenn HAXM nicht installiert ist, führen Sie die Schritte im nächsten Abschnitt aus, um HAXM zu installieren.
 
-<a name="install-haxm-mac" />
+<a name="install-haxm-mac"></a>
 
 ### <a name="installing-haxm"></a>Installieren von HAXM
 

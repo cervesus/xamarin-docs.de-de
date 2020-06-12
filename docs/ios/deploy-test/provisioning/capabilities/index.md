@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: 6250dfa24361601c2b9929d80fec3cc7a18cab2d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: bff3b2a7c1e273c7a03ae341dd663ebc722791eb
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028567"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571739"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Arbeiten mit Funktionen in Xamarin.iOS
 
@@ -113,7 +113,7 @@ Funktionen werden der Datei **Entitlements.plist** hinzugefügt. Wenn Sie Funkti
 
 -----
 
-<a name="devcenter" />
+<a name="devcenter"></a>
 
 ## <a name="using-the-developer-center"></a>Verwenden von Office Developer Center
 
@@ -146,7 +146,7 @@ Die Verwendung des Developer Centers besteht aus zwei Schritten: Erstellen einer
 
 9. Klicken Sie auf **Registrieren** und anschließend auf **Fertig**. Die neu erstellte App-ID sollte nun in der Liste der iOS-App-IDs angezeigt werden.
 
-<a name="provisioningprofile" />
+<a name="provisioningprofile"></a>
 
 ### <a name="creating-a-provisioning-profile"></a>Erstellen eines Bereitstellungsprofils
 
@@ -188,7 +188,7 @@ Erstellen Sie nun ein Bereitstellungsprofil, das diese App-ID enthält. Führen 
 > [!IMPORTANT]
 > Möglicherweise müssen Sie auch Berechtigungsschlüssel in der Datei „Entitlement.plist“ sowie Datenschutzschlüssel in der Datei „Info.plist“ festlegen. Weitere Informationen zu diesen Berechtigungen finden Sie im Leitfaden [Working with Entitlements](~/ios/deploy-test/provisioning/entitlements.md) (Arbeiten mit Berechtigungen).
 
-<a name="nextsteps" />
+<a name="nextsteps"></a>
 
 ## <a name="next-steps"></a>Nächste Schritte
 
@@ -197,7 +197,7 @@ Wenn eine Funktion auf der Serverseite aktiviert wurde, sind weitere Schritte er
 - Verwenden des Framework-Namespaces in Ihrer App
 - Hinzufügen der erforderlichen Berechtigungen zu Ihrer App Informationen zu den erforderlichen Berechtigungen und wie sie hinzugefügt werden finden Sie im Leitfaden [Introduction to Entitlements](~/ios/deploy-test/provisioning/entitlements.md) (Einführung in Berechtigungen).
 
-<a name="troubleshooting" />
+<a name="troubleshooting"></a>
 
 ## <a name="troubleshooting-capabilities"></a>Funktionen zur Problembehandlung
 
@@ -210,7 +210,7 @@ In der folgenden Liste werden einige der häufigsten Probleme aufgeführt, die z
 - Stellen Sie sicher, dass die Datenschutzschlüssel in der Datei „Info.plist“ entsprechend festgelegt sind.
 - Stellen Sie im Bereich **iOS-Bündelsignierung** der App sicher, dass **Benutzerdefinierte Berechtigungen** auf **Entitlements.plist** festgelegt ist. Hierbei handelt es sich _nicht_ um die Standardeinstellung für Debug- und iOS-Simulatorbuilds.
 
-<a name="summary" />
+<a name="summary"></a>
 
 ## <a name="summary"></a>Zusammenfassung
 

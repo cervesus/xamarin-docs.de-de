@@ -6,18 +6,18 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: f99b64b67f4f1cabf3a5884fabb1301e5ee39eee
-ms.sourcegitcommit: 06043f6a5628a7326ac6690eb62ead8e4780f4a7
+ms.openlocfilehash: d21394b3c33b3f415cbe45ae13c84cabab1ec30b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82738795"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571037"
 ---
 # <a name="cross-platform-performance"></a>Plattformübergreifende Leistung
 
 Eine schlechte Anwendungsleistung kann sich auf unterschiedliche Weise bemerkbar machen. Die Anwendung reagiert scheinbar nicht mehr, der Bildlauf ist möglicherweise verlangsamt, und auch die Akkulaufzeit kann abnehmen. Leistungsoptimierung umfasst jedoch mehr als das bloße Implementieren eines effizienten Codes. Es muss ebenfalls berücksichtigt werden, wie der Benutzer die Leistung der Anwendung wahrnimmt. Wenn beispielsweise Vorgänge ausgeführt werden können, ohne dass der Benutzer daran gehindert wird, gleichzeitig andere Aktivitäten auszuführen, kann dies dazu beitragen die Benutzerfreundlichkeit zu verbessern.
 
-<a name="profiler" />
+<a name="profiler"></a>
 
 ## <a name="use-the-profiler"></a>Verwenden des Profilers
 
@@ -31,7 +31,7 @@ Die folgenden Best Practices werden für das Profiling einer App empfohlen:
 - Das Profiling sollte im Idealfall auf einer Vielzahl von Geräten ausgeführt werden, da Leistungsmessungen auf einem Gerät nicht unbedingt die Leistungsmerkmale auf anderen Geräten widerspiegeln. Ist dies nicht möglich, sollte das Profiling zumindest auf einem Gerät ausgeführt werden, das die niedrigste, erwartete Spezifikation aufweist.
 - Schließen Sie alle anderen Anwendungen. So stellen Sie sicher, dass nur die Auswirkungen der Anwendung, für die ein Profil erstellt wurde, und keiner anderen Anwendung gemessen werden.
 
-<a name="idisposable" />
+<a name="idisposable"></a>
 
 ## <a name="release-idisposable-resources"></a>Freigeben von IDisposable-Ressourcen
 
@@ -89,7 +89,7 @@ Die `StreamReader`-Klasse implementiert `IDisposable`, und der `finally`-Block r
 
 Weitere Informationen finden Sie unter [System.IDisposable](xref:System.IDisposable).
 
-<a name="events" />
+<a name="events"></a>
 
 ## <a name="unsubscribe-from-events"></a>Abbestellen von Ereignisabonnements
 
@@ -160,14 +160,14 @@ public class Subscriber : IDisposable
 
 Das `handler`-Feld enthält den Verweis auf die anonyme Methode und dient zum Abonnieren und Abbestellen von Ereignissen.
 
-<a name="weakreferences" />
+<a name="weakreferences"></a>
 
 ## <a name="use-weak-references-to-prevent-immortal-objects"></a>Verwenden schwacher Verweise, um speicherresidente Objekte zu vermeiden
 
 > [!NOTE]
 > iOS-Entwickler sollten sich mit der Dokumentation zum [Vermeiden von Zirkelbezügen in iOS](~/ios/deploy-test/performance.md#avoid-strong-circular-references) vertraut machen, um sicherzustellen, dass ihre Apps Speicher effizient verwenden.
 
-<a name="lazy" />
+<a name="lazy"></a>
 
 ## <a name="delay-the-cost-of-creating-objects"></a>Verzögern der Kosten der Objekterstellung
 
@@ -209,7 +209,7 @@ Die verzögerte Initialisierung tritt beim ersten Zugriff auf die `Lazy<T>.Value
 
 Weitere Informationen zur verzögerten Initialisierung finden Sie unter [Verzögerte Initialisierung](https://msdn.microsoft.com/library/dd997286(v=vs.110).aspx).
 
-<a name="async" />
+<a name="async"></a>
 
 ## <a name="implement-asynchronous-operations"></a>Implementieren von asynchronen Vorgängen
 
@@ -248,7 +248,7 @@ Lang andauernde Vorgänge sollten auch einen Abbruch unterstützen. Es ist z.B. 
 
 Weitere Informationen finden Sie unter [Async Support Overview (Übersicht über die asynchrone Unterstützung)](~/cross-platform/platform/async.md).
 
-<a name="sgen" />
+<a name="sgen"></a>
 
 ## <a name="use-the-sgen-garbage-collector"></a>Verwenden des SGen-Garbage Collectors
 
@@ -282,7 +282,7 @@ Um die Auslastung des Garbage Collectors zu reduzieren, beachten Sie Folgendes:
 - Geben Sie Ressourcen wie Datenströme, Netzwerkverbindungen, große Speicherblöcke und Dateien explizit frei, sobald sie nicht mehr benötigt werden. Weitere Informationen finden Sie im Abschnitt [Freigeben von IDisposable-Ressourcen](#idisposable).
 - Heben Sie die Registrierung von Ereignishandlern auf, sobald sie nicht länger benötigt werden, damit die Objekte bereinigt werden können. Weitere Informationen finden Sie unter [Abbestellen von Ereignisabonnements](#events).
 
-<a name="linker" />
+<a name="linker"></a>
 
 ## <a name="reduce-the-size-of-the-application"></a>Reduzieren der Anwendungsgröße
 
@@ -335,7 +335,7 @@ Anhand der folgenden Schritte können Sie die Größe ausführbarer Anwendungsda
 Android-Apps können auch für jede ABI („Architektur“) in ein separates APK aufgeteilt werden.
 Weitere Informationen finden Sie in diesem Blogbeitrag: [How To Keep Your Android App Size Down (So halten Sie die Größe Ihrer Android-App gering)](https://montemagno.com/how-to-keep-your-android-app-size-down/).
 
-<a name="optimizeimages" />
+<a name="optimizeimages"></a>
 
 ## <a name="optimize-image-resources"></a>Optimieren von Bildressourcen
 
@@ -343,7 +343,7 @@ Bilder gehören zu den speicherintensivsten Ressourcen, die Anwendungen verwende
 
 Unabhängig von der Bildauflösung kann das Anzeigen von Bildressourcen den Speicherbedarf der App erheblich erhöhen. Sie sollten daher nur erstellt werden, wenn dies erforderlich ist. Und sie sollten freigegeben werden, sobald die Anwendung sie nicht mehr benötigt.
 
-<a name="activationperiod" />
+<a name="activationperiod"></a>
 
 ## <a name="reduce-the-application-activation-period"></a>Reduzieren des Aktivierungszeitraums der Anwendung
 
@@ -353,7 +353,7 @@ Vor der anfänglichen Benutzeroberfläche zeigt eine Anwendung einen Begrüßung
 
 Während des Aktivierungszeitraums führen Anwendungen Aktivierungslogik aus, die häufig das Laden und Verarbeiten von Ressourcen umfasst. Der Aktivierungszeitraum kann reduziert werden, indem sichergestellt wird, dass die erforderliche Ressourcen innerhalb der App verpackt und nicht remote abgerufen werden. Unter bestimmten Umständen müssen z.B. lokal gespeicherte Platzhalterdaten während des Aktivierungszeitraums geladen werden. Sobald die anfängliche UI angezeigt wird und der Benutzer mit der App interagieren kann, können die Platzhalterdaten nach und nach aus einer Remotequelle ersetzt werden. Außerdem sollte die Aktivierungslogik der Anwendung nur Tasks ausführen, die für den Anwendungsstart erforderlich sind. Dies kann hilfreich sein, wenn dadurch das Laden zusätzlicher Assemblys verzögert wird, da Assemblys bei der ersten Verwendung geladen werden.
 
-<a name="webservicecommunication" />
+<a name="webservicecommunication"></a>
 
 ## <a name="reduce-web-service-communication"></a>Reduzieren der Kommunikation des Webdiensts
 

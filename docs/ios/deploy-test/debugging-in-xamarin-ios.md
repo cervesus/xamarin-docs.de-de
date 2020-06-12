@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 48aba9ead925d3404146795eb9a3e0588d7b600d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 141d268e7a5670f9ba8002ae9edda828538a01a4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724695"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571791"
 ---
 # <a name="debugging-xamarinios-apps"></a>Debuggen von Xamarin.iOS-Apps
 
@@ -174,7 +174,7 @@ Dies bedeutet, dass es beinahe unmöglich ist, Haltepunkte für den Startcode de
 
 Wenn beim Einrichten des Debuggers ein Fehler auftritt, können Sie eine detaillierte Diagnose aktivieren, indem Sie „-v -v -v“ zu den zusätzlichen Mtouch-Argumenten in den Projektoptionen hinzufügen. Dadurch werden ausführliche Fehlerinformationen an die Konsole des Geräts übergeben.
 
- <a name="WiFi_Debugging" />
+ <a name="WiFi_Debugging"></a>
 
 ## <a name="wireless-debugging"></a>Drahtloses Debuggen
 
@@ -182,7 +182,7 @@ Der Standardvorgang in Xamarin.iOS ist das Debuggen der Anwendung auf Ihren Ger�
 
 Weitere Informationen zur drahtlosen Bereitstellen und zum drahtlosen Debuggen finden Sie im Leitfaden zur [drahtlosen Bereitstellung](~/ios/deploy-test/wireless-deployment.md).
 
-<a name="Technical_Details" />
+<a name="Technical_Details"></a>
 
 ## <a name="technical-details"></a>Technische Details
 
@@ -192,7 +192,7 @@ Beim Start kontaktiert eine Anwendung, die debuggt werden soll, den Debugger, un
 
 Dieser Soft-Debugger erfordert ein kooperatives Debugschema bei der Ausführung auf dem Gerät. Dies bedeutet, dass die Binärbuilds beim Debuggen größer sein werden als der Code. Dieser ist dazu instrumentiert, an jedem Sequenzpunkt zusätzlichen Code zur Debugunterstützung zu enthalten.
 
-<a name="Accessing_the_Console" />
+<a name="Accessing_the_Console"></a>
 
 ## <a name="accessing-the-console"></a>Zugreifen auf die Konsole
 
@@ -204,7 +204,7 @@ Für Visual Studio-Benutzer stehen einige Protokolle im Ausgabefenster zur Verf�
 
 -----
 
-<a name="Debugging_Mono's_Class_Libraries" />
+<a name="Debugging_Mono's_Class_Libraries"></a>
 
 ## <a name="debugging-monos-class-libraries"></a>Debuggen der Mono-Klassenbibliotheken
 

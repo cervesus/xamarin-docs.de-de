@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: be2f7f555b76d472f7a66d95e661bb2f5884c58f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ca83f6ced2e9c2f5380d3bf760e00d613cb0acb0
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725341"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570972"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Übersicht über Objective-C-Bindungen
 
@@ -21,7 +21,7 @@ Die Bindung einer Objective-C-Bibliothek zur Verwendung mit Xamarin erfolgt in d
 
 1. Schreiben Sie eine „API-Definition“ in C#, um die Offenlegung der nativen API in .NET und deren Zuordnung im zugrunde liegenden Objective-C zu beschreiben. Dies geschieht unter Verwendung von C#-Standardkonstrukten wie `interface` und verschiedenen **Bindungsattributen** (siehe dieses [einfache Beispiel](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
 
-2. Nachdem Sie die „API-Definition“ in C# geschrieben haben, kompilieren Sie sie, um eine „Bindungsassembly“ zu generieren. Die Kompilierung kann über die [**Befehlszeile**](#commandline) oder mithilfe eines [**Bindungsprojekts**](#bindingproject) in Visual Studio für Mac oder Visual Studio erfolgen.
+2. Nachdem Sie die „API-Definition“ in C# geschrieben haben, kompilieren Sie sie, um eine „Bindungsassembly“ zu generieren. Die Kompilierung kann über die [**Befehlszeile**](#command-line-bindings) oder mithilfe eines [**Bindungsprojekts**](#bindingproject) in Visual Studio für Mac oder Visual Studio erfolgen.
 
 3. Diese „Bindungsassembly“ wird anschließend Ihrem Xamarin-Anwendungsprojekt hinzugefügt, damit Sie über die definierte API auf die native Funktionalität zugreifen können.
    Das Bindungsprojekt ist vollständig getrennt von Ihren Anwendungsprojekten.
@@ -30,8 +30,6 @@ Die Bindung einer Objective-C-Bibliothek zur Verwendung mit Xamarin erfolgt in d
    > Schritt 1 kann mithilfe von [**Objective Sharpie**](#objectivesharpie) automatisiert werden. Dieses Tool untersucht die Objective-C-API und generiert eine vorgeschlagene C#-API-Definition. Sie können die von Objective Sharpie erstellten Dateien anpassen und sie in einem Bindungsprojekt (oder in der Befehlszeile) verwenden, um Ihre Bindungsassembly zu erstellen. Objective Sharpie selbst erstellt keine Bindungen, dies ist lediglich ein optionaler Bestandteil des übergeordneten Prozesses.
 
 Sie können sich über weitere technische Details zur [Funktionsweise](#howitworks) informieren, um Unterstützung beim Schreiben von Bindungen zu erhalten.
-
-<a name="Command_Line_Bindings" /><a name="commandline" />
 
 ## <a name="command-line-bindings"></a>Befehlszeilenbindungen
 
@@ -51,7 +49,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 Der obige Befehl erzeugt die Datei `cocos2d.dll` im aktuellen Verzeichnis, und sie enthält die vollständig gebundene Bibliothek, die Sie in Ihrem Projekt verwenden können. Dies ist das Tool, mit dem Visual Studio für Mac Ihre Bindungen erstellt, wenn Sie ein Bindungsprojekt verwenden (siehe Beschreibung [unten](#bindingproject)).
 
-<a name="bindingproject" />
+<a name="bindingproject"></a>
 
 ## <a name="binding-project"></a>Bindungsprojekt
 
@@ -59,7 +57,7 @@ Ein Bindungsprojekt kann in Visual Studio für Mac oder Visual Studio (Visual St
 
 Dieser [Leitfaden für die ersten Schritte](~/cross-platform/macios/binding/objective-c-libraries.md#Getting_Started) zeigt, wie Sie ein Bindungsprojekt erstellen und verwenden, um eine Bindung zu erzeugen.
 
-<a name="objectivesharpie" />
+<a name="objectivesharpie"></a>
 
 ## <a name="objective-sharpie"></a>Objektive Sharpie
 
@@ -67,7 +65,7 @@ Objective Sharpie ist ein weiteres, separates Befehlszeilentool, das Unterstütz
 
 In der [Objective Sharpie-Dokumentation](~/cross-platform/macios/binding/objective-sharpie/index.md) erfahren Sie, wie Sie native Bibliotheken, native Frameworks und CocoaPods durch Parsen in API-Definitionen umwandeln, die in Bindungen kompiliert werden können.
 
-<a name="howitworks" />
+<a name="howitworks"></a>
 
 ## <a name="how-binding-works"></a>Funktionsweise von Bindungen
 

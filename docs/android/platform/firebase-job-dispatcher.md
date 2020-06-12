@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: 280fe11f935db0a364f3342b22bb9544cdda1e6d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0ade609997e391e24d4a6da250172efa81a5d490
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020244"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571336"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase Job Dispatcher
 
@@ -173,7 +173,7 @@ Es ist möglich, einen Auftrag anzupassen. Ein Auftrag kann beispielsweise folge
 
 Diese Themen werden in den folgenden Abschnitten ausführlich behandelt.
 
-<a name="Passing_Parameters_to_a_Job" />
+<a name="Passing_Parameters_to_a_Job"></a>
 
 #### <a name="passing-parameters-to-a-job"></a>Übergeben von Parametern an einen Auftrag
 
@@ -201,7 +201,7 @@ public override bool OnStartJob(IJobParameters jobParameters)
 } 
 ```
 
-<a name="Setting_Constraints" />
+<a name="Setting_Constraints"></a>
 
 #### <a name="setting-constraints"></a>Festlegen von Einschränkungen
 
@@ -220,7 +220,7 @@ Job myJob = dispatcher.NewJobBuilder()
                       .Build();
 ```
 
-<a name="Setting_Job_Triggers" />
+<a name="Setting_Job_Triggers"></a>
 
 Der `JobTrigger` weist das Betriebssystem an, wann der Auftrag gestartet werden soll. Ein `JobTrigger` verfügt über ein _Ausführungsfenster_, das einen geplanten Zeitpunkt für die Ausführung des `Job` definiert. Das Ausführungsfenster umfasst Werte für ein _Startfenster_ und ein _Endfenster_. Das Startfenster entspricht der Anzahl der Sekunden, die das Gerät warten soll, bevor der Auftrag ausgeführt wird, und der Wert des Endfensters entspricht der maximalen Anzahl von Sekunden, die gewartet wird, bevor der `Job` ausgeführt wird. 
 
@@ -236,7 +236,7 @@ Job myJob = dispatcher.NewJobBuilder()
 
 Der Wert `Trigger.Now` ist der standardmäßige `JobTrigger` für einen Auftrag, der angibt, dass ein Auftrag nach der Planung so schnell wie möglich ausgeführt werden sollte.
 
-<a name="Setting_a_RetryStrategy" />
+<a name="Setting_a_RetryStrategy"></a>
 
 #### <a name="setting-a-retrystrategy"></a>Festlegen einer RetryStrategy
 

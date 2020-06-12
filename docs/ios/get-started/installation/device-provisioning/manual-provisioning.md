@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2020
-ms.openlocfilehash: 04cb1b9303e571b2a10cdfa621dcd312162e2893
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 9333750432395d008a5454e293648f4e594ae112
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303750"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571687"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Manuelle Bereitstellung für Xamarin.iOS
 
@@ -51,13 +51,13 @@ Das Entwicklerprofil enthält Zertifikate, die zugeordneten Schlüssel und belie
 > [!WARNING]
 > Der Verlust des Zertifikats und der zugehörigen Schlüssel kann äußerst ungünstig sein, da vorhandene Zertifikate gesperrt und zugeordnete Geräte erneut bereitgestellt werden müssen, einschließlich der für die Ad-hoc-Bereitstellung registrierten Geräte. Nach dem erfolgreichen Einrichten der Entwicklungszertifikate exportieren Sie eine Sicherungskopie und speichern sie an einem sicheren Ort. Weitere Informationen hierzu finden Sie in Abschnitt „Exporting and Importing Certificates and Profiles“ (Exportieren und Importieren von Zertifikaten und Profilen) des Handbuchs [Maintaining Certificates (Verwalten von Zertifikaten)](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html) in der Apple-Dokumentation.
 
-<a name="provisioning" />
+<a name="provisioning"></a>
 
 ## <a name="provision-an-ios-device-for-development"></a>Bereitstellen eines iOS-Geräts für die Entwicklung
 
 Nun, da Sie Ihre Identität bei Apple eingerichtet haben und über ein Entwicklungszertifikat verfügen, müssen Sie ein Bereitstellungsprofil und die erforderlichen Entitäten einrichten, um das Bereitstellen einer App auf einem Apple-Gerät zu ermöglichen. Das Gerät muss eine Version von iOS ausführen, die von Xcode unterstützt wird. Es kann erforderlich sein, das Gerät, Xcode oder beides zu aktualisieren.
 
-<a name="adddevice" />
+<a name="adddevice"></a>
 
 ## <a name="add-a-device"></a>Hinzufügen eines Geräts
 
@@ -83,7 +83,7 @@ Wenn Sie ein Bereitstellungsprofil für die Entwicklung erstellen, müssen wir a
 
 Wiederholen Sie die oben genannten Schritte für jedes iOS-Gerät, das zum Testen oder Debuggen einer Xamarin.iOS-Anwendung verwendet wird.
 
-<a name="provisioningprofile" />
+<a name="provisioningprofile"></a>
 
 ## <a name="create-a-development-provisioning-profile"></a>Erstellen eines Entwicklungsbereitstellungsprofils
 
@@ -122,7 +122,7 @@ Führen Sie die folgenden Schritte aus, um ein Bereitstellungsprofil für die En
 
 7. Sie können auf der nächsten Seite optional auf **Download** klicken, um das Bereitstellungsprofil auf den Mac herunterzuladen.
 
-<a name="download" />
+<a name="download"></a>
 
 ## <a name="download-provisioning-profiles-in-visual-studio"></a>Herunterladen von Bereitstellungsprofilen in Visual Studio
 

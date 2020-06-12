@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: d73c72fa70a22bacf122f5c3957b789914dfd765
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ff68666d9f0385b159b9ac9908ff997f53715308
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303552"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571934"
 ---
 # <a name="android-emulator-troubleshooting"></a>Behandlung von Problemen mit dem Android-Emulator
 
@@ -52,7 +52,7 @@ Wenn Sie eine Fehlermeldung erhalten, dass das APK nicht im Emulator installiert
 
 Wenn die Meldung **Ein MMIO-Zugriffsfehler ist aufgetreten.** angezeigt wird, starten Sie den Emulator neu.
 
-<a name="gps-win" />
+<a name="gps-win"></a>
 
 ## <a name="missing-google-play-services"></a>Fehlende Google Play Services
 
@@ -68,7 +68,7 @@ Dieses virtuelle Gerät beinhaltet z.B. Google Play Services und den Google Play
 > [!NOTE]
 > Google Play Store-Images sind nur für einige grundlegende Gerätetypen wie Pixel, Pixel 2, Nexus 5 und Nexus 5X verfügbar.
 
-<a name="perf-win" />
+<a name="perf-win"></a>
 
 ## <a name="performance-issues"></a>Leistungsprobleme
 
@@ -94,7 +94,7 @@ Eine häufige Ursache für dieses Problem ist, dass kein x86-basiertes Image auf
 
 [![Auswählen eines x86-Systemimage für ein virtuelles Gerät](troubleshooting-images/win/02-x86-virtual-device-w158-sml.png)](troubleshooting-images/win/02-x86-virtual-device-w158.png#lightbox)
 
-<a name="accel-issues-win" />
+<a name="accel-issues-win"></a>
 
 ## <a name="hardware-acceleration-issues"></a>Probleme bei der Hardwarebeschleunigung
 
@@ -224,7 +224,7 @@ SERVICE_NAME: intelhaxm
 
 Wenn `STATE` nicht auf `RUNNING` festgelegt ist, erfahren Sie unter [How to Use the Intel Hardware Accelerated Execution Manager (Verwenden von Intel Hardware Accelerated Execution Manager)](https://software.intel.com/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator), wie Sie das Problem beheben.
 
-<a name="virt-conflicts" />
+<a name="virt-conflicts"></a>
 
 #### <a name="haxm-virtualization-conflicts"></a>HAXM-Virtualisierungskonflikte
 
@@ -244,7 +244,7 @@ Wenn Sie HAXM auf einem Windows-PC verwenden, funktioniert HAXM nur dann, wenn V
 
 Um diesen Fehler zu korrigieren, starten Sie den Computer im BIOS, aktivieren Sie sowohl VT-x als auch SLAT (Second Level Address Translation), und starten Sie den Computer dann wieder unter Windows neu.
 
-<a name="disable-hyperv" />
+<a name="disable-hyperv"></a>
 
 #### <a name="disabling-hyper-v"></a>Hyper-V deaktivieren
 
@@ -268,7 +268,7 @@ Intel HAXM und Microsoft Hyper-V können nicht gleichzeitig aktiviert sein. Es g
 
 In einigen Fällen wird Hyper-V durch die oben aufgeführten Schritte nicht deaktiviert, wenn Device Guard und Credential Guard aktiviert sind. Wenn Sie Hyper-V nicht deaktivieren können (oder es vermeintlich deaktiviert ist, aber die Installation von HAXM dennoch fehlschlägt), führen Sie die Schritte im nächsten Abschnitt durch, um Device Guard und Credential Guard zu deaktivieren.
 
-<a name="disable-devguard" />
+<a name="disable-devguard"></a>
 
 #### <a name="disabling-device-guard"></a>Deaktivieren von Device Guard
 
@@ -388,7 +388,7 @@ Wenn Sie eine Fehlermeldung erhalten, dass das APK nicht im Emulator installiert
 
 Wenn **Ein MMIO-Zugriffsfehler ist aufgetreten.** angezeigt wird, starten Sie den Emulator neu.
 
-<a name="gps-mac" />
+<a name="gps-mac"></a>
 
 ## <a name="missing-google-play-services"></a>Fehlende Google Play Services
 
@@ -404,7 +404,7 @@ Dieses virtuelle Gerät beinhaltet z.B. Google Play Services und den Google Play
 > [!NOTE]
 > Google Play Store-Images sind nur für einige grundlegende Gerätetypen wie Pixel, Pixel 2, Nexus 5 und Nexus 5X verfügbar.
 
-<a name="perf-mac" />
+<a name="perf-mac"></a>
 
 ## <a name="performance-issues"></a>Leistungsprobleme
 
@@ -426,13 +426,13 @@ Eine häufige Ursache für dieses Problem ist, dass kein x86-basiertes Image auf
 
 [![Auswählen eines x86-Systemimage für ein virtuelles Gerät](troubleshooting-images/mac/02-x86-virtual-device-m75-sml.png)](troubleshooting-images/mac/02-x86-virtual-device-m75.png#lightbox)
 
-<a name="accel-issues-mac" />
+<a name="accel-issues-mac"></a>
 
 ## <a name="hardware-acceleration-issues"></a>Probleme bei der Hardwarebeschleunigung
 
 Sowohl bei der Verwendung des Hypervisorframeworks als auch von HAXM zur Hardwarebeschleunigung des Emulators können Probleme im Zusammenhang mit der Installation oder aufgrund einer veralteten macOS-Version auftreten. In den folgenden Abschnitten wird beschrieben, wie Sie dieses Problem beheben können.
 
-<a name="hypervisor-issues" />
+<a name="hypervisor-issues"></a>
 
 ### <a name="hypervisor-framework-issues"></a>Probleme mit dem Hypervisorframework
 

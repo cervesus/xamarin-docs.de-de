@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 63a5ed357a903700ea89d858bcde9798ddf97942
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 65a89afb3f301fd88ac4819bb8c3658a2be5e29d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724619"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573195"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Die Datei „iTunesMetadata.plist“ in Xamarin.iOS-Apps
 
@@ -22,7 +22,7 @@ Beim Erstellen einer iOS-Anwendung in iTunes Connect (entweder zum Verkauf oder 
 
 Um die fehlenden Informationen einer Ad-hoc-Verteilung bereitzustellen, kann eine optionale `iTunesMetadata.plist`-Datei erstellt und in die IPA-Datei der Anwendung eingefügt werden. Diese PLIST-Datei ist eine speziell formatierte XML-Datei, die Schlüssel-Wert-Paare enthält, die Information zu einer angegebenen iOS-Anwendung enthalten (weitere Informationen finden Sie im [Property List Programming Guide (Programmierleitfaden zu Eigenschaftenlisten)](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html) von Apple).
 
-<a name="iTunesMetadata_contents" />
+<a name="iTunesMetadata_contents"></a>
 
 ## <a name="the-itunesmetadataplist-contents"></a>Inhalt der „iTunesMetadata.plist“-Datei
 
@@ -280,7 +280,7 @@ Die folgenden Schlüssel werden in allen `iTunesMetadata.plist`-Dateien für iOS
 <integer>16843008</integer>
 ```
 
-<a name="iTunesMetadata_creating" />
+<a name="iTunesMetadata_creating"></a>
 
 ## <a name="creating-an-itunesmetadataplist-file"></a>Erstellen einer „iTunesMetadata.plist“-Datei
 

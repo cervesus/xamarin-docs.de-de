@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 43061272f3d3486926f38af792ee3b9df0c53670
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 7a3fd9e22bcf037ec669c77ac919035b0d04b942
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027233"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567930"
 ---
 # <a name="kitkat-features"></a>Features von KitKat
 
@@ -38,7 +38,7 @@ Um Xamarin.Android-Anwendungen für KitKat zu entwickeln, müssen Sie über *Xam
 
 [![Auswählen von Android 4.4 im Android-SDK-Manager](kitkat-images/api19.png)](kitkat-images/api19.png#lightbox)
 
-<a name="Migrating_Your_App_to_KitKat" />
+<a name="Migrating_Your_App_to_KitKat"></a>
 
 ## <a name="migrating-your-app-to-kitkat"></a>Migrieren Ihrer App zu KitKat
 
@@ -97,7 +97,7 @@ KitKat vereinfacht das Messaging für die Benutzer durch Aggregieren sämtlicher
 
 [WebView](xref:Android.Webkit.WebView) wurde in KitKat gründlich überarbeitet. Die größte Änderung betrifft die zusätzliche Sicherheit beim Laden von Inhalten in einen `WebView`. Die meisten Anwendungen, die für ältere API-Versionen entwickelt wurden, sollten erwartungsgemäß funktionieren. Allerdings empfiehlt es sich dringend, Anwendungen zu testen, die die `WebView`-Klasse verwenden. Weitere Informationen zu den betroffenen WebView-APIs finden Sie in der Android-Dokumentation [Migrating to WebView in Android 4.4](https://developer.android.com/guide/webapps/migrating.html) (Migrieren zu WebView in Android 4.4).
 
-<a name="user_experience" />
+<a name="user_experience"></a>
 
 ## <a name="user-experience"></a>Benutzerfreundlichkeit
 
@@ -310,7 +310,7 @@ Der folgende Screenshot zeigt das obige Theme mit durchsichtigen Status- und Nav
 
 [![Beispielscreenshot der App durchsichtigen Status- und Navigationsleisten](kitkat-images/theme.png)](kitkat-images/theme.png#lightbox)
 
-<a name="user_content" />
+<a name="user_content"></a>
 
 ## <a name="user-content"></a>Benutzerinhalte
 
@@ -505,7 +505,7 @@ Durch Aufrufen von `Print` wird die Benutzeroberfläche für den Druckvorgang au
 
 [![Screenshot von PrintHtmlActivity mit dem Menü „Als PDF speichern“](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
 
-<a name="hardware" />
+<a name="hardware"></a>
 
 ## <a name="hardware"></a>Hardware
 
@@ -639,7 +639,7 @@ Durch Neustarten des Geräts wird die Schrittzahl auf 0 zurückgesetzt. Für Ihr
 > [!NOTE]
 > Die API für die Erfassung und Zählung von Schritten wird zwar mit KitKat ausgeliefert, aber nicht alle Smartphones sind mit einem entsprechenden Sensor ausgestattet. Mit `PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);` können Sie überprüfen, ob ein Sensor verfügbar ist, oder sich vergewissern, dass der Rückgabewert von `GetDefaultSensor` nicht `null` lautet.
 
-<a name="developer_tools" />
+<a name="developer_tools"></a>
 
 ## <a name="developer-tools"></a>Entwicklertools
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 620a7edd4467a5a2bae60bbd82d0e1460c9f0040
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 63365ebc12089ced7de621b3a510996fa66119ce
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021417"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571960"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android-Leistung
 
@@ -38,7 +38,7 @@ Es gibt viele Techniken zum Verbessern der Leistung und der wahrnehmbaren Leistu
 > [!NOTE]
 > Bevor Sie diesen Artikel lesen, sollten Sie zuerst den Artikel [Cross-Platform Performance (Plattformübergreifende Leistung)](~/cross-platform/deploy-test/memory-perf-best-practices.md) lesen, der nicht-plattformspezifische Methoden zur Verbesserung der Arbeitsspeicherauslastung und Leistung von Anwendungen beschreibt, die mit der Xamarin-Plattform erstellt wurden.
 
-<a name="optimizelayout" />
+<a name="optimizelayout"></a>
 
 ## <a name="optimize-layout-hierarchies"></a>Optimieren der Layout-Hierarchien
 
@@ -119,7 +119,7 @@ Dieses Layout verfügt über 3 Ebenen und ist verschwenderisch, wenn es für jed
 
 Die vorherige Hierarchie mit 3 Ebenen wurde auf 2 Ebenen reduziert, und eine einzelne [`RelativeLayout`](xref:Android.Widget.RelativeLayout) ersetzt zwei [`LinearLayout`](xref:Android.Widget.LinearLayout)-Instanzen. Wenn Sie das Layout für jede [`ListView`](xref:Android.Widget.ListView)-Zeile vergrößern, erhalten Sie eine erhebliche Leistungssteigerung.
 
-<a name="optimizelistviews" />
+<a name="optimizelistviews"></a>
 
 ## <a name="optimize-list-views"></a>Optimieren von Listenansichten
 
@@ -132,7 +132,7 @@ Benutzer erwarten einen sanften Bildlauf und schnelle Ladezeiten für [`ListView
 
 Zusammenfassend können diese Techniken zum reibungslosen Bildlauf von [`ListView`](xref:Android.Widget.ListView)-Instanzen beitragen.
 
-<a name="reuserowviews" />
+<a name="reuserowviews"></a>
 
 ### <a name="reuse-row-views"></a>Wiederverwenden von Zeilenansichten
 
@@ -157,7 +157,7 @@ Wenn der Benutzer einen Bildlauf durchführt, ruft die [`ListView`](xref:Android
 
 Weitere Informationen finden Sie unter [Row View Re-Use (Wiederverwenden der Zeilenansicht)](~/android/user-interface/layouts/list-view/populating.md#row-view-re-use) in [Populating a ListView with Data (Eine Listenansicht mit Daten auffüllen)](~/android/user-interface/layouts/list-view/populating.md).
 
-<a name="removeeventhandlers" />
+<a name="removeeventhandlers"></a>
 
 ## <a name="remove-event-handlers-in-activities"></a>Entfernen von Ereignishandlern in Aktivitäten
 
@@ -186,7 +186,7 @@ Wenn die Aktivität den Ausführungsstatus beendet, wird `OnPause` aufgerufen. E
 App.Current.Service1.Updated -= service1UpdateHandler;
 ```
 
-<a name="limitservices" />
+<a name="limitservices"></a>
 
 ## <a name="limit-the-lifespan-of-services"></a>Begrenzen der Lebensdauer von Diensten
 
@@ -194,7 +194,7 @@ Wenn ein Dienst gestartet wird, führt Android den Dienstprozess aus. Dadurch wi
 
 Die Lebensdauer eines Diensts kann mithilfe eines `IntentService` begrenzt werden. Letzterer beendet sich selbst, sobald sein Ziel erreicht ist.
 
-<a name="releaseresources" />
+<a name="releaseresources"></a>
 
 ## <a name="release-resources-when-notified"></a>Freigeben von Ressourcen bei Benachrichtigung
 
@@ -212,7 +212,7 @@ Wenn der Anwendungsprozess zwischengespeichert wird, werden die folgenden Arbeit
 
 Benachrichtigungen sollten durch die Freigabe von Ressourcen auf der Grundlage der empfangenen Ebenen beantwortet werden.
 
-<a name="releaseresourcesuihidden" />
+<a name="releaseresourcesuihidden"></a>
 
 ## <a name="release-resources-when-the-user-interface-is-hidden"></a>Freigeben von Ressourcen, wenn die Benutzeroberfläche ausgeblendet wird
 
@@ -220,7 +220,7 @@ Geben Sie alle Ressourcen frei, die von der Benutzeroberfläche der App verwende
 
 Um eine Benachrichtigung zu erhalten, wenn der Benutzer die Benutzeroberfläche verlässt, implementieren Sie den [`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*)-Rückruf in `Activity`-Klassen, und merken Sie sich die [`TrimMemoryUiHidden`](xref:Android.Content.ComponentCallbacks2.TrimMemoryUiHidden)-Ebene, die angibt, dass die Benutzeroberfläche aus der Ansicht ausgeblendet ist. Diese Benachrichtigung wird nur empfangen, wenn *alle* UI-Komponenten der Anwendung für den Benutzer ausgeblendet werden. Die Freigabe der UI-Ressourcen bei Empfang dieser Benachrichtigung stellt sicher, dass die UI-Ressourcen weiterhin für eine schnelle Fortsetzung der Aktivität verfügbar sind, wenn der Benutzer von einer anderen Aktivität in der App zurückkehrt.
 
-<a name="optimizeimages" />
+<a name="optimizeimages"></a>
 
 ## <a name="optimize-image-resources"></a>Optimieren von Bildressourcen
 
@@ -228,7 +228,7 @@ Bilder gehören zu den speicherintensivsten Ressourcen, die Anwendungen verwende
 
 Weitere Informationen finden Sie unter [Optimize Image Resources (Optimieren von Bildressourcen)](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages) im Leitfaden [Cross Plattform Performance (Plattformübergreifende Leistung)](~/cross-platform/deploy-test/memory-perf-best-practices.md).
 
-<a name="disposeimages" />
+<a name="disposeimages"></a>
 
 ## <a name="dispose-of-unused-image-resources"></a>Löschen von nicht verwendeten Bildressourcen
 
@@ -245,7 +245,7 @@ using (Bitmap smallPic = BitmapFactory.DecodeByteArray(smallImageByte, 0, smallI
 
 Weitere Informationen zum Freigeben von Ressourcen, die gelöscht werden können, finden Sie unter [Freigeben von IDisposable-Ressourcen](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable).  
 
-<a name="avoidfloats" />
+<a name="avoidfloats"></a>
 
 ## <a name="avoid-floating-point-arithmetic"></a>Vermeiden der arithmetischen Gleitkommaoperatoren
 
@@ -254,7 +254,7 @@ Auf Android-Geräten sind arithmetische Gleitkommaoperatoren ca. doppelt so lang
 > [!NOTE]
 > Für Ganzzahlarithmetik fehlt einigen CPUs auch die Fähigkeit, Hardware aufzuteilen. Aus diesem Grund werden Ganzzahldivisionen und Modulooperationen häufig in der Software ausgeführt.
 
-<a name="dismissdialogs" />
+<a name="dismissdialogs"></a>
 
 ## <a name="dismiss-dialogs"></a>Schließen von Dialogfeldern
 

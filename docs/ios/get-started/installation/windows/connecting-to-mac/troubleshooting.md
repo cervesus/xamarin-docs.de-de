@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 40f99fb4e7e44e0a3dc499dc603e66620b890eaa
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 311e0a84cfc71421c0992ffcecde975429eb7d3a
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75886566"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572168"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Behebung von Verbindungsproblemen für einen Xamarin.iOS-Buildhost
 
@@ -82,7 +82,7 @@ Die Xamarin-Buildhostanwendung aus älteren Versionen von Xamarin.iOS ist nicht 
     ssh amyb@10.1.8.95
     ```
 
-    <a name="stepnine" />
+    <a name="stepnine"></a>
 
 9. Wenn **Schritt 8 erfolgreich ist**, können Sie versuchen, einen einfachen Befehl wie `ls` über die Verbindung auszuführen:
 
@@ -112,7 +112,7 @@ Die Xamarin-Buildhostanwendung aus älteren Versionen von Xamarin.iOS ist nicht 
 
 12. Wenn Schritt 8 fehlschlägt und **Schritt 10 fehlschlägt**, dann liegt das Problem wahrscheinlich darin, dass der SSH-Serverprozess auf dem Mac nicht ausgeführt wird oder nicht so konfiguriert ist, dass der aktuelle Benutzer sich anmelden kann. Überprüfen Sie in diesem Fall die Einstellungen der Remoteanmeldung aus Schritt 2 erneut, bevor Sie etwas kompliziertere Möglichkeiten untersuchen.
 
-<a name="knownissues" />
+<a name="knownissues"></a>
 
 ### <a name="known-issues-and-limitations"></a>Bekannte Probleme und Einschränkungen
 
@@ -135,7 +135,7 @@ Bekannte Ursachen:
 
 - **Fehler [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** : Dieses Problem kann bei Xamarin 4.1 auftreten, wenn die **Anmelde-Shell** im Kontextmenü **Erweiterte Optionen** für den Mac-Benutzer in **Systemeinstellungen &gt; Benutzer &amp; Gruppen** auf einen anderen Wert als **/bin/bash** festgelegt ist. (Ab Xamarin 4.2 führt dieses Szenario stattdessen zur Fehlermeldung „Verbindung konnte nicht hergestellt werden“.) **Problemumgehung:** Ändern Sie die **Anmelde-Shell** zurück in die ursprüngliche Standardeinstellung **/bin/bash**.
 
-<a name="tryagain" />
+<a name="tryagain"></a>
 
 #### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>„Es konnte keine Verbindung mit MacBuildHost.local hergestellt werden. Versuchen Sie es erneut.“
 
@@ -179,7 +179,7 @@ Gemeldete Ursachen:
 
     8. Deaktivieren und aktivieren Sie die **Remoteanmeldung** erneut unter **Systemeinstellungen &gt; Freigabe &gt; Remoteanmeldung**, um den SSH-Server neu zu starten.
 
-<a name="clearing" />
+<a name="clearing"></a>
 
 #### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>Deaktivieren des Brokers, IDB, Builds und Designer-Agents auf dem Mac
 
@@ -260,7 +260,7 @@ Wenn das Ausgabefenster nicht genügend Informationen enthält, um das Problem z
 
     [![](troubleshooting-images/troubleshooting-image14.png "Click the Layout Mode drop-down menu and select Thread")](troubleshooting-images/troubleshooting-image14.png#lightbox)
 
-<a name="verboselogs" />
+<a name="verboselogs"></a>
 
 #### <a name="verbose-log-files"></a>Ausführliche Protokolldateien
 
@@ -340,7 +340,7 @@ Dieses Problem kann auftreten, wenn Visual Studio nicht den MEF-Komponentencache
 
 Hierdurch wird der Visual Studio MEF-Komponentencache zum Beheben von Beschädigungen des Caches gelöscht.
 
-<a name="errors" />
+<a name="errors"></a>
 
 ### <a name="errors-due-to-existing-build-host-processes-on-the-mac"></a>Fehler aufgrund von vorhandenen Buildhostprozessen auf dem Mac
 

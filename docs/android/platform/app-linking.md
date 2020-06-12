@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: af90c286d2bb960a9f78547dd15c3d98a69529ae
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: bdcefd6a1b0192dc337afd5b5a5535a20eeaef9e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75487827"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571388"
 ---
 # <a name="app-linking-in-android"></a>App-Linking in Android
 
@@ -49,7 +49,7 @@ Das Einrichten von App-Links in Android 6.0 besteht aus zwei Hauptschritten:
 1. **Hinzufügen von Intent-Filtern für den URI der Website** &ndash; Über die Intent-Filter wird Android angewiesen, wie ein URL-Klick in einem mobilen Browser verarbeitet werden soll.
 2. **Veröffentlichen einer *Digital Asset Links-JSON*-Datei auf der Website** &ndash; Dies ist eine Datei, die auf eine Website hochgeladen und von Android verwendet wird, um die Beziehung zwischen der mobilen App und der Domäne der Website zu überprüfen. Ohne diese Datei kann Android die App nicht als Standardhandler für den URI installieren. Der Benutzer muss dies manuell vornehmen.
 
-<a name="configure-intent-filter" />
+<a name="configure-intent-filter"></a>
 
 ### <a name="configuring-the-intent-filter"></a>Konfigurieren des Intent-Filters
 

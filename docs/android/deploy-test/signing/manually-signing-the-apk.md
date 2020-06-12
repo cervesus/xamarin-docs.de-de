@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 2d84d149b2eb4194de35fabc69cf44af99c04d25
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 5dee7e18b7f9f47493293bc552cd4f44da56ceec
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724125"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571427"
 ---
 # <a name="manually-signing-the-apk"></a>Manuelles Signieren des APK
 
@@ -120,7 +120,7 @@ Weitere Informationen zur Verwendung von **apksigner** finden Sie in der [Google
 > [!NOTE]
 > Laut [Problem 62696222](https://issuetracker.google.com/issues/62696222) im Google Issue Tracker „fehlt“ **apksigner** im Android SDK. Um dieses Problem zu umgehen, müssen Sie die Android SDK-Buildtools v25.0.3 installieren und diese Version von **apksigner** verwenden.  
 
-<a name="Sign_the_APK_with_jarsigner" />
+<a name="Sign_the_APK_with_jarsigner"></a>
 
 ### <a name="sign-the-apk-with-jarsigner"></a>Signieren des APK mit jarsigner
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 2a0f9d063b319c0f412f6e8f47a59f0f994678ae
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 154cb6004bad5a12c98a22fa7522a9cc7a7c757a
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026282"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567475"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>Verwenden von mtouch zum Bündeln von Xamarin.iOS-Apps
 
@@ -67,7 +67,7 @@ $ mtouch -dev -c "iPhone Developer: Miguel de Icaza" foo.exe
 
 In diesem Fall verwenden wir das Zertifikat „iPhone Developer: Miguel de Icaza“, um die Anwendung zu signieren. Dieser Schritt ist sehr wichtig, andernfalls verweigert das physische Gerät das Laden der Anwendung.
 
- <a name="Running_your_Application" />
+ <a name="Running_your_Application"></a>
 
 ## <a name="running-your-application"></a>Ausführen Ihrer Anwendung
 
