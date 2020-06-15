@@ -1,26 +1,14 @@
 ---
-title: Was ist Xamarin.Forms?
-description: In diesem Artikel werden Xamarin.Forms und die dazugehörigen Bibliotheken eingeführt.
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b65be3cd552cf6a4fb094d59c44fa43de3deddcd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139190"
+title: "Was ist Xamarin.Forms?"
+description: "In diesem Artikel werden Xamarin.Forms und die dazugehörigen Bibliotheken eingeführt."
+ms.prod: xamarin ms.assetid: C1E24DB9-3099-4F79-BB88-10AABF7D4614 author: profexorgeek ms.author: jusjohns ms.date: 05/28/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="what-is-xamarinforms"></a>Was ist Xamarin.Forms?
 
 [![Screenshots: Xamarin.Forms-Beispielanwendung unter iOS und Android](what-is-xamarin-forms-images/xamarin-forms-app-cropped.png)](what-is-xamarin-forms-images/xamarin-forms-app.png#lightbox)
 
-Bei Xamarin.Forms handelt es sich um ein Open-Source-Benutzeroberflächenframework. Mithilfe von Xamarin.Forms können Entwickler iOS-, Android- und Windows-Anwendungen aus einer einzigen gemeinsamen Codebasis erstellen.
+Bei Xamarin.Forms handelt es sich um ein Open-Source-Benutzeroberflächenframework. Mithilfe von Xamarin.Forms können Entwickler Xamarin.iOS-, Xamarin.Android- und Windows-Anwendungen aus einer einzigen freigegebenen CodeBase erstellen.
 
 Xamarin.Forms ermöglicht Entwicklern die Erstellung von Benutzeroberflächen in XAML mit CodeBehind in C#. Diese Benutzeroberflächen werden als leistungsfähige native Steuerelemente für jede Plattform gerendert.
 
@@ -38,15 +26,15 @@ Xamarin.Forms eignet sich für Entwickler mit den folgenden Zielen:
 
 Über Xamarin.Forms steht eine konsistente API zur Verfügung, mit der sich plattformübergreifend Benutzeroberflächenelemente erstellen lassen. Diese API kann in XAML oder in C# implementiert werden und unterstützt Datenbindung für Muster wie Model View ViewModel (MVVM).
 
-Zur Laufzeit verwendet Xamarin.Forms Plattformrenderer, um die plattformübergreifenden Benutzeroberflächenelemente in native Steuerelemente für Android, iOS und UWP zu konvertieren. So können Entwickler natives Aussehen, native Servicequalität und native Leistung erreichen und dabei von den Vorteilen der plattformübergreifenden Codefreigabe profitieren.
+Zur Laufzeit verwendet Xamarin.Forms Plattformrenderer, um die plattformübergreifenden Benutzeroberflächenelemente in native Steuerelemente für Xamarin.Android, Xamarin.iOS und UWP zu konvertieren. So können Entwickler natives Aussehen, native Servicequalität und native Leistung erreichen und dabei von den Vorteilen der plattformübergreifenden Codefreigabe profitieren.
 
 Xamarin.Forms-Anwendungen bestehen normalerweise aus einer freigegebenen .NET Standard-Bibliothek und einzelnen Plattformprojekten. Die freigegebene Bibliothek enthält die XAML- und C#-Ansichten und sämtliche Geschäftslogik, wie Dienste, Modelle oder anderen Code. In den Plattformprojekten ist alle plattformspezifische Logik oder sind alle Pakete enthalten, die für die Anwendung erforderlich sind.
 
-Xamarin.Forms verwendet Xamarin, um .NET-Anwendungen plattformübergreifend nativ auszuführen. Weitere Informationen zu Xamarin finden Sie unter [Was ist Xamarin?](~/get-started/what-is-xamarin.md).
+Xamarin.Forms verwendet die Xamarin-Plattform, um .NET-Anwendungen plattformübergreifend nativ auszuführen. Weitere Informationen zur Xamarin-Plattform finden Sie unter [Was ist Xamarin?](~/get-started/what-is-xamarin.md).
 
-## <a name="additional-tools"></a>Weitere Tools
+## <a name="additional-functionality"></a>Zusätzliche Funktionen
 
-Xamarin.Forms verfügt über ein großes Ökosystem von NuGet-Paketen, die Anwendungen verschiedene Funktionen hinzufügen. In diesem Abschnitt werden einige häufig verwendeten NuGet-Pakete näher beschrieben.
+Xamarin.Forms verfügt über ein großes Ökosystem von Bibliotheken, die Anwendungen verschiedene Funktionen hinzufügen. In diesem Abschnitt werden einige dieser zusätzlichen Funktionen beschrieben.
 
 ### Xamarin.Essentials
 
