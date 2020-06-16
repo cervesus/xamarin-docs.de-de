@@ -8,24 +8,24 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/10/2020
-ms.openlocfilehash: 1b3eb61bf08eb006890b8b879c560163bd131844
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: c3b0749fae9a035c234961880a4a7059ccba2349
+ms.sourcegitcommit: 8f558dba59bfb95da0ee9154c94d7121b6a59037
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84655086"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767344"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Tipps zur Problembehandlung für xamarin. IOS
 
 ## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin. IOS kann System. valuetuple nicht auflösen.
 
-Dieser Fehler tritt aufgrund einer Inkompatibilität mit Visual Studio auf.
+Dieser Fehler tritt bei einer Inkompatibilität mit Visual Studio auf.
 
 - **Visual Studio 2017 Update 1** (Version 15,1 oder älter) ist nur mit **System. valuetuple nuget 4.3.0** (oder älter) kompatibel.
 
 - **Visual Studio 2017 Update 2** (Version 15,2 oder höher) ist nur mit dem **System. valuetuple-nuget-4.3.1** oder höher kompatibel.
 
-Wählen Sie das richtige System. valuetuple-nuget aus, das Ihrer Visual Studio 2017-Installation entspricht.
+Wählen Sie die Version von System.ValueTuple NuGet aus, die Ihrer Visual Studio 2017-Installation entspricht.
 
 ## <a name="receiving-error-retrieving-update-information-error-message"></a>Empfangene Fehlermeldung "Fehler beim Abrufen der Update Informationen"
 
@@ -392,6 +392,9 @@ Dies kann behoben werden, indem Sie die Optionen für das xamarin. IOS-Projekt �
 In einigen Fällen kann Antivirussoftware das xamarin. IOS SDK fälschlicherweise als Malware markieren und erforderliche Dateien entfernen, was das SDK beschädigt. Dies führt zu Fehlern, z. b. "xamarin konnte nicht gestartet werden. Start Programm konnte die ausführbare Datei ' mlaunch.exe ' nicht finden".
 
 Wenn Sie betroffen sind, schließen Sie mlaunch.exe von Ihrem Antivirenscanner aus, um eine erneute Ausführung zu verhindern. Weitere Informationen finden Sie unter [How to Create a Application Exception in der Symantex-Endpoint Protection-Manager](https://knowledge.broadcom.com/external/article/180778/how-to-create-an-application-exception-i.html) für Symantec und [Ausschließen von Dateien und Ordnern aus den Überprüfungen für den automatischen Schutz, Sonar und Download von](https://support.norton.com/sp/en/uk/home/current/solutions/v3672136) cloudanwendungen für Norton. Außerdem sollten Sie die Meldung "falsch positiv" an [Symantec](https://symsubmit.symantec.com) oder [Norton](https://submit.norton.com/?type=FP)melden.
+
+> [!IMPORTANT]
+> Für Norton-Benutzer haben Communitymitglieder auch berichtet, dass Sie die Überprüfung im Leerlauf wie hier beschrieben deaktivieren müssen: [Windows](https://community.norton.com/en/comment/5179683#comment-5179683), [Mac](https://github.com/xamarin/xamarin-macios/issues/8736#issuecomment-642874505).
 
 Nachdem Sie einen Ausschluss für mlaunch.exe hinzugefügt haben, ist eine Neuinstallation erforderlich, um die fehlenden Dateien wiederherzustellen. Der einfachste Ansatz hierfür ist das Wechseln von Kanälen in der Updater:
 
