@@ -17,7 +17,7 @@ Xamarin.Formsverfügt über drei primäre Ansichten zum Arbeiten mit Text:
 
 Die Text Darstellung kann mithilfe integrierter oder benutzerdefinierter [Stile](#styles) geändert werden, und einige Steuerelemente unterstützen benutzerdefinierte [Schriftarten](#fonts).
 
-## <a name="label"></a>[Bezeichnung](label.md)
+## <a name="label"></a>[Label](label.md)
 
 Die `Label` Ansicht wird zum Anzeigen von Text verwendet. Es können mehrere Textzeilen oder eine einzelne Textzeile angezeigt werden. `Label`kann Text mit mehreren Formatierungsoptionen darstellen, die in Inline verwendet werden. Die Beschriftungs Ansicht kann Text wrappen oder abschneiden, wenn er nicht in eine Zeile passt.
 
@@ -45,7 +45,7 @@ Beachten Sie, dass im Gegensatz zu `Label` `Entry` keine benutzerdefinierten Sch
 
 Weitere Informationen finden Sie im [Editor](editor.md) -Artikel.
 
-## <a name="fonts"></a>[Schriftarten](fonts.md)
+## <a name="fonts"></a>[Fonts](fonts.md)
 
 Viele Steuerelemente unterstützen unterschiedliche Schriftart Einstellungen mithilfe der integrierten Schriftarten auf jeder Plattform oder benutzerdefinierter Schriftarten, die in Ihrer APP enthalten sind. Ausführlichere Informationen finden Sie im Artikel zu [Schriftarten](fonts.md) .
 

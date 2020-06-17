@@ -632,5 +632,5 @@ Wenn Sie eine XAML-Markup Erweiterung gefunden haben, die in nicht verfügbar is
 - [Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Dynamische Stile](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Datenbindung](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.FormsSchel](~/xamarin-forms/app-fundamentals/shell/index.md)
+- [Xamarin.Forms-Shell](~/xamarin-forms/app-fundamentals/shell/index.md)
 - [Reagieren auf Änderungen des Systemdesigns in Xamarin.Forms Anwendungen](~/xamarin-forms/user-interface/theming/system-theme-changes.md)

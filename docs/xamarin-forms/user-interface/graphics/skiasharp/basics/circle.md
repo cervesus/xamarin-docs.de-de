@@ -95,7 +95,7 @@ Die- [`Style`](xref:SkiaSharp.SKPaint.Style) Eigenschaft gibt an, dass Sie eine 
 - [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
 - [`StrokeAndFill`](xref:SkiaSharp.SKPaintStyle.StrokeAndFill)
 
-Der Standardwert ist `Fill`. Verwenden Sie die dritte Option, um die Zeile zu zeichnen, und füllen Sie das Innere mit der gleichen Farbe aus.
+Der Standardwert lautet `Fill`. Verwenden Sie die dritte Option, um die Zeile zu zeichnen, und füllen Sie das Innere mit der gleichen Farbe aus.
 
 Legen Sie die- [`Color`](xref:SkiaSharp.SKPaint.Color) Eigenschaft auf einen Wert vom Typ fest [`SKColor`](xref:SkiaSharp.SKColor) . Eine Möglichkeit, einen-Wert zu erhalten, `SKColor` besteht darin, einen Xamarin.Forms `Color` Wert `SKColor` mithilfe der-Erweiterungsmethode in einen-Wert umzuwandeln [`ToSKColor`](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*) . Die- [`Extensions`](xref:SkiaSharp.Views.Forms.Extensions) Klasse im- `SkiaSharp.Views.Forms` Namespace enthält andere Methoden, die zwischen Xamarin.Forms Werten und skiasharp-Werten konvertieren.
 

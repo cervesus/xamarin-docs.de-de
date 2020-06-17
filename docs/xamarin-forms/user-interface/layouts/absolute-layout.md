@@ -69,7 +69,7 @@ Werte werden als eine Kombination aus Begrenzungen und einem-Flag angegeben. `La
 - **Positionproportional** &ndash; interpretiert den `X` -Wert und den- `Y` Wert als proportional, während die Größen Werte als absolut interpretiert werden.
 - **Sizeproportional** &ndash; interpretiert den `Width` -Wert und den- `Height` Wert als proportional, während die Positionswerte absolut sind.
 
-In XAML werden Begrenzungen und Flags als Teil der Definition von Sichten innerhalb des Layouts mithilfe der-Eigenschaft festgelegt `AbsoluteLayout.LayoutBounds` . Grenzen werden als durch Trennzeichen getrennte Liste von Werten, `X` ,, `Y` `Width` und `Height` in dieser Reihenfolge festgelegt. Flags werden auch in der Deklaration von Sichten im Layout mithilfe der- `AbsoluteLayout.LayoutFlags` Eigenschaft angegeben. Beachten Sie, dass Flags in XAML mithilfe einer durch Trennzeichen getrennten Liste kombiniert werden können. Betrachten Sie das folgenden Beispiel:
+In XAML werden Begrenzungen und Flags als Teil der Definition von Sichten innerhalb des Layouts mithilfe der-Eigenschaft festgelegt `AbsoluteLayout.LayoutBounds` . Grenzen werden als durch Trennzeichen getrennte Liste von Werten, `X` ,, `Y` `Width` und `Height` in dieser Reihenfolge festgelegt. Flags werden auch in der Deklaration von Sichten im Layout mithilfe der- `AbsoluteLayout.LayoutFlags` Eigenschaft angegeben. Beachten Sie, dass Flags in XAML mithilfe einer durch Trennzeichen getrennten Liste kombiniert werden können. Betrachten Sie das folgende Beispiel:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>

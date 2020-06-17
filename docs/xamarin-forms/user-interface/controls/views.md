@@ -34,7 +34,7 @@ Sichten sind Benutzeroberflächen Objekte, wie z. b. Bezeichnungen, Schaltfläch
 | [`Label`](xref:Xamarin.Forms.Label)zeigt einzeilige Text Zeichenfolgen oder mehrzeilige Textblöcke an, entweder mit konstanter oder variabler Formatierung. Legen Sie die- [`Text`](xref:Xamarin.Forms.Label.Text) Eigenschaft auf eine Zeichenfolge für die Konstante Formatierung fest, oder legen Sie die- [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) Eigenschaft auf ein- [`FormattedString`](xref:Xamarin.Forms.FormattedString) Objekt zur Variablen Formatierung fest<br /><br />[API-Dokumentation](xref:Xamarin.Forms.Label)  /  [Leitfaden](~/xamarin-forms/user-interface/text/label.md)  /  [Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text) | [![Beispiel für eine Bezeichnung](views-images/Label.png "Beispiel für eine Bezeichnung")](views-images/Label-Large.png#lightbox "Beispiel für eine Bezeichnung")<br /> [C#-Code für diese Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/LabelDemoPage.cs)  /  [XAML-Seite](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/LabelDemoPage.xaml) |
 |     |     |
 
-### <a name="image"></a>Bild
+### <a name="image"></a>Image
 
 |     |     |
 | --- | --- |

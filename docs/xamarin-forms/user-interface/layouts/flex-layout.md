@@ -382,7 +382,7 @@ Die- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction) Eigenschaft ist vom 
 
 - `Column`
 - `ColumnReverse`(oder "Column-Reverse" in XAML)
-- `Row`, der Standardwert.
+- `Row`, der Standardwert
 - `RowReverse`(oder "Row-Reverse" in XAML)
 
 In XAML können Sie den Wert dieser Eigenschaft mit den Namen der Enumerationsmember in Kleinbuchstaben, Großbuchstaben oder gemischter Groß-/Kleinschreibung angeben, oder Sie können zwei zusätzliche Zeichen folgen verwenden, die in Klammern angezeigt werden, die mit den CSS-Indikatoren identisch sind. (Die "Column-Reverse"-und "Row-Reverse"-Zeichen folgen werden in der Klasse definiert, [`FlexDirectionTypeConverter`](xref:Xamarin.Forms.FlexDirectionTypeConverter) die vom XAML-Parser verwendet wird.)
@@ -397,7 +397,7 @@ Beachten Sie, dass `Reverse` die Elemente bei den Optionen ganz rechts oder unte
 
 Die- [`Wrap`](xref:Xamarin.Forms.FlexLayout.Wrap) Eigenschaft ist vom Typ [`FlexWrap`](xref:Xamarin.Forms.FlexWrap) , eine Enumeration mit drei Elementen:
 
-- `NoWrap`, der Standardwert.
+- `NoWrap`, der Standardwert
 - `Wrap`
 - `Reverse`(oder "Wrap-Reverse" in XAML)
 
@@ -428,7 +428,7 @@ In allen drei Screenshots wird die- `Wrap` Eigenschaft auf festgelegt `Wrap` . D
 
 Die- [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems) Eigenschaft ist vom Typ [`FlexAlignItems`](xref:Xamarin.Forms.FlexAlignItems) , eine Enumeration mit vier Membern:
 
-- `Stretch`, der Standardwert.
+- `Stretch`, der Standardwert
 - `Center`
 - `Start`(oder "Flex-Start" in XAML)
 - `End`(oder "Flex-End" in XAML)
@@ -445,7 +445,7 @@ Für jedes einzelne Element kann die `AlignItems` Einstellung mit der [`AlignSel
 
 Die- [`AlignContent`](xref:Xamarin.Forms.FlexLayout.AlignContent) Eigenschaft ist vom Typ [`FlexAlignContent`](xref:Xamarin.Forms.FlexAlignContent) , eine Enumeration mit sieben Membern:
 
-- `Stretch`, der Standardwert.
+- `Stretch`, der Standardwert
 - `Center`
 - `Start`(oder "Flex-Start" in XAML)
 - `End`(oder "Flex-End" in XAML)
@@ -471,7 +471,7 @@ Im IOS-Bildschirmfoto befinden sich beide Zeilen im oberen Bereich. im Android-S
 
 Die [`AlignSelf`](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty) angefügte bindbare Eigenschaft weist den Typ auf [`FlexAlignSelf`](xref:Xamarin.Forms.FlexAlignContent) , eine Enumeration mit fünf Membern:
 
-- `Auto`, der Standardwert.
+- `Auto`, der Standardwert
 - `Stretch`
 - `Center`
 - `Start`(oder "Flex-Start" in XAML)

@@ -232,7 +232,7 @@ Mit zwei anderen Formaten können Sie nur eine einzelne hexadezimal Ziffer für 
 
 In diesen Fällen wird die Ziffer wiederholt, um den Wert zu bilden. #CF3 ist beispielsweise die RGB-Farbe CC-FF-33.
 
-## <a name="page-navigation"></a>Seiten Navigation
+## <a name="page-navigation"></a>Seitennavigation
 
 Wenn Sie das **xamlsamples** -Programm ausführen, `MainPage` wird das angezeigt. Um den neuen anzuzeigen `HelloXamlPage` , können Sie diesen entweder als neue Startseite in der **app.XAML.cs** -Datei festlegen, oder Sie können von zur neuen Seite navigieren `MainPage` .
 

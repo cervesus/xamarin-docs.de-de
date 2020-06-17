@@ -11,7 +11,7 @@ ms. Prod: xamarin ms. assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5 ms. Technolo
 
 ![Im App-Browser](webview-images/in-app-browser.png)
 
-## <a name="content"></a>Inhalt
+## <a name="content"></a>Content
 
 `WebView`unterstützt die folgenden Inhaltstypen:
 
@@ -319,7 +319,7 @@ Das ist alles!
 
 ![WebView-Navigations Schaltflächen](webview-images/in-app-browser.png)
 
-## <a name="events"></a>Ereignisse
+## <a name="events"></a>Events
 
 WebView löst die folgenden Ereignisse aus, um Sie bei der Reaktion auf Zustandsänderungen zu unterstützen:
 

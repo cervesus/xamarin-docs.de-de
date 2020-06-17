@@ -7,7 +7,7 @@ ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 90c2d00a-2876-4
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Einfache Vektorgrafiken sehen tendenziell unnatürlich aus. Die geraden Linien, weichen Kurven und voll Tonfarben ähneln nicht den Unzulänglichkeiten von realen Objekten. Beim Arbeiten an den computergenerierten Grafiken für das 1982 Movie _Tron_begann der Computer Analyst Ken Perlin mit der Entwicklung von Algorithmen, die zufällige Prozesse verwendet haben, um diese Bilder realistischer Texturen zuzuweisen. In 1997 hat Ken Perlin eine Academy-Auszeichnung für technische Leistungen gewonnen. Seine Arbeit wurde als Perlin-Rauschen bezeichnet und wird in skiasharp unterstützt. Im Folgenden ein Beispiel:
+Einfache Vektorgrafiken sehen tendenziell unnatürlich aus. Die geraden Linien, weichen Kurven und voll Tonfarben ähneln nicht den Unzulänglichkeiten von realen Objekten. Beim Arbeiten an den computergenerierten Grafiken für das 1982 Movie _Tron_begann der Computer Analyst Ken Perlin mit der Entwicklung von Algorithmen, die zufällige Prozesse verwendet haben, um diese Bilder realistischer Texturen zuzuweisen. In 1997 hat Ken Perlin eine Academy-Auszeichnung für technische Leistungen gewonnen. Seine Arbeit wurde als Perlin-Rauschen bezeichnet und wird in skiasharp unterstützt. Hier sehen Sie ein Beispiel:
 
 ![Perlin-Rausch Beispiel](noise-images/NoiseSample.png "Perlin-Rausch Beispiel")
 

@@ -188,7 +188,7 @@ Diese Verbesserung der Leistung liegt darin begründet, dass `SkiaSharp` Bitmaps
 
 Es ist nicht erforderlich, eine neue Bitmap zu erstellen, um darauf zu zeichnen. Sie können auch auf einer vorhandenen Bitmap zeichnen.
 
-Die **Monkey Moustache** -Seite verwendet den Konstruktor, um das **monkeyface. png** -Bild zu laden. Anschließend `SKCanvas` wird ein Objekt erstellt, das auf dieser Bitmap basiert, und verwendet die `SKPaint` `SKPath` Objekte und, um eine Moustache darauf zu zeichnen:
+Die **Monkey Moustache** -Seite verwendet den Konstruktor, um das **MonkeyFace.png** Bild zu laden. Anschließend `SKCanvas` wird ein Objekt erstellt, das auf dieser Bitmap basiert, und verwendet die `SKPaint` `SKPath` Objekte und, um eine Moustache darauf zu zeichnen:
 
 ```csharp
 public partial class MonkeyMoustachePage : ContentPage

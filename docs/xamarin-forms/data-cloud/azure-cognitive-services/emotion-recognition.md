@@ -40,8 +40,8 @@ Wenn ein gültiger API-Schlüssel nicht an die Gesichtserkennungs-API übergeben
 
 Die Emotions Erkennung wird durchgeführt, indem eine Post-Anforderung mit einem Bild an die `detect` API unter gesendet `https://[location].api.cognitive.microsoft.com/face/v1.0` wird, wobei `[location]]` die Region ist, die Sie zum Abrufen ihres API-Schlüssels verwendet haben. Die optionalen Anforderungs Parameter lauten wie folgt:
 
-- `returnFaceId`– Gibt an, ob fakeids der erkannten Gesichter zurückgegeben werden sollen. Der Standardwert ist `true`.
-- `returnFaceLandmarks`– Gibt an, ob Gesichtspunkte der erkannten Gesichter zurückgegeben werden sollen. Der Standardwert ist `false`.
+- `returnFaceId`– Gibt an, ob fakeids der erkannten Gesichter zurückgegeben werden sollen. Standardwert: `true`.
+- `returnFaceLandmarks`– Gibt an, ob Gesichtspunkte der erkannten Gesichter zurückgegeben werden sollen. Standardwert: `false`.
 - `returnFaceAttributes`– Gibt an, ob ein oder mehrere angegebene Gesichts Attribute analysiert und zurückgegeben werden sollen. Zu den unterstützten Gesichts Attributen zählen `age` , `gender` , `headPose` , `smile` , `facialHair` , `glasses` , `emotion` , `hair` , `makeup` , `occlusion` , `accessories` , `blur` , `exposure` und `noise` . Beachten Sie, dass die Gesichts Attribut Analyse zusätzliche Berechnungs-und Zeit Kosten hat.
 
 Bildinhalte müssen im Text der Post-Anforderung als URL oder Binärdaten abgelegt werden.

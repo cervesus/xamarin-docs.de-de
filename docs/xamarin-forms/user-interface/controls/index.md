@@ -13,7 +13,7 @@ Die vier Haupt Steuerungsgruppen, die zum Erstellen der Benutzeroberfläche eine
 
 - [**Seiten**](pages.md)
 - [**Layouts**](layouts.md)
-- [**Ansichten**](views.md)
+- [**Sichten**](views.md)
 - [**Zellen**](cells.md)
 
 Eine Xamarin.Forms Seite nimmt in der Regel den gesamten Bildschirm ein. Die Seite enthält normalerweise ein Layout, das Sichten und möglicherweise andere Layouts enthält. Zellen sind spezialisierte Komponenten, die in Verbindung mit und verwendet werden [`TableView`](views.md#tableview) [`ListView`](views.md#listview) . Ein Klassendiagramm, das die Hierarchie von Typen anzeigt, die in der Regel zum Erstellen einer Benutzeroberfläche in verwendet werden, finden Sie Xamarin.Forms unter Steuer [ Xamarin.Forms Elemente-Klassenhierarchie](~/xamarin-forms/internals/class-hierarchy.md).

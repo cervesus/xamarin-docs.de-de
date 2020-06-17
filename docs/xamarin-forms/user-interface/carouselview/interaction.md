@@ -12,8 +12,8 @@ ms. Prod: xamarin ms. assetid: 854d97e5-D119-4be2-AE7C-bd428792c992 ms. Technolo
 - `CurrentItem`, vom Typ `object` , das aktuelle Element, das angezeigt wird. Diese Eigenschaft verfügt über einen Standard Bindungs Modus von `TwoWay` und verfügt über einen `null` Wert, wenn keine anzuzeigenden Daten vorhanden sind.
 - `CurrentItemChangedCommand`vom Typ `ICommand` , der ausgeführt wird, wenn sich das aktuelle Element ändert.
 - `CurrentItemChangedCommandParameter` vom Typ `object`: der Parameter, der an `CurrentItemChangedCommand` übergeben wird.
-- `IsBounceEnabled`vom Typ `bool` , der angibt, ob das `CarouselView` an einer Inhalts Grenze springt. Der Standardwert ist `true`.
-- `IsSwipeEnabled`vom Typ `bool` , der bestimmt, ob das angezeigte Element durch eine Schwenkbewegung geändert wird. Der Standardwert ist `true`.
+- `IsBounceEnabled`vom Typ `bool` , der angibt, ob das `CarouselView` an einer Inhalts Grenze springt. Standardwert: `true`.
+- `IsSwipeEnabled`vom Typ `bool` , der bestimmt, ob das angezeigte Element durch eine Schwenkbewegung geändert wird. Standardwert: `true`.
 - `Position`, vom Typ `int` , der Index des aktuellen Elements in der zugrunde liegenden Auflistung. Diese Eigenschaft verfügt über einen Standard Bindungs Modus von `TwoWay` und verfügt über einen Wert von 0, wenn keine anzuzeigenden Daten vorhanden sind.
 - `PositionChangedCommand`vom Typ `ICommand` , der ausgeführt wird, wenn sich die Position ändert.
 - `PositionChangedCommandParameter` vom Typ `object`: der Parameter, der an `PositionChangedCommand` übergeben wird.
@@ -38,7 +38,7 @@ Wenn sich das aktuell angezeigte Element ändert, wird die- `CurrentItem` Eigens
 > [!IMPORTANT]
 > Die- `Position` Eigenschaft ändert sich, wenn sich die `CurrentItem` Eigenschaft ändert. Dies führt dazu `PositionChangedCommand` , dass der ausgeführt wird und das `PositionChanged` Ereignis ausgelöst wird.
 
-### <a name="event"></a>Ereignis
+### <a name="event"></a>event
 
 Das folgende XAML-Beispiel zeigt einen [`CarouselView`](xref:Xamarin.Forms.CarouselView) , der einen Ereignishandler verwendet, um auf das aktuelle Element zu reagieren, das sich ändert:
 
@@ -111,7 +111,7 @@ Wenn sich das aktuell angezeigte Element ändert, wird die- `Position` Eigenscha
 > [!NOTE]
 > Wenn Sie die- `Position` Eigenschaft auf 0 festlegen, wird das erste Element in der zugrunde liegenden Auflistung angezeigt.
 
-### <a name="event"></a>Ereignis
+### <a name="event"></a>event
 
 Das folgende XAML-Beispiel zeigt einen [`CarouselView`](xref:Xamarin.Forms.CarouselView) , der einen Ereignishandler verwendet, um auf die Eigenschaft zu reagieren, die `Position` geändert wird:
 

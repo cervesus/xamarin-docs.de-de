@@ -112,7 +112,7 @@ In c# werden integrierte Stile ausgewählt aus `Device.Styles` :
 label.Style = Device.Styles.TitleStyle;
 ```
 
-## <a name="accessibility"></a>Zugriff
+## <a name="accessibility"></a>Barrierefreiheit
 
 Die integrierten Stile sind vorhanden, damit Barrierefreiheits Einstellungen leichter zu beachten sind. Wenn Sie eines der integrierten Stile verwenden, werden die Schriftgrößen automatisch vergrößert, wenn ein Benutzer seine Barrierefreiheits Einstellungen entsprechend festlegt.
 

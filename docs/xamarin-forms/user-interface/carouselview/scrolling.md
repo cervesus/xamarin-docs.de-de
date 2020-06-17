@@ -13,7 +13,7 @@ ms. Prod: xamarin ms. assetid: 92 d7b618-07fa-4343-9d0f -212525e92c39 ms. Techno
 
 - `HorizontalScrollBarVisibility`vom Typ `ScrollBarVisibility` , der angibt, wann die horizontale Schiebe Leiste sichtbar ist.
 - `IsDragging`vom Typ `bool` , der angibt, ob der Bildlauf durch `CarouselView` führt. Dies ist eine schreibgeschützte Eigenschaft, deren Standardwert ist `false` .
-- `IsScrollAnimated`vom Typ `bool` , der angibt, ob beim Scrollen von eine Animation ausgeführt wird `CarouselView` . Der Standardwert ist `true`.
+- `IsScrollAnimated`vom Typ `bool` , der angibt, ob beim Scrollen von eine Animation ausgeführt wird `CarouselView` . Standardwert: `true`.
 - `ItemsUpdatingScrollMode`vom Typ `ItemsUpdatingScrollMode` , der das Scrollverhalten von darstellt, `CarouselView` Wenn diesem neue Elemente hinzugefügt werden.
 - `VerticalScrollBarVisibility`vom Typ `ScrollBarVisibility` , der angibt, wann die vertikale Schiebe Leiste sichtbar ist.
 

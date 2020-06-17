@@ -45,7 +45,7 @@ Jede APP, die Eingaben von Benutzern akzeptiert, sollte sicherstellen, dass die 
 
 Im Zusammenhang mit dem Model-View-ViewModel (MVVM)-Muster ist häufig ein Ansichts Modell oder-Modell erforderlich, um die Datenüberprüfung auszuführen und Validierungs Fehler an die Sicht zu senden, damit Sie vom Benutzer korrigiert werden kann.
 
-## <a name="configuration-management"></a>[Konfigurationsverwaltung](configuration-management.md)
+## <a name="configuration-management"></a>[Konfigurations Verwaltung](configuration-management.md)
 
 Einstellungen ermöglichen die Trennung von Daten, die das Verhalten einer App aus dem Code konfigurieren, sodass das Verhalten geändert werden kann, ohne die APP neu zu erstellen. App-Einstellungen sind Daten, die von einer App erstellt und verwaltet werden, und Benutzereinstellungen sind die anpassbaren Einstellungen einer APP, die sich auf das Verhalten der APP auswirken und keine häufige erneute Anpassung erfordern.
 

@@ -83,11 +83,11 @@ static void CreateSearchIndex()
 Die `Index.Name` -Eigenschaft sollte auf den Namen des Indexes festgelegt werden, und die- `Index.Fields` Eigenschaft sollte auf ein Array von-Objekten festgelegt werden `Field` . Jede `Field` Instanz gibt einen Namen, einen Typ und alle Eigenschaften an, die angeben, wie das Feld verwendet wird. Zu diesen Eigenschaften zählen folgende:
 
 - `IsKey`– Gibt an, ob das Feld der Schlüssel des Indexes ist. Nur ein Feld im Index vom Typ `DataType.String` muss als Schlüsselfeld festgelegt werden.
-- `IsFacetable`– Gibt an, ob es möglich ist, die Facetten Navigation für dieses Feld auszuführen. Der Standardwert ist `false`.
-- `IsFilterable`– Gibt an, ob das Feld in Filter Abfragen verwendet werden kann. Der Standardwert ist `false`.
-- `IsRetrievable`– Gibt an, ob das Feld in den Suchergebnissen abgerufen werden kann. Der Standardwert ist `true`.
-- `IsSearchable`– Gibt an, ob das Feld in voll Text suchen eingeschlossen ist. Der Standardwert ist `false`.
-- `IsSortable`– Gibt an, ob das Feld in Ausdrücken verwendet werden kann `OrderBy` . Der Standardwert ist `false`.
+- `IsFacetable`– Gibt an, ob es möglich ist, die Facetten Navigation für dieses Feld auszuführen. Standardwert: `false`.
+- `IsFilterable`– Gibt an, ob das Feld in Filter Abfragen verwendet werden kann. Standardwert: `false`.
+- `IsRetrievable`– Gibt an, ob das Feld in den Suchergebnissen abgerufen werden kann. Standardwert: `true`.
+- `IsSearchable`– Gibt an, ob das Feld in voll Text suchen eingeschlossen ist. Standardwert: `false`.
+- `IsSortable`– Gibt an, ob das Feld in Ausdrücken verwendet werden kann `OrderBy` . Standardwert: `false`.
 
 > [!NOTE]
 > Wenn Sie einen Index nach seiner Bereitstellung ändern, werden die Daten neu erstellt und erneut geladen.

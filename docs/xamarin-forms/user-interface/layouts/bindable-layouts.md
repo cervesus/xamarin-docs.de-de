@@ -18,8 +18,8 @@ Bindbare Layouts ermöglichen es allen layoutklassen, die von der-Klasse abgelei
 
 Außerdem macht die- `BindableLayout` Klasse die folgenden bindbaren Eigenschaften verfügbar:
 
-- `EmptyView`– Gibt die- `string` oder-Ansicht an, die angezeigt wird, wenn die- `ItemsSource` Eigenschaft ist `null` , oder wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Der Standardwert ist `null`.
-- `EmptyViewTemplate`– Gibt den [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) an, der angezeigt wird, wenn die- `ItemsSource` Eigenschaft ist `null` , oder wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Der Standardwert ist `null`.
+- `EmptyView`– Gibt die- `string` oder-Ansicht an, die angezeigt wird, wenn die- `ItemsSource` Eigenschaft ist `null` , oder wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Standardwert: `null`.
+- `EmptyViewTemplate`– Gibt den [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) an, der angezeigt wird, wenn die- `ItemsSource` Eigenschaft ist `null` , oder wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Standardwert: `null`.
 
 > [!NOTE]
 > Die `EmptyViewTemplate` -Eigenschaft hat Vorrang, wenn die `EmptyView` -Eigenschaft und die-Eigenschaft `EmptyViewTemplate` festgelegt sind.

@@ -15,7 +15,7 @@ Die XAML-Vorschau zeigt Ihnen, wie Ihre Xamarin.Forms XAML-Seite unter IOS und A
 
 ::: zone pivot="windows"
 
-### <a name="visual-studio-2019"></a>Visual Studio 2019
+### <a name="visual-studio-2019"></a>Visual Studio 2019
 
 Sie können den XAML-Previewer öffnen, indem Sie im Bereich geteilte Ansicht auf die Pfeile klicken. Wenn Sie das Standardverhalten der Split-Ansicht ändern möchten, verwenden Sie das Dialogfeld **Tools > Optionen > xamarin > Xamarin.Forms XAML Previewer** . In diesem Dialogfeld können Sie die Standarddokument Ansicht und die geteilte Ausrichtung auswählen.
 

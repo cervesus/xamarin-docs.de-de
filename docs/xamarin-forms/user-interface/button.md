@@ -747,7 +747,7 @@ Bei einer Bitmap in einem `Button` liegt die beste Größe normalerweise zwische
 
 Im IOS-Projekt enthält der Ordner " **Resources** " drei Größen dieses Bilds:
 
-- Eine quadratische Bitmap mit 48 Pixel, die als **/Resources/MonkeyFace.png** gespeichert ist
+- Eine quadratische Bitmap mit 48 Pixel, die als/Resources/gespeichert ist **MonkeyFace.png**
 - Eine quadratische Bitmap mit 96 Pixel, gespeichert als**/Resource/MonkeyFace@2x.png**
 - Eine quadratische Bitmap mit 144 Pixel, gespeichert als**/Resource/MonkeyFace@3x.png**
 
@@ -755,18 +755,18 @@ Alle drei Bitmaps erhielten eine **Buildaktion** von **bundleresource**.
 
 Für das Android-Projekt haben die Bitmaps alle denselben Namen, aber Sie werden in verschiedenen Unterordnern des Ordners " **Resources** " gespeichert:
 
-- Eine quadratische Bitmap mit 72 Pixel, die als **/Resources/drawable-hdpi/MonkeyFace.png** gespeichert ist
-- Eine quadratische Bitmap mit 96 Pixel, die als **/Resources/drawable-xhdpi/MonkeyFace.png** gespeichert ist
-- Eine quadratische Bitmap mit 144 Pixel, die als **/Resources/drawable-xxhdpi/MonkeyFace.png** gespeichert ist
-- Eine quadratische Bitmap mit 192 Pixel, die als **/Resources/drawable-xxxhdpi/MonkeyFace.png** gespeichert ist
+- Eine quadratische Bitmap mit 72 Pixel, die als/Resources/drawable-hdpi/gespeichert ist **MonkeyFace.png**
+- Eine quadratische Bitmap mit 96 Pixel, die als/Resources/drawable-xhdpi/gespeichert ist **MonkeyFace.png**
+- Eine quadratische Bitmap mit 144 Pixel, die als/Resources/drawable-xxhdpi/gespeichert ist **MonkeyFace.png**
+- Eine quadratische Bitmap mit 192 Pixel, die als/Resources/drawable-xxxhdpi/gespeichert ist **MonkeyFace.png**
 
 Diese **wurden als** Buildvorgang von " **androidresource**" festgestellt.
 
 Im UWP-Projekt können Bitmaps an einer beliebigen Stelle im Projekt gespeichert werden, Sie werden jedoch im Allgemeinen in einem benutzerdefinierten Ordner oder dem vorhandenen **Assets** -Ordner gespeichert. Das UWP-Projekt enthält diese Bitmaps:
 
-- Eine quadratische Bitmap mit 48 Pixel, die als **/Assets/MonkeyFace.Scale-100.png** gespeichert ist
-- Eine quadratische Bitmap mit 96 Pixel, die als **/Assets/MonkeyFace.Scale-200.png** gespeichert ist
-- Eine quadratische Bitmap mit 192 Pixel, die als **/Assets/MonkeyFace.Scale-400.png** gespeichert ist
+- Eine quadratische Bitmap mit 48 Pixel, die als/Assets/gespeichert ist **MonkeyFace.scale-100.png**
+- Eine quadratische Bitmap mit 96 Pixel, die als/Assets/gespeichert ist **MonkeyFace.scale-200.png**
+- Eine quadratische Bitmap mit 192 Pixel, die als/Assets/gespeichert ist **MonkeyFace.scale-400.png**
 
 Sie wurden alle eine **Buildaktion** von **Inhalten**erhalten.
 

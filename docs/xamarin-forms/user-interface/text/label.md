@@ -129,7 +129,7 @@ Die folgenden Screenshots zeigen das Ergebnis der Einstellung der- `TextColor` E
 
 Weitere Informationen zu Farben finden Sie unter [Farben](~/xamarin-forms/user-interface/colors.md).
 
-## <a name="fonts"></a>Schriftarten
+## <a name="fonts"></a>Fonts
 
 Weitere Informationen zum Angeben von Schriftarten auf einem `Label` finden Sie unter [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md).
 

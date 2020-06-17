@@ -343,7 +343,7 @@ Die folgenden Selektoren werden zurzeit nicht unterstützt:
 
 Die folgenden CSS-Eigenschaften werden von unterstützt Xamarin.Forms : (in der **Values** -Spalte sind die Typen _kursiv_formatiert, während Zeichen folgen Literale lauten `gray` ):
 
-|Eigenschaft|Gilt für:|Werte|Beispiel|
+|Eigenschaft|Anwendungsbereich|Werte|Beispiel|
 |---|---|---|---|
 |`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
@@ -358,8 +358,8 @@ Die folgenden CSS-Eigenschaften werden von unterstützt Xamarin.Forms : (in der 
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
 |`flex-basis`|`VisualElement`|_float_ \| `auto` \| `initial`. Außerdem kann ein Prozentsatz im Bereich von 0% bis 100% mit dem Vorzeichen angegeben werden `%` .|`flex-basis: 25%;`|
-|`flex-grow`|`VisualElement`|_float_ \| `initial`|`flex-grow: 1.5;`|
-|`flex-shrink`|`VisualElement`|_float_ \| `initial`|`flex-shrink: 1;`|
+|`flex-grow`|`VisualElement`|_float_ \|`initial`|`flex-grow: 1.5;`|
+|`flex-shrink`|`VisualElement`|_float_ \|`initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
 |`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Zeichenfolge_ \|`initial` |`font-family: Consolas;`|
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Double_ \| _namedsize_ \|  `initial` |`font-size: 12;`|
@@ -410,7 +410,7 @@ Ziel `Span` Elemente haben ein bekanntes Problem, das verhindert, dass spannen d
 
 Die folgenden Xamarin.Forms spezifischen CSS-Eigenschaften werden ebenfalls unterstützt (in der Spalte **Werte** sind die Typen _kursiv_formatiert, während Zeichenfolgenliterale lauten `gray` ):
 
-|Eigenschaft|Gilt für:|Werte|Beispiel|
+|Eigenschaft|Anwendungsbereich|Werte|Beispiel|
 |---|---|---|---|
 |`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_Farbe_ \|`initial` |`-xf-bar-background-color: teal;`|
 |`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_Farbe_ \|`initial` |`-xf-bar-text-color: gray`|
@@ -431,7 +431,7 @@ Die folgenden Xamarin.Forms spezifischen CSS-Eigenschaften werden ebenfalls unte
 
 Die folgenden Xamarin.Forms shellspezifischen CSS-Eigenschaften werden ebenfalls unterstützt (in der Spalte **Werte** sind die Typen _kursiv_formatiert, während Zeichenfolgenliterale lauten `gray` ):
 
-|Eigenschaft|Gilt für:|Werte|Beispiel|
+|Eigenschaft|Anwendungsbereich|Werte|Beispiel|
 |---|---|---|---|
 |`-xf-flyout-background`|`Shell`|_Farbe_ \|`initial` |`-xf-flyout-background: red;`|
 |`-xf-shell-background`|`Element`|_Farbe_ \|`initial` |`-xf-shell-background: green;`|

@@ -50,7 +50,7 @@ Im [**basicboxview**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-s
 </ContentPage>
 ```
 
-Das Ergebnis lautet wie folgt:
+So sieht das Ergebnis aus:
 
 [![Grundlegende boxview](boxview-images/basicboxview-small.png "Grundlegende boxview")](boxview-images/basicboxview-large.png#lightbox "Basicboxview")
 

@@ -100,7 +100,7 @@ public class DeviceStylesPageCS : ContentPage
 
 Die- [`Style`](xref:Xamarin.Forms.NavigableElement.Style) Eigenschaft jeder [`Label`](xref:Xamarin.Forms.Label) Instanz wird auf die entsprechende-Eigenschaft der- [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) Klasse festgelegt.
 
-## <a name="accessibility"></a>Zugriff
+## <a name="accessibility"></a>Barrierefreiheit
 
 Die *Geräte* Stile berücksichtigen Barrierefreiheits Einstellungen, sodass sich die Schriftart Größen ändern, wenn die Barrierefreiheits Einstellungen auf den einzelnen Plattformen geändert werden. Daher müssen Sie zur Unterstützung von Barrierefreiheits textsicher stellen, dass die *Geräte* Stile als Grundlage für beliebige Text Stile in der Anwendung verwendet werden.
 

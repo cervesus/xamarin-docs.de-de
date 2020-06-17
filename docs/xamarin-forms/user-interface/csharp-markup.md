@@ -343,7 +343,7 @@ new Grid
 }
 ```
 
-## <a name="fonts"></a>Schriftarten
+## <a name="fonts"></a>Fonts
 
 Mit den Steuerelementen in der folgenden Liste können `FontSize` die `Bold` `Italic` -,-,-und-Erweiterungs Methoden aufgerufen werden, `Font` um die Darstellung des vom-Steuerelement angezeigten Texts festzulegen:
 

@@ -11,8 +11,8 @@ ms. Prod: xamarin ms. assetid: C6DEE1A9-63fc-4889-BC77-F401D5D7DF32 ms. Technolo
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)definiert die folgenden Eigenschaften, die verwendet werden können, um Benutzer Feedback bereitzustellen, wenn keine anzuzeigenden Daten vorhanden sind:
 
-- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView), vom Typ `object` , der Zeichenfolge, der Bindung oder der Ansicht, die angezeigt wird, wenn die- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) Eigenschaft ist `null` , oder, wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Der Standardwert ist `null`.
-- [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate), vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , die Vorlage, die zum Formatieren des angegebenen verwendet werden soll `EmptyView` . Der Standardwert ist `null`.
+- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView), vom Typ `object` , der Zeichenfolge, der Bindung oder der Ansicht, die angezeigt wird, wenn die- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) Eigenschaft ist `null` , oder, wenn die von der-Eigenschaft angegebene Auflistung `ItemsSource` `null` oder leer ist. Standardwert: `null`.
+- [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate), vom Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , die Vorlage, die zum Formatieren des angegebenen verwendet werden soll `EmptyView` . Standardwert: `null`.
 
 Diese Eigenschaften werden von- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekten unterstützt. Dies bedeutet, dass die Eigenschaften Ziele von Daten Bindungen sein können.
 
