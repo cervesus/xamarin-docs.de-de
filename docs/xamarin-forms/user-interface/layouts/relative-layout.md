@@ -29,7 +29,7 @@ Positionierung und Größe einer Ansicht in einem werden `RelativeLayout` mit Ei
 - **Konstante** &ndash; der Wert, der als Offset des Werts verwendet werden soll.
 - **ElementName** &ndash; der Name der Ansicht, zu der die Einschränkung relativ ist.
 
-In XAML werden Einschränkungen als s ausgedrückt `ConstraintExpression` . Betrachten Sie das folgenden Beispiel:
+In XAML werden Einschränkungen als s ausgedrückt `ConstraintExpression` . Betrachten Sie das folgende Beispiel:
 
 ```xaml
 <BoxView Color="Green" WidthRequest="50" HeightRequest="50"

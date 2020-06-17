@@ -16,7 +16,7 @@ XAML Hot Upload wird in Ihren vorhandenen Workflow integriert, um Ihre Produktiv
 
 | IDE/Framework | Erforderliche Version |
 |------|------------------|
-|Visual Studio 2019 | 16,4 oder höher
+|Visual Studio 2019 | 16,4 oder höher
 Visual Studio 2019 für Mac | 8,4 oder höher
 Xamarin.Forms | 4,1 oder höher
 

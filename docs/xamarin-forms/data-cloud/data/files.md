@@ -61,7 +61,7 @@ Wenn Sie eine Datei in eine **.NET Standard**-Assembly einbetten möchten, müss
 
 -----
 
-`GetManifestResourceStream` wird verwendet, um über die **Ressourcen-ID** auf die eingebettete Datei zuzugreifen. Standardmäßig ist die Ressourcen-ID der Dateiname, dem der Standard Namespace für das Projekt vorangestellt ist, in das Sie eingebettet ist. in diesem Fall ist die Assembly **workingwithfiles** , und der Dateiname ist **libtextresource. txt**, sodass die Ressourcen-ID lautet `WorkingWithFiles.LibTextResource.txt` .
+`GetManifestResourceStream` wird verwendet, um über die **Ressourcen-ID** auf die eingebettete Datei zuzugreifen. Standardmäßig ist die Ressourcen-ID der Dateiname, dem der Standard Namespace für das Projekt vorangestellt ist, in das Sie eingebettet ist. in diesem Fall ist die Assembly **workingwithfiles** , und der Dateiname ist **LibTextResource.txt**, sodass die Ressourcen-ID lautet `WorkingWithFiles.LibTextResource.txt` .
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
