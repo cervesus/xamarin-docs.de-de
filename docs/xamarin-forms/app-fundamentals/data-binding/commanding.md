@@ -1,12 +1,12 @@
 ---
 title: Befehlsschnittstelle in Xamarin.Forms
 description: In diesem Artikel wird das Implementieren der „Command“-Eigenschaft mit Xamarin.Forms-Datenbindungen beschrieben. Über die Befehlsschnittstelle kann jedoch ein alternativer Ansatz für das Implementieren von Befehlen verwendet werden, der für die MVVM-Architektur besser geeignet ist.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

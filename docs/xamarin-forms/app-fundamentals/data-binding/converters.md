@@ -1,12 +1,12 @@
 ---
 title: Bindungswertkonverter in Xamarin.Forms
 description: In diesem Artikel wird erläutert, wie Werte innerhalb einer Xamarin.Forms-Datenbindung durch Implementierung eines Wertkonverters (auch als Bindungskonverter oder Bindungswertkonverter bekannt) umgewandelt oder konvertiert werden.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

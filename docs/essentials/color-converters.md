@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Essentials-Farbkonverter
 description: Die Klasse „ColorConverters“ in Xamarin.Essentials stellt mehrere Hilfs- und Erweiterungsmethoden für System.Drawing.Color bereit.
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-ms.custom: ''
+ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 57b85a909855594c70bfd529d7a794b4bd7bca7e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: ff6a5bed600f45dcd48867596a7fc8aa45decb82
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130220"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802441"
 ---
 # <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials: Farbkonverter
 
@@ -83,9 +83,9 @@ Die Methode `ToSystemColor` ist für Android.Graphics.Color, UIKit.UIColor und W
 
 ## <a name="api"></a>API
 
-- [Color Converters source code (Quellcode für den Farbkonverter)](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/ColorConverters.shared.cs)
+- [Color Converters source code (Quellcode für den Farbkonverter)](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/ColorConverters.shared.cs)
 - [Color Converters API documentation (Dokumentation der Farbkonverter-API)](xref:Xamarin.Essentials.ColorConverters)
-- [Color Extensions source code (Quellcode für die Farberweiterung)](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/ColorConverters.shared.cs)
+- [Color Extensions source code (Quellcode für die Farberweiterung)](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/ColorConverters.shared.cs)
 - [Color Extensions API documentation (Dokumentation der Farberweiterungs-API)](xref:Xamarin.Essentials.ColorExtensions)
 
 ## <a name="related-video"></a>Zugehörige Videos

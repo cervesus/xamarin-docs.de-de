@@ -1,12 +1,12 @@
 ---
 title: Xamarin.Forms-Plattformhilfsprogramme für Dual-Screen-Geräte
 description: In diesem Artikel wird erläutert, wie Sie mit der DualScreenHelper-Klasse in Xamarin.Forms die Benutzeroberfläche Ihrer App für Dual-Screen-Geräte wie Surface Duo und Surface Neo optimieren.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 5aa184c2-5611-427d-85c7-1c56486c3e1b
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

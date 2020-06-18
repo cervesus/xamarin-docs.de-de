@@ -1,21 +1,21 @@
 ---
 title: Klasse „MasterDetailPage“ von Xamarin.Forms
 description: Die Klasse „MasterDetailPage“ ist eine Xamarin.Forms-Seite, die zwei verwandte Seiten mit Informationen verwaltet. Eine davon ist die Masterseite, die Elemente darstellt, und die andere ist eine Detailseite, die Informationen zu Elementen auf der Masterseite darstellt. In diesem Artikel wird erläutert, wie Sie eine MasterDetailPage-Klasse verwenden und zwischen den Seiten mit Informationen navigieren.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 89b1dedcb6219a32332641550018405abd4b6870
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: c751a1843479f1e98739964631999dfdb0e3b634
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137812"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84569633"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Klasse „MasterDetailPage“ von Xamarin.Forms
 
@@ -51,11 +51,11 @@ Das Verhalten der Navigationsfunktion zwischen Master- und Detailseiten ist plat
 
 - Unter iOS können Sie die Detailseite nach rechts und die Masterseite nach links *schieben*, und der linke Teil der Detailseite bleibt weiterhin sichtbar.
 - Unter Android werden die Detail- und Masterseiten miteinander *überlagert*.
-- Auf der Universellen Windows-Plattform werden Masterseiten von der linken Seite aus eingeblendet und bedecken die Detailseite teilweise, sofern die Eigenschaft [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) auf `Popover` festgelegt ist. Weitere Informationen finden Sie unter [Steuern des Anzeigeverhaltens der Detailseite](#Controlling_the_Detail_Page_Display_Behavior).
+- Auf der Universellen Windows-Plattform werden Masterseiten von der linken Seite aus eingeblendet und bedecken die Detailseite teilweise, sofern die Eigenschaft [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) auf `Popover` festgelegt ist. Weitere Informationen finden Sie unter [Steuern des Anzeigeverhaltens der Detailseite](#controlling-the-detail-page-display-behavior).
 
 Im Querformat wird ein ähnliches Verhalten angewandt, mit der Ausnahme, dass die Masterseite unter iOS und Android eine ähnliche Breite wie die Masterseite im Hochformat aufweist, weshalb mehr von der Detailseite angezeigt wird.
 
-Informationen zum Steuern des Navigationsverhaltens finden Sie unter [Steuern des Anzeigeverhaltens der Detailseite](#Controlling_the_Detail_Page_Display_Behavior).
+Informationen zum Steuern des Navigationsverhaltens finden Sie unter [Steuern des Anzeigeverhaltens der Detailseite](#controlling-the-detail-page-display-behavior).
 
 ## <a name="creating-a-masterdetailpage"></a>Erstellen einer MasterDetailPage-Klasse
 
@@ -249,8 +249,6 @@ Die `OnItemSelected`-Methode führt die folgenden Aktionen aus:
 In den folgenden Screenshots wird die Detailseite `ContactPage` gezeigt, die angezeigt wird, wenn sie auf der Masterseite ausgewählt wurde:
 
 ![](master-detail-page-images/detailpage.png "Detail Page Example")
-
-<a name="Controlling_the_Detail_Page_Display_Behavior" />
 
 ### <a name="controlling-the-detail-page-display-behavior"></a>Steuern des Anzeigeverhaltens der Detailseite
 

@@ -1,12 +1,12 @@
 ---
 title: Navigation in der Xamarin.Forms-Shell
 description: Für Xamarin.Forms-Shell-Anwendungen kann eine URI-basierte Navigationsumgebung verwendet werden, die die Navigation zu einer beliebigen Seite in der Anwendung ermöglicht, ohne einer festen Navigationshierarchie folgen zu müssen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

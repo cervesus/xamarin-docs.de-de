@@ -1,21 +1,21 @@
 ---
 title: Xamarin.Forms-Bindungspfad
 description: In diesem Artikel wird erläutert, wie über Xamarin.Forms-Datenbindungen mit der Path-Eigenschaft der Klasse „Binding“ auf untergeordnete Eigenschaften und Sammlungsmember zugegriffen werden kann.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0657f39d0584405ea1a6d7611ac789488817770f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: a0ac8a568c3e8c46fa7e53112461aa0bff5684ae
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139739"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570790"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms-Bindungspfad
 
@@ -127,7 +127,7 @@ Das vierte `Label`-Element geht ähnlich vor, jedoch für die mit Frankreich ass
 </Label>
 ```
 
-Weitere Einzelheiten zur Angabe von Konstruktorargumenten in XAML finden Sie unter [Übergeben von Konstruktorargumenten](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments).
+Weitere Einzelheiten zur Angabe von Konstruktorargumenten in XAML finden Sie unter [Übergeben von Konstruktorargumenten](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments).
 
 Das letzte Beispiel ist schließlich mit dem zweiten vergleichbar. Der einzige Unterschied ist, dass auf eines der untergeordneten Elemente von `StackLayout` verwiesen wird:
 

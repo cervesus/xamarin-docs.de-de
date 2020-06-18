@@ -1,12 +1,12 @@
 ---
 title: 'Xamarin.Forms: TabbedPage'
 description: Die „TabbedPage“-Klasse von Xamarin.Forms besteht aus einer Liste mit Registerkarten und einem größeren Detailbereich. Jede Registerkarte lädt Inhalt in den Detailbereich. In diesem Artikel wird veranschaulicht, wie Sie mit einer TabbedPage-Klasse durch eine Auflistung von Seiten navigieren können.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

@@ -1,21 +1,21 @@
 ---
 title: Modale Xamarin.Forms-Seiten
 description: Xamarin.Forms verfügt über Unterstützung für modale Seiten. Eine modale Seite ermutigt Benutzer, eine eigenständige Aufgabe auszuführen. Dabei kann erst dann die Ansicht gewechselt werden, wenn die Aufgabe abgeschlossen oder abgebrochen wurde. In diesem Artikel wird das Navigieren zu modalen Seiten veranschaulicht.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4f6547049f2801e5d15115c0ae80af9a07034731
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: aecab26efaed9815ec6916877b5f42297821582c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137825"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84569607"
 ---
 # <a name="xamarinforms-modal-pages"></a>Modale Xamarin.Forms-Seiten
 
@@ -25,8 +25,8 @@ _Xamarin.Forms bietet Unterstützung für modale Seiten. Eine modale Seite ermut
 
 In diesem Artikel werden die folgenden Themen behandelt:
 
-- [Ausführen der Navigation:](#Performing_Navigation) Veröffentlichen von Seiten auf dem modalen Stapel, Entfernen von Seiten aus dem modalen Stapel per Pop, Deaktivieren der Schaltfläche „Zurück“ und Animieren von Seitenübergängen.
-- [Übergeben von Daten beim Navigieren:](#Passing_Data_when_Navigating) Übergeben von Daten über einen Seitenkonstruktor und einen `BindingContext`.
+- [Ausführen der Navigation:](#performing-navigation) Veröffentlichen von Seiten auf dem modalen Stapel, Entfernen von Seiten aus dem modalen Stapel per Pop, Deaktivieren der Schaltfläche „Zurück“ und Animieren von Seitenübergängen.
+- [Übergeben von Daten beim Navigieren:](#passing-data-when-navigating) Übergeben von Daten über einen Seitenkonstruktor und einen `BindingContext`.
 
 ## <a name="overview"></a>Übersicht
 
@@ -38,18 +38,14 @@ Um zu vorherigen Seite zurückzukehren, entfernt die Anwendung die aktuelle Seit
 
 ![](modal-images/popping.png "Popping a Page from the Modal Stack")
 
-<a name="Performing_Navigation" />
-
 ## <a name="performing-navigation"></a>Ausführen der Navigation
 
-Modale Navigationsmethoden werden von der Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) für einen beliebigen [`Page`](xref:Xamarin.Forms.Page)-Typ verfügbar gemacht. Diese Methode ermöglicht das [Übertragen von modalen Seiten per Push](#Pushing_Pages_to_the_Modal_Stack) auf den modalen Stapel und das [Entfernen von modalen Seiten per Pop](#Popping_Pages_from_the_Modal_Stack) aus dem modalen Stapel.
+Modale Navigationsmethoden werden von der Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) für einen beliebigen [`Page`](xref:Xamarin.Forms.Page)-Typ verfügbar gemacht. Diese Methode ermöglicht das [Übertragen von modalen Seiten per Push](#pushing-pages-to-the-modal-stack) auf den modalen Stapel und das [Entfernen von modalen Seiten per Pop](#popping-pages-from-the-modal-stack) aus dem modalen Stapel.
 
 Die Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) macht zudem die Eigenschaft [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) verfügbar, über welche die modalen Seiten im modalen Stapel abgerufen werden können. Es gibt jedoch kein Konzept für die modale Stapelbearbeitung oder das Entfernen per Pop, um bei der modalen Navigation zur Stammseite zurückzukehren. Grund dafür ist, dass diese Vorgänge auf den zugrunde liegenden Plattformen nicht allgemein unterstützt werden.
 
 > [!NOTE]
 > Für die Durchführung einer modalen Seitennavigation ist keine [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)-Instanz erforderlich.
-
-<a name="Pushing_Pages_to_the_Modal_Stack" />
 
 ### <a name="pushing-pages-to-the-modal-stack"></a>Übertragen von Seiten per Push auf den modalen Stapel
 
@@ -80,8 +76,6 @@ Die genaue Reihenfolge, in der diese Ereignisse auftreten, ist jedoch plattforma
 
 > [!NOTE]
 > Aufrufe von Überschreibungen von [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) und [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) können nicht als garantierte Anzeichen für eine Seitennavigation behandelt werden. Unter iOS beispielsweise wird die Überschreibung von `OnDisappearing` auf der aktiven Seite aufgerufen, wenn die Anwendung beendet wird.
-
-<a name="Popping_Pages_from_the_Modal_Stack" />
 
 ### <a name="popping-pages-from-the-modal-stack"></a>Seiten zum Entfernen per Pop aus dem modalen Stapel
 
@@ -127,8 +121,6 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 ```
 
 Wird der `boolean`-Parameter auf `false` festgelegt, wird die Seitenübergangsanimation deaktiviert. Wird der Parameter auf `true` festgelegt, wird die Seitenübergangsanimation aktiviert. Vorausgesetzt sie wird von der zugrunde liegenden Plattform unterstützt. Bei Push- und Pop-Methoden ohne diesen Parameter wird die Animation standardmäßig aktiviert.
-
-<a name="Passing_Data_when_Navigating" />
 
 ## <a name="passing-data-when-navigating"></a>Übergeben von Daten beim Navigieren
 

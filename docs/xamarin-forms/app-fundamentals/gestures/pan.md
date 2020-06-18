@@ -1,12 +1,12 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: Hinzufügen einer Gestenerkennung für Schwenkbewegungen
+description: '[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)'
+ms.prod: xamarin
+ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
@@ -17,13 +17,13 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 05/28/2020
 ms.locfileid: "84137630"
 ---
-# <a name="adding-a-pan-gesture-recognizer"></a>Hinzufügen einer Gestenerkennung für Schwenkbewegungen
+# <a name="adding-a-pan-gesture-recognizer"></a>_Die Schwenkbewegung wird verwendet, um die Bewegung von Fingern um den Bildschirm zu erkennen und diese Bewegung auf den Inhalt zu übertragen. Sie wird mit der `PanGestureRecognizer`-Klasse implementiert. Ein häufiges Szenario für die Schwenkbewegung ist das horizontale und vertikale Schwenken eines Bilds, sodass der gesamte Bildinhalt in einem Anzeigebereich angezeigt werden kann, der kleiner als die Bildabmessungen ist. Dies wird durch Bewegen des Bilds innerhalb des Anzeigebereichs erreicht und in diesem Artikel veranschaulicht._
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
+Erstellen Sie eine Instanz [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer), bearbeiten Sie das Ereignis [`PanUpdated`](xref:Xamarin.Forms.PanGestureRecognizer.PanUpdated), und fügen Sie die neue Funktion zur Gestenerkennung der Collection [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) im Benutzeroberflächenelement hinzu, damit ein Benutzeroberflächenelement mit der Schwenkbewegung bewegt werden kann.
 
-_Die Schwenkbewegung wird verwendet, um die Bewegung von Fingern um den Bildschirm zu erkennen und diese Bewegung auf den Inhalt zu übertragen. Sie wird mit der `PanGestureRecognizer`-Klasse implementiert. Ein häufiges Szenario für die Schwenkbewegung ist das horizontale und vertikale Schwenken eines Bilds, sodass der gesamte Bildinhalt in einem Anzeigebereich angezeigt werden kann, der kleiner als die Bildabmessungen ist. Dies wird durch Bewegen des Bilds innerhalb des Anzeigebereichs erreicht und in diesem Artikel veranschaulicht._
+Das folgende Codebeispiel zeigt die Instanz `PanGestureRecognizer`, die an das Element [`Image`](xref:Xamarin.Forms.Image) angefügt ist:
 
-Erstellen Sie eine Instanz [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer), bearbeiten Sie das Ereignis [`PanUpdated`](xref:Xamarin.Forms.PanGestureRecognizer.PanUpdated), und fügen Sie die neue Funktion zur Gestenerkennung der Collection [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) im Benutzeroberflächenelement hinzu, damit ein Benutzeroberflächenelement mit der Schwenkbewegung bewegt werden kann. Das folgende Codebeispiel zeigt die Instanz `PanGestureRecognizer`, die an das Element [`Image`](xref:Xamarin.Forms.Image) angefügt ist:
+Dies kann auch wie im folgenden Codebeispiel dargestellt in XAML erreicht werden: Der Code für den Ereignishandler `OnPanUpdated` wird dann zur CodeBehind-Datei hinzugefügt:
 
 ```csharp
 var panGesture = new PanGestureRecognizer();
@@ -33,7 +33,7 @@ panGesture.PanUpdated += (s, e) => {
 image.GestureRecognizers.Add(panGesture);
 ```
 
-Dies kann auch wie im folgenden Codebeispiel dargestellt in XAML erreicht werden:
+Erstellen eines Schwenkcontainers
 
 ```xaml
 <Image Source="MonoMonkey.jpg">
@@ -43,7 +43,7 @@ Dies kann auch wie im folgenden Codebeispiel dargestellt in XAML erreicht werden
 </Image>
 ```
 
-Der Code für den Ereignishandler `OnPanUpdated` wird dann zur CodeBehind-Datei hinzugefügt:
+Dieser Abschnitt enthält eine generalisierte Hilfsklasse, die das Schwenken mit Freihandformen ausführt. Dies eignet sich in der Regel gut für das Navigieren in Bildern oder Karten.
 
 ```csharp
 void OnPanUpdated (object sender, PanUpdatedEventArgs e)
@@ -52,9 +52,9 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 }
 ```
 
-## <a name="creating-a-pan-container"></a>Erstellen eines Schwenkcontainers
+## <a name="creating-a-pan-container"></a>Für das Bearbeiten der Schwenkbewegung zum Ausführen dieser Operation ist Mathematik erforderlich, um die Benutzeroberfläche zu transformieren.
 
-Dieser Abschnitt enthält eine generalisierte Hilfsklasse, die das Schwenken mit Freihandformen ausführt. Dies eignet sich in der Regel gut für das Navigieren in Bildern oder Karten. Für das Bearbeiten der Schwenkbewegung zum Ausführen dieser Operation ist Mathematik erforderlich, um die Benutzeroberfläche zu transformieren. Diese Mathematik wird verwendet, um nur innerhalb der Begrenzung des umschlossenen Benutzeroberflächenelements zu schwenken. Das folgende Codebeispiel zeigt die `PanContainer`-Klasse:
+Diese Mathematik wird verwendet, um nur innerhalb der Begrenzung des umschlossenen Benutzeroberflächenelements zu schwenken. Das folgende Codebeispiel zeigt die `PanContainer`-Klasse: Diese Klasse kann das Benutzeroberflächenelement umschließen, sodass die Bewegung das umschlossene Benutzeroberflächenelement schwenkt. Das folgende XAML-Codebeispiel zeigt die Klasse `PanContainer`, die ein [`Image`](xref:Xamarin.Forms.Image)-Element umschließt:
 
 ```csharp
 public class PanContainer : ContentView
@@ -77,7 +77,7 @@ public class PanContainer : ContentView
 }
 ```
 
-Diese Klasse kann das Benutzeroberflächenelement umschließen, sodass die Bewegung das umschlossene Benutzeroberflächenelement schwenkt. Das folgende XAML-Codebeispiel zeigt die Klasse `PanContainer`, die ein [`Image`](xref:Xamarin.Forms.Image)-Element umschließt:
+Das folgende Codebeispiel veranschaulicht, wie die Klasse `PanContainer` ein [`Image`](xref:Xamarin.Forms.Image)-Element auf einer C#-Seite umschließt: In beiden Beispielen werden die Eigenschaften [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) und [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) auf die Werte für Breite und Höhe des angezeigten Bilds festgelegt.
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -94,7 +94,7 @@ Diese Klasse kann das Benutzeroberflächenelement umschließen, sodass die Beweg
 </ContentPage>
 ```
 
-Das folgende Codebeispiel veranschaulicht, wie die Klasse `PanContainer` ein [`Image`](xref:Xamarin.Forms.Image)-Element auf einer C#-Seite umschließt:
+Das angezeigte Bild wird geschwenkt, wenn das [`Image`](xref:Xamarin.Forms.Image)-Element eine Schwenkbewegung empfängt.
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -117,9 +117,9 @@ public class HomePageCS : ContentPage
 }
 ```
 
-In beiden Beispielen werden die Eigenschaften [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) und [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) auf die Werte für Breite und Höhe des angezeigten Bilds festgelegt.
+Das Schwenken wird von der Methode `PanContainer.OnPanUpdated` ausgeführt, die im folgenden Codebeispiel veranschaulicht wird:
 
-Das angezeigte Bild wird geschwenkt, wenn das [`Image`](xref:Xamarin.Forms.Image)-Element eine Schwenkbewegung empfängt. Das Schwenken wird von der Methode `PanContainer.OnPanUpdated` ausgeführt, die im folgenden Codebeispiel veranschaulicht wird:
+Diese Methode aktualisiert den sichtbaren Inhalt des umschlossenen Benutzeroberflächenelements basierend auf der Schwenkbewegung des Benutzers. Durch die Verwendung der Werte der Eigenschaften [`TotalX`](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalX) und [`TotalY`](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalY) der Instanz [`PanUpdatedEventArgs`](xref:Xamarin.Forms.PanUpdatedEventArgs) werden die Richtung und der Abstand der Schwenkbewegung berechnet.
 
 ```csharp
 void OnPanUpdated (object sender, PanUpdatedEventArgs e)
@@ -142,15 +142,15 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 }
 ```
 
-Diese Methode aktualisiert den sichtbaren Inhalt des umschlossenen Benutzeroberflächenelements basierend auf der Schwenkbewegung des Benutzers. Durch die Verwendung der Werte der Eigenschaften [`TotalX`](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalX) und [`TotalY`](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalY) der Instanz [`PanUpdatedEventArgs`](xref:Xamarin.Forms.PanUpdatedEventArgs) werden die Richtung und der Abstand der Schwenkbewegung berechnet. Die Eigenschaften `App.ScreenWidth` und `App.ScreenHeight` geben die Höhe und Breite des Anzeigebereichs an und werden durch die jeweiligen plattformspezifischen Projekte auf die Werte von Breite und Höhe des Gerätebildschirms festgelegt. Das umschlossene Benutzeroberflächenelement wird anschließend geschwenkt, indem die Eigenschaften [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) und [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) auf die berechneten Werte festgelegt werden.
+Die Eigenschaften `App.ScreenWidth` und `App.ScreenHeight` geben die Höhe und Breite des Anzeigebereichs an und werden durch die jeweiligen plattformspezifischen Projekte auf die Werte von Breite und Höhe des Gerätebildschirms festgelegt. Das umschlossene Benutzeroberflächenelement wird anschließend geschwenkt, indem die Eigenschaften [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) und [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) auf die berechneten Werte festgelegt werden. Wenn Inhalt in einem Element geschwenkt wird, das nicht den gesamten Bildschirm einnimmt, können die Höhe und Breite des Anzeigebereichs von den Eigenschaften [`Height`](xref:Xamarin.Forms.VisualElement.Height) und [`Width`](xref:Xamarin.Forms.VisualElement.Width) des Elements abgerufen werden. Das Anzeigen von Bildern mit hoher Auflösung kann den Speicherbedarf einer App erheblich erhöhen.
 
-Wenn Inhalt in einem Element geschwenkt wird, das nicht den gesamten Bildschirm einnimmt, können die Höhe und Breite des Anzeigebereichs von den Eigenschaften [`Height`](xref:Xamarin.Forms.VisualElement.Height) und [`Width`](xref:Xamarin.Forms.VisualElement.Width) des Elements abgerufen werden.
+Sie sollten daher nur erstellt werden, wenn dies erforderlich ist. Sie sollten freigegeben werden, sobald die App sie nicht mehr benötigt.
 
 > [!NOTE]
-> Das Anzeigen von Bildern mit hoher Auflösung kann den Speicherbedarf einer App erheblich erhöhen. Sie sollten daher nur erstellt werden, wenn dies erforderlich ist. Sie sollten freigegeben werden, sobald die App sie nicht mehr benötigt. Weitere Informationen finden Sie unter [Optimieren von Bildressourcen](~/xamarin-forms/deploy-test/performance.md#optimize-image-resources).
+> Weitere Informationen finden Sie unter [Optimieren von Bildressourcen](~/xamarin-forms/deploy-test/performance.md#optimize-image-resources). Verwandte Links [PanGesture (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>[GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
 
-- [PanGesture (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
-- [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
 - [PanGestureRecognizer](xref:Xamarin.Forms.PanGestureRecognizer)
+- <bpt id="p1">[</bpt>GestureRecognizer<ept id="p1">](xref:Xamarin.Forms.GestureRecognizer)</ept>
+- <bpt id="p1">[</bpt>PanGestureRecognizer<ept id="p1">](xref:Xamarin.Forms.PanGestureRecognizer)</ept>

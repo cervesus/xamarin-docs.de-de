@@ -1,29 +1,29 @@
 ---
 title: Xamarin.Forms-App-Klasse
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: Dieser Artikel erklärt Features der Standard-App-Klasse, darunter eine Eigenschaft zum Festlegen der Startseite der App und ein beständiges Wörterbuch zum Speichern einfacher Werte über Zustandsänderungen im Lebenszyklus hinweg.
+ms.prod: xamarin
+ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
+ms.technology: xamarin-forms
+ms.custom: video
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/19/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2f4b568809f949d813de86ae88cbe621cfa3161c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 1e761830fb08662a82a8bf98b4544aafaa6eccf7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129687"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573351"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms-App-Klasse
 
 Die Basisklasse `Application` bietet folgende Features, die in der Standard-`App`-Unterklasse Ihres Projekts verfügbar gemacht werden:
 
 * Eine `MainPage`-Eigenschaft, bei der die Startseite für die App festgelegt wird.
-* Ein beständiges [`Properties`-Wörterbuch](#Properties_Dictionary), in dem einfache Werte über Zustandsänderungen im Lebenszyklus hinweg gespeichert werden.
+* Ein beständiges [`Properties`-Wörterbuch](#properties-dictionary), in dem einfache Werte über Zustandsänderungen im Lebenszyklus hinweg gespeichert werden.
 * Eine statische `Current`-Eigenschaft, die einen Verweis auf das aktuelle Anwendungsobjekt enthält.
 
 Es werden auch [Lifecycle methods (Lebenszyklusmethoden)](~/xamarin-forms/app-fundamentals/app-lifecycle.md) wie z.B. `OnStart`, `OnSleep` und `OnResume` sowie modale Navigationsereignisse verfügbar gemacht.
@@ -76,8 +76,6 @@ public class App : Xamarin.Forms.Application
     }
 }
 ```
-
-<a name="Properties_Dictionary" />
 
 ## <a name="properties-dictionary"></a>Eigenschaftenwörterbuch
 

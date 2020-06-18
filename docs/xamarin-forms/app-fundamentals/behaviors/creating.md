@@ -1,12 +1,12 @@
 ---
 title: Erstellen von Xamarin.Forms-Verhalten
 description: Xamarin.Forms-Verhalten werden durch Erstellung von den Klassen „Behavior“ und „Behavior<T>“ erstellt. In diesem Artikel wird veranschaulicht, wie Xamarin.Forms-Verhalten erstellt und verarbeitet werden.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

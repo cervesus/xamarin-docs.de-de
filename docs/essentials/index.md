@@ -1,10 +1,10 @@
 ---
 title: Xamarin.Essentials
 description: Dieses Dokument verweist auf verschiedene Anleitungen für Xamarin.Essentials, womit Entwicklern plattformübergreifende APIs für ihre mobilen Anwendungen bereitgestellt werden.
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 02/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

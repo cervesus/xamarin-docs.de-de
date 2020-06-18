@@ -1,13 +1,13 @@
 ---
 title: Zeichenfolgen- und Bildlokalisierung in Xamarin.Forms
 description: Xamarin.Forms-Apps können mit .NET-Ressourcendateien lokalisiert werden.
-zone_pivot_groups: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+zone_pivot_groups: platform
+ms.prod: xamarin
+ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 11/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

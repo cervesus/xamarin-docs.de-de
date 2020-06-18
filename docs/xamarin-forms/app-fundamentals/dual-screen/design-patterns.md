@@ -1,12 +1,12 @@
 ---
 title: Xamarin.Forms-Entwurfsmuster für Dual-Screen-Geräte
 description: In diesem Artikel werden verschiedene Entwurfsmuster beschrieben, die für Dual-Screen-Geräte optimiert sind und von Xamarin.Forms unterstützt werden.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 3176d792-6dba-4e00-b463-497c58678ee9
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

@@ -1,12 +1,12 @@
 ---
 title: Xamarin.Forms-Steuerelementvorlagen
 description: Xamarin.Forms-Steuerelementvorlagen definieren die visuelle Struktur für von ContentView abgeleitete benutzerdefinierte Steuerelemente und von ContentPage abgeleitete Seiten.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

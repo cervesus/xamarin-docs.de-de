@@ -1,15 +1,15 @@
 ---
 title: Xamarin.Forms Ausführliche Erläuterungen zum Schnellstart
 description: In diesem Artikel werden die Grundlagen der Anwendungsentwicklung mit Xamarin.Forms erläutert. Zu den behandelten Themen zählen die Struktur einer Xamarin.Forms-Anwendung, die Architektur- und Anwendungsgrundlagen sowie die Benutzeroberfläche.
-zone_pivot_groups: ''
-ms.topic: ''
-ms.prod: ''
-ms.custom: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+zone_pivot_groups: platform
+ms.topic: quickstart
+ms.prod: xamarin
+ms.custom: video
+ms.assetid: 7B2340A1-6883-41D8-860C-0BB6C4E0C316
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
