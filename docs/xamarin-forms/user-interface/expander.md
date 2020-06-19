@@ -10,12 +10,12 @@ ms.date: 04/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5e9afa0f6d27003891963af5715d5721e3129306
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 33659dd52452c575c403d0a25b24f17daf9e3f17
+ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129532"
+ms.locfileid: "84988211"
 ---
 # <a name="xamarinforms-expander"></a>Xamarin.FormsExpander
 
@@ -45,7 +45,6 @@ Das- `Expander` Steuerelement definiert die folgenden Eigenschaften:
 - `ForceUpdateSizeCommand`vom Typ `ICommand` , der den Befehl definiert, der ausgeführt wird, wenn die Größe des-Aufforderungs Updates `Expander` erzwungen wird. Diese Eigenschaft verwendet den `OneWayToSource` Bindungs Modus.
 - `Header`vom Typ [`View`](xref:Xamarin.Forms.View) , der den Header Inhalt definiert.
 - `IsExpanded`vom Typ `bool` , der bestimmt, ob der `Expander` erweitert ist. Diese Eigenschaft verwendet den `TwoWay` -Bindungs Modus und hat den Standardwert `false` .
-- `Spacing`vom Typ `double` , der den Leerraum zwischen dem Header und dessen Inhalt darstellt. Der Standardwert dieser Eigenschaft ist 0.
 - `State`vom Typ `ExpanderState` , der den Zustand von darstellt `Expander` . Diese Eigenschaft verwendet den `OneWayToSource` Bindungs Modus.
 
 Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
@@ -224,51 +223,18 @@ Die- `IsExpanded` Eigenschaft wird `true` , wenn der `Expander` Header abgetippt
 
 Weitere Informationen zu Triggern finden Sie unter [ Xamarin.Forms Trigger](~/xamarin-forms/app-fundamentals/triggers.md).
 
-## <a name="define-the-space-between-header-and-content"></a>Hiermit wird der Leerraum zwischen Header und Inhalt definiert.
-
-Standardmäßig wird der Inhalt in einem `Expander` direkt unterhalb seines Headers angezeigt. Dieses Verhalten kann jedoch geändert werden, indem die `Spacing` -Eigenschaft auf einen Wert festgelegt wird `double` , der den leeren Leerraum zwischen dem Inhalt und dem zugehörigen Header darstellt:
-
-```xaml
-<Expander Spacing="50"
-          IsExpanded="true">
-    <Expander.Header>
-        <Label Text="Baboon"
-               FontAttributes="Bold"
-               FontSize="Medium" />
-    </Expander.Header>
-    <Grid Padding="10">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-        <Image Source="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
-               Aspect="AspectFill"
-               HeightRequest="120"
-               WidthRequest="120" />
-        <Label Grid.Column="1"
-               Text="Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae."
-               FontAttributes="Italic" />
-    </Grid>
-</Expander>
-```
-
-In diesem Beispiel wird der `Expander` Inhalt 50 geräteunabhängige Einheiten unterhalb des Headers angezeigt:
-
-![Screenshot eines Expander mit fest gelegenden Abstände unter IOS und Android](expander-images/expander-spacing.png "Expander mit einem in IOS und Android festgelegten Abstand")
-
 ## <a name="embed-an-expander-in-an-expander"></a>Einbetten eines Expander in eine Expander
 
 Der Inhalt eines `Expander` kann auf ein anderes Steuerelement festgelegt werden `Expander` , um mehrere Ebenen der Erweiterung zu aktivieren. Der folgende XAML-Code zeigt ein- `Expander` Objekt, dessen Inhalt ein anderes `Expander` Objekt ist:
 
 ```xaml
-<Expander Spacing="10">
+<Expander>
     <Expander.Header>
         <Label Text="{Binding Name}"
                FontAttributes="Bold"
                FontSize="Medium" />
     </Expander.Header>
-    <Expander Padding="10"
-              Spacing="10">
+    <Expander Padding="10">
         <Expander.Header>
             <Label Text="{Binding Location}"
                    FontSize="Medium" />

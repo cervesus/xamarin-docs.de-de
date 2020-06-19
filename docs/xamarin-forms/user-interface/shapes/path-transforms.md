@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ab759428c1bc5de8840808443ba40c501fb43b51
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5814bb73f843031d672df0573775abb002fd3644
+ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/18/2020
-ms.locfileid: "84947297"
+ms.locfileid: "84990798"
 ---
 # <a name="xamarinforms-shapes-path-transforms"></a>Xamarin.FormsFormen: Pfad Transformationen
 
@@ -352,5 +352,5 @@ In diesem Beispiel wird die- `Matrix` Eigenschaft als durch Trennzeichen getrenn
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapedemos/)
+- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsFormen](index.md)

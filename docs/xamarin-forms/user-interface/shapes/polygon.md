@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: de1848f7439e62e84daea56defa3f4583f5758ea
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 455221b71c612b7987f876e8e9b82e33e5d91129
+ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/18/2020
-ms.locfileid: "84947302"
+ms.locfileid: "84990860"
 ---
 # <a name="xamarinforms-shapes-polygon"></a>Xamarin.FormsFormen: Polygon
 
@@ -47,5 +47,5 @@ Das folgende XAML-Beispiel zeigt, wie Sie ein Polygon zeichnen:
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapedemos/)
+- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsFormen](index.md)

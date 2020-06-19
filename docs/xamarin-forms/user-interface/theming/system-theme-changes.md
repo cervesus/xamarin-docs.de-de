@@ -10,12 +10,12 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 86ad823466470033c458ad44a404e8ab667c1b95
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 28bcbed3a03a2abbec42a619062579419a3063a4
+ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/18/2020
-ms.locfileid: "84903076"
+ms.locfileid: "84988207"
 ---
 # <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>Reagieren auf Änderungen des Systemdesigns in Xamarin.Forms Anwendungen
 
@@ -135,13 +135,16 @@ Die- `RequestedTheme` Eigenschaft gibt einen `OSAppTheme` Enumerationsmember zur
 
 ## <a name="set-the-current-user-theme"></a>Aktuelles Benutzer Design festlegen
 
-Das Design, das von der Anwendung verwendet wird, kann mit der-Eigenschaft festgelegt werden `Application.UserTheme` , die vom Typ ist `OSAppTheme` :
+Das Design, das von der Anwendung verwendet wird, kann mit der-Eigenschaft festgelegt werden `Application.UserAppTheme` , die vom Typ ist `OSAppTheme` , unabhängig davon, welches Systemdesign zurzeit betriebsbereit ist:
 
 ```csharp
 Application.Current.UserAppTheme = OSAppTheme.Dark;
 ```
 
-In diesem Beispiel wird die Anwendung so festgelegt, dass Sie das Design verwendet, das für den dunklen System Modus definiert wurde.
+In diesem Beispiel wird die Anwendung so festgelegt, dass Sie das Design verwendet, das für den dunklen System Modus definiert ist, und zwar unabhängig davon, welches Systemdesign derzeit betriebsbereit ist.
+
+> [!NOTE]
+> Legen Sie die-Eigenschaft auf fest, um `UserAppTheme` `OSAppTheme.Unspecified` das Betriebssystem standardmäßig zu übersetzen.
 
 ## <a name="react-to-theme-changes"></a>Auf Designänderungen reagieren
 
