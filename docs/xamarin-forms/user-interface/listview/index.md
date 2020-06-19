@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms ListView" Description: "in diesem Handbuch wird die Xamarin.Forms ListView vorgestellt, die zum Darstellen von Daten in interaktiven Listen verwendet werden kann."
-ms. Prod: xamarin ms. assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/04/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsListView
+description: In diesem Leitfaden wird die Xamarin.Forms ListView vorgestellt, die zum Darstellen von Daten in interaktiven Listen verwendet werden kann.
+ms.prod: xamarin
+ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a1ff8dd5c8a8a4051cea8ce4b288c42bdbaa8d31
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139905"
 ---
-
 # <a name="xamarinforms-listview"></a>Xamarin.FormsListView
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)

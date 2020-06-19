@@ -1,8 +1,22 @@
 ---
-Title: "Eingabemethoden-Editor-Optionen für Android unter Android" Description: "Platform-Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie die plattformspezifische Android-Methode verwenden, die die Optionen für den Eingabemethoden-Editor für die weiche Tastatur für einen Eintrag festlegt.
-ms. Prod: xamarin ms. assetid: 7909c738-04b2-4476-9a3b-a6d79bc3b9b2 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 07/10/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Eingabemethoden-Editor-Optionen für den Eintrag unter Android
+description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie die plattformspezifische Android-Methode verwenden, die die Optionen für den Eingabemethoden-Editor für die weiche Tastatur für einen Eintrag festlegt.
+ms.prod: xamarin
+ms.assetid: 7909C738-04B2-4476-9A3B-A6D79BC3B9B2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bb77e9fafe39bf76a7d4290dba0bc658cd15094f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140035"
 ---
-
 # <a name="entry-input-method-editor-options-on-android"></a>Eingabemethoden-Editor-Optionen für den Eintrag unter Android
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,7 +1,22 @@
 ---
-Title: "Kommunikation zwischen lose gekoppelten Komponenten" Beschreibung: "in diesem Kapitel wird erläutert, wie die eshoponcontainers-Mobile App das Veröffentlichen-Abonnieren-Muster implementiert, sodass Nachrichten basierte Kommunikation zwischen Komponenten ermöglicht wird, die für die Verknüpfung durch Objekt-und Typverweise ungeeignet sind" MS. Prod: xamarin ms. assetid: 1194af33-8a91-48d2-88b5-B84 d77f 2ce69 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Kommunikation zwischen lose gekoppelten Komponenten
+description: 'In diesem Kapitel wird erläutert, wie die eshoponcontainers-Mobile App das Veröffentlichen-Abonnieren-Muster implementiert, sodass Nachrichten basierte Kommunikation zwischen Komponenten ermöglicht wird, die für die Verknüpfung durch Objekt-und Typverweise ungeeignet sind. '
+ms.prod: xamarin
+ms.assetid: 1194af33-8a91-48d2-88b5-b84d77f2ce69
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c35cd6e30e7843cda0431581025aa7440a21cc29
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140048"
 ---
-
 # <a name="communicating-between-loosely-coupled-components"></a>Kommunikation zwischen lose gekoppelten Komponenten
 
 Das Veröffentlichen-Abonnieren-Muster ist ein Messagingmuster, bei dem Herausgeber Nachrichten senden, ohne über Kenntnisse zu Empfängern zu verfügen, die als Abonnenten bezeichnet werden. Auf ähnliche Weise lauschen Abonnenten auf bestimmte Nachrichten, ohne dass sie über Kenntnisse zu Herausgebern verfügen.

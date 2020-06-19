@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms Media Element" Description: "in diesem Artikel wird erläutert, wie Sie mit Media Element Videos und Audiodaten in einer- Xamarin.Forms Anwendung abspielen."
-ms. Prod: xamarin ms. assetid: e65f1e56-a80d-46c7-9ff4-7ae6650a3165 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/18/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsMedia Element
+description: In diesem Artikel wird erläutert, wie Media Element verwendet wird, um Videos und Audiodaten in einer-Anwendung wiederzugeben Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: e65f1e56-a80d-46c7-9ff4-7ae6650a3165
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/18/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1dfa51177bba3ebf1e3e29208cc926c77567a048
+ms.sourcegitcommit: c000c0ed15b7b2ef2a8f46a39171e11b6d9f8a5d
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84980102"
 ---
-
 # <a name="xamarinforms-mediaelement"></a>Xamarin.FormsMedia Element
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

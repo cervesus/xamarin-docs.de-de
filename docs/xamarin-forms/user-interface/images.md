@@ -1,8 +1,22 @@
 ---
-Title: "Bilder in Xamarin.Forms " Beschreibung: "Bilder können plattformübergreifend mit freigegeben werden Xamarin.Forms , Sie können speziell für jede Plattform geladen werden, oder Sie können zur Anzeige heruntergeladen werden."
-ms. Prod: xamarin ms. assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 12/04/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Bilder inXamarin.Forms
+description: Images können über Plattformen hinweg gemeinsam genutzt werden Xamarin.Forms , Sie können speziell für jede Plattform geladen werden, oder Sie können zur Anzeige heruntergeladen werden.
+ms.prod: xamarin
+ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/19/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7117bb809c43ab5edb67e8367840b17cd1d97ef9
+ms.sourcegitcommit: c000c0ed15b7b2ef2a8f46a39171e11b6d9f8a5d
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84980089"
 ---
-
 # <a name="images-in-xamarinforms"></a>Bilder inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
@@ -15,7 +29,7 @@ Für Symbole und Begrüßungs Bildschirme sind auch plattformspezifische Bilder 
 
 ## <a name="display-images"></a>Anzeigen von Bildern
 
-Xamarin.Formsverwendet die- [`Image`](xref:Xamarin.Forms.Image) Ansicht, um Bilder auf einer Seite anzuzeigen. Es verfügt über zwei wichtige Eigenschaften:
+Xamarin.Formsverwendet die- [`Image`](xref:Xamarin.Forms.Image) Ansicht, um Bilder auf einer Seite anzuzeigen. Es gibt mehrere wichtige Eigenschaften:
 
 - [`Source`](xref:Xamarin.Forms.Image.Source)-Eine- [`ImageSource`](xref:Xamarin.Forms.ImageSource) Instanz, entweder Datei, Uri oder Ressource, mit der das anzuzeigende Bild festgelegt wird.
 - [`Aspect`](xref:Xamarin.Forms.Image.Aspect): Gibt an, wie die Größe des Bilds innerhalb der Grenzen, in denen es angezeigt wird
@@ -30,7 +44,7 @@ Xamarin.Formsverwendet die- [`Image`](xref:Xamarin.Forms.Image) Ansicht, um Bild
 Die- [`Aspect`](xref:Xamarin.Forms.Image.Aspect) Eigenschaft bestimmt, wie das Bild so skaliert wird, dass es in den Anzeigebereich passt:
 
 - [`Fill`](xref:Xamarin.Forms.Aspect.Fill)-Gestreckt das Bild vollständig und gefüllt den Anzeigebereich. Dies kann dazu führen, dass das Bild verzerrt wird.
-- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill)-Schneidet das Bild ab, sodass es den Anzeigebereich füllt und dabei den Aspekt bewahrt (d.h. keine Verzerrung).
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill)-Schneidet das Bild ab, sodass es den Anzeigebereich füllt und dabei den Aspekt bewahrt (d. h. keine Verzerrung).
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit)-Letterboxes das Bild (falls erforderlich), sodass das gesamte Bild in den Anzeigebereich passt, wobei je nachdem, ob das Bild breit oder hoch ist, leerer Leerraum zum oberen bzw. unteren Rand hinzugefügt wird.
 
 Images können aus einer [lokalen Datei](#local-images), einer [eingebetteten Ressource](#embedded-images), [heruntergeladen](#download-images)oder aus einem Stream geladen werden. Außerdem können Schriftart Symbole in der Ansicht angezeigt werden, [`Image`](xref:Xamarin.Forms.Image) indem die Schriftart Symbol Daten in einem-Objekt angegeben werden `FontImageSource` . Weitere Informationen finden Sie unter [Anzeigen von Schriftart Symbolen](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) im [Schriftarten](~/xamarin-forms/user-interface/text/fonts.md) Handbuch.
@@ -39,7 +53,7 @@ Images können aus einer [lokalen Datei](#local-images), einer [eingebetteten Re
 
 Bilddateien können zu jedem Anwendungsprojekt hinzugefügt und aus frei gegebenem Code referenziert werden Xamarin.Forms . Diese Vorgehensweise ist zum Verteilen plattformspezifischer Bilder erforderlich. Beispielsweise kann es vorkommen, dass auf verschiedenen Plattformen unterschiedliche Auflösungen oder geringfügig abweichende Designs verwendet werden.
 
-Um ein einzelnes Image für alle apps zu verwenden, *muss der gleiche Dateiname auf jeder Plattform verwendet werden*, und es muss sich um einen gültigen Android-Ressourcennamen handeln (d.h. nur Kleinbuchstaben, Ziffern, Unterstriche und der Zeitraum sind zulässig).
+Zur Verwendung eines einzelnen Bilds für alle apps *muss derselbe Dateiname auf jeder Plattform verwendet werden*, und es muss sich um einen gültigen Android-Ressourcennamen handeln (d. h. nur Kleinbuchstaben, Ziffern, Unterstriche und der Zeitraum sind zulässig).
 
 - **IOS** : die bevorzugte Methode zum Verwalten und unterstützen von Images seit IOS 9 ist die Verwendung von **Asset Catalog-Image Sätzen**, die alle Versionen eines Abbilds enthalten, die zur Unterstützung verschiedener Geräte und Skalierungsfaktoren für eine Anwendung erforderlich sind. Weitere Informationen finden Sie unter [Hinzufügen von Bildern zu einem Asset Catalog-Image Satz](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 - **Android** : Platzieren Sie Images im **Ressourcen/drawable-** Verzeichnis mit der **Buildaktion "androidresource**". High-und Low-dpi-Versionen eines Bilds können auch bereitgestellt werden (in entsprechend benannten **Ressourcen** Unterverzeichnissen wie **drawable-ldpi**, **drawable-hdpi**und **drawable-xhdpi**).
@@ -231,14 +245,13 @@ var imageSource = ImageSource.FromResource("filename.png",
 Bilder können für die Anzeige automatisch heruntergeladen werden, wie im folgenden XAML-Code dargestellt:
 
 ```xaml
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
        x:Class="WorkingWithImages.DownloadImagesXaml">
   <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
     <Label Text="Image UriSource Xaml" />
-    <Image Source="https://xamarin.com/content/images/pages/forms/example-app.png" />
-    <Label Text="example-app.png gets downloaded from xamarin.com" />
+    <Image Source="https://aka.ms/campus.jpg" />
+    <Label Text="campus.jpg gets downloaded from microsoft.com" />
   </StackLayout>
 </ContentPage>
 ```
@@ -248,7 +261,7 @@ Der entsprechende c#-Code lautet wie folgt:
 ```csharp
 var webImage = new Image {
      Source = ImageSource.FromUri(
-        new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")
+        new Uri("https://aka.ms/campus.jpg")
      ) };
 ```
 
@@ -257,7 +270,7 @@ Die [`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) 
 Es gibt auch eine implizite Konvertierung für URI-Zeichen folgen. das folgende Beispiel funktioniert auch:
 
 ```csharp
-webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.png";
+webImage.Source = "https://aka.ms/campus.jpg";
 ```
 
 Die folgenden Screenshots zeigen das Ergebnis der Anzeige eines Remote Bilds auf den einzelnen Plattformen:
@@ -274,7 +287,7 @@ Ein [`UriImageSource`](xref:Xamarin.Forms.UriImageSource) unterstützt auch das 
 Caching ist standardmäßig aktiviert und speichert das Image für 24 Stunden lokal. Um das Zwischenspeichern für ein bestimmtes Image zu deaktivieren, instanziieren Sie die Image Quelle wie folgt:
 
 ```csharp
-image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("http://server.com/image") };
+image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("https://server.com/image") };
 ```
 
 Zum Festlegen eines bestimmten Cache Zeitraums (z. b. 5 Tage) instanziieren Sie die Image Quelle wie folgt:
@@ -282,7 +295,7 @@ Zum Festlegen eines bestimmten Cache Zeitraums (z. b. 5 Tage) instanziieren Sie 
 ```csharp
 webImage.Source = new UriImageSource
 {
-    Uri = new Uri("https://xamarin.com/content/images/pages/forms/example-app.png"),
+    Uri = new Uri("https://aka.ms/campus.jpg"),
     CachingEnabled = true,
     CacheValidity = new TimeSpan(5,0,0,0)
 };

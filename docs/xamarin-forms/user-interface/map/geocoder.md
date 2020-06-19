@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms map Geocoding" Description: "in diesem Artikel wird erläutert, wie Sie Geocode-Kartendaten mithilfe von Geocodieren und umkehren Xamarin.Forms . Maps Geocoder-Klasse. "
-ms. Prod: xamarin ms. assetid: DE7DB31A-8921-4614-8B49-DAEF1E7B03B3 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/22/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsKarten Geocodierung
+description: In diesem Artikel wird erläutert, wie Sie mithilfe von die Geocodierung von Geocodierungsdaten und die rückgängig-Zuordnung Xamarin.Forms Maps Geocoder-Klasse.
+ms.prod: xamarin
+ms.assetid: DE7DB31A-8921-4614-8B49-DAEF1E7B03B3
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/22/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fe099235857f6bd0531539e3aa84e41bf59b50ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139866"
 ---
-
 # <a name="xamarinforms-map-geocoding"></a>Xamarin.FormsKarten Geocodierung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

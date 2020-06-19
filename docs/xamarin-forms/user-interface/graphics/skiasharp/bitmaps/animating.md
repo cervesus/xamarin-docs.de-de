@@ -1,8 +1,22 @@
 ---
-Title: "Animieren von skiasharp-Bitmaps" Beschreibung: "erfahren Sie, wie Sie eine bitmapanimation durchführen, indem Sie eine Reihe von Bitmaps sequenziell anzeigen und animierte GIF-Dateien rendern."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 97142adc-e2fd-418c-8a09-9c561aee5bfd Author: davidbritch ms. Author: dabritch ms. Date: 07/12/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Animieren von skiasharp-Bitmaps
+description: Erfahren Sie, wie Sie eine bitmapanimation durchführen, indem Sie eine Reihe von Bitmaps sequenziell anzeigen und animierte GIF-Dateien rendern.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/12/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 763f44c26d653aa32429b2aa764989e18e8b8078
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139970"
 ---
-
 # <a name="animating-skiasharp-bitmaps"></a>Animieren von skiasharp-Bitmaps
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

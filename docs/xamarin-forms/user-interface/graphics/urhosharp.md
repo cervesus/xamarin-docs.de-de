@@ -1,8 +1,22 @@
 ---
-Title: "using urhusharp in Xamarin.Forms " Description: "in diesem Artikel wird erläutert, wie urhusharp zum Hinzufügen von 3D-Grafiken zu einer Xamarin.Forms Anwendung für die erweiterte Visualisierung verwendet werden kann."
-ms. Prod: xamarin ms. assetid: 0646b98e-cc04-4537-9715-9F 82338f D7FF ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/11/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Verwenden von urhusharp inXamarin.Forms
+description: In diesem Artikel wird erläutert, wie urhusharp verwendet werden kann, um einer Anwendung 3D-Grafiken Xamarin.Forms für die erweiterte Visualisierung hinzuzufügen.
+ms.prod: xamarin
+ms.assetid: 0646B98E-CC04-4537-9715-9F82338FD7FF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/11/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fbf717092da7f77e265803fae87efb5bf0e9876f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84574365"
 ---
-
 # <a name="using-urhosharp-in-xamarinforms"></a>Verwenden von urhusharp inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/urho-samples/tree/master/FormsSample)

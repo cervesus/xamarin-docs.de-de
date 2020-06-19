@@ -1,8 +1,22 @@
 ---
-Title: "tabbedpage Page Transition Animation on Android" Description: "Platform-Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne benutzerdefinierte Renderer oder Effekte implementieren zu müssen. In diesem Artikel wird erläutert, wie Sie das plattformspezifische Android-Element nutzen, das beim Navigieren durch Seiten in einer tabbedpage Übergangs Animationen deaktiviert.
-ms. Prod: xamarin ms. assetid: 2db4ea6d-9lockte-4137-BAB2-B20A457B1CA3 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 07/10/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Seiten Übergangs Animationen auf tabbedpage unter Android
+description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie das plattformspezifische Android-Element nutzen, das beim Navigieren durch Seiten in einer tabbedpage Übergangs Animationen deaktiviert.
+ms.prod: xamarin
+ms.assetid: 2DB4EA6D-9CED-4137-BAB2-B20A457B1CA3
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d3ae03ec6cbc3469422e6a2d57f186254e87f40c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140015"
 ---
-
 # <a name="tabbedpage-page-transition-animations-on-android"></a>Seiten Übergangs Animationen auf tabbedpage unter Android
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

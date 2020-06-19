@@ -1,8 +1,22 @@
 ---
-Title: "drei Methoden zum Zeichnen eines Bogens" Description: "in diesem Artikel wird erläutert, wie Sie mit skiasharp Bögen auf drei verschiedene Arten definieren und dies mit Beispielcode veranschaulichen."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: F1DA55E4-0182-4388-863C-5C340213BF3C Author: davidbritch ms. Author: dabritch ms. Date: 05/10/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Drei Möglichkeiten, einen Bogen zu zeichnen
+description: In diesem Artikel wird erläutert, wie Sie mit skiasharp Bögen auf drei verschiedene Arten definieren und dies mit Beispielcode veranschaulichen.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4eea7d500876793357113453493fa2fe2ede6cc4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140013"
 ---
-
 # <a name="three-ways-to-draw-an-arc"></a>Drei Möglichkeiten, einen Bogen zu zeichnen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
