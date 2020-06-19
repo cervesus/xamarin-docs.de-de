@@ -1,8 +1,22 @@
 ---
-Title: "Rechtschreibprüfung mit der Bing-Rechtschreibprüfung-API" Description: "Bing-Rechtschreibprüfung führt eine kontextbezogene Rechtschreibprüfung für Text durch und stellt Inline Vorschläge für falsch geschriebene Wörter bereit. In diesem Artikel wird erläutert, wie Sie die Bing-Rechtschreibprüfung Rest-API verwenden, um Rechtschreibfehler in einer-Anwendung zu korrigieren Xamarin.Forms .
-ms. Prod: xamarin ms. assetid: B40EB103-FDC0-45C6-9940-FB4ACDC2F4F9 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/08/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Rechtschreibprüfung mit der Bing-Rechtschreibprüfung-API
+description: Bing-Rechtschreibprüfung führt die kontextbezogene Rechtschreibprüfung für Text durch und stellt Inline Vorschläge für falsch geschriebene Wörter bereit. In diesem Artikel wird erläutert, wie Sie die Bing-Rechtschreibprüfung Rest-API verwenden, um Rechtschreibfehler in einer-Anwendung zu korrigieren Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: B40EB103-FDC0-45C6-9940-FB4ACDC2F4F9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1703f0049408381a86da73fb28696ef8708cc790
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139294"
 ---
-
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Rechtschreibprüfung mit der Bing-Rechtschreibprüfung-API
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

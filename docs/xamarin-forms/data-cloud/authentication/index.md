@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms Webdienst Authentifizierung" Beschreibung: "in diesem Handbuch wird erläutert, wie Authentifizierungsdienste in eine Anwendung integriert werden, Xamarin.Forms um Benutzern die Freigabe eines Back-Ends zu ermöglichen, während nur auf seine eigenen Daten zugegriffen werden kann."
-ms. Prod: xamarin ms. assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 06/27/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsWebdienst Authentifizierung
+description: In diesem Handbuch wird erläutert, wie Authentifizierungsdienste in eine-Anwendung integriert werden, Xamarin.Forms um Benutzern die Freigabe eines Back-Ends zu ermöglichen und nur auf seine eigenen Daten zuzugreifen.
+ms.prod: xamarin
+ms.assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 59130739617f38ce32e0d241f8e068cf077997ac
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136083"
 ---
-
 # <a name="xamarinforms-web-service-authentication"></a>Xamarin.FormsWebdienst Authentifizierung
 
 ## <a name="authenticate-a-restful-web-service"></a>[Authentifizieren eines Rest-Webdiensts](rest.md)

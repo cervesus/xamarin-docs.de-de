@@ -1,21 +1,21 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Implementieren einer Ansicht" description: "In diesem Artikel erfahren Sie, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes Xamarin.Forms-Steuerelement erstellen, mit dem ein Vorschauvideostream von der Kamera des Geräts angezeigt wird."'
+description: 'ms.prod: xamarin ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 05/10/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e565a2bcddf292d37bc3dd07a8edbbabec709d8a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: c239955a093120c3a16ea3236946eb645ea9a4b4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133561"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570803"
 ---
 # <a name="implementing-a-view"></a>Implementieren einer Ansicht
 
@@ -31,13 +31,11 @@ Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`View`](xref
 
 Der Renderingprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`View`](xref:Xamarin.Forms.View)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
-1. [Erstellen](#Creating_the_Custom_Control) Sie ein benutzerdefiniertes Xamarin.Forms-Steuerelement.
-1. [Nutzen](#Consuming_the_Custom_Control) Sie das benutzerdefinierte Steuerelement über Xamarin.Forms.
-1. [Erstellen](#Creating_the_Custom_Renderer_on_each_Platform) Sie den benutzerdefinierten Renderer für das Steuerelement auf jeder Plattform.
+1. [Erstellen](#creating-the-custom-control) Sie ein benutzerdefiniertes Xamarin.Forms-Steuerelement.
+1. [Nutzen](#consuming-the-custom-control) Sie das benutzerdefinierte Steuerelement über Xamarin.Forms.
+1. [Erstellen](#creating-the-custom-renderer-on-each-platform) Sie den benutzerdefinierten Renderer für das Steuerelement auf jeder Plattform.
 
 Im Folgenden wird jedes Element zum Implementieren eines `CameraPreview`-Renderers einzeln erläutert, der einen Vorschauvideostream der Kamera des Geräts zeigt. Durch Tippen auf den Videostream wird er gestartet und gestoppt.
-
-<a name="Creating_the_Custom_Control" />
 
 ## <a name="creating-the-custom-control"></a>Erstellen des benutzerdefinierten Steuerelements
 
@@ -60,8 +58,6 @@ public class CameraPreview : View
 ```
 
 Das benutzerdefinierte Steuerelement `CameraPreview` wird im .NET Standard-Bibliotheksprojekt erstellt und definiert die API für das Steuerelement. Das benutzerdefinierte Steuerelement stellt eine `Camera`-Eigenschaft zur Verfügung, die verwendet wird, um zu steuern, ob der Videostream der vorderen oder hinteren Kamera des Geräts angezeigt werden soll. Wenn bei der Erstellung des Steuerelements kein Wert für die `Camera`-Eigenschaft angegeben ist, wird standardmäßig die hintere Kamera festgelegt.
-
-<a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Nutzen des benutzerdefinierten Steuerelements
 
@@ -108,8 +104,6 @@ public class MainPageCS : ContentPage
 Eine Instanz des benutzerdefinierten Steuerelements `CameraPreview` wird zum Anzeigen des Vorschauvideostreams der Gerätekamera verwendet. Abgesehen von der optionalen Angabe eines Werts für die `Camera`-Eigenschaft, findet die Anpassung des Steuerelements im benutzerdefinierten Renderer statt.
 
 Ein benutzerdefinierter Renderer kann nun zu jedem Anwendungsprojekt hinzugefügt werden, um plattformspezifische Steuerelemente für die Kameravorschau zu erstellen.
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>Erstellen des benutzerdefinierten Renderers auf jeder Plattform
 

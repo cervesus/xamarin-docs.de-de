@@ -1,8 +1,23 @@
 ---
-Title: "Verwenden einer Azure Cosmos DB-dokumentdatenbank in Xamarin.Forms " Beschreibung: "in diesem Artikel wird erläutert, wie Sie die Azure Cosmos DB .NET Standard-Client Bibliothek verwenden, um eine Azure Cosmos DB dokumentdatenbank in eine-Anwendung zu integrieren Xamarin.Forms ."
-ms. Prod: xamarin ms. assetid: 7c0605d9-9b7f -4002-9b60-2b5daa3ea30c ms. Technology: xamarin-Forms ms. Custom: xamu-Video Author: davidbritch ms. Author: dabritch ms. Date: 06/16/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Verwenden einer Azure Cosmos DB-dokumentdatenbank inXamarin.Forms
+description: In diesem Artikel wird erläutert, wie Sie die Azure Cosmos DB .NET Standard-Client Bibliothek verwenden, um eine Azure Cosmos DB Dokumentendatenbank in eine-Anwendung zu integrieren Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/16/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b8cd2ea2f54e4bfdfea4fa5787a01aca252691b4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564653"
 ---
-
 # <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>Verwenden einer Azure Cosmos DB-dokumentdatenbank inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)

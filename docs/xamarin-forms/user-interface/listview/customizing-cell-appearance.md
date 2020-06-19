@@ -1,8 +1,22 @@
 ---
-Title: "Anpassen der ListView-Zellen Darstellung" Beschreibung: "dieser Artikel untersucht die Optionen für die Darstellung von Daten in Xamarin.Forms Anwendungen und nutzt gleichzeitig die Vorteile des ListView-Steuer Elements."
-ms. Prod: xamarin ms. assetid: FD45CB91-1A8F-46FB-B432-6BC20492E456 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/12/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Anpassen der ListView-Zellen Darstellung
+description: Dieser Artikel erläutert die Optionen für die Darstellung von Daten in Xamarin.Forms Anwendungen und nutzt dabei die Vorteile des ListView-Steuer Elements.
+ms.prod: xamarin
+ms.assetid: FD45CB91-1A8F-46FB-B432-6BC20492E456
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/12/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cdede547e3ef7cf9f7b6d89751c7476a2ce66d3d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129011"
 ---
-
 # <a name="customizing-listview-cell-appearance"></a>Anpassen der ListView-Zellen Darstellung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)

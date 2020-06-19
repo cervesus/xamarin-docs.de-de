@@ -1,8 +1,22 @@
 ---
-Title: "Integration in Xamarin.Forms " Description: "in diesem Artikel wird erläutert, wie skiasharp-Grafiken erstellt werden, die auf berühren und Xamarin.Forms Elemente reagieren, und dies mit Beispielcode veranschaulicht."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 288224f1-7aee-4148-A88D-A70C03F83D7A Author: davidbritch ms. Author: dabritch ms. Date: 02/09/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Integration inXamarin.Forms
+description: In diesem Artikel wird erläutert, wie skiasharp-Grafiken erstellt werden, die auf berühren und Xamarin.Forms Elemente reagieren, und dies mit Beispielcode veranschaulicht.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/09/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9e763184f38719cda4526eb0a2dfdf39b2191a03
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137695"
 ---
-
 # <a name="integrating-with-xamarinforms"></a>Integration inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

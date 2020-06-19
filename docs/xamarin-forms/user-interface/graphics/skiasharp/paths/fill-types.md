@@ -1,8 +1,22 @@
 ---
-Title: "die Pfad Füll Typen" Beschreibung: "in diesem Artikel werden die unterschiedlichen möglichen Effekte mit skiasharp-Pfad Füll Typen untersucht, und dies wird mit Beispielcode veranschaulicht."
-ms. Prod: xamarin ms. assetid: 57103a7a-49a2-46AE-894c-7c2664682644 ms. Technology: xamarin-skiasharp Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Die Fülltypen für Pfade
+description: In diesem Artikel werden die unterschiedlichen möglichen Effekte mit skiasharp-Pfad Füll Typen untersucht, und es wird ein Beispielcode veranschaulicht.
+ms.prod: xamarin
+ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
+ms.technology: xamarin-skiasharp
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139047"
 ---
-
 # <a name="the-path-fill-types"></a>Die Fülltypen für Pfade
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,8 +1,22 @@
 ---
-Title: "erstellen und Zeichnen von skiasharp-Bitmaps" Beschreibung: "erfahren Sie, wie Sie skiasharp-Bitmaps erstellen und dann auf diese Bitmaps zeichnen, indem Sie eine Canvas erstellen."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 79bd3266-D457-4e50bddf-33450035fa0f Author: davidbritch ms. Author: dabritch ms. Date: 07/17/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Erstellen und Zeichnen von skiasharp-Bitmaps
+description: Erfahren Sie, wie Sie skiasharp-Bitmaps erstellen und dann auf diese Bitmaps zeichnen, indem Sie eine Canvas basierend auf diesen Bitmaps erstellen.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c045e297beca675c0582efc2f75b1d6b2bcedcf8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573291"
 ---
-
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>Erstellen und Zeichnen von skiasharp-Bitmaps
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

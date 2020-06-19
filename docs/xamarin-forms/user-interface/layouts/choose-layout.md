@@ -1,8 +1,22 @@
 ---
-Title: "Layout auswählen Xamarin.Forms " Beschreibung: " Xamarin.Forms layoutklassen ermöglichen das Anordnen und Gruppieren von UI-Steuerelementen in der Anwendung."
-ms. Prod: xamarin ms. assetid: 05a39752-a174-447e-A30D-3cc9ef98cb96 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/21/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Layout auswählen Xamarin.Forms
+description: Xamarin.Formsmit layoutklassen können Sie UI-Steuerelemente in Ihrer Anwendung anordnen und gruppieren.
+ms.prod: xamarin
+ms.assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138501"
 ---
-
 # <a name="choose-a-xamarinforms-layout"></a>Layout auswählen Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)

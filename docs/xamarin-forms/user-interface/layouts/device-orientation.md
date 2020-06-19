@@ -1,8 +1,22 @@
 ---
-Title: "Geräte Orientierung" Beschreibung: "in diesem Artikel wird erläutert, wie Sie Xamarin.Forms Anwendungen, die in hoch-und Querformat aussehen, hervorragend aussehen."
-ms. Prod: xamarin ms. assetid: 11a1d327-2df3-4 f 3B-810D-6c95b71d27b2 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/24/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Geräteausrichtung
+description: In diesem Artikel wird erläutert, wie Sie Xamarin.Forms Anwendungen, die in hoch-und Querformat aussehen, hervorragend gestalten.
+ms.prod: xamarin
+ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/24/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0b1a47d4dcc92fca4d280708a2cbbe9374c17da8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573292"
 ---
-
 # <a name="device-orientation"></a>Geräteausrichtung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)

@@ -1,8 +1,22 @@
 ---
-Title: "Text Übersetzung using the Translator API" Description: "die Microsoft Translator-API kann verwendet werden, um Sprache und Text über eine Rest-API zu übersetzen. In diesem Artikel wird erläutert, wie Sie mit dem Microsoft Textübersetzungs-API Text von einer Sprache in eine andere Sprache in einer-Anwendung übersetzen Xamarin.Forms . "
-ms. Prod: xamarin ms. assetid: 68330242-92c5-46e1-b1e3-2395d8823b0c ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/08/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Text Übersetzung mithilfe der Translator-API
+description: Die Microsoft Translator-API kann verwendet werden, um Sprache und Text über eine Rest-API zu übersetzen. In diesem Artikel wird erläutert, wie Sie mit dem Microsoft Textübersetzungs-API Text in einer-Anwendung in eine andere Sprache übersetzen Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: 68330242-92C5-46F1-B1E3-2395D8823B0C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f0f43f8f2113b6bd0a800ed3e0bd96b641575b1c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139281"
 ---
-
 # <a name="text-translation-using-the-translator-api"></a>Text Übersetzung mithilfe der Translator-API
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

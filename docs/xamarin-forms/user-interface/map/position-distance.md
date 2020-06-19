@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms map Position and Distance" Description: "The Xamarin.Forms . Der Maps-Namespace enthält eine Positions Struktur, die in der Regel verwendet wird, wenn eine Karte und Ihre Pins positioniert werden, sowie eine Entfernungs Struktur, die optional beim Positionieren einer Karte verwendet werden kann. "
-ms. Prod: xamarin ms. assetid: 2f4ea3d2-1351-40ad-a71d-cf7f1f18f1e8 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsKarten Position und-Entfernung
+description: Die Xamarin.Forms . Der Maps-Namespace enthält eine Positions Struktur, die in der Regel verwendet wird, wenn eine Karte und Ihre Pins positioniert werden, sowie eine Entfernungs Struktur, die optional beim Positionieren einer Karte verwendet werden kann.
+ms.prod: xamarin
+ms.assetid: 2F4EA3D2-1351-40AD-A71D-CF7F1F18F1E8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2b1613789029d59e46a6d0431bfa9da1a53082e8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138397"
 ---
-
 # <a name="xamarinforms-map-position-and-distance"></a>Xamarin.FormsKarten Position und-Entfernung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms contentview" Description: "in diesem Artikel wird erläutert, wie die contentview-Klasse verwendet wird, um ein benutzerdefiniertes Steuerelement zu erstellen, wie z. b. CardView."
-ms. Prod: xamarin ms. assetid: 638402e7-CA44-456b-863b-791s6b6b561d ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 08/14/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms-ContentView
+description: In diesem Artikel wird erläutert, wie Sie mit der contentview-Klasse ein benutzerdefiniertes Steuerelement erstellen, wie z. b. CardView.
+ms.prod: xamarin
+ms.assetid: 638402E7-CA44-456B-863B-791F6B6B561D
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 08/14/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 46d2abf895ffe31bd1dc1c22caf36440c54b331c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130116"
 ---
-
 # <a name="xamarinforms-contentview"></a>Xamarin.Forms-ContentView
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)

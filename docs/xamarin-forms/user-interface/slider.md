@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms Schieberegler" Beschreibung: "der Xamarin.Forms Schieberegler ist ein horizontaler Strich, der vom Benutzer bearbeitet werden kann, um einen doppelten Wert aus einem kontinuierlichen Bereich auszuwählen. In diesem Artikel wird erläutert, wie Sie mit der Slider-Klasse einen Wert aus einem Bereich von kontinuierlichen Werten auswählen.
-ms. Prod: xamarin ms. assetid: 36b1c645-26e0-4874-B6B6-bdbf 77662878 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/27/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsKeits
+description: Der Xamarin.Forms Schieberegler ist ein horizontaler Balken, der vom Benutzer bearbeitet werden kann, um einen doppelten Wert aus einem kontinuierlichen Bereich auszuwählen. In diesem Artikel wird erläutert, wie Sie mit der Slider-Klasse einen Wert aus einem Bereich von kontinuierlichen Werten auswählen.
+ms.prod: xamarin
+ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9fc61dcac588f49fc1df7ee96792cf55bdfa46c5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572038"
 ---
-
 # <a name="xamarinforms-slider"></a>Xamarin.FormsKeits
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)

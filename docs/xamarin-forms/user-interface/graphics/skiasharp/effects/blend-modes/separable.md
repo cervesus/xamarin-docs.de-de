@@ -1,8 +1,22 @@
 ---
-Title: "die trennbaren Blend-Modi" Description: "verwenden Sie die trennbaren Blend-Modi, um die Farben rot, grün und blau zu ändern."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 66d1a537-A247-484e-b5b9-fbcb7838fbe9 Author: davidbritch ms. Author: dabritch ms. Date: 08/23/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Die trennbaren Blend-Modi
+description: Verwenden Sie die trennbaren Blend-Modi, um die Farben rot, grün und blau zu ändern.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139684"
 ---
-
 # <a name="the-separable-blend-modes"></a>Die trennbaren Blend-Modi
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

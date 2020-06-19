@@ -1,8 +1,22 @@
 ---
-Title: "Format Vererbung in Xamarin.Forms " Beschreibung: "Stile können von anderen Stilen erben, um die Duplizierung zu reduzieren und die Wiederverwendung zu ermöglichen. In diesem Artikel wird erläutert, wie Sie die Stil Vererbung in einer- Xamarin.Forms Anwendung ausführen.
-ms. Prod: xamarin ms. assetid: 67a3a39c-8cc0-446d-8162-FFA73582D3B8 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/17/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Stil Vererbung inXamarin.Forms
+description: Stile können von anderen Formaten erben, um Duplizierungen zu verringern und die Wiederverwendung zu ermöglichen. In diesem Artikel wird erläutert, wie Sie die Stil Vererbung in einer- Xamarin.Forms Anwendung ausführen.
+ms.prod: xamarin
+ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/17/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 80cc419ae098f4a0cbbd782785c0ec5ba03fa703
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138956"
 ---
-
 # <a name="style-inheritance-in-xamarinforms"></a>Stil Vererbung inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

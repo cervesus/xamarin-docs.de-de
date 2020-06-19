@@ -1,24 +1,24 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Installieren von Xamarin in Visual Studio 2019" description: "In diesem Dokument wird die Installation von Xamarin in Visual Studio 2019 beschrieben.'
+description: 'Dabei werden die Voraussetzungen, der Installationsvorgang und das Überprüfen der Installation erläutert." ms.prod: xamarin ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D author: conceptdev ms.author: crdun ms.date: 08/28/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
+author: conceptdev
+ms.author: crdun
+ms.date: 08/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 39cf115ad80dd8cdd3ddb298ce87c065663d6cb2
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 91e4cbf09ac730483659dbe692bab19f8bb0b113
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132677"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570127"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>Installieren von Xamarin in Visual Studio 2019
 
-<a name="requirements" />
+<a name="requirements"></a>
 
 Informieren Sie sich zu Beginn über die [Systemanforderungen](~/cross-platform/get-started/requirements.md).
 

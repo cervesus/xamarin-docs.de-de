@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms carouselview Scroll" Description: "Wenn ein Benutzer einen Bildlauf initiiert, kann die Endposition des Scrollvorgangs gesteuert werden, sodass Elemente vollständig angezeigt werden. Außerdem definiert carouselview zwei ScrollTo-Methoden, die Elemente Programm gesteuert in die Ansicht scrollen. "
-ms. Prod: xamarin ms. assetid: 92 d7b618-07fa-4343-9d0f -212525e92c39 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/28/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsCarouselview-Bildlauf
+description: Wenn ein Benutzer einen Bildlauf initiiert, kann die Endposition des Bildlaufs gesteuert werden, sodass Elemente vollständig angezeigt werden. Außerdem definiert carouselview zwei ScrollTo-Methoden, die Elemente Programm gesteuert in die Ansicht scrollen.
+ms.prod: xamarin
+ms.assetid: 92D7B618-07FA-4343-9D0F-212525E92C39
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 462948905f40679e2b931d4aa0039308c64a0a8f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136494"
 ---
-
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselview-Bildlauf
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

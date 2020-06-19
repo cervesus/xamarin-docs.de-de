@@ -1,11 +1,22 @@
 ---
-title: Beschreibung „Erstellen einer Xamarin.Forms-Shellanwendung“: „Das Vorgehen zum Erstellen einer Xamarin.Forms-Shell-Anwendung besteht darin, eine XAML-Datei zu erstellen, die die Shell-Klasse untergliedert, die MainPage-Eigenschaft der App-Klasse der Anwendung auf das in Unterklassen untergliederte Shell-Objekt festzulegen und dann die visuelle Hierarchie der Anwendung in der in Unterklassen untergliederten Shell-Klasse zu beschreiben.“
-ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: 'title: "Erstellen einer Xamarin.Forms-Shellanwendung" description: "Das Vorgehen zum Erstellen einer Xamarin.Forms-Shellanwendung besteht darin, eine XAML-Datei zu erstellen, die die Shellklasse untergliedert, die „MainPage“-Eigenschaft der App-Klasse der Anwendung auf das in Unterklassen untergliederte Shellobjekt festzulegen und dann die visuelle Hierarchie der Anwendung in der in Unterklassen untergliederten Shellklasse zu beschreiben."'
+description: 'ms.prod: xamarin ms.assetid: 2A51D78F-6CD5-4BC4-A62E-11CEFA799987 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 05/24/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 2A51D78F-6CD5-4BC4-A62E-11CEFA799987
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/24/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 62c323dd73f656d5b4f4e06c672fd952845efb22
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84137799"
 ---
-
 # <a name="create-a-xamarinforms-shell-application"></a>Erstellen einer Xamarin.Forms-Shellanwendung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

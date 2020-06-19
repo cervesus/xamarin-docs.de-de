@@ -1,22 +1,22 @@
 ---
-title: ''
-description: In diesem Artikel wird erläutert, wie Sie mit der Anwendungsindizierung und Deep Linking die Suche nach Inhalten von Xamarin.Forms-Anwendungen auf iOS- und Android-Geräten ermöglichen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Anwendungsindizierung und Deep Linking" description: "In diesem Artikel wird erläutert, wie Sie mit der Anwendungsindizierung und Deep Linking die Suche nach Inhalten von Xamarin.Forms-Anwendungen auf iOS- und Android-Geräten ermöglichen."'
+description: 'ms.prod: xamarin ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226 ms.technology: xamarin-forms ms.custom: xamu-video author: davidbritch ms.author: dabritch ms.date: 11/28/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d93f9bbcfafc3cb71d6b71159f6d3368f50c08be
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: c7f5979b93ff35b14ec7c13418a4565604f46bd7
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135732"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570634"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Anwendungsindizierung und Deep Linking
 
@@ -155,8 +155,6 @@ Dadurch wird die [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry)-Instanz aus d
 
 > [!NOTE]
 > Unter Android ist es nicht möglich, indizierten Inhalt aus den Suchergebnissen zu entfernen.
-
-<a name="responding" />
 
 ## <a name="responding-to-a-deep-link"></a>Reagieren auf einen Deep-Link
 

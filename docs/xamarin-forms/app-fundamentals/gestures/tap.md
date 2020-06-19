@@ -1,21 +1,21 @@
 ---
-title: ''
-description: In diesem Artikel wird beschrieben, wie die Tippbewegung in einer Xamarin.Forms-App für die Tipperkennung verwendet wird. Die Tipperkennung wurde mit der Klasse TapGestureRecognizer implementiert.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Hinzufügen der Gestenerkennung für Tippbewegungen" description: "In diesem Artikel wird beschrieben, wie die Tippbewegung in einer Xamarin.Forms-App für die Tipperkennung verwendet wird.'
+description: 'Die Tipperkennung wurde mit der Klasse „TapGestureRecognizer“ implementiert." ms.prod: xamarin ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 01/21/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0470419dd5070424c362dec8d4b1978507985783
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 1f5b476ac83f801b4ccded3e18bb601c06e0d0ef
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137617"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570608"
 ---
 # <a name="adding-a-tap-gesture-recognizer"></a>Hinzufügen einer Gestenerkennung für Tippbewegungen
 
@@ -40,8 +40,6 @@ tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
 Wenn [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) auf größer als 1 festgelegt ist, wird der Ereignishandler nur ausgeführt, wenn innerhalb eines festgelegten Zeitraums Tippbewegungen vorgenommen werden. Dieser Zeitraum ist nicht konfigurierbar. Sollte die zweite Tippbewegung (oder weitere) nicht in diesem Zeitraum stattfinden, werden sie effektiv ignoriert, und das „Zählen der Tippbewegungen“ startet neu.
-
-<a name="Using_Xaml" />
 
 ## <a name="using-xaml"></a>Verwenden von XAML
 

@@ -1,8 +1,22 @@
 ---
-Title: "Einführung in Xamarin.Forms Stile" Description: "Stile ermöglichen die Anpassung visueller Elemente. Stile werden für einen bestimmten Typ definiert und enthalten Werte für die Eigenschaften, die für diesen Typ verfügbar sind. "
-ms. Prod: xamarin ms. assetid: 3ff899c0-6cfb-4c1d-837d-9e9e10181967 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/27/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Einführung in Xamarin.Forms Stile
+description: Mit Stilen können visuelle Elemente angepasst werden. Stile werden für einen bestimmten Typ definiert und enthalten Werte für die Eigenschaften, die für diesen Typ verfügbar sind.
+ms.prod: xamarin
+ms.assetid: 3FF899C0-6CFB-4C1D-837D-9E9E10181967
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/27/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5766af7da3a0cf550a2ccb3a926dad25fd7962eb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138819"
 ---
-
 # <a name="introduction-to-xamarinforms-styles"></a>Einführung in Xamarin.Forms Stile
 
 _Mit Stilen können visuelle Elemente angepasst werden. Stile werden für einen bestimmten Typ definiert und enthalten Werte für die Eigenschaften, die für diesen Typ verfügbar sind._

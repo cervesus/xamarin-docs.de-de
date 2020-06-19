@@ -1,11 +1,22 @@
 ---
-title: description: „Das Xamarin.Forms-Element „ViewCell“ ist eine Zelle, die ListView oder TableView hinzugefügt werden kann und die eine vom Entwickler definierte Ansicht enthält. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein ViewCell-Element erstellen, das in einem Xamarin.Forms-ListView-Steuerelement gehostet wird.“
-ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: 'title: "Anpassen einer ViewCell" description: "Das Xamarin.Forms-Element „ViewCell“ ist eine Zelle, die „ListView“ oder „TableView“ hinzugefügt werden kann und die eine vom Entwickler definierte Ansicht enthält.'
+description: 'In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein „ViewCell“-Element erstellen, das in einem Xamarin.Forms-ListView-Steuerelement gehostet wird." ms.prod: xamarin ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 12/07/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/07/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c908da816352e8b3790ded0bef932e1485170abd
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573871"
 ---
-
 # <a name="customizing-a-viewcell"></a>Anpassen einer ViewCell
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
@@ -20,13 +31,11 @@ Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`ViewCell`](
 
 Der Renderprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
-1. [Erstellen](#Creating_the_Custom_Cell) Sie eine benutzerdefinierte Xamarin.Forms-Zelle.
-1. [Nutzen](#Consuming_the_Custom_Cell) Sie die benutzerdefinierte Zelle über Xamarin.Forms.
-1. [Erstellen](#Creating_the_Custom_Renderer_on_each_Platform) Sie den benutzerdefinierten Renderer für die Zelle auf jeder Plattform.
+1. [Erstellen](#creating-the-custom-cell) Sie eine benutzerdefinierte Xamarin.Forms-Zelle.
+1. [Nutzen](#consuming-the-custom-cell) Sie die benutzerdefinierte Zelle über Xamarin.Forms.
+1. [Erstellen](#creating-the-custom-renderer-on-each-platform) Sie den benutzerdefinierten Renderer für die Zelle auf jeder Plattform.
 
 Jedes dieser Elemente wird nachfolgend noch genauer für die Implementierung eines `NativeCell`-Renderers erläutert, der ein plattformspezifisches Layout für jede Zelle verwendet, die in einem Xamarin.Forms-[`ListView`](xref:Xamarin.Forms.ListView)-Steuerelement gehostet wird. Das verhindert, dass die Xamarin.Forms-Layoutberechnungen wiederholt beim Scrollen in `ListView` aufgerufen werden.
-
-<a name="Creating_the_Custom_Cell" />
 
 ## <a name="creating-the-custom-cell"></a>Erstellen der benutzerdefinierten Zelle
 
@@ -62,8 +71,6 @@ public class NativeCell : ViewCell
 ```
 
 Die Klasse `NativeCell` wird im .NET Standard-Bibliotheksprojekt erstellt und definiert die API für die benutzerdefinierte Zelle. Die benutzerdefinierte Zelle macht die Eigenschaften `Name`, `Category` und `ImageFilename` verfügbar, die über eine Datenbindung angezeigt werden können. Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) (Datenbindungsgrundlagen).
-
-<a name="Consuming_the_Custom_Cell" />
 
 ## <a name="consuming-the-custom-cell"></a>Nutzen der benutzerdefinierten Zelle
 
@@ -143,8 +150,6 @@ Ein Xamarin.Forms-[`ListView`](xref:Xamarin.Forms.ListView)-Steuerelement wird z
 Jede Zeile in der Liste enthält drei Datenelemente: einen Namen, eine Kategorie und einen Dateinamen für ein Bild. Das Layout jeder Zeile in der Liste wird durch eine `DataTemplate` definiert, auf die über die bindbare [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)-Eigenschaft verwiesen wird. Die `DataTemplate` definiert, dass jede Datenzeile in der Liste eine `NativeCell` sein wird, die die Eigenschaften `Name`, `Category` und `ImageFilename` über eine Datenbindung darstellt. Weitere Informationen zum `ListView`-Steuerelement finden Sie unter [ListView](~/xamarin-forms/user-interface/listview/index.md).
 
 Ein benutzerdefinierter Renderer kann nun zu jedem Anwendungsprojekt hinzugefügt werden, um das plattformspezifische Layout für jede Zelle anzupassen.
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>Erstellen des benutzerdefinierten Renderers auf jeder Plattform
 

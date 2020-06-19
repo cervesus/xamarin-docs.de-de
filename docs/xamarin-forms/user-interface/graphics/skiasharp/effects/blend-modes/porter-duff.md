@@ -1,8 +1,22 @@
 ---
-Title: "Porter-Duff-Blend-Modi" Description: "verwenden Sie die" Porter-Duff Blend "-Modi, um Szenen basierend auf Quell-und Ziel Images zu verfassen.
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 57f172 F8-ba03-43ec-A215-ed6b78696bb5 Author: davidbritch ms. Author: dabritch ms. Date: 08/23/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Porter-Duff-Blend-Modi
+description: Verwenden Sie die Blend-Modi "Porter-Duff", um Szenen basierend auf Quell-und Ziel Images zu verfassen.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131052"
 ---
-
 # <a name="porter-duff-blend-modes"></a>Porter-Duff-Blend-Modi
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

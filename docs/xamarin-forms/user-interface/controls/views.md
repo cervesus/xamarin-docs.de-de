@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms views" Description: " Xamarin.Forms Views sind die Bausteine von plattformübergreifenden mobilen Benutzeroberflächen. Dieser Artikel listet die Ansichten auf, die in enthalten sind Xamarin.Forms .
-ms. Prod: xamarin ms. assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/16/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsAnsichten
+description: Xamarin.FormsAnsichten sind die Bausteine von plattformübergreifenden mobilen Benutzeroberflächen. Dieser Artikel listet die Ansichten auf, die in enthalten sind Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c15626e405645d28a785c32d276860f9751ea25
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132378"
 ---
-
 # <a name="xamarinforms-views"></a>Xamarin.FormsAnsichten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)

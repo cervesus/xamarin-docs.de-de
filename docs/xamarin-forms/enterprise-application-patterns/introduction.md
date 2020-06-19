@@ -1,8 +1,22 @@
 ---
-Title: "Einführung in die Entwicklung von Unternehmens-Apps" Beschreibung: "dieses Kapitel bietet eine Einführung in die Entwicklung von Unternehmens-apps und führt den Mobile App der eshoponcontainers ein."
-ms. Prod: xamarin ms. assetid: cbce0659-fa03-447a-86ec-140438143230 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Einführung in die Entwicklung von Unternehmensanwendungen
+description: Dieses Kapitel bietet eine Einführung in die Entwicklung von Unternehmens-apps und führt die Mobile App eshoponcontainers ein.
+ms.prod: xamarin
+ms.assetid: cbce0659-fa03-447a-86ec-140438143230
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e78e7c3056d4f1e22114819f54c1df261aec70e1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198120"
 ---
-
 # <a name="introduction-to-enterprise-app-development"></a>Einführung in die Entwicklung von Unternehmensanwendungen
 
 Unabhängig von der Plattform stehen Entwicklern von Unternehmens-apps verschiedene Herausforderungen zur Seite:
@@ -108,7 +122,7 @@ Außerdem werden Komponententests für einige der Klassen in den eshoponcontaine
 
 Die eshoponcontainers-Mobile App Lösung organisiert den Quellcode und andere Ressourcen in-Projekten. Alle Projekte verwenden Ordner, um den Quellcode und andere Ressourcen in Kategorien zu organisieren. In der folgenden Tabelle werden die Projekte beschrieben, aus denen sich die eshoponcontainers-Mobile App zusammenführen:
 
-|Project|BESCHREIBUNG|
+|Project|Beschreibung|
 |--- |--- |
 |eshoponcontainers. Core|Dieses Projekt ist das Projekt der portablen Klassenbibliothek (Portable Class Library, PCL), das den freigegebenen und den freigegebenen Benutzeroberflächen|
 |eshoponcontainers. Droid|Dieses Projekt enthält Android-spezifischen Code und ist der Einstiegspunkt für die Android-App.|
@@ -133,7 +147,7 @@ Das PCL-Projekt "eshoponcontainers. Core" enthält die folgenden Ordner:
 |Konver|Enthält Wert Konverter, die benutzerdefinierte Logik auf eine Bindung anwenden.|
 |Effekte|Enthält die- `EntryLineColorEffect` Klasse, die verwendet wird, um die Rahmenfarbe bestimmter Steuerelemente zu ändern `Entry` .|
 |Ausnahmen|Enthält die benutzerdefinierten `ServiceAuthenticationException` .|
-|Erweiterungen|Enthält Erweiterungs Methoden für die `VisualElement` -Klasse und die- `IEnumerable` Klasse.|
+|Extensions|Enthält Erweiterungs Methoden für die `VisualElement` -Klasse und die- `IEnumerable` Klasse.|
 |Hilfsmethoden|Enthält Hilfsklassen für die app.|
 |Modelle|Enthält die Modellklassen für die app.|
 |Eigenschaften|Enthält `AssemblyInfo.cs` , eine .net-assemblymetadatendatei.|

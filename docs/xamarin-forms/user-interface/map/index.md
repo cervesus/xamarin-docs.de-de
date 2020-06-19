@@ -1,9 +1,23 @@
 ---
-Title: " Xamarin.Forms map" Description: "das Karten Steuerelement zeigt eine Karte an und erfordert Xamarin.Forms . Ordnet das nuget-Paket zu. "
-ms. Prod: xamarin ms. assetid: B669B5EE-D24C-4C69-93E1-2CA5CC9108B5 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/29/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms-Karte
+description: Das Karten Steuerelement zeigt eine Karte an und erfordert Xamarin.Forms . Ordnet das nuget-Paket zu.
+ms.prod: xamarin
+ms.assetid: B669B5EE-D24C-4C69-93E1-2CA5CC9108B5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/29/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2461ffa8168207e6a57fae005f752be48772a34a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139827"
 ---
-
-# <a name="xamarinforms-map"></a>Xamarin.FormsBilden
+# <a name="xamarinforms-map"></a>Xamarin.Forms-Karte
 
 ## <a name="initialization-and-configuration"></a>[Initialisierung und Konfiguration](setup.md)
 

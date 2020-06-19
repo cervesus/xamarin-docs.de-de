@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms map Initialization and Configuration" Description: "The Xamarin.Forms . Das Karten-nuget-Paket ist erforderlich, um Maps-Funktionen in einer Anwendung zu verwenden. Außerdem müssen für den Zugriff auf den Speicherort des Benutzers Standort Berechtigungen für die Anwendung erteilt worden sein. "
-ms. Prod: xamarin ms. assetid: 59cd1344-8248-406c-9144-0c8a67141e5b ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/07/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsZuordnungs Initialisierung und-Konfiguration
+description: Die Xamarin.Forms . Das Karten-nuget-Paket ist erforderlich, um Maps-Funktionen in einer Anwendung zu verwenden. Außerdem müssen für den Zugriff auf den Speicherort des Benutzers Standort Berechtigungen für die Anwendung erteilt worden sein.
+ms.prod: xamarin
+ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/07/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52e2ac5f8075c57f533fcba064223f355e07ba48
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139840"
 ---
-
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.FormsZuordnungs Initialisierung und-Konfiguration
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

@@ -1,8 +1,22 @@
 ---
-Title: "die skiasharp-kreisförmige Farbverläufe" Beschreibung: "Informationen zu den verschiedenen Typen von Farbverläufen auf der Grundlage von Kreisen."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 400ae23a-6a0b-4fa8-bd6b-de4146b04732 Author: davidbritch ms. Author: dabritch ms. Date: 08/23/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Die kreisförmigen Farbverläufe skiasharp
+description: Erfahren Sie mehr über die verschiedenen Typen von Farbverläufen auf der Grundlage von Kreisen.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 400AE23A-6A0B-4FA8-BD6B-DE4146B04732
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 418d29010a8cce81d2bb8c365608c54b61739622
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135641"
 ---
-
 # <a name="the-skiasharp-circular-gradients"></a>Die kreisförmigen Farbverläufe skiasharp
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

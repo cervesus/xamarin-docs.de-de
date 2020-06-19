@@ -1,8 +1,22 @@
 ---
-Title: "Native Ansichten in XAML" Description: "Native Ansichten von IOS, Android und der universelle Windows-Plattform können direkt von Xamarin.Forms XAML-Dateien referenziert werden. Eigenschaften und Ereignishandler können für Native Ansichten festgelegt werden, und Sie können mit Xamarin.Forms Sichten interagieren. In diesem Artikel wird veranschaulicht, wie Native Sichten von Xamarin.Forms XAML-Dateien genutzt werden.
-ms. Prod: xamarin ms. assetid: 7a856d31-B300-409e-9aeb-f 8a4db99b37e ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/23/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Native Ansichten in XAML
+description: Native Ansichten von IOS, Android und der universelle Windows-Plattform können direkt von Xamarin.Forms XAML-Dateien referenziert werden. Eigenschaften und Ereignishandler können für Native Ansichten festgelegt werden, und Sie können mit Xamarin.Forms Sichten interagieren. In diesem Artikel wird veranschaulicht, wie Native Sichten von Xamarin.Forms XAML-Dateien genutzt werden.
+ms.prod: xamarin
+ms.assetid: 7A856D31-B300-409E-9AEB-F8A4DB99B37E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/23/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0d6aa84a886d450d1dc42ec31edf16380b795404
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564640"
 ---
-
 # <a name="native-views-in-xaml"></a>Native Ansichten in XAML
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)

@@ -1,8 +1,22 @@
 ---
-Title: "Abhängigkeitsauflösung in Xamarin.Forms " Beschreibung: "in diesem Artikel wird erläutert, wie eine Abhängigkeits Auflösungsmethode in eingefügt Xamarin.Forms wird, damit der Abhängigkeits Injection-Container einer Anwendung die Erstellung und die Lebensdauer von benutzerdefinierten Renderers, Effekten und dependencyservice-Implementierungen steuern kann."
-ms. Prod: xamarin ms. assetid: 491b87dc-14cb-4adc-ac6c-40a7627b2524 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 07/27/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Abhängigkeitsauflösung in Xamarin.Forms
+description: In diesem Artikel wird erläutert, wie eine Abhängigkeits Auflösungsmethode in eingefügt Xamarin.Forms wird, damit der Abhängigkeits Injection-Container einer Anwendung die Erstellung und Lebensdauer von benutzerdefinierten Renderers, Effekten und dependencyservice-Implementierungen steuern kann.
+ms.prod: xamarin
+ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ae30b4a4b75906613baf8a2568548c8890ccb33a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139086"
 ---
-
 # <a name="dependency-resolution-in-xamarinforms"></a>Abhängigkeitsauflösung in Xamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)

@@ -1,8 +1,22 @@
 ---
-Title: "Drawing a Simple Circle in skiasharp" Description: "in diesem Artikel werden die Grundlagen der skiasharp-Zeichnung erläutert, einschließlich der canvasen und Zeichnungsobjekte in Xamarin.Forms Anwendungen, und es wird ein Beispielcode veranschaulicht."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8 Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Zeichnen eines einfachen Kreises in skiasharp
+description: In diesem Artikel werden die Grundlagen der skiasharp-Zeichnung erläutert, einschließlich der canvasen und der Paint-Objekte in Xamarin.Forms Anwendungen, und es wird ein Beispielcode veranschaulicht.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fb873102bfb8568b8298a39ea2429fb6c27af175
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137721"
 ---
-
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>Zeichnen eines einfachen Kreises in skiasharp
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms Auswahl" Beschreibung: "die Xamarin.Forms Auswahl zeigt eine kurze Liste von Elementen an, aus der der Benutzer ein Element auswählen kann. In diesem Artikel wird erläutert, wie Sie die Auswahl Klasse verwenden, um ein Textelement aus einer Liste von Daten auszuwählen.
-ms. Prod: xamarin ms. assetid: D4815A4B-104B-4294-951B-BD8F2EC33C86 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/26/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsBild
+description: Die Xamarin.Forms Auswahl zeigt eine kurze Liste von Elementen an, aus der der Benutzer ein Element auswählen kann. In diesem Artikel wird erläutert, wie Sie die Auswahl Klasse verwenden, um ein Textelement aus einer Liste von Daten auszuwählen.
+ms.prod: xamarin
+ms.assetid: D4815A4B-104B-4294-951B-BD8F2EC33C86
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/26/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 50f605f4ad9839521fd4169531ad46d197f20dbf
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139657"
 ---
-
 # <a name="xamarinforms-picker"></a>Xamarin.FormsBild
 
 _Die Auswahl Ansicht ist ein Steuerelement zum Auswählen eines Text Elements aus einer Datenliste._

@@ -1,8 +1,22 @@
 ---
-Title: "Verwenden von Entwurfszeit Daten mit der XAML-Vorschau" Beschreibung: "in diesem Artikel wird erläutert, wie Entwurfszeit Daten verwendet werden, um datenintensive Layouts in der XAML-Vorschau anzuzeigen, ohne Ihre APP ausführen zu müssen."
-ms. Prod: xamarin ms. assetid: 0F 608019-5951-4be6-80e0-9eee1733d642 ms. Technology: xamarin-Forms Author: maddyleger1 ms. Author: maleger ms. Date: 03/27/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Verwenden von Entwurfszeit Daten mit der XAML-Vorschau
+description: In diesem Artikel wird erläutert, wie Entwurfszeit Daten verwendet werden, um datenintensive Layouts in der XAML-Vorschau anzuzeigen, ohne Ihre APP ausführen zu müssen.
+ms.prod: xamarin
+ms.assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 182256fd572a370a7b322898b1e24ade12e971fd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127358"
 ---
-
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>Verwenden von Entwurfszeit Daten mit der XAML-Vorschau
 
 _Einige Layouts sind schwierig zu visualisieren, ohne dass Daten vorliegen. Verwenden Sie diese Tipps, um die Vorschau der datenintensiven Seiten im XAML-Previewer optimal zu nutzen._

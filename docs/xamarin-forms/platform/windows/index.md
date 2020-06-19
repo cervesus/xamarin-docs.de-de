@@ -1,8 +1,22 @@
 ---
-Title: "Windows-Platt Form Features" Beschreibung: "in diesem Artikel wird die Unterstützung der Windows-Plattform erläutert, die in verfügbar ist Xamarin.Forms ."
-ms. Prod: xamarin ms. assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/16/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Features der Windows-Plattform
+description: In diesem Artikel wird die Unterstützung der Windows-Plattform erläutert, die in verfügbar ist Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52246ce5d54ba97e91777f598f25c187901f89c4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137773"
 ---
-
 # <a name="windows-platform-features"></a>Features der Windows-Plattform
 
 Xamarin.FormsZum Entwickeln von Anwendungen für Windows-Plattformen ist Visual Studio erforderlich. Die [Seite "Unterstützte Plattformen](~/get-started/supported-platforms.md) " enthält weitere Informationen zu den Voraussetzungen.

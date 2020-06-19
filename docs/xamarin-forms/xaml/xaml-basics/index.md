@@ -1,8 +1,23 @@
 ---
-Title: " Xamarin.Forms XAML-Grundlagen" Beschreibung: "in diesem Handbuch wird erläutert, wie Sie plattformübergreifende XAML für mobile Geräte starten. Mit XAML können Entwickler Benutzeroberflächen in Xamarin.Forms Anwendungen mit Markup anstelle von Code definieren. "
-ms. Prod: xamarin ms. Custom: Video ms. assetid: 67cc2cd6-d10a-4b14-9696-1d3a410effbf ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/25/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsGrundlagen zu XAML
+description: In dieser Anleitung wird erläutert, wie Sie plattformübergreifende XAML für mobile Geräte starten. Mit XAML können Entwickler Benutzeroberflächen in Xamarin.Forms Anwendungen mit Markup anstelle von Code definieren.
+ms.prod: xamarin
+ms.custom: video
+ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8f5f69038f7d5cfe7ad46f013acb1519c4e9569f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138618"
 ---
-
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.FormsGrundlagen zu XAML
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

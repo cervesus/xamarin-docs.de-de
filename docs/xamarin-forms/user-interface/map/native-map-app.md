@@ -1,8 +1,22 @@
 ---
-Title: "Start the Native Map app from Xamarin.Forms " Description: "die native Maps-APP auf jeder Plattform kann von einer- Xamarin.Forms Anwendung durch die Start Programm Klasse gestartet werden Xamarin.Essentials ."
-ms. Prod: xamarin ms. assetid: 5cf7cd67-3F20-4d80-b99e-d35a5fd1019a ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/30/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Starten Sie die native Karten-app vonXamarin.Forms
+description: Die native Maps-APP auf jeder Plattform kann von einer- Xamarin.Forms Anwendung durch die Start Programm Klasse gestartet werden Xamarin.Essentials .
+ms.prod: xamarin
+ms.assetid: 5CF7CD67-3F20-4D80-B99E-D35A5FD1019A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/30/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c135d5dd02bba5102f5a93132f079526c84865d5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129336"
 ---
-
 # <a name="launch-the-native-map-app-from-xamarinforms"></a>Starten Sie die native Karten-app vonXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

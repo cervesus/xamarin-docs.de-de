@@ -1,8 +1,22 @@
 ---
-Title: "Abhängigkeitsinjektion" Beschreibung: "in diesem Kapitel wird erläutert, wie der eshoponcontainers-Mobile App eine Abhängigkeitsinjektion verwendet, um konkrete Typen aus dem Code, der von diesen Typen abhängt, zu entkoppeln."
-ms. Prod: xamarin ms. assetid: a150f2d1-06f8-4aed-ab4e-7a847d69f103 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 11/04/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Dependency Injection
+description: In diesem Kapitel wird erläutert, wie der eshoponcontainers-Mobile App eine Abhängigkeitsinjektion verwendet, um konkrete Typen aus dem Code zu entkoppeln, der von diesen Typen abhängt.
+ms.prod: xamarin
+ms.assetid: a150f2d1-06f8-4aed-ab4e-7a847d69f103
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 99cac3c597cf1d7351d3214ce59fd0a0a0a46400
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572350"
 ---
-
 # <a name="dependency-injection"></a>Dependency Injection
 
 In der Regel wird ein Klassenkonstruktor aufgerufen, wenn ein Objekt instanziiert wird. alle Werte, die das Objekt benötigt, werden als Argumente an den Konstruktor übergeben. Dies ist ein Beispiel für eine Abhängigkeitsinjektion, insbesondere als *Konstruktorinjektion*bezeichnet. Die Abhängigkeiten, die das Objekt benötigt, werden in den Konstruktor eingefügt.

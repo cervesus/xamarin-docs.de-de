@@ -1,8 +1,22 @@
 ---
-Title: "Authentifizierung und Autorisierung" Beschreibung: "in diesem Kapitel wird erläutert, wie der eshoponcontainers-Mobile App die Authentifizierung und Autorisierung für die containerisierten microservices ausführt."
-ms. Prod: xamarin ms. assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/08/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Authentifizierung und Autorisierung
+description: In diesem Kapitel wird erläutert, wie der eshoponcontainers-Mobile App die Authentifizierung und Autorisierung für die containerisierten microservices ausführt.
+ms.prod: xamarin
+ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8b712b2a5d7eeb2ee5e71047b9e6c460eb10d72a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573832"
 ---
-
 # <a name="authentication-and-authorization"></a>Authentifizierung und Autorisierung
 
 Die Authentifizierung ist der Prozess, bei dem Identifikations Anmelde Informationen wie Name und Kennwort eines Benutzers erhalten und diese Anmelde Informationen anhand einer Autorität überprüft werden. Wenn die Anmelde Informationen gültig sind, wird die Entität, die die Anmelde Informationen übermittelt hat, als authentifizierte Identität angesehen. Nachdem eine Identität authentifiziert wurde, bestimmt ein Autorisierungs Prozess, ob diese Identität Zugriff auf eine bestimmte Ressource hat.

@@ -1,6 +1,22 @@
 ---
-Title: "Formatieren von Xamarin.Forms apps mit Cascading Stylesheets (CSS)" Description: "unterstützt das Formatieren Xamarin.Forms visueller Elemente mithilfe Cascading Stylesheets (CSS)".
-ms. Prod: xamarin ms. assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2 ms. Technology: xamarin-Forms ms. Custom: xamu-Video Author: davidbritch ms. Author: dabritch ms. Date: 04/17/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Formatieren von Xamarin.Forms apps mit Cascading Stylesheets (CSS)
+description: Xamarin.Formsunterstützt das Formatieren visueller Elemente mithilfe Cascading Stylesheets (CSS).
+ms.prod: xamarin
+ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/20/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9375c4078c75d8e4788cb31a3d6a6a3a10100f49
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946222"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Formatieren von Xamarin.Forms apps mit Cascading Stylesheets (CSS)
 
@@ -145,6 +161,12 @@ Das Argument für die- `StyleSheet.FromReader` Methode ist der `TextReader` , de
 CSS verwendet Selektoren, um zu bestimmen, welche Elemente als Ziel verwendet werden. Stile mit übereinstimmenden Selektoren werden nacheinander in der Definitions Reihenfolge angewendet. Stile, die für ein bestimmtes Element definiert sind, werden immer zuletzt angewendet. Weitere Informationen zu unterstützten Selektoren finden Sie unter [Selector Reference](#selector-reference).
 
 CSS verwendet Eigenschaften, um ein ausgewähltes Element zu formatieren. Jede Eigenschaft verfügt über einen Satz möglicher Werte, und einige Eigenschaften können sich auf beliebige Elementtypen auswirken, während andere auf Gruppen von Elementen zutreffen. Weitere Informationen zu unterstützten Eigenschaften finden Sie unter Eigenschaften [Referenz](#property-reference).
+
+Untergeordnete Stylesheets überschreiben immer übergeordnete Stylesheets, wenn die gleichen Eigenschaften festgelegt werden. Daher werden die folgenden Rang folgen Regeln befolgt, wenn Stile angewendet werden, die die gleichen Eigenschaften festlegen:
+
+- Ein Stil, der in den Anwendungs Ressourcen definiert ist, wird durch ein Format überschrieben, das in den Seiten Ressourcen definiert ist, wenn die gleichen Eigenschaften festgelegt werden.
+- Ein in Seiten Ressourcen definierter Stil wird durch einen Stil überschrieben, der in den Steuerelement Ressourcen definiert ist, wenn die gleichen Eigenschaften festgelegt werden.
+- Ein Stil, der in den Anwendungs Ressourcen definiert ist, wird durch ein Format überschrieben, das in den Steuerelement Ressourcen definiert ist, wenn die gleichen Eigenschaften festgelegt werden.
 
 > [!IMPORTANT]
 > CSS-Variablen werden nicht unterstützt.
@@ -312,7 +334,7 @@ Dieser Selektor identifiziert alle [`Image`](xref:Xamarin.Forms.Image) Elemente,
 
 Folgende CSS-Selektoren werden von unterstützt Xamarin.Forms :
 
-|Auswahl|Beispiel|BESCHREIBUNG|
+|Auswahl|Beispiel|Beschreibung|
 |---|---|---|
 |`.class`|`.header`|Wählt alle-Elemente mit der-Eigenschaft aus, die `StyleClass` ' Header ' enthält. Beachten Sie, dass bei dieser Auswahl zwischen Groß-und klein|
 |`#id`|`#email`|Wählt alle-Elemente aus `StyleId` , deren auf festgelegt ist `email` . Wenn `StyleId` nicht festgelegt ist, Fall Back auf `x:Name` . Bei Verwendung von XAML `x:Name` wird von bevorzugt `StyleId` . Beachten Sie, dass bei dieser Auswahl zwischen Groß-und klein|
@@ -349,7 +371,7 @@ Die folgenden CSS-Eigenschaften werden von unterstützt Xamarin.Forms : (in der 
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_Farbe_ \|`initial` |`background-color: springgreen;`|
-|`background-image`|`Page`|_Zeichenfolge_ \|`initial` |`background-image: bg.png;`|
+|`background-image`|`Page`|_Zeichenfolge_ \| `initial` |`background-image: bg.png;`|
 |`border-color`|`Button`, `Frame`, `ImageButton`|_Farbe_ \|`initial`|`border-color: #9acd32;`|
 |`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \| `initial` |`border-radius: 10;`|
 |`border-width`|`Button`, `ImageButton`|_double_ \| `initial` |`border-width: .5;`|
@@ -361,7 +383,7 @@ Die folgenden CSS-Eigenschaften werden von unterstützt Xamarin.Forms : (in der 
 |`flex-grow`|`VisualElement`|_float_ \|`initial`|`flex-grow: 1.5;`|
 |`flex-shrink`|`VisualElement`|_float_ \|`initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Zeichenfolge_ \|`initial` |`font-family: Consolas;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Zeichenfolge_ \| `initial` |`font-family: Consolas;`|
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Double_ \| _namedsize_ \|  `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
@@ -425,7 +447,7 @@ Die folgenden Xamarin.Forms spezifischen CSS-Eigenschaften werden ebenfalls unte
 |`-xf-thumb-color`|`Slider`, `Switch`|_Farbe_ \|`initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
-|`-xf-visual`|`VisualElement`|_Zeichenfolge_ \|`initial` |`-xf-visual: material;`|
+|`-xf-visual`|`VisualElement`|_Zeichenfolge_ \| `initial` |`-xf-visual: material;`|
 
 ### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.FormsShellspezifische Eigenschaften
 

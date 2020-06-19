@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms indikatorview" Description: "der Wert von" sichorview "ist ein Steuerelement, das Indikatoren anzeigt, die die Anzahl der Elemente und die aktuelle Position in einer" carouselview "darstellen.
-ms. Prod: xamarin ms. assetid: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/27/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsIndikator Ansicht
+description: Die "sichorview" ist ein Steuerelement, das Indikatoren anzeigt, die die Anzahl der Elemente und die aktuelle Position in einer "carouselview" darstellen.
+ms.prod: xamarin
+ms.assetId: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/27/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e4c7d528cc61bb71fc495c830780ea4245ff3d87
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946376"
 ---
-
 # <a name="xamarinforms-indicatorview"></a>Xamarin.FormsIndikator Ansicht
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -12,12 +26,6 @@ ms. Prod: xamarin ms. assetid: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2 ms. Technolo
 Das `IndicatorView` -Steuerelement ist ein Steuerelement, das Indikatoren anzeigt, die die Anzahl der Elemente und die aktuelle Position in einem darstellen `CarouselView` :
 
 [![Screenshot von "carouselview" und "indikatorview" unter IOS und Android](indicatorview-images/circles.png "Sichorview-Kreise")](indicatorview-images/circles-large.png#lightbox "Sichorview-Kreise")
-
-`IndicatorView`ist auf Xamarin.Forms den IOS-und Android-Plattformen in 4,4 und 4,5 auf dem universelle Windows-Plattform verfügbar. Es ist jedoch zurzeit experimentell und kann nur verwendet werden, indem die folgende Codezeile zu Ihrer `AppDelegate` Klasse unter IOS oder ihrer Klasse unter Android hinzugefügt wird `MainActivity` , bevor aufgerufen wird `Forms.Init` :
-
-```csharp
-Forms.SetFlags("IndicatorView_Experimental");
-```
 
 `IndicatorView` definiert die folgenden Eigenschaften:
 

@@ -1,6 +1,6 @@
 ---
-title: Lokale Xamarin.Forms-Benachrichtigungen
-description: In diesem Artikel wird das Senden und Empfangen lokaler Benachrichtigungen in Xamarin.Forms erläutert.
+title: 'title: "Lokale Xamarin.Forms-Benachrichtigungen" description: "In diesem Artikel wird das Senden und Empfangen lokaler Benachrichtigungen in Xamarin.Forms erläutert."'
+description: 'ms.prod: xamarin ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date: 10/10/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 40e040f216ddda40931273f4e7f5614964862fe8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84137591"
 ---
 # <a name="local-notifications-in-xamarinforms"></a>Lokale Benachrichtigungen in Xamarin.Forms

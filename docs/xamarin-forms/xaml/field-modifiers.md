@@ -1,8 +1,22 @@
 ---
-Title: "XAML-Feldmodifizierer in Xamarin.Forms " Description: "das Attribut" x:FieldModifier Namespace "gibt die Zugriffsebene für generierte Felder für benannte XAML-Elemente an.
-ms. Prod: xamarin ms. assetid: 12357ce0-3C11-4b62-947f -72db6dfc23a2 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/02/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML-Feldmodifizierer inXamarin.Forms
+description: Das Namespace-Attribut "x:FieldModifier" gibt die Zugriffsebene für generierte Felder für benannte XAML-Elemente an.
+ms.prod: xamarin
+ms.assetid: 12357CE0-3C11-4B62-947F-72DB6DFC23A2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/02/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: db00f522b71a8993ef0f7f6cf5070813ce07396a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138124"
 ---
-
 # <a name="xaml-field-modifiers-in-xamarinforms"></a>XAML-Feldmodifizierer inXamarin.Forms
 
 Das `x:FieldModifier` Namespace-Attribut gibt die Zugriffsebene für generierte Felder für benannte XAML-Elemente an. Gültige Werte für das-Attribut sind:

@@ -1,8 +1,22 @@
 ---
-Title: "reagieren auf Systemdesign Änderungen in Xamarin.Forms Anwendungen" Beschreibung: " Xamarin.Forms Anwendungen können auf Änderungen des Betriebssystem Designs reagieren, indem Sie den Typ" onapptheme "und die dynamikresource-Markup Erweiterung verwenden.
-ms. assetid: D10506DD-BAA0-437F-A4AD-882D16E7B60D ms. Prod: xamarin ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/22/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Reagieren auf Änderungen des Systemdesigns in Xamarin.Forms Anwendungen
+description: Xamarin.FormsAnwendungen können auf Änderungen des Betriebssystem Designs reagieren, indem Sie den Typ "onapptheme" und die dynamikresource-Markup Erweiterung verwenden.
+ms.assetid: D10506DD-BAA0-437F-A4AD-882D16E7B60D
+ms.prod: xamarin
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 86ad823466470033c458ad44a404e8ab667c1b95
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84903076"
 ---
-
 # <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>Reagieren auf Änderungen des Systemdesigns in Xamarin.Forms Anwendungen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
@@ -11,14 +25,14 @@ Geräte enthalten in der Regel helle und dunkle Designs, die jeweils auf eine Vi
 
 Abhängig von der Gerätekonfiguration kann sich das Systemdesign aus verschiedenen Gründen ändern. Dies schließt das Systemdesign ein, das explizit vom Benutzer geändert wird, da es sich aufgrund der Tageszeit geändert hat und sich aufgrund von Umgebungsfaktoren (z. b. niedriger Beleuchtung) ändert.
 
-Xamarin.FormsAnwendungen können auf Systemdesign Änderungen reagieren, indem Sie Ressourcen mit der `AppThemeColor` -Klasse, der `OnAppTheme<T>` -Klasse und der- `OnAppTheme` Markup Erweiterung definieren. Diese Ressourcen sollten dann mit der `DynamicResource` Markup Erweiterung genutzt werden.
+Xamarin.FormsAnwendungen können auf Systemdesign Änderungen reagieren, indem Sie Ressourcen mit der `AppThemeBinding` Markup Erweiterung und die `SetAppThemeColor` -und- `SetOnAppTheme<T>` Erweiterungs Methoden nutzen.
 
 > [!IMPORTANT]
 > Die Reaktion auf eine Systemdesign Änderung ist derzeit experimentell und kann nur verwendet werden, indem das-Flag festgelegt wird `AppTheme_Experimental` . Weitere Informationen finden Sie unter [experimentelle Flags](~/xamarin-forms/internals/experimental-flags.md).
 
 Die folgenden Anforderungen müssen erfüllt sein, damit auf Xamarin.Forms eine Systemdesign Änderung reagiert:
 
-- Xamarin.Forms4,6 oder höher.
+- Xamarin.Forms4.6.0.967 oder höher.
 - IOS 13 oder höher.
 - Android 10 (API 29) oder höher.
 - UWP-Build 14393 oder höher.
@@ -30,123 +44,80 @@ Die folgenden Screenshots zeigen Design Seiten für helle und dunkle Systemdesig
 
 ## <a name="define-and-consume-theme-resources"></a>Definieren und Verwenden von Design Ressourcen
 
-Ressourcen für helle und dunkle Designs können mit der- `AppThemeColor` Klasse, der `OnAppTheme<T>` -Klasse und der- `OnAppTheme` Markup Erweiterung definiert werden. Bei jedem Ansatz werden diese Ressourcen automatisch basierend auf dem Wert des aktuellen Systemdesigns angewendet. Außerdem werden Objekte, die diese Ressourcen nutzen, automatisch aktualisiert, wenn sich das Systemdesign ändert, während eine app ausgeführt wird.
+Ressourcen für helle und dunkle Designs können mit der `AppThemeBinding` Markup Erweiterung und den `SetAppThemeColor` Erweiterungs Methoden und verwendet werden `SetOnAppTheme<T>` . Mit diesen Ansätzen werden Ressourcen automatisch basierend auf dem Wert des aktuellen Systemdesigns angewendet. Außerdem werden Objekte, die diese Ressourcen nutzen, automatisch aktualisiert, wenn sich das Systemdesign ändert, während eine app ausgeführt wird.
 
-### <a name="appthemecolor"></a>Appmecolor
+### <a name="appthemebinding-markup-extension"></a>Apptomebinding-Markup Erweiterung
 
-Die `AppThemeColor` -Klasse wird verwendet, um [`Color`](xref:Xamarin.Forms.Color) Ressourcen für die hellen und dunklen Systemdesigns zu definieren. `AppThemeColor`Ressourcen sollten in einem definiert werden [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) :
-
-```xaml
-<Application ...>
-    <Application.Resources>
-        <AppThemeColor x:Key="PageBackgroundColor"
-                       Light="White"
-                       Dark="Black" />
-        <AppThemeColor x:Key="NavigationBarColor"
-                       Light="WhiteSmoke"
-                       Dark="Teal" />
-        <AppThemeColor x:Key="PrimaryColor"
-                       Light="WhiteSmoke"
-                       Dark="Teal" />
-        <AppThemeColor x:Key="SecondaryColor"
-                       Light="Black"
-                       Dark="White" />
-        <AppThemeColor x:Key="PrimaryTextColor"
-                       Light="Black"
-                       Dark="White" />
-        <AppThemeColor x:Key="SecondaryTextColor"
-                       Light="White"
-                       Dark="White" />
-        <AppThemeColor x:Key="TertiaryTextColor"
-                       Light="Gray"
-                       Dark="WhiteSmoke" />
-        <AppThemeColor x:Key="TransparentColor"
-                       Light="Transparent"
-                       Dark="Transparent" />
-    </Application.Resources>
-</Application>
-```
-
-Jede `AppThemeColor` Ressource muss über ein- `x:Key` Attribut verfügen, das ihr einen beschreibenden Schlüssel in der übergibt [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . Der Wert der `Light` Eigenschaften und `Dark` sollte- [`Color`](xref:Xamarin.Forms.Color) Objekte sein. Außerdem `Default` kann eine Eigenschaft auf einen festgelegt werden, `Color` der standardmäßig vom Consumerobjekt verwendet werden soll.
-
-`AppThemeColor`Ressourcen können Inline genutzt werden:
-
-```xaml
-<Label Text="This monkey reacts appropriately to ridiculous assertions and actions"
-       TextColor="{DynamicResource PrimaryTextColor}" />
-```
-
-Alternativ `AppThemeColor` können Ressourcen von impliziten oder expliziten Objekten genutzt werden [`Style`](xref:Xamarin.Forms.Style) :
-
-```xaml
-<Style TargetType="NavigationPage">
-    <Setter Property="BarBackgroundColor"
-            Value="{DynamicResource NavigationBarColor}" />
-    <Setter Property="BarTextColor"
-            Value="{DynamicResource SecondaryColor}" />
-</Style>
-```
-
-> [!IMPORTANT]
-> `AppThemeColor`Ressourcen sollten mit der `DynamicResource` Markup Erweiterung genutzt werden. Dadurch wird sichergestellt, dass die Darstellung des nutzenden Objekts aktualisiert wird, wenn das Systemdesign geändert wird.
-
-### <a name="onappthemelttgt"></a>Onapptheme &lt; T&gt;
-
-Die `OnAppTheme<T>` -Klasse wird verwendet, um Ressourcen eines beliebigen Typs für die hellen und dunklen Systemdesigns zu definieren. `OnAppTheme<T>`Ressourcen sollten in einem definiert werden [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) , wobei das `T` Argument als Wert des- `x:TypeArguments` Attributs angegeben ist:
-
-```xaml
-<Application ...>
-    <Application.Resources>
-        <OnAppTheme x:Key="ImageLogo"
-                    x:TypeArguments="FileImageSource"
-                    Light="lightlogo.png"
-                    Dark="darklogo.png" />
-    </Application.Resources>
-</Application>
-```
-
-Jede `OnAppTheme<T>` Ressource muss über ein- `x:Key` Attribut verfügen, das ihr einen beschreibenden Schlüssel in der übergibt [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . Der Wert der `Light` Eigenschaften und `Dark` sollte Objekte des Typs sein, der als-Attribut definiert ist `x:TypeArguments` . Außerdem `Default` kann eine Eigenschaft auf ein Objekt vom Typ festgelegt werden, `T` das standardmäßig vom Consumerobjekt verwendet werden soll.
-
-`OnAppTheme<T>`Ressourcen können Inline genutzt werden:
-
-```xaml
-<Image Source="{DynamicResource ImageLogo}"
-       Aspect="AspectFit"
-       HeightRequest="200" /
-```
-
-Alternativ `OnAppTheme<T>` können Ressourcen von impliziten oder expliziten Objekten genutzt werden [`Style`](xref:Xamarin.Forms.Style) :
-
-```xaml
-<Style x:Key="imageLogoStyle"
-       TargetType="Image">
-    <Setter Property="Source"
-            Value="{DynamicResource ImageLogo}" />
-    <Setter Property="Aspect"
-            Value="AspectFit" />
-</Style>
-```
-
-> [!IMPORTANT]
-> `OnAppTheme<T>`Ressourcen sollten mit der `DynamicResource` Markup Erweiterung genutzt werden. Dadurch wird sichergestellt, dass die Darstellung des nutzenden Objekts aktualisiert wird, wenn das Systemdesign geändert wird.
-
-### <a name="onapptheme-markup-extension"></a>OnAppTheme-Markuperweiterung
-
-Die `OnAppTheme` Markup Erweiterung ermöglicht es Ihnen, eine zu verwendende Ressource anzugeben, z. b. ein Bild oder eine Farbe, basierend auf dem aktuellen Systemdesign. Sie bietet die gleiche Funktionalität wie die- `OnAppTheme<T>` Klasse, bietet aber eine präzisere Darstellung:
+Die `AppThemeBinding` Markup Erweiterung ermöglicht es Ihnen, basierend auf dem aktuellen Systemdesign eine Ressource, z. b. ein Bild oder eine Farbe, zu verwenden:
 
 ```xaml
 <ContentPage ...>
     <StackLayout Margin="20">
         <Label Text="This text is green in light mode, and red in dark mode."
-               TextColor="{OnAppTheme Light=Green, Dark=Red}" />
-        <Image Source="{OnAppTheme Light=lightlogo.png, Dark=darklogo.png}" />
+               TextColor="{AppThemeBinding Light=Green, Dark=Red}" />
+        <Image Source="{AppThemeBinding Light=lightlogo.png, Dark=darklogo.png}" />
     </StackLayout>
 </ContentPage>
 ```
 
 In diesem Beispiel wird die Textfarbe der ersten [`Label`](xref:Xamarin.Forms.Label) auf grün festgelegt, wenn das Gerät das helle Design verwendet, und wird auf Rot festgelegt, wenn das Gerät das dunkle Design verwendet. Entsprechend [`Image`](xref:Xamarin.Forms.Image) zeigt eine andere Bilddatei an, die auf dem aktuellen Systemdesign basiert.
 
-Weitere Informationen zur `OnAppTheme` Markup Erweiterung finden Sie unter [onapptheme Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#onapptheme-markup-extension).
+Außerdem können in einem definierte Ressourcen [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) mit der Markup Erweiterung genutzt werden `StaticResource` :
+
+```xaml
+<ContentPage ...>
+    <ContentPage.Resources>
+
+        <!-- Light colors -->
+        <Color x:Key="LightPrimaryColor">WhiteSmoke</Color>
+        <Color x:Key="LightSecondaryColor">Black</Color>
+
+        <!-- Dark colors -->
+        <Color x:Key="DarkPrimaryColor">Teal</Color>
+        <Color x:Key="DarkSecondaryColor">White</Color>
+
+        <Style x:Key="ButtonStyle"
+               TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}" />
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+        </Style>
+
+    </ContentPage.Resources>
+
+    <Grid BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+      <Button Text="MORE INFO"
+              Style="{StaticResource ButtonStyle}" />
+    </Grid>    
+</ContentPage>    
+```
+
+In diesem Beispiel ändert sich die Hintergrundfarbe der [`Grid`](xref:Xamarin.Forms.Grid) und der Stil, je nachdem, [`Button`](xref:Xamarin.Forms.Button) ob das Gerät das helle Design oder das dunkle Design verwendet.
+
+Weitere Informationen zur `AppThemeBinding` Markup Erweiterung finden Sie unter [appdermebinding-Markup Erweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension).
+
+### <a name="extension-methods"></a>Erweiterungsmethoden
+
+Xamarin.Formsschließt `SetAppThemeColor` -und- `SetOnAppTheme<T>` Erweiterungs Methoden ein, mit denen [`VisualElement`](xref:Xamarin.Forms.VisualElement) Objekte auf Systemdesign Änderungen reagieren können.
+
+Die- `SetAppThemeColor` Methode ermöglicht das [`Color`](xref:Xamarin.Forms.Color) Angeben von-Objekten, die basierend auf dem aktuellen Systemdesign für eine Ziel Eigenschaft festgelegt werden:
+
+```csharp
+Label label = new Label();
+label.SetAppThemeColor(Label.TextColorProperty, Color.Green, Color.Red);
+```
+
+In diesem Beispiel wird die Textfarbe der [`Label`](xref:Xamarin.Forms.Label) auf grün festgelegt, wenn das Gerät das helle Design verwendet, und wird auf Rot festgelegt, wenn das Gerät das dunkle Design verwendet.
+
+Die- `SetOnAppTheme<T>` Methode ermöglicht die Angabe von Objekten des Typs `T` , die basierend auf dem aktuellen Systemdesign für eine Ziel Eigenschaft festgelegt werden:
+
+```csharp
+Image image = new Image();
+image.SetOnAppTheme<FileImageSource>(Image.SourceProperty, "lightlogo.png", "darklogo.png");
+```
+
+In diesem Beispiel wird [`Image`](xref:Xamarin.Forms.Image) angezeigt, `lightlogo.png` Wenn das Gerät das helle Design verwendet und `darklogo.png` Wenn das Gerät das dunkle Design verwendet.
 
 ## <a name="detect-the-current-system-theme"></a>Aktuelles Systemdesign erkennen
 
@@ -161,6 +132,16 @@ Die- `RequestedTheme` Eigenschaft gibt einen `OSAppTheme` Enumerationsmember zur
 - `Unspecified`Gibt an, dass für das Gerät ein nicht bestimmtes Design verwendet wird.
 - `Light`Gibt an, dass das helle Design des Geräts verwendet wird.
 - `Dark`Gibt an, dass das Gerät das dunkle Design verwendet.
+
+## <a name="set-the-current-user-theme"></a>Aktuelles Benutzer Design festlegen
+
+Das Design, das von der Anwendung verwendet wird, kann mit der-Eigenschaft festgelegt werden `Application.UserTheme` , die vom Typ ist `OSAppTheme` :
+
+```csharp
+Application.Current.UserAppTheme = OSAppTheme.Dark;
+```
+
+In diesem Beispiel wird die Anwendung so festgelegt, dass Sie das Design verwendet, das für den dunklen System Modus definiert wurde.
 
 ## <a name="react-to-theme-changes"></a>Auf Designänderungen reagieren
 
@@ -178,7 +159,6 @@ Das- `AppThemeChangedEventArgs` Objekt, das das- `RequestedThemeChanged` Ereigni
 ## <a name="related-links"></a>Verwandte Links
 
 - [Systemdesigns (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
-- [OnAppTheme-Markuperweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#onapptheme-markup-extension)
+- [Apptomebinding-Markup Erweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)
 - [Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Dynamische Stile inXamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
 - [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md)

@@ -1,8 +1,22 @@
 ---
-Title: "Path Effects in skiasharp" Description: "in diesem Artikel werden die verschiedenen skiasharp-Pfad Effekte erläutert, die die Verwendung von Pfaden zum überspringen und Auffüllen ermöglichen und dies mit Beispielcode veranschaulichen."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 95167d1f-A718-405a-AFCC-90e596d422f3 Author: davidbritch ms. Author: dabritch ms. Date: 07/29/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Pfad Effekte in skiasharp
+description: In diesem Artikel werden die verschiedenen skiasharp-Pfad Effekte erläutert, die die Verwendung von Pfaden für das streicheln und Auffüllen ermöglichen und dies mit Beispielcode veranschaulicht.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/29/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f3a5a581ffb4ca2acf1d4209b8b7a744f0daa5eb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128047"
 ---
-
 # <a name="path-effects-in-skiasharp"></a>Pfad Effekte in skiasharp
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

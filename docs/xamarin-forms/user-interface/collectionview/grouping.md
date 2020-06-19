@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms CollectionView-Gruppierung" Beschreibung: "CollectionView kann ordnungsgemäß gruppierte Daten anzeigen, indem die isgroupeigenschaft auf true festgelegt wird."
-ms. Prod: xamarin ms. assetid: 7e494245-bdbd-49d6-b7fa-cef976eb59bb ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/17/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsCollectionView-Gruppierung
+description: CollectionView kann ordnungsgemäß gruppierte Daten anzeigen, indem die isgruppierte Eigenschaft auf true festgelegt wird.
+ms.prod: xamarin
+ms.assetid: 7E494245-FDBD-49D6-B7FA-CEF976EB59BB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/17/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 51661d6573d78386f4ca8bfea0063b752295c2d8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136460"
 ---
-
 # <a name="xamarinforms-collectionview-grouping"></a>Xamarin.FormsCollectionView-Gruppierung
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

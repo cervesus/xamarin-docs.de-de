@@ -1,6 +1,21 @@
 ---
-Title: "Bearbeiten von Xamarin.Forms XAML mit der Toolbox" Description: "die XAML-Toolbox enthält alle integrierten Layouts und Steuerelemente, die direkt in eine geöffnete XAML-Datei gezogen werden können."
-ms. Prod: xamarin ms. assetid: 513d1247-8ad0-4611-8660-1d277cd369e1 ms. Technology: xamarin-Forms Author: konzeptiontdev ms. Author: crdun ms. Date: 08/29/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Bearbeiten von Xamarin.Forms XAML mit der Toolbox
+description: Die XAML-Toolbox enthält alle integrierten Layouts und Steuerelemente, die direkt in eine geöffnete XAML-Datei gezogen werden können.
+ms.prod: xamarin
+ms.assetid: 513D1247-8AD0-4611-8660-1D277CD369E1
+ms.technology: xamarin-forms
+author: conceptdev
+ms.author: crdun
+ms.date: 08/29/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 76d6a6f39692445f208f250ca7f6141a1e1ad450
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198005"
 ---
 # <a name="xamarinforms-xaml-toolbox"></a>Xamarin.FormsXAML-Toolbox
 

@@ -1,8 +1,22 @@
 ---
-Title: "Authentifizieren eines Rest-Webdiensts" Beschreibung: "die Standard Authentifizierung ermöglicht nur Clients, die über die richtigen Anmelde Informationen verfügen, Zugriff auf Ressourcen. In diesem Artikel wird erläutert, wie die Standard Authentifizierung verwendet wird, um den Zugriff auf Rest-Webdienst Ressourcen zu schützen.
-ms. Prod: xamarin ms. assetid: 7b5ffdc4-f2aa-4b12-a30a-1dacc7fecbf1 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/22/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Authentifizieren eines Rest-Webdiensts
+description: Die Standard Authentifizierung ermöglicht nur Clients, die über die richtigen Anmelde Informationen verfügen, Zugriff auf Ressourcen. In diesem Artikel wird erläutert, wie die Standard Authentifizierung verwendet wird, um den Zugriff auf Rest-Webdienst Ressourcen zu schützen
+ms.prod: xamarin
+ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/22/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135719"
 ---
-
 # <a name="authenticate-a-restful-web-service"></a>Authentifizieren eines Rest-Webdiensts
 
 _HTTP unterstützt die Verwendung mehrerer Authentifizierungsmechanismen, um den Zugriff auf Ressourcen zu steuern. Die Standard Authentifizierung ermöglicht nur Clients, die über die richtigen Anmelde Informationen verfügen, Zugriff auf Ressourcen. In diesem Artikel wird veranschaulicht, wie die Standard Authentifizierung verwendet wird, um den Zugriff auf Rest-Webdienst Ressourcen zu schützen_

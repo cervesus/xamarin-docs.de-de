@@ -1,8 +1,22 @@
 ---
-Title: "SVG Path Data in skiasharp" Description: "in diesem Artikel wird erläutert, wie Sie skiasharp-Pfade mithilfe von Text Zeichenfolgen im Format der skalierbaren Vektorgrafik definieren und dies mit Beispielcode veranschaulichen."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 1d53067b-3502-4d74-b89d-7ec496901ae2 Author: davidbritch ms. Author: dabritch ms. Date: 05/24/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: SVG-Pfaddaten in skiasharp
+description: In diesem Artikel wird erläutert, wie Sie skiasharp-Pfade mithilfe von Text Zeichenfolgen im Format der skalierbaren Vektorgrafik definieren und dies mit Beispielcode veranschaulichen.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/24/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 680c924280f8f3a6080b2fcc1968ecaf308f33a0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138059"
 ---
-
 # <a name="svg-path-data-in-skiasharp"></a>SVG-Pfaddaten in skiasharp
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

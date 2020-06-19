@@ -1,8 +1,22 @@
 ---
-Title: "Start Indikator Sichtbarkeit für IOS" Description: "Platform-Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne benutzerdefinierte Renderer oder Effekte implementieren zu müssen. In diesem Artikel wird erläutert, wie die plattformspezifische IOS-Anwendung verwendet wird, die die Sichtbarkeit des Start Indikators auf einer Seite festlegt.
-ms. Prod: xamarin ms. assetid: F81022E0-3C6C-49C0-A000-FAF6574D3FB7 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 05/09/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Sichtbarkeit von Start Indikatoren unter IOS
+description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung nutzen, die die Sichtbarkeit des Start Indikators auf einer Seite festlegt.
+ms.prod: xamarin
+ms.assetid: F81022E0-3C6C-49C0-A000-FAF6574D3FB7
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/09/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e76684ffb293380c283153c35c907acc50e40aab
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128075"
 ---
-
 # <a name="home-indicator-visibility-on-ios"></a>Sichtbarkeit von Start Indikatoren unter IOS
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,21 +1,21 @@
 ---
-title: ''
-description: Mit dem Entry-Steuerelement von Xamarin.Forms kann eine einzelne Textzeile bearbeitet werden. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für das Entry-Steuerelement erstellen, sodass Entwickler das native Standardrendering mit ihrem eigenen plattformspezifischen Rendering überschreiben können.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Anpassen eines Eintrags" description: "Mit dem Entry-Steuerelement von Xamarin.Forms kann eine einzelne Textzeile bearbeitet werden.'
+description: 'In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für das Entry-Steuerelement erstellen, sodass Entwickler das native Standardrendering mit ihrem eigenen plattformspezifischen Rendering überschreiben können." ms.prod: xamarin ms.assetid: 7B5DD10D-0411-424F-88D8-8A474DF16D8D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 11/26/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 7B5DD10D-0411-424F-88D8-8A474DF16D8D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 61bd66fd25b7aea3e5be346f79e63d410164b002
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: d28a9079d27310dde0e5ea5bf80c83895bbcf1d4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138982"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571570"
 ---
 # <a name="customizing-an-entry"></a>Anpassen eines Eintrags
 
@@ -31,16 +31,14 @@ Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`Entry`](xre
 
 Der Renderingprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für das [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
-1. [Erstellen](#Creating_the_Custom_Entry_Control) Sie ein benutzerdefiniertes Xamarin.Forms-Steuerelement.
-1. [Nutzen](#Consuming_the_Custom_Control) Sie das benutzerdefinierte Steuerelement über Xamarin.Forms.
-1. [Erstellen](#Creating_the_Custom_Renderer_on_each_Platform) Sie den benutzerdefinierten Renderer für das Steuerelement auf jeder Plattform.
+1. [Erstellen](#creating-the-custom-entry-control) Sie ein benutzerdefiniertes Xamarin.Forms-Steuerelement.
+1. [Nutzen](#consuming-the-custom-control) Sie das benutzerdefinierte Steuerelement über Xamarin.Forms.
+1. [Erstellen](#creating-the-custom-renderer-on-each-platform) Sie den benutzerdefinierten Renderer für das Steuerelement auf jeder Plattform.
 
 Im Folgenden wird auf jeden dieser Punkte ausführlicher eingegangen, um zu veranschaulichen, wie Sie ein [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement implementieren können, das auf jeder Plattform eine andere Hintergrundfarbe aufweist.
 
 > [!IMPORTANT]
 > In diesem Artikel wird erläutert, wie Sie einen einfachen benutzerdefinierten Renderer erstellen. Es ist jedoch nicht erforderlich, einen benutzerdefinierten Renderer zu erstellen, um ein `Entry`-Steuerelement zu implementieren, das auf jeder Plattform eine andere Hintergrundfarbe aufweist. Dies erreichen Sie einfacher, indem Sie mithilfe der [`Device`](xref:Xamarin.Forms.Device)-Klasse oder der `OnPlatform`-Markuperweiterung plattformspezifische Werte angeben. Weitere Informationen finden Sie unter [Providing Platform-Specific Values (Angeben plattformspezifischer Werte)](~/xamarin-forms/platform/device.md#provide-platform-specific-values) und [OnPlatform Markup Extension (OnPlatform-Markuperweiterung)](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension).
-
-<a name="Creating_the_Custom_Entry_Control" />
 
 ## <a name="creating-the-custom-entry-control"></a>Erstellen des benutzerdefinierten Entry-Steuerelements
 
@@ -53,8 +51,6 @@ public class MyEntry : Entry
 ```
 
 Das `MyEntry`-Steuerelement wird im .NET-Standard-Bibliotheksprojekt erstellt. Es handelt sich dabei einfach um ein [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement. Die Anpassung des Steuerelements erfolgt im benutzerdefinierten Renderer, sodass keine zusätzliche Implementierung im `MyEntry`-Steuerelement erforderlich ist.
-
-<a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Nutzen des benutzerdefinierten Steuerelements
 
@@ -98,8 +94,6 @@ public class MainPage : ContentPage
 Dieser Code instanziiert ein neues [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt, das ein [`Label`](xref:Xamarin.Forms.Label)- und `MyEntry`-Steuerelement anzeigt, die auf der Seite vertikal und horizontal zentriert sind.
 
 Ein benutzerdefinierter Renderer kann nun zu jedem Anwendungsprojekt hinzugefügt werden, um die Darstellung des Steuerelements auf jeder Plattform anzupassen.
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>Erstellen des benutzerdefinierten Renderers auf jeder Plattform
 

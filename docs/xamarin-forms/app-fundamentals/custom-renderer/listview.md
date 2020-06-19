@@ -1,21 +1,21 @@
 ---
-title: ''
-description: Beim Xamarin.Forms-Element „ListView“ handelt es sich um eine Ansicht, in der eine Sammlung von Daten als vertikale Liste angezeigt wird. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer erstellen, der plattformspezifische Listensteuerelemente und natives Zellenlayout kapselt, sodass die Kontrolle über die Leistung nativer Listensteuerelemente erhöht wird.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Anpassen einer ListView" description: "Beim Xamarin.Forms-Element „ListView“ handelt es sich um eine Ansicht, in der eine Sammlung von Daten als vertikale Liste angezeigt wird.'
+description: 'In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer erstellen, der plattformspezifische Listensteuerelemente und natives Zellenlayout kapselt, sodass die Kontrolle über die Leistung nativer Listensteuerelemente erhöht wird." ms.prod: xamarin ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 11/29/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3403948c2853289610a73bb36073f09c0c86137d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: dc28cdaf78c72c219706a30c30af7f90ae7c4eec
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135303"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569620"
 ---
 # <a name="customizing-a-listview"></a>Anpassen einer ListView
 
@@ -31,13 +31,11 @@ Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`ListView`](
 
 Der Renderprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`ListView`](xref:Xamarin.Forms.ListView)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
-1. [Erstellen](#Creating_the_Custom_ListView_Control) Sie ein benutzerdefiniertes Xamarin.Forms-Steuerelement.
-1. [Nutzen](#Consuming_the_Custom_Control) Sie das benutzerdefinierte Steuerelement über Xamarin.Forms.
-1. [Erstellen](#Creating_the_Custom_Renderer_on_each_Platform) Sie den benutzerdefinierten Renderer für das Steuerelement auf jeder Plattform.
+1. [Erstellen](#creating-the-custom-listview-control) Sie ein benutzerdefiniertes Xamarin.Forms-Steuerelement.
+1. [Nutzen](#consuming-the-custom-control) Sie das benutzerdefinierte Steuerelement über Xamarin.Forms.
+1. [Erstellen](#creating-the-custom-renderer-on-each-platform) Sie den benutzerdefinierten Renderer für das Steuerelement auf jeder Plattform.
 
 Jedes dieser Elemente wird nachfolgend noch genauer für die Implementierung eines `NativeListView`-Renderers erläutert, der ein plattformspezifisches Listensteuerelement und native Zellenlayouts nutzt. Dieses Szenario ist nützlich, wenn Sie eine vorhandene native App portieren, die Code für Listen und Zellen enthält, der wiederverwendet werden kann. Darüber hinaus können Sie detaillierte Anpassungen der Listensteuerelementfeatures vornehmen, die die Leistung beeinflussen können, in etwa Datenvirtualisierungen.
-
-<a name="Creating_the_Custom_ListView_Control" />
 
 ## <a name="creating-the-custom-listview-control"></a>Erstellen des benutzerdefinierten ListView-Steuerelements
 
@@ -66,8 +64,6 @@ public class NativeListView : ListView
 ```
 
 Das Steuerelement `NativeListView` wird im .NET Standard-Bibliotheksprojekt erstellt und definiert die API für das benutzerdefinierte Steuerelement. Dieses Steuerelement macht eine `Items`-Eigenschaft verfügbar, die zum Auffüllen der `ListView` mit Daten verwendet wird und zu Anzeigezwecken an Daten gebunden werden kann. Das Steuerelement stellt ebenfalls ein `ItemSelected`-Ereignis zur Verfügung, das ausgelöst wird, wenn ein Element in einem plattformspezifischen, nativen Listensteuerelement ausgewählt wird. Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) (Datenbindungsgrundlagen).
-
-<a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Nutzen des benutzerdefinierten Steuerelements
 
@@ -142,8 +138,6 @@ Das benutzerdefinierte Steuerelement `NativeListView` verwendet plattformspezifi
 > Da das benutzerdefinierte Steuerelement `NativeListView` mithilfe der plattformspezifischen Listensteuerelemente gerendert wird, die gescrollt werden können, darf das benutzerdefinierte Steuerelement nicht in scrollbaren Layoutsteuerelementen wie [`ScrollView`](xref:Xamarin.Forms.ScrollView) gehostet werden.
 
 Ein benutzerdefinierter Renderer kann nun zu jedem Anwendungsprojekt hinzugefügt werden, um plattformspezifische Listensteuerelemente und native Zellenlayouts zu erstellen.
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>Erstellen des benutzerdefinierten Renderers auf jeder Plattform
 

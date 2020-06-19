@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms Switch" Description: "der Xamarin.Forms Schalter ist eine Art von Schaltfläche, die vom Benutzer geändert werden kann, um zwischen den Zuständen" ein "und" aus "zu wechseln. In diesem Artikel wird erläutert, wie Sie die Switch-Klasse verwenden, um ein umschlendes Benutzeroberflächen Element anzuzeigen.
-ms. Prod: xamarin ms. assetid: B2F9CC65-481B-4323-8E77-C6BE29C90DE9 ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 07/18/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsNot
+description: Der- Xamarin.Forms Schalter ist ein Typ von Schaltfläche, der vom Benutzer geändert werden kann, um zwischen den Zuständen "ein" und "aus" zu wechseln. In diesem Artikel wird erläutert, wie Sie die Switch-Klasse verwenden, um ein umschlendes Benutzeroberflächen Element anzuzeigen.
+ms.prod: xamarin
+ms.assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 05/19/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 12831eec6ba97eee7cde7479729c5c22dce78e90
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946425"
 ---
-
 # <a name="xamarinforms-switch"></a>Xamarin.FormsNot
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
@@ -15,9 +29,9 @@ Die folgenden Screenshots zeigen ein `Switch` Steuerelement in seinen **on** -un
 
 Das- `Switch` Steuerelement definiert die folgenden Eigenschaften:
 
-* [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)ein `boolean` Wert, der angibt, ob `Switch` **auf on**fest liegt.
-* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)ist eine `Color` , die sich darauf auswirkt, wie das-Objekt `Switch` im ein- **on**oder ausgeschaltet wird.
-* `ThumbColor`ist der `Color` des Zieh Punkts.
+- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)ein `boolean` Wert, der angibt, ob `Switch` **auf on**fest liegt.
+- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)ist eine `Color` , die sich darauf auswirkt, wie das-Objekt `Switch` im ein- **on**oder ausgeschaltet wird.
+- `ThumbColor`ist der `Color` des Zieh Punkts.
 
 Diese Eigenschaften werden durch ein- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Objekt unterstützt. Dies bedeutet, dass formatiert `Switch` werden kann und das Ziel von Daten Bindungen ist.
 
@@ -109,11 +123,46 @@ In diesem Beispiel [`Label`](xref:Xamarin.Forms.Label) verwendet einen Bindungs 
 
 Weitere Informationen zu Triggern finden Sie unter [ Xamarin.Forms Trigger](~/xamarin-forms/app-fundamentals/triggers.md).
 
+## <a name="switch-visual-states"></a>Visuelle Zustände wechseln
+
+[`Switch`](xref:Xamarin.Forms.Switch)verfügt `On` über `Off` die visuellen Zustände und, die zum Initiieren einer visuellen Änderung verwendet werden können, wenn sich die- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) Eigenschaft ändert.
+
+Das folgende XAML-Beispiel zeigt, wie visuelle Zustände für die `On` Zustände und definiert werden `Off` :
+
+```xaml
+<Switch IsToggled="True">
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+            <VisualState x:Name="On">
+                <VisualState.Setters>
+                    <Setter Property="ThumbColor"
+                            Value="MediumSpringGreen" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState x:Name="Off">
+                <VisualState.Setters>
+                    <Setter Property="ThumbColor"
+                            Value="Red" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+</Switch>
+```
+
+In diesem Beispiel gibt das `On` [`VisualState`](xref:Xamarin.Forms.VisualState) an, dass die-Eigenschaft, wenn die- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) Eigenschaft ist `true` , `ThumbColor` auf Mittel Spring grün festgelegt wird. Der `Off` `VisualState` gibt `IsToggled` an, dass die-Eigenschaft, wenn die-Eigenschaft ist `false` , `ThumbColor` auf Rot festgelegt wird. Der Gesamteffekt besteht daher darin, dass der `Switch` Ziehpunkt in einer Off-Position rot ist und sein Ziehpunkt Mittel Spring grün ist, wenn sich das an der `Switch` Position befindet:
+
+![Screenshot des Schalters "VisualState" unter IOS und Android](switch-images/on-visualstate.png "Bei VisualState wechseln") 
+ ![Screenshot: Deaktivieren von VisualState, unter IOS und Android](switch-images/off-visualstate.png "VisualState ausschalten")
+
+Weitere Informationen zu visuellen Zuständen finden Sie unter [Xamarin.Forms: Visual State-Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
+
 ## <a name="disable-a-switch"></a>Deaktivieren eines Schalters
 
 Eine Anwendung kann einen Status eingeben, in dem ein-/ausgeschaltet `Switch` ist, der kein gültiger Vorgang ist. In solchen Fällen kann der deaktiviert werden, indem die zugehörige- `Switch` Eigenschaft auf festgelegt wird `IsEnabled` `false` . Dadurch wird verhindert, dass Benutzer die bearbeiten können `Switch` .
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [Switchdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
-* [Xamarin.Forms-Trigger](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Switchdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+- [Xamarin.Forms-Trigger](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms: Visual State-Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

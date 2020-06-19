@@ -1,8 +1,22 @@
 ---
-Title: "verwenden Sie die Anmeldung mit Apple für Xamarin.Forms " Description: "erfahren Sie, wie Sie die Anmeldung mit Apple in Ihren Xamarin.Forms mobilen Anwendungen implementieren."
-ms. Prod: xamarin ms. assetid: 2e47e7f 2-93d4-4ca3-9e66-247466d25e4d ms. Technology: xamarin-Forms Author: davidortinau ms. Author: daortin ms. Date: 09/10/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Verwenden von anmelden mit Apple fürXamarin.Forms
+description: Erfahren Sie, wie Sie die Anmeldung mit Apple in Ihren Xamarin.Forms mobilen Anwendungen implementieren.
+ms.prod: xamarin
+ms.assetid: 2E47E7F2-93D4-4CA3-9E66-247466D25E4D
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 09/10/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fb37f8fb2d01154bf2e749e685c4e96c12d6bc5e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139489"
 ---
-
 # <a name="use-sign-in-with-apple-in-xamarinforms"></a>Verwenden von anmelden mit Apple inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/signinwithapple/)

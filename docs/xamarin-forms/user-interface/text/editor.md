@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms Editor" Description: "in diesem Artikel wird erläutert, wie das Xamarin.Forms Editor-Steuerelement verwendet wird, um mehrzeilige Texteingaben in einer Anwendung zu akzeptieren."
-ms. Prod: xamarin ms. assetid: 7074db3a-30D2-4a6b-9a89-b029eef20b07 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/26/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms Editor
+description: In diesem Artikel wird erläutert, wie das Xamarin.Forms Editor-Steuerelement verwendet wird, um mehrzeilige Texteingaben in einer Anwendung zu akzeptieren.
+ms.prod: xamarin
+ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/26/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 02749c9f8f55427bb1742e78464bbc003f1f7358
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136174"
 ---
-
 # <a name="xamarinforms-editor"></a>Xamarin.Forms Editor
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

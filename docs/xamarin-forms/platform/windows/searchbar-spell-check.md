@@ -1,8 +1,22 @@
 ---
-Title: "Searchbar Rechtschreibprüfung unter Windows" Description: "Platform-Besonderheiten ermöglicht Ihnen die Nutzung von Funktionen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie das Windows-plattformspezifische verwenden, das es einer Suchleiste ermöglicht, mit der Rechtschreibprüfungs-Engine zu interagieren.
-ms. Prod: xamarin ms. assetid: 7974c91f -7502-4db3-b0e9-c45e943dda26 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/24/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: " Searchbar-Rechtschreibprüfung unter Windows"
+description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie das Windows-plattformspezifische verwenden können, das es einer Suchleiste ermöglicht, mit dem Rechtschreib Prüfungs Modul zu interagieren.
+ms.prod: xamarin
+ms.assetid: 7974C91F-7502-4DB3-B0E9-C45E943DDA26
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f6c8810ea37c767ef67c7f53d312b63a9de09f26
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136564"
 ---
-
 # <a name="searchbar-spell-check-on-windows"></a>Searchbar-Rechtschreibprüfung unter Windows
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

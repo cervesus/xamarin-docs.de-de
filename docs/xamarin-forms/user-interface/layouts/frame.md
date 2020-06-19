@@ -1,6 +1,21 @@
 ---
-Title: " Xamarin.Forms Frame" Description: "die Xamarin.Forms Frame-Klasse ist ein Layout, das verwendet wird, um eine Ansicht oder ein Layout mit einem Rahmen zu umschließen, der mit Farbe, Schatten und anderen Optionen konfiguriert werden kann."
-ms. Prod: xamarin ms. assetid: 4e074714-0928-41C8-A468-b60e23236a8c ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 08/06/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsDr
+description: Die Xamarin.Forms Frame-Klasse ist ein Layout, das verwendet wird, um eine Ansicht oder ein Layout mit einem Rahmen zu umschließen, der mit Farbe, Schatten und anderen Optionen konfiguriert werden kann.
+ms.prod: xamarin
+ms.assetId: 4E074714-0928-41C8-A468-B60E23236A8C
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 08/06/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 42192111befbefda7e0f62b7691a8392c2828818
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137188"
 ---
 # <a name="xamarinforms-frame"></a>Xamarin.FormsDr
 

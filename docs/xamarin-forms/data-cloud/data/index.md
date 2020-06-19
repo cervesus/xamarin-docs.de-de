@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms lokale Datenspeicherung" Beschreibung: "erfahren Sie, wie Sie die Dateiverarbeitung aus Xamarin.Forms frei gegebenem Code ausführen und wie Sie Daten in einer lokalen SQLite-Datenbank mithilfe von SQLite.net lesen und schreiben."
-ms. Prod: xamarin ms. assetid: A324C247-7DA8-4B14-A813-25F85525E32B ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 06/27/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formslokale Datenspeicherung
+description: Erfahren Sie, wie Sie die Dateiverarbeitung aus Xamarin.Forms frei gegebenem Code ausführen und wie Sie Daten in einer lokalen SQLite-Datenbank mithilfe von SQLite.net lesen und schreiben.
+ms.prod: xamarin
+ms.assetid: A324C247-7DA8-4B14-A813-25F85525E32B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 997a659dd01e410f791af28d1b657055296081c8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127113"
 ---
-
 # <a name="xamarinforms-local-data-storage"></a>Xamarin.Formslokale Datenspeicherung
 
 ## <a name="files"></a>[Dateien](files.md)

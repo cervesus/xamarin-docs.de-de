@@ -1,8 +1,22 @@
 ---
-Title: "path and Text in skiasharp" Description: "dieser Artikel untersucht die Schnittmenge von skiasharp-Pfaden und-Text und veranschaulicht dies mit Beispielcode."
-ms. Prod: xamarin ms. assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B ms. Technology: xamarin-skiasharp Author: davidbritch ms. Author: dabritch ms. Date: 08/01/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Pfade und Text in skiasharp
+description: Dieser Artikel untersucht die Schnittmenge von skiasharp-Pfaden und-Text und veranschaulicht dies mit Beispielcode.
+ms.prod: xamarin
+ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
+ms.technology: xamarin-skiasharp
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/01/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b0cbb7d26a2aea02a3255fc75947c20a3d803b86
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131897"
 ---
-
 # <a name="paths-and-text-in-skiasharp"></a>Pfade und Text in skiasharp
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

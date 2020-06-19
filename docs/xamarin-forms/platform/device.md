@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms Geräteklasse" Beschreibung: "in diesem Artikel wird erläutert, wie Sie die Xamarin.Forms Geräteklasse verwenden, um die Funktionalität und Layouts auf Platt Form Ebene genauer steuern zu können."
-ms. Prod: xamarin ms. assetid: 2F 304aec-8612-4833-81e5-b2f 3F 469b2df ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/17/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsGeräteklasse
+description: In diesem Artikel wird erläutert, wie Sie die Xamarin.Forms Geräteklasse verwenden, um die Funktionalität und Layouts auf Platt Form Ebene genauer zu steuern.
+ms.prod: xamarin
+ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ba4e93b8f364d6887439b05017a9cd373dce5985
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572324"
 ---
-
 # <a name="xamarinforms-device-class"></a>Xamarin.FormsGeräteklasse
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)

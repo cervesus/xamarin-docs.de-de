@@ -1,8 +1,22 @@
 ---
-Title: "Erstellen eines Xamarin.Forms visuellen Renderers" Description: "erstellen Sie Xamarin.Forms Visualisierungen, die selektiv auf visualelement-Objekte angewendet werden sollen, ohne dass untergeordnete Sichten vorhanden sein müssen Xamarin.Forms ."
-ms. Prod: xamarin ms. assetid: 80bf 9c72-ac28-4aaf-9ddd-b60cbdd1cd59 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/12/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Erstellen eines Xamarin.Forms visuellen Renderers
+description: Erstellen Xamarin.Forms Sie Visualisierungen, die selektiv auf visualelement-Objekte angewendet werden, ohne dass untergeordnete Sichten vorhanden sein müssen Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: 80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/12/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 23edbb007e912d13858686d1c5ec574c9e3349c7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127139"
 ---
-
 # <a name="create-a-xamarinforms-visual-renderer"></a>Erstellen eines Xamarin.Forms visuellen Renderers
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)

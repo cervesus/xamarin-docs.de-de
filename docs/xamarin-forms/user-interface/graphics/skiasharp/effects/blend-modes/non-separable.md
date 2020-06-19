@@ -1,8 +1,22 @@
 ---
-Title: "die nicht trennbare Blend-Modi" Description: "verwenden Sie die nicht trennbaren Blend-Modi, um Farbton, Sättigung oder Helligkeit zu ändern."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 97fa2730-87c0-4914-8c9f-c64a02cf9eef Author: davidbritch ms. Author: dabritch ms. Date: 08/23/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Die nicht trennbaren Blend-Modi
+description: Verwenden Sie die nicht trennbaren Blend-Modi, um Farbton, Sättigung oder Helligkeit zu ändern.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 97FA2730-87C0-4914-8C9F-C64A02CF9EEF
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52be7641ac3b2983f537e11bccd76f2a5b52574d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130181"
 ---
-
 # <a name="the-non-separable-blend-modes"></a>Die nicht trennbaren Blend-Modi
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,8 +1,22 @@
 ---
-Title: "Finger zeichnen in skiasharp" Description: "in diesem Artikel wird erläutert, wie Sie mit Ihren Fingern auf dem skiasharp-Canvas in einer- Xamarin.Forms Anwendung zeichnen und dies mit Beispielcode veranschaulichen."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 56929d74-8f2c-44c6-90e6-3fbabcdc0a4b Author: davidbritch ms. Author: dabritch ms. Date: 04/05/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Finger zeichnen in skiasharp
+description: In diesem Artikel wird erläutert, wie Sie mit Ihren Fingern in der skiasharp-Canvas in einer Xamarin.Forms -Anwendung zeichnen und dies mit Beispielcode veranschaulichen.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/05/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 61ae651a2402204f69f642235d74d8d641b47988
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139021"
 ---
-
 # <a name="finger-painting-in-skiasharp"></a>Finger zeichnen in skiasharp
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

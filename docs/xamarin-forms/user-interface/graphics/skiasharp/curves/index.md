@@ -1,8 +1,22 @@
 ---
-Title: "skiasharp Curves and Pfades" Description: "in diesem Artikel wird erläutert, wie Sie skiasharp zum Zeichnen von Kurven und zum Verwenden von Pfad Features in Xamarin.Forms Anwendungen verwenden. Dies wird mit Beispielcode veranschaulicht."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 781937aa-aa1c-469c-aa92-d42d08b58635 Author: davidbritch ms. Author: dabritch ms. Date: 05/24/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: SkiaSharp-Kurven und -Pfade
+description: In diesem Artikel wird erläutert, wie Sie mit skiasharp Kurven zeichnen und Pfad Features in Xamarin.Forms -Anwendungen verwenden. Dies wird mit Beispielcode veranschaulicht.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/24/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d5a4fc818cef77671b6cabddc56de8234cb858d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127802"
 ---
-
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp-Kurven und -Pfade
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

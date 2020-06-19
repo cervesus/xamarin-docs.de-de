@@ -1,8 +1,22 @@
 ---
-Title: "Platform-Besonderheiten" Description: "Platform-Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne benutzerdefinierte Renderer oder Effekte implementieren zu müssen. In diesem Artikel wird erläutert, wie Platt Form Besonderheiten genutzt und erstellt werden. "
-ms. Prod: xamarin ms. assetid: 4729db9c-8800-4e29-9d66-3be13c5f 8c94 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/01/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Plattformeigenschaften
+description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Platt Form Besonderheiten verwendet und erstellt werden.
+ms.prod: xamarin
+ms.assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/01/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8478db85bd9904ee6c5cfeab9b2af390e7d3096d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139502"
 ---
-
 # <a name="platform-specifics"></a>Plattformeigenschaften
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

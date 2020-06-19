@@ -1,8 +1,22 @@
 ---
-Title: "Unternehmens-App-Navigation" Beschreibung: "in diesem Kapitel wird erläutert, wie die eshoponcontainers-Mobile App das Anzeigen von Model First-Navigation aus Ansichts Modellen ausführt."
-ms. Prod: xamarin ms. assetid: 4cad57b5-7 FE4-4527-A988-d9b60c9620b4 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Navigation in der Unternehmens Anwendung
+description: In diesem Kapitel wird erläutert, wie die eshoponcontainers-Mobile App das Anzeigen von Model First-Navigation aus Ansichts Modellen ausführt.
+ms.prod: xamarin
+ms.assetid: 4cad57b5-7fe4-4527-a988-d9b60c9620b4
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ca562120a819d4d9fe09b2ee5891a78f1010b1a5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572025"
 ---
-
 # <a name="enterprise-app-navigation"></a>Navigation in der Unternehmens Anwendung
 
 Xamarin.Formsbietet Unterstützung für die Seitennavigation, die in der Regel aus der Interaktion des Benutzers mit der Benutzeroberfläche oder aus der APP selbst infolge interner, Logik gesteuerter Zustandsänderungen resultiert. Allerdings kann die Navigation in apps, die das Model-View-ViewModel (MVVM)-Muster verwenden, sehr komplex sein, da die folgenden Anforderungen erfüllt sein müssen:

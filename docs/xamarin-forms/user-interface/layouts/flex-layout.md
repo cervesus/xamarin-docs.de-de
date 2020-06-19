@@ -1,8 +1,23 @@
 ---
-Title: "The Xamarin.Forms flexlayout" Description: "Verwenden von flexlayout zum Stapeln oder Umpacken einer Auflistung von untergeordneten Ansichten."
-ms. Prod: xamarin ms. assetid: 6a91ea70-268c-462c-AAAf-t8da011403f 8 ms. Technology: xamarin-Forms ms. Custom: xamarin-Video Author: davidbritch ms. Author: dabritch ms. Date: 05/07/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Das Xamarin.Forms flexlayout
+description: Verwenden Sie das flexlayout zum Stapeln oder Umpacken einer Auflistung untergeordneter Ansichten.
+ms.prod: xamarin
+ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/07/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 518bf97be3dd9d906d574b15434b0bfa67612516
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570686"
 ---
-
 # <a name="the-xamarinforms-flexlayout"></a>Das Xamarin.Forms flexlayout
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)

@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms Ausführliche Erläuterungen zum Schnellstart
-description: In diesem Artikel werden die Grundlagen der Anwendungsentwicklung mit Xamarin.Forms erläutert. Zu den behandelten Themen zählen die Struktur einer Xamarin.Forms-Anwendung, die Architektur- und Anwendungsgrundlagen sowie die Benutzeroberfläche.
+title: 'title: "Xamarin.Forms – Ausführliche Erläuterungen zum Schnellstart" description: "In diesem Artikel werden die Grundlagen der Anwendungsentwicklung mit Xamarin.Forms erläutert.'
+description: 'Zu den behandelten Themen zählen die Struktur einer Xamarin.Forms-Anwendung, die Architektur- und Anwendungsgrundlagen sowie die Benutzeroberfläche." zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.custom: video ms.assetid: 7B2340A1-6883-41D8-860C-0BB6C4E0C316 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 11/27/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -14,10 +14,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 1bfb76f71a2ac9d8bc9ae84152501909000b9623
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84132521"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms Ausführliche Erläuterungen zum Schnellstart
@@ -47,7 +47,7 @@ Der folgende Screenshot zeigt den Inhalt des .NET Standard-Bibliotheksprojekts �
 
 Das Projekt verfügt über den Knoten **Abhängigkeiten**, der die Knoten **NuGet** und **SDK** enthält:
 
-- **NuGet:** Die NuGet-Pakete für &ndash; und „sqlite-net-pcl“, die dem Projekt hinzugefügt wurden
+- **NuGet:** Die NuGet-Pakete für Xamarin.Forms und „sqlite-net-pcl“, die dem Projekt hinzugefügt wurden
 - **SDK:** Das Metapaket `NETStandard.Library` verweist auf alle NuGet-Pakete, die .NET Standard definieren.
 
 ::: zone-end

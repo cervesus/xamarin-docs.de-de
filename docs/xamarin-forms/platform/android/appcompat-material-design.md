@@ -1,8 +1,22 @@
 ---
-Title: "Hinzufügen von AppCompat und Material Design" Beschreibung: "in diesem Artikel wird erläutert, wie vorhandene Xamarin.Forms Android-Apps für die Verwendung von AppCompat und Material Design konvertiert werden."
-ms. Prod: xamarin ms. assetid: 045f-9911-BD3938C87D58 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 06/27/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Hinzufügen von AppCompat und Material Design
+description: In diesem Artikel wird erläutert, wie vorhandene Xamarin.Forms Android-Apps für die Verwendung von AppCompat und Material Design konvertiert werden.
+ms.prod: xamarin
+ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/27/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135706"
 ---
-
 # <a name="adding-appcompat-and-material-design"></a>Hinzufügen von AppCompat und Material Design
 
 _Gehen Sie folgendermaßen vor, um vorhandene Xamarin.Forms Android-Apps zur Verwendung von AppCompat und Material Design zu konvertieren._

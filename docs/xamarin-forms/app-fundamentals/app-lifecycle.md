@@ -1,31 +1,29 @@
 ---
-title: Lebenszyklus der Xamarin.Forms-App
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Xamarin.Forms App-Lebenszyklus" description: "In diesem Artikel wird erläutert, wie Sie auf den Lebenszyklus der Anwendung reagieren, einschließlich Lebenszyklusmethoden, Seitenbenachrichtigungsereignisse und modale Navigationsereignisse."'
+description: 'ms.prod: xamarin ms.assetid: 69B416CF-B243-4790-AB29-F030B32465BE ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 05/31/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 69B416CF-B243-4790-AB29-F030B32465BE
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/31/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3793a54f04b2c028752e18e2a5a238c275c2958a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 2a67d0c3adb54332bf30879a5b6f1d086581f0ec
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129674"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573338"
 ---
 # <a name="xamarinforms-app-lifecycle"></a>Lebenszyklus der Xamarin.Forms-App
 
 Die [`Application`](xref:Xamarin.Forms.Application)-Basisklasse bietet folgende Features:
 
-- [Lebenszyklusmethoden:](#Lifecycle_Methods) `OnStart`, `OnSleep` und `OnResume`
-- [Seitennavigationsereignisse:](#page) [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing), [`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing)
-- [Modale Navigationsereignisse:](#modal) `ModalPushing`, `ModalPushed`, `ModalPopping` und `ModalPopped`
-
-<a name="Lifecycle_Methods" />
+- [Lebenszyklusmethoden:](#lifecycle-methods) `OnStart`, `OnSleep` und `OnResume`
+- [Seitennavigationsereignisse:](#page-navigation-events) [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing), [`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing)
+- [Modale Navigationsereignisse:](#modal-navigation-events) `ModalPushing`, `ModalPushed`, `ModalPopping` und `ModalPopped`
 
 ## <a name="lifecycle-methods"></a>Lebenszyklusmethoden
 
@@ -58,9 +56,7 @@ protected override void OnResume()
 > [!IMPORTANT]
 > Unter Android wird die `OnStart`-Methode rotierend und beim ersten Ausführen der App aufgerufen, wenn `ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation` im `[Activity()]`-Attribut in der Hauptaktivität nicht vorhanden ist.
 
-<a name="page" />
-
-## <a name="page-notification-events"></a>Benachrichtigungsereignisse für Seiten
+## <a name="page-navigation-events"></a>Seitennavigationsereignisse
 
 Die [`Application`](xref:Xamarin.Forms.Application)-Klasse verfügt über zwei Ereignisse, die Benachrichtigungen zu angezeigten und ausgeblendeten Seiten bereitstellt:
 
@@ -71,8 +67,6 @@ Diese Ereignisse können in Szenarios verwendet werden, bei denen Sie Seiten bei
 
 > [!NOTE]
 > Die Ereignisse [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing) und [`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing) werden unmittelbar nach den Ereignissen [`Page.Appearing`](xref:Xamarin.Forms.Page.Appearing) und [`Page.Disappearing`](xref:Xamarin.Forms.Page.Disappearing) in der [`Page`](xref:Xamarin.Forms.Page)-Basisklasse ausgelöst.
-
-<a name="modal" />
 
 ## <a name="modal-navigation-events"></a>Modale Navigationsereignisse
 

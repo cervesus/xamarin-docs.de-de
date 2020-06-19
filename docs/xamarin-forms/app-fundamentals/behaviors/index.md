@@ -1,20 +1,20 @@
 ---
-title: Xamarin.Forms-Verhalten
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Xamarin.Forms – Verhaltensweisen" description: "Durch Verhalten können Sie Steuerelementen der Benutzeroberfläche Funktionen hinzufügen, ohne diese unterordnen zu müssen.'
+description: 'Verhalten werden im Code geschrieben und Steuerelementen mit XAML oder Code hinzugefügt." ms.prod: xamarin ms.assetid: 42E32AD7-8E3B-48B3-B402-E75B758DA913 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 04/06/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 42E32AD7-8E3B-48B3-B402-E75B758DA913
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 83952982bd163725fb931c860cac3e267726315c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84135810"
 ---
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms-Verhalten

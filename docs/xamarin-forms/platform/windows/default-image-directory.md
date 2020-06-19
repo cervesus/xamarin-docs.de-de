@@ -1,8 +1,22 @@
 ---
-Title: "Standard Image Verzeichnis on Windows" Description: "Platform-Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne benutzerdefinierte Renderer oder Effekte implementieren zu müssen. In diesem Artikel wird erläutert, wie Sie das Windows-plattformspezifische verwenden, das das Verzeichnis in dem Projekt definiert, aus dem Image-Assets geladen werden.
-ms. Prod: xamarin ms. assetid: 537a032b-74dd-4D43-864e-7d7113286d0d ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/16/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Standard Image Verzeichnis unter Windows
+description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie das Windows-plattformspezifische verwenden, das das Verzeichnis im Projekt definiert, aus dem Image-Assets geladen werden.
+ms.prod: xamarin
+ms.assetid: 537A032B-74DD-4D43-864E-7D7113286D0D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d5c5e6db8ddcf3cef32bde5c387adc378afd0058
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135602"
 ---
-
 # <a name="default-image-directory-on-windows"></a>Standard Image Verzeichnis unter Windows
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

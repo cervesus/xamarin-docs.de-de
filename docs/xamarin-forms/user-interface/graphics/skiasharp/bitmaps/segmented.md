@@ -1,8 +1,22 @@
 ---
-Title: "segmentiertes Anzeigen von skiasharp-Bitmaps" Description: "zeigt eine skiasharp-Bitmap an, sodass ein Bereich gestreckt und einige Bereiche nicht sind."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 79ae2033-c41c-4447-95a6-76d22e913d19 Author: davidbritch ms. Author: dabritch ms. Date: 07/17/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Segmentierte Anzeige von skiasharp-Bitmaps
+description: Zeigt eine skiasharp-Bitmap an, sodass ein Bereich gestreckt und einige Bereiche nicht angezeigt werden.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5c3909271580d0568d7c603de0d434ff5b3f3bc4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138670"
 ---
-
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>Segmentierte Anzeige von skiasharp-Bitmaps
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

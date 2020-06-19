@@ -1,8 +1,22 @@
 ---
-Title: "angefügte Eigenschaften" Beschreibung: "dieser Artikel enthält eine Einführung in angefügte Eigenschaften und zeigt, wie Sie erstellt und genutzt werden."
-ms. Prod: xamarin ms. assetid: 6e9dcdc3-a0e4-46a6-baa9-4feb6df8a5a8 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 06/02/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Angefügte Eigenschaften
+description: Dieser Artikel bietet eine Einführung in angefügte Eigenschaften und zeigt, wie diese erstellt und genutzt werden.
+ms.prod: xamarin
+ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/02/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f26a4415a75b2b02fd7d6893e366ef81156f077
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138189"
 ---
-
 # <a name="attached-properties"></a>Angefügte Eigenschaften
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)

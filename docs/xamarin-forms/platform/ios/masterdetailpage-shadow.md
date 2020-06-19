@@ -1,8 +1,22 @@
 ---
-Title: "masterdetailpage Shadow on IOS" Description: "Platform-Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne benutzerdefinierte Renderer oder Effekte implementieren zu müssen. In diesem Artikel wird erläutert, wie Sie das plattformspezifische IOS-Element nutzen, das steuert, ob auf der Detailseite einer masterdetailpage Schatten darauf angewendet wird, wenn die Master Seite angezeigt wird. "
-ms. Prod: xamarin ms. assetid: FB907EA2-C00A-43A5-84B1-A43584C867A5 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/05/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Masterdetailpage Schatten unter IOS
+description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie das plattformspezifische IOS-Element nutzen, das steuert, ob auf der Detailseite einer masterdetailpage Schatten darauf angewendet wird, wenn die Master Seite angezeigt wird.
+ms.prod: xamarin
+ms.assetid: FB907EA2-C00A-43A5-84B1-A43584C867A5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/05/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: aaf94536d41da47aec10fc655f9d053b753da5a2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135966"
 ---
-
 # <a name="masterdetailpage-shadow-on-ios"></a>Masterdetailpage Schatten unter IOS
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

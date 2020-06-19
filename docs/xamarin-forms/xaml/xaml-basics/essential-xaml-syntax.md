@@ -1,8 +1,22 @@
 ---
-Title: "Teil 2. Wichtige XAML-Syntax "Description:" in diesem Artikel werden die wesentlichen XAML-Syntax Funktionen von Eigenschafts Elementen und angefügten Eigenschaften erläutert. "
-ms. Prod: xamarin ms. assetid: 4022f 1 DC-3802-4635-A553-688abd3f 0d5a ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/25/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Teil 2. Grundlegende XAML-Syntax
+description: In diesem Artikel werden die wesentlichen XAML-Syntax Funktionen von Eigenschafts Elementen und angefügten Eigenschaften erläutert.
+ms.prod: xamarin
+ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c400bb342568a0399e2a582496f85ead273b6994
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572181"
 ---
-
 # <a name="part-2-essential-xaml-syntax"></a>Teil 2. Grundlegende XAML-Syntax
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

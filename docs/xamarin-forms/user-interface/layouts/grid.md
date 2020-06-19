@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms Raster" Beschreibung: "das Xamarin.Forms Raster ist ein Layout, das seine untergeordneten Elemente in Zeilen und Spalten von Zellen organisiert."
-ms. Prod: xamarin ms. assetid: 762b1802-d185-494c-b643-74eed55882fe ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 05/15/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsNetz
+description: Das Xamarin.Forms Raster ist ein Layout, das seine untergeordneten Elemente in Zeilen und Spalten von Zellen organisiert.
+ms.prod: xamarin
+ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9d2e697a07e033fd7c3c8d3efffa1d67f6c097c3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946337"
 ---
-
 # <a name="xamarinforms-grid"></a>Xamarin.FormsNetz
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
@@ -274,6 +288,21 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2); // second column, second row
 
 > [!NOTE]
 > Darüber hinaus können [`Grid`](xref:Xamarin.Forms.Grid) mit den [`AddHorizontal`](xref:Xamarin.Forms.Grid.IGridList`1.AddHorizontal*) -und-Methoden, die untergeordnete Sichten zu [`AddVertical`](xref:Xamarin.Forms.Grid.IGridList`1.AddVertical*) einer einzelnen Zeile oder einzelnen Spalten hinzufügen, eine untergeordnete Ansicht hinzugefügt werden `Grid` . Der wird `Grid` dann in Zeilen oder Spalten erweitert, wenn diese Aufrufe durchgeführt werden, und die untergeordneten Elemente werden automatisch in den richtigen Zellen positioniert.
+
+### <a name="simplify-row-and-column-definitions"></a>Vereinfachen von Zeilen-und Spaltendefinitionen
+
+In XAML können die Zeilen-und Spalten Eigenschaften von [`Grid`](xref:Xamarin.Forms.Grid) mit einer vereinfachten Syntax angegeben werden, die das definieren [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) von-und- [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) Objekten für jede Zeile und Spalte vermeidet. Stattdessen können die [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) -Eigenschaft und die-Eigenschaft auf Zeichen folgen [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) mit durch Trennzeichen getrennten Werten festgelegt werden [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) , aus denen Typkonverter in Xamarin.Forms Create `RowDefinition` -und-Objekte integriert werden `ColumnDefinition` :
+
+```xaml
+<Grid RowDefinitions="1*, Auto, 25, 14, 20"
+      ColumnDefinitions="*, 2*, Auto, 300">
+    ...
+</Grid>
+```
+
+In diesem Beispiel [`Grid`](xref:Xamarin.Forms.Grid) verfügt über fünf Zeilen und vier Spalten. Die Dritten, nächsten und fünften Zeilen werden auf absolute Höhen festgelegt, wobei die automatische Größenanpassung der zweiten Zeile auf ihren Inhalt festgelegt wird. Die verbleibende Höhe wird dann der ersten Zeile zugeordnet.
+
+Die Spalte weiter wird auf eine absolute Breite festgelegt, wobei die automatische Größenanpassung der dritten Spalte auf ihren Inhalt festgelegt ist. Die verbleibende Breite wird proportional zwischen der ersten und der zweiten Spalte basierend auf der Zahl vor dem Stern zugewiesen. In diesem Beispiel ist die Breite der zweiten Spalte zweimal das der ersten Spalte (da `*` mit identisch ist `1*` ).
 
 ## <a name="space-between-rows-and-columns"></a>Leerraum zwischen Zeilen und Spalten
 

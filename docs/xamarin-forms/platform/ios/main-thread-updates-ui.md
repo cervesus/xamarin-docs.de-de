@@ -1,8 +1,22 @@
 ---
-Title: "Beschreibung der Hauptthread-Steuerelemente unter IOS" Description: "Platform-Besonderheiten ermöglicht Ihnen die Nutzung von Funktionen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung nutzen, mit der Steuerelement Layout und Renderingupdates im Haupt Thread ausgeführt werden können. "
-ms. Prod: xamarin ms. assetid: 945e711d-9bd2-4BF 9-9bb3-cbe0d5b25a49 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/24/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Haupt-Thread Steuerungs Updates unter IOS
+description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie die plattformspezifische IOS-Anwendung verwenden, die das Ausführen von Steuerelement Layout und Renderingupdates im Haupt Thread ermöglicht.
+ms.prod: xamarin
+ms.assetid: 945E711D-9BD2-4BF9-9FB3-CBE0D5B25A49
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 005e8216b887b694b33916179ca276cf8091e006
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135979"
 ---
-
 # <a name="main-thread-control-updates-on-ios"></a>Haupt-Thread Steuerungs Updates unter IOS
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

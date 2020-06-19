@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms TableView" Description: "in diesem Artikel wird erläutert, wie Sie die Xamarin.Forms TableView-Klasse verwenden, um Scrollmenüs, Einstellungen und Eingabeformulare in-Anwendungen darzustellen."
-ms. Prod: xamarin ms. assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/25/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsTableView
+description: In diesem Artikel wird erläutert, wie Sie die Xamarin.Forms TableView-Klasse verwenden, um Scrollmenüs, Einstellungen und Eingabeformulare in-Anwendungen darzustellen.
+ms.prod: xamarin
+ms.assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bf09856efddbd1887ee93b34014ef0f573058f4d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565290"
 ---
-
 # <a name="xamarinforms-tableview"></a>Xamarin.FormsTableView
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)

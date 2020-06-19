@@ -1,8 +1,23 @@
 ---
-Title: "XAML-Steuerelemente" Beschreibung: "alle in definierten Sichten Xamarin.Forms können von XAML-Dateien referenziert werden."
-ms. Topic: article ms. Prod: xamarin ms. assetid: 639bd392-1496-41bb-bb09-7652273ac9d8 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/17/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML-Steuerelemente
+description: Auf alle in definierten Sichten Xamarin.Forms kann in XAML-Dateien verwiesen werden.
+ms.topic: article
+ms.prod: xamarin
+ms.assetid: 639BD392-1496-41BB-BB09-7652273AC9D8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 445ef85f661d945bda25203f35dea787e64dc9b0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138423"
 ---
-
 # <a name="xaml-controls"></a>XAML-Steuerelemente
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

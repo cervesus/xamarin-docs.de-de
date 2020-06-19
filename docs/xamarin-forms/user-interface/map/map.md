@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms Kartensteuerelement" Beschreibung: "das Karten Steuerelement ist eine plattformübergreifende Ansicht zum Anzeigen und kommentieren von Zuordnungen. Es verwendet das Native Karten Steuerelement für jede Plattform und bietet Benutzern eine schnelle und vertraute Zuordnungs Darstellung. "
-ms. Prod: xamarin ms. assetid: 22c99029-0b16-43a6-BF 58-26b48c4aed38 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/29/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsKartensteuerelement
+description: Beim Karten Steuerelement handelt es sich um eine plattformübergreifende Ansicht zum Anzeigen und kommentieren von Zuordnungen. Es verwendet das Native Karten Steuerelement für jede Plattform und bietet Benutzern eine schnelle und vertraute Zuordnungs Darstellung.
+ms.prod: xamarin
+ms.assetid: 22C99029-0B16-43A6-BF58-26B48C4AED38
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/20/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1aee81b6988e1f3a7099c2722b6f336f071ad8c0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946363"
 ---
-
 # <a name="xamarinforms-map-control"></a>Xamarin.FormsKartensteuerelement
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
@@ -23,6 +37,7 @@ Die [`Map`](xref:Xamarin.Forms.Maps.Map) -Klasse definiert die folgenden Eigensc
 - [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)[`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)gibt den Anzeige Stil der Karte an.
 - `MoveToLastRegionOnLayoutChange`, vom Typ `bool` , steuert, ob der angezeigte Kartenbereich von seinem aktuellen Bereich in den zuvor festgelegten Bereich verschoben wird, wenn eine Layoutänderung auftritt.
 - [`Pins`](xref:Xamarin.Forms.Maps.Map.Pins)stellt vom Typ `IList<Pin>` die Liste der Pins in der Karte dar.
+- `TrafficEnabled`gibt mit dem Typ an `bool` , ob Datenverkehrs Daten auf der Karte überlagert werden.
 - [`VisibleRegion`](xref:Xamarin.Forms.Maps.Map.VisibleRegion)[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)gibt den aktuell angezeigten Bereich der Zuordnung vom Typ zurück.
 
 Diese Eigenschaften, mit Ausnahme der `MapElements` `Pins` Eigenschaften, und `VisibleRegion` , werden von-Objekten unterstützt [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen sein können.
@@ -196,6 +211,23 @@ Das Verhalten eines [`Map`](xref:Xamarin.Forms.Maps.Map) kann angepasst werden, 
 
 > [!NOTE]
 > Weitere Anpassungs Verhalten können durch Erstellen eines benutzerdefinierten Renderers für Zuordnungen erreicht werden. Weitere Informationen finden Sie unter [Anpassen einer Xamarin.Forms Karte](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md).
+
+### <a name="show-traffic-data"></a>Anzeigen von Datenverkehrsdaten
+
+Die- [`Map`](xref:Xamarin.Forms.Maps.Map) Klasse definiert eine `TrafficEnabled` Eigenschaft vom Typ `bool` . Standardmäßig ist diese Eigenschaft `false` . Dies bedeutet, dass Datenverkehrs Daten nicht überlagert werden. Wenn diese Eigenschaft auf festgelegt ist `true` , werden die Datenverkehrs Daten auf der Karte überlagert. Das folgende Beispiel zeigt, wie Sie diese Eigenschaft festlegen:
+
+```xaml
+<maps:Map TrafficEnabled="true" />
+```
+
+Der entsprechende C#-Code lautet:
+
+```csharp
+Map map = new Map
+{
+    TrafficEnabled = true
+};
+```
 
 ### <a name="disable-scroll"></a>Scrollvorgang deaktivieren
 

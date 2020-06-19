@@ -1,8 +1,22 @@
 ---
-Title: "Text in Xamarin.Forms " Description: " Xamarin.Forms enthält drei primäre Ansichten zum Arbeiten mit Text. in diesem Artikel wird erläutert, wie Sie diese zum eingeben und Anzeigen von Text in Xamarin.Forms Anwendungen verwenden.
-ms. Prod: xamarin ms. assetid: 4dba7689-e5c8-4583-8b4-02ab208b4416 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/26/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Text inXamarin.Forms
+description: Xamarin.Formsverfügt über drei primäre Ansichten zum Arbeiten mit Text. in diesem Artikel wird erläutert, wie Sie diese zum eingeben und Anzeigen von Text in- Xamarin.Forms Anwendungen verwenden.
+ms.prod: xamarin
+ms.assetid: 4DBA7689-E5C8-4583-8FB4-02AB208B4416
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b44a0b3e3542638874ee366a86967d73c0d53652
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573793"
 ---
-
 # <a name="text-in-xamarinforms"></a>Text inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
@@ -17,7 +31,7 @@ Xamarin.Formsverfügt über drei primäre Ansichten zum Arbeiten mit Text:
 
 Die Text Darstellung kann mithilfe integrierter oder benutzerdefinierter [Stile](#styles) geändert werden, und einige Steuerelemente unterstützen benutzerdefinierte [Schriftarten](#fonts).
 
-## <a name="label"></a>[Label](label.md)
+## <a name="label"></a>[Bezeichnung](label.md)
 
 Die `Label` Ansicht wird zum Anzeigen von Text verwendet. Es können mehrere Textzeilen oder eine einzelne Textzeile angezeigt werden. `Label`kann Text mit mehreren Formatierungsoptionen darstellen, die in Inline verwendet werden. Die Beschriftungs Ansicht kann Text wrappen oder abschneiden, wenn er nicht in eine Zeile passt.
 

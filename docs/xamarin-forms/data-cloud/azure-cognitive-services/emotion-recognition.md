@@ -1,8 +1,22 @@
 ---
-Title: "wahrgenommene Emotionen erkennen mithilfe der Gesichtserkennungs-API" Beschreibung: "der Gesichtserkennungs-API verwendet einen Gesichtsausdruck in einem Bild als Eingabe und gibt Daten zurück, die Vertrauens Ebenen für eine Reihe von Emotionen für jedes Gesicht im Bild enthalten. In diesem Artikel wird erläutert, wie Sie mit dem Gesichtserkennungs-API Emotionen erkennen, um eine-Anwendung zu bewerten Xamarin.Forms .
-ms. Prod: xamarin ms. assetid: 19d36a7c-e8d8-43d1-be80-48de6c02879a ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 05/10/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Wahrgenommene Emotionen erkennen mithilfe der Gesichtserkennungs-API
+description: Der Gesichtserkennungs-API nimmt einen Gesichtsausdruck in einem Bild als Eingabe an und gibt Daten zurück, die Vertrauens Ebenen für eine Reihe von Emotionen für jedes Gesicht im Bild enthalten. In diesem Artikel wird erläutert, wie Sie mit dem Gesichtserkennungs-API Emotionen erkennen, um eine-Anwendung zu bewerten Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: 19D36A7C-E8D8-43D1-BE80-48DE6C02879A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ff384605b35f6406b628da99de500b550da811c9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136057"
 ---
-
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>Wahrgenommene Emotionen erkennen mithilfe der Gesichtserkennungs-API
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

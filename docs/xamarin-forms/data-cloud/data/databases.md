@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms local Database" Description: " Xamarin.Forms unterstützt datenbankgesteuerte Anwendungen, die die SQLite-Datenbank-Engine verwenden. Dadurch können Objekte in frei gegebenem Code geladen und gespeichert werden. In diesem Artikel wird beschrieben Xamarin.Forms , wie Anwendungen mithilfe von SQLite.NET Daten in einer lokalen SQLite-Datenbank lesen und schreiben können. "
-ms. Prod: xamarin ms. assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 12/05/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsLokale Datenbanken
+description: Xamarin.Formsunterstützt datenbankgesteuerte Anwendungen mithilfe der SQLite-Datenbank-Engine, die das Laden und Speichern von Objekten in frei gegebenem Code ermöglicht. In diesem Artikel wird beschrieben Xamarin.Forms , wie Anwendungen mithilfe von SQLite.NET Daten in einer lokalen SQLite-Datenbank lesen und schreiben können.
+ms.prod: xamarin
+ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 12/05/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f7cef5fd39d82cf0a4b55337835c0fe1d57b8bf9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197593"
 ---
-
 # <a name="xamarinforms-local-databases"></a>Xamarin.FormsLokale Datenbanken
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)

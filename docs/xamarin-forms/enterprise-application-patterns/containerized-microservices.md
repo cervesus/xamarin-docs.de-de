@@ -1,8 +1,22 @@
 ---
-Title: "containerisierte Microservices" Beschreibung: "in diesem Kapitel wird erläutert, wie Sie Microservices und Container verwenden, um Agile, skalierbare und zuverlässige moderne cloudanwendungen zu erstellen."
-ms. Prod: xamarin ms. assetid: 5872ad92-04e0-4f 1a-9691-79d5602f 5683 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Containermicroservices
+description: In diesem Kapitel wird erläutert, wie Sie mithilfe von mikroservices und Containern Agile, skalierbare und zuverlässige, moderne cloudanwendungen erstellen.
+ms.prod: xamarin
+ms.assetid: 5872ad92-04e0-4f1a-9691-79d5602f5683
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3ebd3940cbd61342977bde60addc773460a08854
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84569568"
 ---
-
 # <a name="containerized-microservices"></a>Containermicroservices
 
 Die Entwicklung von Client-Server-Anwendungen führte zu einem Schwerpunkt auf der Erstellung mehrstufiger Anwendungen, die bestimmte Technologien in den einzelnen Ebenen verwenden. Solche Anwendungen werden häufig als *monolithische* Anwendungen bezeichnet und sind auf Hardware verpackt, die für Spitzenlasten vorab skaliert ist. Die Haupt Nachteile dieses Entwicklungsansatzes sind die enge Kopplung zwischen den Komponenten innerhalb der einzelnen Ebenen, dass einzelne Komponenten nicht problemlos skaliert werden können und die Kosten für Tests. Ein einfaches Update kann auf den Rest der Ebene unvorhergesehene Auswirkungen haben. Daher muss für eine Änderung an einer Anwendungs Komponente die gesamte Ebene erneut getestet und erneut bereitgestellt werden.

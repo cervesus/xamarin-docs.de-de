@@ -1,8 +1,22 @@
 ---
-Title: "Erstellen eines benutzerdefinierten Layouts in Xamarin.Forms " Description: "in diesem Artikel wird erläutert, wie eine benutzerdefinierte Layoutklasse geschrieben wird. Außerdem wird eine Orientierungs abhängige wraplayout-Klasse veranschaulicht, die die untergeordneten Elemente horizontal auf der Seite anordnet und dann die Anzeige der nachfolgenden untergeordneten Elemente in zusätzliche Zeilen umschließt.
-ms. Prod: xamarin ms. assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 03/29/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Erstellen eines benutzerdefinierten Layouts inXamarin.Forms
+description: In diesem Artikel wird erläutert, wie eine benutzerdefinierte Layoutklasse geschrieben wird, und es wird eine Orientierung-sensible wraplayout-Klasse veranschaulicht, die die untergeordneten Elemente horizontal auf der Seite anordnet und dann die Anzeige der nachfolgenden untergeordneten Elemente in zusätzliche Zeilen
+ms.prod: xamarin
+ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/29/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2c1a958bd4cb56096f554acf26756019eeb0693c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572233"
 ---
-
 # <a name="create-a-custom-layout-in-xamarinforms"></a>Erstellen eines benutzerdefinierten Layouts inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)

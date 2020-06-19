@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms AbsoluteLayout" Description: "in diesem Artikel wird erläutert, wie Sie die Xamarin.Forms Klasse" AbsoluteLayout "verwenden, um Pixel perfekte Benutzeroberflächen zu erstellen. Diese Klasse positioniert und passt die Größe untergeordneter Elemente proportional zu ihrer eigenen Größe und Position oder mit absoluten Werten an. "
-ms. Prod: xamarin ms. assetid: 01a5cce0-ad45-4806-84td-72c007005b38 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 11/25/2015 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsAbsoluteLayout
+description: In diesem Artikel wird erläutert, wie Sie die Xamarin.Forms Klasse "AbsoluteLayout" verwenden, um Pixel perfekte Benutzeroberflächen zu erstellen. Diese Klasse positioniert und untergeordnet untergeordnete Elemente proportional zu ihrer eigenen Größe und Position oder mit absoluten Werten.
+ms.prod: xamarin
+ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/25/2015
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 110b01d6482fbe3e23a772c90194b6bf40d54877
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570530"
 ---
-
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -26,7 +40,7 @@ Aufgrund des Positionierungs Modells von `AbsoluteLayout` ist das Layout relativ
 
 `AbsoluteLayout`kann überall dort verwendet werden, wo Elemente in einer Ansicht positioniert werden müssen, und ist besonders nützlich, wenn Elemente an Kanten ausgerichtet werden.
 
-## <a name="usage"></a>Verwendung
+## <a name="usage"></a>Usage
 
 ### <a name="proportional-layouts"></a>Proportionale Layouts
 

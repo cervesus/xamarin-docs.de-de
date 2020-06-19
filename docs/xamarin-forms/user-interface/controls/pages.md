@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms Seiten" Beschreibung: " Xamarin.Forms Seiten stellen plattformübergreifende Mobile Anwendungs Bildschirme dar. In diesem Artikel werden die Seiten aufgelistet, die in enthalten sind Xamarin.Forms .
-ms. Prod: xamarin ms. assetid: 9c8c710f-E312-420b-9324-A7A20CEDB7EC ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/12/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms Pages
+description: Xamarin.FormsSeiten stellen plattformübergreifende Mobile Anwendungs Bildschirme dar. In diesem Artikel werden die Seiten aufgelistet, die in enthalten sind Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: 9C8C710F-E312-420B-9324-A7A20CEDB7EC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/12/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b72564ebbb057c8154140c9845961d4c42e93db3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573312"
 ---
-
 # <a name="xamarinforms-pages"></a>Xamarin.Forms Pages
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)

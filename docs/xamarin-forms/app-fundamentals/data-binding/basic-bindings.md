@@ -1,6 +1,6 @@
 ---
-title: Einfache Xamarin.Forms-Bindungen
-description: In diesem Artikel wird beschrieben, wie Sie Xamarin.Forms-Datenbindungen verwenden können. Hierbei wird ein Eigenschaftenpaar zwischen zwei Objekten verknüpft, von denen mindestens eines ein Benutzeroberflächenobjekt ist. Diese beiden Objekte sind das Ziel und die Quelle.
+title: 'title: "Xamarin.Forms – Grundlegende Bindungen" description: "In diesem Artikel wird beschrieben, wie Sie Xamarin.Forms-Datenbindungen verwenden können. Hierbei wird ein Eigenschaftenpaar zwischen zwei Objekten verknüpft, von denen mindestens eines ein Benutzeroberflächenobjekt ist.'
+description: 'Diese beiden Objekte sind das Ziel und die Quelle." ms.prod: xamarin ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 01/22/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials] ms.custom: video'
 ms.prod: xamarin
 ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
@@ -12,10 +12,10 @@ no-loc:
 - Xamarin.Essentials
 ms.custom: video
 ms.openlocfilehash: c0c6bc6e1005997548952aedc09cd83a451e7caa
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84133535"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Einfache Xamarin.Forms-Bindungen

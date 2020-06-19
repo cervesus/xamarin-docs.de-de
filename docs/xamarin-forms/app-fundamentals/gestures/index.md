@@ -1,20 +1,20 @@
 ---
-title: Xamarin.Forms-Gesten
-description: In diesem Leitfaden wird beschrieben, wie Gestenerkennungsfunktionen von Xamarin.Forms verwendet werden können, um Benutzerinteraktionen mit Ansichten in einer Xamarin.Forms-Anwendung zu erkennen.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Xamarin.Forms-Gesten" description: "In diesem Leitfaden wird erläutert, wie die Gestenerkennungsfunktionen von Xamarin.Forms zum Erkennen von Benutzerinteraktionen mit Ansichten in einer Xamarin.Forms-Anwendung verwendet werden können."'
+description: 'ms.prod: xamarin ms.assetid: 0E197A51-2304-4C09-A710-C7FF24A89F15 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 07/25/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 0E197A51-2304-4C09-A710-C7FF24A89F15
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/25/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 5e1e93f74ab8ef6d63213a8fbdc7ec45a794cf55
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84137876"
 ---
 # <a name="xamarinforms-gestures"></a>Xamarin.Forms-Gesten

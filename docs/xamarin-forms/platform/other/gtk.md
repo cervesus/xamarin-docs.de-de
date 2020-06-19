@@ -1,7 +1,22 @@
 ---
-Title: "gtk # Platform Setup" Description: " Xamarin.Forms bietet jetzt eine Vorschau Unterstützung für die GTK #-Plattform" MS. Prod: xamarin ms. assetid: 3417b95-3e4b-47da-85d0-f 34832747236 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/10/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'GTK #-Platt Form Einrichtung'
+description: 'Xamarin.Formsbietet jetzt eine Vorschau Unterstützung für die GTK #-Plattform.'
+ms.prod: xamarin
+ms.assetid: 3417FB95-3E4B-47DA-85D0-F34832747236
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a5635da9f7c083609ce1e0f120d0613fff9bd77b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198105"
 ---
-
 # <a name="gtk-platform-setup"></a>GTK #-Platt Form Einrichtung
 
 ![Vorschau](~/media/shared/preview.png)

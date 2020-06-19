@@ -1,8 +1,22 @@
 ---
-Title: "skiasharp-Farbfilter" Beschreibung: "Verwenden von Farbfiltern zum Konvertieren von Farben mit Transformationen oder Tabellen".
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 774e7b55-aec8-4f12-b657-1c0cee01ad63 Author: davidbritch ms. Author: dabritch ms. Date: 08/28/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Skiasharp-Farbfilter
+description: Verwenden Sie Farbfilter, um Farben mit Transformationen oder Tabellen zu konvertieren.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 774E7B55-AEC8-4F12-B657-1C0CEE01AD63
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/28/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b9c89d4d426884d678e77687ffa226cced97be58
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136382"
 ---
-
 # <a name="skiasharp-color-filters"></a>Skiasharp-Farbfilter
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

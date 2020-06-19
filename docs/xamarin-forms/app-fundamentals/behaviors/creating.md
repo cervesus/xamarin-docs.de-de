@@ -1,6 +1,6 @@
 ---
-title: Erstellen von Xamarin.Forms-Verhalten
-description: Xamarin.Forms-Verhalten werden durch Erstellung von den Klassen „Behavior“ und „Behavior<T>“ erstellt. In diesem Artikel wird veranschaulicht, wie Xamarin.Forms-Verhalten erstellt und verarbeitet werden.
+title: 'title: "Erstellen von Xamarin.Forms-Verhalten“ description: „Xamarin.Forms-Verhalten werden von den Klassen „Behavior“ und „Behavior<T>“ abgeleitet.'
+description: 'In diesem Artikel wird veranschaulicht, wie Xamarin.Forms-Verhalten erstellt und verarbeitet werden." ms.prod: xamarin ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 04/06/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 67db30b5caadce75a41755530db2b245562d0304
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84135823"
 ---
 # <a name="create-xamarinforms-behaviors"></a>Erstellen von Xamarin.Forms-Verhalten

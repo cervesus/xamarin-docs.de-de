@@ -1,20 +1,20 @@
 ---
-title: ''
-description: In diesem Artikel wird beschrieben, wie Videos, die als Anwendungsressourcen gespeichert sind, mithilfe von Xamarin.Forms in einer Videoplayeranwendung geladen werden.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Laden von Videoanwendungsressourcen" description: "In diesem Artikel erfahren Sie, wie Sie als Anwendungsressourcen gespeicherte Videos mithilfe von Xamarin.Forms in eine Videoplayeranwendung laden."'
+description: 'ms.prod: xamarin ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 02/12/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 472c6c2a7c5a084520aee6b8ae160d9329c3f593
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84133762"
 ---
 # <a name="loading-application-resource-videos"></a>Laden von Anwendungsressourcenvideos

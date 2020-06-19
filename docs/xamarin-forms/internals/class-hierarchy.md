@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms Controls Class Hierarchy" Description: "Entwickler sollten mit der Hierarchie von Typen vertraut sein, die zum Erstellen der Benutzeroberfläche einer-Anwendung verwendet werden Xamarin.Forms ."
-ms. Prod: xamarin ms. assetid: C89E6B98-464D-4BBE-BF11-13A5FCBBF420 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/07/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsControls-Klassenhierarchie
+description: Entwickler sollten mit der Hierarchie von Typen vertraut sein, die zum Erstellen der Benutzeroberfläche einer-Anwendung verwendet werden Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: C89E6B98-464D-4BBE-BF11-13A5FCBBF420
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/07/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0087e2bb81c7c9204a782519a9eeb9891adc297a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138637"
 ---
-
 # <a name="xamarinforms-controls-class-hierarchy"></a>Xamarin.FormsControls-Klassenhierarchie
 
 Xamarin.Formsbesteht aus Hunderten von Typen, über mehrere Namespaces. Entwickler sollten am häufigsten mit der Hierarchie von Typen vertraut sein, die zum Erstellen der Benutzeroberfläche einer-Anwendung verwendet werden Xamarin.Forms , die sich im- `Xamarin.Forms` Namespace befinden.

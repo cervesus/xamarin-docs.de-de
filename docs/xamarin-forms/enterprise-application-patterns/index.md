@@ -1,8 +1,22 @@
 ---
-Title: "Unternehmens Anwendungs Muster mit e- Xamarin.Forms Book" Description: "dieses e-Book bietet Architektur Anleitungen zum entwickeln anpassbarer, verwaltebarer und testbarer Xamarin.Forms Unternehmensanwendungen."
-ms. Prod: xamarin ms. assetid: 28cfed6c-6175-4223-a8cc-798d40bf 0832 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: E-Book zu Mustern von Unternehmensanwendungen mithilfe von Xamarin.Forms
+description: Dieses e-Book bietet Architektur Anleitungen zum entwickeln anpassbarer, verwaltebarer und testbarer Xamarin.Forms Unternehmensanwendungen.
+ms.prod: xamarin
+ms.assetid: 28cfed6c-6175-4223-a8cc-798d40bf0832
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139398"
 ---
-
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>E-Book zu Mustern von Unternehmensanwendungen mithilfe von Xamarin.Forms
 
 _Architektur Leit Faden für die Entwicklung anpassbarer, verwaltebarer und testbarer Xamarin.Forms Unternehmensanwendungen_

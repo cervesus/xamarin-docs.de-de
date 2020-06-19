@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms und Azure Cognitive Services Introduction" Description: Dieser Artikel bietet eine Einführung in eine Beispielanwendung, die veranschaulicht, wie einige der Microsoft Cognitive Service-APIs aufgerufen werden.
-ms. Prod: xamarin ms. assetid: 74121adb-1322-4c1e-A103-f 37257bc7cb0 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/08/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsund Azure Cognitive Services Introduction
+description: Dieser Artikel bietet eine Einführung in eine Beispielanwendung, die veranschaulicht, wie einige der Microsoft Cognitive Service-APIs aufgerufen werden.
+ms.prod: xamarin
+ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7c2a63c40d1006c7d83c9dde871e17d4b194bdca
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129713"
 ---
-
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Formsund Azure Cognitive Services Introduction
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
@@ -52,7 +66,7 @@ Das Projekt mit dem freigegebenen Code für die Beispielanwendung besteht aus f�
 |Repositorys|Enthält die `ITodoItemRepository` Schnittstelle und die `TodoItemRepository` Klasse, die zum Ausführen von Daten Bank Vorgängen verwendet werden.|
 |Dienste|Enthält die Schnittstellen und Klassen, die für den Zugriff auf verschiedene Microsoft Cognitive Service-APIs verwendet werden, sowie Schnittstellen, die von der-Klasse verwendet werden, `DependencyService` um die Klassen zu finden, die die Schnittstellen in Platt Form Projekten implementieren.|
 |Utils|Enthält die- `Timer` Klasse, die von der-Klasse verwendet wird, `AuthenticationService` um ein JWT-Zugriffs Token alle 9 Minuten zu erneuern.|
-|Sichten|Enthält die Seiten für die Anwendung.|
+|Ansichten|Enthält die Seiten für die Anwendung.|
 
 Das Projekt mit frei gegebenem Code enthält auch einige wichtige Dateien:
 

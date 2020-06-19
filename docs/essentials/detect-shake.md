@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials: Erkennen einer Schüttelbewegung'' description: 'Mit der Klasse „Accelerometer“ von Xamarin.Essentials können Sie ermitteln, wenn das Gerät geschüttelt wird.'
-ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "Xamarin.Essentials: Erkennen einer Schüttelbewegung'' description: "Mit der Klasse „Accelerometer“ von Xamarin.Essentials können Sie ermitteln, wenn das Gerät geschüttelt wird."
+ms.assetid: 07513D32-120F-4F12-8757-A47802A8027B author: jamesmontemagno ms.author: jamont ms.date: 05/28/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials: Erkennen einer Schüttelbewegung

@@ -1,8 +1,22 @@
 ---
-Title: "Generika in Xamarin.Forms XAML" Description: " Xamarin.Forms XAML bietet Unterstützung für die Verwendung generischer CLR-Typen, indem die generischen Einschränkungen als Typargumente angegeben werden."
-ms. Prod: xamarin ms. assetid: 97b73048-4f 90-41ad-AB48-8eb804c4998b ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/28/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Generika in Xamarin.Forms XAML
+description: Xamarin.FormsXAML bietet Unterstützung für die Verwendung generischer CLR-Typen durch Angeben der generischen Einschränkungen als Typargumente.
+ms.prod: xamarin
+ms.assetid: 97B73048-4F90-41AD-AB48-8EB804C4998B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5a033e5feeefc41b97be29491a70632e767aa1b4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565199"
 ---
-
 # <a name="generics-in-xamarinforms-xaml"></a>Generika in Xamarin.Forms XAML
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)

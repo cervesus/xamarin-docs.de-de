@@ -1,20 +1,20 @@
 ---
-title: ''
-description: In diesem Artikel wird beschrieben, wie Videoquellen mithilfe von Xamarin.Forms an den Videoplayer gebunden werden.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Binden von Videoquellen an den Player" description: "In diesem Artikel wird beschrieben, wie Videoquellen mithilfe von Xamarin.Forms an den Videoplayer gebunden werden."'
+description: 'ms.prod: xamarin ms.assetid: 504E0C7E-051A-4AF2-B654-BAB4D0957928 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 02/12/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 504E0C7E-051A-4AF2-B654-BAB4D0957928
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: c02764d6160bb8ce2481a3cf67e357933d25934f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84133730"
 ---
 # <a name="binding-video-sources-to-the-player"></a>Binden von Videoquellen an den Player

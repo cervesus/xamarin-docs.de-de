@@ -1,8 +1,22 @@
 ---
-Title: "visualelement-Erweiterung bei Android" Description: "Platform-Besonderheiten ermöglicht Ihnen die Nutzung von Funktionen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie das plattformspezifische Android-Element nutzen, um die Erweiterung von visualelements auf Anwendungen zu steuern, die API 21 oder höher als Ziel haben. "
-ms. Prod: xamarin ms. assetid: 5bfd6175-2bbd-41CD-b8f9-521b4750b708 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 07/10/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Visualelement-Rechte Erweiterung unter Android
+description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie das plattformspezifische Android-Element nutzen, um die Erweiterung von visualelements auf Anwendungen zu steuern, die API 21 oder höher als Ziel haben.
+ms.prod: xamarin
+ms.assetid: 5BFD6175-2BBD-41CD-B8F9-521B4750B708
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 48060356014dc7600518b5de555ad3f346c50c35
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128543"
 ---
-
 # <a name="visualelement-elevation-on-android"></a>Visualelement-Rechte Erweiterung unter Android
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

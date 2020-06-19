@@ -1,8 +1,22 @@
 ---
-Title: "Pfadinformationen und Enumeration" Beschreibung: "in diesem Artikel wird erläutert, wie Sie Informationen zu skiasharp-Pfaden erhalten und den Inhalt auflisten. Dies wird mit Beispielcode veranschaulicht."
-ms. Prod: xamarin ms. assetid: 8e8c5c6a-F324-4155-8652-7a77d231b3e5 ms. Technology: xamarin-skiasharp Author: davidbritch ms. Author: dabritch ms. Date: 09/12/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Pfadinformationen und -enumeration
+description: In diesem Artikel wird erläutert, wie Sie Informationen zu skiasharp-Pfaden erhalten und den Inhalt auflisten. Dies wird anhand von Beispielcode veranschaulicht.
+ms.prod: xamarin
+ms.assetid: 8E8C5C6A-F324-4155-8652-7A77D231B3E5
+ms.technology: xamarin-skiasharp
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/12/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 931b8d0946f1af5e697e581a04c0feefb31ba2d3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131923"
 ---
-
 # <a name="path-information-and-enumeration"></a>Pfadinformationen und -enumeration
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

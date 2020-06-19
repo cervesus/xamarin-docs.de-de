@@ -1,6 +1,6 @@
 ---
-title: Erstellen einer Single-Page-Webanwendung in Xamarin.Forms
-description: In diesem Artikel wird erläutert, wie Sie eine einfache plattformübergreifende Single-Page-Anwendung mit Xamarin.Forms erstellen, in die Sie eine Notiz eingeben und auf dem Gerät speichern können.
+title: 'title: "Erstellen einer Single-Page-Webanwendung in Xamarin.Forms" description: "In diesem Artikel wird erläutert, wie Sie eine einfache plattformübergreifende Single-Page-Anwendung mit Xamarin.Forms erstellen, in die Sie eine Notiz eingeben und auf dem Gerät speichern können."'
+description: 'zone_pivot_groups: platform-dev16 ms.topic: quickstart ms.prod: xamarin ms.assetid: E8CF05B1-54B9-428B-8518-D068837BD61E ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 04/01/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 zone_pivot_groups: platform-dev16
 ms.topic: quickstart
 ms.prod: xamarin
@@ -13,10 +13,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: b9a3017fc8188d3669b64d95c968b2d0a5325358
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84136070"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Erstellen einer Single-Page-Webanwendung in Xamarin.Forms

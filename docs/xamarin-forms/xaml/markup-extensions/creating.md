@@ -1,8 +1,22 @@
 ---
-Title: "Erstellen von XAML-Markup Erweiterungen" Beschreibung: "in diesem Artikel wird erläutert, wie Sie eigene benutzerdefinierte Xamarin.Forms XAML-Markup Erweiterungen definieren. Eine XAML-Markup Erweiterung ist eine Klasse, die die Schnittstelle "imarkupextension" oder "imarkupextension <T> " implementiert.
-ms. Prod: xamarin ms. assetid: 797c1ef9-1c8e-4208-8610-9b79ccar17d46 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/05/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Erstellen von XAML-Markuperweiterungen
+description: In diesem Artikel wird erläutert, wie Sie eigene benutzerdefinierte Xamarin.Forms XAML-Markup Erweiterungen definieren. Eine XAML-Markup Erweiterung ist eine Klasse, die die Schnittstelle "imarkupextension" oder "imarkupextension" implementiert <T> .
+ms.prod: xamarin
+ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 878ebcaa5249261afac2776a9e7cf47c0c047135
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130532"
 ---
-
 # <a name="creating-xaml-markup-extensions"></a>Erstellen von XAML-Markuperweiterungen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)

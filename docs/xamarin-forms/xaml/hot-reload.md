@@ -1,8 +1,22 @@
 ---
-Title: "XAML Hot Upload for Xamarin.Forms " Description: "die Änderungen an der XAML-Datei werden sofort in der laufenden Anwendung neu geladen, damit Sie das Xamarin.Forms Projekt nicht nach jeder XAML-Änderung erstellen müssen."
-ms. Prod: xamarin ms. assetid: E220F054-32EE-424C-A7E5-6156BE271519 ms. Technology: xamarin-Forms Author: maddyleger1 ms. Author: maleger ms. Date: 03/14/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML-Hot-Upload fürXamarin.Forms
+description: Erneutes Laden von Änderungen an ihrer XAML-Datei in der laufenden Anwendung, damit Sie das Xamarin.Forms Projekt nicht nach jeder XAML-Änderung erstellen müssen.
+ms.prod: xamarin
+ms.assetid: E220F054-32EE-424C-A7E5-6156BE271519
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/14/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0655739c95ba58b8d93aae6d3987d54bd0582c7b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127451"
 ---
-
 # <a name="xaml-hot-reload-for-xamarinforms"></a>XAML-Hot-Upload fürXamarin.Forms
 
 XAML Hot Upload wird in Ihren vorhandenen Workflow integriert, um Ihre Produktivität zu steigern und Zeit zu sparen. Ohne das erneute Laden von XAML müssen Sie die APP jedes Mal erstellen und bereitstellen, wenn Sie eine XAML-Änderung sehen möchten. Wenn Sie beim Laden der XAML-Datei die XAML-Datei speichern, werden die Änderungen in der laufenden app Live übernommen. Außerdem werden der Navigations Zustand und die Daten beibehalten, sodass Sie Ihre Benutzeroberfläche schnell durchlaufen können, ohne Ihre Position in der APP zu verlieren. Mit XAML Hot Neuladen verbringen Sie daher weniger Zeit mit der Neuerstellung und Bereitstellung Ihrer Apps, um Änderungen an der Benutzeroberfläche zu überprüfen.

@@ -1,8 +1,22 @@
 ---
-Title: "Teil 3. XAML-Markup Erweiterungen "Description:" XAML-Markup Erweiterungen bilden ein wichtiges Feature in XAML, das es ermöglicht, Eigenschaften auf Objekte oder Werte festzulegen, auf die indirekt aus anderen Quellen verwiesen wird. "
-ms. Prod: xamarin ms. Technology: xamarin-Forms ms. assetid: F4A37564-B18B-42FF-B841-9A1949895AB6 Author: davidbritch ms. Author: dabritch ms. Date: 03/27/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Teil 3. XAML-Markuperweiterungen
+description: XAML-Markup Erweiterungen bilden ein wichtiges Feature in XAML, das es ermöglicht, Eigenschaften auf Objekte oder Werte festzulegen, auf die indirekt aus anderen Quellen verwiesen wird.
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3fcea963b253ea34601a36434007f18d925975eb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131338"
 ---
-
 # <a name="part-3-xaml-markup-extensions"></a>Teil 3. XAML-Markuperweiterungen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

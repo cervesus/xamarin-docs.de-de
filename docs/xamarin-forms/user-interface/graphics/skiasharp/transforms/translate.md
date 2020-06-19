@@ -1,8 +1,22 @@
 ---
-Title: "The Translation Transform" Description: "in diesem Artikel wird erläutert, wie Sie die Transformation" übersetzen "verwenden, um skiasharp-Grafiken in Anwendungen zu verschieben Xamarin.Forms , und dies mit Beispielcode veranschaulicht.
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: BD28ADA1-49F9-44E2-A548-46024A29882F Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Die Verschiebungstransformation
+description: In diesem Artikel wird beschrieben, wie Sie die Transformation "übersetzen" verwenden, um skiasharp-Grafiken in Anwendungen zu verschieben Xamarin.Forms , und dies mit Beispielcode veranschaulicht.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0eb3b4a6b37d59363984c9248cc39de91a6819e0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138254"
 ---
-
 # <a name="the-translate-transform"></a>Die Verschiebungstransformation
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

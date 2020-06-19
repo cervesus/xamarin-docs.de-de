@@ -1,8 +1,22 @@
 ---
-Title: "Controls Reference" Description: "eine Beschreibung aller Benutzeroberflächen Elemente, die zum Erstellen einer Anwendung verwendet werden Xamarin.Forms . In diesem Artikel werden die Steuerelement Gruppen aufgelistet, aus denen sich die Benutzeroberfläche einer- Xamarin.Forms Anwendung besteht.
-ms. Prod: xamarin ms. assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/08/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Steuerelementreferenz
+description: Eine Beschreibung aller Benutzeroberflächen Elemente, die zum Erstellen einer- Xamarin.Forms Anwendung verwendet werden. In diesem Artikel werden die Steuerelement Gruppen aufgelistet, aus denen sich die Benutzeroberfläche einer- Xamarin.Forms Anwendung besteht.
+ms.prod: xamarin
+ms.assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/08/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e843f0e42f4f66a6ce4e60c2f5d8a233d19f1df6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136395"
 ---
-
 # <a name="controls-reference"></a>Steuerelementreferenz
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)

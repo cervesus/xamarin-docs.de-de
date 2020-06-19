@@ -1,8 +1,22 @@
 ---
-Title: "Layout für Tablet-und Desktop-Apps" Beschreibung: "in diesem Artikel Xamarin.Forms wird erläutert, wie Anwendungs Layouts für Tablets und nicht für Smartphones optimiert werden."
-ms. Prod: xamarin ms. assetid: D62F472B-4345-4983-8403-659A538B591F ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/01/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Layout für Tablet-und Desktop-Apps
+description: In diesem Artikel wird erläutert, wie Sie Xamarin.Forms Anwendungs Layouts für Tablets im Gegensatz zu Smartphones optimieren.
+ms.prod: xamarin
+ms.assetid: D62F472B-4345-4983-8403-659A538B591F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/01/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0ecbc850960465296dc4047277bdafe78ac800a4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573247"
 ---
-
 # <a name="layout-for-tablet-and-desktop-apps"></a>Layout für Tablet-und Desktop-Apps
 
 Xamarin.Formsin werden alle Gerätetypen unterstützt, die auf den unterstützten Plattformen verfügbar sind. zusätzlich zu den Smartphones können apps auch unter ausgeführt werden:

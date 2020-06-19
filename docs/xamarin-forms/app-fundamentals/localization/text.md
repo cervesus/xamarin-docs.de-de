@@ -1,6 +1,6 @@
 ---
-title: Zeichenfolgen- und Bildlokalisierung in Xamarin.Forms
-description: Xamarin.Forms-Apps können mit .NET-Ressourcendateien lokalisiert werden.
+title: 'title: "Zeichenfolgen- und Imagelokalisierung in Xamarin.Forms" description: "Xamarin.Forms-Apps können mithilfe von .NET-Ressourcendateien lokalisiert werden."'
+description: 'zone_pivot_groups: "platform" ms.prod: xamarin ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date: 11/01/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
@@ -12,10 +12,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: af15dc5a23404a11be6207bef7b4fc3e4bf9fad7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84137601"
 ---
 # <a name="xamarinforms-string-and-image-localization"></a>Zeichenfolgen- und Bildlokalisierung für Xamarin.Forms
@@ -30,7 +30,7 @@ Lokalisierung ist der Prozess, bei dem eine Anwendung an die jeweilige Sprache o
 
 Zum Lokalisieren von Xamarin.Forms-Anwendungen mit Ressourcendateien müssen Sie die folgenden Schritte ausführen:
 
-1. [Erstellen der RESX-Dateien](#create-resx-files) mit übersetztem Text
+1. [Erstellen der RESX-Dateien](#create-resx-files) mit übersetzten Text
 1. [Angeben der Standardkultur](#specify-the-default-culture) im freigegebenen Projekt
 1. [Lokalisieren von Text in Xamarin.Forms](#localize-text-in-xamarinforms).
 1. [Lokalisieren von Bildern](#localize-images) basierend auf Kultureinstellungen für jede Plattform

@@ -1,8 +1,22 @@
 ---
-Title: "auffallen Pull Directions on Windows" Description: "Platform-Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne benutzerdefinierte Renderer oder Effekte implementieren zu müssen. In diesem Artikel wird erläutert, wie Sie die Windows-plattformspezifische verwenden, mit der die Pull-Richtung einer aktualisierbaren Ansicht geändert werden kann.
-ms. Prod: xamarin ms. assetid: 407a862b-281E-4384-9696-C0655830B84D ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/20/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: RefreshView-Pullrichtung unter Windows
+description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie die Windows-plattformspezifische verwenden, mit der die Pull-Richtung einer aktualisierbaren Ansicht geändert werden kann.
+ms.prod: xamarin
+ms.assetid: 407A862B-281E-4384-9696-C0655830B84D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 46a1b4d00b9eea276b9a3b3d5bffbdac3d31e0ef
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136577"
 ---
-
 # <a name="refreshview-pull-direction-on-windows"></a>RefreshView-Pullrichtung unter Windows
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

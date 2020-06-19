@@ -1,21 +1,21 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Hierarchische Navigation" description: "In diesem Artikel wird gezeigt, wie die „NavigationPage“-Klasse verwendet werden kann, um die Navigation in einem Stapel von LIFO-Seiten (Last In, First Out) auszuführen."'
+description: 'ms.prod: xamarin ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 03/10/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 92774cffdfed7412bdb4d44993dc221993ad56c8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: ec35b03e7e96f0730813918bdd96e1408cfabde7
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137869"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571492"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
@@ -32,8 +32,6 @@ Um zu vorherigen Seite zurückzukehren, entfernt die Anwendung die aktuelle Seit
 ![](hierarchical-images/popping.png "Popping a Page from the Navigation Stack")
 
 Navigationsmethoden werden von der Eigenschaft [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) für einen beliebigen [`Page`](xref:Xamarin.Forms.Page)-Typ verfügbar gemacht. Diese Methoden bieten die Möglichkeit, Seiten per Push auf den Navigationsstapel zu übertragen, Seiten per Pop aus dem Navigationsstapel zu entfernen und die Stapelbearbeitung durchzuführen.
-
-<a name="Performing_Navigation" />
 
 ## <a name="performing-navigation"></a>Ausführen der Navigation
 
@@ -154,8 +152,6 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 
 Wird der `boolean`-Parameter auf `false` festgelegt, wird die Seitenübergangsanimation deaktiviert. Wird der Parameter auf `true` festgelegt, wird die Seitenübergangsanimation aktiviert. Vorausgesetzt sie wird von der zugrunde liegenden Plattform unterstützt. Bei Push- und Pop-Methoden ohne diesen Parameter wird die Animation standardmäßig aktiviert.
 
-<a name="Passing_Data_when_Navigating" />
-
 ## <a name="passing-data-when-navigating"></a>Übergeben von Daten beim Navigieren
 
 Beim Navigieren kann es manchmal erforderlich sein, dass Daten an eine andere Seite übergeben werden. Dies kann auf zwei Arten erfolgen: Durch das Übergeben von Daten durch einen Seitenkonstruktor oder durch Festlegen des [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) der neuen Seite auf die Daten. Beide werden nun nacheinander erläutert.
@@ -274,8 +270,6 @@ Durch mehrere [`Label`](xref:Xamarin.Forms.Label)-Steuerelemente werden die Date
 ![](hierarchical-images/passing-data-bindingcontext.png "Data Passed Through a BindingContext")
 
 Weitere Informationen zur Datenbindung finden Sie unter [Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) (Datenbindungsgrundlagen).
-
-<a name="Manipulating_the_Navigation_Stack" />
 
 ## <a name="manipulating-the-navigation-stack"></a>Bearbeiten des Navigationsstapels
 

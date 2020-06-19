@@ -1,8 +1,22 @@
 ---
-Title: "Spracherkennung mithilfe der Sprachdienst-API" Beschreibung: "in diesem Artikel wird erläutert, wie Sie die Azure Speech Service-API verwenden, um Sprache in Text in einer-Anwendung zu schreiben Xamarin.Forms ."
-ms. Prod: xamarin ms. assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1 ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 01/14/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Spracherkennung mithilfe der Sprachdienst-API
+description: In diesem Artikel wird erläutert, wie Sie die Azure Speech Service-API verwenden, um die Sprache in Text in einer-Anwendung zu schreiben Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 01/14/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 171ecc02fda304135e5f535c3e798067595d7047
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139320"
 ---
-
 # <a name="speech-recognition-using-azure-speech-service"></a>Spracherkennung mit Azure Speech Service
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)

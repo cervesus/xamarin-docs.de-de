@@ -1,8 +1,22 @@
 ---
-Title: "XAML-Markup Erweiterungen" Description: "der Artikel erläutert, wie Xamarin.Forms XAML-Markup Erweiterungen verwendet werden, um die Leistungsfähigkeit und Flexibilität von XAML zu erweitern, indem Element Attribute aus anderen Quellen als Literalzeichenfolgen festgelegt werden können."
-ms. Prod: xamarin ms. assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/05/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML-Markuperweiterungen
+description: Der Artikel erläutert, wie Xamarin.Forms XAML-Markup Erweiterungen verwendet werden, um die Leistungsfähigkeit und Flexibilität von XAML zu erweitern, indem Element Attribute aus anderen Quellen als Literalzeichenfolgen festgelegt werden können.
+ms.prod: xamarin
+ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 568cffc335f28b1a47f3278ad061d851ebef84b6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130389"
 ---
-
 # <a name="xaml-markup-extensions"></a>XAML-Markuperweiterungen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)

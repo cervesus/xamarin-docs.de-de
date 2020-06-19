@@ -1,8 +1,22 @@
 ---
-Title: "Bezeichnung Xamarin.Forms " Description: "in diesem Artikel wird erläutert, wie Sie die Xamarin.Forms Label-Klasse verwenden, um einen Text in einer einzelnen und mehreren Zeilen in Anwendungen anzuzeigen."
-ms. Prod: xamarin ms. assetid: 02e6c553-5670-49a0-8ee9-5153ed21ea91 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/09/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsETI
+description: In diesem Artikel wird beschrieben, wie Sie die Xamarin.Forms Label-Klasse verwenden, um Text in-Anwendungen mit einfacher und mehrzeiligen Text anzuzeigen.
+ms.prod: xamarin
+ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/09/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8bf6517e3624ad80c2fd4d209e5a77472460be76
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570504"
 ---
-
 # <a name="xamarinforms-label"></a>Xamarin.FormsETI
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

@@ -1,20 +1,20 @@
 ---
-title: Verbessern der Leistung einer Xamarin.Forms-App
-description: Es gibt viele Methoden, mit denen sich die Leistung von Xamarin.Forms-Anwendungen verbessern lässt. Wenn Sie diese Kniffe kombinieren, können Sie die CPU-Auslastung und die Speichermenge, die von einer Anwendung verwendet wird, erheblich reduzieren.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Verbessern der Leistung einer Xamarin.Forms-App" description: "Es gibt viele Methoden, mit denen sich die Leistung von Xamarin.Forms-Anwendungen verbessern lässt.'
+description: 'Wenn Sie diese Methoden kombinieren, können Sie die CPU-Auslastung und die Speichermenge, die von einer Anwendung verwendet werden, erheblich reduzieren." ms.prod: xamarin ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 11/27/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/27/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 96b5939fd1f8448d45d1398fd56770f9032de083
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84139112"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>Verbessern der Leistung einer Xamarin.Forms-App

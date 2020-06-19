@@ -1,20 +1,20 @@
 ---
-title: Xamarin.Forms-Vorlagen
-description: In diesem Leitfaden erfahren Sie, wie Sie die Vorlagenunterstützung von Xamarin.Forms nutzen können. Diese Unterstützung umfasst Steuerelementvorlagen, die die visuelle Struktur benutzerdefinierter Steuerelemente und Seiten definieren, sowie Datenvorlagen, die die Darstellung von Daten in unterstützten Steuerelementen definieren.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Xamarin.Forms-Vorlagen" description: "In diesem Leitfaden erfahren Sie, wie Sie die Vorlagenunterstützung von Xamarin.Forms nutzen können.'
+description: 'Diese Unterstützung umfasst Steuerelementvorlagen, die die visuelle Struktur benutzerdefinierter Steuerelemente und Seiten definieren, sowie Datenvorlagen, die die Darstellung von Daten in unterstützten Steuerelementen definieren." ms.prod: xamarin ms.assetid: 4453C209-C068-47D5-A49B-0ECC95C0FB3B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 01/13/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 4453C209-C068-47D5-A49B-0ECC95C0FB3B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 079c9079efdf224db1dee8a60f054439eeee8e8c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84135927"
 ---
 # <a name="xamarinforms-templates"></a>Xamarin.Forms-Vorlagen

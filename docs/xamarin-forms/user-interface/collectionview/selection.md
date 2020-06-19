@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms CollectionView Selection" Description: "die CollectionView-Auswahl ist standardmäßig deaktiviert. Die Auswahl von "einfach" und "Mehrfachauswahl" kann jedoch aktiviert werden.
-ms. Prod: xamarin ms. assetid: 423d91c7-1E58-4735-9e80-58b11cdfd953 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 05/06/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsCollectionView-Auswahl
+description: Standardmäßig ist die CollectionView-Auswahl deaktiviert. Die Auswahl von einzeln und mehrfach kann jedoch aktiviert werden.
+ms.prod: xamarin
+ms.assetid: 423D91C7-1E58-4735-9E80-58F11CDFD953
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/06/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 39f118d7073fc551923f891681c8c6cf6a4c5ddd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137383"
 ---
-
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin.FormsCollectionView-Auswahl
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

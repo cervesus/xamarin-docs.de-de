@@ -1,20 +1,20 @@
 ---
-title: ''
-description: In diesem Artikel wird beschrieben, wie eine Videoplayeranwendung mit Xamarin.Forms implementiert wird.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Implementieren eines Videoplayers" description: "In diesem Artikel wird beschrieben, wie eine Videoplayeranwendung mithilfe von Xamarin.Forms implementiert wird."'
+description: 'ms.prod: xamarin ms.assetid: 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 02/12/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 08bfb86f040bfbce834df5a5d98231afae92e78d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84133758"
 ---
 # <a name="implementing-a-video-player"></a>Implementieren eines Videoplayers

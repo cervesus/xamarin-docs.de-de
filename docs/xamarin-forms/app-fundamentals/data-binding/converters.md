@@ -1,6 +1,6 @@
 ---
-title: Bindungswertkonverter in Xamarin.Forms
-description: In diesem Artikel wird erläutert, wie Werte innerhalb einer Xamarin.Forms-Datenbindung durch Implementierung eines Wertkonverters (auch als Bindungskonverter oder Bindungswertkonverter bekannt) umgewandelt oder konvertiert werden.
+title: 'title: "Xamarin.Forms Bindungswertkonverter" description: "In diesem Artikel wird erläutert, wie Werte innerhalb einer Xamarin.Forms-Datenbindung durch Implementierung eines Wertkonverters (auch als Bindungskonverter oder Bindungswertkonverter bekannt) umgewandelt oder konvertiert werden."'
+description: 'ms.prod: xamarin ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 01/05/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: e1a4faabc8f0703b497062a8c5d587221692dab7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84139759"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Bindungswertkonverter in Xamarin.Forms
@@ -470,4 +470,4 @@ So sieht das Ergebnis aus:
 ## <a name="related-links"></a>Verwandte Links
 
 - [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Zusammenfassung von Kapitel 16.: Datenbindung](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Kapitel zu Datenbindung aus dem Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

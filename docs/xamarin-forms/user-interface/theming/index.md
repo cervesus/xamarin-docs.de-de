@@ -1,8 +1,22 @@
 ---
-Title: "Design einer Xamarin.Forms Anwendung" Beschreibung: " Xamarin.Forms Anwendungen unterstützen das Design, indem Sie für jedes Design ein ResourceDictionary erstellen und anschließend die Ressourcen mit der DynamicResource-Markup Erweiterung laden."
-ms. Prod: xamarin ms. assetid: BF92AEDD-EF23-4D08-A972-B089066E75F9 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/22/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Themen zu einer Xamarin.Forms Anwendung
+description: Xamarin.FormsAnwendungen unterstützen das Design, indem Sie für jedes Design ein ResourceDictionary erstellen und anschließend die Ressourcen mit der DynamicResource-Markup Erweiterung laden.
+ms.prod: xamarin
+ms.assetId: BF92AEDD-EF23-4D08-A972-B089066E75F9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/22/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 80660ae7d3af0fe5948a5ae4ffdb35d2f9c2a40f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136135"
 ---
-
 # <a name="theming-a-xamarinforms-application"></a>Themen zu einer Xamarin.Forms Anwendung
 
 ## <a name="theme-an-application"></a>[Design einer Anwendung](theming.md)

@@ -1,8 +1,22 @@
 ---
-Title: "Pixel und geräteunabhängige Einheiten" Beschreibung: "dieser Artikel untersucht die Unterschiede zwischen skiasharp-Koordinaten und- Xamarin.Forms Koordinaten und veranschaulicht dies mit Beispielcode".
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 26c25bb8-fbe8-4b77-B01D-16a163a16890 Author: davidbritch ms. Author: dabritch ms. Date: 02/09/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Pixel und geräteunabhängige Einheiten
+description: In diesem Artikel werden die Unterschiede zwischen skiasharp-Koordinaten und- Xamarin.Forms Koordinaten erläutert und mit Beispielcode veranschaulicht.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/09/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6d01018f4393ac5562220fa1f9524bc0d9872c67
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137669"
 ---
-
 # <a name="pixels-and-device-independent-units"></a>Pixel und geräteunabhängige Einheiten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

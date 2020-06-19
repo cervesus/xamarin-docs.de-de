@@ -1,8 +1,22 @@
 ---
-Title: "skiasharp Lines and Path" Description: "in diesem Artikel wird erläutert, wie Sie skiasharp verwenden, um Linien und Grafik Pfade in Anwendungen zu zeichnen Xamarin.Forms , und dies mit Beispielcode veranschaulicht."
-ms. Prod: xamarin ms. assetid: 316a15fe-383d-4d06-8641-bac7ee7474ca ms. Technology: xamarin-skiasharp Author: davidbritch ms. Author: dabritch ms. Date: 03/10/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: SkiaSharp-Linien und -Pfade
+description: In diesem Artikel wird erläutert, wie Sie mit skiasharp Linien und Grafik Pfade in- Xamarin.Forms Anwendungen zeichnen und dies mit Beispielcode veranschaulichen.
+ms.prod: xamarin
+ms.assetid: 316A15FE-383D-4D06-8641-BAC7EE7474CA
+ms.technology: xamarin-skiasharp
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 97c7305e59a023e65535186bbbe39a9c2b7d4c26
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138995"
 ---
-
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp-Linien und -Pfade
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,8 +1,22 @@
 ---
-Title: "skiasharp Rauschen and Komposition" Description: "Generieren von Perlin-Rauschen-Shadern und kombinieren mit anderen Shadern".
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 90c2d00a-2876-43ea-A836-538c3318cf93 Author: davidbritch ms. Author: dabritch ms. Date: 08/23/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Skiasharp-Rauschen und Komposition
+description: Generieren von Perlin-Rausch-Shadern und kombinieren mit anderen Shadern.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 45ec48c0b7b58e26fa47d7343e96bb49591cb339
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127763"
 ---
-
 # <a name="skiasharp-noise-and-composing"></a>Skiasharp-Rauschen und Komposition
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

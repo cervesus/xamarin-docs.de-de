@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms-Bindungspfad
-description: In diesem Artikel wird erläutert, wie über Xamarin.Forms-Datenbindungen mit der Path-Eigenschaft der Klasse „Binding“ auf untergeordnete Eigenschaften und Sammlungsmember zugegriffen werden kann.
+title: 'title: "Xamarin.Forms – Bindungspfad" description: "In diesem Artikel wird erläutert, wie über Xamarin.Forms-Datenbindungen mit der „Path“-Eigenschaft der Klasse „Binding“ auf untergeordnete Eigenschaften und Sammlungsmember zugegriffen werden kann."'
+description: 'ms.prod: xamarin ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 01/05/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: a0ac8a568c3e8c46fa7e53112461aa0bff5684ae
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
+ms.lasthandoff: 06/09/2020
 ms.locfileid: "84570790"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms-Bindungspfad
@@ -169,4 +169,4 @@ Wenn eine Eigenschaft im Bindungspfad `INotifyPropertyChanged` nicht implementie
 ## <a name="related-links"></a>Verwandte Links
 
 - [Data Binding Demos (Demos zur Datenbindung (Beispiel))](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Zusammenfassung von Kapitel 16.: Datenbindung](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Kapitel zu Datenbindung aus dem Xamarin.Forms-Buch](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

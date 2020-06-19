@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms c# Markup" Description: "c# Markup ist ein Satz von fließenden Hilfsmethoden und-Klassen, um den Prozess des Ersatzes von deklarativen Xamarin.Forms Benutzeroberflächen in c# zu vereinfachen."
-ms. Prod: xamarin ms. assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 05/15/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsC#-Markup
+description: C#-Markup ist ein Opt-in-Satz von fließenden Hilfsmethoden und-Klassen, um den Prozess des Ersatzes von deklarativen Xamarin.Forms Benutzeroberflächen in c# zu vereinfachen.
+ms.prod: xamarin
+ms.assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137747"
 ---
-
 # <a name="xamarinforms-c-markup"></a>Xamarin.FormsC#-Markup
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

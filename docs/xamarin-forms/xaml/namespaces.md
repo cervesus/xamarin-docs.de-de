@@ -1,8 +1,22 @@
 ---
-Title: "XAML-Namespaces in Xamarin.Forms " Description: "XAML verwendet das xmlns-XML-Attribut für Namespace Deklarationen. In diesem Artikel wird die XAML-Namespace Syntax vorgestellt, und es wird veranschaulicht, wie ein XAML-Namespace für den Zugriff auf einen Typ deklariert wird. "
-ms. Prod: xamarin ms. assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/21/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML-Namespaces inXamarin.Forms
+description: XAML verwendet das xmlns-XML-Attribut für Namespace Deklarationen. In diesem Artikel wird die XAML-Namespace Syntax vorgestellt, und es wird veranschaulicht, wie ein XAML-Namespace für den Zugriff auf einen Typ deklariert wird.
+ms.prod: xamarin
+ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7f35342134767ccdadfab086bfa14f6b610b325d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130376"
 ---
-
 # <a name="xaml-namespaces-in-xamarinforms"></a>XAML-Namespaces inXamarin.Forms
 
 _XAML verwendet das xmlns-XML-Attribut für Namespace Deklarationen. In diesem Artikel wird die XAML-Namespace Syntax vorgestellt, und es wird veranschaulicht, wie ein XAML-Namespace für den Zugriff auf einen Typ deklariert wird._
@@ -27,7 +41,7 @@ XAML verwendet Präfixe, um nicht standardmäßige Namespaces zu deklarieren, wo
 
 In der folgenden Tabelle sind die `x` von unterstützten Namespace Attribute aufgeführt Xamarin.Forms :
 
-|Konstrukt|BESCHREIBUNG|
+|Konstrukt|Beschreibung|
 |--- |--- |
 |`x:Arguments`|Gibt Konstruktorargumente für einen nicht Standardkonstruktor oder für eine Factorymethoden-Objekt Deklaration an.|
 |`x:Class`|Gibt den Namespace und den Klassennamen für eine Klasse an, die in XAML definiert ist. Der Klassenname muss mit dem Klassennamen der Code Behind-Datei identisch sein. Beachten Sie, dass dieses Konstrukt nur im Root-Element einer XAML-Datei angezeigt werden kann.|

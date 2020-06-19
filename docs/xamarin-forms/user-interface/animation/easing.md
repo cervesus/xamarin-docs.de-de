@@ -1,8 +1,22 @@
 ---
-Title: "Beschleunigungsfunktionen in Xamarin.Forms " Description: " Xamarin.Forms enthält eine Beschleunigungs Klasse, die es Ihnen ermöglicht, eine Übertragungsfunktion anzugeben, mit der gesteuert wird, wie Animationen bei der Ausführung beschleunigt oder verlangsamt werden. In diesem Artikel wird veranschaulicht, wie die vordefinierten Beschleunigungsfunktionen verwendet werden und wie benutzerdefinierte Beschleunigungsfunktionen erstellt werden.
-ms. Prod: xamarin ms. assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 07/14/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Beschleunigungsfunktionen inXamarin.Forms
+description: Xamarin.Formsenthält eine Beschleunigungs Klasse, mit der Sie eine Übertragungsfunktion angeben können, mit der gesteuert wird, wie Animationen bei der Ausführung beschleunigt oder verlangsamt werden. In diesem Artikel wird veranschaulicht, wie die vordefinierten Beschleunigungsfunktionen verwendet werden und wie benutzerdefinierte Beschleunigungsfunktionen erstellt werden.
+ms.prod: xamarin
+ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/14/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 574b6f82aea3c71d43799c6ca86997d895eed4c5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573806"
 ---
-
 # <a name="easing-functions-in-xamarinforms"></a>Beschleunigungsfunktionen inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)

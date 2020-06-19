@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms Text Stile" Description: "in diesem Artikel wird das Formatieren von Text in Xamarin.Forms Anwendungen erläutert. Stile können einmalig definiert und von vielen Ansichten verwendet werden, aber ein Stil kann nur mit Ansichten eines Typs verwendet werden. "
-ms. Prod: xamarin ms. assetid: 57c0cfd6-A568-46b8-ada1-bf25681893cf ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 05/22/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsTextstile
+description: Dieser Artikel erläutert das Formatieren von Text in- Xamarin.Forms Anwendungen. Stile können einmalig definiert und von vielen Ansichten verwendet werden, aber ein Stil kann nur mit Ansichten eines Typs verwendet werden.
+ms.prod: xamarin
+ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/22/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d82348231c4b4905f2f70b80f73c45f2f0bf66b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571999"
 ---
-
 # <a name="xamarinforms-text-styles"></a>Xamarin.FormsTextstile
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

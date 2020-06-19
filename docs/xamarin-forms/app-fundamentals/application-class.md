@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms-App-Klasse
-description: Dieser Artikel erklärt Features der Standard-App-Klasse, darunter eine Eigenschaft zum Festlegen der Startseite der App und ein beständiges Wörterbuch zum Speichern einfacher Werte über Zustandsänderungen im Lebenszyklus hinweg.
+title: 'title: "Xamarin.Forms App-Klasse" description: "In diesem Artikel werden die Features der Standard-App-Klasse erläutert, darunter eine Eigenschaft zum Festlegen der Startseite der App und ein beständiges Wörterbuch zum Speichern einfacher Werte über Zustandsänderungen im Lebenszyklus."'
+description: 'ms.prod: xamarin ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D ms.technology: xamarin-forms ms.custom: video author: davidbritch ms.author: dabritch ms.date: 02/19/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
 ms.technology: xamarin-forms
@@ -12,10 +12,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 1e761830fb08662a82a8bf98b4544aafaa6eccf7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
+ms.lasthandoff: 06/09/2020
 ms.locfileid: "84573351"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms-App-Klasse

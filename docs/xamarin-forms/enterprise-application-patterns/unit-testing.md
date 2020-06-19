@@ -1,8 +1,22 @@
 ---
-Title: "Unit Testing Enterprise Apps" Description: "in diesem Kapitel wird erläutert, wie Unittests im Mobile App" eshoponcontainers "durchgeführt werden.
-ms. Prod: xamarin ms. assetid: 4af82e52-l99b-4cad-b278-1745f 190c240 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Komponententests für Unternehmens-apps
+description: In diesem Kapitel wird erläutert, wie Unittests in den eshoponcontainers-Mobile App durchgeführt werden.
+ms.prod: xamarin
+ms.assetid: 4af82e52-f99b-4cad-b278-1745f190c240
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a05de34089fdf6ad90740067b88edea0b62f55a7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134653"
 ---
-
 # <a name="unit-testing-enterprise-apps"></a>Komponententests für Unternehmens-apps
 
 Mobile Apps haben eindeutige Probleme, die Desktop-und webbasierten Anwendungen nicht berücksichtigen müssen. Mobile Benutzer unterscheiden sich von den Geräten, die Sie verwenden, durch Netzwerk Konnektivität, durch die Verfügbarkeit von Diensten und einen Bereich anderer Faktoren. Daher sollten Mobile Apps getestet werden, da Sie in der realen Welt verwendet werden, um ihre Qualität, Zuverlässigkeit und Leistung zu verbessern. Es gibt viele Arten von Tests, die für eine app ausgeführt werden sollten, einschließlich Komponententests, Integrationstests und Tests der Benutzeroberfläche, wobei Komponententests die gängigste Art von Tests sind.

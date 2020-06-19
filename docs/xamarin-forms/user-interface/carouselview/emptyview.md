@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms carouselview emptyview" Description: "in carouselview kann eine leere Ansicht angegeben werden, die dem Benutzer Feedback liefert, wenn keine Daten zur Anzeige verfügbar sind. Die leere Ansicht kann eine Zeichenfolge, eine Ansicht oder mehrere Ansichten sein. "
-ms. Prod: xamarin ms. assetid: C6DEE1A9-63fc-4889-BC77-F401D5D7DF32 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 10/03/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsCarouselview emptyview
+description: In carouselview kann eine leere Ansicht angegeben werden, die dem Benutzer Feedback bietet, wenn keine Daten zur Anzeige verfügbar sind. Die leere Ansicht kann eine Zeichenfolge, eine Ansicht oder mehrere Ansichten sein.
+ms.prod: xamarin
+ms.assetid: C6DEE1A9-63FC-4889-BC77-F401D5D7DF32
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/03/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a9f952da75e68e9ad39e0a15f57fbd0379233d7e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137396"
 ---
-
 # <a name="xamarinforms-carouselview-emptyview"></a>Xamarin.FormsCarouselview emptyview
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

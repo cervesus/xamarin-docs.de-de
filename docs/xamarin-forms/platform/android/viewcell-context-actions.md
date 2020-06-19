@@ -1,8 +1,22 @@
 ---
-Title: "viewcell Context Actions on Android" Description: "Platform-Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie das plattformspezifische Android-Modell verwenden, das viewcell-Kontext Aktionen im Legacy Modus ermöglicht. "
-ms. Prod: xamarin ms. assetid: 8bd71b10-5037-443f-9975-B941CE393E5A ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/24/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: ViewCell-Kontextaktionen unter Android
+description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie das plattformspezifische Android-Modell verwenden, das viewcell-Kontext Aktionen im Legacy Modus ermöglicht.
+ms.prod: xamarin
+ms.assetid: 8BD71B10-5037-443F-9975-B941CE393E5A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/24/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 053697921f1adacc102e9e9bee9dd17f8d44526b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128556"
 ---
-
 # <a name="viewcell-context-actions-on-android"></a>ViewCell-Kontextaktionen unter Android
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

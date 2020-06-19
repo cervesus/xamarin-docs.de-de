@@ -1,8 +1,22 @@
 ---
-Title: "The skiasharp Linear Gradient" Description: "Discover line to Stroke Lines or Fill Areas with Gradienten, bestehend aus einer schrittweisen Mischung aus zwei Farben."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 20a2a8c4-feb7-478d-bf57-c92e26117b6a Author: davidbritch ms. Author: dabritch ms. Date: 08/23/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Der lineare skiasharp-Farbverlauf
+description: Erfahren Sie, wie Sie Linien oder Bereiche mit Farbverläufen, die aus einer schrittweisen Mischung aus zwei Farben bestehen, zeichnen oder Bereiche Auffüllen
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 20A2A8C4-FEB7-478D-BF57-C92E26117B6A
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 43aa429046c1b0f72a1cbe6a5b921da9b8907a49
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132222"
 ---
-
 # <a name="the-skiasharp-linear-gradient"></a>Der lineare skiasharp-Farbverlauf
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

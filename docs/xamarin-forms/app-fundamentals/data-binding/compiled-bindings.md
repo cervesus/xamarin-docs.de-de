@@ -1,6 +1,6 @@
 ---
-title: Kompilierte Bindungen in Xamarin.Forms
-description: In diesem Artikel wird erläutert, wie Sie kompilierte Bindungen verwenden können, um die Leistung der Datenbindung in Xamarin.Forms-Anwendungen zu verbessern.
+title: 'title: "Xamarin.Forms Kompilierte Bindungen" description: "In diesem Artikel wird erläutert, wie Sie kompilierte Bindungen verwenden können, um die Leistung der Datenbindung in Xamarin.Forms-Anwendungen zu verbessern."'
+description: 'ms.prod: xamarin ms.assetid: ABE6B7F7-875E-4402-A1D2-845CE374402B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 09/18/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: ABE6B7F7-875E-4402-A1D2-845CE374402B
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 094691796fed9653f2a2e468ccb1c33d1a408a49
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
+ms.lasthandoff: 06/09/2020
 ms.locfileid: "84571557"
 ---
 # <a name="xamarinforms-compiled-bindings"></a>Kompilierte Bindungen in Xamarin.Forms

@@ -1,8 +1,22 @@
 ---
-Title: "Fonts in Xamarin.Forms " Description: "in diesem Artikel wird erläutert, wie Sie Schriftart Informationen für Steuerelemente angeben, die Text in Xamarin.Forms Anwendungen anzeigen."
-ms. Prod: xamarin ms. assetid: 49dd2249-C575-41ae-AE06-08F 890f d6031 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/01/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Schriftarten inXamarin.Forms
+description: In diesem Artikel wird erläutert, wie Sie Schriftart Informationen für Steuerelemente angeben, die Text in Xamarin.Forms Anwendungen anzeigen.
+ms.prod: xamarin
+ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a657915edb41573f9637128b4c88233d58a5909a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572207"
 ---
-
 # <a name="fonts-in-xamarinforms"></a>Schriftarten inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)

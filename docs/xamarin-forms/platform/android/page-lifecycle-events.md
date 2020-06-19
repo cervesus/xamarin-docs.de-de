@@ -1,8 +1,22 @@
 ---
-Title: "page Lifecycle Events on Android" Description: "Platform-Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne benutzerdefinierte Renderer oder Effekte implementieren zu müssen. In diesem Artikel wird erläutert, wie Sie die plattformspezifische Android-Anwendung nutzen, die das Verschwinden und die Anzeige von Seiten Ereignissen für die Anwendungs Unterbrechung bzw. Fortsetzung deaktiviert. "
-ms. Prod: xamarin ms. assetid: F6E3759C-D347-407A-91A2-CF9B3B7D4CBD ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 07/10/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Seiten Lebenszyklus-Ereignisse unter Android
+description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie die plattformspezifische Android-Anwendung nutzen, die das Verschwinden und die Anzeige von Seiten Ereignissen für die Anwendungs Unterbrechung bzw. Fortsetzung deaktiviert.
+ms.prod: xamarin
+ms.assetid: F6E3759C-D347-407A-91A2-CF9B3B7D4CBD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 76724ff17613fcebe35cb68518a1c932eee8aad7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128725"
 ---
-
 # <a name="page-lifecycle-events-on-android"></a>Seiten Lebenszyklus-Ereignisse unter Android
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

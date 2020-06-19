@@ -1,8 +1,22 @@
 ---
-Title: "Datei Behandlung in Xamarin.Forms " Description: "die Datei Behandlung mit Xamarin.Forms kann mithilfe von Code in einer .NET Standard Bibliothek oder mithilfe von eingebetteten Ressourcen erreicht werden."
-ms. Prod: xamarin ms. assetid: 9987c3f6-5f04-403b-bbb4-ecb024ea6cc8 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 06/21/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Dateiverarbeitung inXamarin.Forms
+description: Die Verarbeitung von Dateien mit Xamarin.Forms kann mithilfe von Code in einer .NET Standard Bibliothek oder mithilfe von eingebetteten Ressourcen erreicht werden.
+ms.prod: xamarin
+ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f62e5522b5b9a10a3806a70fe949561d77ce0d4e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84574352"
 ---
-
 # <a name="file-handling-in-xamarinforms"></a>Dateiverarbeitung inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)

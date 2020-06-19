@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 0fa717a775ff2f1ace9e248a8afde8d373e8a1f8
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 00c9c2e9f39943960d35c30602935ed109639cf4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724344"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567727"
 ---
 # <a name="working-with-jni-and-xamarinandroid"></a>Arbeiten mit der JNI und Xamarin.Android
 
@@ -159,7 +159,7 @@ Da die Codegenerierung keine Möglichkeit zum Generieren von beliebigen Java-Met
 
 - Bei der Paketerstellung tritt aufgrund einer fehlenden **Mono.Android.Export.dll** ein Fehler auf &ndash; wenn Sie `ExportAttribute` oder `ExportFieldAttribute` in einigen Methoden in Ihrem Code oder abhängigen Bibliotheken verwendet haben, müssen Sie die **Mono.Android.Export.dll** hinzufügen. Diese Assembly ist isoliert, um Rückrufcode aus Java zu unterstützen. Sie ist von der **Mono.Android.dll** getrennt, da sie die Anwendung vergrößert.
 
-- Im Releasebuild tritt `MissingMethodException` bei Exportmethoden auf. (Dieses Problem wurde in der neuesten Version von Xamarin.Android behoben.)
+- Im Releasebuild tritt `MissingMethodException` bei Exportmethoden auf &ndash; Im Releasebuild tritt `MissingMethodException` bei Exportmethoden auf. (Dieses Problem wurde in der neuesten Version von Xamarin.Android behoben.)
 
 ### <a name="exportparameterattribute"></a>ExportParameterAttribute
 
@@ -277,7 +277,7 @@ Genauso wie bei Feldern wird bei den Methoden zum Abrufen der Methoden-ID und zu
 
 Die Methodenbindung kann mehr bieten als nur Methodenaufrufe. Zur Methodenbindung gehört auch das Zulassen der Überschreibung (bei abstrakten und nicht abschließenden Methoden) oder Implementierung (bei Schnittstellenmethoden) von Methoden. Im Abschnitt [Unterstützen der Vererbung, Schnittstellen](#_Supporting_Inheritance,_Interfaces_1) wird die Komplexität der Unterstützung von virtuellen Methoden und Schnittstellenmethoden behandelt.
 
-<a name="_Static_Methods_1" />
+<a name="_Static_Methods_1"></a>
 
 #### <a name="static-methods"></a>Statische Methoden
 
@@ -395,7 +395,7 @@ public Integer (int value)
 
 Die [JNIEnv.CreateInstance](xref:Android.Runtime.JNIEnv.CreateInstance*)-Methoden sind Hilfsmethoden zum Ausführen von `JNIEnv.FindClass`, `JNIEnv.GetMethodID`, `JNIEnv.NewObject` und `JNIEnv.DeleteGlobalReference` für den von `JNIEnv.FindClass` zurückgegebenen Wert. Nähere Informationen finden Sie im nächsten Abschnitt.
 
-<a name="_Supporting_Inheritance,_Interfaces_1" />
+<a name="_Supporting_Inheritance,_Interfaces_1"></a>
 
 ### <a name="supporting-inheritance-interfaces"></a>Unterstützen der Vererbung, Schnittstellen
 
@@ -1049,7 +1049,7 @@ IntPtr lrefString = JNIEnv.CallObjectMethod(instance, methodID);
 Java.Lang.String value = Java.Lang.Object.GetObject<Java.Lang.String>( lrefString, JniHandleOwnership.TransferLocalRef);
 ```
 
-<a name="_Looking_up_Java_Types" />
+<a name="_Looking_up_Java_Types"></a>
 
 ## <a name="looking-up-java-types"></a>Suchen nach Java-Typen
 
@@ -1057,7 +1057,7 @@ Um ein Feld oder eine Methode in der JNI zu suchen, muss zuerst der deklarierend
 
 Hinweis: Im Gegensatz zu allen anderen `JNIEnv`-Methoden, die Objektinstanzen zurückgeben, gibt `FindClass` einen globalen Verweis zurück, keinen lokalen.
 
-<a name="_Instance_Fields" />
+<a name="_Instance_Fields"></a>
 
 ## <a name="instance-fields"></a>Instanzfelder
 
@@ -1123,7 +1123,7 @@ Dabei ist *Type* der Typ des Felds:
 
 - [JNIEnv.SetField](xref:Android.Runtime.JNIEnv.SetField*) &ndash; zum Schreiben des Werts von `double`-Instanzfeldern.
 
-<a name="_Static_Fields" />
+<a name="_Static_Fields"></a>
 
 ## <a name="static-fields"></a>Statische Felder
 
@@ -1187,7 +1187,7 @@ Dabei ist *Type* der Typ des Felds:
 
 - [JNIEnv.SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*) &ndash; zum Schreiben des Werts von statischen `double`-Feldern.
 
-<a name="_Instance_Methods" />
+<a name="_Instance_Methods"></a>
 
 ## <a name="instance-methods"></a>Instanzmethoden
 
@@ -1253,7 +1253,7 @@ Dabei ist `*` der Rückgabetyp der Methode. Ein nicht virtueller Methodenaufruf 
 
 - [JNIEnv.CallNonvirtualDoubleMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualDoubleMethod*) &ndash; zum nicht virtuellen Aufrufen einer Methode, die einen `double`-Wert zurückgibt.
 
-<a name="_Static_Methods" />
+<a name="_Static_Methods"></a>
 
 ## <a name="static-methods"></a>Statische Methoden
 
@@ -1287,7 +1287,7 @@ Dabei ist `*` der Rückgabetyp der Methode.
 
 - [JNIEnv.CallStaticDoubleMethod](xref:Android.Runtime.JNIEnv.CallStaticDoubleMethod*) &ndash; zum Aufrufen einer statischen Methode, die einen `double`-Wert zurückgibt.
 
-<a name="JNI_Type_Signatures" />
+<a name="JNI_Type_Signatures"></a>
 
 ## <a name="jni-type-signatures"></a>JNI-Typsignaturen
 
@@ -1307,7 +1307,7 @@ Die JNI-Typsignatur sieht wie folgt aus:
 
 Im Allgemeinen wird *dringend* empfohlen, zum Bestimmen von JNI-Signaturen den Befehl `javap` zu verwenden. Ein Beispiel: Die JNI-Typsignatur der Methode [java.lang.Thread.State.valueOf(String)](https://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String)) lautet „(Ljava/lang/String;)Ljava/lang/Thread$State;“, während die JNI-Typsignatur der [java.lang.Thread.State.values](https://developer.android.com/reference/java/lang/Thread.State.html#values)-Methode „()[Ljava/lang/Thread$State;“ lautet. Beachten Sie die abschließenden Semikolons, sie *sind Teil* der JNI-Typsignatur.
 
-<a name="_JNI_Type_References" />
+<a name="_JNI_Type_References"></a>
 
 ## <a name="jni-type-references"></a>JNI-Typverweise
 
@@ -1333,7 +1333,7 @@ Integrierte Typverweise bestehen aus einem einzigen Zeichen und werden zum Verwe
 - `"Z"` für `bool`.
 - `"V"` für `void`-Rückgabetypen von Methoden.
 
-<a name="_Simplified_Type_References_1" />
+<a name="_Simplified_Type_References_1"></a>
 
 ### <a name="simplified-type-references"></a>Vereinfachte Typverweise
 

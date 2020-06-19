@@ -1,8 +1,22 @@
 ---
-Title: "Formatieren Xamarin.Forms von apps mit XAML-Stilen" Beschreibung: "in diesem Handbuch wird erläutert, wie Sie die Darstellung einer- Xamarin.Forms Anwendung mithilfe von XAML-Stilen anpassen."
-ms. Prod: xamarin ms. assetid: 344a34aa-B19A-4765-BC8A-875d9a6b5ea8 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/30/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen
+description: In diesem Handbuch wird erläutert, wie die Darstellung einer- Xamarin.Forms Anwendung mithilfe von XAML-Stilen angepasst wird.
+ms.prod: xamarin
+ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/30/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 72effe15d3456b5a48cbf5d09e889600134ac686
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84903089"
 ---
-
 # <a name="styling-xamarinforms-apps-using-xaml-styles"></a>Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen
 
 ## <a name="introduction"></a>[Introduction (Einführung)](introduction.md)

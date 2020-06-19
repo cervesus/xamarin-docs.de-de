@@ -1,8 +1,22 @@
 ---
-Title: "Verwenden von XAML-Markup Erweiterungen" Beschreibung: "in diesem Artikel wird erläutert, wie XAML Xamarin.Forms -Markup Erweiterungen verwendet werden, um die Leistungsfähigkeit und Flexibilität von XAML zu verbessern, indem Element Attribute aus einer Vielzahl von Quellen festgelegt werden können."
-ms. Prod: xamarin ms. assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/21/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Verwenden von XAML-Markuperweiterungen
+description: In diesem Artikel wird erläutert, wie Xamarin.Forms XAML-Markup Erweiterungen verwendet werden, um die Leistungsfähigkeit und Flexibilität von XAML zu verbessern, indem Element Attribute aus einer Vielzahl von Quellen festgelegt werden können.
+ms.prod: xamarin
+ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1429c3f39e37dc552d7f6ca8767058e5aec853b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84903107"
 ---
-
 # <a name="consuming-xaml-markup-extensions"></a>Verwenden von XAML-Markuperweiterungen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
@@ -18,7 +32,7 @@ XAML-Markup Erweiterungen helfen, die Leistungsfähigkeit und Flexibilität von 
 - [`OnIdiom`](#onidiom-markup-extension)– Anpassen der Darstellung der Benutzeroberfläche basierend auf dem Erscheinungsbild des Geräts, auf dem die Anwendung ausgeführt wird.
 - [`DataTemplate`](#datatemplate-markup-extension)– Konvertiert einen-Typ in einen-Typ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) .
 - [`FontImage`](#fontimage-markup-extension)– zeigt ein Schriftart Symbol in einer beliebigen Ansicht an, in der ein angezeigt werden kann `ImageSource` .
-- [`OnAppTheme`](#onapptheme-markup-extension)– verwendet eine Ressource basierend auf dem aktuellen Systemdesign.
+- [`AppThemeBinding`](#appthemebinding-markup-extension)– verwendet eine Ressource basierend auf dem aktuellen Systemdesign.
 
 Weitere XAML-Markup Erweiterungen wurden in der Vergangenheit von anderen XAML-Implementierungen unterstützt und werden auch von unterstützt Xamarin.Forms . Diese werden in anderen Artikeln ausführlicher beschrieben:
 
@@ -566,60 +580,55 @@ Dies ist das Programm, das ausgeführt wird:
 
 Informationen zum Anzeigen von Schriftart Symbolen durch Angeben der Schriftart Symbol Daten in einem- `FontImageSource` Objekt finden Sie unter [Anzeigen von Schriftart Symbolen](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons).
 
-## <a name="onapptheme-markup-extension"></a>OnAppTheme-Markuperweiterung
+## <a name="appthemebinding-markup-extension"></a>Apptomebinding-Markup Erweiterung
 
-Die `OnAppTheme` Markup Erweiterung ermöglicht es Ihnen, eine zu verwendende Ressource anzugeben, z. b. ein Bild oder eine Farbe, basierend auf dem aktuellen Systemdesign. Sie bietet die gleiche Funktionalität wie die- `OnAppTheme<T>` Klasse, bietet aber eine präzisere Darstellung.
+Die `AppThemeBinding` Markup Erweiterung ermöglicht es Ihnen, eine zu verwendende Ressource anzugeben, z. b. ein Bild oder eine Farbe, basierend auf dem aktuellen Systemdesign.
 
 > [!IMPORTANT]
-> Die `OnAppTheme` Markup Erweiterung verfügt über die Mindestanforderungen an das Betriebssystem. Weitere Informationen finden Sie unter [reagieren auf Änderungen des Systemdesigns in Xamarin.Forms Anwendungen](~/xamarin-forms/user-interface/theming/system-theme-changes.md).
+> Die `AppThemeBinding` Markup Erweiterung verfügt über die Mindestanforderungen an das Betriebssystem. Weitere Informationen finden Sie unter [reagieren auf Änderungen des Systemdesigns in Xamarin.Forms Anwendungen](~/xamarin-forms/user-interface/theming/system-theme-changes.md).
 
-Die Markuperweiterung `OnAppTheme` wird von der Klasse `OnAppThemeExtension` unterstützt, in der die folgenden Eigenschaften definiert werden:
+Die Markuperweiterung `AppThemeBinding` wird von der Klasse `AppThemeBindingExtension` unterstützt, in der die folgenden Eigenschaften definiert werden:
 
 - `Default`vom Typ `object` , den Sie auf die Ressource festlegen, die standardmäßig verwendet werden soll.
 - `Light`vom Typ `object` , den Sie auf die Ressource festlegen, die verwendet werden soll, wenn das Gerät das helle Design verwendet.
 - `Dark`vom Typ `object` , den Sie auf die Ressource festlegen, die verwendet werden soll, wenn das Gerät das dunkle Design verwendet.
 - `Value`vom Typ `object` , der die Ressource zurückgibt, die zurzeit von der Markup Erweiterung verwendet wird.
-- `Converter`vom Typ `IValueConverter` , die auf eine Implementierung festgelegt werden kann `IValueConverter` .
-- `ConverterParameter`vom Typ `object` , die auf einen Wert festgelegt werden kann, der an die-Implementierung übergeben werden soll `IValueConverter` .
 
 > [!NOTE]
-> Im XAML-Parser kann die Klasse `OnAppThemeExtension` zu `OnAppTheme` abgekürzt werden.
+> Im XAML-Parser kann die Klasse `AppThemeBindingExtension` zu `AppBindingTheme` abgekürzt werden.
 
-Die- `Default` Eigenschaft ist die Content-Eigenschaft von `OnAppThemeExtension` . Daher können Sie für XAML-Markup Ausdrücke, die mit geschweiften Klammern ausgedrückt werden, den `Default=` Teil des Ausdrucks entfernen, vorausgesetzt, dass es sich um das erste Argument handelt.
+Die- `Default` Eigenschaft ist die Content-Eigenschaft von `AppThemeBindingExtension` . Daher können Sie für XAML-Markup Ausdrücke, die mit geschweiften Klammern ausgedrückt werden, den `Default=` Teil des Ausdrucks entfernen, vorausgesetzt, dass es sich um das erste Argument handelt.
 
-Die **onapptheme-Demoseite** zeigt die Verwendung der `OnAppTheme` Markup Erweiterung:
+Die exemplarische Vorgehensweise " **appdermebinding** " zeigt die Verwendung der `AppThemeBinding` Markup Erweiterung:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MarkupExtensions.OnAppThemeDemoPage"
-             Title="OnAppTheme Demo">
+             x:Class="MarkupExtensions.AppThemeBindingDemoPage"
+             Title="AppThemeBinding Demo">
     <ContentPage.Resources>
 
         <Style x:Key="labelStyle"
                TargetType="Label">
             <Setter Property="TextColor"
-                    Value="{OnAppTheme Black, Light=Blue, Dark=Teal}" />
+                    Value="{AppThemeBinding Black, Light=Blue, Dark=Teal}" />
         </Style>
 
     </ContentPage.Resources>
     <StackLayout Margin="20">
         <Label Text="This text is green in light mode, and red in dark mode."
-               TextColor="{OnAppTheme Light=Green, Dark=Red}" />
+               TextColor="{AppThemeBinding Light=Green, Dark=Red}" />
         <Label Text="This text is black by default, blue in light mode, and teal in dark mode."
-               Style="{DynamicResource labelStyle}" />
+               Style="{StaticResource labelStyle}" />
     </StackLayout>
 </ContentPage>
 ```
 
 In diesem Beispiel wird die Textfarbe der ersten [`Label`](xref:Xamarin.Forms.Label) auf grün festgelegt, wenn das Gerät das helle Design verwendet, und wird auf Rot festgelegt, wenn das Gerät das dunkle Design verwendet. In der zweiten ist die- `Label` [`TextColor`](xref:Xamarin.Forms.Label.TextColor) Eigenschaft durch einen festgelegt [`Style`](xref:Xamarin.Forms.Style) . Dadurch wird `Style` die Textfarbe der `Label` standardmäßig auf schwarz festgelegt, auf blau, wenn das Gerät das helle Design verwendet, und auf den Wert, wenn das Gerät das dunkle Design verwendet.
 
-> [!NOTE]
-> Ein [`Style`](xref:Xamarin.Forms.Style) , das die `OnAppTheme` Markup Erweiterung verwendet, sollte auf ein Steuerelement mit der `DynamicResource` Markup Erweiterung angewendet werden, damit die Benutzeroberfläche der APP aktualisiert wird, wenn das Systemdesign geändert wird.
-
 Dies ist das Programm, das ausgeführt wird:
 
-![Onapptheme-Demo](consuming-images/onappthemedemo.png "Onapptheme-Demo")
+![Appthmebinding-Demo](consuming-images/appthemebindingdemo.png "Appthmebinding-Demo")
 
 ## <a name="define-markup-extensions"></a>Definieren von Markup Erweiterungen
 

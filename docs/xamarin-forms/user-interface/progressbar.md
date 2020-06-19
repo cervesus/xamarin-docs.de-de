@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms ProgressBar" Description: "das Xamarin.Forms ProgressBar-Steuerelement ist ein Steuerelement, das den Fortschritt visuell als horizontalen Balken darstellt, der basierend auf einer float-Eigenschaft ausgefüllt wird."
-ms. Prod: xamarin ms. assetid: C2F85FED-797C-466B-A0FD-E73CFB79B267 ms. Technology: xamarin-Forms Author: profexorgeek ms. Author: jusjohns ms. Date: 07/09/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsProgressBar
+description: Das Xamarin.Forms ProgressBar-Steuerelement ist ein Steuerelement, das den Fortschritt visuell als horizontalen Balken darstellt, der basierend auf einer float-Eigenschaft ausgefüllt wird.
+ms.prod: xamarin
+ms.assetId: C2F85FED-797C-466B-A0FD-E73CFB79B267
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 07/09/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b4ac6231c0483c0c44755c2ac9539f237dd64251
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136278"
 ---
-
 # <a name="xamarinforms-progressbar"></a>Xamarin.FormsProgressBar
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
 

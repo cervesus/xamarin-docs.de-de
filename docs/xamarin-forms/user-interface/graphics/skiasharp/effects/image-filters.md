@@ -1,8 +1,22 @@
 ---
-Title: "skiasharp-Bild Filter" Beschreibung: "erfahren Sie, wie Sie mit dem Bild Filter verwischt erstellen und Schatten ablegen."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 173e7b22-aec8-4f12-b657-1c0cee01ad63 Author: davidbritch ms. Author: dabritch ms. Date: 08/27/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Skiasharp-Bild Filter
+description: Erfahren Sie, wie Sie mit dem Bild Filter verwischt erstellen und Schatten ablegen.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eedbca080fce9f3001a7b1e2358845fd63c6121b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136343"
 ---
-
 # <a name="skiasharp-image-filters"></a>Skiasharp-Bild Filter
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

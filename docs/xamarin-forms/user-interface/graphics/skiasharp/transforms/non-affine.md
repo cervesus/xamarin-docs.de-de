@@ -1,8 +1,22 @@
 ---
-Title: "Non-affine Transformationen" Description: "in diesem Artikel wird erläutert, wie Sie Perspektiven und tapro Effekte mit der dritten Spalte der Transformationsmatrix erstellen und dies mit Beispielcode veranschaulichen."
-ms. Prod: xamarin ms. Technology: xamarin-skiasharp ms. assetid: 785f4d13-7430-492e-b24e-3b45c560e9f1 Author: davidbritch ms. Author: dabritch ms. Date: 04/14/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Nicht affine Transformationen
+description: In diesem Artikel wird erläutert, wie Sie Perspektiven und tapro-Effekte mit der dritten Spalte der Transformationsmatrix erstellen und dies mit Beispielcode veranschaulichen.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/14/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 91a639b2d3c2f6a8437a09a70808dc6d793ba76b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131754"
 ---
-
 # <a name="non-affine-transforms"></a>Nicht affine Transformationen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

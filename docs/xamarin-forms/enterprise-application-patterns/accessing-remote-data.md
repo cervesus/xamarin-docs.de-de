@@ -1,8 +1,22 @@
 ---
-Title: "zugreifen auf Remote Daten" Beschreibung: "in diesem Kapitel wird erläutert, wie die eshoponcontainers-Mobile App auf Daten aus den containerisierten microservices zugreifen."
-ms. Prod: xamarin ms. assetid: 42eba6f 5-9784-4E1A-9943-5c1bea7452 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Zugreifen auf Remotedaten
+description: In diesem Kapitel wird erläutert, wie der eshoponcontainers-Mobile App auf Daten aus den containerisierten microservices zugreift.
+ms.prod: xamarin
+ms.assetid: 42eba6f5-9784-4e1a-9943-5c1fbeea7452
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cef3c2369bb4aee81a52ddd27d6ad732d7544dfa
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573845"
 ---
-
 # <a name="accessing-remote-data"></a>Zugreifen auf Remotedaten
 
 Viele moderne webbasierte Lösungen nutzen Webdienste, die von Webservern gehostet werden, um Funktionen für Remote Client Anwendungen bereitzustellen. Die von einem Webdienst verfügbar gemachten Vorgänge bilden eine Web-API.

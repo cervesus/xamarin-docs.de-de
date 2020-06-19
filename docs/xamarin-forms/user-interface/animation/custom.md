@@ -1,8 +1,22 @@
 ---
-Title: "benutzerdefinierte Animationen in Xamarin.Forms " Beschreibung: "in diesem Artikel wird veranschaulicht, wie Sie mit der Animations Klasse von xamarin. FOrms Animationen erstellen und Abbrechen, mehrere Animationen synchronisieren und benutzerdefinierte Animationen zum Animieren von Eigenschaften erstellen, die nicht von den vorhandenen Animations Methoden animiert werden."
-ms. Prod: xamarin ms. assetid: 03b2e3fc-E720-4D45-b9a0-711081fc1907 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 02/10/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Benutzerdefinierte Animationen inXamarin.Forms
+description: In diesem Artikel wird veranschaulicht, wie Sie mit der Animations Klasse von xamarin. FOrms Animationen erstellen und Abbrechen, mehrere Animationen synchronisieren und benutzerdefinierte Animationen zum Animieren von Eigenschaften erstellen, die nicht von den vorhandenen Animations Methoden animiert werden.
+ms.prod: xamarin
+ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/10/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 573f18de0d7593d832505eb6bb2b492caea024a1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946103"
 ---
-
 # <a name="custom-animations-in-xamarinforms"></a>Benutzerdefinierte Animationen inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)

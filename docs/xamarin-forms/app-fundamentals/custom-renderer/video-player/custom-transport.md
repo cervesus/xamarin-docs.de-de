@@ -1,20 +1,20 @@
 ---
-title: ''
-description: In diesem Artikel wird beschrieben, wie benutzerdefinierte Transportsteuerelemente mithilfe von Xamarin.Forms in eine Videoplayeranwendung implementiert werden.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Benutzerdefinierte Transportsteuerelemente für Videos" description: "In diesem Artikel wird beschrieben, wie benutzerdefinierte Transportsteuerelemente mithilfe von Xamarin.Forms in eine Videoplayeranwendung implementiert werden."'
+description: 'ms.prod: xamarin ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 02/12/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: c72f68f327b6c0df6959d37ed4bf390e3bd7f31d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84135004"
 ---
 # <a name="custom-video-transport-controls"></a>Benutzerdefinierte Transportsteuerelemente für Videos

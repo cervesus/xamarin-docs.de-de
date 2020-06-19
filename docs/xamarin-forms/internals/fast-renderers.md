@@ -1,21 +1,21 @@
 ---
 title: Xamarin.FormsSchnelle Renderer
 description: In diesem Artikel werden schnelle Renderer vorgestellt, die die Inflations-und renderingkosten eines Xamarin.Forms Steuer Elements auf Android verringern, indem die resultierende Native Steuerelement Hierarchie vereinfacht wird.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 097f87f2-d891-4f3c-be02-fb7d195a481a
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3f25f4c2da5b2a426673b49045b5d2d05b0c6ac4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 29f79e4aed0314fe1590fa26c8e4b052e14a94d6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139073"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198066"
 ---
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.FormsSchnelle Renderer
 
@@ -31,9 +31,10 @@ Schnelle Renderer verringern die Inflations-und renderingkosten eines Xamarin.Fo
 Schnelle Renderer sind für die folgenden Steuerelemente in Xamarin.Forms unter Android verfügbar:
 
 - [`Button`](xref:Xamarin.Forms.Button)
+- [`Frame`](xref:Xamarin.Forms.Frame)
 - [`Image`](xref:Xamarin.Forms.Image)
 - [`Label`](xref:Xamarin.Forms.Label)
-- [`Frame`](xref:Xamarin.Forms.Frame)
+- [`MediaElement`](xref:Xamarin.Forms.MediaElement)
 
 Diese schnellen Renderer unterscheiden sich nicht von den Legacy-Renderer. Ab Xamarin.Forms 4,0 `FormsAppCompatActivity` werden diese schnellen Renderer von allen Zielanwendungen standardmäßig verwendet. Renderer für alle neuen Steuerelemente, einschließlich [`ImageButton`](xref:Xamarin.Forms.ImageButton) und [`CollectionView`](xref:Xamarin.Forms.CollectionView) , verwenden den schnellen rendereransatz.
 

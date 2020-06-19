@@ -1,8 +1,22 @@
 ---
-Title: "Teil 1. Bei den ersten Schritten mit XAML "Description:" in einer- Xamarin.Forms Anwendung wird XAML größtenteils zum Definieren des visuellen Inhalts einer Seite und zusammen mit einer Code Behind-Datei verwendet. "
-ms. Prod: xamarin ms. assetid: 9073fa0e-bd5a-4492-8a93-54c466f 6edb9 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/30/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Teil 1. Erste Schritte mit XAML
+description: In einer- Xamarin.Forms Anwendung wird XAML größtenteils verwendet, um den visuellen Inhalt einer Seite zu definieren und zusammen mit einer Code Behind-Datei zu arbeiten.
+ms.prod: xamarin
+ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/30/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e38080fc9bc4ef0b74eb8c12c3a3f646c4888f53
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198081"
 ---
-
 # <a name="part-1-getting-started-with-xaml"></a>Teil 1. Erste Schritte mit XAML
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

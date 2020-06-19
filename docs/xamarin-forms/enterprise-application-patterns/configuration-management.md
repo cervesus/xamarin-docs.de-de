@@ -1,8 +1,22 @@
 ---
-Title: "Konfigurations Verwaltung" Beschreibung: "in diesem Kapitel wird erläutert, wie die eshoponcontainers-Mobile App die Konfigurations Verwaltung implementiert, um App-Einstellungen und Benutzereinstellungen bereitzustellen."
-ms. Prod: xamarin ms. assetid: 50d6e780-E768-47F 8-9361-3af11e56b87b ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 08/07/2017 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Konfigurationsverwaltung
+description: In diesem Kapitel wird erläutert, wie die eshoponcontainers-Mobile App die Konfigurations Verwaltung implementiert, um App-Einstellungen und Benutzereinstellungen bereitzustellen.
+ms.prod: xamarin
+ms.assetid: 50d6e780-e768-47f8-9361-3af11e56b87b
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f6f61503f619c08ed3e4eae2adf6ddb2c474f99f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571479"
 ---
-
 # <a name="configuration-management"></a>Konfigurationsverwaltung
 
 Einstellungen ermöglichen die Trennung von Daten, die das Verhalten einer App aus dem Code konfigurieren, sodass das Verhalten geändert werden kann, ohne die APP neu zu erstellen. Es gibt zwei Arten von Einstellungen: App-Einstellungen und Benutzereinstellungen.

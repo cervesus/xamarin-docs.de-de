@@ -1,8 +1,22 @@
 ---
-Title: "Hinzufügen von IOS-spezifischer Formatierung" Beschreibung: "in diesem Artikel wird erläutert, wie Sie eine IOS-spezifische Darstellung ohne einen Xamarin.Forms benutzerdefinierten Renderer festlegen."
-ms. Prod: xamarin ms. assetid: CE50E207-D092-4D88-8439-1B51F178E7ED ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 01/29/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Hinzufügen einer IOS-spezifischen Formatierung
+description: In diesem Artikel wird erläutert, wie Sie eine IOS-spezifische Darstellung ohne einen Xamarin.Forms benutzerdefinierten Renderer festlegen.
+ms.prod: xamarin
+ms.assetid: CE50E207-D092-4D88-8439-1B51F178E7ED
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/29/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 062dd77f1dc7b82f16bfbc6d46e44d4adeb73350
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564705"
 ---
-
 # <a name="adding-ios-specific-formatting"></a>Hinzufügen einer IOS-spezifischen Formatierung
 
 Eine Möglichkeit zum Festlegen einer IOS-spezifischen Formatierung besteht darin, einen [benutzerdefinierten Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) für ein Steuerelement zu erstellen und plattformspezifische Stile und Farben für jede Plattform festzulegen.

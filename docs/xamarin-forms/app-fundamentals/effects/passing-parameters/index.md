@@ -1,20 +1,20 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 'title: "Übergeben von Parametern an Effekte" description: "Effect-Parameter können durch Eigenschaften definiert werden, die dafür sorgen, dass der Effekt wiederverwendet werden kann.'
+description: 'Parameter können anschließend an den Effekt übergeben werden, indem bei der Instanziierung des Effekts für jede Eigenschaft Werte angegeben werden." ms.prod: xamarin ms.assetid: F6429859-6EF7-48BE-A0CB-8F42B8A75215 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 04/06/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: F6429859-6EF7-48BE-A0CB-8F42B8A75215
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 42d3943b00fc2ae5385343f946d9d96743e955cd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84138839"
 ---
 # <a name="passing-parameters-to-an-effect"></a>Übergeben von Parametern an Effekte

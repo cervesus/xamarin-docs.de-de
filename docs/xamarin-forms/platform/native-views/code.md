@@ -1,8 +1,22 @@
 ---
-Title: "systemeigene Sichten in c#" Description: "Native Ansichten von IOS, Android und UWP können direkt von Seiten referenziert werden, die Xamarin.Forms mit c# erstellt wurden. In diesem Artikel wird veranschaulicht, wie Sie systemeigene Ansichten zu einem Xamarin.Forms mit c# erstellten Layout hinzufügen und wie Sie das Layout von benutzerdefinierten Ansichten überschreiben, um die Verwendung der Messungs-API zu korrigieren.
-ms. Prod: xamarin ms. assetid: 230 f 937c-f 914-4b21-8ea1-1a2a9e644769 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 04/27/2016 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Native Ansichten in C#
+description: Native Ansichten von IOS, Android und UWP können direkt von Xamarin.Forms mit c# erstellten Seiten referenziert werden. In diesem Artikel wird veranschaulicht, wie Sie systemeigene Ansichten zu einem Xamarin.Forms mit c# erstellten Layout hinzufügen und wie Sie das Layout von benutzerdefinierten Ansichten überschreiben, um die Verwendung der Messungs-API zu korrigieren.
+ms.prod: xamarin
+ms.assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/27/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 18cdeccbdff86a6b20aab4b33db259f1f06ee096
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139593"
 ---
-
 # <a name="native-views-in-c"></a>Native Ansichten in C\#
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)

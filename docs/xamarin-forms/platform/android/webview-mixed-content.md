@@ -1,8 +1,22 @@
 ---
-Title: "WebView Mixed Content on Android" Description: "Platform-Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne benutzerdefinierte Renderer oder Effekte implementieren zu müssen. In diesem Artikel wird erläutert, wie Sie das plattformspezifische Android-Gerät verwenden, das gemischte Inhalte in einer WebView in Anwendungen anzeigt, die API 21 oder höher als Ziel haben. "
-ms. Prod: xamarin ms. assetid: 68F 908f 3-04c5-4b91-b6e5-b7e8357b4154 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 07/10/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Gemischter WebView-Inhalt unter Android
+description: Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden. In diesem Artikel wird erläutert, wie Sie das plattformspezifische Android-Gerät verwenden, das gemischte Inhalte in einer WebView in Anwendungen anzeigt, die API 21 oder höher als Ziel haben.
+ms.prod: xamarin
+ms.assetid: 68F908F3-04C5-4B91-B6E5-B7E8357B4154
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7269b0617be7199c365f350fc26ecd42256e28f3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128452"
 ---
-
 # <a name="webview-mixed-content-on-android"></a>Gemischter WebView-Inhalt unter Android
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

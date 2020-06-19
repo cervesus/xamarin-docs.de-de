@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms CollectionView Scroll" Description: "Wenn ein Benutzer einen Bildlauf initiiert, kann die Endposition des Bildlaufs gesteuert werden, sodass Elemente vollständig angezeigt werden. Außerdem definiert CollectionView zwei ScrollTo-Methoden, die Elemente Programm gesteuert in die Ansicht scrollen. "
-ms. Prod: xamarin ms. assetid: 2ed719af-33d2-434d-949a-b70b479c9ba5 ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 09/17/2019 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsBild Lauf der CollectionView
+description: Wenn ein Benutzer einen Bildlauf initiiert, kann die Endposition des Bildlaufs gesteuert werden, sodass Elemente vollständig angezeigt werden. Außerdem definiert CollectionView zwei ScrollTo-Methoden, die Elemente Programm gesteuert in die Ansicht scrollen.
+ms.prod: xamarin
+ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/17/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 04d190971fa5ef16e08091600558f7f016bc8605
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134511"
 ---
-
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.FormsBild Lauf der CollectionView
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

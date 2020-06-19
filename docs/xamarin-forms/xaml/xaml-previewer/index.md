@@ -1,8 +1,23 @@
 ---
-Title: "XAML Previewer for Xamarin.Forms " Description: in diesem Artikel wird erläutert, wie Sie die XAML-Vorschau verwenden, um Ihre Layouts bei der Xamarin.Forms Typisierungs Darstellung anzuzeigen. Der XAML-Previewer ist in Visual Studio 2019 und Visual Studio 2019 für Mac verfügbar. "
-zone_pivot_groups: Platform ms. Prod: xamarin ms. assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2 ms. Technology: xamarin-Forms Author: maddyleger1 ms. Author: maleger ms. Date: 03/16/2020 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML-Vorschau fürXamarin.Forms
+description: In diesem Artikel wird erläutert, wie Sie die XAML-Vorschau verwenden, um Ihre Layouts bei der Xamarin.Forms Typisierungs Darstellung anzuzeigen. Der XAML-Previewer ist in Visual Studio 2019 und Visual Studio 2019 für Mac verfügbar.
+zone_pivot_groups: platform
+ms.prod: xamarin
+ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6916d5fde688c5b1162f12db0d36bc3ca27156d8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137318"
 ---
-
 # <a name="xaml-previewer-for-xamarinforms"></a>XAML-Vorschau fürXamarin.Forms
 
 _Anzeigen der Xamarin.Forms gerenderten Layouts bei der Typdarstellung_

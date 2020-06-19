@@ -1,8 +1,22 @@
 ---
-Title: " Xamarin.Forms boxview" Description: "in diesem Artikel wird erläutert, wie ein farbiges Rechteck für die Dekoration, Grafik und Interaktion in einer-Anwendung verwendet wird Xamarin.Forms ."
-ms. Prod: xamarin ms. assetid: 4cbf 703d-84a0-4cdf-A433-5926b587782a ms. Technology: xamarin-Forms Author: davidbritch ms. Author: dabritch ms. Date: 07/26/2018 NO-LOC: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsBoxview
+description: In diesem Artikel wird erläutert, wie Sie ein farbiges Rechteck für die Dekoration, Grafik und Interaktion in einer- Xamarin.Forms Anwendung verwenden.
+ms.prod: xamarin
+ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 06f1813bafb34a9c32603490e66f8caa6c6a6a22
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573819"
 ---
-
 # <a name="xamarinforms-boxview"></a>Xamarin.FormsBoxview
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
