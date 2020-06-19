@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms-Schnellstarts" description: "Schnellstarts zur Entwicklung von Xamarin.Forms-Anwendungen mit Visual Studio und Visual Studio für Mac"'
-description: 'ms.prod: xamarin ms.technology: xamarin-forms ms.assetid: 3318B8F8-3B24-489E-8E7B-28FA948796F8 author: davidbritch ms.author: dabritch ms.date: 01/06/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms-Schnellstarts
+description: Schnellstarts zur Entwicklung von Xamarin.Forms-Apps mit Visual Studio und Visual Studio für Mac.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3318B8F8-3B24-489E-8E7B-28FA948796F8
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 03d20114fb84bf17be40d9166e32c3d631786069
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84132508"
 ---
 # <a name="xamarinforms-quickstarts"></a>Xamarin.Forms-Schnellstarts

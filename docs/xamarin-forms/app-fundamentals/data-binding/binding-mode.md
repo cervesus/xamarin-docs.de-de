@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms Bindungsmodus" description "In diesem Artikel wird erläutert, wie Sie den Informationsfluss zwischen Quelle und Ziel mit einem Bindungsmodus steuern können, der mit einem Member der BindingMode-Enumeration angegeben wird.'
-description: 'Jede bindbare Eigenschaft verfügt über einen Standardbindungsmodus, der den geltenden Modus angibt, wenn diese Eigenschaft das Ziel einer Datenbindung ist". ms.prod: xamarin ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 05/01/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Bindungsmodus in Xamarin.Forms
+description: In diesem Artikel wird erläutert, wie Sie den Informationsfluss zwischen Quelle und Ziel mit einem Bindungsmodus steuern können, der mit einem Member der BindingMode-Enumeration angegeben wird. Jede bindbare Eigenschaft verfügt über einen Standardbindungsmodus, der den geltenden Modus angibt, wenn diese Eigenschaft das Ziel einer Datenbindung ist.
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: c14215071a1d9d3ec804c307fa6edbbe4ddcf8e9
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84139775"
 ---
 # <a name="xamarinforms-binding-mode"></a>Bindungsmodus in Xamarin.Forms

@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms – Shelllebenszyklus" description: "Shellanwendungen respektieren den Lebenszyklus von Xamarin.Forms, und ein „Appearing“-Ereignis wird ausgelöst, wenn eine Seite auf dem Bildschirm angezeigt werden soll. Ein „Disappearing“-Ereignis wird ausgelöst, wenn eine Seite in Kürze nicht mehr auf dem Bildschirm angezeigt werden soll."'
-description: 'ms.prod: xamarin ms.assetid: 4E4EE50E-3BB4-441D-8355-CD9CD26ED1D0 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 07/25/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Lebenszyklus der Xamarin.Forms-Shell
+description: Shellanwendungen respektieren den Lebenszyklus von Xamarin.Forms, und ein „Appearing“-Ereignis wird ausgelöst, wenn eine Seite auf dem Bildschirm angezeigt werden soll. Ein „Disappearing“-Ereignis wird ausgelöst, wenn eine Seite in Kürze nicht mehr auf dem Bildschirm angezeigt werden soll.
 ms.prod: xamarin
 ms.assetid: 4E4EE50E-3BB4-441D-8355-CD9CD26ED1D0
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 3a7a46187d861098b61f638a3fb460d890b081dd
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84138722"
 ---
 # <a name="xamarinforms-shell-lifecycle"></a>Lebenszyklus der Xamarin.Forms-Shell

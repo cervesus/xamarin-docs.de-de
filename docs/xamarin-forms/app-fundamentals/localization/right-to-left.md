@@ -1,6 +1,6 @@
 ---
-title: 'title: "Lokalisierung von rechts nach links" description: "Durch die Lokalisierung von rechts nach links kann Text in Xamarin.Forms-Anwendungen in der Leserichtung von rechts nach links dargestellt werden."'
-description: 'ms.prod: xamarin ms.assetid: 90E0CB16-C42A-4CC8-A70E-0C2CFB64A429 ms.technology: xamarin-forms ms.custom: xamu-video author: davidbritch ms.author: dabritch ms.date: 05/07/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Lokalisierung von rechts nach links
+description: Durch die Lokalisierung von rechts nach links kann Text in Xamarin.Forms-Anwendungen in der Leserichtung von rechts nach links dargestellt werden.
 ms.prod: xamarin
 ms.assetid: 90E0CB16-C42A-4CC8-A70E-0C2CFB64A429
 ms.technology: xamarin-forms
@@ -12,10 +12,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 212674472706a36c66436a3955ab7b988f8e246b
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84137552"
 ---
 # <a name="right-to-left-localization"></a>Lokalisierung von rechts nach links

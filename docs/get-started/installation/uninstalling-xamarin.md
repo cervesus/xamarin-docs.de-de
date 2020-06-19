@@ -1,6 +1,6 @@
 ---
-title: 'title: "Deinstallieren von Xamarin" description: "In diesem Dokument wird beschrieben, wie Sie unter Windows Xamarin in Visual Studio deinstallieren."'
-description: 'ms.prod: xamarin ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b author: conceptdev ms.author: crdun ms.date: 01/22/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Deinstallieren von Xamarin
+description: In diesem Dokument wird beschrieben, wie Sie unter Windows Xamarin in Visual Studio deinstallieren.
 ms.prod: xamarin
 ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: conceptdev
@@ -10,10 +10,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: b4d644591ab85f185709e7bd53353580a6578d77
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84570109"
 ---
 # <a name="uninstall-xamarin-from-visual-studio"></a>Deinstallieren von Xamarin in Visual Studio

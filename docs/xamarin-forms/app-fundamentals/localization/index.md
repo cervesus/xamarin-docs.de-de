@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms – Lokalisierung" description: "Das integrierte .NET-Lokalisierungsframework kann zum Erstellen plattformübergreifender mehrsprachiger Anwendungen mit Xamarin.Forms verwendet werden.'
-description: 'Text und Bilder können lokalisiert werden, und Anwendungen können die Leserichtung von rechts nach links unterstützen." ms.prod: xamarin ms.assetid: 97BF843B-BDAA-4CEA-8189-6DB54B291D7F ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 11/07/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms-Lokalisierung
+description: Das integrierte .NET-Lokalisierungsframework kann zum Erstellen plattformübergreifender mehrsprachiger Anwendungen mit Xamarin.Forms verwendet werden. Text und Bilder können lokalisiert werden, und Anwendungen können die Leserichtung von rechts nach links unterstützen.
 ms.prod: xamarin
 ms.assetid: 97BF843B-BDAA-4CEA-8189-6DB54B291D7F
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: dddb80e8fb683547d2bf6ba0b74e870fe240695c
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84137565"
 ---
 # <a name="xamarinforms-localization"></a>Xamarin.Forms-Lokalisierung

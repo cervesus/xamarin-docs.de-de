@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms – Benutzerdefinierte Renderer" description: "Mithilfe benutzerdefinierter Renderer können Entwickler das Standardrendering der nativen Steuerelemente auf jeder Plattform außer Kraft setzen, um so die Darstellung und das Verhalten von Xamarin.Forms-Steuerelementen anzupassen."'
-description: 'ms.prod: xamarin ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 12/03/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms Benutzerdefinierte Renderer
+description: Mithilfe benutzerdefinierter Renderer können Entwickler das Standardrendering der nativen Steuerelemente auf jeder Plattform außer Kraft setzen, um so die Darstellung und das Verhalten von Xamarin.Forms-Steuerelementen anzupassen.
 ms.prod: xamarin
 ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: be281f9b7987a8d23ba6ac93f0771e432f277d45
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84138917"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms Benutzerdefinierte Renderer

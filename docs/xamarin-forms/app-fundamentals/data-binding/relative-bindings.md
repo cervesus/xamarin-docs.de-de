@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms Relative Bindungen" description: "In diesem Artikel wird beschrieben, wie Sie mithilfe der RelativeSource-Markuperweiterung relative Bindungen erstellen, um die Bindungsquelle relativ zur Position des Bindungsziels festzulegen."'
-description: 'ms.prod: xamarin ms.assetid: CC64BB1D-8303-46B1-94B6-4EF2F20317A8 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 12/04/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Relative Bindungen in Xamarin.Forms
+description: In diesem Artikel wird beschrieben, wie Sie mithilfe der RelativeSource-Markuperweiterung relative Bindungen erstellen, um die Bindungsquelle relativ zur Position des Bindungsziels festzulegen.
 ms.prod: xamarin
 ms.assetid: CC64BB1D-8303-46B1-94B6-4EF2F20317A8
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 8d4e2696e6027f07b7b8e638cd1e0f1d65a5503d
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84139710"
 ---
 # <a name="xamarinforms-relative-bindings"></a>Relative Bindungen in Xamarin.Forms

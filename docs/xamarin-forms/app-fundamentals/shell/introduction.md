@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms -Shell (Einführung)" description: "Xamarin.Forms -Shell verfügt über die wichtigsten Features, die von den meisten Anwendungen benötigt werden, z. B. eine gemeinsame Benutzeroberfläche für die Navigation, ein URI-basiertes Navigationsschema und einen integrierten Suchhandler."'
-description: 'ms.prod: xamarin ms.assetid: 4604DCB5-83DA-458A-8B02-6508A740BE0E ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 09/20/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Einführung in die Xamarin.Forms-Shell
+description: Die Xamarin.Forms-Shell verfügt über die wichtigsten Features, die von den meisten Anwendungen benötigt werden, z. B. eine gemeinsame Benutzeroberfläche für die Navigation, ein URI-basiertes Navigationsschema und einen integrierten Suchhandler.
 ms.prod: xamarin
 ms.assetid: 4604DCB5-83DA-458A-8B02-6508A740BE0E
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 29a99161ff2ef2d71b6c803db994522bfe80ed03
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84138735"
 ---
 # <a name="xamarinforms-shell-introduction"></a>Einführung in die Xamarin.Forms-Shell

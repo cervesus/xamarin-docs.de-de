@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin-Firewall-Konfigurationsanleitung" description: "Dieses Dokument enthält eine Liste von Hosts, die in Ihrer Firewall zugelassen sein müssen, damit Xamarin in einer Unternehmensumgebung funktioniert."'
-description: 'ms.prod: xamarin ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6 author: conceptdev ms.author: crdun ms.date: 07/17/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin-Firewall-Konfigurationsanleitung
+description: Dieses Dokument enthält eine Liste von Hosts, die in Ihrer Firewall zugelassen werden müssen, damit Xamarin in einer Unternehmensumgebung arbeiten kann.
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
 author: conceptdev
@@ -10,10 +10,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 71b2754d19d00b7bf4860acd96bfb7ad8dec4ce5
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84132990"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin-Firewallkonfigurationsanleitung

@@ -1,6 +1,6 @@
 ---
-title: 'title: "Installieren der Xamarin-Vorschauversion unter Windows" description: "In diesem Artikel wird beschrieben, wie Sie eine Vorschauversion von Xamarin in Visual Studio 2019 installieren, indem Sie den Kanal für die Veröffentlichung von Vorschauversionen verwenden."'
-description: 'ms.prod: xamarin ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA author: conceptdev ms.author: crdun ms.date: 03/20/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Installieren der Xamarin-Vorschauversion unter Windows
+description: In diesem Artikel wird beschrieben, wie Sie eine Vorschauversion von Xamarin in Visual Studio 2019 installieren, indem Sie den Kanal für die Veröffentlichung von Vorschauversionen verwenden.
 ms.prod: xamarin
 ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA
 author: conceptdev
@@ -10,10 +10,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 5ccd5a610ad41c0160a6778a63a367376bd200b3
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84134016"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>Installieren der Xamarin-Vorschauversion unter Windows

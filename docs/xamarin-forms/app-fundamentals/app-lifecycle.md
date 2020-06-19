@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms App-Lebenszyklus" description: "In diesem Artikel wird erläutert, wie Sie auf den Lebenszyklus der Anwendung reagieren, einschließlich Lebenszyklusmethoden, Seitenbenachrichtigungsereignisse und modale Navigationsereignisse."'
-description: 'ms.prod: xamarin ms.assetid: 69B416CF-B243-4790-AB29-F030B32465BE ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 05/31/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Lebenszyklus der Xamarin.Forms-App
+description: In diesem Artikel wird erläutert, wie Sie auf den Lebenszyklus der App reagieren, einschließlich Lebenszyklusmethoden, Seitenbenachrichtigungsereignisse und modaler Navigationsereignisse.
 ms.prod: xamarin
 ms.assetid: 69B416CF-B243-4790-AB29-F030B32465BE
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 2a67d0c3adb54332bf30879a5b6f1d086581f0ec
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84573338"
 ---
 # <a name="xamarinforms-app-lifecycle"></a>Lebenszyklus der Xamarin.Forms-App

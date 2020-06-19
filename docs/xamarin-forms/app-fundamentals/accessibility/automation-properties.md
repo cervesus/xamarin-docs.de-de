@@ -1,6 +1,6 @@
 ---
-title: 'title: "Automatisierungseigenschaften" description: "In diesem Artikel wird beschrieben, wie Sie die „AutomationProperties“-Klasse in einer Xamarin.Forms-Anwendung verwenden, damit eine Sprachausgabe über die Elemente auf der Seite sprechen kann."'
-description: 'ms.prod: xamarin ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 12/18/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Automatisierungseigenschaften
+description: In diesem Artikel wird beschrieben, wie Sie die AutomationProperties-Klasse in einer Xamarin.Forms-Anwendung verwenden, damit eine Sprachausgabe über die Elemente auf der Seite sprechen kann.
 ms.prod: xamarin
 ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 341e1454c37d1fd20423204c95337e580eba7ecb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84573403"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Automatisierungseigenschaften in Xamarin.Forms

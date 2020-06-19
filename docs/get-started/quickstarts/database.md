@@ -1,6 +1,6 @@
 ---
-title: 'title: "Speichern von Daten in einer lokalen SQLite.NET-Datenbank" description: "In diesem Artikel erfahren Sie, wie Sie Daten in einer lokalen SQLite.NET-Datenbank speichern."'
-description: 'zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.assetid: 5BF901BD-FDE8-4B74-B4AB-418E81745A3B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 04/01/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Speichern von Daten in einer lokalen SQLite.NET-Datenbank
+description: In diesem Artikel erfahren Sie, wie Sie Daten in einer lokalen SQLite.NET-Datenbank speichern.
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -13,10 +13,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84139801"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Speichern von Daten in einer lokalen SQLite.NET-Datenbank

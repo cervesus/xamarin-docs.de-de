@@ -1,6 +1,6 @@
 ---
-title: 'title: "Wiederverwendbare EventToCommandBehavior-Klasse" description: "Verhalten können zum Zuordnen von Befehlen zu Steuerelementen verwendet werden, die nicht für die Interaktion mit Befehlen konzipiert sind.'
-description: 'In diesem Artikel erfahren Sie, wie Sie ein Xamarin.Forms-Verhalten zum Aufrufen eines Befehls bei Auslösung eines Ereignisses erstellen und verwenden." ms.prod: xamarin ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 11/09/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Wiederverwendbare EventToCommandBehavior-Klasse
+description: Verhalten können zum Zuordnen von Befehlen zu Steuerelementen verwendet werden, die nicht dazu konzipiert sind, mit Befehlen zu interagieren. In diesem Artikel wird das Erstellen und Nutzen eines Xamarin.Forms-Verhaltens veranschaulicht, um einen Befehl aufzurufen, wenn ein Ereignis ausgelöst wird.
 ms.prod: xamarin
 ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 46d1566c89de763a469f30ce8ed2c6ef919f1426
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84135797"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>Wiederverwendbare EventToCommandBehavior-Klasse

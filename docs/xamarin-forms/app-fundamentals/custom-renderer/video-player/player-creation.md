@@ -1,6 +1,6 @@
 ---
-title: 'title: "Erstellen von Plattformen für Videoplayer" description: "In diesem Artikel wird beschrieben, wie Sie mithilfe von Xamarin.Forms einen benutzerdefinierten Renderer für Videoplayer auf Plattformen implementieren."'
-description: 'ms.prod: xamarin ms.assetid: EEE2FB9B-EB73-4A3F-A859-7A1D4808E149 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 02/12/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Erstellen von Plattformen für Videoplayer
+description: In diesem Artikel wird beschrieben, wie Sie mithilfe von RendererXamarin.Forms einen benutzerdefinierten Renderer für Videoplayer auf Plattformen implementieren.
 ms.prod: xamarin
 ms.assetid: EEE2FB9B-EB73-4A3F-A859-7A1D4808E149
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: d026ecc3288da155aefb0f68ee0c70721106c0da
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84133743"
 ---
 # <a name="creating-the-platform-video-players"></a>Erstellen von Plattformen für Videoplayer

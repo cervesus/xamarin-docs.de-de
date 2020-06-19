@@ -1,6 +1,6 @@
 ---
-title: 'title: "Aufrufen von Ereignissen über Effekte" description: "Effekte können Ereignisse definieren und auslösen, die Änderungen in der zugrunde liegenden nativen Ansicht signalisieren.'
-description: 'In diesem Artikel wird beschrieben, wie Sie eine umfassende Multitouchverfolgung implementieren und Ereignisse generieren, die eine Touchaktivität signalisieren." ms.prod: xamarin ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 12/14/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Aufrufen von Ereignissen über Effekte
+description: Effekte können Ereignisse definieren und auslösen, die Änderungen in der zugrunde liegenden nativen Ansicht signalisieren. In diesem Artikel wird beschrieben, wie Sie eine umfassende Multitouchverfolgung implementieren und Ereignisse generieren, die eine Touchaktivität signalisieren.
 ms.prod: xamarin
 ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 892bffa4027a1a61d6c22cc26d1556fb007432d8
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84136980"
 ---
 # <a name="invoking-events-from-effects"></a>Aufrufen von Ereignissen über Effekte
