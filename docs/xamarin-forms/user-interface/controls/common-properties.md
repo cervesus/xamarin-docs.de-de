@@ -6,16 +6,16 @@ ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 08/21/2019
+ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: deb894cccd5b6a2a9d908ef8967de91f00e7d297
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f3ab70dc20dda78e3acf400cf51d0ee9df84ff93
+ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136421"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104324"
 ---
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsallgemeine Steuerelement Eigenschaften, Methoden und Ereignisse
 
@@ -23,7 +23,7 @@ Die- Xamarin.Forms `VisualElement` Klasse ist die Basisklasse für die meisten S
 
 ## <a name="properties"></a>Eigenschaften
 
-Die folgenden Eigenschaften sind in- `VisualElement` Instanzen verfügbar. Eine umfassende Liste finden Sie in den [visualelement-API-Eigenschaften](xref:Xamarin.Forms.VisualElement#properties).
+Die folgenden Eigenschaften sind für- [`VisualElement`](xref:Xamarin.Forms.VisualElement) Objekte verfügbar.
 
 ### [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX)
 
@@ -44,6 +44,10 @@ Die- `Behaviors` Eigenschaft ist eine `List` von- `Behavior` Objekten. Mithilfe 
 ### [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds)
 
 Die- `Bounds` Eigenschaft ist ein Schreib geschütztes- `Rectangle` Objekt, das den vom-Steuerelement belegten Bereich darstellt. Der `Bounds` Eigenschafts Wert wird während des layoutcycle zugewiesen. Die `Rectangle` `struct` enthält nützliche Eigenschaften und Methoden zum Testen der Schnittmenge und Kapselung von Rechtecke. Weitere Informationen finden Sie unter The [ Xamarin.Forms Rechteck API](xref:Xamarin.Forms.Rectangle).
+
+### `Clip`
+
+Die- `Clip` Eigenschaft ist ein- `Geometry` Objekt, das die Gliederung des Inhalts eines Elements definiert. Zum Definieren eines Clips verwenden Sie ein `Geometry` -Objekt, z `EllipseGeometry` . b., um die-Eigenschaft des Elements festzulegen `Clip` . Nur der Bereich, der sich innerhalb des Bereichs der Geometrie befindet, wird angezeigt. Weitere Informationen finden Sie unter [Clip Geometrien](~/xamarin-forms/user-interface/shapes/geometries.md#clip-geometries).
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
@@ -67,7 +71,7 @@ Die- `InputTransparent` Eigenschaft ist eine `bool` , die bestimmt, ob das Steue
 
 ### [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled)
 
-Die- `IsEnabled` Eigenschaft ist ein `bool` Wert, der bestimmt, ob das Steuerelement auf Benutzereingaben reagiert. Standardwert: `true`. Wenn diese Eigenschaft auf false festgelegt wird, wird verhindert, dass das Steuerelement Benutzereingaben akzeptiert.
+Die- `IsEnabled` Eigenschaft ist ein `bool` Wert, der bestimmt, ob das Steuerelement auf Benutzereingaben reagiert. Der Standardwert ist `true`. Wenn diese Eigenschaft auf false festgelegt wird, wird verhindert, dass das Steuerelement Benutzereingaben akzeptiert.
 
 ### [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused)
 
@@ -213,7 +217,7 @@ public void Unfocus ()
 
 Das-Element muss bereits den Fokus haben, damit diese Methode funktioniert.
 
-## <a name="events"></a>Events
+## <a name="events"></a>Ereignisse
 
 Die folgenden Ereignisse sind für die- `VisualElement` Klasse verfügbar. Eine umfassende Liste finden Sie unter [ Xamarin.Forms visualelement-Ereignisse](xref:Xamarin.Forms.VisualElement#events).
 
@@ -268,4 +272,4 @@ Das Verhalten ist nicht definiert, wenn der minimale Wert größer ist als der a
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [Visualelement-API-Dokumentation](xref:Xamarin.Forms.VisualElement)
+- [Visualelement-API](xref:Xamarin.Forms.VisualElement)

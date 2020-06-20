@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a0d528948ae8a57fc7c702d8a4ce3d3ec2eda15a
-ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
+ms.openlocfilehash: da9649a4abb2cb65930d98576eda81739b711886
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990831"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85101366"
 ---
 # <a name="xamarinforms-shapes-rectangle"></a>Xamarin.FormsFormen: Rechteck
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 
 Die `Rectangle` -Klasse wird von der `Shape` -Klasse abgeleitet und kann zum Zeichnen von Rechtecke verwendet werden. Informationen zu den Eigenschaften, die die `Rectangle` Klasse von der-Klasse erbt `Shape` , finden Sie unter [ Xamarin.Forms Shapes](index.md).
 
@@ -51,5 +51,5 @@ Das folgende XAML-Beispiel zeigt, wie Sie ein ausgefülltes Rechteck mit abgerun
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Shapedemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 - [Xamarin.FormsFormen](index.md)

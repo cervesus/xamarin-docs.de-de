@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 48d68d2597986a941a6ac3a8df0d99f09f421e62
-ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
+ms.openlocfilehash: cb2e3ea68f181f0a6e6392c012db221ef35d65bd
+ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990873"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104305"
 ---
 # <a name="xamarinforms-shapes-path"></a>Xamarin.FormsFormen: Pfad
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 
 Die `Path` -Klasse wird von der `Shape` -Klasse abgeleitet und kann zum Zeichnen von Kurven und komplexen Formen verwendet werden. Diese Kurven und Formen werden oft mithilfe von `Geometry` Objekten beschrieben. Informationen zu den Eigenschaften, die die `Path` Klasse von der-Klasse erbt `Shape` , finden Sie unter [ Xamarin.Forms Shapes](index.md).
 
@@ -36,7 +36,7 @@ Weitere Informationen zu Transformationen finden Sie unter [ Xamarin.Forms Pfad 
 
 ## <a name="create-a-path"></a>Erstellen eines Pfads
 
-Das folgende XAML-Beispiel zeigt, wie Sie ein Polygon mit einer speziellen abgekürzten Syntax zeichnen:
+Das folgende XAML-Beispiel zeigt, wie ein Polygon mithilfe einer speziellen abgekürzten Syntax gezeichnet wird, die als Pfad Markup Syntax bezeichnet wird:
 
 ```xaml
 <Path Data="M 10,50 L 200,70"
@@ -48,7 +48,12 @@ Das folgende XAML-Beispiel zeigt, wie Sie ein Polygon mit einer speziellen abgek
       WidthRequest="100" />
 ```
 
-Die `Data` Zeichenfolge beginnt mit dem Befehl "muveto", der durch angegeben wird, `M` wodurch ein Startpunkt für den Pfad festgelegt wird. Bei Pfad Daten Parametern wird die Groß-/Kleinschreibung beachtet Das Kapital `M` gibt einen absoluten Speicherort für den Startpunkt an. Ein Kleinbuchstabe `m` würde relative Koordinaten angeben. `L`ist der Line-Befehl, der eine gerade Linie vom Startpunkt bis zum angegebenen Endpunkt erstellt.
+Die `Data` Zeichenfolge beginnt mit dem Befehl "muveto", der durch angegeben wird, `M` wodurch ein Startpunkt für den Pfad festgelegt wird. `L`ist der Line-Befehl, der eine gerade Linie vom Startpunkt bis zum angegebenen Endpunkt erstellt.
+
+> [!NOTE]
+> Die Pfad Markup Syntax ist nur in XAML verfügbar.
+
+Weitere Informationen zur Pfad Markup Syntax finden Sie unter [ Xamarin.Forms Pfad Markup Syntax](path-markup-syntax.md).
 
 ## <a name="path-geometry"></a>Pfad Geometrie
 
@@ -91,7 +96,8 @@ Weitere Informationen zu Geometrien finden Sie unter [ Xamarin.Forms Geometries]
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Shapedemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 - [Xamarin.FormsFormen](index.md)
-- [Xamarin.FormsShape-Geometrien](geometries.md)
+- [Xamarin.FormsGeometrien](geometries.md)
+- [Xamarin.FormsPfad Markup Syntax](path-markup-syntax.md)
 - [Xamarin.FormsPfad Transformationen](path-transforms.md)

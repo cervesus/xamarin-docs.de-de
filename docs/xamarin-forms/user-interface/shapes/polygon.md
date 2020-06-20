@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 455221b71c612b7987f876e8e9b82e33e5d91129
-ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
+ms.openlocfilehash: 2d67a6a4bbea6a4be27f0c0440d9c28ffd5a188f
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990860"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85101305"
 ---
 # <a name="xamarinforms-shapes-polygon"></a>Xamarin.FormsFormen: Polygon
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 
 Die `Polygon` Klasse wird von der `Shape` -Klasse abgeleitet und kann zum Zeichnen von Polygonen verwendet werden, bei denen es sich um eine verbundene Reihe von Linien handelt, die geschlossene Formen bilden. Informationen zu den Eigenschaften, die die `Polygon` Klasse von der-Klasse erbt `Shape` , finden Sie unter [ Xamarin.Forms Shapes](index.md).
 
@@ -47,5 +47,5 @@ Das folgende XAML-Beispiel zeigt, wie Sie ein Polygon zeichnen:
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Shapedemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 - [Xamarin.FormsFormen](index.md)

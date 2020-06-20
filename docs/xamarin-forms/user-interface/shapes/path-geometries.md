@@ -1,6 +1,6 @@
 ---
-title: 'Xamarin.FormsFormen: Geometrien'
-description: Xamarin.FormsGeometry-Klassen ermöglichen es Ihnen, die Geometrie einer 2D-Form zu beschreiben.
+title: 'Xamarin.FormsFormen: Pfadgeometrien'
+description: Xamarin.FormsMit den Pfad Geometrie Klassen können Sie die Geometrie einer 2D-Form beschreiben.
 ms.prod: xamarin
 ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05fcd1ada62bffa4829ad422ee5eda36d9d75ae3
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 5718b0594581928e6f00e11a15163d176615378f
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104262"
+ms.locfileid: "85101876"
 ---
-# <a name="xamarinforms-shapes-geometries"></a>Xamarin.FormsFormen: Geometrien
+# <a name="xamarinforms-shapes-path-geometries"></a>Xamarin.FormsFormen: Pfadgeometrien
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
@@ -189,29 +189,6 @@ Im folgenden Beispiel wird gezeigt, wie Geometrien in einem kombiniert werden `G
 ```
 
 In diesem Beispiel werden vier `EllipseGeometry` Objekte mit identischen x-Radius-und y-Radius-Koordinaten, aber mit unterschiedlichen mittelkoordinaten kombiniert. Dadurch werden vier überlappende Kreise erstellt, deren inneren innen mit der Füllregel Orange gefüllt sind `EvenOdd` .
-
-## <a name="clip-geometries"></a>Cligeometries
-
-Die- [`VisualElement`](xref:Xamarin.Forms.VisualElement) Klasse verfügt über eine- `Clip` Eigenschaft vom Typ, die die Gliederung `Geometry` des Inhalts eines Elements definiert. Wenn die- `Clip` Eigenschaft auf ein-Objekt festgelegt ist `Geometry` , wird nur der Bereich angezeigt, der sich innerhalb des Bereichs von befindet `Geometry` .
-
-Im folgenden Beispiel wird gezeigt, wie ein- `Geometry` Objekt als Ausschneide Bereich für einen verwendet wird [`Image`](xref:Xamarin.Forms.Image) :
-
-```xaml
-<Image Source="monkeyface.png">
-    <Image.Clip>
-        <EllipseGeometry RadiusX="100"
-                         RadiusY="100"
-                         Center="180,180" />
-    </Image.Clip>
-</Image>
-```
-
-In diesem Beispiel wird ein `EllipseGeometry` mit `RadiusX` -und- `RadiusY` Werten von 100 und der `Center` Wert (180.180) auf die- `Clip` Eigenschaft eines festgelegt [`Image`](xref:Xamarin.Forms.Image) . Es wird nur der Teil des Bilds angezeigt, der sich innerhalb des Bereichs der Ellipse befindet:
-
-![Schneiden eines Bilds mit einem ellipetgeometry-Typ](geometries-images/clip-ellipsegeometry.png "Schneiden eines Bilds mit einem ellipetgeometry-Typ")
-
-> [!NOTE]
-> Einfache Geometrien, Pfadgeometrien und zusammengesetzte Geometrien können zum Ausschneiden von Objekten verwendet werden [`VisualElement`](xref:Xamarin.Forms.VisualElement) .
 
 ## <a name="other-features"></a>Andere Funktionen
 

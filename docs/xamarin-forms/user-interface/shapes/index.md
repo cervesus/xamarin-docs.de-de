@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6f8cb91a3699ce7e18e7f4d2e891fafa1ff552c2
-ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
+ms.openlocfilehash: 9c7c552abe724dca6b06265b73346a399d35c3cb
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990759"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85101391"
 ---
 # <a name="xamarinforms-shapes"></a>Xamarin.FormsFormen
 
@@ -45,4 +45,4 @@ Xamarin.Formsdefiniert eine Reihe von-Objekten, die von der-Klasse abgeleitet we
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Shapedemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
