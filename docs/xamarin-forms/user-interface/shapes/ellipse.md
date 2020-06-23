@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 053805c14f195ef0dd3ae8f0cfcac2ee7425271d
-ms.sourcegitcommit: dc49ba58510eeb52048a866e5d3daf5f1f68fbd2
+ms.openlocfilehash: 725f892a667b4e89d55266abcf69e5394b09b6a5
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85130904"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243811"
 ---
 # <a name="xamarinforms-shapes-ellipse"></a>Xamarin.FormsFormen: Ellipse
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Die `Ellipse` -Klasse wird von der `Shape` -Klasse abgeleitet und kann verwendet werden, um Ellipsen und Kreise zu zeichnen. Informationen zu den Eigenschaften, die die `Ellipse` Klasse von der-Klasse erbt `Shape` , finden Sie unter [ Xamarin.Forms Shapes](index.md).
 
@@ -29,7 +29,7 @@ Die- `Ellipse` Klasse legt die `Aspect` von der-Klasse geerbte-Eigenschaft `Shap
 
 ## <a name="create-an-ellipse"></a>Erstellen einer Ellipse
 
-Um eine Ellipse zu zeichnen, erstellen Sie ein `Ellipse` -Objekt, und legen Sie dessen `WidthRequest` und- `HeightRequest` Eigenschaften fest. Verwenden `Fill` Sie die-Eigenschaft, um den anzugeben [`Color`](xref:Xamarin.Forms.Color) , der zum Zeichnen des Inneren der Ellipse verwendet wird. Verwenden `Stroke` Sie die-Eigenschaft, um das anzugeben `Color` , das verwendet wird, um die Gliederung der Ellipse zu zeichnen. Die- `StrokeThickness` Eigenschaft gibt die Stärke der Ellipse-Gliederung an.
+Um eine Ellipse zu zeichnen, erstellen Sie ein `Ellipse` -Objekt, und legen Sie dessen `WidthRequest` und- `HeightRequest` Eigenschaften fest. Um das Innere der Ellipse zu zeichnen, legen Sie die zugehörige- `Fill` Eigenschaft auf fest [`Color`](xref:Xamarin.Forms.Color) . Um der Ellipse einen Umriss zuzuweisen, legen Sie die zugehörige- `Stroke` Eigenschaft auf fest [`Color`](xref:Xamarin.Forms.Color) . Die- `StrokeThickness` Eigenschaft gibt die Stärke der Ellipse-Gliederung an.
 
 Um einen Kreis zu zeichnen, machen Sie die `WidthRequest` -Eigenschaft und die-Eigenschaft `HeightRequest` des- `Ellipse` Objekts gleich.
 
@@ -60,7 +60,9 @@ In diesem Beispiel wird ein roter Kreis mit den Dimensionen 150x150 (geräteunab
 
 ![Kreisen](ellipse-images/circle.png "Circle")
 
+Weitere Informationen zum Zeichnen einer gestrichelten Ellipse finden Sie unter [Zeichnen von gestrichelten Formen](index.md#draw-dashed-shapes).
+
 ## <a name="related-links"></a>Verwandte Links
 
-- [Shapedemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsFormen](index.md)

@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cb2e3ea68f181f0a6e6392c012db221ef35d65bd
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 384dcef3c2b480166f17e91d547f8cda39c83dc0
+ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104305"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85132969"
 ---
 # <a name="xamarinforms-shapes-path"></a>Xamarin.FormsFormen: Pfad
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Die `Path` -Klasse wird von der `Shape` -Klasse abgeleitet und kann zum Zeichnen von Kurven und komplexen Formen verwendet werden. Diese Kurven und Formen werden oft mithilfe von `Geometry` Objekten beschrieben. Informationen zu den Eigenschaften, die die `Path` Klasse von der-Klasse erbt `Shape` , finden Sie unter [ Xamarin.Forms Shapes](index.md).
 
@@ -96,7 +96,7 @@ Weitere Informationen zu Geometrien finden Sie unter [ Xamarin.Forms Geometries]
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Shapedemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsFormen](index.md)
 - [Xamarin.FormsGeometrien](geometries.md)
 - [Xamarin.FormsPfad Markup Syntax](path-markup-syntax.md)

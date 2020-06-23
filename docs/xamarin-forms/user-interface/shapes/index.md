@@ -10,12 +10,12 @@ ms.date: 06/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 13c79d7597325a3bf8dbabfa2983d55a92309c4b
-ms.sourcegitcommit: dc49ba58510eeb52048a866e5d3daf5f1f68fbd2
+ms.openlocfilehash: fdab7d422040aee5a00b16bb1e301f917b0c4883
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85130881"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243762"
 ---
 # <a name="xamarinforms-shapes"></a>Xamarin.FormsFormen
 
@@ -97,7 +97,82 @@ In diesem Beispiel zeichnet ein- `Path` Objekt ein Herz. Die `Path` -und-Eigensc
 
 ![Stretch-Formen](images/aspect.png "Stretch-Formen")
 
+## <a name="draw-dashed-shapes"></a>Gestrichelte Formen zeichnen
+
+`Shape`-Objekte verfügen über eine `StrokeDashArray` Eigenschaft vom Typ `DoubleCollection` . Diese Eigenschaft stellt eine Auflistung von `double` Werten dar, die das Muster von Bindestrichen und Lücken angeben, die zum Gliedern einer Form verwendet werden. Ein `DoubleCollection` ist ein `ObservableCollection` von- `double` Werten. Jede `double` in der Auflistung gibt die Länge eines Bindestrichs oder einer Lücke an. Das erste Element in der Auflistung, das sich bei Index 0 befindet, gibt die Länge eines Bindestrichs an. Das zweite Element in der Auflistung, das sich bei Index 1 befindet, gibt die Länge einer Lücke an. Daher geben Objekte mit einem geraden Indexwert Bindestriche an, während Objekte mit einem ungeraden Indexwert Lücken enthalten.
+
+`Shape`-Objekte verfügen auch `StrokeDashOffset` über eine-Eigenschaft vom Typ `double` , die den Abstand innerhalb des Strich Musters angibt, in dem ein Bindestrich beginnt. Wenn diese Eigenschaft nicht festgelegt wird, führt dies zu `Shape` einer voll soliden Kontur.
+
+Gestrichelte Formen können durch Festlegen der `StrokeDashArray` Eigenschaften und gezeichnet werden `StrokeDashOffset` . Die- `StrokeDashArray` Eigenschaft sollte auf einen oder mehrere Werte festgelegt werden `double` , wobei jedes Paar durch ein einzelnes Komma und/oder ein oder mehrere Leerzeichen getrennt ist. Beispielsweise sind "0,5 1,0" und "0,5, 1.0" beide gültig.
+
+Das folgende XAML-Beispiel zeigt, wie Sie ein gestricheltes Rechteck zeichnen:
+
+```xaml
+<Rectangle Fill="DarkBlue"
+           Stroke="Red"
+           StrokeThickness="4"
+           StrokeDashArray="1,1"
+           StrokeDashOffset="6"
+           WidthRequest="150"
+           HeightRequest="50"
+           HorizontalOptions="Start" />
+```
+
+In diesem Beispiel wird ein ausgefülltes Rechteck mit einem gestrichelten Strich gezeichnet:
+
+![Gestricheltes Rechteck](images/dashed-rectangle.png "Gestrichelte Linie")
+
+## <a name="control-line-ends"></a>Steuerungs Zeilenenden
+
+Eine Linie besteht aus drei Teilen: Start Abdeckung, Zeilen Text und Ende der Obergrenze. Die Start-und ENDCAPS beschreiben die Form am Anfang und Ende einer Linie oder eines Segments.
+
+`Shape`-Objekte verfügen über eine `StrokeLineCap` Eigenschaft vom Typ `PenLineCap` , die die Form am Anfang und Ende einer Linie oder eines Segments beschreibt. Die `PenLineCap`-Enumeration definiert die folgenden Member:
+
+- `Flat`, das eine Obergrenze darstellt, die nicht über den letzten Punkt der Zeile hinausgeht. Dies ist vergleichbar mit keinem Linien Ende und ist der Standardwert der `StrokeLineCap` Eigenschaft.
+- `Square`, das ein Rechteck darstellt, dessen Höhe gleich der Linienstärke und eine Länge gleich der halben Linienstärke ist.
+- `Round`, der einen Halbkreis darstellt, dessen Durchmesser gleich der Linienstärke ist.
+
+> [!IMPORTANT]
+> Die- `StrokeLineCap` Eigenschaft hat keine Auswirkung, wenn Sie Sie für eine Form ohne Start-oder Endpunkte festgelegt haben. Diese Eigenschaft hat z. b. keine Auswirkung, wenn Sie Sie für einen oder einen festgelegt haben `Ellipse` `Rectangle` .
+
+Der folgende XAML-Code zeigt, wie die-Eigenschaft festgelegt wird `StrokeLineCap` :
+
+```xaml
+<Line X1="0"
+      Y1="20"
+      X2="300"
+      Y2="20"
+      StrokeLineCap="Round"
+      Stroke="Red"
+      StrokeThickness="12" />
+```
+
+In diesem Beispiel wird die rote Linie am Anfang und am Ende der Zeile gerundet:
+
+![Linien Kappen](images/linecap.png "Linien Kappen")
+
+## <a name="control-line-joins"></a>Steuer Zeilen Joins
+
+`Shape`-Objekte verfügen über eine `StrokeLineJoin` Eigenschaft vom Typ `PenLineJoin` , die den Typ des Joins angibt, der an den Scheitel Punkten der Form verwendet wird. Die `PenLineJoin`-Enumeration definiert die folgenden Member:
+
+- `Miter`stellt reguläre Winkel Scheitel Punkte dar. Dies ist der Standardwert der `StrokeLineJoin`-Eigenschaft.
+- `Bevel`, das gefragte Vertices darstellt.
+- `Round`, das abgerundete Vertices darstellt.
+
+Der folgende XAML-Code zeigt, wie die-Eigenschaft festgelegt wird `StrokeLineJoin` :
+
+```xaml
+<Polyline Points="20 20,250 50,20 120"
+          Stroke="DarkBlue"
+          StrokeThickness="20"
+          StrokeLineJoin="Round" />
+```
+
+In diesem Beispiel enthält die dunkelblaue Polylinie gerundete Joins an den Scheitel Punkten:
+
+![Linienjoins](images/linejoin.png "Linienjoins")
+
 ## <a name="related-links"></a>Verwandte Links
 
-- [Shapedemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Farben inXamarin.Forms](~/xamarin-forms/user-interface/colors.md)

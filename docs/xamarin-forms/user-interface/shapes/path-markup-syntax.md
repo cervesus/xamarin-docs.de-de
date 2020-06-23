@@ -10,18 +10,18 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 263b77371e6fc991704fd86f2616d567584c832a
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 943636ac82163c3c575577bb4c56f6433cf73339
+ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104340"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85132885"
 ---
 # <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.FormsShapes: Pfad Markup Syntax
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Xamarin.Formsmit der Pfad Markup Syntax können Sie Pfadgeometrien in XAML kompakt angeben. Die Syntax wird als Zeichen folgen Wert für die- `Path.Data` Eigenschaft angegeben:
 
@@ -170,5 +170,5 @@ Darüber hinaus können Sie auch die Groß-/Kleinschreibung in wissenschaftliche
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Shapedemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsGeometrien](geometries.md)

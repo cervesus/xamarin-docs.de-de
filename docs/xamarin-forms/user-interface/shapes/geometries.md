@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05fcd1ada62bffa4829ad422ee5eda36d9d75ae3
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: c3b869d10d454453172065b30eb7ce32da81c8ce
+ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104262"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133034"
 ---
 # <a name="xamarinforms-shapes-geometries"></a>Xamarin.FormsFormen: Geometrien
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Die `Geometry` -Klasse und die Klassen, die davon abgeleitet werden, ermöglichen es Ihnen, die Geometrie einer 2D-Form zu beschreiben. `Geometry`Objekte können einfach sein, z. b. Rechtecke und Kreise oder zusammengesetzte, die aus zwei oder mehr Geometrie Objekten erstellt werden. Komplexere Geometrien können mithilfe der-Klasse erstellt werden `PathGeometry` , die es Ihnen ermöglicht, Bögen und Kurven zu beschreiben.
 
@@ -224,5 +224,5 @@ Die- `GeometryHelper` Klasse stellt die folgenden Hilfsmethoden bereit:
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Shapedemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsFormen](index.md)

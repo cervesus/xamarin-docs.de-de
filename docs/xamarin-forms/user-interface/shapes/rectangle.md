@@ -6,24 +6,24 @@ ms.assetid: 2DD663D3-DAEC-495C-AB6D-8A143FC97637
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/16/2020
+ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: da9649a4abb2cb65930d98576eda81739b711886
-ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
+ms.openlocfilehash: 1fd985aa2997be2b35fe3b22606b891aa0b66cf3
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85101366"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243736"
 ---
 # <a name="xamarinforms-shapes-rectangle"></a>Xamarin.FormsFormen: Rechteck
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
-Die `Rectangle` -Klasse wird von der `Shape` -Klasse abgeleitet und kann zum Zeichnen von Rechtecke verwendet werden. Informationen zu den Eigenschaften, die die `Rectangle` Klasse von der-Klasse erbt `Shape` , finden Sie unter [ Xamarin.Forms Shapes](index.md).
+Die `Rectangle` -Klasse wird von der `Shape` -Klasse abgeleitet und kann zum Zeichnen von Rechtecke und Quadraten verwendet werden. Informationen zu den Eigenschaften, die die `Rectangle` Klasse von der-Klasse erbt `Shape` , finden Sie unter [ Xamarin.Forms Shapes](index.md).
 
 `Rectangle` definiert die folgenden Eigenschaften:
 
@@ -32,24 +32,49 @@ Die `Rectangle` -Klasse wird von der `Shape` -Klasse abgeleitet und kann zum Zei
 
 Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
 
-Die- `Rectangle` Klasse legt die `Aspect` von der-Klasse geerbte-Eigenschaft `Shape` auf fest `Stretch.Fill` .
+Die- `Rectangle` Klasse legt die `Aspect` von der-Klasse geerbte-Eigenschaft `Shape` auf fest `Stretch.Fill` . Weitere Informationen zur- `Aspect` Eigenschaft finden Sie unter [Stretch Shapes](index.md#stretch-shapes).
 
 ## <a name="create-a-rectangle"></a>Erstellen eines Rechtecks
 
-Das folgende XAML-Beispiel zeigt, wie Sie ein ausgefülltes Rechteck mit abgerundeten Ecken zeichnen:
+Um ein Rechteck zu zeichnen, erstellen Sie ein `Rectangle` -Objekt und legen dessen `WidthRequest` -Eigenschaft und-Eigenschaft fest `HeightRequest` Um den inneren Bereich des Rechtecks zu zeichnen, legen Sie seine- `Fill` Eigenschaft auf fest [`Color`](xref:Xamarin.Forms.Color) . Um dem Rechteck eine Kontur zuzuweisen, legen Sie dessen- `Stroke` Eigenschaft auf fest [`Color`](xref:Xamarin.Forms.Color) . Die- `StrokeThickness` Eigenschaft gibt die Stärke des Rechteck Gliederung an.
+
+Legen Sie die-Eigenschaft und die-Eigenschaft fest, um dem Rechteck abgerundete Ecken zuzuweisen `RadiusX` `RadiusY` Mit diesen Eigenschaften wird die Basis für die x-Achse und die y-Achse festgelegt, die zum Abrunden der Ecken des Rechtecks verwendet wird.
+
+Um ein Quadrat zu zeichnen, machen Sie die `WidthRequest` -Eigenschaft und die-Eigenschaft `HeightRequest` des- `Rectangle` Objekts gleich.
+
+Das folgende XAML-Beispiel zeigt, wie Sie ein ausgefülltes Rechteck zeichnen:
 
 ```xaml
-<Rectangle Fill="DarkBlue"
-           Stroke="Red"
-           StrokeThickness="4"
-           RadiusX="12"
-           RadiusY="24"           
+<Rectangle Fill="Red"
            WidthRequest="150"
            HeightRequest="50"
            HorizontalOptions="Start" />
 ```
 
+In diesem Beispiel wird ein rot ausgefülltes Rechteck mit den Abmessungen 150x50 (geräteunabhängige Einheiten) gezeichnet:
+
+![Ausgefülltes Rechteck](rectangle-images/filled.png "Ausgefülltes Rechteck")
+
+Das folgende XAML-Beispiel zeigt, wie Sie ein ausgefülltes Rechteck mit abgerundeten Ecken zeichnen:
+
+```xaml
+<Rectangle Fill="Blue"
+           Stroke="Black"
+           StrokeThickness="3"
+           RadiusX="50"
+           RadiusY="10"
+           WidthRequest="200"
+           HeightRequest="100"
+           HorizontalOptions="Start" />
+```
+
+In diesem Beispiel wird ein blaues ausgefülltes Rechteck mit abgerundeten Ecken gezeichnet:
+
+![Rechteck mit abgerundeten Ecken](rectangle-images/rounded.png "Rechteck mit abgerundeten Ecken")
+
+Informationen zum Zeichnen eines gestrichelten Rechtecks finden Sie unter [Zeichnen von gestrichelten Formen](index.md#draw-dashed-shapes)
+
 ## <a name="related-links"></a>Verwandte Links
 
-- [Shapedemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsFormen](index.md)

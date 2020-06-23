@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c0abf7b30192ac9183c28e89d7917ea8d08dfc4f
-ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
+ms.openlocfilehash: 8df87f0ee3be78749d70dfc535b5d4d50874f194
+ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85101334"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133021"
 ---
 # <a name="xamarinforms-shapes-path-transforms"></a>Xamarin.FormsFormen: Pfad Transformationen
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Eine `Transform` definiert, wie ein- `Path` Objekt von einem Koordinaten Bereich in einen anderen Koordinaten Bereich transformiert wird. Diese Zuordnung wird durch eine Transformation beschrieben `Matrix` , bei der es sich um eine Sammlung von drei Zeilen mit drei Spalten von `double` Werten handelt.
 
@@ -352,5 +352,5 @@ In diesem Beispiel wird die- `Matrix` Eigenschaft als durch Trennzeichen getrenn
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Shapedemos (Beispiel)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsFormen](index.md)
