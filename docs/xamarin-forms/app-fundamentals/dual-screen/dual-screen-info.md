@@ -1,21 +1,21 @@
 ---
 title: Funktionen für Dual-Screen-Geräte in Xamarin.Forms
 description: In diesem Artikel wird erläutert, wie Sie mit der DualScreenInfo-Klasse in Xamarin.Forms die Benutzeroberfläche Ihrer App für Dual-Screen-Geräte wie Surface Duo und Surface Neo optimieren.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 59575823a9ec29847a60209e846ba244e51ca0c0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 12f3ac86d2418c6516d000371753fc8ae65d557c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138930"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946350"
 ---
 # <a name="xamarinforms-dual-screen-device-capabilities"></a>Funktionen für Dual-Screen-Geräte in Xamarin.Forms
 
@@ -32,15 +32,15 @@ Mithilfe der `DualScreenInfo`-Klasse können Sie z. B. bestimmen, in welchem Be
 - `IsLandscape`: Diese Eigenschaft gibt an, ob das Querformat auf dem Gerät verwendet wird. Dies ist hilfreich, weil native Ausrichtungs-APIs die Ausrichtung nicht korrekt melden, wenn das Anwendungsfenster mehr als einen Bildschirm einnimmt.
 - `SpanMode`: Diese Eigenschaft gibt an, ob das Layout den hohen, breiten oder den Einzelseitenmodus ausweist.
 
-Außerdem wird ein `PropertyChanged`-Ereignis ausgelöst, wenn eine Eigenschaft geändert wird.
+Darüber hinaus wird das Ereignis `PropertyChanged` ausgelöst, wenn sich beliebige Eigenschaften ändern. Das Ereignis `HingeAngleChanged` wird ausgelöst, wenn sich der Öffnungsgrads des Scharniers ändert.
 
-## <a name="poll-hinge-angle-on-android"></a>Abrufen des Öffnungsgrads des Scharniers auf Android-Geräten
+## <a name="poll-hinge-angle-on-android-and-uwp"></a>Abrufen des Öffnungsgrads des Scharniers unter Android und UWP
 
-Die folgende Eigenschaft ist verfügbar, wenn Sie über ein Android-Plattformprojekt auf `DualScreenInfo` zugreifen:
+Die folgende Methode steht zur Verfügung, wenn aus Projekten auf der Android- und UWP-Plattform auf `DualScreenInfo` zugegriffen wird:
 
 - `GetHingeAngleAsync`: Diese Eigenschaft ruft den aktuellen Öffnungsgrad des Gerätescharniers ab. Im Simulator kann HingeAngle festgelegt werden, indem Sie den Drucksensor bearbeiten.
 
-Diese Eigenschaft kann von einem benutzerdefinierten Android-Renderer verwendet werden:
+Diese Methode kann von benutzerdefinierten Renderern unter Android und UWP aufgerufen werden. Der folgende Code zeigt ein Beispiel eines benutzerdefinierten Android-Renderers:
 
 ```csharp
 public class HingeAngleLabelRenderer : Xamarin.Forms.Platform.Android.FastRenderers.LabelRenderer

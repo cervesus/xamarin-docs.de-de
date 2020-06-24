@@ -1,21 +1,21 @@
 ---
 title: Xamarin.Forms-Datenbindung
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: Bei der Datenbindung werden die Eigenschaften von zwei Objekten verknüpft. Dadurch werden Änderungen an einer Eigenschaft automatisch in der anderen widergespiegelt. Die Datenbindung ist ein integraler Teil der „Model View ViewModel“-Anwendungsarchitektur (MVVM).
+ms.prod: xamarin
+ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4b99877342ddbaf9ad5606ec5dc284818fcfeffd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 9abbe60865cbf5fb9082b5f4882c27fe095b36ac
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139697"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946454"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms-Datenbindung
 
@@ -69,6 +69,10 @@ Verwenden Sie relative Bindungen, um die Bindungsquelle relativ zur Position des
 ## <a name="binding-fallbacks"></a>[Bindungsfallbacks](binding-fallbacks.md)
 
 Gestalten Sie Datenbindungen widerstandfähiger, indem Sie Fallbackwerte definieren, die verwendet werden, wenn die Bindung fehlschlägt.
+
+## <a name="multi-bindings"></a>[Mehrfachbindungen](multibinding.md)
+
+Fügen Sie eine Sammlung von [`Binding`](xref:Xamarin.Forms.Binding)-Objekten an eine einzelne Bindungszieleigenschaft an.
 
 ## <a name="the-command-interface"></a>[Die Befehlsschnittstelle](commanding.md)
 

@@ -1,6 +1,6 @@
 ---
-title: 'title: "Anpassen einer ViewCell" description: "Das Xamarin.Forms-Element „ViewCell“ ist eine Zelle, die „ListView“ oder „TableView“ hinzugefügt werden kann und die eine vom Entwickler definierte Ansicht enthält.'
-description: 'In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein „ViewCell“-Element erstellen, das in einem Xamarin.Forms-ListView-Steuerelement gehostet wird." ms.prod: xamarin ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 12/07/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Anpassen einer ViewCell
+description: Das Xamarin.Forms-Element „ViewCell“ ist eine Zelle, die „ListView“ oder „TableView“ hinzugefügt werden kann und die eine vom Entwickler definierte Ansicht enthält. In diesem Artikel wird veranschaulicht, wie Sie einen benutzerdefinierten Renderer für ein ViewCell-Element erstellen können, das in einem Xamarin.Forms-ListView-Steuerelement gehostet wird.
 ms.prod: xamarin
 ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: c908da816352e8b3790ded0bef932e1485170abd
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84573871"
 ---
 # <a name="customizing-a-viewcell"></a>Anpassen einer ViewCell

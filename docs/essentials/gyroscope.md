@@ -1,8 +1,20 @@
 ---
-title: "Xamarin.Essentials: Gyroscope" description: "Mit der Klasse „Gyroscope“ in Xamarin.Essentials können Sie den Gyroskopsensor des Geräts überwachen, der die Drehung um die drei Hauptachsen des Geräts misst."
-ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1 author: jamesmontemagno ms.author: jamont ms.date: 11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Gyroskop'
+description: Mit der Klasse „Gyroscope“ in Xamarin.Essentials können Sie den Gyroskopsensor des Geräts überwachen, der die Drehung um die drei Hauptachsen des Geräts misst.
+ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5a085ac5bd18e660339443ea33fe552dd86259cb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802296"
 ---
-
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: Gyroskop
 
 Mit der Klasse **Gyroscope** können Sie den Gyroskopsensor des Geräts überwachen, der die Drehung um die drei Hauptachsen des Geräts verfolgt.
@@ -66,5 +78,5 @@ public class GyroscopeTest
 
 ## <a name="api"></a>API
 
-- [Gyroscope-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Gyroscope)
+- [Gyroscope-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Gyroscope)
 - [Gyroscope-API-Dokumentation](xref:Xamarin.Essentials.Gyroscope)

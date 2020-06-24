@@ -1,6 +1,6 @@
 ---
-title: 'title: "Implementieren einer Ansicht" description: "In diesem Artikel erfahren Sie, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes Xamarin.Forms-Steuerelement erstellen, mit dem ein Vorschauvideostream von der Kamera des Geräts angezeigt wird."'
-description: 'ms.prod: xamarin ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 05/10/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Implementieren einer Ansicht
+description: In diesem Artikel erfahren Sie, wie Sie einen benutzerdefinierten Renderer für ein benutzerdefiniertes Xamarin.Forms-Steuerelement erstellen, mit dem ein Vorschauvideostream von der Kamera des Geräts angezeigt wird.
 ms.prod: xamarin
 ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: c239955a093120c3a16ea3236946eb645ea9a4b4
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84570803"
 ---
 # <a name="implementing-a-view"></a>Implementieren einer Ansicht

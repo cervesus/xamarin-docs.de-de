@@ -1,7 +1,21 @@
 ---
-title: "Xamarin.Essentials: Wählhilfe'' description: "Mit der Klasse „PhoneDialer“ in Xamarin.Essentials kann eine Anwendung eine Telefonnummer im Wählprogramm öffnen." ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F author: jamesmontemagno ms.custom: video ms.author: jamont ms.date: 07/02/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Wählhilfe'
+description: Mit der PhoneDialer-Klasse in Xamarin.Essentials kann eine Anwendung eine Telefonnummer im Wählprogramm öffnen.
+ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 07/02/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d642005e9aed663570c251e955c6a3af4704ed5c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802201"
 ---
-
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials: Wählhilfe
 
 Mit der Klasse **PhoneDialer** in Xamarin.Essentials kann eine Anwendung eine Telefonnummer im Wählprogramm öffnen.
@@ -47,7 +61,7 @@ public class PhoneDialerTest
 
 ## <a name="api"></a>API
 
-- [PhoneDialer-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/PhoneDialer)
+- [PhoneDialer-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/PhoneDialer)
 - [PhoneDialer-API-Dokumentation](xref:Xamarin.Essentials.PhoneDialer)
 
 ## <a name="related-video"></a>Zugehörige Videos

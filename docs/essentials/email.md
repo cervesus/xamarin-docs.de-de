@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials: Email" description: "Die Email-Klasse in Xamarin.Essentials ermöglicht einer Anwendung das Öffnen der E-Mail-Standardanwendung mit speziellen Informationen, einschließlich Betreff, Nachrichtentext und Empfänger (An, CC, BCC)."
-ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date: 08/20/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: E-Mail'
+description: Die Email-Klasse in Xamarin.Essentials ermöglicht einer Anwendung das Öffnen der E-Mail-Standardanwendung mit speziellen Informationen, einschließlich Betreff, Nachrichtentext und Empfänger (An, CC, BCC).
+ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 08/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eba2b6decc74c63e6b2790287842e6cc9b237bd2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802372"
 ---
-
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials: E-Mail
 
 Die Klasse **Email** ermöglicht einer Anwendung das Öffnen der E-Mail-Standardanwendung mit speziellen Informationen, einschließlich Betreff, Nachrichtentext und Empfänger (to, cc, bcc).
@@ -16,7 +29,7 @@ Die Klasse **Email** ermöglicht einer Anwendung das Öffnen der E-Mail-Standard
 
 ## <a name="using-email"></a>Verwenden von E-Mail
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -95,7 +108,7 @@ Nicht alle E-Mail-Clients unterstützen das Senden von Anhängen. Weitere Inform
 
 ## <a name="api"></a>API
 
-- [Email-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
+- [Email-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Email)
 - [Email-API-Dokumentation](xref:Xamarin.Essentials.Email)
 
 ## <a name="related-video"></a>Zugehörige Videos

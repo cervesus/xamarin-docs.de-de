@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials: Share" description: "Die Share-Klasse in Xamarin.Essentials ermöglicht einer Anwendung das Teilen von Daten wie Text und Weblinks mit anderen Anwendungen auf dem Gerät."
-ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665 author: jamesmontemagno ms.author: jamont ms.date: 01/06/2020 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Freigeben'
+description: Die Share-Klasse in Xamarin.Essentials ermöglicht einer Anwendung das Teilen von Daten wie Text und Weblinks mit anderen Anwendungen auf dem Gerät.
+ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ef4c9961e7e1fac20084247f4c85e87b79bcc427
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801932"
 ---
-
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials: Freigeben
 
 Die **Share**-Klasse ermöglicht einer Anwendung das Teilen von Daten wie Text und Weblinks mit anderen Anwendungen auf dem Gerät.
@@ -13,7 +26,7 @@ Die **Share**-Klasse ermöglicht einer Anwendung das Teilen von Daten wie Text u
 
 ## <a name="using-share"></a>Verwenden von „Teilen“
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -102,7 +115,7 @@ await Share.RequestAsync(new ShareFileRequest
 
 ## <a name="api"></a>API
 
-- [Share-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Share)
+- [Share-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Share)
 - [Share-API-Dokumentation](xref:Xamarin.Essentials.Share)
 
 ## <a name="related-video"></a>Zugehörige Videos

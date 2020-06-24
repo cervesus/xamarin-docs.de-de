@@ -1,21 +1,21 @@
 ---
 title: DependencyService-Registrierung und -Auflösung in Xamarin.Forms
 description: In diesem Artikel wird die Funktionsweise der DependencyService-Klasse von Xamarin.Forms für den Aufruf der nativen Plattformfunktionalität beschrieben.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 50d77e9ba41767aa1f676bf21994431844fc4530
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 050b53be5e4ae67e2adbc1436bbd56ff824f5f7b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138774"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946389"
 ---
 # <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>DependencyService-Registrierung und -Auflösung in Xamarin.Forms
 
@@ -27,7 +27,7 @@ Wenn Sie [`DependencyService`](xref:Xamarin.Forms.DependencyService) von Xamarin
 
 Plattformimplementierungen müssen mit der [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse registriert werden, damit diese in Xamarin.Forms zur Laufzeit gefunden werden können.
 
-Die Registrierung kann bei der [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute)-Klasse oder über die [`Register`](xref:Xamarin.Forms.DependencyService.Register*)-Methode erfolgen.
+Die Registrierung kann mithilfe der Methoden [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) oder [`Register`](xref:Xamarin.Forms.DependencyService.Register*) und `RegisterSingleton` erfolgen.
 
 > [!IMPORTANT]
 > Releasebuilds von UWP-Projekten, die nativen .NET-Kompilierung verwenden, sollten Plattformimplementierungen mit den [`Register`](xref:Xamarin.Forms.DependencyService.Register*)-Methoden registrieren.
@@ -63,7 +63,7 @@ Gleichermaßen sollten die Implementierungen der `IDeviceOrientationService`-Sch
 
 ### <a name="registration-by-method"></a>Registrierung mithilfe einer Methode
 
-Mithilfe von [`DependencyService.Register`](xref:Xamarin.Forms.DependencyService.Register*)-Methoden kann eine Plattformimplementierung mit der [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse registriert werden.
+Mithilfe der Methoden [`DependencyService.Register`](xref:Xamarin.Forms.DependencyService.Register*) und der `RegisterSingleton`-Methode kann eine Plattformimplementierung bei [`DependencyService`](xref:Xamarin.Forms.DependencyService) registriert werden.
 
 Im folgenden Beispiel wird veranschaulicht, wie mithilfe einer [`Register`](xref:Xamarin.Forms.DependencyService.Register*)-Methode die iOS-Implementierung der `IDeviceOrientationService`-Schnittstelle registriert wird:
 
@@ -89,10 +89,19 @@ DependencyService.Register<DeviceOrientationService>();
 
 In diesem Beispiel wird `DeviceOrientationService` von der [`Register`](xref:Xamarin.Forms.DependencyService.Register*)-Methode mit der [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse registriert. Dies führt dazu, dass der konkrete Typ mit der von ihm implementierten Schnittstelle registriert wird.
 
-Gleichermaßen können die Implementierungen der `IDeviceOrientationService`-Schnittstelle auf anderen Plattformen mit den [`Register`](xref:Xamarin.Forms.DependencyService.Register*)-Methoden registriert werden.
+Alternativ kann eine vorhandene Objektinstanz mit der `RegisterSingleton`-Methode als Singleton registriert werden:
+
+```csharp
+var service = new DeviceOrientationService();
+DependencyService.RegisterSingleton<IDeviceOrientationService>(service);
+```
+
+Bei diesem Beispiel registriert die `RegisterSingleton`-Methode die Instanz des `DeviceOrientationService`-Objekts an der `IDeviceOrientationService`-Schnittstelle als Singleton.
+
+Gleichermaßen können die Implementierungen der `IDeviceOrientationService`-Schnittstelle auf anderen Plattformen mit den Methoden [`Register`](xref:Xamarin.Forms.DependencyService.Register*) und der `RegisterSingleton`-Methode registriert werden.
 
 > [!IMPORTANT]
-> Die Registrierung mit den [`Register`](xref:Xamarin.Forms.DependencyService.Register*)-Methoden muss in Plattformprojekten erfolgen, bevor die von der Plattformimplementierung bereitgestellte Funktionalität aus dem freigegebenen Code aufgerufen wird.
+> Die Registrierung mit den Methoden [`Register`](xref:Xamarin.Forms.DependencyService.Register*) und der `RegisterSingleton`-Methode muss in Plattformprojekten erfolgen, bevor die von der Plattformimplementierung bereitgestellte Funktionalität aus dem freigegebenen Code aufgerufen wird.
 
 ## <a name="resolve-the-platform-implementations"></a>Auflösen der Plattformimplementierungen
 
@@ -105,7 +114,12 @@ Standardmäßig löst [`DependencyService`](xref:Xamarin.Forms.DependencyService
 
 ### <a name="resolve-using-the-getlttgt-method"></a>Auflösen mit der Get&lt;T&gt;-Methode
 
-Die [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)-Methode ruft zur Laufzeit die Plattformimplementierung der `T`-Schnittstelle ab und erstellt eine Instanz davon als Singleton. Diese Instanz bleibt während der gesamten Lebensdauer der Anwendung erhalten, und alle nachfolgenden Aufrufe zur Auflösung derselben Plattformimplementierung rufen dieselbe Instanz ab.
+Die [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)-Methode ruft zur Laufzeit die Plattformimplementierung der `T`-Schnittstelle ab. Anschließend wird:
+
+- Eine Instanz davon als Singleton erstellt.
+- Eine vorhandene Instanz als Singleton zurückgegeben, die mithilfe von `DependencyService` durch die `RegisterSingleton`-Methode registriert wurde.
+
+Diese Instanz bleibt in beiden Fällen während der gesamten Lebensdauer der Anwendung erhalten. Alle nachfolgenden Aufrufe zur Auflösung derselben Plattformimplementierung rufen dieselbe Instanz ab.
 
 Im folgenden Code ist ein Beispiel für den Aufruf der [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)-Methode zur Auflösung der `IDeviceOrientationService`-Schnittstelle und den anschließenden Aufruf der `GetOrientation`-Methode dargestellt:
 
@@ -121,7 +135,7 @@ DeviceOrientation orientation = DependencyService.Get<IDeviceOrientationService>
 ```
 
 > [!NOTE]
-> Die [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)-Methode erstellt standardmäßig eine Instanz der Plattformimplementierung der `T`-Schnittstelle als Singleton. Dieses Verhalten kann jedoch geändert werden. Weitere Informationen finden Sie unter [Verwalten der Lebensdauer von aufgelösten Objekten](#manage-the-lifetime-of-resolved-objects).
+> Die [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)-Methode gibt standardmäßig eine Instanz der Plattformimplementierung der `T`-Schnittstelle als Singleton zurück. Dieses Verhalten kann jedoch geändert werden. Weitere Informationen finden Sie unter [Verwalten der Lebensdauer von aufgelösten Objekten](#manage-the-lifetime-of-resolved-objects).
 
 ### <a name="resolve-using-the-resolvelttgt-method"></a>Auflösen mit der Resolve&lt;T&gt;-Methode
 
@@ -141,7 +155,7 @@ DeviceOrientation orientation = DependencyService.Resolve<IDeviceOrientationServ
 ```
 
 > [!NOTE]
-> Wenn die [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*)-Methode auf den Aufruf der [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)-Methode zurückgreift, wird standardmäßig eine Instanz der Plattformimplementierung der `T`-Schnittstelle als Singleton erstellt. Dieses Verhalten kann jedoch geändert werden. Weitere Informationen finden Sie unter [Verwalten der Lebensdauer von aufgelösten Objekten](#manage-the-lifetime-of-resolved-objects).
+> Wenn die [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*)-Methode auf den Aufruf der [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)-Methode zurückgreift, wird standardmäßig eine Instanz der Plattformimplementierung der `T`-Schnittstelle als Singleton zurückgegeben. Dieses Verhalten kann jedoch geändert werden. Weitere Informationen finden Sie unter [Verwalten der Lebensdauer von aufgelösten Objekten](#manage-the-lifetime-of-resolved-objects).
 
 ## <a name="manage-the-lifetime-of-resolved-objects"></a>Verwalten der Lebensdauer von aufgelösten Objekten
 

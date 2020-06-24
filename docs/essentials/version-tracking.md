@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials: Versionsnachverfolgung'' description: "Mit der „VersionTracking“-Klasse in Xamarin.Essentials können Sie die Anwendungsversion und Buildnummern überprüfen und weitere Informationen anzeigen. So können Sie beispielsweise feststellen, ob es sich um den erstmaligen Start der Anwendung oder der aktuellen Version handelt oder die Nummer des vorherigen Builds abrufen."
-ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3 author: jamesmontemagno ms.author: jamont ms.date: 05/28/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Versionsnachverfolgung'
+description: Mit der VersionTracking-Klasse in Xamarin.Essentials können Sie die Anwendungsversion und Buildnummern überprüfen und weitere Informationen anzeigen. So können Sie beispielsweise feststellen, ob es sich um den erstmaligen Start der Anwendung oder der aktuellen Version handelt oder die Nummer des vorherigen Builds abrufen.
+ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/28/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 20819d76c23ca43f60073bcc2cd762abda280374
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802033"
 ---
-
 # <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Versionsnachverfolgung
 
 Mit der Klasse **VersionTracking** können Sie die Anwendungsversion und Buildnummern überprüfen und weitere Informationen anzeigen. So können Sie z. B. feststellen, ob es sich um den allerersten Start der Anwendung oder der aktuellen Version handelt, die Nummer des vorherigen Builds abrufen usw.
@@ -69,7 +82,7 @@ Alle Versionsinformationen werden mithilfe der [Preferences](preferences.md)-API
 
 ## <a name="api"></a>API
 
-- [VersionTracking-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
+- [VersionTracking-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/VersionTracking)
 - [VersionTracking-API-Dokumentation](xref:Xamarin.Essentials.VersionTracking)
 
 ## <a name="related-video"></a>Zugehörige Videos

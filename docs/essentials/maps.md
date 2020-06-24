@@ -1,9 +1,22 @@
 ---
-title: "Xamarin.Essentials Map" description: "Mit der Map-Klasse in Xamarin.Essentials kann eine Anwendung die installierte Kartenanwendung für einen bestimmten Standort oder eine bestimmte Ortsmarkierung (Placemark) öffnen."
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author: jamesmontemagno ms.author: jamont ms.date: 05/26/2020 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials Karte
+description: Mit der Map-Klasse in Xamarin.Essentials kann eine Anwendung die installierte Kartenanwendung für einen bestimmten Standort oder eine bestimmte Ortsmarkierung öffnen.
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/26/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b566b6705d1cd8e229b6a2636fffd2ebc2ed5cde
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802263"
 ---
-
-# <a name="xamarinessentials-map"></a>Xamarin.Essentials: Zuordnung
+# <a name="xamarinessentials-map"></a>Xamarin.Essentials: Karte
 
 Mit der **Map**-Klasse kann eine Anwendung die installierte Kartenanwendung für einen bestimmten Standort oder eine bestimmte Ortsmarkierung öffnen.
 
@@ -13,7 +26,7 @@ Mit der **Map**-Klasse kann eine Anwendung die installierte Kartenanwendung für
 
 ## <a name="using-map"></a>Verwenden von Map
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -146,7 +159,7 @@ Keine plattformspezifischen Implementierungsangaben.
 
 ## <a name="api"></a>API
 
-- [Kartenquellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Map)
+- [Kartenquellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Map)
 - [Karten- API-Dokumentation](xref:Xamarin.Essentials.Map)
 
 ## <a name="related-video"></a>Zugehörige Videos

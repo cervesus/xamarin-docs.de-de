@@ -1,27 +1,27 @@
 ---
 title: Fallbacks für Xamarin.Forms-Bindungen
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: In diesem Artikel wird erläutert, wie Bindungen stabiler gemacht werden können, indem Fallback-Werte definiert werden, die verwendet werden, wenn der Bindungsprozess fehlschlägt.
+ms.prod: xamarin
+ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/16/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f3aadef1960618731c3749507233933b8bf7630e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 2c5ce10aa0a1137ad4e4832d5dc931c902b82810
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133459"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946207"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Fallbacks für Xamarin.Forms-Bindungen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-Manchmal schlagen Datenbindungen fehl, weil die Bindungsquelle nicht aufgelöst werden kann oder weil eine erfolgreiche Bindung einen `null`-Wert zurückgibt. Während diese Szenarios mit Wertkonvertern behandelt werden können, oder einem anderen zusätzlichen Code, können Datenbindungen stabiler gemacht werden, indem Fallback-Werte festgelegt werden, die verwendet werden, wenn der Bindungsprozess fehlschlägt. Dies kann erreicht werden, indem die Eigenschaften [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) und [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) in einem Bindungsausdruck definiert werden. Da sich diese Eigenschaften in der [`BindingBase`](xref:Xamarin.Forms.BindingBase)-Klasse befinden, können sie mit Bindungen, kompilierten Bindungen und mit der `Binding`-Markuperweiterung verwendet werden.
+Manchmal schlagen Datenbindungen fehl, weil die Bindungsquelle nicht aufgelöst werden kann oder weil eine erfolgreiche Bindung einen `null`-Wert zurückgibt. Während diese Szenarios mit Wertkonvertern behandelt werden können, oder einem anderen zusätzlichen Code, können Datenbindungen stabiler gemacht werden, indem Fallback-Werte festgelegt werden, die verwendet werden, wenn der Bindungsprozess fehlschlägt. Dies kann erreicht werden, indem die Eigenschaften [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) und [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) in einem Bindungsausdruck definiert werden. Da sich diese Eigenschaften in der [`BindingBase`](xref:Xamarin.Forms.BindingBase)-Klasse befinden, können sie mit Bindungen, Mehrfachbindungen, kompilierten Bindungen und mit der Markuperweiterung `Binding` verwendet werden.
 
 > [!NOTE]
 > Die Verwendung der Eigenschaften [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) und [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) in einem Bindungsausdruck ist optional.

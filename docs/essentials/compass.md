@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials: Compass" description: "In diesem Dokument wird die Compass-Klasse in Xamarin.Essentials beschrieben, mit der Sie die Ausrichtung des Geräts auf den magnetischen Norden überwachen können."
-ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date: 11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Kompass'
+description: In diesem Dokument wird die Compass-Klasse in Xamarin.Essentials beschrieben, mit der Sie die Ausrichtung des Geräts auf den magnetischen Norden überwachen können.
+ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f85c6c1d262606ce75131e6ba39f326526bb8eb7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802465"
 ---
-
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials: Kompass
 
 Mit der Klasse **Compass** können Sie die Ausrichtung des Geräts auf den magnetischen Norden überwachen.
@@ -13,7 +26,7 @@ Mit der Klasse **Compass** können Sie die Ausrichtung des Geräts auf den magne
 
 ## <a name="using-compass"></a>Verwenden des Kompasses
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -87,7 +100,7 @@ Dies wird nur auf der Android-Plattform angewendet, und der Parameter wird auf i
 
 ## <a name="api"></a>API
 
-- [Compass-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
+- [Compass-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Compass)
 - [Compass-API-Dokumentation](xref:Xamarin.Essentials.Compass)
 
 ## <a name="related-video"></a>Zugehörige Videos

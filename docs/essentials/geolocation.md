@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials: Geolocation" description: "In diesem Dokument wird die Geolocation-Klasse in Xamarin.Essentials beschrieben, die APIs zum Abrufen der Koordinaten des aktuellen geografischen Standorts des Geräts bereitstellt."
-ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date: 03/13/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Geolocation'
+description: In diesem Dokument wird die Geolocation-Klasse in Xamarin.Essentials beschrieben, die APIs zum Abrufen der Koordinaten des aktuellen geografischen Standorts des Geräts bereitstellt.
+ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 03/13/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f54c31afef691d316cbc3108792ab3158359c47c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802323"
 ---
-
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Geolocation
 
 Die Klasse **Geolocation** stellt APIs zum Abrufen der Koordinaten des aktuellen geografischen Standorts des Geräts bereit.
@@ -64,7 +77,7 @@ Sie müssen die Berechtigung `Location` für die Anwendung festlegen. Öffnen Si
 
 ## <a name="using-geolocation"></a>Verwenden der Geolocation
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -231,7 +244,7 @@ Bei der UWP wird die Höhe in Metern zurückgegeben. Weitere Informationen finde
 
 ## <a name="api"></a>API
 
-- [Geolocation-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geolocation)
+- [Geolocation-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Geolocation)
 - [Geolacation-API-Dokumentation](xref:Xamarin.Essentials.Geolocation)
 
 ## <a name="related-video"></a>Zugehörige Videos

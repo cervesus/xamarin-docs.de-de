@@ -1,8 +1,20 @@
 ---
-title: "Xamarin.Essentials: Barometer" description: "Mit der Barometer-Klasse in Xamarin.Essentials können Sie den Barometersensor des Geräts überwachen, der den Druck misst."
-ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1 author: jamesmontemagno ms.author: jamont ms.date: 11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Barometer'
+description: Mit der Barometer-Klasse in Xamarin.Essentials können Sie den Barometersensor des Geräts überwachen, der den Druck misst.
+ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9a2742a5d515c864611361e85ea0678e9c5611ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802489"
 ---
-
 # <a name="xamarinessentials-barometer"></a>Xamarin.Essentials: Barometer
 
 Mit der Klasse **Barometer** können Sie den Barometersensor des Geräts überwachen, der den Druck misst.
@@ -13,7 +25,7 @@ Mit der Klasse **Barometer** können Sie den Barometersensor des Geräts überwa
 
 ## <a name="using-barometer"></a>Verwenden des Barometers
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -84,5 +96,5 @@ Keine plattformspezifischen Implementierungsangaben.
 
 ## <a name="api"></a>API
 
-- [Barometer-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Barometer)
+- [Barometer-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Barometer)
 - [Barometer-API-Dokumentation](xref:Xamarin.Essentials.Barometer)

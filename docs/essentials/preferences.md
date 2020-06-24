@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials: Preferences" description: "In diesem Dokument wird die Preferences-Klasse in Xamarin.Essentials beschrieben, die Anwendungseinstellungen in einem Schlüsselwertspeicher speichert. Es werden die Verwendung der Klasse und die Datentypen erklärt, die gespeichert werden können."
-ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF author: jamesmontemagno ms.author: jamont ms.date: 01/15/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Einstellungen'
+description: In diesem Dokument wird die Preferences-Klasse in Xamarin.Essentials beschrieben, die Anwendungseinstellungen in einem Schlüssel-Wert-Speicher speichert. Behandelt werden die Verwendung der Klasse und die Datentypen, die gespeichert werden können.
+ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/15/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: acc0c48776c7a91e9e5a060928564bc6e0c1d775
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801815"
 ---
-
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: Einstellungen
 
 Die Klasse **Preferences** unterstützt das Speichern von Anwendungseinstellungen in einem Schlüsselwertspeicher.
@@ -13,7 +26,7 @@ Die Klasse **Preferences** unterstützt das Speichern von Anwendungseinstellunge
 
 ## <a name="using-preferences"></a>Verwenden von Einstellungen
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -104,7 +117,7 @@ Beachten Sie beim Speichern einer Zeichenfolge, dass diese API zum Speichern kle
 
 ## <a name="api"></a>API
 
-- [Preferences-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
+- [Preferences-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Preferences)
 - [Preferences-API-Dokumentation](xref:Xamarin.Essentials.Preferences)
 
 ## <a name="related-video"></a>Zugehörige Videos

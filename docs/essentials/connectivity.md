@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials: Connectivity" description: "Mit der Connectivity-Klasse in Xamarin.Essentials können Sie Änderungen der Netzwerkbedingungen des Geräts überwachen, den aktuellen Netzwerkzugriff überprüfen und die aktuelle Verbindung bestimmen."
-ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49 author: jamesmontemagno ms.author: jamont ms.date: 01/08/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Konnektivität'
+description: Mit der Connectivity-Klasse in Xamarin.Essentials können Sie Änderungen der Netzwerkbedingungen des Geräts überwachen, den aktuellen Netzwerkzugriff überprüfen und die aktuelle Verbindung bestimmen.
+ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/08/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 056992b06e012845755aa02b2076a1bb80c6f176
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802417"
 ---
-
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: Konnektivität
 
 Mit der **Connectivity**-Klasse können Sie Änderungen der Netzwerkbedingungen des Geräts überwachen, den aktuellen Netzwerkzugriff überprüfen und die aktuelle Verbindung bestimmen.
@@ -45,7 +58,7 @@ Es ist kein zusätzliches Setup erforderlich.
 
 ## <a name="using-connectivity"></a>Verwenden der Konnektivität
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -105,7 +118,7 @@ Beachten Sie, dass möglicherweise `Internet` von `NetworkAccess` gemeldet wird,
 
 ## <a name="api"></a>API
 
-* [Connectivity-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
+* [Connectivity-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Connectivity)
 * [Connectivity-API-Dokumentation](xref:Xamarin.Essentials.Connectivity)
 
 ## <a name="related-video"></a>Zugehörige Videos

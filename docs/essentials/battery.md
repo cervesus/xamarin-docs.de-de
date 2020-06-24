@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials: Battery" description: "In diesem Dokument wird die Battery-Klasse in Xamarin.Essentials beschrieben, mit der Sie die Akkuinformationen des Geräts überprüfen und auf Änderungen überwachen können."
-ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43 author: jamesmontemagno ms.author: jamont ms.date: 01/22/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Akku'
+description: In diesem Dokument wird die Battery-Klasse in Xamarin.Essentials beschrieben, mit der Sie die Akkuinformationen des Geräts überprüfen und auf Änderungen überwachen können.
+ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/22/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3138db09c2a3d343f36aa48f561930df47f48ae6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802476"
 ---
-
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: Akku
 
 Mit der **Battery**-Klasse können Sie Informationen über den Akkustand und über Änderungen des Geräts sowie den Energiesparstatus des Geräts überwachen. Dieser gibt an, ob sich das Gerät im Energiesparmodus befindet. Anwendungen sollten Hintergrundverarbeitung vermeiden, wenn der Energiesparmodus des Geräts aktiviert ist.
@@ -45,7 +58,7 @@ Es ist kein zusätzliches Setup erforderlich.
 
 ## <a name="using-battery"></a>Verwenden der Akku-Funktion
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -171,7 +184,7 @@ Keine Plattformunterschiede.
 
 ## <a name="api"></a>API
 
-- [Battery-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Battery)
+- [Battery-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Battery)
 - [Battery-API-Dokumentation](xref:Xamarin.Essentials.Battery)
 
 ## <a name="related-video"></a>Zugehörige Videos

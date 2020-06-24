@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials: Permissions" description: "In diesem Dokument wird die Permissions-Klasse in Xamarin.Essentials beschrieben, die die Möglichkeit bietet, Laufzeitberechtigungen zu prüfen und anzufordern."
-ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57 author: jamesmontemagno ms.author: jamont ms.custom: video ms.date: 01/06/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Berechtigungen'
+description: In diesem Dokument wird die Permissions-Klasse in Xamarin.Essentials beschrieben, die die Möglichkeit bietet, Laufzeitberechtigungen zu prüfen und anzufordern.
+ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
+author: jamesmontemagno
+ms.author: jamont
+ms.custom: video
+ms.date: 01/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5de10511d73614570d6308b6f4deb7b4ca55549a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802228"
 ---
-
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials: Berechtigungen
 
 Die **Permissions**-Klasse bietet die Möglichkeit, Laufzeitberechtigungen zu prüfen und anzufordern.
@@ -15,7 +28,7 @@ Die **Permissions**-Klasse bietet die Möglichkeit, Laufzeitberechtigungen zu pr
 
 ## <a name="using-permissions"></a>Verwenden von Berechtigungen
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -214,7 +227,7 @@ Weitere Informationen finden Sie in der Dokumentation zur [Deklaration von App-F
 
 ## <a name="api"></a>API
 
-- [Quellcode für Berechtigungen](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Permissions)
+- [Quellcode für Berechtigungen](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Permissions)
 - [Dokumentation zur Permissions-API](xref:Xamarin.Essentials.Permissions)
 
 

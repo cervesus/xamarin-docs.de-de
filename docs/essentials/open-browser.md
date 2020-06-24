@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials OpenBrowser" description: "Mit der Browser-Klasse in Xamarin.Essentials kann eine Anwendung einen Weblink im optimierten und vom System bevorzugten Browser oder im externen Browser öffnen."
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author: jamesmontemagno ms.author: jamont ms.date: 04/02/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials Browser öffnen
+description: Mit der Browser-Klasse in Xamarin.Essentials kann eine Anwendung einen Weblink im optimierten und vom System bevorzugten Browser oder im externen Browser öffnen.
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 04/02/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 997c6b66b5dba43eb440130f3f58d31a5a274815
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802249"
 ---
-
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials: Browser
 
 Mit der Klasse **Browser** kann eine Anwendung einen Weblink im optimierten und vom System bevorzugten Browser oder im externen Browser öffnen.
@@ -13,7 +26,7 @@ Mit der Klasse **Browser** kann eine Anwendung einen Weblink im optimierten und 
 
 ## <a name="using-browser"></a>Verwenden des Browsers
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -84,7 +97,7 @@ Der Standardbrowser des Benutzers wird immer gestartet, unabhängig von `Browser
 
 ## <a name="api"></a>API
 
-- [Browser-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
+- [Browser-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Browser)
 - [Browser-API-Dokumentation](xref:Xamarin.Essentials.Browser)
 
 ## <a name="related-video"></a>Zugehörige Videos

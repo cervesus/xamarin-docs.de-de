@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials: SecureStorage" description: "In diesem Dokument wird die SecureStorage-Klasse in Xamarin.Essentials beschrieben, mit der einfache Schlüssel-Wert-Paare sicher gespeichert werden können. Hier erfahren Sie das Wichtigste über die Verwendung der Klasse, die Besonderheiten der Plattformimplementierung und geltende Einschränkungen."
-ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64 author: jamesmontemagno ms.author: jamont ms.date: 04/02/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Sicherer Speicher'
+description: In diesem Dokument wird die SecureStorage-Klasse in Xamarin.Essentials beschrieben, mit der einfache Schlüssel-Wert-Paare sicher gespeichert werden können. Hier erfahren Sie das Wichtigste über die Verwendung der Klasse, die Besonderheiten der Plattformimplementierung und die Einschränkungen.
+ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 04/02/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 061bc1cfe785ad080092ba21340f7d38bc499ed9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801945"
 ---
-
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Sicherer Speicher
 
 Mit der Klasse **SecureStorage** können Sie einfache Schlüssel/Wertpaare sicher speichern.
@@ -70,7 +83,7 @@ Es ist kein zusätzliches Setup erforderlich.
 
 ## <a name="using-secure-storage"></a>Verwenden des sicheren Speichers
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -155,7 +168,7 @@ Diese API wurde zum Speichern kleiner Textmengen konzipiert.  Die Leistung ist g
 
 ## <a name="api"></a>API
 
-- [SecureStorage-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
+- [SecureStorage-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/SecureStorage)
 - [SecureStorage-API-Dokumentation](xref:Xamarin.Essentials.SecureStorage)
 
 ## <a name="related-video"></a>Zugehörige Videos

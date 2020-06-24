@@ -1,8 +1,20 @@
 ---
-title: "Xamarin.Essentials: WebAuthenticator" description: "In diesem Dokument wird die WebAuthenticator-Klasse in Xamarin.Essentials beschrieben, mit der Sie browserbasierte Authentifizierungsflows starten können, die auf einen Rückruf an die App lauschen."
-ms.assetid: 3D95371E-5D59-440E-8D31-F3C04E493DC1 author: redth ms.author: jodick ms.date: 03/26/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Web Authenticator'
+description: In diesem Dokument wird die WebAuthenticator-Klasse in Xamarin.Essentials beschrieben, mit der Sie browserbasierte Authentifizierungsflows starten können, die auf einen Rückruf an die App lauschen.
+ms.assetid: 3D95371E-5D59-440E-8D31-F3C04E493DC1
+author: redth
+ms.author: jodick
+ms.date: 03/26/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 578e750afd718c684d70217355629a0286d2b028
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801880"
 ---
-
 # <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials: Web Authenticator
 
 Mit der **WebAuthenticator**-Klasse können Sie browserbasierte Flows initiieren, die auf einen Rückruf an eine bestimmte URL lauschen, die für die App registriert ist.
@@ -97,7 +109,7 @@ Für UWP müssen Sie den Rückruf-URI in der Datei `Package.appxmanifest` deklar
 
 ## <a name="using-webauthenticator"></a>Verwenden von WebAuthenticator
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -220,6 +232,6 @@ Sehen Sie sich das [vollständige Controller-Beispiel](https://github.com/xamari
 -----
 ## <a name="api"></a>API
 
-- [WebAuthenticator-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/WebAuthenticator)
+- [WebAuthenticator-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/WebAuthenticator)
 - [Dokumentation zur WebAuthenticator-API](xref:Xamarin.Essentials.WebAuthenticator)
 - [Beispiel für den ASP.NET Core-Server](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/)

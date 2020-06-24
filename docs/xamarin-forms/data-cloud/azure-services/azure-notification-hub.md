@@ -1,6 +1,6 @@
 ---
-title: 'title: "Senden und Empfangen von Pushbenachrichtigungen mit den Azure Notification Hubs und Xamarin.Forms" description: "In diesem Artikel erfahren Sie, wie Sie über die Azure Notification Hubs plattformübergreifende Pushbenachrichtigungen an Xamarin.Forms-Anwendungen senden."'
-description: 'ms.prod: xamarin ms.assetid: 07D13195-3A0D-4C95-ACF0-143A9084973C ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date: 11/27/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials, Firebase]'
+title: Senden und Empfangen von Pushbenachrichtigungen mit den Azure Notification Hubs und Xamarin.Forms
+description: In diesem Artikel erfahren Sie, wie Sie über die Azure Notification Hubs plattformübergreifende Pushbenachrichtigungen an Xamarin.Forms-Anwendungen senden.
 ms.prod: xamarin
 ms.assetid: 07D13195-3A0D-4C95-ACF0-143A9084973C
 ms.technology: xamarin-forms
@@ -12,10 +12,10 @@ no-loc:
 - Xamarin.Essentials
 - Firebase
 ms.openlocfilehash: 5f7b83c1fc907de790b382aabde0c5a957e5a8bb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84565420"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>Senden und Empfangen von Pushbenachrichtigungen mit den Azure Notification Hubs und Xamarin.Forms

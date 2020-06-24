@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials: FileSystem-Hilfsprogramme" description: "Die FileSystem-Klasse in Xamarin.Essentials enthält einige Hilfsprogramme, um den Cache und die Datenverzeichnisse der Anwendung zu suchen und Dateien im App-Paket zu öffnen."
-ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date: 11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: Dateisystemhilfsprogramme'
+description: Die FileSystem-Klasse in Xamarin.Essentials enthält einige Hilfsprogramme, um den Cache und die Datenverzeichnisse der Anwendung zu suchen und Dateien im App-Paket zu öffnen.
+ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5fafc24d9c4bd35d4ef0010ae4530341316c878a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802365"
 ---
-
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Dateisystemhilfsprogramme
 
 Die Klasse **FileSystem** enthält eine Reihe von Hilfsprogrammen, um den Cache und die Datenverzeichnisse der Anwendung zu finden und Dateien im App-Paket zu öffnen.
@@ -13,7 +26,7 @@ Die Klasse **FileSystem** enthält eine Reihe von Hilfsprogrammen, um den Cache 
 
 ## <a name="using-file-system-helpers"></a>Verwenden der Dateisystemhilfsprogramme
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -70,7 +83,7 @@ Fügen Sie eine beliebige Datei zum Stammverzeichnis des UWP-Projekts hinzu, und
 
 ## <a name="api"></a>API
 
-- [FileSystem-Hilfsprogramme – Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/FileSystem)
+- [FileSystem-Hilfsprogramme – Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/FileSystem)
 - [FileSystem-API-Dokumentation](xref:Xamarin.Essentials.FileSystem)
 
 ## <a name="related-video"></a>Zugehörige Videos
