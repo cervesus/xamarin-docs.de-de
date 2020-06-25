@@ -10,12 +10,12 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 943636ac82163c3c575577bb4c56f6433cf73339
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: d2eb0ac68bf754e45ffcd2a1c77e4347bb3bcf4c
+ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85132885"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326207"
 ---
 # <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.FormsShapes: Pfad Markup Syntax
 
@@ -35,7 +35,7 @@ Die Pfad Markup Syntax besteht aus einem optionalen `FillRule` Wert und einer od
 
 In dieser Syntax:
 
-- *FillRule* ist ein optionaler Wert `Xamarin.Forms.Shapes.FillRule` , der angibt, ob die Geometrie oder verwenden soll `EvenOdd` `Nonzero` `FillRule` . `F0`Gibt die `EvenOdd` Füllregel an, während `F1` die `Nonzero` Füllregel angibt.
+- *FillRule* ist ein optionaler Wert `Xamarin.Forms.Shapes.FillRule` , der angibt, ob die Geometrie oder verwenden soll `EvenOdd` `Nonzero` `FillRule` . `F0`Gibt die `EvenOdd` Füllregel an, während `F1` die `Nonzero` Füllregel angibt. Weitere Informationen zu Füll Regeln finden Sie unter [ Xamarin.Forms Shapes: Füll Regeln](fillrules.md).
 -  *figuredescription* stellt eine Abbildung dar, die aus einem Move-Befehl, zeichnen-Befehlen und einem optionalen Close-Befehl besteht. Ein Move-Befehl gibt den Startpunkt der Abbildung an. Zeichnen-Befehle beschreiben den Inhalt der Abbildung, und der optionale Close-Befehl schließt die Figur.
 
 Im obigen Beispiel gibt die Pfad Markup Syntax einen Startpunkt mithilfe des Verschiebungs Befehls ( `M` ), eine Reihe von geraden Linien mit dem Zeilen Befehl ( `L` ) an und schließt den Pfad mit dem Befehl "Schließen" ( `Z` ).
@@ -172,3 +172,4 @@ Darüber hinaus können Sie auch die Groß-/Kleinschreibung in wissenschaftliche
 
 - [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsGeometrien](geometries.md)
+- [Xamarin.FormsFormen: Füll Regeln](fillrules.md)

@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials: AppInfo" description: "In diesem Dokument wird die AppInfo-Klasse in Xamarin.Essentials beschrieben, die Informationen zu Ihrer Anwendung bereitstellt. Sie enthält beispielsweise den Namen und die Version der App."
-ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA author: jamesmontemagno ms.author: jamont ms.date: 01/29/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'Xamarin.Essentials: App-Informationen'
+description: In diesem Dokument wird die AppInfo-Klasse in Xamarin.Essentials beschrieben, die Informationen zu Ihrer Anwendung bereitstellt. Sie macht beispielsweise den Namen und die Version der App verfügbar.
+ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/29/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1a8673e7c405660355e3a849e6ef1709fd2980a4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802524"
 ---
-
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials: App-Informationen
 
 Die Klasse **AppInfo** stellt Informationen zu Ihrer Anwendung bereit.
@@ -13,7 +26,7 @@ Die Klasse **AppInfo** stellt Informationen zu Ihrer Anwendung bereit.
 
 ## <a name="using-appinfo"></a>Verwenden von App-Informationen
 
-Fügen Sie Ihrem Projekt einen Xamarin.Essentials-Verweis hinzu:
+Fügen Sie in Ihrer Klasse einen Verweis auf Xamarin.Essentials hinzu:
 
 ```csharp
 using Xamarin.Essentials;
@@ -81,7 +94,7 @@ Für die folgenden Felder werden App-Informationen aus der Datei `Package.appxma
 
 ## <a name="api"></a>API
 
-- [AppInfo-Quellcode](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/AppInfo)
+- [AppInfo-Quellcode](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/AppInfo)
 - [AppInfo-API-Dokumentation](xref:Xamarin.Essentials.AppInfo)
 
 ## <a name="related-video"></a>Zugehörige Videos

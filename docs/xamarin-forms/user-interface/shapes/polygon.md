@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e6f8ad3afdcdb9137869dc57078ac94895f4183c
-ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
+ms.openlocfilehash: 9c90b0ae4ae3d241dcd6d6d749f220dcfb683693
+ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243809"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326148"
 ---
 # <a name="xamarinforms-shapes-polygon"></a>Xamarin.FormsFormen: Polygon
 
@@ -34,10 +34,7 @@ Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref:X
 
 Der `PointsCollection` Typ ist eine `ObservableCollection` von- [`Point`](xref:Xamarin.Forms.Point) Objekten. Die `Point` -Struktur definiert die `X` -Eigenschaft und die-Eigenschaft `Y` des Typs `double` , die ein x-und y-Koordinatenpaar im 2D-Raum darstellen. Daher sollte die `Points` -Eigenschaft auf eine Liste von x-Koordinate und y-Koordinatenpaaren festgelegt werden, die die Polygon Scheitel Punkte beschreiben, getrennt durch ein einzelnes Komma und/oder ein oder mehrere Leerzeichen. Beispielsweise sind "40, 10 70, 80" und "40 10, 70 80" gültig.
 
-Die `FillRule`-Enumeration definiert die folgenden Member:
-
-- `EvenOdd`stellt eine Regel dar, die bestimmt, ob sich ein Punkt im Füllbereich des Polygons befindet. Er zeichnet einen Strahl vom Punkt auf unendlich in beliebiger Richtung und zählt die Anzahl der Segmente in der Form, die der Strahl kreuzt. Wenn diese Zahl ungerade ist, befindet sich der Punkt innerhalb von. Wenn diese Zahl gerade ist, befindet sich der Punkt außerhalb von.
-- `Nonzero`stellt eine Regel dar, die bestimmt, ob sich ein Punkt im Füllbereich des Polygons befindet. Er zeichnet einen Strahl von Punkt zu unendlich in beliebiger Richtung und überprüft dann die stellen, an denen ein Segment der Form den Strahl schneidet. Beginnend mit einer Anzahl von 0 (null) wird die Anzahl jedes Mal erhöht, wenn ein Segment den Strahl von links nach rechts schneidet und dekrementiert wird, wenn ein Segment den Strahl von rechts nach links überschreitet. Wenn das Ergebnis nach dem zählen der Übergänge 0 (null) ist, liegt der Punkt außerhalb des Polygons. Andernfalls befindet er sich in.
+Weitere Informationen zur- `FillRule` Enumeration finden Sie unter [ Xamarin.Forms Shapes: Füll Regeln](fillrules.md).
 
 ## <a name="create-a-polygon"></a>Erstellen eines Polygons
 
@@ -104,3 +101,4 @@ In diesem Beispiel wird das Füllverhalten der einzelnen Polygon mithilfe der `N
 
 - [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsFormen](index.md)
+- [Xamarin.FormsFormen: Füll Regeln](fillrules.md)

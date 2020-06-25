@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c3b869d10d454453172065b30eb7ce32da81c8ce
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: 412b0255dafcbd752c7b350ddc25ecd13f8f98d8
+ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133034"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326185"
 ---
 # <a name="xamarinforms-shapes-geometries"></a>Xamarin.FormsFormen: Geometrien
 
@@ -37,7 +37,7 @@ Die einfachen Geometry-Klassen sind `EllipseGeometry` , `LineGeometry` und `Rect
 
 Eine Ellipse-Geometrie stellt die Geometrie oder eine Ellipse oder einen Kreis dar und wird durch einen Mittelpunkt, einen x-Radius und einen y-Radius definiert.
 
-Die- `EllipseGeometry` Klasse definiert die folgenden Eigenschaften:
+Die `EllipseGeometry`-Klasse definiert die folgenden Eigenschaften:
 
 - `Center`vom Typ `Point` , der den Mittelpunkt der Geometrie darstellt.
 - `RadiusX`vom Typ `double` , der den x-Radius-Wert der Geometrie darstellt. Der Standardwert dieser Eigenschaft ist 0,0.
@@ -65,7 +65,7 @@ In diesem Beispiel ist der Mittelpunkt von `EllipseGeometry` auf (50, 50) festge
 
 Eine Linien Geometrie stellt die Geometrie einer Linie dar und wird durch Angabe des Anfangs Punkts der Linie und des Endpunkts definiert.
 
-Die- `LimeGeometry` Klasse definiert die folgenden Eigenschaften:
+Die `LimeGeometry`-Klasse definiert die folgenden Eigenschaften:
 
 - `StartPoint`vom Typ `Point` , der den Anfangspunkt der Linie darstellt.
 - `EndPoint`vom Typ `Point` , der den Endpunkt der Zeile darstellt.
@@ -90,7 +90,7 @@ In diesem Beispiel wird ein `LineGeometry` von (10, 20) bis (100.130) gezeichnet
 
 Eine Rechteck Geometrie stellt ein Rechteck dar und wird mit einer- `Rect` Struktur definiert, die ihre relative Position und ihre Höhe und Breite angibt.
 
-Die- `RectangleGeometry` Klasse definiert die folgenden Eigenschaften:
+Die `RectangleGeometry`-Klasse definiert die folgenden Eigenschaften:
 
 - `Rect`vom Typ `FormsRect` , der die Abmessungen des Rechtecks darstellt.
 
@@ -114,7 +114,7 @@ Die Position und die Dimensionen des Rechtecks werden durch eine- `Rect` Struktu
 
 Eine Pfad Geometrie beschreibt eine komplexe Form, die aus Arcs, Kurven, Ellipsen, Linien und Rechtecke bestehen kann.
 
-Die- `PathGeometry` Klasse definiert die folgenden Eigenschaften:
+Die `PathGeometry`-Klasse definiert die folgenden Eigenschaften:
 
 - `Figures`vom Typ `PathFigureCollection` , der die Auflistung von-Objekten darstellt, die `PathFigure` den Pfad Inhalt beschreiben.
 - `FillRule`vom Typ `FillRule` , der bestimmt, wie die sich überschneidenden Bereiche in der Geometrie kombiniert werden. Der Standardwert dieser Eigenschaft ist `FillRule.EvenOdd`.
@@ -123,6 +123,8 @@ Die- `PathGeometry` Klasse definiert die folgenden Eigenschaften:
 > Die `Figures` -Eigenschaft ist der der `ContentProperty` `PathGeometry` -Klasse und muss daher nicht explizit aus XAML festgelegt werden.
 
 Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
+
+Weitere Informationen zur- `FillRule` Enumeration finden Sie unter [ Xamarin.Forms Shapes: Füll Regeln](fillrules.md).
 
 Eine `PathGeometry` besteht aus einer Auflistung von- `PathFigure` Objekten, wobei jede `PathFigure` eine Form in der Geometrie beschreibt. Jede besteht aus `PathFigure` einem oder mehreren- `PathSegment` Objekten, von denen jedes ein Segment der Form beschreibt. Es gibt viele Arten von Segmenten:
 
@@ -226,3 +228,4 @@ Die- `GeometryHelper` Klasse stellt die folgenden Hilfsmethoden bereit:
 
 - [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsFormen](index.md)
+- [Xamarin.FormsFormen: Füll Regeln](fillrules.md)
