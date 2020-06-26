@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: a776dbb2ecfaf0942d79c2b403c13f98cdc7c2e2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 2a9260bc782d2b19e6fd74356738276e1648dcf2
+ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571973"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104345"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Hardwarebeschleunigung für verbesserte Leistung des Emulators (Hyper-V und HAXM)
 
@@ -142,9 +142,9 @@ Wenn Ihr Computer HAXM unterstützen kann, aber HAXM nicht installiert ist, füh
 
 ### <a name="installing-haxm"></a>Installieren von HAXM
 
-HAXM-Installationspakete für Windows können über die Seite [Intel Hardware Accelerated Execution Manager](https://software.intel.com/android/articles/intel-hardware-accelerated-execution-manager) heruntergeladen werden. Führen Sie die folgenden Schritte durch, um HAXM herunterzuladen und zu installieren:
+HAXM-Installationspakete für Windows können über die GitHub-Releaseseite [Intel Hardware Accelerated Execution Manager](https://github.com/intel/haxm/releases) heruntergeladen werden. Führen Sie die folgenden Schritte durch, um HAXM herunterzuladen und zu installieren:
 
-1. Laden Sie von der Intel-Website den aktuellsten Windows-Installer [HAXM-Virtualisierungs-Engine](https://software.intel.com/android/articles/intel-hardware-accelerated-execution-manager/) herunter. Wenn Sie den HAXM-Installer direkt von der Intel-Website herunterladen, können Sie sich sicher sein, dass Sie die aktuellste Version verwenden.
+1. Laden Sie von der Intel-Website den aktuellsten Windows-Installer [HAXM-Virtualisierungs-Engine](https://github.com/intel/haxm/releases) herunter. Wenn Sie den HAXM-Installer direkt von der Intel-Website herunterladen, können Sie sich sicher sein, dass Sie die aktuellste Version verwenden.
 
 2. Führen Sie **intelhaxm-android.exe** aus, um den HAXM-Installer zu starten. Nehmen Sie die Standardwerte in den Installer-Dialogfeldern an:
 

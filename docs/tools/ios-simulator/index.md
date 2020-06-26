@@ -6,12 +6,12 @@ ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2019
-ms.openlocfilehash: d5898f9c6ee30eb1f12bf6480b93a609e762e6ea
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 84c5a72f887f38c5efcee09cfc19986093db226e
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75886592"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85101348"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>iOS-Remotesimulator für Windows
 
@@ -23,7 +23,7 @@ Mit dem iOS-Remotesimulator für Windows können Sie Ihre Apps in einem iOS-Simu
 
 Der iOS-Remotesimulator für Windows wird automatisch als Teil von Xamarin in Visual Studio 2019 und Visual Studio 2017 installiert. Führen Sie folgende Schritte aus, um den Simulator zu verwenden:
 
-1. [Koppeln Sie Visual Studio 2019 an einen Host mit Mac-Build](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+1. [Koppeln Sie Visual Studio 2019 mit einem Mac-Buildhost](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Starten Sie in Visual Studio das Debuggen eines iOS- oder tvOS-Projekts. Der iOS-Remotesimulator für Windows wird auf Ihrem Windows-Computer geöffnet.
 
 Eine ausführliche Anleitung finden Sie in [diesem Video](deploy.md).
@@ -71,7 +71,7 @@ Zum Deaktivieren des iOS-Remotesimulators für Windows wechseln Sie zu **Tools >
 
 [![Kontrollkästchen zur Verwendung des Simulators](images/options-sml.png "Kontrollkästchen zur Verwendung des Simulators")](images/options.png#lightbox)
 
-Wenn diese Option deaktiviert ist, wird beim Debuggen der iOS-Simulator auf dem verbundenen Host mit dem Mac-Build geöffnet.
+Wenn diese Option deaktiviert ist, wird beim Debuggen der iOS-Simulator auf dem verbundenen Mac-Buildhost geöffnet.
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
