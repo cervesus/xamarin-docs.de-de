@@ -54,7 +54,7 @@ Es ist wichtig, zu beachten, dass abgelaufene Zertifikate nicht erneuert werden 
 1. Navigieren Sie zum Abschnitt *Certificates, Identifiers & Profiles* (Zertifikate, Bezeichner & Profile) im Developer Member Center von Apple.
 2. Wählen Sie unter *Certificates* (Zertifikate) die Option **Production** (Produktion) aus.
 3. Klicken Sie auf die Schaltfläche **+** , um ein neues Zertifikat zu erstellen.
-4. Wählen Sie unter der Überschrift *Produktion***Intern und Ad-hoc** aus:
+4. Wählen Sie unter der Überschrift *Produktion* **Intern und Ad-hoc** aus:
 
    [![](in-house-distribution-images/createcertmanually01.png "Select In-House and Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
 
