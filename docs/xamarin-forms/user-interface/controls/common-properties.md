@@ -10,12 +10,12 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f3ab70dc20dda78e3acf400cf51d0ee9df84ff93
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 9afad335de60e605ef6551b0878455674a40750f
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104324"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85795033"
 ---
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsallgemeine Steuerelement Eigenschaften, Methoden und Ereignisse
 
@@ -47,7 +47,7 @@ Die- `Bounds` Eigenschaft ist ein Schreib geschütztes- `Rectangle` Objekt, das 
 
 ### `Clip`
 
-Die- `Clip` Eigenschaft ist ein- `Geometry` Objekt, das die Gliederung des Inhalts eines Elements definiert. Zum Definieren eines Clips verwenden Sie ein `Geometry` -Objekt, z `EllipseGeometry` . b., um die-Eigenschaft des Elements festzulegen `Clip` . Nur der Bereich, der sich innerhalb des Bereichs der Geometrie befindet, wird angezeigt. Weitere Informationen finden Sie unter [Clip Geometrien](~/xamarin-forms/user-interface/shapes/geometries.md#clip-geometries).
+Die- `Clip` Eigenschaft ist ein- `Geometry` Objekt, das die Gliederung des Inhalts eines Elements definiert. Zum Definieren eines Clips verwenden Sie ein `Geometry` -Objekt, z `EllipseGeometry` . b., um die-Eigenschaft des Elements festzulegen `Clip` . Nur der Bereich, der sich innerhalb des Bereichs der Geometrie befindet, wird angezeigt. Weitere Informationen finden Sie unter [Clip with a Geometry](~/xamarin-forms/user-interface/shapes/geometries.md#clip-with-a-geometry).
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 

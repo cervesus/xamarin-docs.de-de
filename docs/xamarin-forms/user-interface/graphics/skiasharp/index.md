@@ -9,16 +9,16 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 855bd0d357950b019487b3ea05e379915f54b9d4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: da00aafb9f659d8af119e00476a9a243a2f91023
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127633"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85795074"
 ---
 # <a name="skiasharp-graphics-in-xamarinforms"></a>Skiasharp-Grafiken inXamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Verwenden von skiasharp für 2D-Grafiken in Ihren Xamarin.Forms Anwendungen_
 
@@ -34,7 +34,7 @@ In dieser Anleitung wird davon ausgegangen, dass Sie mit der Programmierung vert
 
 Skiasharp für Xamarin.Forms ist als nuget-Paket verpackt. Nachdem Sie eine Projekt Mappe Xamarin.Forms in Visual Studio oder Visual Studio für Mac erstellt haben, können Sie den nuget-Paket-Manager verwenden, um nach dem **skiasharp. views. Forms** -Paket zu suchen und es der Projekt Mappe hinzuzufügen. Wenn Sie nach dem Hinzufügen von skiasharp den Abschnitt **Verweise** der einzelnen Projekte überprüfen, können Sie sehen, dass jedem Projekt in der Projekt Mappe verschiedene **skiasharp** -Bibliotheken hinzugefügt wurden.
 
-Wenn Ihre Xamarin.Forms Anwendung auf IOS ausgerichtet ist, ändern Sie auf der Seite mit den Projekteigenschaften das minimal Bereitstellungs Ziel in ios 8,0.
+Wenn Ihre Xamarin.Forms Anwendung auf IOS ausgerichtet ist, bearbeiten Sie die Datei " **Info. plist** ", um das minimale Bereitstellungs Ziel in ios 8,0 zu ändern.
 
 Auf jeder c#-Seite, die skiasharp verwendet, sollten Sie eine- `using` Direktive für den- [`SkiaSharp`](xref:SkiaSharp) Namespace einschließen, die alle skiasharp-Klassen,-Strukturen und-Enumerationen umfasst, die Sie in der Grafik Programmierung verwenden. Außerdem benötigen Sie eine- `using` Direktive für den- [`SkiaSharp.Views.Forms`](xref:SkiaSharp.Views.Forms) Namespace für die Klassen, die für spezifisch sind Xamarin.Forms . Dabei handelt es sich um einen viel kleineren Namespace, bei dem es sich um die wichtigste Klasse handelt [`SKCanvasView`](xref:SkiaSharp.Views.Forms.SKCanvasView) . Diese Klasse wird von der Xamarin.Forms `View` -Klasse abgeleitet und hostet ihre skiasharp-Grafikausgabe.
 
@@ -65,7 +65,7 @@ Bitmaps sind rechteckige Arrays von Bits, die den Pixeln eines Anzeige Geräts e
 
 Effekte sind Eigenschaften, die die normale Darstellung von Grafiken ändern, einschließlich linearer und Zirkel Gradienten, Bitmap-tiult, Blend-Modi, weich Zeichen und anderen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

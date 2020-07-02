@@ -10,24 +10,23 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d2eb0ac68bf754e45ffcd2a1c77e4347bb3bcf4c
-ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
+ms.openlocfilehash: 68b7f4a245a60df1723f5a6442f30dc2b1a15932
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85326207"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85794983"
 ---
 # <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.FormsShapes: Pfad Markup Syntax
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Xamarin.Formsmit der Pfad Markup Syntax können Sie Pfadgeometrien in XAML kompakt angeben. Die Syntax wird als Zeichen folgen Wert für die- `Path.Data` Eigenschaft angegeben:
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Data="M13.908992,16.207977 L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983Z" />
 ```
 
@@ -35,8 +34,8 @@ Die Pfad Markup Syntax besteht aus einem optionalen `FillRule` Wert und einer od
 
 In dieser Syntax:
 
-- *FillRule* ist ein optionaler Wert `Xamarin.Forms.Shapes.FillRule` , der angibt, ob die Geometrie oder verwenden soll `EvenOdd` `Nonzero` `FillRule` . `F0`Gibt die `EvenOdd` Füllregel an, während `F1` die `Nonzero` Füllregel angibt. Weitere Informationen zu Füll Regeln finden Sie unter [ Xamarin.Forms Shapes: Füll Regeln](fillrules.md).
--  *figuredescription* stellt eine Abbildung dar, die aus einem Move-Befehl, zeichnen-Befehlen und einem optionalen Close-Befehl besteht. Ein Move-Befehl gibt den Startpunkt der Abbildung an. Zeichnen-Befehle beschreiben den Inhalt der Abbildung, und der optionale Close-Befehl schließt die Figur.
+- *FillRule* ist ein optionaler Wert `Xamarin.Forms.Shapes.FillRule` , der angibt, ob die Geometrie oder verwenden soll `EvenOdd` `Nonzero` `FillRule` . `F0`wird verwendet, um die `EvenOdd` Füllregel anzugeben, während `F1` zum Angeben der `Nonzero` Füllregel verwendet wird. Weitere Informationen zu Füll Regeln finden Sie unter [ Xamarin.Forms Shapes: Füll Regeln](fillrules.md).
+- *figuredescription* stellt eine Abbildung dar, die aus einem Move-Befehl, zeichnen-Befehlen und einem optionalen Close-Befehl besteht. Ein Move-Befehl gibt den Startpunkt der Abbildung an. Zeichnen-Befehle beschreiben den Inhalt der Abbildung, und der optionale Close-Befehl schließt die Figur.
 
 Im obigen Beispiel gibt die Pfad Markup Syntax einen Startpunkt mithilfe des Verschiebungs Befehls ( `M` ), eine Reihe von geraden Linien mit dem Zeilen Befehl ( `L` ) an und schließt den Pfad mit dem Befehl "Schließen" ( `Z` ).
 
@@ -66,7 +65,7 @@ Ein Draw-Befehl kann aus mehreren Shape-Befehlen bestehen. Die folgenden draw-Be
 - Glatte quadratische Bezier-Kurve ( `T` oder `t` ).
 - Elliptischer Bogen ( `A` oder `a` ).
 
-Jeder zeichnen-Befehl wird mit einem groß-oder Kleinbuchstaben angegeben. Wenn Sie nacheinander mehrere Befehle des gleichen Typs eingeben, müssen Sie die Befehle nicht doppelt eingeben. Beispielsweise `L 100,200 300,400` entspricht `L 100, 200 L 300,400` .
+Jeder zeichnen-Befehl wird ohne Beachtung der Groß-/Kleinschreibung angegeben. Wenn Sie nacheinander mehrere Befehle des gleichen Typs eingeben, müssen Sie die Befehle nicht doppelt eingeben. Beispielsweise `L 100,200 300,400` entspricht `L 100,200 L 300,400` .
 
 ### <a name="line-command"></a>Linienbefehl
 
@@ -150,7 +149,7 @@ In dieser Syntax:
 - `sweepDirectionFlag`sollte auf 1 festgelegt werden, wenn der Bogen in einer Richtung mit positivem Winkel gezeichnet wird; andernfalls wird 0 festgelegt.
 - `endPoint`ist ein [`Point`](xref:Xamarin.Forms.Point) , zu dem der Bogen gezeichnet wird.
 
-`A150,150 0 1,0 150,-150`ist ein Beispiel für einen gültigen Befehl für einen Ellipsen Bogen.
+`A 150,150 0 1,0 150,-150`ist ein Beispiel für einen gültigen Befehl für einen Ellipsen Bogen.
 
 ## <a name="close-command"></a>Schließen-Befehl
 
@@ -171,5 +170,5 @@ Darüber hinaus können Sie auch die Groß-/Kleinschreibung in wissenschaftliche
 ## <a name="related-links"></a>Verwandte Links
 
 - [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.FormsGeometrien](geometries.md)
+- [Xamarin.FormsFormen: Geometrien](geometries.md)
 - [Xamarin.FormsFormen: Füll Regeln](fillrules.md)

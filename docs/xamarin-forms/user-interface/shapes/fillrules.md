@@ -10,18 +10,18 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f2ad0104ee7ea5b44df0c6c24ac20e750d1b1be0
-ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
+ms.openlocfilehash: 92fcb86f9acac159cc79cae8e71b180fe229b7a6
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85326451"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85794985"
 ---
 # <a name="xamarinforms-shapes-fill-rules"></a>Xamarin.FormsFormen: Füll Regeln
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Mehrere Xamarin.Forms Formen Klassen verfügen über `FillRule` Eigenschaften vom Typ `FillRule` . Hierzu zählen `Polygon` , `Polyline` und `GeometryGroup` .
 
@@ -38,7 +38,6 @@ Im folgenden XAML-Beispiel wird eine zusammengesetzte Form erstellt und gerender
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Fill="#CCCCFF"
       Aspect="Uniform"
       HorizontalOptions="Start">
@@ -80,7 +79,6 @@ Im folgenden XAML-Beispiel wird eine zusammengesetzte Form erstellt und rendert,
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Fill="#CCCCFF"
       Aspect="Uniform"
       HorizontalOptions="Start">
@@ -117,7 +115,6 @@ Eine komplexere Form, in der Segmente in verschiedenen Richtungen ausgeführt we
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Fill="#CCCCFF">
      <Path.Data>
          <GeometryGroup FillRule="Nonzero">
