@@ -1,5 +1,5 @@
 ---
-title: 'Exemplarische Vorgehensweise: Binden einer IOS SWIFT-Bibliothek'
+title: 'Exemplarische Vorgehensweise: Binden einer iOS Swift-Bibliothek'
 description: Dieser Artikel enthält eine praktische Exemplarische Vorgehensweise zum Erstellen einer xamarin. IOS-Bindung für ein vorhandenes SWIFT-Framework (Gigya). Es behandelt Themen wie das Kompilieren eines SWIFT-Frameworks, die Bindung und die Verwendung der Bindung in einer xamarin. IOS-Anwendung.
 ms.prod: xamarin
 ms.assetid: B563ADE9-D0E3-4BC3-A288-66D2296BE706
@@ -7,16 +7,19 @@ ms.technology: xamarin-ios
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: b650f86a1bba62d5db7463875de3398db9c33842
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.openlocfilehash: 3c63b1a4ed58b0efcc510085934a5380e6049ae7
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77497983"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853155"
 ---
-# <a name="walkthrough-bind-an-ios-swift-library"></a>Exemplarische Vorgehensweise: Binden einer IOS SWIFT-Bibliothek
+# <a name="walkthrough-bind-an-ios-swift-library"></a>Exemplarische Vorgehensweise: Binden einer iOS Swift-Bibliothek
 
-Xamarin ermöglicht mobilen Entwicklern das Erstellen von plattformübergreifenden, nativen mobilen Umgebungen mithilfe C#von Visual Studio und. Die IOS Platform SDK-Komponenten können standardmäßig verwendet werden. In vielen Fällen möchten Sie jedoch auch Drittanbieter-sdgs verwenden, die für diese Plattform entwickelt wurden, die xamarin über Bindungen ermöglicht. Wenn Sie ein Ziel-C-Framework von Drittanbietern in Ihre xamarin. IOS-Anwendung integrieren möchten, müssen Sie eine xamarin. IOS-Bindung für die Anwendung erstellen, bevor Sie Sie in Ihren Anwendungen verwenden können.
+> [!IMPORTANT]
+> Wir untersuchen derzeit die benutzerdefinierte Bindungs Verwendung auf der xamarin-Plattform. Nehmen Sie an [**dieser Umfrage**](https://www.surveymonkey.com/r/KKBHNLT) Teil, um zukünftige Entwicklungsbemühungen zu informieren.
+
+Xamarin ermöglicht mobilen Entwicklern das Erstellen von plattformübergreifenden, nativen mobilen Umgebungen mithilfe von Visual Studio und c#. Die IOS Platform SDK-Komponenten können standardmäßig verwendet werden. In vielen Fällen möchten Sie jedoch auch Drittanbieter-sdgs verwenden, die für diese Plattform entwickelt wurden, die xamarin über Bindungen ermöglicht. Wenn Sie ein Ziel-C-Framework von Drittanbietern in Ihre xamarin. IOS-Anwendung integrieren möchten, müssen Sie eine xamarin. IOS-Bindung für die Anwendung erstellen, bevor Sie Sie in Ihren Anwendungen verwenden können.
 
 Die IOS-Plattform wird zusammen mit den nativen Sprachen und Tools ständig weiterentwickelt, und SWIFT ist einer der dynamischsten Bereiche in der IOS-Entwicklungswelt. Es gibt eine Reihe von SDK von Drittanbietern, die bereits von Ziel-C zu SWIFT migriert wurden und neue Herausforderungen darstellen. Obwohl der SWIFT-Bindungsprozess dem Ziel-C ähnelt, sind zusätzliche Schritte und Konfigurationseinstellungen erforderlich, um eine xamarin. IOS-Anwendung, die für den AppStore akzeptabel ist, erfolgreich zu erstellen und auszuführen.
 
@@ -37,18 +40,18 @@ Um diese exemplarische Vorgehensweise abzuschließen, benötigen Sie Folgendes:
 
 ## <a name="build-a-native-library"></a>Erstellen einer nativen Bibliothek
 
-Der erste Schritt besteht im Erstellen eines nativen SWIFT-Frameworks mit aktiviertem Ziel-C-Header. Das Framework wird normalerweise von einem Entwickler von Drittanbietern bereitgestellt, und der Header ist im folgenden Verzeichnis in das Paket eingebettet: **\<FrameworkName >. Framework/Headers/\<FrameworkName >-SWIFT. h**.
+Der erste Schritt besteht im Erstellen eines nativen SWIFT-Frameworks mit aktiviertem Ziel-C-Header. Das Framework wird normalerweise von einem Entwickler von Drittanbietern bereitgestellt, und der Header ist im folgenden Verzeichnis in das Paket eingebettet: ** \<FrameworkName> . Framework/Headers/ \<FrameworkName> -Swift. h**.
 
-Dieser Header stellt die öffentlichen Schnittstellen zur Verfügung, die zum Erstellen von xamarin. IOS-Bindungs Metadaten C# und zum Generieren von Klassen verwendet werden, die die SWIFT Framework-Member verfügbar machen. Wenn der Header nicht vorhanden ist oder eine unvollständige öffentliche Schnittstelle aufweist (z. b. werden keine Klassen/Member angezeigt), haben Sie zwei Möglichkeiten:
+Dieser Header macht die öffentlichen Schnittstellen verfügbar, die zum Erstellen von xamarin. IOS-Bindungs Metadaten und zum Generieren von c#-Klassen verwendet werden, die die SWIFT Framework-Member verfügbar machen. Wenn der Header nicht vorhanden ist oder eine unvollständige öffentliche Schnittstelle aufweist (z. b. werden keine Klassen/Member angezeigt), haben Sie zwei Möglichkeiten:
 
-- Aktualisieren Sie den SWIFT-Quellcode, um den Header zu generieren, und markieren Sie die erforderlichen Member mit `@objc` Attribut.
+- Aktualisieren Sie den SWIFT-Quellcode, um den Header zu generieren, und markieren Sie die erforderlichen Member mit dem `@objc` Attribut.
 - Erstellen eines Proxy-Frameworks, in dem Sie die öffentliche Schnittstelle steuern und alle Aufrufe an das zugrunde liegende Framework überstellen
 
 In diesem Tutorial wird der zweite Ansatz beschrieben, da er weniger Abhängigkeiten von Quellcode von Drittanbietern aufweist, der nicht immer verfügbar ist. Ein weiterer Grund, den ersten Ansatz zu vermeiden, ist der zusätzliche Aufwand, der zur Unterstützung zukünftiger frameworkänderungen erforderlich ist Nachdem Sie mit dem Hinzufügen von Änderungen am Quellcode von Drittanbietern begonnen haben, sind Sie dafür verantwortlich, diese Änderungen zu unterstützen und ggf. mit jedem zukünftigen Update zusammenzuführen.
 
 In diesem Tutorial wird z. b. eine Bindung für das [Gigya SWIFT SDK](https://developers.gigya.com/display/GD/Swift+SDK) erstellt:
 
-1. Öffnen Sie Xcode, und erstellen Sie ein neues SWIFT-Framework, das als Proxy zwischen xamarin. IOS-Code und einem SWIFT-Framework von Drittanbietern verwendet wird. Klicken Sie auf **Datei > Neues > Projekt** , und befolgen Sie die Schritte im Assistenten:
+1. Öffnen Sie Xcode, und erstellen Sie ein neues SWIFT-Framework, das als Proxy zwischen xamarin. IOS-Code und einem SWIFT-Framework von Drittanbietern verwendet wird. Klicken Sie auf **Datei > neues > Projekt** , und befolgen Sie die Schritte im Assistenten:
 
     ![Xcode-Framework-Projekt erstellen](walkthrough-images/xcode-create-framework-project.png)
 
@@ -70,7 +73,7 @@ In diesem Tutorial wird z. b. eine Bindung für das [Gigya SWIFT SDK](https://de
 
 1. Stellen Sie sicher, dass die Option Buildeinstellungen **immer SWIFT-Standard Bibliotheken einbetten**. dazu gehören SWIFT-Bibliotheken, für die das Framework auf Nein gesetzt ist. Sie werden später manuell gesteuert, welche SWIFT-dylics in das endgültige Paket aufgenommen werden:
 
-    [![Xcode immer false-Option](walkthrough-images/xcode-alwaysembedfalse-option.png)](walkthrough-images/xcode-alwaysembedfalse-option.png#lightbox)
+    [![Xcode-Option ' false ' immer einbetten](walkthrough-images/xcode-alwaysembedfalse-option.png)](walkthrough-images/xcode-alwaysembedfalse-option.png#lightbox)
 
 1. Stellen Sie sicher, dass die Option **Bitcode aktivieren** auf **Nein**festgelegt ist. Ab sofort enthält xamarin. IOS keinen Bitcode, während Apple erfordert, dass alle Bibliotheken dieselben Architekturen unterstützen:
 
@@ -84,11 +87,11 @@ In diesem Tutorial wird z. b. eine Bindung für das [Gigya SWIFT SDK](https://de
 
     Die Ausgabe sollte leer sein, andernfalls sollten Sie die Projekteinstellungen für die jeweilige Konfiguration überprüfen.
 
-1. Stellen Sie sicher, dass die Option **Ziel-C-generierter Schnittstellen Header Name** aktiviert ist, und gibt einen Header Namen an. Der Standardname ist **\<FrameworkName >-SWIFT. h**:
+1. Stellen Sie sicher, dass die Option **Ziel-C-generierter Schnittstellen Header Name** aktiviert ist, und gibt einen Header Namen an. Der Standardname lautet ** \<FrameworkName> -Swift. h**:
 
     [![Xcode-objectice-c-Header aktiviert (Option)](walkthrough-images/xcode-objcheaderenabled-option.png)](walkthrough-images/xcode-objcheaderenabled-option.png#lightbox)
 
-1. Machen Sie die gewünschten Methoden verfügbar, markieren Sie Sie mit `@objc`-Attribut, und wenden Sie die unten definierten Regeln an Wenn Sie das Framework ohne diesen Schritt erstellen, ist der generierte Ziel-C-Header leer, und xamarin. IOS kann nicht auf die Mitglieder des Swift-Frameworks zugreifen. Machen Sie die Initialisierungs Logik für das zugrunde liegende Gigya SWIFT SDK verfügbar, indem Sie eine neue SWIFT-Datei **swiftframeworkproxy. Swift** erstellen und den folgenden Code definieren:
+1. Machen Sie die gewünschten Methoden verfügbar, markieren Sie Sie mit dem `@objc` Attribut, und wenden Sie die unten definierten Regeln an Wenn Sie das Framework ohne diesen Schritt erstellen, ist der generierte Ziel-C-Header leer, und xamarin. IOS kann nicht auf die Mitglieder des Swift-Frameworks zugreifen. Machen Sie die Initialisierungs Logik für das zugrunde liegende Gigya SWIFT SDK verfügbar, indem Sie eine neue SWIFT-Datei **swiftframeworkproxy. Swift** erstellen und den folgenden Code definieren:
 
     ```swift
     import Foundation
@@ -111,9 +114,9 @@ In diesem Tutorial wird z. b. eine Bindung für das [Gigya SWIFT SDK](https://de
     Einige wichtige Hinweise zum obigen Code:
 
     - Importieren Sie das Gigya-Modul hier aus dem ursprünglichen Gigya-SDK von Drittanbietern, und greifen Sie jetzt auf alle Member des Frameworks zu.
-    - Markieren Sie die swiftframeworkproxy-Klasse mit dem `@objc`-Attribut, das einen Namen angibt; andernfalls wird ein eindeutiger nicht lesbarer Name generiert, z. b. `_TtC19SwiftFrameworkProxy19SwiftFrameworkProxy`. Der Typname sollte eindeutig definiert werden, da er später anhand seines Namens verwendet wird.
-    - Erben Sie die Proxy Klasse von `NSObject`, andernfalls wird Sie nicht in der Ziel-C-Header Datei generiert.
-    - Markieren Sie alle Elemente, die als `public`verfügbar gemacht werden sollen.
+    - Markieren Sie die swiftframeworkproxy-Klasse mit dem- `@objc` Attribut, das einen Namen angibt; andernfalls wird ein eindeutiger nicht lesbarer Name generiert, z `_TtC19SwiftFrameworkProxy19SwiftFrameworkProxy` . b.. Der Typname sollte eindeutig definiert werden, da er später anhand seines Namens verwendet wird.
+    - Erben Sie die Proxy Klasse von `NSObject` , andernfalls wird Sie nicht in der Ziel-C-Header Datei generiert.
+    - Markieren Sie alle Member, die als verfügbar gemacht werden sollen `public` .
 
 1. Ändern Sie die Schema-Buildkonfiguration von **Debug** in **Release**. Öffnen Sie hierzu das Dialogfeld **Xcode-> Ziel > Schema bearbeiten** , und legen Sie dann die **buildkonfigurationsoption** auf **Release**fest:
 
@@ -200,7 +203,7 @@ In diesem Tutorial wird z. b. eine Bindung für das [Gigya SWIFT SDK](https://de
 
 ## <a name="prepare-metadata"></a>Vorbereiten von Metadaten
 
-Zu diesem Zeitpunkt sollte das Framework mit dem Ziel-C generierten Schnittstellen Header bereit für die Verwendung durch eine xamarin. IOS-Bindung sein.  Der nächste Schritt besteht im Vorbereiten der API-Definitions Schnittstellen, die von einem Bindungs Projekt verwendet werden, C# um Klassen zu generieren. Diese Definitionen können manuell oder automatisch durch das Ziel- [Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/) -Tool und die generierte Header Datei erstellt werden. Verwenden Sie Sharpie, um die Metadaten zu generieren:
+Zu diesem Zeitpunkt sollte das Framework mit dem Ziel-C generierten Schnittstellen Header bereit für die Verwendung durch eine xamarin. IOS-Bindung sein.  Der nächste Schritt besteht im Vorbereiten der API-Definitions Schnittstellen, die von einem Bindungs Projekt zum Generieren von c#-Klassen verwendet werden. Diese Definitionen können manuell oder automatisch durch das Ziel- [Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/) -Tool und die generierte Header Datei erstellt werden. Verwenden Sie Sharpie, um die Metadaten zu generieren:
 
 1. Laden Sie das neueste [Ziel-Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/) -Tool von der offiziellen Download Website herunter, und installieren Sie es, indem Sie den Assistenten befolgen. Sobald die Installation abgeschlossen ist, können Sie Sie überprüfen, indem Sie den Befehl "Sharpie" ausführen:
 
@@ -223,7 +226,7 @@ Zu diesem Zeitpunkt sollte das Framework mit dem Ziel-C generierten Schnittstell
         [write] StructsAndEnums.cs
     ```
 
-    Das Tool generiert C# Metadaten für jedes offengelegte Ziel-C-Element, das in etwa wie der folgende Code aussieht. Wie Sie sehen können, kann Sie manuell definiert werden, da Sie über ein lesbares Format und eine einfache Zuordnung von Membern verfügt:
+    Das Tool generiert c#-Metadaten für jeden verfügbar gemachten Ziel-C-Member, der in etwa wie der folgende Code aussieht. Wie Sie sehen können, kann Sie manuell definiert werden, da Sie über ein lesbares Format und eine einfache Zuordnung von Membern verfügt:
 
     ```csharp
     [Export ("initForApiKey:")]
@@ -249,7 +252,7 @@ Der nächste Schritt besteht darin, ein xamarin. IOS-Bindungs Projekt mithilfe d
 
     ![Visual Studio-Projektstruktur Metadaten](walkthrough-images/visualstudio-project-structure-metadata.png)
 
-    Die Metadaten selbst beschreiben jede verfügbar gemachte Ziel-C-Klasse und C# dieses Member mithilfe von Sprache. Die ursprüngliche Ziel-C-Header Definition kann zusammen mit der C# Deklaration angezeigt werden:
+    Die Metadaten selbst beschreiben alle verfügbar gemachten Ziel-C-Klassen und-Member mithilfe der Programmiersprache c#. Die ursprüngliche Ziel-C-Header Definition kann neben der c#-Deklaration angezeigt werden:
 
     ```csharp
     // @interface SwiftFrameworkProxy : NSObject
@@ -262,7 +265,7 @@ Der nächste Schritt besteht darin, ein xamarin. IOS-Bindungs Projekt mithilfe d
     }
     ```
 
-    Obwohl es sich um einen gültigen C# Code handelt, wird er nicht wie folgt verwendet, sondern stattdessen von xamarin. IOS-Tools verwendet C# , um Klassen auf der Grundlage dieser Metadatendefinition zu generieren. Daher erhalten Sie anstelle der-Schnittstelle swiftframeworkproxy eine C# Klasse mit dem gleichen Namen, die durch ihren xamarin. IOS-Code instanziiert werden kann. Diese Klasse ruft Methoden, Eigenschaften und andere Member ab, die von den Metadaten definiert werden, die Sie in C# einer Weise aufzurufen.
+    Obwohl es sich um einen gültigen c#-Code handelt, wird er nicht wie folgt verwendet, sondern stattdessen von xamarin. IOS-Tools verwendet, um c#-Klassen basierend auf dieser Metadatendefinition zu generieren. Daher erhalten Sie anstelle der-Schnittstelle swiftframeworkproxy eine c#-Klasse mit dem gleichen Namen, die durch ihren xamarin. IOS-Code instanziiert werden kann. Diese Klasse ruft Methoden, Eigenschaften und andere Member ab, die von den Metadaten definiert werden, die Sie in einer c#-Weise aufzurufen.
 
 1. Fügen Sie den nativen Verweis auf das generierte frühere FAT-Framework sowie jede Abhängigkeit dieses Frameworks hinzu. Fügen Sie in diesem Fall beide swiftframeworkproxy-und nativen Gigya-Framework-Verweise zum Bindungs Projekt hinzu:
 
@@ -294,15 +297,15 @@ Der nächste Schritt besteht darin, ein xamarin. IOS-Bindungs Projekt mithilfe d
         L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/ -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -Wl,-rpath -Wl,@executable_path/Frameworks
         ```
 
-        Die ersten beiden Optionen (die `-L ...` ) teilen dem systemeigenen Compiler mit, wo die SWIFT-Bibliotheken zu finden sind. Der Native Compiler ignoriert Bibliotheken, die nicht die richtige Architektur aufweisen. Dies bedeutet, dass es möglich ist, den Speicherort sowohl für simulatorbibliotheken als auch für Geräte Bibliotheken gleichzeitig zu übergeben, sodass er sowohl für Simulator-als auch für Geräte Builds funktioniert (diese Pfade sind nur für IOS korrekt. für tvos und watchos müssen Sie aktualisiert werden.) Ein Nachteil ist, dass dieser Ansatz erfordert, dass sich der korrekte Xcode in/Application/Xcode.app befindet, wenn der Consumer der Bindungs Bibliothek über Xcode an einem anderen Speicherort verfügt, funktioniert er nicht. Die alternative Lösung besteht darin, diese Optionen in den zusätzlichen mberührungs-Argumenten in den IOS-Buildoptionen des ausführbaren Projekts (`--gcc_flags -L... -L...`) hinzuzufügen. Mit der dritten Option speichert der Native Linker den Speicherort der SWIFT-Bibliotheken in der ausführbaren Datei, damit das Betriebssystem Sie finden kann.
+        Die ersten beiden Optionen (die  `-L ...`   ) teilen dem systemeigenen Compiler mit, wo die SWIFT-Bibliotheken zu finden sind. Der Native Compiler ignoriert Bibliotheken, die nicht die richtige Architektur aufweisen. Dies bedeutet, dass es möglich ist, den Speicherort sowohl für simulatorbibliotheken als auch für Geräte Bibliotheken gleichzeitig zu übergeben, sodass er sowohl für Simulator-als auch für Geräte Builds funktioniert (diese Pfade sind nur für IOS korrekt; für tvos und watchos müssen Sie aktualisiert werden). Ein Nachteil ist, dass dieser Ansatz erfordert, dass sich der korrekte Xcode in/Application/Xcode.app befindet, wenn der Consumer der Bindungs Bibliothek über Xcode an einem anderen Speicherort verfügt, funktioniert er nicht. Die alternative Lösung besteht darin, diese Optionen in den zusätzlichen mberührungs-Argumenten in den IOS-Buildoptionen des ausführbaren Projekts () hinzuzufügen `--gcc_flags -L... -L...` . Mit der dritten Option speichert der Native Linker den Speicherort der SWIFT-Bibliotheken in der ausführbaren Datei, damit das Betriebssystem Sie finden kann.
 
-1. Die letzte Aktion besteht darin, die Bibliothek zu erstellen und sicherzustellen, dass keine Kompilierungsfehler vorliegen. Sie werden häufig feststellen, dass Bindungs Metadaten, die von Ziel-Sharpie erzeugt werden, mit dem `[Verify]` -Attribut versehen werden. Diese Attribute geben an, dass Sie sicherstellen sollten, dass Ziel-Sharpie das richtige ist, indem Sie die Bindung mit der ursprünglichen Ziel-C-Deklaration vergleichen (die in einem Kommentar oberhalb der gebundenen Deklaration bereitgestellt wird). Weitere Informationen zu Membern, die mit dem-Attribut gekennzeichnet sind, finden Sie unter [folgendem Link](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/platform/verify). Nachdem das Projekt erstellt wurde, kann es von einer xamarin. IOS-Anwendung verwendet werden.
+1. Die letzte Aktion besteht darin, die Bibliothek zu erstellen und sicherzustellen, dass keine Kompilierungsfehler vorliegen. Sie werden häufig feststellen, dass Bindungs Metadaten, die vom Ziel-Sharpie erzeugt werden, mit dem-Attribut kommentiert werden  `[Verify]`   . Diese Attribute geben an, dass Sie sicherstellen sollten, dass Ziel-Sharpie das richtige ist, indem Sie die Bindung mit der ursprünglichen Ziel-C-Deklaration vergleichen (die in einem Kommentar oberhalb der gebundenen Deklaration bereitgestellt wird). Weitere Informationen zu Membern, die mit dem-Attribut gekennzeichnet sind, finden Sie unter [folgendem Link](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/platform/verify). Nachdem das Projekt erstellt wurde, kann es von einer xamarin. IOS-Anwendung verwendet werden.
 
 ## <a name="consume-the-binding-library"></a>Verwenden der Bindungs Bibliothek
 
 Der letzte Schritt besteht darin, die xamarin. IOS-Bindungs Bibliothek in einer xamarin. IOS-Anwendung zu verwenden. Erstellen Sie ein neues xamarin. IOS-Projekt, fügen Sie der Bindungs Bibliothek einen Verweis hinzu, und aktivieren Sie das Gigya SWIFT SDK:
 
-1. Erstellen Sie ein xamarin. IOS-Projekt. Sie können die **IOS-> app > Einzelansicht-App** als Ausgangspunkt verwenden:
+1. Erstellen Sie ein xamarin. IOS-Projekt. Sie können die **IOS-> App > Einzelansicht-App** als Ausgangspunkt verwenden:
 
     ![Visual Studio-app neu](walkthrough-images/visualstudio-app-new.png)
 
@@ -334,11 +337,11 @@ Der letzte Schritt besteht darin, die xamarin. IOS-Bindungs Bibliothek in einer 
     }
     ```
 
-1. Führen Sie die app in der Debugausgabe aus, um die folgende Zeile zu sehen: `Gigya initialized with domain: us1.gigya.com`. Klicken Sie auf die Schaltfläche, um den Authentifizierungs Ablauf zu aktivieren:
+1. Führen Sie die app in der Debugausgabe aus, um die folgende Zeile anzuzeigen: `Gigya initialized with domain: us1.gigya.com` . Klicken Sie auf die Schaltfläche, um den Authentifizierungs Ablauf zu aktivieren:
 
     [![SWIFT-Proxy Ergebnis](walkthrough-images/swiftproxy-result.png)](walkthrough-images/swiftproxy-result.png#lightbox)
 
-Glückwunsch! Sie haben erfolgreich eine xamarin. IOS-APP und eine Bindungs Bibliothek erstellt, die ein Swift-Framework nutzt. Die obige Anwendung kann unter IOS 12.2 und höher ausgeführt werden, da Apple ab dieser IOS-Version die [ABI-Stabilität eingeführt](https://swift.org/blog/swift-5-1-released/) hat und jeder IOS-Start von 12,2 und mehr SWIFT-Laufzeitbibliotheken enthält, die zum Ausführen der mit SWIFT 5.1 + kompilierten Anwendung verwendet werden können. Wenn Sie Unterstützung für frühere IOS-Versionen hinzufügen müssen, müssen Sie einige weitere Schritte ausführen:
+Herzlichen Glückwunsch! Sie haben erfolgreich eine xamarin. IOS-APP und eine Bindungs Bibliothek erstellt, die ein Swift-Framework nutzt. Die obige Anwendung kann unter IOS 12.2 und höher ausgeführt werden, da Apple ab dieser IOS-Version die [ABI-Stabilität eingeführt](https://swift.org/blog/swift-5-1-released/) hat und jeder IOS-Start von 12,2 und mehr SWIFT-Laufzeitbibliotheken enthält, die zum Ausführen der mit SWIFT 5.1 + kompilierten Anwendung verwendet werden können. Wenn Sie Unterstützung für frühere IOS-Versionen hinzufügen müssen, müssen Sie einige weitere Schritte ausführen:
 
 1. Um Unterstützung für IOS 12,1 und früher hinzuzufügen, möchten Sie bestimmte SWIFT-dylisb zur Kompilierung Ihres Frameworks bereitstellen. Verwenden Sie das nuget-Paket [xamarin. IOS. swiftruntimesupport](https://www.nuget.org/packages/Xamarin.iOS.SwiftRuntimeSupport/) , um die erforderlichen Bibliotheken mit ihrer IPA-Datei zu verarbeiten und zu kopieren. Fügen Sie dem Ziel Projekt den nuget-Verweis hinzu, und erstellen Sie die Anwendung neu. Es sind keine weiteren Schritte erforderlich, das nuget-Paket installiert bestimmte Aufgaben, die mit dem Buildprozess ausgeführt werden, identifizieren Sie die erforderlichen SWIFT-dylisb, und Verpacken Sie Sie mit der endgültigen IPA-Datei.
 

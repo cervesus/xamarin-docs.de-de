@@ -7,14 +7,17 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 328633bc58f17216c071a2b2cd779704da2bbf74
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c36159984f314ecbf90f98df6472eee2149eee92
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569412"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853159"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Exemplarische Vorgehensweise: Binden einer IOS-Ziel-C-Bibliothek
+
+> [!IMPORTANT]
+> Wir untersuchen derzeit die benutzerdefinierte Bindungs Verwendung auf der xamarin-Plattform. Nehmen Sie an [**dieser Umfrage**](https://www.surveymonkey.com/r/KKBHNLT) Teil, um zukünftige Entwicklungsbemühungen zu informieren.
 
 _Dieser Artikel enthält eine praktische Exemplarische Vorgehensweise zum Erstellen einer xamarin. IOS-Bindung für eine vorhandene Ziel-C-Bibliothek, infcolorpicker. Es behandelt Themen wie das Kompilieren einer statischen Ziel-C-Bibliothek, deren Bindung und die Verwendung der Bindung in einer xamarin. IOS-Anwendung._
 
@@ -41,7 +44,7 @@ Wir behandeln alle notwendigen Schritte, um diese spezielle Ziel-C-API in xamari
 
 Die Beispielanwendung veranschaulicht, wie ein starker Delegat für die Kommunikation zwischen der infcolorpicker-API und dem c#-Code verwendet wird. Nachdem Sie erfahren haben, wie Sie einen starken Delegaten verwenden, wird erläutert, wie Sie schwache Delegaten verwenden, um dieselben Aufgaben auszuführen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 In diesem Artikel wird davon ausgegangen, dass Sie mit Xcode und der Programmiersprache "Ziel-c" vertraut sind und dass Sie unsere [Bindungs Ziel-c-](~/cross-platform/macios/binding/index.md) Dokumentation gelesen haben. Außerdem ist Folgendes erforderlich, um die folgenden Schritte auszuführen:
 
@@ -270,11 +273,11 @@ Die Projekt Mappe wird erstellt, und es werden zwei Standard Dateien eingeschlos
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Starten Sie Visual Studio.
+1. Starten Sie Visual Studio.
 
 1. Wählen Sie im Menü **Datei** die Option **Neues**  >  **Projekt...** aus:
 
-    ![Starten eines neuen Projekts](walkthrough-images/bind01vs.png "Starten eines neuen Projekts")
+    ![Erstellen eines neuen Projekts](walkthrough-images/bind01vs.png "Erstellen eines neuen Projekts")
 
 1. Wählen Sie im Dialogfeld Neues Projekt die Option **Visual c# > iPhone & iPad > IOS-Bindungs Bibliothek (xamarin)** aus:
 
@@ -717,7 +720,7 @@ Führen Sie die Anwendung aus. Es sollte sich nun genau wie zuvor Verhalten, abe
 
 In diesem Artikel wurde das Erstellen und Verwenden eines xamarin. IOS-Bindungs Projekts erläutert. Zuerst wurde erläutert, wie eine vorhandene Ziel-C-Bibliothek in eine statische Bibliothek kompiliert wird. Anschließend haben wir erläutert, wie Sie ein xamarin. IOS-Bindungs Projekt erstellen und die API-Definitionen für die Ziel-C-Bibliothek mit dem Ziel-Sharpie generieren. Wir haben erläutert, wie Sie die generierten API-Definitionen aktualisieren und optimieren, damit Sie für den öffentlichen Gebrauch geeignet sind. Nachdem das xamarin. IOS-Bindungs Projekt fertiggestellt wurde, haben wir mit der Verwendung dieser Bindung in einer xamarin. IOS-Anwendung weiterentwickelt, wobei der Schwerpunkt auf der Verwendung starker Delegaten und schwacher Delegaten liegt.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Binden von Objective-C-Bibliotheken](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [Bindungs Details](~/cross-platform/macios/binding/overview.md)

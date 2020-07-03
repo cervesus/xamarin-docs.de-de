@@ -1,20 +1,23 @@
 ---
 title: Binden von IOS SWIFT-Bibliotheken
-description: In diesem Dokument wird beschrieben, C# wie Bindungen für SWIFT-Code erstellt werden, sodass Native Bibliotheken und cocoapods in einer xamarin. IOS-Anwendung verwendet werden können.
+description: In diesem Dokument wird beschrieben, wie Sie c#-Bindungen für SWIFT-Code erstellen, sodass Sie Native Bibliotheken und cocoapods in einer xamarin. IOS-Anwendung nutzen können.
 ms.prod: xamarin
 ms.assetid: 890EFCCA-A2A2-4561-88EA-30DE3041F61D
 ms.technology: xamarin-ios
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: 9a683f31016a9db4271e3909e421f27ef83c2080
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.openlocfilehash: 72ab1d9f10ee308313569528d152d5930a258207
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77497959"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85852964"
 ---
 # <a name="bind-ios-swift-libraries"></a>Binden von IOS SWIFT-Bibliotheken
+
+> [!IMPORTANT]
+> Wir untersuchen derzeit die benutzerdefinierte Bindungs Verwendung auf der xamarin-Plattform. Nehmen Sie an [**dieser Umfrage**](https://www.surveymonkey.com/r/KKBHNLT) Teil, um zukünftige Entwicklungsbemühungen zu informieren.
 
 Die IOS-Plattform wird zusammen mit den nativen Sprachen und Tools ständig weiterentwickelt, und es gibt zahlreiche Bibliotheken von Drittanbietern, die mit den neuesten angeboten entwickelt wurden. Das maximieren von Code und der Wiederverwendung von Komponenten ist eines der wichtigsten Ziele der plattformübergreifenden Entwicklung. Die Möglichkeit zur Wiederverwendung von mit SWIFT erstellten Komponenten ist für xamarin-Entwickler immer wichtiger geworden, da ihre Beliebtheit bei Entwicklern weiterhin zunimmt. Möglicherweise sind Sie bereits mit dem Binden regulärer [Ziel-C-](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough) Bibliotheken vertraut. Es ist jetzt eine zusätzliche Dokumentation verfügbar, die den Prozess der [Bindung eines SWIFT-Frameworks](walkthrough.md)beschreibt, sodass Sie von einer xamarin-Anwendung auf die gleiche Weise genutzt werden können. Dieses Dokument soll einen allgemeinen Ansatz zum Erstellen einer SWIFT-Bindung für xamarin beschreiben.
 
@@ -23,7 +26,7 @@ Die IOS-Plattform wird zusammen mit den nativen Sprachen und Tools ständig weit
 Mit xamarin können Sie eine native Bibliothek von Drittanbietern binden, damit Sie von einer xamarin-Anwendung genutzt werden kann. SWIFT ist die neue Sprache und das Erstellen einer Bindung für Bibliotheken, die mit dieser Sprache erstellt wurden, erfordert einige zusätzliche Schritte und Tools. Diese Vorgehensweise umfasst die folgenden vier Schritte:
 
 1. Aufbauen der nativen Bibliothek
-1. Vorbereiten der xamarin-Metadaten, die xamarin-Tools das C# Generieren von Klassen ermöglichen
+1. Vorbereiten der xamarin-Metadaten, die xamarin-Tools das Generieren von c#-Klassen ermöglichen
 1. Aufbauen einer xamarin-Bindungs Bibliothek mithilfe der nativen Bibliothek und der Metadaten
 1. Verwenden der xamarin-Bindungs Bibliothek in einer xamarin-Anwendung
 
@@ -31,14 +34,14 @@ In den folgenden Abschnitten werden diese Schritte mit zusätzlichen Details erl
 
 ### <a name="build-the-native-library"></a>Erstellen der nativen Bibliothek
 
-Der erste Schritt besteht darin, ein System eigenes SWIFT-Framework bereit zu lassen, das den Ziel-C-Header erstellt. Diese Datei ist ein automatisch generierter Header, der gewünschte SWIFT-Klassen,-Methoden und-Felder verfügbar macht, sodass diese sowohl für C# das Ziel "-C" als auch für eine xamarin-Bindungs Bibliothek verfügbar sind. Diese Datei befindet sich innerhalb des Frameworks unter folgendem Pfad: **\<FrameworkName >. Framework/Header/\<FrameworkName >-SWIFT. h**. Wenn die verfügbar gemachte Schnittstelle über alle erforderlichen Mitglieder verfügt, können Sie mit dem nächsten Schritt fortfahren. Andernfalls sind weitere Schritte erforderlich, um diese Mitglieder verfügbar zu machen. Die Vorgehensweise hängt davon ab, ob Sie auf den SWIFT Framework-Quellcode zugreifen können:
+Der erste Schritt besteht darin, ein System eigenes SWIFT-Framework bereit zu lassen, das den Ziel-C-Header erstellt. Diese Datei ist ein automatisch generierter Header, der gewünschte SWIFT-Klassen,-Methoden und-Felder verfügbar macht, sodass diese sowohl für das Ziel-C als auch für c# über eine xamarin-Bindungs Bibliothek verfügbar sind. Diese Datei befindet sich innerhalb des Frameworks unter folgendem Pfad: ** \<FrameworkName> . Framework/Headers/ \<FrameworkName> -Swift. h**. Wenn die verfügbar gemachte Schnittstelle über alle erforderlichen Mitglieder verfügt, können Sie mit dem nächsten Schritt fortfahren. Andernfalls sind weitere Schritte erforderlich, um diese Mitglieder verfügbar zu machen. Die Vorgehensweise hängt davon ab, ob Sie auf den SWIFT Framework-Quellcode zugreifen können:
 
-- Wenn Sie Zugriff auf den Code haben, können Sie die erforderlichen SWIFT-Member mit dem `@objc`-Attribut ergänzen und einige zusätzliche Regeln anwenden, um den Xcode-Buildtools mitzuteilen, dass diese Member für die Ziel-C-Welt und den-Header verfügbar gemacht werden sollen.
-- Wenn Sie keinen Zugriff auf den Quellcode haben, müssen Sie ein Proxy-SWIFT-Framework erstellen, das das ursprüngliche SWIFT-Framework umschließt und die öffentliche Schnittstelle definiert, die Ihre Anwendung mit dem `@objc`-Attribut benötigt.
+- Wenn Sie Zugriff auf den Code haben, können Sie die erforderlichen SWIFT-Member mit dem `@objc` -Attribut ergänzen und einige zusätzliche Regeln anwenden, um den Xcode-Buildtools mitzuteilen, dass diese Member für die Ziel-C-Welt und den-Header verfügbar gemacht werden sollen.
+- Wenn Sie keinen Zugriff auf den Quell Code haben, müssen Sie ein Proxy-SWIFT-Framework erstellen, das das ursprüngliche SWIFT-Framework umschließt und die öffentliche Schnittstelle definiert, die Ihre Anwendung mit dem- `@objc` Attribut benötigt.
 
 ### <a name="prepare-the-xamarin-metadata"></a>Vorbereiten der xamarin-Metadaten
 
-Der zweite Schritt besteht im Vorbereiten von API-Definitions Schnittstellen, die von einem Bindungs Projekt verwendet werden C# , um Klassen zu generieren. Diese Definitionen können manuell oder automatisch durch das Ziel- [Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/) -Tool und die oben genannte automatisch generierte **\<FrameworkName >-SWIFT. h-** Header Datei erstellt werden. Nachdem die Metadaten generiert wurden, sollten Sie überprüft und manuell überprüft werden.
+Der zweite Schritt besteht im Vorbereiten von API-Definitions Schnittstellen, die von einem Bindungs Projekt verwendet werden, um c#-Klassen zu generieren. Diese Definitionen können manuell oder automatisch durch das Ziel- [Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/) -Tool und die oben genannte automatisch generierten ** \<FrameworkName> -Swift. h-** Header Datei erstellt werden. Nachdem die Metadaten generiert wurden, sollten Sie überprüft und manuell überprüft werden.
 
 ### <a name="build-the-xamarinios-binding-library"></a>Erstellen der xamarin. IOS-Bindungs Bibliothek
 

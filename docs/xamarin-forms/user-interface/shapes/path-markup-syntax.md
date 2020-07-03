@@ -10,12 +10,12 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 68b7f4a245a60df1723f5a6442f30dc2b1a15932
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: 124c739f68ce8a3fcbc359a07513a2bcb178578f
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85794983"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853128"
 ---
 # <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.FormsShapes: Pfad Markup Syntax
 
@@ -59,11 +59,11 @@ Ein Draw-Befehl kann aus mehreren Shape-Befehlen bestehen. Die folgenden draw-Be
 - Zeile ( `L` oder `l` ).
 - Horizontale Linie ( `H` oder `h` ).
 - Vertikale Linie ( `V` oder `v` ).
+- Elliptischer Bogen ( `A` oder `a` ).
 - Kubische Bezier-Kurve ( `C` oder `c` ).
 - Quadratische Bezier-Kurve ( `Q` oder `q` ).
 - Glatte kubische Bezier-Kurve ( `S` oder `s` ).
 - Glatte quadratische Bezier-Kurve ( `T` oder `t` ).
-- Elliptischer Bogen ( `A` oder `a` ).
 
 Jeder zeichnen-Befehl wird ohne Beachtung der Groß-/Kleinschreibung angegeben. Wenn Sie nacheinander mehrere Befehle des gleichen Typs eingeben, müssen Sie die Befehle nicht doppelt eingeben. Beispielsweise `L 100,200 300,400` entspricht `L 100,200 L 300,400` .
 
@@ -74,6 +74,8 @@ Der Line-Befehl erstellt eine gerade Linie zwischen dem aktuellen Punkt und dem 
 In dieser Syntax ist *EndPoint* eine [`Point`](xref:Xamarin.Forms.Point) , die den Endpunkt der Zeile darstellt.
 
 `L 20,30` und `L 20 30` sind Beispiele für gültige Linienbefehle.
+
+Weitere Informationen zum Erstellen einer geraden Linie als- `PathGeometry` Objekt finden Sie unter [Erstellen eines LineSegment](geometries.md#create-a-linesegment)-Objekts.
 
 ### <a name="horizontal-line-command"></a>Befehl für eine horizontale Linie
 
@@ -91,6 +93,22 @@ In dieser Syntax ist *y* eine `double` , die die y-Koordinate des Endpunkts der 
 
 `V 90` ist ein Beispiel für einen gültigen Befehl für eine vertikale Linie.
 
+### <a name="elliptical-arc-command"></a>Befehl für einen Ellipsenbogen
+
+Der Befehl elliptischer Bogen erstellt einen elliptischen Bogen zwischen dem aktuellen Punkt und dem angegebenen Endpunkt. Die Syntax für diesen Befehl lautet: `A` *size* *RotationAngle* *islargearcflag* *sweepdirectionflag* *EndPoint* oder `a` *size* *RotationAngle* *islargearcflag* *sweepdirectionflag* *EndPoint*.
+
+In dieser Syntax:
+
+- `size`ist ein [`Size`](xref:Xamarin.Forms.Size) , das den x-und y-Radius des Bogens darstellt.
+- `rotationAngle`ist eine `double` , die die Drehung der Ellipse in Grad darstellt.
+- `isLargeArcFlag`sollte auf 1 festgelegt werden, wenn der Winkel des Bogens 180 Grad oder größer sein soll; andernfalls wird der Wert auf 0 festgelegt.
+- `sweepDirectionFlag`sollte auf 1 festgelegt werden, wenn der Bogen in einer Richtung mit positivem Winkel gezeichnet wird; andernfalls wird 0 festgelegt.
+- `endPoint`ist ein [`Point`](xref:Xamarin.Forms.Point) , zu dem der Bogen gezeichnet wird.
+
+`A 150,150 0 1,0 150,-150`ist ein Beispiel für einen gültigen Befehl für einen Ellipsen Bogen.
+
+Weitere Informationen zum Erstellen eines elliptischen Bogens als- `PathGeometry` Objekt finden Sie unter [Erstellen eines ArcSegments](geometries.md#create-an-arcsegment).
+
 ### <a name="cubic-bezier-curve-command"></a>Befehl "kubisch Bezier Kurve"
 
 Der Befehl kubische Bezier-Kurve erstellt eine kubische Bezier-Kurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt, indem der zwei angegebene Steuerungspunkt verwendet wird. Die Syntax für diesen Befehl lautet: `C` *controlPoint1* *controlPoint2* *EndPoint* oder `c` *controlPoint1* *controlPoint2* *EndPoint*.
@@ -103,6 +121,8 @@ In dieser Syntax:
 
 `C 100,200 200,400 300,200`ist ein Beispiel für einen gültigen Befehl für eine kubische Bezier-Kurve.
 
+Weitere Informationen zum Erstellen einer kubischen Bezier-Kurve als- `PathGeometry` Objekt finden Sie unter [Create a BezierSegment](geometries.md#create-a-beziersegment).
+
 ### <a name="quadratic-bezier-curve-command"></a>Befehl "Quadratic Bezier Curve"
 
 Der Befehl quadratischen Bezier Curve erstellt eine quadratische Bezier-Kurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt, indem der angegebene Steuerungspunkt verwendet wird. Die Syntax für diesen Befehl lautet: `Q` *ControlPoint* *EndPoint* oder `q` *ControlPoint* *EndPoint*.
@@ -113,6 +133,8 @@ In dieser Syntax:
 - der *Endpunkt* ist eine [`Point`](xref:Xamarin.Forms.Point) , die den Punkt darstellt, an dem die Kurve gezeichnet wird.
 
 `Q 100,200 300,200`ist ein Beispiel für einen gültigen Befehl für eine quadratische Bezier-Kurve.
+
+Informationen zum Erstellen einer quadratischen Bezier-Kurve als- `PathGeometry` Objekt finden Sie unter [Create a QuadraticBezierSegment](geometries.md#create-a-quadraticbeziersegment).
 
 ### <a name="smooth-cubic-bezier-curve-command"></a>Befehl "glatte kubische Bezier-Kurve"
 
@@ -136,20 +158,6 @@ In dieser Syntax ist *EndPoint* eine [`Point`](xref:Xamarin.Forms.Point) , die d
 Der Kontrollpunkt soll die Reflektion des Kontrollpunkts des vorherigen Befehls relativ zum aktuellen Punkt sein. Wenn kein vorheriger Befehl vorhanden ist, oder wenn der vorherige Befehl keine quadratische und keine quadratische Bezier-Kurve war, wird davon ausgegangen, dass der Kontrollpunkt mit dem aktuellen Punkt koincident ist.
 
 `T 100,30`ist ein Beispiel für einen gültigen Smooth quadratischen-Befehl, der sich in der quadratischen Befehls Kurve befindet.
-
-### <a name="elliptical-arc-command"></a>Befehl für einen Ellipsenbogen
-
-Der Befehl elliptischer Bogen erstellt einen elliptischen Bogen zwischen dem aktuellen Punkt und dem angegebenen Endpunkt. Die Syntax für diesen Befehl lautet: `A` *size* *RotationAngle* *islargearcflag* *sweepdirectionflag* *EndPoint* oder `a` *size* *RotationAngle* *islargearcflag* *sweepdirectionflag* *EndPoint*.
-
-In dieser Syntax:
-
-- `size`ist ein [`Size`](xref:Xamarin.Forms.Size) , das den x-und y-Radius des Bogens darstellt.
-- `rotationAngle`ist eine `double` , die die Drehung der Ellipse in Grad darstellt.
-- `isLargeArcFlag`sollte auf 1 festgelegt werden, wenn der Winkel des Bogens 180 Grad oder größer sein soll; andernfalls wird der Wert auf 0 festgelegt.
-- `sweepDirectionFlag`sollte auf 1 festgelegt werden, wenn der Bogen in einer Richtung mit positivem Winkel gezeichnet wird; andernfalls wird 0 festgelegt.
-- `endPoint`ist ein [`Point`](xref:Xamarin.Forms.Point) , zu dem der Bogen gezeichnet wird.
-
-`A 150,150 0 1,0 150,-150`ist ein Beispiel für einen gültigen Befehl für einen Ellipsen Bogen.
 
 ## <a name="close-command"></a>Schließen-Befehl
 
