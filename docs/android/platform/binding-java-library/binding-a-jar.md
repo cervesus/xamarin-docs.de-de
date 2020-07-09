@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
-ms.openlocfilehash: 59969abae739db1d9035ec31738c39a3912f47ae
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 336462176813b9985e2c269273d08c4aacbea9b5
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027773"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853096"
 ---
 # <a name="binding-a-jar"></a>Binden einer JAR-Datei
+
+> [!IMPORTANT]
+> Wir untersuchen derzeit die Nutzung benutzerdefinierter Bindungen auf der Xamarin-Plattform. Nehmen Sie an [**dieser Umfrage**](https://www.surveymonkey.com/r/KKBHNLT) teil, um zukünftige Entwicklungsarbeiten zu unterstützen.
 
 _Diese exemplarische Vorgehensweise enthält ausführliche Anleitungen zum Erstellen einer Xamarin.Android-Java-Bindungsbibliothek aus einem Android-JAR-Datei._
 

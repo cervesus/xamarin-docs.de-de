@@ -10,12 +10,12 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f92ad47ae883f4b1b413ae5192a9add83045bb77
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a287ff28ab62fcfcc00c88858cf3595ba2fa5118
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136954"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853142"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms-Trigger
 
@@ -319,11 +319,7 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 ## <a name="state-triggers"></a>Zustandstrigger
 
-Zustandstrigger wurden in Xamarin.Forms 4.5 eingeführt und sind eine spezialisierte Gruppe von Triggern, die die Bedingungen definieren, bei denen ein [`VisualState`](xref:Xamarin.Forms.VisualState) angewendet werden muss. Sie sind jedoch derzeit experimentell und können nur durch Hinzufügen der folgenden Codezeile zu Ihrer Datei *App.xaml.cs* verwendet werden:
-
-```csharp
-Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
-```
+Zustandstrigger sind spezialisierte Trigger, die die Bedingungen definieren, bei denen [`VisualState`](xref:Xamarin.Forms.VisualState) angewendet werden muss. 
 
 Zustandstrigger werden der Sammlung [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) eines [`VisualState`](xref:Xamarin.Forms.VisualState) hinzugefügt. Diese Sammlung kann Trigger mit einem oder mehreren Zustandstriggern enthalten. Ein [`VisualState`](xref:Xamarin.Forms.VisualState) wird angewendet, wenn alle Zustandstrigger in der Sammlung aktiv sind.
 

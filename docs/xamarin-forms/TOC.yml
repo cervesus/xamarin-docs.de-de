@@ -405,6 +405,32 @@
                   href: user-interface/map/native-map-app.md
             - name: MediaElement
               href: user-interface/mediaelement.md
+            - name: Formen
+              items:
+                - name: Übersicht
+                  href: user-interface/shapes/index.md
+                - name: Ellipse
+                  href: user-interface/shapes/ellipse.md
+                - name: Füllregeln
+                  href: user-interface/shapes/fillrules.md
+                - name: Geometrien
+                  href: user-interface/shapes/geometries.md
+                - name: Linie
+                  href: user-interface/shapes/line.md
+                - name: Pfade
+                  items:
+                    - name: Pfad
+                      href: user-interface/shapes/path.md
+                    - name: Pfadmarkupsyntax
+                      href: user-interface/shapes/path-markup-syntax.md
+                    - name: Pfadtransformationen
+                      href: user-interface/shapes/path-transforms.md
+                - name: Polygon
+                  href: user-interface/shapes/polygon.md
+                - name: Polylinie
+                  href: user-interface/shapes/polyline.md
+                - name: Rechteck
+                  href: user-interface/shapes/rectangle.md
             - name: WebView
               href: user-interface/webview.md
         - name: Initiieren von Befehlen
@@ -537,32 +563,6 @@
               href: user-interface/text/fonts.md
             - name: Grafiken mit SkiaSharp
               href: user-interface/graphics/skiasharp/index.md
-            - name: Formen
-              items:
-                - name: Übersicht
-                  href: user-interface/shapes/index.md
-                - name: Ellipse
-                  href: user-interface/shapes/ellipse.md
-                - name: Füllregeln
-                  href: user-interface/shapes/fillrules.md
-                - name: Geometrien
-                  href: user-interface/shapes/geometries.md
-                - name: Linie
-                  href: user-interface/shapes/line.md
-                - name: Pfade
-                  items:
-                    - name: Pfad
-                      href: user-interface/shapes/path.md
-                    - name: Pfadmarkupsyntax
-                      href: user-interface/shapes/path-markup-syntax.md
-                    - name: Pfadtransformationen
-                      href: user-interface/shapes/path-transforms.md
-                - name: Polygon
-                  href: user-interface/shapes/polygon.md
-                - name: Polylinie
-                  href: user-interface/shapes/polyline.md
-                - name: Rechteck
-                  href: user-interface/shapes/rectangle.md
             - name: Begrüßungsbildschirm
               href: user-interface/splashscreen.md
             - name: Stile

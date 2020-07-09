@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/18/2020
-ms.openlocfilehash: dfe6da8a76b447bf0c2a6c0a3bea9823e498d5e4
-ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
+ms.openlocfilehash: 0aafe01fcbde6cf1aacf3e2dd47444d4b77021e2
+ms.sourcegitcommit: 79ba3deb031c8a60d0841bb3dbeaaf65daf2b224
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84988195"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85846374"
 ---
 # <a name="xamarinforms-multi-bindings"></a>Mehrfachbindungen in Xamarin.Forms
 
@@ -44,7 +44,7 @@ Der Wert der `Mode`-Eigenschaft bestimmt die Funktionalität von `MultiBinding` 
 
 ## <a name="define-a-imultivalueconverter"></a>Definieren der IMultiValueConverter-Schnittstelle
 
-Die `IMultiValueConverter`-Schnittstelle ermöglicht das Anwenden benutzerdefinierter Logik auf eine `MultiBinding`. Um einen Konverter mit `MultiBinding` zu verknüpfen, erstellen Sie eine Klasse, die die `IValueConverter`-Schnittstelle implementiert, und implementieren Sie dann die Methoden `Convert` und `ConvertBack`:
+Die `IMultiValueConverter`-Schnittstelle ermöglicht das Anwenden benutzerdefinierter Logik auf eine `MultiBinding`. Um einen Konverter mit `MultiBinding` zu verknüpfen, erstellen Sie eine Klasse, die die `IMultiValueConverter`-Schnittstelle implementiert, und implementieren Sie dann die Methoden `Convert` und `ConvertBack`:
 
 ```csharp
 public class AllTrueMultiConverter : IMultiValueConverter

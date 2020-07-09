@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 2a88888b2306589930ad6386fb69bbd3b48924b7
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 5439e213c0016ea01935d617f5f6b5a3edf3eee8
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571375"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853015"
 ---
 # <a name="java-bindings-metadata"></a>Metadaten für Java-Bindungen
+
+> [!IMPORTANT]
+> Wir untersuchen derzeit die Nutzung benutzerdefinierter Bindungen auf der Xamarin-Plattform. Nehmen Sie an [**dieser Umfrage**](https://www.surveymonkey.com/r/KKBHNLT) teil, um zukünftige Entwicklungsarbeiten zu unterstützen.
 
 _C#-Code in Xamarin.Android ruft Java-Bibliotheken über Bindungen auf. Dabei handelt es sich um einen Mechanismus, der die in Java Native Interface (JNI) festgelegten untergeordneten Details abstrahiert. Xamarin.Android umfasst ein Tool, das diese Bindungen generiert. Mit diesem Tool kann der Entwickler mithilfe von Metadaten steuern, wie eine Bindung erstellt wird, um z. B. Namespaces zu ändern und Member umzubenennen. In diesem Dokument wird erläutert, wie Metadaten funktionieren. Es enthält weiterhin einer Übersicht über die von Metadaten unterstützten Attribute und erläutert, wie Bindungsprobleme durch Ändern dieser Metadaten gelöst werden._
 

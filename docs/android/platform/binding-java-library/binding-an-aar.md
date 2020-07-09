@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
-ms.openlocfilehash: 103720c8cb47b1ac4cfe5cfadeb6b18828318ad3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 514157873412b3af31e43ba211aa636c9b53c112
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73618535"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853114"
 ---
 # <a name="binding-an-aar"></a>Binden einer AAR-Datei
+
+> [!IMPORTANT]
+> Wir untersuchen derzeit die Nutzung benutzerdefinierter Bindungen auf der Xamarin-Plattform. Nehmen Sie an [**dieser Umfrage**](https://www.surveymonkey.com/r/KKBHNLT) teil, um zukünftige Entwicklungsarbeiten zu unterstützen.
 
 _Diese exemplarische Vorgehensweise enthält ausführliche Anleitungen zum Erstellen einer Xamarin.Android-Java-Bindungsbibliothek aus einer Android-AAR-Datei._
 

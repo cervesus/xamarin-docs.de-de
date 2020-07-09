@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: ec7d154b0d7fcb055bd398089e142fe8b1d9f60e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: d2251a0219ca25ecd37e42361e49ac966bac131d
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77497965"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85852996"
 ---
 # <a name="bind-android-kotlin-libraries"></a>Binden von Android-Kotlin-Bibliotheken
+
+> [!IMPORTANT]
+> Wir untersuchen derzeit die Nutzung benutzerdefinierter Bindungen auf der Xamarin-Plattform. Nehmen Sie an [**dieser Umfrage**](https://www.surveymonkey.com/r/KKBHNLT) teil, um zukünftige Entwicklungsarbeiten zu unterstützen.
 
 Die Android-Plattform wird zusammen mit den nativen Sprachen und Tools ständig weiterentwickelt, und es gibt eine Vielzahl von Bibliotheken von Drittanbietern, die unter Verwendung der neuesten Angebote entwickelt wurden. Die maximale Wiederverwendung von Code und Komponenten ist eines der wichtigsten Ziele der plattformübergreifenden Entwicklung. Die Möglichkeit zur Wiederverwendung von Komponenten, die mit Kotlin erstellt wurden, ist für Xamarin-Entwickler immer wichtiger geworden, da deren Beliebtheit bei Entwicklern weiterhin zunimmt. Möglicherweise sind Sie bereits mit dem Binden regulärer [Java](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/)-Bibliotheken vertraut. Jetzt ist eine weitere Dokumentation verfügbar, in der das [Binden einer Kotlin-Bibliothek](walkthrough.md) beschrieben wird, damit die Bibliothek von einer Xamarin-Anwendung wie üblich genutzt werden kann. Der Zweck dieses Dokuments besteht darin, eine übergeordnete Vorgehensweise zum Erstellen einer Kotlin-Bindung für Xamarin zu beschreiben.
 

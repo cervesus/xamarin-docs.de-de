@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: cbd7c796cd13aa45dc107bddf06ca44d6adbdf9d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: af926b518c55bd0d6c73180e512dd669e93778f7
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77519674"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853059"
 ---
 # <a name="walkthrough-bind-an-android-kotlin-library"></a>Exemplarische Vorgehensweise: Binden einer Android-Kotlin-Bibliothek
+
+> [!IMPORTANT]
+> Wir untersuchen derzeit die Nutzung benutzerdefinierter Bindungen auf der Xamarin-Plattform. Nehmen Sie an [**dieser Umfrage**](https://www.surveymonkey.com/r/KKBHNLT) teil, um zukünftige Entwicklungsarbeiten zu unterstützen.
 
 Xamarin ermöglicht Mobilgeräteentwicklern das Erstellen von plattformübergreifenden nativen mobilen Apps mit Visual Studio und C#. Sie können die standardmäßig im SDK der Android-Plattform enthaltenen Komponenten verwenden. In vielen Fällen kann aber die Verwendung von Drittanbieter-SDKs wünschenswert sein, die für diese Plattform geschrieben wurden. Xamarin macht dies über Bindungen möglich. Wenn Sie das Android-Framework eines Drittanbieters in Ihre Xamarin.Android-Anwendung integrieren möchten, müssen Sie eine Xamarin.Android-Bindung erstellen, damit Sie das Framework in Ihren Anwendungen verwenden können.
 
@@ -173,7 +176,7 @@ Die Metadaten verwenden  [XPath](https://www.w3.org/TR/xpath/) -Syntax und wer
 
     Im BubblePicker-Beispiel gibt es keine Member, die vorzeichenlose Typen verwenden, sodass keine weiteren Änderungen erforderlich sind.
 
-- Kotlin-Member mit generischen Parametern werden standardmäßig in Parameter des Typs „Java.`Lang.Object`“ umgewandelt. Eine Kotlin-Methode weist beispielsweise einen generischen Parameter \<T> auf:
+- Kotlin-Member mit generischen Parametern werden standardmäßig in Parameter des Typs Java.`Lang.Object` umgewandelt. Eine Kotlin-Methode weist beispielsweise einen generischen Parameter \<T> auf:
 
     ```Kotlin
     public open fun <T>fooGenericMethod(value: T) : String {

@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/20/2017
-ms.openlocfilehash: 060c4759d39bc3b8c424ce46dc615644540fe9c2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: bcfc5778ed4e5486d188f4eefbd32811792b44e5
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027669"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85852981"
 ---
 # <a name="naming-parameters-with-javadoc"></a>Benennen von Parametern mit Javadoc
+
+> [!IMPORTANT]
+> Wir untersuchen derzeit die Nutzung benutzerdefinierter Bindungen auf der Xamarin-Plattform. Nehmen Sie an [**dieser Umfrage**](https://www.surveymonkey.com/r/KKBHNLT) teil, um zukünftige Entwicklungsarbeiten zu unterstützen.
 
 _In diesem Artikel wird erläutert, wie Parameternamen in einem Java-Bindungsprojekt mithilfe von JavaDoc wieder hergestellt werden, die vom Java-Projekt generiert wurden._
 
