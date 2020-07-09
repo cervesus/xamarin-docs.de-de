@@ -10,16 +10,16 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 28bcbed3a03a2abbec42a619062579419a3063a4
-ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
+ms.openlocfilehash: b451fe004ca21c8770658f31c9c38253e073c259
+ms.sourcegitcommit: 82eabb0eaa4a674897aa6d5e64efb91fd580c330
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84988207"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100182"
 ---
 # <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>Reagieren auf Änderungen des Systemdesigns in Xamarin.Forms Anwendungen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 
 Geräte enthalten in der Regel helle und dunkle Designs, die jeweils auf eine Vielzahl von Darstellungs Einstellungen verweisen, die auf Betriebssystemebene festgelegt werden können. Anwendungen sollten diese Systemdesigns berücksichtigen und sofort reagieren, wenn das Systemdesign geändert wird.
 
@@ -46,7 +46,7 @@ Die folgenden Screenshots zeigen Design Seiten für helle und dunkle Systemdesig
 
 Ressourcen für helle und dunkle Designs können mit der `AppThemeBinding` Markup Erweiterung und den `SetAppThemeColor` Erweiterungs Methoden und verwendet werden `SetOnAppTheme<T>` . Mit diesen Ansätzen werden Ressourcen automatisch basierend auf dem Wert des aktuellen Systemdesigns angewendet. Außerdem werden Objekte, die diese Ressourcen nutzen, automatisch aktualisiert, wenn sich das Systemdesign ändert, während eine app ausgeführt wird.
 
-### <a name="appthemebinding-markup-extension"></a>Apptomebinding-Markup Erweiterung
+### <a name="appthemebinding-markup-extension"></a>Markuperweiterung AppThemeBinding
 
 Die `AppThemeBinding` Markup Erweiterung ermöglicht es Ihnen, basierend auf dem aktuellen Systemdesign eine Ressource, z. b. ein Bild oder eine Farbe, zu verwenden:
 
@@ -159,9 +159,12 @@ Application.Current.RequestedThemeChanged += (s, a) =>
 
 Das- `AppThemeChangedEventArgs` Objekt, das das- `RequestedThemeChanged` Ereignis begleitet, verfügt über eine einzelne-Eigenschaft mit dem Namen `RequestedTheme` vom Typ `OSAppTheme` . Diese Eigenschaft kann untersucht werden, um das angeforderte Systemdesign zu erkennen.
 
+> [!IMPORTANT]
+> Um auf Änderungen am Design von Android zu reagieren, müssen Sie das- `ConfigChanges.UiMode` Flag in das- `Activity` Attribut der- `MainActivity` Klasse einschließen.
+
 ## <a name="related-links"></a>Verwandte Links
 
 - [Systemdesigns (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
-- [Apptomebinding-Markup Erweiterung](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)
-- [Ressourcen Wörterbücher](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Markuperweiterung AppThemeBinding](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)
+- [Ressourcenverzeichnisse](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Formatieren von Xamarin.Forms-Apps mithilfe von XAML-Formatvorlagen](~/xamarin-forms/user-interface/styles/xaml/index.md)
