@@ -10,12 +10,12 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7117bb809c43ab5edb67e8367840b17cd1d97ef9
-ms.sourcegitcommit: c000c0ed15b7b2ef2a8f46a39171e11b6d9f8a5d
+ms.openlocfilehash: 7ae6e5e764dc066940971dd9b5a8fdc36c7a1970
+ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84980089"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86225493"
 ---
 # <a name="images-in-xamarinforms"></a>Bilder inXamarin.Forms
 
@@ -152,11 +152,10 @@ Wenn Sie eingebettete Bilder in Ordner innerhalb Ihres Projekts platzieren, werd
 Der Code zum Laden eines eingebetteten Bilds übergibt einfach die **Ressourcen-ID** an die-Methode, [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) wie unten dargestellt:
 
 ```csharp
-var embeddedImage = new Image {
-      Source = ImageSource.FromResource(
-        "WorkingWithImages.beach.jpg",
-        typeof(EmbeddedImages).GetTypeInfo().Assembly
-      ) };
+Image embeddedImage = new Image
+{
+    Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(MyClass).GetTypeInfo().Assembly)
+};
 ```
 
 > [!NOTE]
@@ -222,7 +221,7 @@ Da es manchmal schwierig ist zu verstehen, warum eine bestimmte Bildressource ni
 using System.Reflection;
 // ...
 // NOTE: use for debugging, not in released app code!
-var assembly = typeof(EmbeddedImages).GetTypeInfo().Assembly;
+var assembly = typeof(MyClass).GetTypeInfo().Assembly;
 foreach (var res in assembly.GetManifestResourceNames())
 {
     System.Diagnostics.Debug.WriteLine("found resource: " + res);

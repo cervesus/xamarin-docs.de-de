@@ -10,12 +10,12 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 33b3763075b64ea8af615465825313a527d20db2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7d83728edc161a89b381330884e86f09b7788e3d
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138176"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226780"
 ---
 # <a name="xamarinforms-bindable-properties"></a>Xamarin.FormsBindbare Eigenschaften
 
@@ -55,6 +55,9 @@ Es muss mindestens ein Bezeichner angegeben werden, wenn ein erstellt wird [`Bin
 - Der Typ des besitzenden Objekts.
 - Der Standardwert für die Eigenschaft. Dadurch wird sichergestellt, dass die-Eigenschaft immer einen bestimmten Standardwert zurückgibt, wenn Sie nicht festgelegt ist, und Sie kann sich vom Standardwert für den Typ der Eigenschaft unterscheiden. Der Standardwert wird wieder hergestellt, wenn [ `ClearValue` ] (Xref: Xamarin.Forms . Bindableobject. ClearValue ( Xamarin.Forms . Bindableproperty))-Methode wird für die bindbare Eigenschaft aufgerufen.
 
+> [!IMPORTANT]
+> Die Benennungs Konvention für bindbare Eigenschaften besteht darin, dass der Bezeichner der bindbaren Eigenschaft mit dem in der Methode angegebenen Eigenschaftsnamen übereinstimmen muss `Create` , wobei "Property" angehängt wird. 
+
 Der folgende Code zeigt ein Beispiel für eine bindbare Eigenschaft mit einem Bezeichner und Werten für die vier erforderlichen Parameter:
 
 ```csharp
@@ -62,7 +65,7 @@ public static readonly BindableProperty EventNameProperty =
   BindableProperty.Create ("EventName", typeof(string), typeof(EventToCommandBehavior), null);
 ```
 
-Dadurch wird eine- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Instanz `EventName` mit dem Namen vom Typ erstellt `string` . Die-Eigenschaft ist im Besitz der `EventToCommandBehavior` -Klasse, und hat den Standardwert `null` . Die Benennungs Konvention für bindbare Eigenschaften besteht darin, dass der Bezeichner der bindbaren Eigenschaft mit dem in der Methode angegebenen Eigenschaftsnamen übereinstimmen muss `Create` , wobei "Property" angehängt wird. Im obigen Beispiel lautet der Bezeichner der bindbaren Eigenschaft daher `EventNameProperty` .
+Dadurch wird eine- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Instanz `EventNameProperty` mit dem Namen vom Typ erstellt `string` . Die-Eigenschaft ist im Besitz der `EventToCommandBehavior` -Klasse, und hat den Standardwert `null` .
 
 Wenn Sie eine- [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) Instanz erstellen, können Sie optional die folgenden Parameter angeben:
 

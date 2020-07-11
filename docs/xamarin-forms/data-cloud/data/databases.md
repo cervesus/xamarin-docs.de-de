@@ -10,12 +10,12 @@ ms.date: 12/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f7cef5fd39d82cf0a4b55337835c0fe1d57b8bf9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2268f9034a4b09adce697f5fb7b6652baa4feed6
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84197593"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226819"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.FormsLokale Datenbanken
 
@@ -39,8 +39,10 @@ Verwenden Sie den nuget-Paket-Manager, um nach **SQLite-net-PCL** zu suchen und 
 
 Es gibt eine Reihe von NuGet-Paketen mit ähnlichen Namen. Das richtige Paket verfügt über die folgenden Attribute:
 
-- **Erstellt von:** Frank A. Krueger (praeclarum)
 - **ID:** sqlite-net-pcl
+- **Autor (e):** SQLite-net
+- **Besitzer:** praeclarum
+- **Projekt-URL:**https://github.com/praeclarum/sqlite-net
 - **NuGet-Link:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
@@ -135,7 +137,7 @@ Die- `InitializeAsync` Methode ist dafür verantwortlich, zu überprüfen, ob be
 
 ### <a name="the-safefireandforget-extension-method"></a>Die safefireandforget-Erweiterungsmethode
 
-Wenn die `TodoItemDatabase` Klasse instanziiert wird, muss Sie die Datenbankverbindung initialisieren, bei der es sich um einen asynchronen Prozess handelt. Allerdings:
+Wenn die `TodoItemDatabase` Klasse instanziiert wird, muss Sie die Datenbankverbindung initialisieren, bei der es sich um einen asynchronen Prozess handelt. Dabei gilt jedoch Folgendes:
 
 - Klassenkonstruktoren dürfen nicht asynchron sein.
 - Eine Async-Methode, die nicht erwartet wird, löst keine Ausnahmen aus.

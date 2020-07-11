@@ -1,6 +1,6 @@
 ---
-title: Xamarin.FormsAktuerfrischendes Ansicht
-description: Die Xamarin.Forms Aktualisierungs Ansicht ist ein Container Steuerelement, das Pull zur Aktualisierungs Funktionalität für scrollbaren Inhalt bereitstellt.
+title: Xamarin.Forms RefreshView
+description: Der Xamarin.Forms RefreshView ist ein Container Steuerelement, das Pull zur Aktualisierungs Funktionalität für scrollbaren Inhalt bereitstellt.
 ms.prod: xamarin
 ms.assetId: 58DBD23B-ADB9-40DA-B331-4DDB6E698990
 ms.technology: xamarin-forms
@@ -10,14 +10,16 @@ ms.date: 09/19/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d84e6bb6ed41f2fbc213cd15051d071521f588cd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+- RefreshView
+- Universal Windows Platform
+ms.openlocfilehash: 83802683aee722468acf9bcc827ba66f45c05e6b
+ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127594"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86225480"
 ---
-# <a name="xamarinforms-refreshview"></a>Xamarin.FormsAktuerfrischendes Ansicht
+# <a name="xamarinforms-refreshview"></a>Xamarin.Forms RefreshView
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
@@ -33,9 +35,9 @@ Der `RefreshView` ist ein Container Steuerelement, das Pull zur Aktualisierungs 
 Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
 
 > [!NOTE]
-> Auf dem universelle Windows-Plattform kann die Pull-Richtung eines `RefreshView` mit einem plattformspezifischen festgelegt werden. Weitere Informationen finden Sie unter [pullrichtung](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)für den Pullvorgang.
+> Auf der Universal Windows Platform kann die Pull-Richtung eines `RefreshView` mit einem plattformspezifischen festgelegt werden. Weitere Informationen finden Sie unter [ RefreshView Pull Direction](~/xamarin-forms/platform/windows/refreshview-pulldirection.md).
 
-## <a name="create-a-refreshview"></a>Erstellen einer aktuerfrischenden Ansicht
+## <a name="create-a-refreshview"></a>Erstellen der Datei RefreshView
 
 Im folgenden Beispiel wird gezeigt, wie ein `RefreshView` in XAML instanziiert wird:
 
@@ -77,12 +79,12 @@ Der Wert der- `RefreshView.IsRefreshing` Eigenschaft gibt den aktuellen Zustand 
 
 Wenn der Benutzer eine Aktualisierung initiiert, `ICommand` wird der durch die- `Command` Eigenschaft definierte ausgeführt, wodurch die angezeigten Elemente aktualisiert werden. Eine Aktualisierungs Visualisierung wird angezeigt, während die Aktualisierung durchgeführt wird, die aus einem animierten Fortschritts Kreis besteht:
 
-[![Screenshot einer Aktualisierungs Ansicht für das Aktualisieren von Daten unter IOS und Android](refreshview-images/default-progress-circle.png "Aktualisierungs Ansicht zum Aktualisieren von Daten")](refreshview-images/default-progress-circle-large.png#lightbox "Aktualisierungs Ansicht zum Aktualisieren von Daten")
+[![Screenshot der Aktualisierung von RefreshView Daten unter IOS und Android](refreshview-images/default-progress-circle.png "[! Schel. No-Loc (erfrischende Ansicht)] Aktualisieren von Daten")](refreshview-images/default-progress-circle-large.png#lightbox "[! Schel. No-Loc (erfrischende Ansicht)] Aktualisieren von Daten")
 
 > [!NOTE]
 > `IsRefreshing`Wenn Sie die-Eigenschaft manuell auf festlegen `true` , wird die Aktualisierungs Visualisierung auslöst, und die `ICommand` von der-Eigenschaft definierte wird ausgeführt `Command` .
 
-## <a name="refreshview-appearance"></a>Erscheinungsbild der Bild Anzeige
+## <a name="refreshview-appearance"></a>RefreshViewAuftritts
 
 Zusätzlich zu den Eigenschaften, die `RefreshView` von der- [`VisualElement`](xref:Xamarin.Forms.VisualElement) Klasse erben, `RefreshView` definiert auch die- `RefreshColor` Eigenschaft. Diese Eigenschaft kann festgelegt werden, um die Farbe des Fortschritts Kreises zu definieren, der während der Aktualisierung angezeigt wird:
 
@@ -93,14 +95,14 @@ Zusätzlich zu den Eigenschaften, die `RefreshView` von der- [`VisualElement`](x
 
 Der folgende Screenshot zeigt ein- `RefreshView` Objekt mit der- `RefreshColor` Eigenschaft:
 
-[![Screenshot einer aktuverlaufs Ansicht mit einem aktiven Status Kreis unter IOS und Android](refreshview-images/teal-progress-circle.png "Aktuverlaufs Ansicht mit einem aktiven Status Kreis")](refreshview-images/teal-progress-circle-large.png#lightbox "Aktuverlaufs Ansicht mit einem aktiven Status Kreis")
+[![Screenshot eines RefreshView mit einem aktiven Status Kreis unter IOS und Android](refreshview-images/teal-progress-circle.png "[! Schel. No-Loc (erfrischend Ansicht)] mit einem aktiven Status Kreis")](refreshview-images/teal-progress-circle-large.png#lightbox "[! Schel. No-Loc (erfrischend Ansicht)] mit einem aktiven Status Kreis")
 
 Außerdem kann die- `BackgroundColor` Eigenschaft auf einen festgelegt werden [`Color`](xref:Xamarin.Forms.Color) , der die Hintergrundfarbe des Fortschritts Kreises darstellt.
 
 > [!NOTE]
 > Unter IOS legt die- `BackgroundColor` Eigenschaft die Hintergrundfarbe des fest `UIView` , der den Status Kreis enthält.
 
-## <a name="disable-a-refreshview"></a>Deaktivieren einer aktuaktivierungs Ansicht
+## <a name="disable-a-refreshview"></a>Deaktivieren einesRefreshView
 
 Eine Anwendung kann einen Status eingeben, bei dem der Pull-Vorgang zum Aktualisieren kein gültiger Vorgang ist. In solchen Fällen kann der deaktiviert werden, indem die zugehörige- `RefreshView` Eigenschaft auf festgelegt wird `IsEnabled` `false` . Dadurch wird verhindert, dass Benutzer in der Lage sind, Pull zum Aktualisieren zu initiieren.
 
@@ -108,6 +110,6 @@ Wenn Sie die-Eigenschaft definieren, kann der-Delegat auch `Command` `CanExecute
 
 ## <a name="related-links"></a>Verwandte Links
 
-- [Aktuerfrischendes Ansicht (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
+- [RefreshViewBlutprobe](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 - [Bindbare Layouts inXamarin.Forms](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
-- [Aktualisierbare Pull Direction-plattformspezifisch](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)
+- [RefreshViewPlattformspezifisch für Pull Direction](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)

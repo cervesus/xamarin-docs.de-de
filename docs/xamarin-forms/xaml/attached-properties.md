@@ -10,12 +10,12 @@ ms.date: 06/02/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f26a4415a75b2b02fd7d6893e366ef81156f077
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1277b3cd875c1b4e05e45202a8e30ef2ff93972a
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138189"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226793"
 ---
 # <a name="attached-properties"></a>Angefügte Eigenschaften
 
@@ -44,6 +44,9 @@ Beim Erstellen einer angefügten Eigenschaft für die Verwendung in anderen Type
 
 Eine angefügte Eigenschaft kann erstellt werden, indem eine `public static readonly` Eigenschaft vom Typ deklariert wird [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Die bindbare Eigenschaft sollte auf den zurückgegebenen Wert von einem der [ `BindableProperty.CreateAttached` ] (Xref:) festgelegt werden Xamarin.Forms . Bindableproperty. kreateattached (System. String, System. Type, System. Type, System. Object, Xamarin.Forms . BindingMode, Xamarin.Forms . Bindableproperty. validatevaluedelegat, Xamarin.Forms . Bindableproperty. bindingpropertychangeddelegat, Xamarin.Forms . Bindableproperty. bindingpropertychangingdelegat, Xamarin.Forms . Bindableproperty. coercevaluedelegat, Xamarin.Forms . Bindableproperty. kreatedefaultvaluedelegat)-Methoden Überladungen. Die Deklaration sollte innerhalb des Texts der besitzenden Klasse, aber außerhalb von Element Definitionen liegen.
 
+> [!IMPORTANT]
+> Die Benennungs Konvention für angefügte Eigenschaften besteht darin, dass der Bezeichner der angefügten Eigenschaft mit dem in der Methode angegebenen Eigenschaftsnamen übereinstimmen muss `CreateAttached` , wobei "Property" angehängt wird.
+
 Der folgende Code zeigt ein Beispiel für eine angefügte Eigenschaft:
 
 ```csharp
@@ -51,7 +54,7 @@ public static readonly BindableProperty HasShadowProperty =
   BindableProperty.CreateAttached ("HasShadow", typeof(bool), typeof(ShadowEffect), false);
 ```
 
-Dadurch wird eine angefügte Eigenschaft `HasShadow` mit dem Namen des Typs erstellt `bool` . Die-Eigenschaft ist im Besitz der `ShadowEffect` -Klasse, und hat den Standardwert `false` . Die Benennungs Konvention für angefügte Eigenschaften besteht darin, dass der Bezeichner der angefügten Eigenschaft mit dem in der Methode angegebenen Eigenschaftsnamen übereinstimmen muss `CreateAttached` , wobei "Property" angehängt wird. Daher ist im obigen Beispiel der Bezeichner der angefügten Eigenschaft `HasShadowProperty` .
+Dadurch wird eine angefügte Eigenschaft `HasShadowProperty` mit dem Namen des Typs erstellt `bool` . Die-Eigenschaft ist im Besitz der `ShadowEffect` -Klasse, und hat den Standardwert `false` .
 
 Weitere Informationen zum Erstellen von bindbaren Eigenschaften, einschließlich Parametern, die während der Erstellung angegeben werden können, finden Sie unter [Erstellen einer bindbare-Eigenschaft](~/xamarin-forms/xaml/bindable-properties.md#consume-a-bindable-property).
 
