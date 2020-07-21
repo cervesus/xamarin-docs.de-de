@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/02/2018
-ms.openlocfilehash: c6a606bf326d1e59398ab77c51b1de5ed3e497e0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 66d2f66f0118e84778b25fc0e872099439510ce2
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571531"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226845"
 ---
 # <a name="signing-the-android-application-package"></a>Signieren des Android-Anwendungspakets
 
@@ -20,7 +20,7 @@ Unter [Preparing an Application for Release (Vorbereiten einer Anwendung auf die
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Unter [Zur Veröffentlichung aktivieren](~/android/deploy-test/release-prep/index.md#archive) stellte das Dialogfeld **Verteilungskanal** zwei Möglichkeiten für die Verteilung dar. Wählen Sie **Ad-Hoc** aus:
+Unter [Zur Veröffentlichung aktivieren](~/android/deploy-test/release-prep/index.md#archive) bietet das Dialogfeld **Verteilungskanal** zwei Optionen für die Verteilung. Wählen Sie **Ad-Hoc** aus:
 
 [![Dialogfeld „Verteilungskanal“](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
@@ -46,7 +46,7 @@ Ein vorhandenes Zertifikat kann verwendet werden, indem Sie auf die Schaltfläch
 
 [![Ad-Hoc-Signierungsidentität](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 
-Das Dialogfeld **Create Android Key Store** (Android-Schlüsselspeicher erstellen) wird angezeigt. Verwenden Sie dieses, um ein neues Signaturzertifikat zu erstellen, das zum Signieren von Android-Anwendungen verwendet werden kann. Geben Sie wie im folgenden Dialogfeld gezeigt die erforderlichen Informationen (rot umrandet) ein:
+Das Dialogfeld **Android-Schlüsselspeicher erstellen** wird angezeigt. Verwenden Sie dieses, um ein neues Signaturzertifikat zu erstellen, das zum Signieren von Android-Anwendungen verwendet werden kann. Geben Sie wie im folgenden Dialogfeld gezeigt die erforderlichen Informationen (rot umrandet) ein:
 
 [![Dialogfeld „Create Android Key Store“ (Android-Schlüsselspeicher erstellen)](images/vs/03-create-android-key-store-vs-sml.png)](images/vs/03-create-android-key-store-vs.png#lightbox)
 
@@ -62,8 +62,10 @@ Wenn Sie z.B. **chimp** als Alias verwenden, wird im Zuge der oben genannten Sch
 
 **C:\\Benutzer\\*BENUTZERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\\chimp.keystore**
 
-> [!NOTE]
-> Achten Sie darauf, die daraus entstehende Keystore-Datei und das Kennwort an einem sicheren Speicherort zu speichern, da diese nicht in der Projektmappe enthalten sind. Wenn Sie Ihre Keystore-Datei verlieren (z.B. weil Sie einen anderen Computer verwenden oder Windows neu installiert haben), können Sie Ihre App nicht mit demselben Zertifikat wie vorherige Versionen signieren.
+> [!IMPORTANT]
+> Der AppData-Ordner ist standardmäßig ausgeblendet, daher müssen Sie ihn möglicherweise einblenden, um darauf zuzugreifen.
+>
+> Achten Sie außerdem darauf, die entstehende Keystore-Datei und das Kennwort an einem sicheren Speicherort zu speichern &ndash; diese sind nicht in der Projektmappe enthalten. Wenn Sie Ihre Keystore-Datei verlieren (z.B. weil Sie einen anderen Computer verwenden oder Windows neu installiert haben), können Sie Ihre App nicht mit demselben Zertifikat wie vorherige Versionen signieren.
 
 Weitere Informationen zur Keystore-Datei finden Sie unter [Finding your Keystore's MD5 or SHA1 Signature (Suchen der MD5- oder SHA1-Signatur Ihrer Keystore-Datei)](~/android/deploy-test/signing/keystore-signature.md).
 
