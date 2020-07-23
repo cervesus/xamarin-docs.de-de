@@ -6,12 +6,12 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 5992e8df3080bb35fd123483e5ffb5e64f268b1a
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 8f7ec5175895a31746710fad9ea7372052b698ff
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76724759"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936486"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Einführung in die Spieleentwicklung mit xamarin
 
@@ -34,7 +34,7 @@ Ein typisches Spiel erfordert ein konstantes verschieben oder ändern, das als R
 
 Im folgenden finden Sie ein Diagramm einer einfachen Spiel Schleife:
 
-![](images/image1.png "This is a diagram of a simple game loop")
+![Dies ist ein Diagramm einer einfachen Spiel Schleife.](images/image1.png)
 
 Die im folgenden erläuterten Technologien abstrahieren die tatsächliche while-Schleife, aber trotz dieser Abstraktion ist das Konzept der Updates für jedes Frame vorhanden.
 
@@ -67,7 +67,7 @@ Viele Spiele erfordern eine erweiterte Mathematik als nicht-Spielanwendungen. Na
 
 Wenn Sie mit der kartesischen Ebene vertraut sind –, die X-und Y-Koordinaten zum Positionieren von Objekten verwendet –, sind Sie für den Einstieg in die Spieleentwicklung ausreichend. Das folgende Beispiel zeigt eine kartesische Ebene mit dem positiven Y, das nach oben zeigt:
 
-![](images/image2.png "This shows a Cartesian plane with positive Y pointing upward")
+![Dies zeigt eine kartesische Ebene mit positiver Y, die nach oben zeigt.](images/image2.png)
 
 > [!IMPORTANT]
 > Einige Engines/APIs verwenden ein Koordinatensystem, in dem der Y-Wert eines Objekts durch Vergrößern des y-Werts eines Objekts verschoben wird, während andere Systeme ein Koordinatensystem verwenden, bei dem positive Y-Werte in der Denken Sie daran, wenn Sie zwischen Systemen wechseln.
@@ -86,8 +86,8 @@ Einige Inhalts Pipelines sind möglicherweise sehr schnell und erfordern keinen 
 Bei der Spieleentwicklung werden neue Rollen und Titel für Personen eingeführt, die am Prozess beteiligt sind. Die meisten Spieleentwickler sind nicht in der Lage, die breite Palette an Kenntnissen zu erfüllen, die zum Freigeben eines vollständigen Spiels erforderlich sind, sodass eine Reihe von Disziplinen vorhanden ist. Beachten Sie, dass es sich hierbei nicht um eine vollständige Liste der Entwicklungsbereiche handelt – nur einige der gängigeren.
 
 - **Programmierer** – die meisten Personen, die diesen Artikel lesen, fallen in diese Kategorie. Die Rolle eines Programmierers bei der Spieleentwicklung ähnelt der Rolle eines Programmierers in einer Anwendung ohne Spiel. Zu den Zuständigkeiten gehören das Schreiben von Logik zum Steuern des spielflusses, das Entwickeln von Systemen für allgemeine Aufgaben im Kontext eines bestimmten Projekts, das Hinzufügen und Anzeigen von Inhalten und – natürlich – das Beheben von Fehlern.
-- **2D-Künstlerin** – 2D-Künstler sind für das Erstellen von *2D-Assets*verantwortlich. Dazu zählen Bilddateien für die Benutzeroberfläche des Spiels, Partikel, Umgebungen und Zeichen. Wenn das Spiel, das Sie entwickeln, 3D ist, sind 2D-Künstler möglicherweise nicht für Umgebungen und Zeichen verantwortlich. Die kostenlose Kunst für Ihr Spiel finden Sie unter [http://opengameart.org/](http://opengameart.org/) .
-- **3D-Künstler** – 3D-Künstler sind für das Erstellen von *3D-Assets*verantwortlich. Hierzu zählen 3D-Modelle für Umgebungen, Zeichen und Eigenschaften (Möbel, Werke und andere inanimieren-Objekte). Einige Teams unterscheiden sich abhängig von der Größe des Teams zwischen 3D-Künstlern und 3D-Animatoren. Auf [http://opengameart.org/](http://opengameart.org/) finden Sie Kostenlose 3D-Grafiken für Ihr Spiel.
+- **2D-Künstlerin** – 2D-Künstler sind für das Erstellen von *2D-Assets*verantwortlich. Dazu zählen Bilddateien für die Benutzeroberfläche des Spiels, Partikel, Umgebungen und Zeichen. Wenn das Spiel, das Sie entwickeln, 3D ist, sind 2D-Künstler möglicherweise nicht für Umgebungen und Zeichen verantwortlich. Eine kostenlose Grafik finden Sie unter [http://opengameart.org/](http://opengameart.org/) .
+- **3D-Künstler** – 3D-Künstler sind für das Erstellen von *3D-Assets*verantwortlich. Hierzu zählen 3D-Modelle für Umgebungen, Zeichen und Eigenschaften (Möbel, Werke und andere inanimieren-Objekte). Einige Teams unterscheiden sich abhängig von der Größe des Teams zwischen 3D-Künstlern und 3D-Animatoren. Kostenlose 3D-Grafiken finden Sie unter [http://opengameart.org/](http://opengameart.org/) .
 - **Game Designer** – Spiel-Designer sind dafür verantwortlich, wie das Spiel wiedergegeben wird. Dies kann allgemeine Entscheidungen einschließen, wie z. b. die Einstellung des Spiels, das Gesamtziel des Spiels und die Art und Weise, wie ein Spieler das Spiel durchläuft. Spiele-Designer können auch an sehr detaillierten Entscheidungen beteiligt sein, z. b. bei der Zuordnung von Eingaben zu Aktionen, beim Definieren von Koeffizienten für Verschiebungen oder ebenenups und beim Entwerfen des Layouts. Beachten Sie, dass der Begriff- *Designer* je nach Kontext auf einen Spiel-Designer oder einen visuellen Designer verweisen kann.
 - **Sounddesigner** – Sounddesigner sind für die Audioressourcen eines Spiels verantwortlich. Einige Teams unterscheiden sich möglicherweise zwischen Personen, die für das Erstellen von Soundeffekten und Komponisten zuständig sind, während kleinere Teams möglicherweise eine einzelne Person für alle Audiodaten besitzen.
 
@@ -119,13 +119,13 @@ Monogame bietet keine standardmäßige visuelle Entwicklungsumgebung, sodass das
 
 Wichtige Beispiele für Spiele, die monogame verwenden, sind:
 
-FEZ:
+Fez
 
-![](images/image7.png "FEZ")
+![Fez](images/image7.png)
 
 Basti
 
-![](images/image8.jpg "Bastion")
+![Bastion](images/image8.jpg)
 
 Um mit monogame zu arbeiten, besuchen Sie die [monogame](~/graphics-games/monogame/index.md)-Handbücher.
 
@@ -133,7 +133,7 @@ Um mit monogame zu arbeiten, besuchen Sie die [monogame](~/graphics-games/monoga
 
 Urhosharp ist ein plattformübergreifendes 3D-und 2D-Modul auf hoher Ebene, mit dem animierte 3D-und 2D-Szenen für Ihre Anwendungen mithilfe von Geometrien, Materialien, Lichtern und Kameras erstellt werden können.
 
-![](images/urhosharp.gif "UrhoSharp is a cross-platform high-level 3D and 2D engine that can be used to create animated 3D and 2D scenes")
+![Urhosharp ist ein plattformübergreifendes 3D-und 2D-Modul auf hoher Ebene, das zum Erstellen animierter 3D-und 2D-Szenen verwendet werden kann.](images/urhosharp.gif)
 
 Sehen Sie sich die [urhusharp-Leitfäden](~/graphics-games/urhosharp/index.md) an, um zu beginnen.
 
@@ -141,9 +141,9 @@ Sehen Sie sich die [urhusharp-Leitfäden](~/graphics-games/urhosharp/index.md) a
 
 Die oben markierten Technologien sind nur ein Beispiel für die verfügbaren Technologien. Weitere wichtige Technologien sind:
 
-- **Sprite Kit** – xamarin bietet Unterstützung für das Sprite Kit-Spiel Framework von Apple, das Ihnen den Zugriff auf die gesamte Funktionalität der systemeigenen API ermöglicht. Da das Sprite Kit von Apple erstellte Technologien umfasst, bietet es eine umfassende Integration in den Rest des IOS-Ökosystems. Natürlich ist das Sprite Kit nicht plattformübergreifend, sodass es nicht auf Android verwendet werden kann. Weitere Informationen zur Verwendung von Sprite Kit finden Sie in diesem Beitrag: [https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **Scene Kit** – xamarin bietet auch Unterstützung für das Scene Kit-Framework von Apple, das die Implementierung von 3D-Grafiken in ios-apps vereinfacht. Das Scene Kit ist auch von Apple bereitgestellte Technologie, sodass es sowohl über die Integrations-als auch über die plattformspezifischen Überlegungen für Sprite Kit verfügt. Weitere Informationen zum Scene Kit finden Sie in diesem Beitrag: [https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
-- **Opentk –** Opentk (steht für Open Tool Kit) bietet OpenGL-Zugriff auf niedriger Ebene auf Ios-, Apple-und Mac-Hardware. Weitere Informationen zu opentk finden Sie auf der Hauptseite unter: [https://opentk.net/](https://opentk.net/)
+- **Sprite Kit** – xamarin bietet Unterstützung für das Sprite Kit-Spiel Framework von Apple, das Ihnen den Zugriff auf die gesamte Funktionalität der systemeigenen API ermöglicht. Da das Sprite Kit von Apple erstellte Technologien umfasst, bietet es eine umfassende Integration in den Rest des IOS-Ökosystems. Natürlich ist das Sprite Kit nicht plattformübergreifend, sodass es nicht auf Android verwendet werden kann. Weitere Informationen zur Verwendung von Sprite Kit finden Sie in diesem Beitrag:[https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **Scene Kit** – xamarin bietet auch Unterstützung für das Scene Kit-Framework von Apple, das die Implementierung von 3D-Grafiken in ios-apps vereinfacht. Das Scene Kit ist auch von Apple bereitgestellte Technologie, sodass es sowohl über die Integrations-als auch über die plattformspezifischen Überlegungen für Sprite Kit verfügt. Weitere Informationen zum Scene Kit finden Sie in diesem Beitrag:[https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **Opentk –** Opentk (steht für Open Tool Kit) bietet OpenGL-Zugriff auf niedriger Ebene auf Ios-, Apple-und Mac-Hardware. Weitere Informationen zu opentk finden Sie auf der Hauptseite unter:[https://opentk.net/](https://opentk.net/)
 
 ## <a name="related-links"></a>Verwandte Links
 

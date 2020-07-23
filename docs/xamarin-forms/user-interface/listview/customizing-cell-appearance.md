@@ -10,12 +10,12 @@ ms.date: 09/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cdede547e3ef7cf9f7b6d89751c7476a2ce66d3d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 05a001d3b49f38b2cb5306d8a19a08b4f8392425
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129011"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935563"
 ---
 # <a name="customizing-listview-cell-appearance"></a>Anpassen der ListView-Zellen Darstellung
 
@@ -37,7 +37,7 @@ Die [`SwitchCell`](~/xamarin-forms/user-interface/tableview.md#switchcell) -und-
 
 [`TextCell`](xref:Xamarin.Forms.TextCell)ist eine Zelle zum Anzeigen von Text, optional mit einer zweiten Zeile als Detailtext. Der folgende Screenshot zeigt `TextCell` Elemente unter IOS und Android:
 
-![](customizing-cell-appearance-images/text-cell-default.png "Default TextCell Example")
+![Standard textcell-Beispiel](customizing-cell-appearance-images/text-cell-default.png)
 
 Textcells werden zur Laufzeit als native Steuerelemente gerendert, sodass die Leistung im Vergleich zu einem benutzerdefinierten sehr gut ist `ViewCell` . Textcells können angepasst werden, sodass Sie die folgenden Eigenschaften festlegen können:
 
@@ -48,7 +48,7 @@ Textcells werden zur Laufzeit als native Steuerelemente gerendert, sodass die Le
 
 Der folgende Screenshot zeigt `TextCell` Elemente mit angepassten Farbeigenschaften:
 
-![](customizing-cell-appearance-images/text-cell-custom.png "Custom TextCell Example")
+![Beispiel für benutzerdefinierte textcell](customizing-cell-appearance-images/text-cell-custom.png)
 
 ### <a name="imagecell"></a>ImageCell
 
