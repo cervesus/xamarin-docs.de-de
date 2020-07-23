@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d3ae71685c7aaebdceacb5f8b7cd5f3dd308407c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 876e5449e17276efc3b368ab7d2c9e57365f948f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137246"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937825"
 ---
 # <a name="masterdetailpage-navigation-bar-on-windows"></a>Masterdetailpage-Navigationsleiste unter Windows
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Diese universelle Windows-Plattform plattformspezifisch wird verwendet, um die Navigationsleiste eines zu reduzieren [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) , und wird in XAML verwendet, indem [`MasterDetailPage.CollapseStyle`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty) die [`MasterDetailPage.CollapsedPaneWidth`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty) angefügten Eigenschaften und festgelegt werden:
 
@@ -47,7 +47,7 @@ Die- `MasterDetailPage.On<Windows>` Methode gibt an, dass diese plattformspezifi
 
 Das Ergebnis ist, dass eine angegebene [`CollapseStyle`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle) auf die Instanz angewendet wird [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) , wobei die Breite ebenfalls angegeben wird:
 
-[![](masterdetailpage-navigation-bar-images/collapsed-navigation-bar.png "Collapsed Navigation Bar Platform-Specific")](masterdetailpage-navigation-bar-images/collapsed-navigation-bar-large.png#lightbox "Collapsed Navigation Bar Platform-Specific")
+[![Plattformspezifisch reduzierte Navigationsleiste](masterdetailpage-navigation-bar-images/collapsed-navigation-bar.png)](masterdetailpage-navigation-bar-images/collapsed-navigation-bar-large.png#lightbox "Plattformspezifisch reduzierte Navigationsleiste")
 
 ## <a name="related-links"></a>Verwandte Links
 

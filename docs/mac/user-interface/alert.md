@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 044792f37fbba13699a5ab31d815b4f2c5dafe17
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 00e5b2a2238763822172a1b7d7a7c3090634ed17
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565485"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938085"
 ---
 # <a name="alerts-in-xamarinmac"></a>Warnungen in xamarin. Mac
 
@@ -22,7 +22,7 @@ Wenn Sie mit c# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zug
 
 Eine Warnung ist eine besondere Art von Dialogfeld, das angezeigt wird, wenn ein schwerwiegendes Problem auftritt (z. b. ein Fehler) oder eine Warnung (z. b. das Löschen einer Datei). Da es sich bei einer Warnung um ein Dialogfeld handelt, ist auch eine Benutzer Antwort erforderlich, bevor Sie geschlossen werden kann.
 
-[![](alert-images/alert06.png "An example alert")](alert-images/alert06.png#lightbox)
+[![Beispiel für eine Warnung](alert-images/alert06.png)](alert-images/alert06.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Arbeit mit Warnungen in einer xamarin. Mac-Anwendung behandelt. 
 
@@ -60,7 +60,7 @@ alert.RunModal ();
 
 Der obige Code zeigt eine Warnung an, bei der das Anwendungssymbol auf dem Warnungs Symbol, einem Titel, einer Warnmeldung und einer einzelnen Schaltfläche " **OK** " überlagert wurde:
 
-[![](alert-images/alert01.png "An alert with a OK button")](alert-images/alert01.png#lightbox)
+[![Eine Warnung mit der Schaltfläche "OK"](alert-images/alert01.png)](alert-images/alert01.png#lightbox)
 
 Apple bietet verschiedene Eigenschaften, die verwendet werden können, um eine Warnung anzupassen:
 
@@ -93,7 +93,7 @@ alert.RunModal ();
 
 Wenn dieser Code ausgeführt wird, wird Folgendes angezeigt:
 
-[![](alert-images/alert02.png "A simple alert")](alert-images/alert02.png#lightbox)
+[![Eine einfache Warnung](alert-images/alert02.png)](alert-images/alert02.png#lightbox)
 
 Der folgende Code zeigt dieselbe Warnung an wie ein Blatt:
 
@@ -108,7 +108,7 @@ alert.BeginSheet (this);
 
 Wenn dieser Code ausgeführt wird, wird Folgendes angezeigt:
 
-[![](alert-images/alert03.png "An alert displayed as a sheet")](alert-images/alert03.png#lightbox)
+[![Eine Warnung, die als Blatt angezeigt wird.](alert-images/alert03.png)](alert-images/alert03.png#lightbox)
 
 <a name="Working_with_Alert_Buttons"></a>
 
@@ -136,7 +136,7 @@ Die erste Schaltfläche, die hinzugefügt wird, ist die _Standard_ Schaltfläche
 
 Wenn Sie den Code ausführen, wird Folgendes angezeigt:
 
-[![](alert-images/alert04.png "An alert with three button options")](alert-images/alert04.png#lightbox)
+[![Eine Warnung mit drei Schaltflächen Optionen](alert-images/alert04.png)](alert-images/alert04.png#lightbox)
 
 Dies ist der Code für dieselbe Warnung wie ein Blatt:
 
@@ -156,7 +156,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 Wenn dieser Code ausgeführt wird, wird Folgendes angezeigt:
 
-[![](alert-images/alert05.png "A three button alert displayed as a sheet")](alert-images/alert05.png#lightbox)
+[![Eine drei Schaltflächen Warnung wird als Blatt angezeigt.](alert-images/alert05.png)](alert-images/alert05.png#lightbox)
 
 > [!IMPORTANT]
 > Sie sollten einer Warnung niemals mehr als drei Schaltflächen hinzufügen.
@@ -185,7 +185,7 @@ Wenn der Wert von `alert.SuppressionButton.State` ist `NSCellStateValue.On` , ha
 
 Wenn der Code ausgeführt wird, wird Folgendes angezeigt:
 
-[![](alert-images/alert06.png "An alert with a suppress button")](alert-images/alert06.png#lightbox)
+[![Eine Warnung mit der Schaltfläche "unterdrücken"](alert-images/alert06.png)](alert-images/alert06.png#lightbox)
 
 Dies ist der Code für dieselbe Warnung wie ein Blatt:
 
@@ -206,7 +206,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 Wenn dieser Code ausgeführt wird, wird Folgendes angezeigt:
 
-[![](alert-images/alert07.png "An alert with a suppress button display as a sheet")](alert-images/alert07.png#lightbox)
+[![Eine Warnung mit der Schaltfläche "unterdrücken" als Blatt](alert-images/alert07.png)](alert-images/alert07.png#lightbox)
 
 <a name="Adding_a_Custom_SubView"></a>
 
@@ -236,7 +236,7 @@ In den folgenden Schlüssel Zeilen `var input = new NSTextField (new CGRect (0, 
 
 Wenn Sie den Code ausführen, wird Folgendes angezeigt:
 
-[![](alert-images/alert08.png "If we run the code, the following will be displayed")](alert-images/alert08.png#lightbox)
+[![Wenn Sie den Code ausführen, wird Folgendes angezeigt:](alert-images/alert08.png)](alert-images/alert08.png#lightbox)
 
 Dies ist dieselbe Warnung wie ein Blatt:
 
@@ -261,7 +261,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 Wenn Sie diesen Code ausführen, wird Folgendes angezeigt:
 
-[![](alert-images/alert09.png "An alert with a custom view")](alert-images/alert09.png#lightbox)
+[![Eine Warnung mit einer benutzerdefinierten Ansicht](alert-images/alert09.png)](alert-images/alert09.png#lightbox)
 
 <a name="Summary"></a>
 
@@ -269,7 +269,7 @@ Wenn Sie diesen Code ausführen, wird Folgendes angezeigt:
 
 In diesem Artikel wurde die Arbeit mit Warnungen in einer xamarin. Mac-Anwendung ausführlich erläutert. Wir haben die verschiedenen Typen und Verwendungsmöglichkeiten von Warnungen gesehen, das Erstellen und Anpassen von Warnungen und das Arbeiten mit Warnungen in c#-Code.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Macwindows (Beispiel)](https://docs.microsoft.com/samples/xamarin/mac-samples/macwindows)
 - [Hello, Mac (Hallo Mac)](~/mac/get-started/hello-mac.md)

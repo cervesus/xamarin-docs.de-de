@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: def34efd1fd48cc0e7dd802a6d3e843be1e156a4
-ms.sourcegitcommit: 5ddb107b0a56bef8a16fce5bc6846f9673b3b22e
+ms.openlocfilehash: 4fe58dbc02da47d5791afbbfe0132fd21e774b63
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75558806"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939788"
 ---
 # <a name="photokit-in-xamarinios"></a>Photokit in xamarin. IOS
 
-[Beispiel für ![herunterladen](~/media/shared/download.png) Codebeispiel herunterladen](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp/)
+[![Download Beispiel ](~/media/shared/download.png) Herunterladen eines Code Beispiels](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp/)
 
 Photokit ist ein Framework, das es Anwendungen ermöglicht, die System Image Bibliothek abzufragen und benutzerdefinierte Benutzeroberflächen zu erstellen, um deren Inhalte anzuzeigen und zu ändern. Sie enthält eine Reihe von Klassen, die Bild-und Video Medienobjekte sowie Sammlungen von Assets wie z. b. Alben und Ordner darstellen.
 
@@ -31,18 +31,18 @@ Bevor Ihre APP auf die Fotobibliothek zugreifen kann, wird dem Benutzer ein Bere
 
 ## <a name="model-objects"></a>Modell Objekte
 
-Photokit stellt diese Assets in der Art dar, in der Modell Objekte aufgerufen werden. Die Modell Objekte, die die Fotos und Videos selbst darstellen, sind vom Typ `PHAsset`. Eine `PHAsset` die Metadaten wie den Medientyp des Assets und das Erstellungsdatum enthält.
-Entsprechend enthalten die Klassen "`PHAssetCollection`" und "`PHCollectionList`" Metadaten zu Ressourcen Sammlungen und Sammlungs Listen. Ressourcen Sammlungen sind Gruppen von Assets, wie z. b. Alle Fotos und Videos für ein bestimmtes Jahr. Ebenso sind Sammlungs Listen Gruppen von Ressourcen Sammlungen, z. b. Fotos und Videos nach Jahr gruppiert.
+Photokit stellt diese Assets in der Art dar, in der Modell Objekte aufgerufen werden. Die Modell Objekte, die die Fotos und Videos selbst darstellen, sind vom Typ `PHAsset` . Ein `PHAsset` enthält Metadaten, z. b. den Medientyp des Assets und das Erstellungsdatum.
+`PHAssetCollection` `PHCollectionList` Entsprechend enthalten die Klassen und Metadaten zu Ressourcen Auflistungen und Sammlungs Listen. Ressourcen Sammlungen sind Gruppen von Assets, wie z. b. Alle Fotos und Videos für ein bestimmtes Jahr. Ebenso sind Sammlungs Listen Gruppen von Ressourcen Sammlungen, z. b. Fotos und Videos nach Jahr gruppiert.
 
 ## <a name="querying-model-data"></a>Abfragen von Modelldaten
 
-Mit photokit können Sie Modelldaten problemlos über eine Vielzahl von Abruf Methoden Abfragen. Wenn Sie z. b. alle Images abrufen möchten, rufen Sie `PHAsset.Fetch`auf, und übergeben Sie den `PHAssetMediaType.Image` Medientyp.
+Mit photokit können Sie Modelldaten problemlos über eine Vielzahl von Abruf Methoden Abfragen. Wenn Sie z. b. alle Images abrufen möchten, rufen Sie auf `PHAsset.Fetch` , und übergeben Sie den `PHAssetMediaType.Image` Medientyp.
 
 ```csharp
 PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 ```
 
-Die `PHFetchResult` Instanz enthält dann alle `PHAsset` Instanzen, die Bilder darstellen. Um die Images selbst abzurufen, verwenden Sie die `PHImageManager` (oder die cachingversion `PHCachingImageManager`), um eine Anforderung für das Image durch Aufrufen von `RequestImageForAsset`zu erstellen. Der folgende Code ruft z. b. ein Bild für jede Ressource in einem `PHFetchResult` ab, das in einer Auflistungs Ansichts Zelle angezeigt werden soll:
+Die `PHFetchResult` Instanz würde dann alle Instanzen enthalten, die `PHAsset` Bilder darstellen. Um die Images selbst abzurufen, verwenden Sie `PHImageManager` (oder die Cache Version), `PHCachingImageManager` um eine Anforderung für das Image durch Aufrufen von zu erstellen `RequestImageForAsset` . Der folgende Code ruft beispielsweise ein Bild für jedes Medienobjekt in einem ab `PHFetchResult` , das in einer Auflistungs Ansichts Zelle angezeigt werden soll:
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
@@ -62,11 +62,11 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 Dies führt zu einem Raster mit Bildern, wie unten dargestellt:
 
-![](photokit-images/image4.png "The running app displaying a grid of images")
+![Die laufende APP, die ein Raster mit Bildern anzeigt](photokit-images/image4.png)
 
 ## <a name="saving-changes-to-the-photo-library"></a>Speichern von Änderungen an der Fotobibliothek
 
-So wird das Abfragen und Lesen von Daten behandelt. Sie können auch Änderungen zurück in die Bibliothek schreiben. Da mehrere interessierte Anwendungen mit der System Fotobibliothek interagieren können, können Sie einen Beobachter registrieren, um über Änderungen mithilfe eines `PhotoLibraryObserver`benachrichtigt zu werden. Wenn dann Änderungen auftreten, kann die Anwendung entsprechend aktualisiert werden. Hier ist beispielsweise eine einfache Implementierung zum erneuten Laden der oben aufgeführten Sammlungsansicht:
+So wird das Abfragen und Lesen von Daten behandelt. Sie können auch Änderungen zurück in die Bibliothek schreiben. Da mehrere interessierte Anwendungen mit der System Fotobibliothek interagieren können, können Sie einen Beobachter registrieren, um über Änderungen mithilfe von benachrichtigt zu werden `PhotoLibraryObserver` . Wenn dann Änderungen auftreten, kann die Anwendung entsprechend aktualisiert werden. Hier ist beispielsweise eine einfache Implementierung zum erneuten Laden der oben aufgeführten Sammlungsansicht:
 
 ```csharp
 class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
@@ -89,10 +89,10 @@ class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
 }
 ```
 
-Wenn Sie tatsächlich Änderungen von Ihrer Anwendung Zurückschreiben möchten, erstellen Sie eine Change Request. Jede Modell Klasse verfügt über eine zugeordnete Change Request-Klasse. Wenn Sie z. b. eine `PHAsset`ändern möchten, erstellen Sie eine `PHAssetChangeRequest`. Die Schritte zum Ausführen von Änderungen, die in die Fotobibliothek zurückgeschrieben und an Beobachter wie die oben gesendet werden, lauten wie folgt:
+Wenn Sie tatsächlich Änderungen von Ihrer Anwendung Zurückschreiben möchten, erstellen Sie eine Change Request. Jede Modell Klasse verfügt über eine zugeordnete Change Request-Klasse. Wenn Sie z. b. ein ändern möchten `PHAsset` , erstellen Sie einen `PHAssetChangeRequest` . Die Schritte zum Ausführen von Änderungen, die in die Fotobibliothek zurückgeschrieben und an Beobachter wie die oben gesendet werden, lauten wie folgt:
 
 1. Führt den Bearbeitungsvorgang aus.
-2. Speichert die gefilterten Bilddaten in einer `PHContentEditingOutput`-Instanz.
+2. Speichert die gefilterten Bilddaten in einer- `PHContentEditingOutput` Instanz.
 3. Erstellen Sie eine Change Request, um die Änderungen aus der Bearbeitungs Ausgabe zu veröffentlichen.
 
 Hier ist ein Beispiel, das eine Änderung an ein Bild zurückgibt, das einen Core-Bild-WF-Filter anwendet:
@@ -135,6 +135,6 @@ Wenn der Benutzer die Schaltfläche auswählt, wird der Filter angewendet:
 
 ![Zwei Beispiele, in denen das Foto vor und nach dem Anwenden des Filters angezeigt wird](photokit-images/image5.png)
 
-Dank der `PHPhotoLibraryChangeObserver`wird die Änderung in der Auflistungs Ansicht widergespiegelt, wenn der Benutzer zurück navigiert:
+Dank der wird die `PHPhotoLibraryChangeObserver` Änderung in der Auflistungs Ansicht widergespiegelt, wenn der Benutzer zurück navigiert:
 
 ![Foto-Sammlungsansicht mit geändertem Foto](photokit-images/image6.png)

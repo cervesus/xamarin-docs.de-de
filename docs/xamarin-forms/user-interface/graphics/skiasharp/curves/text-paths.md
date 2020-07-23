@@ -10,16 +10,16 @@ ms.date: 08/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b0cbb7d26a2aea02a3255fc75947c20a3d803b86
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0964ad7d2bf517a6a4c7cf7965c346629716166
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131897"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936018"
 ---
 # <a name="paths-and-text-in-skiasharp"></a>Pfade und Text in skiasharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Untersuchen der Schnittmenge von Pfaden und Text_
 
@@ -29,7 +29,7 @@ Sie haben bereits gesehen, dass Sie die Kontur von Textzeichen zeichnen und ausf
 
 Neben der Verwendung eines Pfad Effekts zum Zeichnen einer Zeichen Gliederung können Sie auch Pfad Effekte erstellen, die auf einem Pfad basieren, der von einer Zeichenfolge abgeleitet ist, und Sie können sogar die beiden Effekte kombinieren:
 
-![](text-paths-images/pathsandtextsample.png "Text Path Effect")
+![Text Pfad Effekt](text-paths-images/pathsandtextsample.png)
 
 Im vorherigen Artikel zu [**path-Effekten**](effects.md)haben Sie gesehen, wie die- [`GetFillPath`](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single)) Methode von eine Gliederung `SKPaint` eines gezeichneten Pfades abrufen kann. Sie können diese Methode auch mit Pfaden verwenden, die von Zeichen umrissen abgeleitet werden.
 
@@ -49,7 +49,7 @@ Die- `GetTextPath` Methode ist übertrieben, wenn Sie nur den resultierenden Pfa
 
 Eine dieser Aufgaben ist das Clipping. Auf der Seite **Clipping-Text** wird ein clippingpfad basierend auf den Zeichen umrissen des Worts "Code" erstellt. Dieser Pfad wird auf die Größe der Seite gestreckt, um eine Bitmap zu schneiden, die ein Bild des **Clipping-Text** Quellcodes enthält:
 
-[![](text-paths-images/clippingtext-small.png "Triple screenshot of the Clipping Text page")](text-paths-images/clippingtext-large.png#lightbox "Triple screenshot of the Clipping Text page")
+[![Dreifacher Screenshot der clippingtextzeile](text-paths-images/clippingtext-small.png)](text-paths-images/clippingtext-large.png#lightbox "Dreifacher Screenshot der clippingtextzeile")
 
 Der- [`ClippingTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Klassenkonstruktor lädt die Bitmap, die als eingebettete Ressource gespeichert ist, in den **Medien** Ordner der Projekt Mappe:
 
@@ -129,7 +129,7 @@ Nachdem der clippingpfad festgelegt wurde, kann die Bitmap angezeigt werden, und
 
 Auf der Seite **Text Pfad Effekt** werden ein einzelnes kaufmännisches Zeichen und ein Zeichen in einen Pfad konvertiert, um einen 1D-Pfad Effekt zu erstellen. Ein Paint-Objekt mit diesem Pfad Effekt wird dann verwendet, um die Kontur einer größeren Version desselben Zeichens zu zeichnen:
 
-[![](text-paths-images/textpatheffect-small.png "Triple screenshot of the Text Path Effect page")](text-paths-images/textpatheffect-large.png#lightbox "Triple screenshot of the Text Path Effect page")
+[![Dreifacher Screenshot der Seite "Text Pfad Effekt"](text-paths-images/textpatheffect-small.png)](text-paths-images/textpatheffect-large.png#lightbox "Dreifacher Screenshot der Seite "Text Pfad Effekt"")
 
 Ein Großteil der Arbeit in der [`TextPathEffectPath`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) -Klasse tritt in den Feldern und dem Konstruktor auf. Die beiden `SKPaint` -Objekte, die als Felder definiert sind, werden für zwei unterschiedliche Zwecke verwendet: die erste (mit dem Namen `textPathPaint` ) wird verwendet, um das kaufmännische und-Element mit einem `TextSize` von 50 in einen Pfad für den 1D-Pfad Effekt zu konvertieren. Die zweite ( `textPaint` ) wird verwendet, um die größere Version des kaufmännischen und mit diesem Pfad Effekt anzuzeigen. Aus diesem Grund wird der `Style` dieses zweiten Paint-Objekts auf festgelegt `Stroke` , aber die- `StrokeWidth` Eigenschaft ist nicht festgelegt, da diese Eigenschaft bei Verwendung eines 1D-Pfad Effekts nicht erforderlich ist:
 
@@ -274,7 +274,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Der `PaintSurface` Handler erstellt dann einen neuen Pfad mit dem Namen `outlinePath` . Dies wird zum Zielpfad im-Befehl `GetFillPath` . Die- `StrokeWidth` Eigenschaft von 25 bewirkt, dass die Gliederung `outlinePath` eines 25 Pixel weiten Pfades, der die Textzeichen überschneidet, beschrieben wird. Dieser Pfad wird dann rot mit einer Strichbreite von 5 angezeigt:
 
-[![](text-paths-images/characteroutlineoutlines-small.png "Triple screenshot of the Character Outline Outlines page")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Triple screenshot of the Character Outline Outlines page")
+[![Dreifacher Screenshot der Seite mit den Gliederungs umrissen](text-paths-images/characteroutlineoutlines-small.png)](text-paths-images/characteroutlineoutlines-large.png#lightbox "Dreifacher Screenshot der Seite mit den Gliederungs umrissen")
 
 Sehen Sie sich genau an, und Sie sehen Überschneidungen, wenn die Pfad Gliederung eine Spitze Ecke bildet. Dabei handelt es sich um normale Artefakte dieses Prozesses.
 
@@ -327,11 +327,11 @@ public class CircularTextPage : ContentPage
 
 Die- `TextSize` Eigenschaft von `textPaint` wird dann so angepasst, dass die Text Breite mit dem Umfang des Kreises übereinstimmt:
 
-[![](text-paths-images/circulartext-small.png "Triple screenshot of the Circular Text page")](text-paths-images/circulartext-large.png#lightbox "Triple screenshot of the Circular Text page")
+[![Dreifacher Screenshot der kreisförmigen Textseite](text-paths-images/circulartext-small.png)](text-paths-images/circulartext-large.png#lightbox "Dreifacher Screenshot der kreisförmigen Textseite")
 
 Der Text selbst wurde auch etwas zirkulär gewählt: das Wort "Circle" ist sowohl der Betreff des Satzes als auch das Objekt eines Ausdrucks mit vorangestelltem Ausdruck.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

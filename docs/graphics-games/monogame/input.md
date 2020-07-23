@@ -1,38 +1,38 @@
 ---
-title: MonoGame GamePad-Referenz
-description: Dieses Dokument beschreibt GamePad, einer plattformübergreifenden-Klasse für den Zugriff auf Geräte, die in MonoGame Eingabe. Es wird erläutert, wie aus den Gamepad Eingabe zu lesen und stellt Beispielcode bereit.
+title: Monogame-Gamepad-Referenz
+description: In diesem Dokument wird Gamepad beschrieben, eine plattformübergreifende Klasse für den Zugriff auf Eingabegeräte in monogame. Es wird erläutert, wie Sie Eingaben aus dem Gamepad lesen und Beispielcode bereitstellen.
 ms.prod: xamarin
 ms.assetid: 1F71F3E8-2397-4C6A-8163-6731ECFB7E03
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 235166b78dfbd4998086a2925a54137f1922f5d1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 11b1cfda435e97b09f9d1eded22f11f912d1783d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61385698"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934029"
 ---
-# <a name="monogame-gamepad-reference"></a>MonoGame GamePad-Referenz
+# <a name="monogame-gamepad-reference"></a>Monogame-Gamepad-Referenz
 
-_GamePad ist ein standard, Cross-Platform-Klasse für den Zugriff auf Eingabegeräte in MonoGame._
+_Gamepad ist eine plattformübergreifende Standardklasse für den Zugriff auf Eingabegeräte in monogame._
 
-`GamePad` kann verwendet werden, von Eingabegeräte auf mehreren Plattformen von MonoGame lesen. Dieses Handbuch veranschaulicht, wie Arbeiten Sie mit der GamePad-Klasse. Da jede Eingabegerät unterscheidet sich in Layout und die Anzahl der bereitgestellten, enthält dieses Handbuch Diagramme, die die verschiedenen Geräte Zuordnungen zu zeigen.
+`GamePad`kann zum Lesen von Eingaben von Eingabegeräten auf mehreren monogame-Plattformen verwendet werden. Diese Anleitung zeigt, wie Sie mit der Gamepad-Klasse arbeiten. Da sich jedes Eingabegerät im Layout und in der Anzahl der von ihm bereitgestellten Schaltflächen unterscheidet, enthält dieses Handbuch Diagramme, in denen die verschiedenen Geräte Zuordnungen angezeigt werden.
 
-## <a name="gamepad-as-a-replacement-for-xbox360gamepad"></a>GamePad als Ersatz für Xbox360GamePad
+## <a name="gamepad-as-a-replacement-for-xbox360gamepad"></a>Gamepad als Ersatz für Xbox360GamePad
 
-Die ursprüngliche bereitgestellte XNA-API die `Xbox360GamePad` Klasse zum Lesen von Eingaben über ein game Controller für die Xbox 360 oder PC. MonoGame wurde ersetzt, dies mit einem `GamePad` Klasse, da die Xbox 360-Controller für die meisten MonoGame-Plattformen (z. B. iOS oder deiner Xbox One) verwendet werden können. Trotz der Namensänderung die Verwendung von der `GamePad` Klasse ist vergleichbar mit der `Xbox360GamePad` Klasse.
+Die ursprüngliche XNA-API stellte die `Xbox360GamePad` Klasse zum Lesen von Eingaben von einem Spiele Controller auf der Xbox 360 oder dem PC bereit. Monogame hat dies durch eine Klasse ersetzt, `GamePad` da Xbox 360-Controller nicht auf den meisten monogame-Plattformen (z. b. IOS oder Xbox One) verwendet werden können. Trotz der Namensänderung ähnelt die Verwendung der- `GamePad` Klasse der- `Xbox360GamePad` Klasse.
 
-## <a name="reading-input-from-gamepad"></a>Lesen von Eingaben über GamePad
+## <a name="reading-input-from-gamepad"></a>Lesen von Eingaben aus Gamepad
 
-Die `GamePad` Klasse bietet eine standardisierte Möglichkeit Lesen von Eingaben auf jeder Plattform MonoGame. Es enthält Informationen über zwei Methoden:
+Die- `GamePad` Klasse bietet eine standardisierte Möglichkeit zum Lesen von Eingaben auf jeder monogame-Plattform. Sie enthält Informationen über zwei Methoden:
 
-- `GetState` – Gibt den aktuellen Status von Schaltflächen, analoge Sticks und Steuerkreuz des Controllers zurück.
-- `GetCapabilities` – Informationen zu den Funktionen der Hardware, zurückgibt, z. B., ob der Controller bestimmte hat Schaltflächen oder Vibration unterstützt.
+- `GetState`– Gibt den aktuellen Zustand der Schaltflächen, die analogen Sticks und das d-Pad des Controllers zurück.
+- `GetCapabilities`– Gibt Informationen zu den Funktionen von Hardware zurück, z. b. ob der Controller über bestimmte Schaltflächen verfügt oder Vibrationen unterstützt.
 
-### <a name="example-moving-a-character"></a>Beispiel: Ein Zeichen verschieben
+### <a name="example-moving-a-character"></a>Beispiel: Verschieben eines Zeichens
 
-Der folgende Code zeigt, wie der linke Ziehpunkt Stick verwendet werden kann, verschieben Sie ein Zeichen durch Festlegen seiner `XVelocity` und `YVelocity` Eigenschaften. Dieser Code setzt voraus, dass `characterInstance` ist eine Instanz eines Objekts mit `XVelocity` und `YVelocity` Eigenschaften:
+Der folgende Code zeigt, wie der linke Ziehpunkt zum Verschieben eines Zeichens verwendet werden kann, indem seine-Eigenschaft und die-Eigenschaft festgelegt werden `XVelocity` `YVelocity` . Bei diesem Code wird davon ausgegangen, dass `characterInstance` eine Instanz eines Objekts ist, das über die `XVelocity` Eigenschaften und verfügt `YVelocity` :
 
 ```csharp
 // In Update, or some code called every frame:
@@ -42,11 +42,11 @@ characterInstance.XVelocity = gamePadState.ThumbSticks.Left.X * characterInstanc
 characterInstance.YVelocity = gamePadState.ThumbSticks.Left.Y * characterInstance.MaxSpeed;
 ```
 
-### <a name="example-detecting-pushes"></a>Beispiel: Erkennen von Pushvorgängen
+### <a name="example-detecting-pushes"></a>Beispiel: Erkennen von pushvorgängen
 
-`GamePadState` enthält Informationen zu den aktuellen Zustand des Controllers, z. B., ob eine bestimmte Schaltfläche geklickt wird. Bestimmte Aktionen ausführen, z. B. indem ein Zeichen zu wechseln, erfordert überprüfen, wenn die Schaltfläche mithilfe von Push übertragen wurde (war nicht nach unten letzten Frame, aber Sie diesen Frame ist) oder freigegeben (war Sie letzten Frame, aber nicht nach diesem Frame unten).
+`GamePadState`stellt Informationen zum aktuellen Zustand des Controllers bereit, z. b. ob eine bestimmte Schaltfläche gedrückt wird. Bestimmte Aktionen (z. b. das Ausführen eines Zeichens) erfordern das überprüfen, ob die Schaltfläche gedrückt wurde (war nicht der letzte Rahmen, aber der Frame ist nicht nach unten) oder freigegeben (war der letzte Frame, aber nicht in diesem Frame).
 
-Um diese Art von Logik, lokale Variablen auszuführen, die des vorherigen Frames zu speichern `GamePadState` und des aktuellen Frames `GamePadState` muss erstellt werden. Das folgende Beispiel zeigt, wie das Speichern und verwenden die vorherigen Frames `GamePadState` springen zu implementieren:
+Um diese Art von Logik auszuführen, müssen lokale Variablen erstellt werden, die den vorherigen Frame `GamePadState` und den aktuellen Frame speichern `GamePadState` . Im folgenden Beispiel wird gezeigt, wie Sie den vorherigen Frame zum Speichern und verwenden können `GamePadState` , um das Springen zu implementieren:
 
 ```csharp
 // At class scope:
@@ -70,9 +70,9 @@ currentGamePadState.Buttons.A == ButtonState.Pressed
 }
 ```
 
-### <a name="example-checking-for-buttons"></a>Beispiel: Überprüfen für Schaltflächen
+### <a name="example-checking-for-buttons"></a>Beispiel: Überprüfen auf Schaltflächen
 
-`GetCapabilities` kann verwendet werden, zu überprüfen, ob ein Controller über eine bestimmte Hardware, z. B. eine bestimmte Schaltfläche oder einen analogen Stick verfügt. Der folgende Code zeigt, wie für die Schaltflächen "B" und "Y" auf einem Domänencontroller in einem Spiel überprüft das Vorhandensein der beiden Schaltflächen müssen:
+`GetCapabilities`kann verwendet werden, um zu überprüfen, ob ein Controller über bestimmte Hardware verfügt, z. b. eine bestimmte Schaltfläche oder einen analogen Stift Der folgende Code zeigt, wie die Schaltflächen B und Y eines Controllers in einem Spiel überprüft werden, für das das vorhanden sein beider Schaltflächen erforderlich ist:
 
 ```csharp
 var capabilities = GamePad.GetCapabilities(PlayerIndex.One);
@@ -86,49 +86,49 @@ if(!hasBButton || !hasXButton)
 
 ## <a name="ios"></a>iOS
 
-iOS-apps unterstützt die drahtlose Gamecontroller Eingabe.
+IOS-apps unterstützen die Eingabe des drahtlos Spiel Controllers.
 
 > [!IMPORTANT]
-> Die NuGet-Pakete für MonoGame 3.5 enthalten keine Unterstützung für drahtlose Gamecontroller. Mithilfe der GamePad-Klasse unter iOS ist erforderlich, MonoGame 3.5 von der Quelle erstellen, oder verwenden die MonoGame-3.6-NuGet-Binärdateien.
+> Die nuget-Pakete für monogame 3,5 enthalten keine Unterstützung für drahtlos Spielcontroller. Die Verwendung der Gamepad-Klasse unter IOS erfordert die Verwendung von monogame 3,5 aus der Quelle oder die Verwendung der monogame-Binärdateien mit den Binärdateien 3,6.
 
-### <a name="ios-game-controller"></a>iOS-Spiel-Controller
+### <a name="ios-game-controller"></a>IOS-Spiele Controller
 
-Die `GamePad` Klasse zurückgibt, Eigenschaften, die von drahtlosen Controllern zu lesen. Die Eigenschaften in der `GamePad` bieten eine gute codeabdeckung für den standard iOS Controller Hardware, wie im folgenden Diagramm dargestellt:
+Die `GamePad` Klasse gibt Eigenschaften zurück, die von drahtlos Controllern gelesen werden. Die Eigenschaften in `GamePad` bieten eine gute Abdeckung für die standardmäßige IOS-Controller-Hardware, wie in der folgenden Abbildung dargestellt:
 
-![](input-images/image1.png "Die Eigenschaften in den GamePad bieten eine gute codeabdeckung für den standard-iOS Controller Hardware, wie in diesem Diagramm dargestellt.")
+![Die Eigenschaften im Gamepad bieten eine gute Abdeckung für die standardmäßige IOS-Controller-Hardware, wie in diesem Diagramm dargestellt.](input-images/image1.png)
 
 ## <a name="apple-tv"></a>Apple TV
 
-Apple TV-Spiele können die Siri Remote oder drahtlosen Gamecontroller für die Eingabe.
+Apple TV-Spiele können die Siri-Remote-oder drahtlos Spielcontroller für die Eingabe verwenden.
 
-### <a name="siri-remote"></a>Siri-Remote
+### <a name="siri-remote"></a>Siri (Remote)
 
-*Siri Remote* ist das systemeigene Eingabegerät für Apple TV. Obwohl Werte aus der Siri Remote über Ereignisse gelesen werden können (siehe die [Siri Remote- und Bluetooth-Controller –](~/ios/tvos/platform/remote-bluetooth.md)), wird die `GamePad` Klasse kann Werte von Siri Remote zurückgeben.
+*Siri Remote* ist das Native Eingabegerät für Apple TV. Obwohl die Werte von Siri Remote durch Ereignisse gelesen werden können (wie im Handbuch für die [Remote-und Bluetooth-Controller von Siri](~/ios/tvos/platform/remote-bluetooth.md)), kann die- `GamePad` Klasse Werte von der Siri-Remote Rückgabe zurückgeben.
 
-Beachten Sie, dass `GamePad` kann nur von der Schaltfläche "Abspielen" Lesen und touch-Oberfläche:
+Beachten Sie, dass `GamePad` die Eingaben nur über die Wiedergabe Schaltfläche und die Berührungs Oberfläche lesen können:
 
-![](input-images/image2.png "Beachten Sie, dass GamePad kann nur von der Schaltfläche \"Abspielen\" zu lesen und touch-Oberfläche")
+![Beachten Sie, dass Gamepad nur Eingaben aus der Wiedergabe Schaltfläche und der Touchoberfläche lesen kann.](input-images/image2.png)
 
-Seit der Touch-Oberfläche verschieben wird gelesen, über die `DPad` Eigenschaft Bewegung gemeldeten Werte werden mithilfe der `ButtonState` Klasse. Das heißt, Werte stehen nur als `ButtonState.Pressed` oder `ButtonState.Released`, im Gegensatz zu numerischen Werten oder Gesten.
+Da die Berührungs Oberflächenbewegung durch die-Eigenschaft gelesen wird `DPad` , werden Verschiebungs Werte mithilfe der- `ButtonState` Klasse gemeldet. Mit anderen Worten, Werte sind nur als `ButtonState.Pressed` oder verfügbar `ButtonState.Released` , im Gegensatz zu numerischen Werten oder Gesten.
 
-### <a name="apple-tv-game-controller"></a>Apple TV-Gamecontroller
+### <a name="apple-tv-game-controller"></a>Apple TV Game Controller
 
-Gamecontroller für Apple TV Verhalten sich identisch, Gamecontroller für iOS-apps. Weitere Informationen finden Sie unter den [iOS Game Controller](#ios-game-controller) Abschnitt. 
+Spiele Controller für Apple TV Verhalten sich identisch mit Spiel Controllern für IOS-apps. Weitere Informationen finden Sie im Abschnitt [IOS Game Controller](#ios-game-controller) . 
 
 ## <a name="xbox-one"></a>Xbox One
 
-Die Xbox One-Konsole unterstützt, Lesen von Eingaben über eine Xbox One Gamecontroller.
+Die Xbox One-Konsole unterstützt das Lesen von Eingaben von einem Xbox One-Spielcontroller.
 
-### <a name="xbox-one-game-controller"></a>Spiele Xbox One-Controller
+### <a name="xbox-one-game-controller"></a>Xbox One-Spiel Controller
 
-Der Xbox One game Controller ist das am häufigsten verwendeten Eingabegerät für Xbox One. Die `GamePad` Klasse bietet der Eingabewerten von der Hardware auf Gamecontroller.
+Der Xbox One-Spielcontroller ist das gängigste Eingabegerät für die Xbox One. Die- `GamePad` Klasse stellt Eingabewerte von der Game Controller-Hardware bereit.
 
-![](input-images/image3.png "Die GamePad-Klasse bietet der Eingabewerten von der Hardware auf Gamecontroller")
+![Die Gamepad-Klasse stellt Eingabewerte von der Game Controller-Hardware bereit.](input-images/image3.png)
 
 ## <a name="summary"></a>Zusammenfassung
 
-Diese Anleitung enthält einer Übersicht über die MonoGame `GamePad` Klasse zum Implementieren von Eingabe-lesen-Logik und Diagramme der allgemeinen `GamePad` Implementierungen.
+Dieses Handbuch bietet eine Übersicht über die-Klasse von monogame `GamePad` , die Implementierung von Eingabe Lese Logik und Diagramme allgemeiner `GamePad` Implementierungen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
-- [MonoGame GamePad](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_GamePad)
+- [Monogame-Gamepad](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_GamePad)

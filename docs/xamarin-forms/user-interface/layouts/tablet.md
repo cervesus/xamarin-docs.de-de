@@ -10,12 +10,12 @@ ms.date: 02/01/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0ecbc850960465296dc4047277bdafe78ac800a4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8c53b1e58ad97f7d0e17972a2b232c16e05ecc1a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573247"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934887"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Layout für Tablet-und Desktop-Apps
 
@@ -43,7 +43,7 @@ Um eine angenehme Start Funktion zu gewährleisten und sicherzustellen, dass die
 Vor IOS 9 haben alle apps auf dem Gerät den voll Bildschirm übernommen, aber einige iPads können jetzt [Multitasking mit geteiltem Bildschirm](~/ios/platform/multitasking.md)durchführen.
 Dies bedeutet, dass Ihre APP auf der Seite des Bildschirms nur eine schlanke Spalte, 50% der Bildschirmbreite oder den gesamten Bildschirm aufnehmen könnte.
 
-[![](tablet-images/ipad-sml.png "iPad Split Screen Example")](tablet-images/ipad.png#lightbox "iPad Split Screen Example")
+[![Beispiel für den iPad-Split](tablet-images/ipad-sml.png)](tablet-images/ipad.png#lightbox "Beispiel für den iPad-Split")
 
 Die Funktion "Split-Screen" bedeutet, dass Sie Ihre APP so entwerfen müssen, dass Sie mit weniger als 320 Pixel Breite oder mit einer Breite von höchstens 1366 Pixel funktioniert.
 
@@ -60,7 +60,7 @@ Zur Unterstützung von Tablets und Desktop Computern, auf denen Windows ausgefü
 
 Apps, die auf Windows-Tablets und-Desktops ausgeführt werden, können neben dem Vollbildmodus auch in beliebige Dimensionen geändert werden.
 
-[![](tablet-images/splitscreen-sml.png "Windows Split Screen Example")](tablet-images/splitscreen.png#lightbox "Windows Split Screen Example")
+[![Beispiel für Windows-Split Screen](tablet-images/splitscreen-sml.png)](tablet-images/splitscreen.png#lightbox "Beispiel für Windows-Split Screen")
 
 ## <a name="optimize-for-tablet-and-desktop"></a>Optimieren von Tablet und Desktop
 
@@ -87,7 +87,7 @@ Der [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) eignet sich ideal 
 
 Lesen Sie [diesen xamarin-Blogbeitrag](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/) , um zu erfahren, wie Sie Ihre Benutzeroberfläche so anpassen können, dass Telefone ein Layout verwenden und größere Bildschirme andere (mit) verwenden können `MasterDetailPage` .
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Xamarin-Blog](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/)
 - [Myshoppe-Beispiel](https://github.com/jamesmontemagno/myshoppe)

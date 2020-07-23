@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f6f61503f619c08ed3e4eae2adf6ddb2c474f99f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6def31ebfe2a619f1d5db1e0fba071494afbcd3e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571479"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931962"
 ---
 # <a name="configuration-management"></a>Konfigurationsverwaltung
 
@@ -124,7 +124,7 @@ Jedes Mal, wenn die- `BaseEndpoint` Eigenschaft festgelegt wird, wird die- `Upda
 
 Im Mobile App eshoponcontainers werden von `SettingsView` zwei Benutzereinstellungen verfügbar gemacht. Mit diesen Einstellungen können Sie konfigurieren, ob die APP Daten von als docker-Container bereitgestellten als docker-Container abrufen soll oder ob die APP Daten von mockdiensten abrufen soll, die keine Internetverbindung benötigen. Beim Abrufen von Daten aus containerisierten microservices muss eine Basis Endpunkt-URL für die microservices angegeben werden. In Abbildung 7-1 wird der angezeigt `SettingsView` , wenn der Benutzer das Abrufen von Daten aus containerisierten microservices ausgewählt hat.
 
-![](configuration-management-images/settings-endpoint.png "User settings exposed by the eShopOnContainers mobile app")
+![Benutzereinstellungen, die von der eshoponcontainers-Mobile App verfügbar gemacht werden](configuration-management-images/settings-endpoint.png)
 
 **Abbildung 7-1**: Benutzereinstellungen, die von der eshoponcontainers-Mobile App verfügbar gemacht werden
 
@@ -188,7 +188,7 @@ Einstellungen ermöglichen die Trennung von Daten, die das Verhalten einer App a
 
 Die XAM. Plugins. Settings-Bibliothek bietet eine konsistente, typsichere und plattformübergreifende Methode zum beibehalten und Abrufen von App-und Benutzereinstellungen, und die Datenbindung kann verwendet werden, um auf die mit der Bibliothek erstellten Einstellungen zuzugreifen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
 - [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

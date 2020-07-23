@@ -10,12 +10,12 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf03d0c32d80d7a1821e323acdc84a351413efec
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 71238775e9cc9d3e32ab9c9287e5b52c759ca9eb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138878"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939931"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Übergeben von Effect-Parametern als angefügte Eigenschaften
 
@@ -38,11 +38,11 @@ Parameter können dann an den Effekt übergeben werden, indem die angefügten Ei
 
 Die Beispielanwendung veranschaulicht eine `ShadowEffect`-Klasse, die einen Schatten zu dem Text hinzufügt, der vom [`Label`](xref:Xamarin.Forms.Label)-Steuerelement angezeigt wird. Die Farbe des Schattens kann darüber hinaus zur Laufzeit geändert werden. Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](attached-properties-images/shadow-effect.png "Shadow Effect Project Responsibilities")
+![Projektzuständigkeiten beim Schatteneffekt](attached-properties-images/shadow-effect.png)
 
 Ein [`Label`](xref:Xamarin.Forms.Label)-Steuerelement im `HomePage`-Element wird in jedem plattformspezifischen Projekt von `LabelShadowEffect` angepasst. Parameter werden über angefügte Eigenschaften in der `ShadowEffect`-Klasse an jede `LabelShadowEffect`-Klasse übergeben. Jede `LabelShadowEffect`-Klasse wird von der `PlatformEffect`-Klasse für jede Plattform abgeleitet. Dadurch wird wie in den folgenden Screenshots dargestellt ein Schatten zu dem Text hinzugefügt, der vom `Label`-Steuerelement angezeigt wird:
 
-![](attached-properties-images/screenshots.png "Shadow Effect on each Platform")
+![Schatteneffekt auf den verschiedenen Plattformen](attached-properties-images/screenshots.png)
 
 ## <a name="creating-effect-parameters"></a>Erstellen von Effect-Parametern
 

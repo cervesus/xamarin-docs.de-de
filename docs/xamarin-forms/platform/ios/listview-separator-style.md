@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c8d660896684283ba9b40cde168adbfe30ca0c51
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fda45bc0aa2b7bc582c30b752662055bd4bd4865
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135992"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937058"
 ---
 # <a name="listview-separator-style-on-ios"></a>ListView-Trennzeichen Stil unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Mit diesem IOS-plattformspezifischen Steuerelement wird gesteuert, ob das Trennzeichen zwischen den Zellen in einer [`ListView`](xref:Xamarin.Forms.ListView) die vollständige Breite des verwendet `ListView` . Sie wird in XAML verwendet, indem die [`ListView.SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty) angefügte-Eigenschaft auf einen Wert der-Enumeration festgelegt wird [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) :
 
@@ -51,7 +51,7 @@ Die- `ListView.On<iOS>` Methode gibt an, dass diese plattformspezifische nur unt
 
 Das Ergebnis ist, dass ein [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) angegebener Wert auf den angewendet wird [`ListView`](xref:Xamarin.Forms.ListView) , der die Breite des Trenn Zeichens zwischen Zellen steuert:
 
-![](listview-separator-style-images/listview-separatorstyle.png "ListView SeparatorStyle Platform-Specific")
+![Plattformspezifischer ListView-Trennzeichen Stil](listview-separator-style-images/listview-separatorstyle.png)
 
 > [!NOTE]
 > Nachdem der Trenn Zeichenstil auf festgelegt wurde `FullWidth` , kann er nicht zur Laufzeit wieder in geändert werden `Default` .

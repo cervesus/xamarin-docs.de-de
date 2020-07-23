@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 725f892a667b4e89d55266abcf69e5394b09b6a5
-ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
+ms.openlocfilehash: b4369fdb7c5a35d6b9a192d9222fd82670b7e3f3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243811"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933587"
 ---
 # <a name="xamarinforms-shapes-ellipse"></a>Xamarin.FormsFormen: Ellipse
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Die `Ellipse` -Klasse wird von der `Shape` -Klasse abgeleitet und kann verwendet werden, um Ellipsen und Kreise zu zeichnen. Informationen zu den Eigenschaften, die die `Ellipse` Klasse von der-Klasse erbt `Shape` , finden Sie unter [ Xamarin.Forms Shapes](index.md).
 
@@ -58,7 +58,7 @@ Das folgende XAML-Beispiel zeigt, wie Sie einen Kreis zeichnen:
 
 In diesem Beispiel wird ein roter Kreis mit den Dimensionen 150x150 (geräteunabhängige Einheiten) gezeichnet:
 
-![Kreisen](ellipse-images/circle.png "Circle")
+![Circle](ellipse-images/circle.png "Circle")
 
 Weitere Informationen zum Zeichnen einer gestrichelten Ellipse finden Sie unter [Zeichnen von gestrichelten Formen](index.md#draw-dashed-shapes).
 

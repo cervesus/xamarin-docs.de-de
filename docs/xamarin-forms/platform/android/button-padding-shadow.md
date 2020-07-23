@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5554341493b52d20c946a4bcfe2d1230e4a02759
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3efcd5cd7c2d00e9d646c937863fd7e55d17f240
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135563"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929882"
 ---
 # <a name="button-padding-and-shadows-on-android"></a>Schaltflächen Auffüll Flächen und Schatten unter Android
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Mit dieser Android-plattformspezifischen Steuerung wird gesteuert, ob Xamarin.Forms Schaltflächen die Standard Auffüll-und Schatten Werte von Android-Schaltflächen verwenden Sie wird in XAML verwendet, indem die [`Button.UseDefaultPadding`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPaddingProperty) [`Button.UseDefaultShadow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadowProperty) angefügten Eigenschaften und auf-Werte festgelegt werden `boolean` :
 
@@ -49,7 +49,7 @@ Die- `Button.On<Android>` Methode gibt an, dass diese plattformspezifische nur u
 
 Das Ergebnis ist, dass Xamarin.Forms Schaltflächen die Standard Auffüll-und Schatten Werte von Android-Schaltflächen verwenden können:
 
-![](button-padding-shadow-images/button-padding-and-shadow.png "Default Padding and Shadow Values on Android Buttons")
+![Standard Auffüll-und Schatten Werte für Android-Schaltflächen](button-padding-shadow-images/button-padding-and-shadow.png)
 
 Beachten Sie, dass im obigen Screenshot jeweils [`Button`](xref:Xamarin.Forms.Button) identische Definitionen vorliegen, mit dem Unterschied, dass die Rechte Seite `Button` die Standard Auffüll-und Schatten Werte von Android-Schaltflächen verwendet.
 

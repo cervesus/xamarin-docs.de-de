@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0db20620870340386ccd0cedf7f98cb2975527ba
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 88761472c4beae3f40f2ca6852eea4db8276c4c9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128042"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930680"
 ---
 # <a name="large-page-titles-on-ios"></a>Große Seitentitel unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Diese IOS-plattformspezifische wird verwendet, um den Seitentitel als großen Titel auf der Navigationsleiste eines [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) für Geräte mit IOS 11 oder höher anzuzeigen. Ein großer Titel wird linksbündig ausgerichtet und verwendet eine größere Schriftart und wechselt zu einem Standard Titel, wenn der Benutzer mit dem Scrollen von Inhalten beginnt, sodass der Bildschirm tatsächlich verwendet wird. Bei der quer Ausrichtung wird der Titel jedoch in den Mittelpunkt der Navigationsleiste zurückkehren, um das Inhalts Layout zu optimieren. Sie wird in XAML verwendet, indem die `NavigationPage.PrefersLargeTitles` angefügte-Eigenschaft auf einen Wert festgelegt wird `boolean` :
 
@@ -100,7 +100,7 @@ switch (On<iOS>().LargeTitleDisplay())
 
 Das Ergebnis ist, dass ein `LargeTitleDisplayMode` angegebenes auf das angewendet wird [`Page`](xref:Xamarin.Forms.Page) , das das Verhalten des großen Titels steuert:
 
-![](page-large-title-images/large-title.png "Blur Effect Platform-Specific")
+![Weichzeichnereffekt plattformspezifisch](page-large-title-images/large-title.png)
 
 ## <a name="related-links"></a>Verwandte Links
 

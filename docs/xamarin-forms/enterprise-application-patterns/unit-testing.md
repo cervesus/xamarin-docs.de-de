@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a05de34089fdf6ad90740067b88edea0b62f55a7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4f30b8be762e23f84a90595a56912587cc3aa838
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134653"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934250"
 ---
 # <a name="unit-testing-enterprise-apps"></a>Komponententests für Unternehmens-apps
 
@@ -55,7 +55,7 @@ public class OrderDetailViewModel : ViewModelBase
 
 Die- `OrderDetailViewModel` Klasse hat eine Abhängigkeit von dem `IOrderService` Typ, den der Container auflöst, wenn er ein-Objekt instanziiert `OrderDetailViewModel` . Anstatt jedoch ein-Objekt für den Komponenten `OrderService` Test der- `OrderDetailViewModel` Klasse zu erstellen, ersetzen Sie stattdessen das- `OrderService` Objekt durch ein Mock zum Zweck der Tests. In Abbildung 10-1 wird diese Beziehung veranschaulicht.
 
-![](unit-testing-images/unittesting.png "Classes that implement the IOrderService interface")
+![Klassen, die die IOrderService-Schnittstelle implementieren](unit-testing-images/unittesting.png)
 
 **Abbildung 10-1:** Klassen, die die IOrderService-Schnittstelle implementieren
 
@@ -229,7 +229,7 @@ Das Verhalten eines zu testenden Objekts kann isoliert werden, indem abhängige 
 
 Das Testen von Modellen und Anzeigen von Modellen von MVVM-Anwendungen ist identisch mit dem Testen anderer Klassen, und es können dieselben Tools und Techniken verwendet werden.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
 - [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9a59f65655772768860ce29128f14a48641abc26
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 71e64f7b8286f22040a802336e9be756d932c0cd
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134276"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936538"
 ---
 # <a name="basic-animation-in-skiasharp"></a>Grundlegende Animation in skiasharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Erfahren Sie, wie Sie Ihre skiasharp-Grafiken animieren_
 
 Sie können skiasharp-Grafiken in animieren Xamarin.Forms , indem Sie die- `PaintSurface` Methode in regelmäßigen Abständen aufrufen. Im folgenden finden Sie eine Animation, die später in diesem Artikel mit konzentrischen Kreisen gezeigt wird, die sich scheinbar von der Mitte aus erweitern:
 
-![](animation-images/animationexample.png "Several concentric circles seemingly expanding from the center")
+![Mehrere konzentrische Kreise werden scheinbar von der Mitte aus erweitert.](animation-images/animationexample.png)
 
 Die Seite mit der **pulsierenden Ellipse** im [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Programm animiert die zwei Achsen einer Ellipse, sodass Sie zu einem pulsierenden wird, und Sie können sogar die Rate der pulfizierung steuern. Die Datei [**pulsatingellipsepage. XAML**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) instanziiert ein Xamarin.Forms `Slider` -und ein-Zeichen `Label` , um den aktuellen Wert des Schiebereglers anzuzeigen. Dies ist eine gängige Methode, um eine in `SKCanvasView` andere Xamarin.Forms Ansichten zu integrieren:
 
@@ -144,7 +144,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die-Methode berechnet einen maximalen Radius basierend auf der Größe des Anzeige Bereichs und einem minimalen Radius basierend auf dem maximalen Radius. Der `scale` Wert wird zwischen 0 und 1 und zurück zu 0 animiert, sodass die-Methode verwendet, um einen zu berechnen, der `xRadius` `yRadius` zwischen `minRadius` und liegt `maxRadius` . Diese Werte werden verwendet, um eine Ellipse zu zeichnen und auszufüllen:
 
-[![](animation-images/pulsatingellipse-small.png "Triple screenshot of the Pulsating Ellipse page")](animation-images/pulsatingellipse-large.png#lightbox "Triple screenshot of the Pulsating Ellipse page")
+[![Dreifacher Screenshot der Seite mit der pulsierenden Ellipse](animation-images/pulsatingellipse-small.png)](animation-images/pulsatingellipse-large.png#lightbox "Dreifacher Screenshot der Seite mit der pulsierenden Ellipse")
 
 Beachten Sie, dass das- `SKPaint` Objekt in einem-Block erstellt wird `using` . Wie viele skiasharp-Klassen werden `SKPaint` von abgeleitet `SKObject` , das von abgeleitet `SKNativeObject` wird und die- [`IDisposable`](xref:System.IDisposable) Schnittstelle implementiert. `SKPaint`überschreibt die- `Dispose` Methode, um nicht verwaltete Ressourcen freizugeben.
 
@@ -247,9 +247,9 @@ public class ExpandingCirclesPage : ContentPage
 
 Das Ergebnis ist, dass das Bild identisch ist, wenn `t` gleich 0 ist `t` , wenn gleich 1 ist, und die Kreise auch immer weiter erweitert werden sollen:
 
-[![](animation-images/expandingcircles-small.png "Triple screenshot of the Expanding Circles page")](animation-images/expandingcircles-large.png#lightbox "Triple screenshot of the Expanding Circles page")
+[![Dreifacher Screenshot der Seite "erweiternde Kreise"](animation-images/expandingcircles-small.png)](animation-images/expandingcircles-large.png#lightbox "Dreifacher Screenshot der Seite "erweiternde Kreise"")
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

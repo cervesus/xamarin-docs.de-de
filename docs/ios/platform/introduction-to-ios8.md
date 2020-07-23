@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 1fae83f60f819da9767e14612a7f778dc49ddf52
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6f2a188617b00a008dafa20012c0997bc399045d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84564629"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930961"
 ---
 # <a name="introduction-to-ios-8"></a>Einführung in iOS 8
 
@@ -48,7 +48,7 @@ Mit homekit können Drittanbieter-apps und Siri Zubehör erkennen und ihrer eige
 
 Das folgende Diagramm zeigt die grundlegende Hierarchie der Konfiguration von homekit-Zubehör:
 
-![](introduction-to-ios8-images/image1.png "This diagram shows the basic hierarchy of the configuration of HomeKit accessories")
+![Dieses Diagramm zeigt die grundlegende Hierarchie der Konfiguration von homekit-Zubehör.](introduction-to-ios8-images/image1.png)
 
 Um mit homekit zu beginnen, müssen Entwickler sicherstellen, dass für das Bereitstellungs Profil der homekit-Dienst ausgewählt ist. Apple hat Entwicklern auch ein homekit-Simulator-Add-in für Xcode bereitgestellt. Diese finden Sie im [Apple Developer Center](https://developer.apple.com/downloads/index.action)unter `Hardware IO Tools for Xcode` . 
 
@@ -70,7 +70,7 @@ Der erste Schritt beim Erstellen einer APP-Erweiterung besteht darin, den richti
 
 Navigieren Sie im Dialogfeld **Neues Projekt** zu **c#**  >  **IOS**  >  **Unified API**  >  **Extensions**, wie im folgenden Screenshot veranschaulicht:
 
-![](introduction-to-ios8-images/image2.png "Creating a new extension")
+![Erstellen einer neuen Erweiterung](introduction-to-ios8-images/image2.png)
 
 Das Dialogfeld "Neues Projekt" enthält sieben neue Projektvorlagen zum Erstellen von App-Erweiterungen, die im folgenden erläutert werden. Beachten Sie, dass viele der Erweiterungen sich auf andere neue APIs in ios beziehen, wie z. b. die Dokument Auswahl:
 
@@ -101,7 +101,7 @@ Die Dokument Auswahl funktioniert mit einem Benutzer-icloud-Laufwerk, um dem Ben
 
 Weitere Informationen zur Dokument Auswahl und zur Integration in eine xamarin. IOS-Anwendung finden Sie in der [Einführung in das Dokument](~/ios/platform/document-picker.md) Auswahl Handbuch.
 
-### <a name="handoff"></a>Handoff
+### <a name="handoff"></a>Übergabe
 
 Der Handoff, der Teil des größeren Kontinuitäts Features ist, führt zur Integration von OS X und IOS einen Schritt weiter. Dies umfasst plattformübergreifende airdrop, die Möglichkeit zum Übernehmen von iPhone-anrufen, SMS auf dem iPad und Mac sowie Verbesserungen beim Tethering von Ihrem iPhone.
 
@@ -121,7 +121,7 @@ Jedes Gerät wird in der vertikalen und der horizontalen Achse durch eine Size-K
 
 Wenn die beiden Konzepte gleichzeitig verwendet werden, ist das Ergebnis ein 2 x 2-Raster, in dem die verschiedenen möglichen Größen definiert werden, die in den unterschiedlichen Ausrichtungen verwendet werden können, wie in der folgenden Abbildung dargestellt:
 
-![](introduction-to-ios8-images/image3.png "A diagram representing the 2 x 2 grid that defines the different possible sizes that can be used in both the differing orientations")
+![Ein Diagramm, das das 2 x 2-Raster darstellt, in dem die verschiedenen möglichen Größen definiert werden, die in den unterschiedlichen Ausrichtungen verwendet werden können](introduction-to-ios8-images/image3.png)
 
 Weitere Informationen zu Größenklassen finden Sie unter [Introduction to Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md).
 
@@ -164,7 +164,7 @@ Mit allen in ios 8 vorgenommenen Verbesserungen sind einige APIs veraltet. Einig
 ## <a name="summary"></a>Zusammenfassung
 In diesem Artikel wurden einige der neuen Features behandelt, die von Apple in ios 8 eingeführt wurden.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Uikitenhancements (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-uikitenhancements)
 - [Einführung in App-Erweiterungen](~/ios/platform/extensions.md)

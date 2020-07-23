@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: aed11ff8794f79ff7e16fbb8401a95a5697d2d4b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9280917f451d58ae864398088bec7faaf15ad96a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572064"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937344"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Quell Listen in xamarin. Mac
 
@@ -22,7 +22,7 @@ Wenn Sie mit c# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zug
 
 Eine Quell Liste ist eine besondere Art von Gliederungs Ansicht, die verwendet wird, um die Quelle einer Aktion anzuzeigen, wie z. b. die Seitenleiste in Finder oder iTunes.
 
-[![](source-list-images/source05.png "An example source list")](source-list-images/source05.png#lightbox)
+[![Eine Beispiel Quell Liste](source-list-images/source05.png)](source-list-images/source05.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Arbeit mit Quell Listen in einer xamarin. Mac-Anwendung behandelt. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , durcharbeiten, da er wichtige Konzepte und Techniken behandelt, die wir in diesem Artikel verwenden werden.
 
@@ -50,7 +50,7 @@ Eine Quell Liste ist eine besondere Art von Gliederungs Ansicht, die verwendet w
 
 Zunächst erstellen wir eine neue `SourceListItem` Klasse zum Speichern der Daten für die Quell Liste. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie neue Datei **Hinzufügen**  >  **... aus.** Wählen Sie **Allgemeine**  >  **leere Klasse**aus, geben Sie `SourceListItem` als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** :
 
-[![](source-list-images/source01.png "Adding an empty class")](source-list-images/source01.png#lightbox)
+[![Hinzufügen einer leeren Klasse](source-list-images/source01.png)](source-list-images/source01.png#lightbox)
 
 Erstellen Sie die `SourceListItem.cs` Datei wie folgt: 
 
@@ -532,19 +532,19 @@ Dadurch wird eine benutzerdefinierte, wiederverwendbare Unterklasse von `NSOutli
 
 Nun entwerfen wir unsere Quell Liste in Interface Builder. Doppelklicken Sie `Main.storyboard` auf die Datei, um Sie in Interface Builder zu bearbeiten, und ziehen Sie eine geteilte Ansicht aus dem **Bibliotheks Inspektor**, fügen Sie Sie dem Ansichts Controller hinzu, und legen Sie fest, dass die Größe mit der Ansicht im **Einschränkungs-Editor**geändert wird:
 
-[![](source-list-images/source00.png "Editing constraints")](source-list-images/source00.png#lightbox)
+[![Bearbeitungs Einschränkungen](source-list-images/source00.png)](source-list-images/source00.png#lightbox)
 
 Ziehen Sie als nächstes eine Quell Liste aus dem **Bibliotheks Inspektor**, fügen Sie Sie auf der linken Seite der geteilten Ansicht ein, und legen Sie fest, dass die Größe mit der Ansicht im **Einschränkungs-Editor**geändert wird:
 
-[![](source-list-images/source02.png "Editing constraints")](source-list-images/source02.png#lightbox)
+[![Bearbeitungs Einschränkungen](source-list-images/source02.png)](source-list-images/source02.png#lightbox)
 
 Wechseln Sie als nächstes zur **Ansicht Identität**, wählen Sie die Liste Quelle aus, und ändern Sie die **Klasse** in `SourceListView` :
 
-[![](source-list-images/source03.png "Setting the class name")](source-list-images/source03.png#lightbox)
+[![Festlegen des Klassen namens](source-list-images/source03.png)](source-list-images/source03.png#lightbox)
 
 Erstellen Sie abschließend ein **Outlet** für die Quell Liste, `SourceList` die in der Datei aufgerufen wird `ViewController.h` :
 
-[![](source-list-images/source04.png "Configuring an Outlet")](source-list-images/source04.png#lightbox)
+[![Konfigurieren eines Outlets](source-list-images/source04.png)](source-list-images/source04.png#lightbox)
 
 Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
@@ -614,7 +614,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 Wenn wir die Anwendung ausführen, wird Folgendes angezeigt:
 
-[![](source-list-images/source05.png "An example app run")](source-list-images/source05.png#lightbox)
+[![Ein Beispiel für eine APP-Laufzeit](source-list-images/source05.png)](source-list-images/source05.png#lightbox)
 
 <a name="Summary"></a>
 
@@ -622,7 +622,7 @@ Wenn wir die Anwendung ausführen, wird Folgendes angezeigt:
 
 In diesem Artikel wurde die Arbeit mit Quell Listen in einer xamarin. Mac-Anwendung ausführlich erläutert. Wir haben gesehen, wie Sie Quell Listen in Xcode-Interface Builder erstellen und verwalten und wie Sie mit Quell Listen in c#-Code arbeiten können.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Macskizziert (Beispiel)](https://docs.microsoft.com/samples/xamarin/mac-samples/macoutlines)
 - [Hello, Mac (Hallo Mac)](~/mac/get-started/hello-mac.md)

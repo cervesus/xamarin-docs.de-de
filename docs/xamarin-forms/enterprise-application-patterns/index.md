@@ -10,18 +10,18 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1d993afa7163beb0b24e496b0c876d903f2396e7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139398"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934289"
 ---
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>E-Book zu Mustern von Unternehmensanwendungen mithilfe von Xamarin.Forms
 
 _Architektur Leit Faden für die Entwicklung anpassbarer, verwaltebarer und testbarer Xamarin.Forms Unternehmensanwendungen_
 
-![](images/cover-sml.png "Enterprise Application Patterns using Xamarin.Forms eBook")
+![E-Book zu Mustern von Unternehmensanwendungen mithilfe von Xamarin.Forms](images/cover-sml.png)
 
 Dieses e-Book enthält Anleitungen dazu, wie das Model-View-ViewModel (MVVM)-Muster, die Abhängigkeitsinjektion, Navigation, Validierung und Konfigurations Verwaltung implementiert wird, während die lose Kopplung beibehalten wird. Außerdem gibt es Anleitungen zum Durchführen von Authentifizierung und Autorisierung mit identityserver, zum Zugreifen auf Daten aus containerisierten microservices und Unittests.
 
@@ -29,7 +29,7 @@ Dieses e-Book enthält Anleitungen dazu, wie das Model-View-ViewModel (MVVM)-Mus
 
 In diesem Kapitel werden Zweck und Umfang des Handbuchs erläutert.
 
-## <a name="introduction"></a>[Introduction (Einführung)](introduction.md)
+## <a name="introduction"></a>[Einführung](introduction.md)
 
 Entwickler von Unternehmens-apps stellen verschiedene Herausforderungen dar, die die Architektur der APP während der Entwicklung ändern können. Daher ist es wichtig, eine APP zu erstellen, damit Sie im Laufe der Zeit geändert oder erweitert werden kann. Der Entwurf für diese Anpassbarkeit kann schwierig sein, aber es umfasst in der Regel die Partitionierung einer APP in diskrete, lose gekoppelte Komponenten, die problemlos in eine APP integriert werden können.
 
@@ -83,7 +83,7 @@ Das Testen von Modellen und Anzeigen von Modellen von MVVM-Anwendungen ist ident
 
 Dieses Projekt verfügt über eine Community-Website, auf der Sie Fragen stellen und Feedback geben können. Die Community-Website befindet sich auf [GitHub](https://github.com/dotnet-architecture/eShopOnContainers). Alternativ können Sie Feedback zu dem e-book per e-Mail senden [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com) .
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
 - [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

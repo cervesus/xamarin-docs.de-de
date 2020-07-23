@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f0f43f8f2113b6bd0a800ed3e0bd96b641575b1c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 38c7f11ecf65a2a9ec9ef54b5beb270f51d24dda
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139281"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929947"
 ---
 # <a name="text-translation-using-the-translator-api"></a>Text Übersetzung mithilfe der Translator-API
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Die Microsoft Translator-API kann verwendet werden, um Sprache und Text über eine Rest-API zu übersetzen. In diesem Artikel wird erläutert, wie Sie mit dem Microsoft Textübersetzungs-API Text in einer-Anwendung in eine andere Sprache übersetzen Xamarin.Forms ._
 
@@ -143,13 +143,13 @@ Die API-Antwort wird im XML-Format zurückgegeben. Die folgenden XML-Daten zeige
 
 In der Beispielanwendung wird die XML-Antwort in eine- `XDocument` Instanz analysiert, wobei der XML-Stamm Wert an die aufrufende Methode für die Anzeige zurückgegeben wird, wie in den folgenden Screenshots gezeigt:
 
-![](text-translation-images/text-translation.png "Text Translation to German")
+![Text Übersetzung in Deutsch](text-translation-images/text-translation.png)
 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurde erläutert, wie Sie mit dem Microsoft Textübersetzungs-API Text von einer Sprache in Text einer anderen Sprache in einer-Anwendung übersetzen Xamarin.Forms . Zusätzlich zur Übersetzung von Text kann die Microsoft Translator-API auch Sprache aus einer Sprache in Text einer anderen Sprache umwandeln.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Dokumentation zur Textübersetzungs-API](/azure/cognitive-services/translator/)
 - [Nutzen eines Rest-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)

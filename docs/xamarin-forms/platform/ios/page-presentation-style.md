@@ -10,16 +10,16 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2abc255964df35fbdfeb4191911c57df9be99fd9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 20bf6d3d8c802c1d4919cd16885d3939cb0102aa
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128010"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930623"
 ---
 # <a name="modal-page-presentation-style-on-ios"></a>Stil der modalen Seitendarstellung unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Diese IOS-plattformspezifische wird verwendet, um den Präsentationsstil einer modalen Seite festzulegen, und kann zusätzlich verwendet werden, um modale Seiten mit transparenten Hintergründen anzuzeigen. Sie wird in XAML verwendet, indem die `Page.ModalPresentationStyle` bindbare Eigenschaft auf einen- `UIModalPresentationStyle` Enumerationswert festgelegt wird:
 
@@ -60,7 +60,7 @@ Außerdem kann die- `GetModalPresentationStyle` Methode zum Abrufen des aktuelle
 
 Das Ergebnis ist, dass der modale Präsentationsstil in einem [`Page`](xref:Xamarin.Forms.Page) festgelegt werden kann:
 
-[![](page-presentation-style-images/modal-presentation-style-small.png "Modal Presentation Styles")](page-presentation-style-images/modal-presentation-style-large.png#lightbox "Modal Presentation Styles")
+[![Modale Präsentations Stile](page-presentation-style-images/modal-presentation-style-small.png)](page-presentation-style-images/modal-presentation-style-large.png#lightbox "Modale Präsentations Stile")
 
 > [!NOTE]
 > Für Seiten, die diese plattformspezifische zum Festlegen des modalen Präsentations Stils verwenden, muss die modale Navigation verwendet werden. Weitere Informationen finden Sie unter [ Xamarin.Forms modale Seiten](~/xamarin-forms/app-fundamentals/navigation/modal.md).

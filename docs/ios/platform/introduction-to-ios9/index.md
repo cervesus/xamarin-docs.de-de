@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: de4b6e8b95eed33e7fb38baf51a0da73cef313c0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: bfa2a74bf9cd30fb7b9888ecd7339a80fe472c9e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574131"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939086"
 ---
 # <a name="introduction-to-ios-9"></a>Einführung in iOS 9
 
 _In diesem Artikel werden alle neuen und geänderten APIs und Features vorgestellt, die in ios 9 für xamarin. IOS-Entwickler zur Verfügung stehen._
 
-![](images/ios9-sml.png "The iOS 9 logo")
+![IOS 9-Logo](images/ios9-sml.png)
 
 Apple hat mehrere neue APIs und Dienste in ios 9 zusammen mit vielen Verbesserungen an vorhandenen Features hinzugefügt.
 
@@ -201,7 +201,7 @@ Sehen Sie sich auch die IOS-Abschnitte dieser Beispiele an (Begleit Mac OS X Ver
 - [Agentscatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
 - [Metalkitessentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [Einführung in 3D-Fingereingabe](~/ios/platform/3d-touch.md)

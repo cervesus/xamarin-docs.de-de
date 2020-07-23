@@ -10,16 +10,16 @@ ms.date: 04/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8d11add988828fa4e26d3f6728dd0b4319b3630
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 020319761ba1274495b7595a0d18435f98a5f990
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133301"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937175"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>Matrix Transformationen in skiasharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Tiefere Einblicke in skiasharp-Transformationen mit der vielseitigen Transformationsmatrix_
 
@@ -27,7 +27,7 @@ Alle Transformationen, die auf das- `SKCanvas` Objekt angewendet werden, werden 
 
 Wie Sie gesehen haben, können Sie Transformationen in skiasharp verwenden, ohne die Transformationsmatrix zu kennen, aber die Transformationsmatrix ist aus theoretischer Sicht wichtig, und es ist entscheidend, wenn Sie Transformationen zum Ändern von Pfaden oder zur Verarbeitung komplexer Berührungs Eingaben verwenden, die beide in diesem Artikel und in der nächsten erläutert werden.
 
-![](matrix-images/matrixtransformexample.png "A bitmap subjected to an affine transform")
+![Eine Bitmap, die einer affinen Transformation unterliegt.](matrix-images/matrixtransformexample.png)
 
 Die aktuelle Transformationsmatrix, die auf das angewendet `SKCanvas` wird, ist jederzeit verfügbar, indem Sie auf die schreibgeschützte [`TotalMatrix`](xref:SkiaSharp.SKCanvas.TotalMatrix) Eigenschaft zugreifen. Sie können mithilfe der-Methode eine neue Transformationsmatrix festlegen [`SetMatrix`](xref:SkiaSharp.SKCanvas.SetMatrix(SkiaSharp.SKMatrix)) , und Sie können diese Transformationsmatrix in Standardwerte wiederherstellen, indem Sie aufrufen [`ResetMatrix`](xref:SkiaSharp.SKCanvas.ResetMatrix) .
 
@@ -407,7 +407,7 @@ public class PathTransformPage : ContentPage
 
 Sie wird in der oberen linken Ecke der Canvas angezeigt:
 
-[![](matrix-images/pathtransform-small.png "Triple screenshot of the Path Transform page")](matrix-images/pathtransform-large.png#lightbox "Triple screenshot of the Path Transform page")
+[![Dreifacher Screenshot der Seite "Pfad Transformation"](matrix-images/pathtransform-small.png)](matrix-images/pathtransform-large.png#lightbox "Dreifacher Screenshot der Seite "Pfad Transformation"")
 
 Der Konstruktor dieses Programms wendet die Matrix mit dem folgenden-Befehl auf den Pfad an:
 
@@ -444,7 +444,7 @@ Wenn Sie diese letzte Methode verwenden, denken Sie daran, dass die `SKRect` Str
 
 Eine Möglichkeit, ein Gefühl für die affine Transformation zu erhalten, besteht darin, die drei Ecken einer Bitmap auf dem Bildschirm interaktiv zu verschieben und die Transformations Ergebnisse anzuzeigen. Dies ist die Idee hinter der Seite **affine Matrix anzeigen** . Diese Seite erfordert zwei weitere Klassen, die auch in anderen Demos verwendet werden:
 
-Die- [`TouchPoint`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) Klasse zeigt einen durchlässigen Kreis an, der um den Bildschirm gezogen werden kann. `TouchPoint`erfordert, dass ein- `SKCanvasView` Element oder ein-Element, das ein übergeordnetes Element von ist, `SKCanvasView` den [`TouchEffect`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) angefügten aufweisen Legen Sie die `Capture` -Eigenschaft auf `true`fest. Im- `TouchAction` Ereignishandler muss das Programm die- `ProcessTouchEvent` Methode in `TouchPoint` für jede Instanz von abrufen `TouchPoint` . Die Methode gibt zurück, `true` Wenn das Berührungs Ereignis zum Verschieben des Berührungs Punkts geführt hat. Außerdem muss der `PaintSurface` Handler die- `Paint` Methode in jeder Instanz aufzurufen `TouchPoint` und ihm das- `SKCanvas` Objekt übergeben.
+Die- [`TouchPoint`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) Klasse zeigt einen durchlässigen Kreis an, der um den Bildschirm gezogen werden kann. `TouchPoint`erfordert, dass ein- `SKCanvasView` Element oder ein-Element, das ein übergeordnetes Element von ist, `SKCanvasView` den [`TouchEffect`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) angefügten aufweisen Setzen Sie die `Capture`-Eigenschaft auf `true`. Im- `TouchAction` Ereignishandler muss das Programm die- `ProcessTouchEvent` Methode in `TouchPoint` für jede Instanz von abrufen `TouchPoint` . Die Methode gibt zurück, `true` Wenn das Berührungs Ereignis zum Verschieben des Berührungs Punkts geführt hat. Außerdem muss der `PaintSurface` Handler die- `Paint` Methode in jeder Instanz aufzurufen `TouchPoint` und ihm das- `SKCanvas` Objekt übergeben.
 
 `TouchPoint`veranschaulicht eine gängige Methode, mit der ein skiasharp-visuelles Element in einer separaten Klasse gekapselt werden kann. Die Klasse kann Eigenschaften zum Angeben der Merkmale des visuellen Elements definieren, und eine Methode `Paint` mit dem Namen mit einem `SKCanvas` Argument kann Sie darstellen.
 
@@ -593,7 +593,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 Der unten stehende IOS-Bildschirm zeigt die Bitmap an, wenn die Seite zum ersten Mal geladen wird, während die beiden anderen Bildschirme Sie nach einer gewissen Bearbeitung anzeigen:
 
-[![](matrix-images/showaffinematrix-small.png "Triple screenshot of the Show Affine Matrix page")](matrix-images/showaffinematrix-large.png#lightbox "Triple screenshot of the Show Affine Matrix page")
+[![Dreifacher Screenshot der Seite "affine Matrix anzeigen"](matrix-images/showaffinematrix-small.png)](matrix-images/showaffinematrix-large.png#lightbox "Dreifacher Screenshot der Seite "affine Matrix anzeigen"")
 
 Obwohl es so aussieht, als ob die Berührungspunkte die Ecken der Bitmap ziehen, ist das nur eine Illusion. Die von den Berührungspunkten berechnete Matrix wandelt die Bitmap um, sodass die Ecken mit den Berührungspunkten übereinstimmen.
 
@@ -653,7 +653,7 @@ Die `SKMatrix` Struktur in skiasharp definiert Eigenschaften für die dritte Zei
 
 Werte ungleich NULL von `Persp0` und `Persp1` führen zu Transformationen, die Objekte aus der zweidimensionalen Ebene verschieben, wobei Z gleich 1 ist. Was geschieht, wenn diese Objekte zurück in diese Ebene verschoben werden, wird in dem Artikel zu [**nicht affinen Transformationen**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)behandelt.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

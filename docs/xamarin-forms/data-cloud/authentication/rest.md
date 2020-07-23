@@ -10,12 +10,12 @@ ms.date: 01/22/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2a46d099520103ba6f1552d5bda3f619c07b743d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135719"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928522"
 ---
 # <a name="authenticate-a-restful-web-service"></a>Authentifizieren eines Rest-Webdiensts
 
@@ -31,11 +31,11 @@ Die Standard Authentifizierung ist der einfachste von http unterstützte Authent
 
 - Wenn ein Webdienst eine Anforderung für eine geschützte Ressource empfängt, lehnt er die Anforderung mit dem HTTP-Statuscode 401 (Zugriff verweigert) ab und legt den WWW-Authenticate-Antwortheader fest, wie im folgenden Diagramm dargestellt:
 
-![](rest-images/basic-authentication-fail.png "Basic Authentication Failing")
+![Fehler bei der Standard Authentifizierung](rest-images/basic-authentication-fail.png)
 
 - Wenn ein Webdienst eine Anforderung für eine geschützte Ressource empfängt und der- `Authorization` Header ordnungsgemäß festgelegt ist, antwortet der Webdienst mit dem HTTP-Statuscode 200, der angibt, dass die Anforderung erfolgreich war und die angeforderten Informationen in der Antwort angezeigt werden. Dieses Szenario ist im folgenden Diagramm dargestellt:
 
-![](rest-images/basic-authentication-success.png "Basic Authentication Succeeding")
+![Standard Authentifizierung erfolgreich](rest-images/basic-authentication-success.png)
 
 > [!NOTE]
 > Die Standard Authentifizierung sollte nur über eine HTTPS-Verbindung verwendet werden. Wenn Sie über eine HTTP-Verbindung verwendet wird, `Authorization` kann der Header problemlos decodiert werden, wenn der HTTP-Datenverkehr von einem Angreifer aufgezeichnet wird.
@@ -87,7 +87,7 @@ Im Standard Authentifizierungs Modul, das von IIS verwendet wird, werden die Ben
 > [!NOTE]
 > Die Standard Authentifizierung wurde nicht für die Verwaltung der Protokollierung konzipiert. Daher ist der standardmäßige Standard Authentifizierungs Ansatz für die Abmeldung das Beenden der Sitzung.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Nutzen eines Rest-Webdiensts](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

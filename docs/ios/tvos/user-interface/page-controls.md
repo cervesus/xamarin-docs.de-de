@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 9a45e87165101a8e8afcfc51d15d085982b6499e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d4a1cab23b8d295d899c47edc5ffe77f6d20a467
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569932"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939762"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Arbeiten mit tvos-Seiten Steuerelementen in xamarin
 
 Manchmal müssen Sie möglicherweise eine Reihe von Seiten oder Bildern in ihrer xamarin. tvos-App anzeigen. Ein Seiten Steuerelement wurde so entworfen, dass die Seite, auf der sich ein Benutzer befindet, deutlich von der maximalen Anzahl von Seiten angezeigt wird. Ein Seiten Steuerelement zeigt eine Reihe von Punkten gegen einen dunklen, oval-förmigen Hintergrund an. Auf der aktuellen Seite wird ein ausgefüllter Punkt angezeigt. alle anderen Seiten werden als hohl Punkte angezeigt. Das Seiten Steuerelement durchsucht die äußeren meisten Punkte, wenn zu viele für den Hintergrundbereich vorhanden sind.
 
-[![](page-controls-images/page01.png "Sample Page control")](page-controls-images/page01.png#lightbox)
+[![Sample Page-Steuerelement](page-controls-images/page01.png)](page-controls-images/page01.png#lightbox)
 
 Ein Seiten Steuerelement in einem nicht interaktiven Element, das nur dem Benutzer Feedback geben soll. Sie müssen weitere Steuerelemente hinzufügen, um die aktuelle Seitenzahl (z. b. Gesten oder Schaltflächen) zu ändern.
 
@@ -38,14 +38,14 @@ Die einfachste Möglichkeit zum Arbeiten mit Seiten Steuerelementen in einer xam
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie ein **Seiten Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab:
 
-    [![](page-controls-images/page02.png "A Page Control")](page-controls-images/page02.png#lightbox)
+    [![Ein Seiten Steuerelement](page-controls-images/page02.png)](page-controls-images/page02.png#lightbox)
 1. Auf der **Registerkarte widget** des **Eigenschaftenpad**können Sie verschiedene Eigenschaften des Seiten Steuer Elements anpassen, z. b. die **aktuelle Seite** und die Anzahl **der Seiten**:
 
-    [![](page-controls-images/page03.png "The Widget Tab")](page-controls-images/page03.png#lightbox)
+    [![Die Widget-Registerkarte](page-controls-images/page03.png)](page-controls-images/page03.png#lightbox)
 1. Fügen Sie als nächstes der Ansicht Steuerelemente oder Gesten hinzu, um die Auflistung der Seiten rückwärts und vorwärts zu bewegen.
 1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie in c#-Code darauf reagieren können. Beispiel:
 
-    [![](page-controls-images/page04.png "Name the control")](page-controls-images/page04.png#lightbox)
+    [![Benennen des Steuer Elements](page-controls-images/page04.png)](page-controls-images/page04.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -53,14 +53,14 @@ Die einfachste Möglichkeit zum Arbeiten mit Seiten Steuerelementen in einer xam
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie ein **Seiten Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab:
 
-    [![](page-controls-images/page02-vs.png "A Page Control")](page-controls-images/page02-vs.png#lightbox)
+    [![Ein Seiten Steuerelement](page-controls-images/page02-vs.png)](page-controls-images/page02-vs.png#lightbox)
 1. Auf der **Registerkarte widget** des **Eigenschaften-Explorers**können Sie verschiedene Eigenschaften des Seiten Steuer Elements anpassen, z. b. die **aktuelle Seite** und die Anzahl **der Seiten**:
 
-    [![](page-controls-images/page03-vs.png "The Widget tab")](page-controls-images/page03-vs.png#lightbox)
+    [![Die Widget-Registerkarte](page-controls-images/page03-vs.png)](page-controls-images/page03-vs.png#lightbox)
 1. Fügen Sie als nächstes der Ansicht Steuerelemente oder Gesten hinzu, um die Auflistung der Seiten rückwärts und vorwärts zu bewegen.
 1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie in c#-Code darauf reagieren können. Beispiel:
 
-    [![](page-controls-images/page04-vs.png "Name the control")](page-controls-images/page04-vs.png#lightbox)
+    [![Benennen des Steuer Elements](page-controls-images/page04-vs.png)](page-controls-images/page04-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 -----
@@ -164,7 +164,7 @@ Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-
 
 In diesem Artikel wurde das Entwerfen und arbeiten mit der Seitensteuerung in einer xamarin. tvos-App behandelt.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

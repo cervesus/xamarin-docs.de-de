@@ -7,35 +7,35 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: e5dbc04e52aea4307716c343df5757d0fe012b74
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 832071023bfe2ea9d947946ff2b70428d93fc866
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022384"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937538"
 ---
 # <a name="ios-app-architecture"></a>IOS-App-Architektur
 
-Xamarin. IOS-Anwendungen werden innerhalb der Mono-Ausführungsumgebung ausgeführt und verwenden die vollständige vorab Kompilierung (AOT C# ), um Code in die Arm-Assemblysprache zu kompilieren. Dies wird parallel zur [Ziel-C-Laufzeit](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)ausgeführt. Beide Laufzeitumgebungen werden auf einem UNIX-ähnlichen Kernel, insbesondere [XNU](https://en.wikipedia.org/wiki/XNU), ausgeführt und stellen verschiedene APIs für den Benutzercode bereit, sodass Entwickler auf das zugrunde liegende systemeigene oder verwaltete System zugreifen können.
+Xamarin. IOS-Anwendungen werden innerhalb der Mono-Ausführungsumgebung ausgeführt und verwenden die vollständige vorab Kompilierung (AOT), um c#-Code in die Arm-Assemblysprache zu kompilieren. Dies wird parallel zur [Ziel-C-Laufzeit](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)ausgeführt. Beide Laufzeitumgebungen werden auf einem UNIX-ähnlichen Kernel, insbesondere [XNU](https://en.wikipedia.org/wiki/XNU), ausgeführt und stellen verschiedene APIs für den Benutzercode bereit, sodass Entwickler auf das zugrunde liegende systemeigene oder verwaltete System zugreifen können.
 
 Das folgende Diagramm zeigt eine grundlegende Übersicht über diese Architektur:
 
-[![](architecture-images/ios-arch-small.png "This diagram shows a basic overview of the Ahead of Time (AOT) compilation architecture")](architecture-images/ios-arch.png#lightbox)
+[![Dieses Diagramm zeigt eine grundlegende Übersicht über die Architektur der Vorkompilierung (Ahead of Time, AOT).](architecture-images/ios-arch-small.png)](architecture-images/ios-arch.png#lightbox)
 
 ## <a name="native-and-managed-code-an-explanation"></a>Nativer und verwalteter Code: eine Erläuterung
 
 Bei der Entwicklung für xamarin werden die Begriffe System eigener *und verwalteter* Code häufig verwendet. [Verwalteter Code](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) ist Code, dessen Ausführung von der [.NET Framework Common Language Runtime](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)verwaltet wird, oder im Fall von xamarin: der Mono-Laufzeit. Dies wird als zwischen Sprache bezeichnet.
 
-Bei System eigenem Code handelt es sich um Code, der auf der jeweiligen Plattform nativ ausgeführt wird (z. b. mit Ziel-C oder sogar AOT-kompiliertem Code auf einem Arm-Chip). In dieser Anleitung wird erläutert, wie AOT Ihren verwalteten Code in systemeigenen Code kompiliert und erläutert, wie eine xamarin. IOS-Anwendung funktioniert, wobei die IOS-APIs von Apple durch die Verwendung von Bindungen vollständig genutzt werden, während gleichzeitig auf zugegriffen werden kann. BCL von NET und eine ausgereifte Sprache wie C#.
+Bei System eigenem Code handelt es sich um Code, der auf der jeweiligen Plattform nativ ausgeführt wird (z. b. mit Ziel-C oder sogar AOT-kompiliertem Code auf einem Arm-Chip). In dieser Anleitung wird erläutert, wie AOT Ihren verwalteten Code in systemeigenen Code kompiliert und erläutert, wie eine xamarin. IOS-Anwendung funktioniert, wobei die IOS-APIs von Apple durch die Verwendung von Bindungen vollständig genutzt werden, während gleichzeitig auf zugegriffen werden kann. BCL von NET und eine ausgereifte Sprache wie z. b. c#.
 
 ## <a name="aot"></a>AOT
 
-Wenn Sie eine xamarin Platform-Anwendung kompilieren, wird C# der Mono F#-Compiler (oder) ausgeführt und kompiliert C# Ihren F# -und-Code in die Microsoft Intermediate Language (MSIL). Wenn Sie eine xamarin. Android-Anwendung, eine xamarin. Mac-Anwendung oder sogar eine xamarin. IOS-Anwendung im Simulator ausführen, kompiliert die [.NET Common Language Runtime (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx) die MSIL mit einem JIT-Compiler (Just in Time). Zur Laufzeit wird dieser in einen systemeigenen Code kompiliert, der in der richtigen Architektur für die Anwendung ausgeführt werden kann.
+Wenn Sie eine xamarin Platform-Anwendung kompilieren, wird der Mono c#-Compiler (oder f #) ausgeführt, und der c#-und f #-Code wird in Microsoft Intermediate Language (MSIL) kompiliert. Wenn Sie eine xamarin. Android-Anwendung, eine xamarin. Mac-Anwendung oder sogar eine xamarin. IOS-Anwendung im Simulator ausführen, kompiliert die [.NET Common Language Runtime (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx) die MSIL mit einem JIT-Compiler (Just in Time). Zur Laufzeit wird dieser in einen systemeigenen Code kompiliert, der in der richtigen Architektur für die Anwendung ausgeführt werden kann.
 
 Für IOS gibt es jedoch eine Sicherheits Einschränkung, die von Apple festgelegt wird und die Ausführung von dynamisch generiertem Code auf einem Gerät nicht zulässt.
 Um sicherzustellen, dass diese Sicherheitsprotokolle befolgt werden, verwendet xamarin. IOS stattdessen einen AOT-Compiler (Ahead-of-Time), um den verwalteten Code zu kompilieren. Dies erzeugt eine native IOS-Binärdatei, die optional mit llvm für Geräte optimiert wird und auf dem ARM-basierten Prozessor von Apple bereitgestellt werden kann. Eine grobe Darstellung der kombinieren dieser Vorgehensweise ist im folgenden dargestellt:
 
-[![](architecture-images/aot.png "A rough diagram of how this fits together")](architecture-images/aot-large.png#lightbox)
+[![Ein grobes Diagramm der kombinieren dieser kombinieren](architecture-images/aot.png)](architecture-images/aot-large.png#lightbox)
 
 Die Verwendung von AOT weist eine Reihe von Einschränkungen auf, die im Leitfaden [Einschränkungen](~/ios/internals/limitations.md) ausführlich erläutert werden. Außerdem bietet es eine Reihe von Verbesserungen im Vergleich zu JIT durch eine Verringerung der Startzeit und verschiedene Leistungsoptimierungen.
 
@@ -45,20 +45,20 @@ Nun, da wir untersucht haben, wie der Code von der Quelle in systemeigenen Code 
 
 Mit xamarin verfügen wir über zwei separate Ökosysteme, .net und Apple, die wir zusammenbringen müssen, um so optimiert zu werden, dass das Endziel eine reibungslose Benutzerfunktion ist. Wir haben im obigen Abschnitt erläutert, wie die beiden Laufzeiten kommunizieren, und vielleicht haben Sie den Begriff "Bindungen" gehört, der die Verwendung der nativen IOS-APIs in xamarin ermöglicht. Bindungen werden in unserer [Ziel-C-Bindungs](~/cross-platform/macios/binding/overview.md) Dokumentation ausführlich erläutert. wir sehen uns nun an, wie IOS im Hintergrund arbeitet.
 
-Zuerst muss eine Möglichkeit zum verfügbar machen von Ziel-C für C#verfügbar sein, was über Selektoren erreicht wird. Eine Auswahl ist eine Nachricht, die an ein Objekt oder eine Klasse gesendet wird. Mit "Ziel-C" erfolgt dies über die [objc_msgSend](~/cross-platform/macios/binding/overview.md) -Funktionen.
+Zunächst müssen Sie eine Möglichkeit haben, "Ziel-C" für c# verfügbar zu machen. Dies erfolgt über Selektoren. Eine Auswahl ist eine Nachricht, die an ein Objekt oder eine Klasse gesendet wird. Mit "Ziel-C" erfolgt dies über die [objc_msgSend](~/cross-platform/macios/binding/overview.md) Funktionen.
 Weitere Informationen zur Verwendung von Selectors finden Sie im Leitfaden zu den [Ziel-C-Selektoren](~/ios/internals/objective-c-selectors.md) . Außerdem muss verwalteter Code für "Ziel-c" verfügbar gemacht werden, was komplizierter ist, da "Ziel-c" nichts über den verwalteten Code weiß. Um dies zu umgehen, verwenden wir *Registrars*. Diese werden im nächsten Abschnitt ausführlicher erläutert.
 
 ## <a name="registrars"></a>Registrierungsstellen
 
 Wie bereits erwähnt, ist die Registrierungsstelle Code, der verwalteten Code für "Ziel-C" verfügbar macht. Hierzu wird eine Liste aller verwalteten Klassen erstellt, die von NSObject abgeleitet werden:
 
-- Für alle Klassen, die keine vorhandene Ziel-c-Klasse umwickeln, wird eine neue Ziel-c-Klasse erstellt, wobei die Ziel-c-Member alle verwalteten Member mit einem [`Export`]-Attribut spiegeln.
+- Für alle Klassen, die keine vorhandene Ziel-c-Klasse umwickeln, wird eine neue Ziel-c-Klasse erstellt, wobei die Ziel-c-Member alle verwalteten Member mit einem [ `Export` ]-Attribut spiegeln.
 
 - In den Implementierungen für jedes Ziel – C-Member wird automatisch Code hinzugefügt, um den gespiegelten verwalteten Member aufzurufen.
 
 Der folgende Pseudo Code zeigt ein Beispiel für die Vorgehensweise:
 
-**C#(Verwalteter Code)**
+**C# (verwalteter Code)**
 
 ```csharp
  class MyViewController : UIViewController{
@@ -87,28 +87,28 @@ Der folgende Pseudo Code zeigt ein Beispiel für die Vorgehensweise:
 
 ```
 
-Der verwaltete Code kann die Attribute, `[Register]` und `[Export]`enthalten, die von der Registrierungsstelle verwendet werden, um zu wissen, dass das Objekt für "Ziel-C" verfügbar gemacht werden muss.
-Das `[Register]`-Attribut wird verwendet, um den Namen der generierten Ziel-C-Klasse anzugeben, falls der generierte Standardname nicht geeignet ist. Alle von NSObject abgeleiteten Klassen werden automatisch bei Ziel-C registriert.
-Das erforderliche `[Export]`-Attribut enthält eine Zeichenfolge, die der in der generierten Ziel-C-Klasse verwendete Selektor ist.
+Der verwaltete Code kann die Attribute und enthalten, die `[Register]` `[Export]` von der Registrierungsstelle verwendet werden, um zu wissen, dass das Objekt für "Ziel-C" verfügbar gemacht werden muss.
+Das- `[Register]` Attribut wird verwendet, um den Namen der generierten Ziel-C-Klasse anzugeben, falls der generierte Standardname nicht geeignet ist. Alle von NSObject abgeleiteten Klassen werden automatisch bei Ziel-C registriert.
+Das erforderliche `[Export]` Attribut enthält eine Zeichenfolge, bei der es sich um den in der generierten Ziel-C-Klasse verwendeten Selektor handelt.
 
 In xamarin. IOS werden zwei Arten von Registrierungsstellen verwendet – dynamisch und statisch:
 
 - **Dynamische** Registrierungsstellen – die dynamische Registrierungsstelle führt die Registrierung aller Typen in der Assembly zur Laufzeit durch. Dies erfolgt mithilfe von Funktionen, die von [der Runtime-API von Ziel-C](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)bereitgestellt werden. Die dynamische Registrierungsstelle hat daher einen langsameren Start, aber eine schnellere Buildzeit. Dies ist der Standardwert für den IOS-Simulator. Native Funktionen (normalerweise in C), die als "Trampolines" bezeichnet werden, werden als Methoden Implementierungen verwendet, wenn die dynamischen Registrare verwendet werden. Sie variieren zwischen verschiedenen Architekturen.
 
-- **Statische Registrierungs** stellen – die statische Registrierungsstelle generiert den Ziel-C-Code während des Builds, der dann in eine statische Bibliothek kompiliert und mit der ausführbaren Datei verknüpft wird. Dies ermöglicht einen schnelleren Start, dauert aber während der Buildzeit länger. Diese wird standardmäßig für gerätebuilds verwendet. Die statische Registrierungsstelle kann auch mit dem IOS-Simulator verwendet werden, indem `--registrar:static` als `mtouch` Attribut in den Buildoptionen des Projekts übergeben wird, wie unten dargestellt:
+- **Statische Registrierungs** stellen – die statische Registrierungsstelle generiert den Ziel-C-Code während des Builds, der dann in eine statische Bibliothek kompiliert und mit der ausführbaren Datei verknüpft wird. Dies ermöglicht einen schnelleren Start, dauert aber während der Buildzeit länger. Diese wird standardmäßig für gerätebuilds verwendet. Die statische Registrierungsstelle kann auch mit dem IOS-Simulator verwendet werden `--registrar:static` , indem `mtouch` Sie als Attribut in den Buildoptionen des Projekts übergeben, wie unten dargestellt:
 
-    [![](architecture-images/image1.png "Setting Additional mtouch arguments")](architecture-images/image1.png#lightbox)
+    [![Festlegen zusätzlicher mberührungs-Argumente](architecture-images/image1.png)](architecture-images/image1.png#lightbox)
 
 Weitere Informationen zu den Besonderheiten des IOS-typregistrierungs Systems, das von xamarin. IOS verwendet wird, finden Sie im Handbuch zur [typregistrierungs](~/ios/internals/registrar.md) Stelle.
 
 ## <a name="application-launch"></a>Anwendungsstart
 
-Der Einstiegspunkt aller ausführbaren xamarin. IOS-Dateien wird von einer Funktion mit dem Namen `xamarin_main`bereitgestellt, mit der Mono initialisiert wird.
+Der Einstiegspunkt aller ausführbaren xamarin. IOS-Dateien wird von einer Funktion mit dem Namen bereitgestellt `xamarin_main` , die Mono initialisiert.
 
 Abhängig vom Projekttyp erfolgt Folgendes:
 
-- Für reguläre IOS-und tvos-Anwendungen wird die verwaltete Main-Methode, die von der xamarin-App bereitgestellt wird, aufgerufen. Diese verwaltete Main-Methode ruft dann `UIApplication.Main`auf, die der Einstiegspunkt für "Ziel-C" ist. UIApplication. Main ist die Bindung für die `UIApplicationMain`-Methode von Ziel-C.
-- Bei Erweiterungen wird die native Funktion – `NSExtensionMain` or (`NSExtensionmain` for watchos Extensions) –, die von Apple-Bibliotheken bereitgestellt wird, aufgerufen. Da es sich bei diesen Projekten um Klassenbibliotheken und nicht um ausführbare Projekte handelt, sind keine verwalteten Hauptmethoden zum Ausführen vorhanden.
+- Für reguläre IOS-und tvos-Anwendungen wird die verwaltete Main-Methode, die von der xamarin-App bereitgestellt wird, aufgerufen. Diese verwaltete Main-Methode ruft dann `UIApplication.Main` auf. Dies ist der Einstiegspunkt für "Ziel-C". UIApplication. Main ist die Bindung für die-Methode von Ziel C `UIApplicationMain` .
+- Bei Erweiterungen wird die native Funktion –  `NSExtensionMain` oder ( `NSExtensionmain` für watchos Extensions) –, die von Apple-Bibliotheken bereitgestellt wird, aufgerufen. Da es sich bei diesen Projekten um Klassenbibliotheken und nicht um ausführbare Projekte handelt, sind keine verwalteten Hauptmethoden zum Ausführen vorhanden.
 
 Alle diese Startsequenz wird in eine statische Bibliothek kompiliert, die dann mit der endgültigen ausführbaren Datei verknüpft wird, damit Ihre APP weiß, wie Sie von Grund auf loslegen kann.
 
@@ -151,10 +151,10 @@ public interface UIToolbar : UIBarPositioning {
 }
 ```
 
-Der Generator, der in xamarin. IOS als [`btouch`](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs) bezeichnet wird, übernimmt diese Definitions Dateien und verwendet .NET-Tools, um [Sie in eine temporäre Assembly zu kompilieren](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs#L318). Diese temporäre Assembly kann jedoch nicht zum Aufruf von Ziel-C-Code aufgerufen werden. Der Generator liest dann die temporäre Assembly und generiert C# Code, der zur Laufzeit verwendet werden kann.
-Wenn Sie z. b. ein zufälliges Attribut zu ihrer Definition. cs-Datei hinzufügen, wird es im ausgegebenen Code nicht angezeigt. Der Generator weiß es nicht, weshalb `btouch` nicht weiß, dass er in der temporären Assembly nach der Ausgabe sucht, um Sie auszugeben.
+Der [`btouch`](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs) in xamarin. IOS aufgerufene Generator übernimmt diese Definitions Dateien und verwendet .NET-Tools, um [Sie in eine temporäre Assembly zu kompilieren](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs#L318). Diese temporäre Assembly kann jedoch nicht zum Aufruf von Ziel-C-Code aufgerufen werden. Der Generator liest dann die temporäre Assembly und generiert c#-Code, der zur Laufzeit verwendet werden kann.
+Wenn Sie z. b. ein zufälliges Attribut zu ihrer Definition. cs-Datei hinzufügen, wird es im ausgegebenen Code nicht angezeigt. Der Generator weiß es nicht, und er `btouch` weiß daher nicht, dass er in der temporären Assembly suchen muss, um ihn auszugeben.
 
-Nachdem xamarin. IOS. dll erstellt wurde, werden alle Komponenten von mfinger zusammengefasst.
+Nachdem die Xamarin.iOS.dll erstellt wurde, werden alle Komponenten von mtouchscreen zusammen gebündelt.
 
 Auf hoher Ebene wird dies erreicht, indem die folgenden Aufgaben ausgeführt werden:
 
@@ -162,7 +162,7 @@ Auf hoher Ebene wird dies erreicht, indem die folgenden Aufgaben ausgeführt wer
 - Kopieren Sie die verwalteten Assemblys.
 - Wenn die Verknüpfung aktiviert ist, führen Sie den verwalteten Linker aus, um die Assemblys zu optimieren, indem Sie nicht verwendete Teile auslagern
 - AOT-Kompilierung.
-- Erstellen Sie eine systemeigene ausführbare Datei, die eine Reihe von statischen Bibliotheken (jeweils eine für jede Assembly) ausgibt, die mit der nativen ausführbaren Datei verknüpft sind, sodass die native ausführbare Datei aus dem Start Programmcode, dem Registrierungscode (wenn statisch) und allen Ausgaben aus dem AOT besteht. Versionen
+- Erstellen Sie eine systemeigene ausführbare Datei, die eine Reihe von statischen Bibliotheken (jeweils eine für jede Assembly) ausgibt, die mit der nativen ausführbaren Datei verknüpft sind, sodass die native ausführbare Datei aus dem Start Programmcode, dem Registrierungscode (wenn statisch) und allen Ausgaben des AOT-Compilers besteht.
 
 Ausführlichere Informationen zum Linker und seiner Verwendung finden Sie im [Linker](~/ios/deploy-test/linker.md) -Handbuch.
 
@@ -170,7 +170,7 @@ Ausführlichere Informationen zum Linker und seiner Verwendung finden Sie im [Li
 
 Dieses Handbuch befasst sich mit der AOT-Kompilierung von xamarin. IOS-apps und hat xamarin. IOS und seine Beziehung zu Ziel C ausführlich untersucht.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Einschränkungen](~/ios/internals/limitations.md)
 - [Binden von Objective-C](~/cross-platform/macios/binding/overview.md)

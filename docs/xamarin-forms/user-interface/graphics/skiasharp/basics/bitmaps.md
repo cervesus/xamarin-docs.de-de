@@ -10,22 +10,22 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1e4c170f818dc62640b1cd72ec3b70f48d227d93
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 440a078857a940f57f5700a18f91fc8b25bdfae8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137734"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937201"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Grundlagen der Bitmap in skiasharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Laden Sie Bitmaps aus verschiedenen Quellen, und zeigen Sie Sie an._
 
 Die Unterstützung von Bitmaps in skiasharp ist recht umfangreich. In diesem Artikel werden nur die Grundlagen &mdash; zum Laden von Bitmaps und deren Anzeige behandelt:
 
-![](bitmaps-images/basicbitmaps-small.png "The display of two bitmaps")
+![Anzeige von zwei Bitmaps](bitmaps-images/basicbitmaps-small.png)
 
 Eine weitaus tiefere Untersuchung von Bitmaps finden Sie im Abschnitt [skiasharp-Bitmaps](../bitmaps/index.md).
 
@@ -208,7 +208,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die Bitmap wird auf die Abmessungen des Rechtecks gestreckt, weshalb der Affe horizontal in den folgenden Screenshots gestreckt wird:
 
-[![](bitmaps-images/basicbitmaps-small.png "A triple screenshot of the Basic Bitmaps page")](bitmaps-images/basicbitmaps-large.png#lightbox "A triple screenshot of the Basic Bitmaps page")
+[![Ein dreifacher Screenshot der grundlegenden Bitmaps-Seite](bitmaps-images/basicbitmaps-small.png)](bitmaps-images/basicbitmaps-large.png#lightbox "Ein dreifacher Screenshot der grundlegenden Bitmaps-Seite")
 
 Das dritte Bild, das &mdash; Sie nur sehen können, wenn Sie das Programm ausführen und ein Foto aus ihrer eigenen Bildbibliothek laden &mdash; , wird ebenfalls innerhalb eines Rechtecks angezeigt, aber die Position und Größe des Rechtecks werden angepasst, um das Seitenverhältnis der Bitmap beizubehalten. Diese Berechnung ist etwas komplizierter, da Sie einen Skalierungsfaktor basierend auf der Größe der Bitmap und des Ziel Rechtecks berechnen muss und das Rechteck in diesem Bereich zentriert:
 
@@ -249,7 +249,7 @@ Wenn noch keine Bitmap aus der Bildbibliothek geladen wurde, zeigt der- `else` B
 
 Sie können Bitmaps mit unterschiedlichen Grad an Transparenz anzeigen, und im nächsten Artikel über [**skiasharp-Transparenz**](transparency.md) wird beschrieben, wie.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

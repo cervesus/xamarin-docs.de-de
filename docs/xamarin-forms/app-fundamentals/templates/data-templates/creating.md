@@ -10,12 +10,12 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3054180a9deb1357357c90db7b7fbdd8058b6773
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9ed7e485adbc13862ff6fb6af9b02c43cc6a1f10
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565498"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935641"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>Erstellen eines Xamarin.Forms-DataTemplate-Objekts
 
@@ -31,7 +31,7 @@ Ein gängiges Verwendungsszenario für eine [`DataTemplate`](xref:Xamarin.Forms.
 
 Unabhängig von der verwendeten Methode führt dies dazu, dass das Aussehen jeder Zelle in der [`ListView`](xref:Xamarin.Forms.ListView) von einer [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) definiert wird. Dies wird im folgenden Screenshots veranschaulicht:
 
-![](creating-images/data-template-appearance.png "ListView with a DataTemplate")
+![ListView mit einem DataTemplate-Objekt](creating-images/data-template-appearance.png)
 
 ## <a name="creating-an-inline-datatemplate"></a>Erstellen eines Inline-DataTemplate-Objekts
 

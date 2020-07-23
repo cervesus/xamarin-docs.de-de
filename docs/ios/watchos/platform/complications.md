@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/03/2017
-ms.openlocfilehash: 139b58fd1953924d5a848fc79c3a1706afb760b0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e3ef2a667996f3fc38008521c2804cc644cfb328
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565640"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928604"
 ---
 # <a name="watchos-complications-in-xamarin"></a>watchos-Komplikationen in xamarin
 
@@ -24,7 +24,7 @@ Beachten Sie, dass jede watchos-Anwendung nur eine Komplikation aufweisen kann.
 
 Lesen Sie zunächst [die Apple-Dokumente](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html) , um zu ermitteln, ob Ihre APP für eine Komplikation geeignet ist. Es stehen fünf `CLKComplicationFamily` Anzeigetypen zur Auswahl:
 
-[![](complications-images/all-complications-sml.png "The 5 CLKComplicationFamily types available: Circular Small, Modular Small, Modular Large, Utilitarian Small, Utilitarian Large")](complications-images/all-complications.png#lightbox)
+[![Die 5 clkcomplicationfamily-Typen sind verfügbar: zirkulär klein, modular Small, modular Large, utilitarian Small, Utility Large](complications-images/all-complications-sml.png)](complications-images/all-complications.png#lightbox)
 
 Apps können je nach angezeigter Daten nur einen Stil oder alle fünf implementieren.
 Sie können auch Zeit reisen unterstützen und Werte für vergangene und/oder zukünftige Zeiten bereitstellen, während der Benutzer die Digital Crown schaltet.
@@ -41,7 +41,7 @@ Komplikationen können einer Überwachungs-APP während der Erstellung hinzugef�
 
 Der Assistent zum **Hinzufügen eines neuen Projekts** enthält ein Kontrollkästchen, mit dem automatisch eine komplikations Controller Klasse erstellt und die Datei " **Info. plist** " konfiguriert wird:
 
-![](complications-images/file-new-project-sml.png "The Include Complication checkbox")
+![Kontrollkästchen "Komplikation einschließen"](complications-images/file-new-project-sml.png)
 
 ### <a name="existing-projects"></a>Vorhandene Projekte
 
@@ -83,7 +83,7 @@ Befolgen Sie die Anweisungen zum [Schreiben einer Komplikation](#writing) , um d
 
 In der **Info. plist** -Datei der Watch-Erweiterung sollte der Name der `CLKComplicationDataSource` und der komplikations Familien, die Sie unterstützen möchten, angegeben werden:
 
-[![](complications-images/complications-config-sml.png "The complication family types")](complications-images/complications-config.png#lightbox)
+[![Die komplikationsfamilientypen](complications-images/complications-config-sml.png)](complications-images/complications-config.png#lightbox)
 
 In der Eingabeliste der **Datenquellen Klasse** werden Klassennamen angezeigt, die Unterklassen- `CLKComplicationDataSource` Unterklassen enthalten, die ihre komplikations Logik enthalten.
 
@@ -234,7 +234,7 @@ Diese Vorlagen Klassennamen haben alle folgende Präfix `CLKComplicationTemplate
 Es gibt nur eine Vorlage für diesen komplikations Stil: `CLKComplicationTemplateUtilitarianLargeFlat` .
 Es werden ein einzelnes Bild und ein Text angezeigt, und zwar alle in einer einzelnen Zeile.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Apple docs](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ComplicationEssentials.html)
 - [WWDC-Video](https://developer.apple.com/videos/play/wwdc2015-209/)

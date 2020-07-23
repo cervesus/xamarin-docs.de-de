@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 87b97ad913e08c42d16bbf055f168c07b9bd60e8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 644e6ab4acffa7acf2d86733d68fed8db07a752a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137204"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932365"
 ---
 # <a name="lines-and-stroke-caps"></a>Linien und Strichenden
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Erfahren Sie, wie Sie skiasharp zum Zeichnen von Linien mit unterschiedlichen Strich Strichen verwenden können._
 
 In skiasharp unterscheidet sich das Rendern einer einzelnen Zeile stark vom Rendern einer Reihe verbundener gerader Linien. Auch wenn einzelne Zeilen gezeichnet werden, ist es oft erforderlich, den Linien eine bestimmte Strichbreite zuzuweisen. Wenn diese Linien breiter werden, wird die Darstellung der Zeilenenden ebenfalls wichtig. Die Darstellung des Endes der Zeile wird als *Strich*Abdeckung bezeichnet:
 
-![](lines-images/strokecapsexample.png "The three stroke caps options")
+![Die drei Optionen für Strich Kappen](lines-images/strokecapsexample.png)
 
 Zum Zeichnen einzelner Zeilen `SKCanvas` definiert eine einfache [`DrawLine`](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) Methode, deren Argumente die Start-und Endkoordinaten der Zeile mit einem `SKPaint` Objekt angeben:
 
@@ -97,7 +97,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Für jeden Member der- `SKStrokeCap` Enumeration zeichnet der Handler zwei Zeilen, eine mit einer Strichstärke von 50 Pixeln und eine andere Zeile, die mit einer Strichstärke von zwei Pixeln positioniert ist. Diese zweite Zeile soll den geometrischen Anfang und das Ende der Linie unabhängig von der Linienstärke und der Strich Abdeckung veranschaulichen:
 
-[![](lines-images/strokecaps-small.png "Triple screenshot of the Stroke Caps page")](lines-images/strokecaps-large.png#lightbox "Triple screenshot of the Stroke Caps page")
+[![Dreifacher Screenshot der Seite "Strichstärke"](lines-images/strokecaps-small.png)](lines-images/strokecaps-large.png#lightbox "Dreifacher Screenshot der Seite "Strichstärke"")
 
 Wie Sie sehen können, wird `Square` die `Round` Länge der Linie durch die Striche-und-Striche effektiv um die Hälfte der Strichbreite am Anfang der Zeile und wieder am Ende erweitert. Diese Erweiterung wird wichtig, wenn es erforderlich ist, die Dimensionen eines gerenderten Grafik Objekts zu bestimmen.
 
@@ -231,7 +231,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die Screenshots zeigen eine Vielzahl von `Picker` Auswahlmöglichkeiten:
 
-[![](lines-images/multiplelines-small.png "Triple screenshot of the Multiple Lines page")](lines-images/multiplelines-large.png#lightbox "Triple screenshot of the Multiple Lines page")
+[![Dreifacher Screenshot der Seite mit mehreren Zeilen](lines-images/multiplelines-small.png)](lines-images/multiplelines-large.png#lightbox "Dreifacher Screenshot der Seite mit mehreren Zeilen")
 
 Das iPhone auf der linken Seite zeigt, wie das `SKPointMode.Points` Enumerationsmember bewirkt `DrawPoints` , dass alle Punkte im `SKPoint` Array als Quadrat darstellen, wenn das Linien Ende `Butt` oder ist `Square` . Kreise werden gerendert, wenn das Linien Ende ist `Round` .
 
@@ -241,7 +241,7 @@ Wenn Sie stattdessen verwenden `SKPointMode.Polygon` , wird eine Linie zwischen 
 
 Ob Zeilen verbunden oder nicht verbunden sind, ist ein wichtiger Aspekt bei der Arbeit mit Grafik Pfaden.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

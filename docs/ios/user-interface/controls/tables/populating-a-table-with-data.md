@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 9acdde897a3a700d0138cb67db6735a8cce07120
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 48aeaf8e3036c9b4e1ed548208b7daa822a00913
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570829"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933418"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Auffüllen einer Tabelle mit Daten in xamarin. IOS
 
@@ -89,7 +89,7 @@ public override void ViewDidLoad ()
 
 Die resultierende Tabelle sieht wie folgt aus:
 
- [![](populating-a-table-with-data-images/image3.png "Sample table running")](populating-a-table-with-data-images/image3.png#lightbox)
+ [![Beispiel Tabelle wird ausgeführt](populating-a-table-with-data-images/image3.png)](populating-a-table-with-data-images/image3.png#lightbox)
 
 In den meisten Tabellen können Benutzer eine Zeile berühren, um Sie auszuwählen und andere Aktionen auszuführen (z. b. das Abspielen eines Titels oder das Aufrufen eines Kontakts oder das Anzeigen eines anderen Bildschirms). Um dies zu erreichen, müssen wir einige Dinge tun. Erstellen Sie zunächst einen alertcontroller, um eine Meldung anzuzeigen, wenn der Benutzer auf eine Zeile klickt, indem Sie der-Methode Folgendes hinzufügen `RowSelected` :
 
@@ -141,7 +141,7 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 
 Nun kann der Benutzer eine Zeile berühren, und es wird eine Warnung angezeigt:
 
- [![](populating-a-table-with-data-images/image4.png "The row selected alert")](populating-a-table-with-data-images/image4.png#lightbox)
+ [![Die ausgewählte Zeile "Warnung"](populating-a-table-with-data-images/image4.png)](populating-a-table-with-data-images/image4.png#lightbox)
 
 ## <a name="cell-reuse"></a>Wiederverwendung von Zellen
 
@@ -220,7 +220,7 @@ Hier finden Sie Beispiele für die oben erläuterten Themen im **basierbaren** B
 
 Ein Index unterstützt den Benutzer beim Scrollen durch lange Listen, die normalerweise alphabetisch sortiert sind, obwohl Sie die Indizierung nach beliebigen Kriterien durchführen können. Das **basictableindex** -Beispiel lädt eine wesentlich längere Liste von Elementen aus einer Datei, um den Index zu veranschaulichen. Jedes Element im Index entspricht einem ' section ' der Tabelle.
 
- [![](populating-a-table-with-data-images/image5.png "The Index display")](populating-a-table-with-data-images/image5.png#lightbox)
+ [![Die Index Anzeige](populating-a-table-with-data-images/image5.png)](populating-a-table-with-data-images/image5.png#lightbox)
 
 Um ' Abschnitte ' zu unterstützen, müssen die Daten, die der Tabelle zugrunde liegen, gruppiert werden, sodass das basictableindex-Beispiel ein `Dictionary<>` aus dem Array von Zeichen folgen erstellt, wobei der erste Buchstabe jedes Elements als Wörterbuch Schlüssel verwendet wird:
 
@@ -268,7 +268,7 @@ Indizes werden im Allgemeinen nur mit dem einfachen Tabellen Stil verwendet.
 Kopf-und Fußzeilen können zum visuellen Gruppieren von Zeilen in einer Tabelle verwendet werden. Die erforderliche Datenstruktur ähnelt dem Hinzufügen eines Indexes – a `Dictionary<>` funktioniert wirklich gut. Anstatt das Alphabet zum Gruppieren der Zellen zu verwenden, wird in diesem Beispiel das Gemüse nach dem botanischen Typ gruppiert.
 Die Ausgabe sieht wie folgt aus:
 
- [![](populating-a-table-with-data-images/image6.png "Sample Headers and Footers")](populating-a-table-with-data-images/image6.png#lightbox)
+ [![Beispiel Kopfzeilen und-Fußzeilen](populating-a-table-with-data-images/image6.png)](populating-a-table-with-data-images/image6.png#lightbox)
 
 Zum Anzeigen von Kopf-und Fußzeilen `UITableViewSource` benötigt die Unterklasse diese zusätzlichen Methoden:
 
@@ -290,6 +290,6 @@ public override string TitleForFooter (UITableView tableView, nint section)
 
 Sie können die Darstellung der Kopf-und Fußzeile mit einem Ansichts Objekt weiter anpassen, indem Sie die `GetViewForHeader` -Methode und die- `GetViewForFooter` Methode überschreibt `UITableViewSource` .
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Workingwithtables (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

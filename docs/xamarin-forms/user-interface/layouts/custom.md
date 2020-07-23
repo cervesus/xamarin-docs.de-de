@@ -10,18 +10,18 @@ ms.date: 03/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2c1a958bd4cb56096f554acf26756019eeb0693c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b3063a644a48a8796b03b1a6acedbbcbfc7acbf7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572233"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934263"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>Erstellen eines benutzerdefinierten Layouts inXamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
-_Xamarin. Forms definiert fünf layoutklassen – Stacklayout, AbsoluteLayout, relativelayout, Grid und flexlayout, und jede ordnet die untergeordneten Elemente auf andere Weise an. Manchmal ist es jedoch notwendig, den Seiten Inhalt mithilfe eines Layouts zu organisieren, das nicht von bereitgestellt wird Xamarin.Forms . In diesem Artikel wird erläutert, wie eine benutzerdefinierte Layoutklasse geschrieben wird, und es wird eine Orientierung-sensible wraplayout-Klasse veranschaulicht, die die untergeordneten Elemente horizontal auf der Seite anordnet und dann die Anzeige der nachfolgenden untergeordneten Elemente in zusätzliche Zeilen_
+_Xamarin.Formsdefiniert fünf layoutklassen – Stacklayout, AbsoluteLayout, relativelayout, Grid und flexlayout, und jede ordnet die untergeordneten Elemente auf andere Weise an. Manchmal ist es jedoch notwendig, den Seiten Inhalt mithilfe eines Layouts zu organisieren, das nicht von bereitgestellt wird Xamarin.Forms . In diesem Artikel wird erläutert, wie eine benutzerdefinierte Layoutklasse geschrieben wird, und es wird eine Orientierung-sensible wraplayout-Klasse veranschaulicht, die die untergeordneten Elemente horizontal auf der Seite anordnet und dann die Anzeige der nachfolgenden untergeordneten Elemente in zusätzliche Zeilen_
 
 In Xamarin.Forms werden alle layoutklassen von der- [`Layout<T>`](xref:Xamarin.Forms.Layout`1) Klasse abgeleitet und beschränken den generischen Typ auf [`View`](xref:Xamarin.Forms.View) und die abgeleiteten Typen. Die `Layout<T>` -Klasse wird wiederum von der- [`Layout`](xref:Xamarin.Forms.Layout) Klasse abgeleitet, die den Mechanismus zur Positionierung und Größenanpassung von untergeordneten Elementen bereitstellt.
 
@@ -40,7 +40,7 @@ Die- [`VisualElement`](xref:Xamarin.Forms.VisualElement) Klasse definiert eine [
 
 Dadurch wird sichergestellt, dass alle visuellen Elemente auf der Seite Aufrufe an die `Measure` -Methode und die- `Layout` Methode empfangen. Der Prozess wird in der folgenden Abbildung dargestellt:
 
-![](custom-images/layout-cycle.png "Xamarin.Forms Layout Cycle")
+![Xamarin.FormsLayoutcycle](custom-images/layout-cycle.png)
 
 > [!NOTE]
 > Beachten Sie, dass layoutzyklen auch für eine Teilmenge der visuellen Struktur auftreten können, wenn sich etwas ändert, das sich auf das Layout auswirkt. Dies schließt Elemente ein, die einer Auflistung hinzugefügt oder daraus entfernt werden, z. b. in einer [`StackLayout`](xref:Xamarin.Forms.StackLayout) , eine Änderung der- [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) Eigenschaft eines-Elements oder eine Änderung in der Größe eines Elements.
@@ -52,7 +52,7 @@ Außerdem muss jede Klasse, die von oder abgeleitet wird [`Layout`](xref:Xamarin
 > [!NOTE]
 > -Elemente bestimmen ihre Größe auf der Grundlage von *Einschränkungen*, die angeben, wie viel Speicherplatz für ein Element innerhalb des übergeordneten Elements des Elements verfügbar ist. Einschränkungen, die an [ `Measure` ] (Xref:) übermittelt werden Xamarin.Forms . Visualelement. Measure (System. Double, System. Double, Xamarin.Forms . "Messreflags") und- [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) Methoden können zwischen 0 und liegen `Double.PositiveInfinity` . Ein Element ist *eingeschränkt*oder *vollständig eingeschränkt*, wenn es einen aufzurufenden [ `Measure` ] (Xref:) empfängt Xamarin.Forms . Visualelement. Measure (System. Double, System. Double, Xamarin.Forms . Messreflags)) Methode mit nicht unendlichen Argumenten: das Element ist auf eine bestimmte Größe beschränkt. Ein Element ist *nicht eingeschränkt*oder *teilweise eingeschränkt*, wenn es einen aufzurufenden Befehl `Measure` mit mindestens einem Argument erhält, das gleich ist `Double.PositiveInfinity` – die unendliche Einschränkung kann sich als Angabe der autoSizing vorstellen.
 
-## <a name="invalidation"></a>Aufheben einer Validierung
+## <a name="invalidation"></a>Invalidierung
 
 Die Invalidierung ist der Prozess, durch den eine Änderung in einem Element auf einer Seite einen neuen layoutcycle auslöst. Elemente werden als ungültig betrachtet, wenn Sie nicht mehr über die richtige Größe oder Position verfügen. Wenn beispielsweise die- [`FontSize`](xref:Xamarin.Forms.Button.FontSize) Eigenschaft einer [`Button`](xref:Xamarin.Forms.Button) geändert wird, wird die als `Button` ungültig bezeichnet, da Sie nicht mehr die richtige Größe hat. Wenn Sie die Größe des ändern, `Button` wirkt sich dies möglicherweise auf die Änderungen im Layout über den Rest einer Seite aus.
 
@@ -60,7 +60,7 @@ Elemente werden durch Aufrufen der- [`InvalidateMeasure`](xref:Xamarin.Forms.Vis
 
 Die [`Layout`](xref:Xamarin.Forms.Layout) -Klasse legt einen Handler für das-Ereignis für jedes untergeordnete Element fest, das der [`MeasureInvalidated`](xref:Xamarin.Forms.VisualElement.MeasureInvalidated) Eigenschaft oder Auflistung hinzugefügt `Content` `Children` wurde, und trennt den Handler, wenn das untergeordnete Element entfernt wird. Daher wird jedes Element in der visuellen Struktur, das über untergeordnete Elemente verfügt, benachrichtigt, wenn eines der untergeordneten Elemente die Größe ändert. Im folgenden Diagramm wird veranschaulicht, wie eine Änderung in der Größe eines Elements in der visuellen Strukturänderungen verursachen kann, die die Struktur aufschlagen:
 
-![](custom-images/invalidation.png "Invalidation in the Visual Tree")
+![Invalidierung in der visuellen Struktur](custom-images/invalidation.png)
 
 Allerdings `Layout` versucht die-Klasse, die Auswirkungen einer Änderung in der Größe eines Kindes auf das Layout einer Seite einzuschränken. Wenn das Layout der Größe eingeschränkt ist, wirkt sich eine Änderung der untergeordneten Größe nicht auf eine höhere Größe als das übergeordnete Layout in der visuellen Struktur aus. In der Regel wirkt sich eine Änderung der Größe eines Layouts jedoch darauf aus, wie das Layout seine untergeordneten Elemente anordnet. Daher wird durch jede Änderung in der Größe eines Layouts ein layoutcycle für das Layout gestartet, und das Layout empfängt Aufrufe der [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) -und- [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) Methoden.
 
@@ -400,13 +400,13 @@ async Task<ImageList> GetImageListAsync()
 
 Wenn die Seite mit dem `WrapLayout` angezeigt wird, greift die Beispielanwendung asynchron auf eine Remote-JSON-Datei mit einer Liste von Fotos zu, erstellt ein [`Image`](xref:Xamarin.Forms.Image) -Element für jedes Foto und fügt Sie hinzu `WrapLayout` . Dies ergibt die in den folgenden Screenshots gezeigte Darstellung:
 
-![](custom-images/portait-screenshots.png "Sample Application Portrait Screenshots")
+![Beispiel Bildschirm Screenshots für Anwendungen](custom-images/portait-screenshots.png)
 
 Die folgenden Screenshots zeigen die `WrapLayout` , nachdem Sie in Querformat gedreht wurde:
 
-![](custom-images/landscape-ios.png "Sample iOS Application Landscape Screenshot")
-![](custom-images/landscape-android.png "Sample Android Application Landscape Screenshot")
-![](custom-images/landscape-uwp.png "Sample UWP Application Landscape Screenshot")
+![Beispiel: Beispiel für IOS-Anwendungslandschaft Screenshot ](custom-images/landscape-ios.png)
+ ![ Beispiel für Android-Anwendungslandschaft Screenshot ](custom-images/landscape-android.png)
+ ![ Beispiel für UWP Anwendungslandschaft Screenshot](custom-images/landscape-uwp.png)
 
 Die Anzahl der Spalten in den einzelnen Zeilen hängt von der Fotogröße, der Bildschirmbreite und der Anzahl der Pixel pro geräteunabhängigen Einheit ab. Die [`Image`](xref:Xamarin.Forms.Image) Elemente werden von den-Elementen asynchron geladen, und daher empfängt die- `WrapLayout` Klasse Häufige Aufrufe an die- [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) Methode, da jedes `Image` Element auf der Grundlage des geladenen Fotos eine neue Größe erhält.
 

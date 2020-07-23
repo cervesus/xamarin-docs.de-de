@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 885e5862e517303b4a2556b0b1bd3fa8759bbca6
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: 0fe6b0b46035ac61d4aaddccb585276a80337202
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940890"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928808"
 ---
 # <a name="touch-events-and-gestures-in-xamarinios"></a>Touchereignisse und Gesten in xamarin. IOS
 
-Es ist wichtig, die touchereignisse und touchapis in einer IOS-Anwendung zu verstehen, da Sie für alle physischen Interaktionen mit dem Gerät von zentraler Bedeutung sind. Alle touchinteraktionen umfassen ein `UITouch` Objekt. In diesem Artikel erfahren Sie, wie Sie die `UITouch`-Klasse und ihre APIs zur Unterstützung von Finger Eingaben verwenden. Später werden wir unsere Kenntnisse erweitern, um zu erfahren, wie Gesten unterstützt werden.
+Es ist wichtig, die touchereignisse und touchapis in einer IOS-Anwendung zu verstehen, da Sie für alle physischen Interaktionen mit dem Gerät von zentraler Bedeutung sind. Alle touchinteraktionen umfassen ein- `UITouch` Objekt. In diesem Artikel erfahren Sie, wie Sie die `UITouch` -Klasse und ihre APIs zur Unterstützung von Finger Eingaben verwenden. Später werden wir unsere Kenntnisse erweitern, um zu erfahren, wie Gesten unterstützt werden.
 
 ## <a name="enabling-touch"></a>Aktivieren der Fingereingabe
 
-Steuerelemente in `UIKit` – solche, die von UIControl – untergeordnet sind, sind so von der Benutzerinteraktion abhängig, dass Sie Gesten in UIKit eingebaut haben. Daher ist es nicht erforderlich, die Toucheingabe zu aktivieren. Sie ist bereits aktiviert.
+Steuerelemente in `UIKit` – diese untergeordneten Elemente von UIControl – sind so von der Benutzerinteraktion abhängig, dass Sie Gesten in UIKit integriert haben. Daher ist es nicht erforderlich, die Toucheingabe zu aktivieren. Sie ist bereits aktiviert.
 
-Für viele der Sichten in `UIKit` ist die Fingereingabe jedoch standardmäßig nicht aktiviert. Es gibt zwei Möglichkeiten, die Fingereingabe für ein Steuerelement zu aktivieren. Die erste Möglichkeit ist das Aktivieren des Kontrollkästchens aktivierte Benutzerinteraktion im Eigenschaften-Pad des IOS-Designers, wie im folgenden Screenshot zu sehen:
+Für viele der Sichten in ist die Fingereingabe jedoch `UIKit` standardmäßig nicht aktiviert. Es gibt zwei Möglichkeiten, die Fingereingabe für ein Steuerelement zu aktivieren. Die erste Möglichkeit ist das Aktivieren des Kontrollkästchens aktivierte Benutzerinteraktion im Eigenschaften-Pad des IOS-Designers, wie im folgenden Screenshot zu sehen:
 
- [![](touch-in-ios-images/image1.png "Check the User Interaction Enabled checkbox in the Property Pad of the iOS Designer")](touch-in-ios-images/image1.png#lightbox)
+ [![Aktivieren Sie das Kontrollkästchen aktivierte Benutzerinteraktion im Eigenschaften-Pad des IOS-Designers.](touch-in-ios-images/image1.png)](touch-in-ios-images/image1.png#lightbox)
 
-Wir können auch einen Controller verwenden, um die `UserInteractionEnabled`-Eigenschaft für eine `UIView` Klasse auf "true" festzulegen. Dies ist erforderlich, wenn die Benutzeroberfläche im Code erstellt wird.
+Wir können auch einen Controller verwenden, um die- `UserInteractionEnabled` Eigenschaft für eine Klasse auf true festzulegen `UIView` . Dies ist erforderlich, wenn die Benutzeroberfläche im Code erstellt wird.
 
 Die folgende Codezeile ist ein Beispiel:
 
@@ -36,17 +36,17 @@ imgTouchMe.UserInteractionEnabled = true;
 
 ## <a name="touch-events"></a>Berührungsereignisse
 
-Es gibt drei Berührungs Phasen, die auftreten, wenn der Benutzer den Bildschirm berührt, seinen Finger bewegt oder den Finger entfernt. Diese Methoden werden in `UIResponder`definiert, der die Basisklasse für UIView ist. IOS überschreibt die zugeordneten Methoden auf dem `UIView` und die `UIViewController`, um die Berührungs Behandlung zu behandeln:
+Es gibt drei Berührungs Phasen, die auftreten, wenn der Benutzer den Bildschirm berührt, seinen Finger bewegt oder den Finger entfernt. Diese Methoden werden in definiert `UIResponder` . Dies ist die Basisklasse für UIView. IOS überschreibt die zugeordneten Methoden in `UIView` und `UIViewController` , um die Berührungs Behandlung zu behandeln:
 
-- `TouchesBegan` – Dies wird aufgerufen, wenn der Bildschirm zum ersten Mal berührt wird.
-- `TouchesMoved` – Dies wird aufgerufen, wenn sich die Position der Fingereingabe ändert, während der Benutzer die Finger auf dem Bildschirm verrutscht.
-- `TouchesEnded`-oder `TouchesCancelled` –-`TouchesEnded` wird aufgerufen, wenn die Finger des Benutzers vom Bildschirm entfernt werden.  `TouchesCancelled` wird aufgerufen, wenn IOS den Touch-Vorgang abbricht – beispielsweise, wenn ein Benutzer seinen Finger von einer Schaltfläche bewegt, um eine Taste abzubrechen.
+- `TouchesBegan`– Dies wird aufgerufen, wenn der Bildschirm zum ersten Mal berührt wird.
+- `TouchesMoved`– Dies wird aufgerufen, wenn sich die Position der Fingereingabe ändert, während der Benutzer die Finger auf dem Bildschirm verrutscht.
+- `TouchesEnded`oder `TouchesCancelled` – `TouchesEnded` wird aufgerufen, wenn die Finger des Benutzers vom Bildschirm entfernt werden.  `TouchesCancelled`wird aufgerufen, wenn IOS den Touch-Vorgang abbricht – beispielsweise, wenn ein Benutzer seinen Finger von einer Schaltfläche bewegt, um eine Taste abzubrechen.
 
-Berührungs Ereignisse Reisen rekursiv durch den Stapel von UIViews, um zu überprüfen, ob sich das Berührungs Ereignis innerhalb der Grenzen eines Ansichts Objekts befindet. Dies wird häufig als _Treffer Test_bezeichnet. Sie werden zuerst auf der obersten `UIView` oder `UIViewController` aufgerufen und dann auf dem `UIView` aufgerufen und in der Ansichts Hierarchie unter diesen `UIViewControllers` werden.
+Berührungs Ereignisse Reisen rekursiv durch den Stapel von UIViews, um zu überprüfen, ob sich das Berührungs Ereignis innerhalb der Grenzen eines Ansichts Objekts befindet. Dies wird häufig als _Treffer Test_bezeichnet. Sie werden zuerst auf der obersten Ebene oder aufgerufen `UIView` `UIViewController` und dann `UIView` in der `UIViewControllers` Ansichts Hierarchie unter und unter Ihnen aufgerufen.
 
-Jedes Mal, wenn der Benutzer den Bildschirm berührt, wird ein `UITouch` Objekt erstellt. Das `UITouch`-Objekt enthält Daten über die Fingereingabe, wie z. b. den Zeitpunkt, zu dem die Fingereingabe aufgetreten ist,, wenn die Fingereingabe ein Schwenk ist, usw. Die Touch-Ereignisse werden an eine berührt-Eigenschaft weitergegeben – eine `NSSet`, die einen oder mehrere Berührungen enthält. Wir können diese Eigenschaft verwenden, um einen Verweis auf eine Fingereingabe zu erhalten und die Antwort der Anwendung zu bestimmen.
+`UITouch`Jedes Mal, wenn der Benutzer den Bildschirm berührt, wird ein-Objekt erstellt. Das `UITouch` Objekt enthält Daten über die Fingereingabe, wie z. b. den Zeitpunkt, zu dem die Fingereingabe aufgetreten ist, den Zeitpunkt, an dem sich der Fingerabdruck befand, usw. Die Touch-Ereignisse werden an eine berührt-Eigenschaft weitergegeben – eine, die `NSSet` einen oder mehrere Berührungen enthält. Wir können diese Eigenschaft verwenden, um einen Verweis auf eine Fingereingabe zu erhalten und die Antwort der Anwendung zu bestimmen.
 
-Klassen, die eines der Berührungs Ereignisse überschreiben, sollten zunächst die Basis Implementierung und dann das `UITouch`-Objekt abrufen, das dem Ereignis zugeordnet ist. Rufen Sie zum Abrufen eines Verweises auf den ersten Fingerabdruck die `AnyObject`-Eigenschaft auf, und wandeln Sie Sie als `UITouch` ein, wie im folgenden Beispiel gezeigt:
+Klassen, die eines der Berührungs Ereignisse überschreiben, sollten zunächst die Basis Implementierung und dann das dem Ereignis zugeordnete- `UITouch` Objekt abrufen. Um einen Verweis auf den ersten Fingerabdruck abzurufen, rufen `AnyObject` Sie die-Eigenschaft auf, und wandeln Sie Sie als ein, `UITouch` wie im folgenden Beispiel gezeigt:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -60,7 +60,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-IOS erkennt automatisch aufeinander folgende schnell Berührungen auf dem Bildschirm und sammelt Sie alle als einen Tap in einem einzelnen `UITouch` Objekt. Dadurch wird die Überprüfung auf eine doppelte Abzweigung genauso einfach wie das Überprüfen der `TapCount` Eigenschaft, wie im folgenden Code veranschaulicht:
+IOS erkennt automatisch aufeinander folgende schnell Berührungen auf dem Bildschirm und sammelt Sie alle als einen Tap in einem einzelnen `UITouch` Objekt. Dadurch wird die Überprüfung auf eine doppelte Tap genauso einfach wie das Überprüfen der `TapCount` Eigenschaft, wie im folgenden Code veranschaulicht:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -81,15 +81,15 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 
 Multi-Touch ist für Steuerelemente standardmäßig nicht aktiviert. Multi-Touch kann im IOS-Designer aktiviert werden, wie im folgenden Screenshot veranschaulicht:
 
- [![](touch-in-ios-images/image2.png "Multi-touch enabled in the iOS Designer")](touch-in-ios-images/image2.png#lightbox)
+ [![Multitouch-Aktivierung im IOS-Designer](touch-in-ios-images/image2.png)](touch-in-ios-images/image2.png#lightbox)
 
-Es ist auch möglich, Multitouch Programm gesteuert festzulegen, indem Sie die `MultipleTouchEnabled`-Eigenschaft wie in der folgenden Codezeile gezeigt festlegen:
+Es ist auch möglich, Multitouch Programm gesteuert festzulegen, indem Sie die- `MultipleTouchEnabled` Eigenschaft wie in der folgenden Codezeile gezeigt festlegen:
 
 ```csharp
 imgTouchMe.MultipleTouchEnabled = true;
 ```
 
-Um zu ermitteln, wie viele Finger den Bildschirm berührt haben, verwenden Sie die `Count`-Eigenschaft für die `UITouch`-Eigenschaft:
+Verwenden Sie die-Eigenschaft für die-Eigenschaft, um zu bestimmen, wie viele Finger den Bildschirm berührt haben `Count` `UITouch` :
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -101,7 +101,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 
 ## <a name="determining-touch-location"></a>Bestimmen des Berührungs Orts
 
-Die-Methode `UITouch.LocationInView` gibt ein CGPoint-Objekt zurück, das die Koordinaten der Fingereingabe innerhalb einer angegebenen Ansicht enthält. Außerdem können Sie überprüfen, ob sich dieser Speicherort innerhalb eines Steuer Elements befindet, indem Sie die-Methode `Frame.Contains`aufrufen. Der folgende Code Ausschnitt zeigt ein Beispiel für Folgendes:
+Die-Methode `UITouch.LocationInView` gibt ein CGPoint-Objekt zurück, das die Koordinaten der Fingereingabe innerhalb einer angegebenen Ansicht enthält. Außerdem können wir testen, ob sich diese Position innerhalb eines Steuer Elements befindet, indem Sie die-Methode aufrufen `Frame.Contains` . Der folgende Code Ausschnitt zeigt ein Beispiel für Folgendes:
 
 ```csharp
 if (this.imgTouchMe.Frame.Contains (touch.LocationInView (this.View)))
@@ -128,16 +128,16 @@ Xamarin. IOS stellt die-Klasse `UIGestureRecognizer` als Basisklasse für die fo
 Das grundlegende Muster für die Verwendung eines Gesten Erkennungs Moduls lautet wie folgt:
 
 1. **Instanziieren Sie die Gestenerkennung** – zuerst instanziieren Sie eine `UIGestureRecognizer` Unterklasse. Das Objekt, das instanziiert wird, wird durch eine Sicht verknüpft, und die Garbage Collection wird durchgeführt, wenn die Sicht verworfen wird. Es ist nicht erforderlich, diese Sicht als Variable auf Klassenebene zu erstellen.
-1. **Konfigurieren Sie alle Gesten Einstellungen** – der nächste Schritt besteht darin, die Gestenerkennung zu konfigurieren. Eine Liste der Eigenschaften, die festgelegt werden können, um das Verhalten einer `UIGestureRecognizer` Instanz zu steuern, finden Sie in der Dokumentation zu xamarin auf `UIGestureRecognizer` und den zugehörigen Unterklassen.
-1. **Konfigurieren des Ziel** – aufgrund seines Ziels C-Erbes werden von xamarin. IOS keine Ereignisse erhoben, wenn eine Gestenerkennung mit einer Geste übereinstimmt.  `UIGestureRecognizer` verfügt über eine Methode – `AddTarget` –, die einen anonymen Delegaten oder einen Ziel-C-Selektor mit dem Code akzeptieren kann, der ausgeführt werden soll, wenn die Gestenerkennung eine Entsprechung trifft.
+1. **Konfigurieren Sie alle Gesten Einstellungen** – der nächste Schritt besteht darin, die Gestenerkennung zu konfigurieren. `UIGestureRecognizer`Eine Liste der Eigenschaften, die festgelegt werden können, um das Verhalten einer-Instanz zu steuern, finden Sie in der Dokumentation zu xamarin und den zugehörigen Unterklassen `UIGestureRecognizer` .
+1. **Konfigurieren des Ziel** – aufgrund seines Ziels C-Erbes werden von xamarin. IOS keine Ereignisse erhoben, wenn eine Gestenerkennung mit einer Geste übereinstimmt.  `UIGestureRecognizer`verfügt über eine Methode – `AddTarget` –, die einen anonymen Delegaten oder einen Ziel-C-Selektor mit dem Code akzeptieren kann, der ausgeführt werden soll, wenn die Gestenerkennung eine Entsprechung trifft.
 1. **Aktivieren** der Gestenerkennung – genau wie bei touchereignissen werden Gesten nur erkannt, wenn Berührungs Interaktionen aktiviert sind.
-1. **Fügen Sie der Ansicht die Gestenerkennung hinzu** – der letzte Schritt besteht darin, die Geste einer Ansicht hinzuzufügen, indem Sie `View.AddGestureRecognizer` aufrufen und ihr ein Gesten Erkennungs Objekt übergeben.
+1. **Fügen Sie der Ansicht die Gestenerkennung hinzu** – der letzte Schritt besteht darin, die Geste einer Ansicht hinzuzufügen `View.AddGestureRecognizer` , indem Sie aufrufen und ihr ein Gesten Erkennungs Objekt übergeben.
 
 Weitere Informationen zur Implementierung in Code finden Sie in den [Beispielen zur Gestenerkennung](~/ios/app-fundamentals/touch/ios-touch-walkthrough.md#Gesture_Recognizer_Samples) .
 
-Wenn das Ziel der Geste aufgerufen wird, wird ein Verweis auf die aufgetretene Geste an Sie übermittelt. Dies ermöglicht dem Gesten Ziel das Abrufen von Informationen über die aufgetretene Geste. Der Umfang der verfügbaren Informationen richtet sich nach dem Typ der verwendeten Gestenerkennung. Informationen zu den Daten, die für jede `UIGestureRecognizer` Unterklasse verfügbar sind, finden Sie in der Dokumentation zu xamarin.
+Wenn das Ziel der Geste aufgerufen wird, wird ein Verweis auf die aufgetretene Geste an Sie übermittelt. Dies ermöglicht dem Gesten Ziel das Abrufen von Informationen über die aufgetretene Geste. Der Umfang der verfügbaren Informationen richtet sich nach dem Typ der verwendeten Gestenerkennung. Informationen zu den Daten, die für jede Unterklasse verfügbar sind, finden Sie in der Dokumentation zu xamarin `UIGestureRecognizer` .
 
-Beachten Sie, dass die Ansicht (und alle darunter liegenden Ansichten) keine Berührungs Ereignisse empfangen, sobald einer Ansicht eine Gestenerkennung hinzugefügt wurde. Um Berührungs Ereignisse gleichzeitig mit Gesten zuzulassen, muss die `CancelsTouchesInView`-Eigenschaft auf false festgelegt werden, wie im folgenden Code veranschaulicht:
+Beachten Sie, dass die Ansicht (und alle darunter liegenden Ansichten) keine Berührungs Ereignisse empfangen, sobald einer Ansicht eine Gestenerkennung hinzugefügt wurde. Um Berührungs Ereignisse gleichzeitig mit Gesten zuzulassen, `CancelsTouchesInView` muss die-Eigenschaft auf false festgelegt werden, wie im folgenden Code veranschaulicht:
 
 ```csharp
 _tapGesture.Recognizer.CancelsTouchesInView = false;
@@ -160,7 +160,7 @@ Gesten Erkennungs Tools sind in einem der folgenden Zustände vorhanden:
 - *Beendet* – Dies ist ein Alias für den erkannten Zustand.
 - Fehler – wenn die Gestenerkennung nicht mehr mit den Berührungen identisch ist, die Sie überwacht, wird der Status in *"failed"* geändert.
 
-Xamarin. IOS stellt diese Werte in der `UIGestureRecognizerState`-Enumeration dar.
+Xamarin. IOS stellt diese Werte in der- `UIGestureRecognizerState` Enumeration dar.
 
 ## <a name="working-with-multiple-gestures"></a>Arbeiten mit mehreren Gesten
 
@@ -175,7 +175,7 @@ Es ist auch möglich, eine Geste in IOS zu deaktivieren. Es gibt zwei delegateig
 1. *Rechdreceivetouch* – dieser Delegat wird aufgerufen, unmittelbar bevor die Gestenerkennung an ein Touch-Ereignis geleitet wird, und bietet die Möglichkeit, die Berührungen zu untersuchen und zu entscheiden, welche Berührungen von der Gestenerkennung behandelt werden.
 1. *Schulter* – Dies wird aufgerufen, wenn eine Erkennung versucht, den Zustand von einem möglichen in einen anderen Zustand zu ändern. Wenn Sie false zurückgeben, erzwingen Sie, dass der Status der Gestenerkennung in "failed" geändert wird.
 
-Sie können diese Methoden mit einem stark typisierten `UIGestureRecognizerDelegate`, einem schwachen Delegaten oder einer Bindung über die Ereignishandlersyntax überschreiben, wie im folgenden Code Ausschnitt veranschaulicht:
+Sie können diese Methoden mit einem stark typisierten `UIGestureRecognizerDelegate` , einem schwachen Delegaten oder einer Bindung über die Ereignishandlersyntax überschreiben, wie im folgenden Code Ausschnitt veranschaulicht:
 
 ```csharp
 gesture.ShouldReceiveTouch += (UIGestureRecognizer r, UITouch t) => { return true; };
@@ -191,7 +191,7 @@ singleTapGesture.RequireGestureRecognizerToFail(doubleTapGesture);
 
 Obwohl IOS einige Standard Gesten Erkennungs Tools bereitstellt, kann es erforderlich sein, in bestimmten Fällen benutzerdefinierte Gesten Erkennungs Tools zu erstellen. Das Erstellen einer benutzerdefinierten Gestenerkennung umfasst die folgenden Schritte:
 
-1. Unterklasse `UIGestureRecognizer`.
+1. Unterklasse `UIGestureRecognizer` .
 1. Überschreiben Sie die entsprechenden Berührungs Ereignis Methoden.
 1. Blasen Sie den Erkennungs Status mithilfe der "State"-Eigenschaft der Basisklasse.
 

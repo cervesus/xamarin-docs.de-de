@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 06a3197cfcd3b49538cfa5fa97e40a9f50c7a244
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 164c059b60c1b5b2aadb2cb348c6b5407da63928
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84655098"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934705"
 ---
 # <a name="introduction-to-web-services"></a>Einführung in Webdienste
 
@@ -293,7 +293,7 @@ Die Webdienst-URL kann entweder eine gehostete Remote Quelle oder eine lokale Da
 file:///Users/myUserName/projects/MyProjectName/service.wsdl
 ```
 
-[![](images/add-webreference-dialog.png "The web service URL can either be a hosted remote source or local file system resource accessible via the file path prefix")](images/add-webreference-dialog.png#lightbox)
+[![Die Webdienst-URL kann entweder eine gehostete Remote Quelle oder eine lokale Dateisystem Ressource sein, auf die über das Dateipfad-Präfix](images/add-webreference-dialog.png)](images/add-webreference-dialog.png#lightbox)
 
 Dadurch wird der Proxy im Web-oder Dienst Verweis Ordner des Projekts generiert. Da es sich bei einem Proxy um generierten Code handelt, sollte er nicht geändert werden.
 
@@ -440,7 +440,7 @@ client.ClientCredentials.UserName.Password = @"mrsnuggles";
 
 Weitere Informationen zur http-Standard Authentifizierung, obwohl im Kontext eines Rest-Webdiensts, finden Sie unter [Authentifizieren eines Rest-Webdiensts](~/xamarin-forms/data-cloud/authentication/rest.md).
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Webdienste in xamarin. Forms](~/xamarin-forms/data-cloud/index.yml)
 - [Service Model Metadata Utility-Tool (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)

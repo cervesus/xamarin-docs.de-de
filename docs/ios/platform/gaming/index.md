@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: fd79153520036ae49fd6fd9abe652e2c7459b30d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b21e72cc072b614c2e900d7c7b3aa04c9f0812cb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032514"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939775"
 ---
 # <a name="ios-gaming-apis-in-xamarinios"></a>IOS-Gaming-APIs in xamarin. IOS
 
@@ -21,7 +21,7 @@ _In diesem Artikel werden die neuen Spiele Erweiterungen von IOS 9 behandelt, mi
 Apple hat einige technologische Verbesserungen an den Gaming-APIs in ios 9 vorgenommen, die die Implementierung von Spielgrafiken und Audiodaten in einer xamarin. IOS-App vereinfachen.
 Diese umfassen sowohl die einfache Entwicklung durch allgemeine Frameworks als auch die Leistungsfähigkeit der GPU des IOS-Geräts, um die Geschwindigkeit und Grafikfunktionen zu verbessern.
 
-[![](images/flocking01.png "An example of an app running flocking")](images/flocking01.png#lightbox)
+[![Ein Beispiel für eine APP, die Flocking ausgeführt wird.](images/flocking01.png)](images/flocking01.png#lightbox)
 
 Dies umfasst gameplaykit, replaykit, Model I/O, Metal Kit und Metal Performance Shaders sowie neue, erweiterte Features von Metal, scenekit und spritekit.
 
@@ -52,13 +52,13 @@ Werfen wir einen kurzen Blick auf die Implementierung einiger einfacher Spielmec
 ### <a name="pathfinding"></a>Pfadsuche
 
 Pathfind ist die Fähigkeit eines Ki-Elements eines Spiels, seine Art um das spielboard zu finden.
-Beispielsweise wird ein 2D-Gegner durch ein Labyrinth oder ein 3D-Zeichen durch ein First-Person-Shooter-Welt Gelände gefunden.
+Beispielsweise wird ein 2D-Feind durch ein Labyrinth oder ein 3D-Zeichen durch ein First-Person-Shooter-Welt Gelände gefunden.
 
 Sehen Sie sich die folgende Karte an:
 
-[![](images/gkpathfindpath.png "An example pathfinding map")](images/gkpathfindpath.png#lightbox)
+[![Ein Beispiel für eine Pfadsuche](images/gkpathfindpath.png)](images/gkpathfindpath.png#lightbox)
 
-Mithilfe der pathfind C# -Methode kann dieser Code eine Methode durch die Zuordnung finden:
+Durch die Verwendung von pathfind kann dieser c#-Code eine Weise durch die Karte finden:
 
 ```csharp
 var a = GKGraphNode2D.FromPoint (new Vector2 (0, 5));
@@ -84,7 +84,7 @@ Console.WriteLine(String.Join ("->", (object[]) a2f));
 
 ### <a name="classical-expert-system"></a>Klassisches Expertensystem
 
-Der folgende C# Code Ausschnitt zeigt, wie das gameplaykit verwendet werden kann, um ein klassisches Expertensystem zu implementieren:
+Der folgende Code Ausschnitt von c#-Code zeigt, wie das gameplaykit verwendet werden kann, um ein klassisches Expertensystem zu implementieren:
 
 ```csharp
 string output = "";
@@ -145,13 +145,13 @@ protected Func<GKRuleSystem, bool> mod(int m)
 }
 ```
 
-Basierend auf einem bestimmten Satz von Regeln (`GKRule`) und einem bekannten Satz von Eingaben erstellt das Expertensystem (`GKRuleSystem`) eine vorhersagbare Ausgabe (`fizzbuzz` für unser Beispiel oben).
+Basierend auf einem bestimmten Satz von Regeln ( `GKRule` ) und einem bekannten Satz von Eingaben erstellt das Expertensystem ( `GKRuleSystem` ) eine vorhersagbare Ausgabe ( `fizzbuzz` für unser Beispiel oben).
 
 ### <a name="flocking"></a>Wird Flocking
 
 Das Flocking ermöglicht es einer Gruppe von Ki-gesteuerten Spiel Entitäten, sich als eine Bewegung zu Verhalten, bei der die Gruppe auf die Bewegungen und Aktionen einer führenden Entität antwortet, wie z. b. eine Bewegung von Vögeln im Flug oder eine Schule von Fisch schwimmen.
 
-Der folgende Code Ausschnitt implementiert C# das flockverhalten mithilfe von gameplaykit und spritekit für die Grafik Anzeige:
+Der folgende Code Ausschnitt von c#-Code implementiert das flockverhalten mithilfe von gameplaykit und spritekit für die Grafik Anzeige:
 
 ```csharp
 using System;
@@ -365,17 +365,17 @@ public override void ViewWillLayoutSubviews ()
 
 Bei der Durchführung werden die kleinen animierten _"Boids"_ um unsere Fingerspitzen herum herum angezeigt:
 
-[![](images/flocking01.png "The little animated Boids will flock around the finger taps")](images/flocking01.png#lightbox)
+[![Die kleinen animierten Boids bewegen sich um die Fingerspitzen.](images/flocking01.png)](images/flocking01.png#lightbox)
 
 ### <a name="other-apple-examples"></a>Weitere Apple-Beispiele
 
-Zusätzlich zu den oben dargestellten Beispielen hat Apple die folgenden Beispiel-apps bereitgestellt, die in C# und xamarin. IOS transcodiert werden können:
+Zusätzlich zu den oben dargestellten Beispielen hat Apple die folgenden Beispiel-apps bereitgestellt, die in c# und xamarin. IOS transcodiert werden können:
 
-- [fourinarow: Verwenden des "gameplaykit MinMax"-Strategen für die](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142) der Gegner-KI
-- [agentscatalog: Verwenden des Agents System in gameplaykit](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
-- [demobots: Entwickeln eines plattformübergreifenden Spiels mit spritekit und gameplaykit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
+- [Fourinarow: Verwenden des gameplaykit-MinMax-Strategen für die Gegenspieler-Ki](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
+- [Agentscatalog: Verwenden des Agents System in gameplaykit](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
+- [Demobots: aufbauen eines plattformübergreifenden Spiels mit spritekit und gameplaykit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
 
-## <a name="metal"></a>Metal
+## <a name="metal"></a>Metallisch
 
 In ios 9 hat Apple verschiedene Änderungen und Ergänzungen zu Metal vorgenommen, um den Zugriff auf die GPU mit geringem mehr Aufwand zu ermöglichen. Mit Metal können Sie die Grafik und das Rechen Potenzial ihrer IOS-apps maximieren.
 
@@ -404,9 +404,9 @@ Durch die Verwendung von Klassen für den Metal Performance-Shader können Sie d
 
 Das Metal Performance Shader-Framework bietet eine Reihe allgemeiner Shader wie z. b.:
 
-- **Gaußscher Weichzeichner** (`MPSImageGaussianBlur`)
-- **Sobel Edge-Erkennung** (`MPSImageSobel`)
-- **Bild Histogramm** (`MPSImageHistogram`)
+- **Gaußscher Weichzeichner** ( `MPSImageGaussianBlur` )
+- **Sobel Edge-Erkennung** ( `MPSImageSobel` )
+- **Bild Histogramm** ( `MPSImageHistogram` )
 
 Weitere Informationen finden Sie im Apple- [Handbuch zur Metal-Schattierung](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalShadingLanguageGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014364).
 
@@ -427,7 +427,7 @@ Weitere Informationen zu Modell-e/a finden Sie in der [Referenz zum Modell](http
 
 Das neue replaykit-Framework von Apple ermöglicht Ihnen das einfache Hinzufügen von Spiel spielen zu Ihrem IOS-Spiel und ermöglicht dem Benutzer, dieses Video in der app schnell und einfach zu bearbeiten und freizugeben.
 
-Weitere Informationen finden Sie unter Apple [Social Social with replaykit und Game Center Video](https://developer.apple.com/videos/wwdc/2015/?id=605) und ihre [demobots: Entwickeln eines plattformübergreifenden Spiels mit spritekit und gameplaykit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179) Beispiel-app.
+Weitere Informationen finden Sie unter Apple [Social Social mit replaykit und Game Center Video](https://developer.apple.com/videos/wwdc/2015/?id=605) und deren [demobots: aufbauen eines plattformübergreifenden Spiels mit der spritekit-und gameplaykit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179) -Beispiel-app.
 
 ## <a name="scenekit"></a>SceneKit
 
@@ -440,10 +440,10 @@ Weitere Informationen finden Sie in unserer [scenekit](~/ios/platform/gaming/sce
 Apple hat die folgenden neuen Features von scenekit für IOS 9 hinzugefügt:
 
 - Xcode bietet jetzt einen Szene-Editor, mit dem Sie schnell Spiele und interaktive 3D-Apps erstellen können, indem Sie Szenen direkt in Xcode bearbeiten.
-- Die Klassen `SCNView` und `SCNSceneRenderer` können verwendet werden, um das Metal-Rendering (auf unterstützten IOS-Geräten) zu aktivieren.
-- Mithilfe der Klassen `SCNAudioPlayer` und `SCNNode` können Sie räumliche Audioeffekte hinzufügen, mit denen die Position eines Players automatisch einer IOS-App nachverfolgt wird.
+- Die `SCNView` `SCNSceneRenderer` Klassen und können verwendet werden, um das Metal-Rendering (auf unterstützten IOS-Geräten) zu aktivieren.
+- Mithilfe der `SCNAudioPlayer` -Klasse und der `SCNNode` -Klasse können Sie räumliche Audioeffekte hinzufügen, die automatisch die Position eines Players an eine IOS-App nachverfolgen.
 
-Weitere Informationen finden Sie in unserer [scenekit-Dokumentation](~/ios/platform/introduction-to-ios8.md#scenekit) und in der [scenekit Framework-Referenz](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283) von Apple und [Fox: Das Aufbau eines scenekit-Spiels mit dem Xcode-Szenen-Editor](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154) Beispiel Projekt.
+Weitere Informationen finden Sie in unserer [scenekit-Dokumentation](~/ios/platform/introduction-to-ios8.md#scenekit) und in der [scenekit Framework-Referenz](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283) von Apple und im Beispiel für [das Entwickeln eines scenekit-Spiels mit dem Beispiel Projekt "Xcode Scene Editor](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154) ".
 
 ## <a name="spritekit"></a>SpriteKit
 
@@ -455,19 +455,19 @@ Weitere Informationen finden Sie in unserer [spritekit](~/ios/platform/gaming/sp
 
 Apple hat das spritekit für IOS 9 die folgenden neuen Features hinzugefügt:
 
-- Räumlicher Audioeffekt, bei dem die Position des Players automatisch mit der `SKAudioNode`-Klasse nachverfolgt wird.
+- Räumlicher Audioeffekt, bei dem die Position des Players automatisch mit der-Klasse nachverfolgt wird `SKAudioNode` .
 - Xcode enthält jetzt einen Szene-Editor und einen Aktions-Editor für die einfache Erstellung von 2D-Spielen und-apps.
-- Einfache scrollspiel Unterstützung mit neuen Kamera Knoten (`SKCameraNode`) Objekten.
+- Einfache scrollspiel Unterstützung mit neuen Kamera Knoten ( `SKCameraNode` )-Objekten.
 - Auf IOS-Geräten, die Metal unterstützen, wird das spritekit automatisch für das Rendering verwendet, auch wenn Sie bereits benutzerdefinierte OpenGL es-Shader verwendet haben.
 
-Weitere Informationen finden Sie in unserer [spritekit-Dokumentation](~/ios/platform/introduction-to-ios8.md#spritekit) , der [spritekit-frameworkreferenz](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041) von Apple und ihren [demobots: Entwickeln eines plattformübergreifenden Spiels mit spritekit und gameplaykit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179) Beispiel-app.
+Weitere Informationen finden Sie in der [spritekit-Dokumentation](~/ios/platform/introduction-to-ios8.md#spritekit) der [spritekit-frameworkreferenz](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041) von Apple und in den zugehörigen [demobots: aufbauen eines plattformübergreifenden Spiels mit der spritekit-und gameplaykit-](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179) Beispiel-app.
 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel wurden die neuen Spiele Features behandelt, die IOS 9 für Ihre xamarin. IOS-apps bereitstellt.
 Es wurden gameplaykit und Modell-e/a eingeführt. die wichtigsten Verbesserungen an Metal und die neuen Features von scenekit und spritekit.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [IOS 9-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [IOS 9 für Entwickler](https://developer.apple.com/ios/pre-release/)

@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c62d09c7d7848d9f62c018caa1698bb53a2a39a8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c7a379fa0128f73af471509974a043dbf2475d3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128712"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933314"
 ---
 # <a name="soft-keyboard-input-mode-on-android"></a>Weicher Tastatureingabe Modus unter Android
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Diese Android-plattformspezifische wird verwendet, um den Betriebsmodus für einen Soft Tastatureingabe Bereich festzulegen, und wird in XAML verwendet, indem die [`Application.WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty) angefügte-Eigenschaft auf einen Wert der-Enumeration festgelegt wird [`WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) :
 
@@ -45,7 +45,7 @@ Die- `Application.On<Android>` Methode gibt an, dass diese plattformspezifische 
 
 Das Ergebnis ist, dass der Betriebsmodus für den Soft Tastatureingabe Bereich festgelegt werden kann, wenn ein Eingabe Steuerelement den Fokus hat:
 
-[![](soft-keyboard-input-mode-images/pan-resize.png "Soft Keyboard Operating Mode Platform-Specific")](soft-keyboard-input-mode-images/pan-resize-large.png#lightbox "Soft Keyboard Operating Mode Platform-Specific")
+[![Soft-Tastatur-Betriebsmodus plattformspezifisch](soft-keyboard-input-mode-images/pan-resize.png)](soft-keyboard-input-mode-images/pan-resize-large.png#lightbox "Soft-Tastatur-Betriebsmodus plattformspezifisch")
 
 ## <a name="related-links"></a>Verwandte Links
 

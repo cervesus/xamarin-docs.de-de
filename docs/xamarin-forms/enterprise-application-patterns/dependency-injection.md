@@ -10,12 +10,12 @@ ms.date: 11/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 99cac3c597cf1d7351d3214ce59fd0a0a0a46400
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8aea3ad36f6c35e9faf2771fc6b54c378c304afb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572350"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933600"
 ---
 # <a name="dependency-injection"></a>Dependency Injection
 
@@ -62,7 +62,7 @@ Es sind viele abhängigkeiteneinschleusungs Container verfügbar, wobei der esho
 
 In tinyioc stellt der- `TinyIoCContainer` Typ den Container für die Abhängigkeitsinjektion bereit. In Abbildung 3-1 werden die Abhängigkeiten angezeigt, wenn dieser Container verwendet wird, der ein Objekt instanziiert `IOrderService` und in die- `ProfileViewModel` Klasse einfügt.
 
-![](dependency-injection-images/dependencyinjection.png "Dependencies example when using dependency injection")
+![Abhängigkeits Beispiel bei Verwendung von Abhängigkeitsinjektion](dependency-injection-images/dependencyinjection.png)
 
 **Abbildung 3-1:** Abhängigkeiten bei der Verwendung von Abhängigkeitsinjektion
 
@@ -166,7 +166,7 @@ Die Abhängigkeitsinjektion ermöglicht das Entkoppeln von konkreten Typen aus d
 
 Tinyioc ist ein Lightweight-Container, der im Vergleich zu den meisten bekannten Containern eine bessere Leistung auf mobilen Plattformen bietet. Es vereinfacht das entwickeln lose gekoppelter apps und bietet alle Features, die häufig in Abhängigkeits einschleusungs Containern gefunden werden, einschließlich Methoden zum Registrieren von Typzuordnungen, Auflösen von Objekten, Verwalten der Objekt Lebensdauer und Einfügen abhängiger Objekte in Konstruktoren von Objekten, die Sie auflöst.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
 - [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

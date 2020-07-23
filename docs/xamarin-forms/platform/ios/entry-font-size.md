@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 57498811d8789d8ef9ef775f8f39f141b77659c8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a0c30d32d53397392a4be2ca984ac5f60975ca78
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138527"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936317"
 ---
 # <a name="entry-font-size-on-ios"></a>Eingabe Schriftgröße unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Diese plattformspezifische IOS-Datei wird verwendet, um den Schrift Grad eines zu skalieren [`Entry`](xref:Xamarin.Forms.Entry) , um sicherzustellen, dass der eingeputzte Text in das Steuerelement passt. Sie wird in XAML verwendet, indem die [`Entry.AdjustsFontSizeToFitWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty) angefügte-Eigenschaft auf einen Wert festgelegt wird `boolean` :
 
@@ -54,7 +54,7 @@ entry.On<iOS>().SetAdjustsFontSizeToFitWidth(!entry.On<iOS>().AdjustsFontSizeToF
 
 Das Ergebnis ist, dass der Schrift Grad der [`Entry`](xref:Xamarin.Forms.Entry) skaliert wird, um sicherzustellen, dass der eingeputzte Text in das Steuerelement passt:
 
-![](entry-font-size-images/entry-font-size.png "Adjust Entry Font Size Platform-Specific")
+![Anpassen der Größe der Eingabe Größe der Plattform](entry-font-size-images/entry-font-size.png)
 
 ## <a name="related-links"></a>Verwandte Links
 

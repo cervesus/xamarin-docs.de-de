@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 68c0fb9e034f432c619bc188553996bd7bacdee8
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b316e0629bce66e295241be9d67dc4eb37ce1972
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573689"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939567"
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>Konfigurieren Ihrer tvOS-App in iTunes Connect
 
@@ -38,11 +38,11 @@ Optional ist auch Folgendes erforderlich:
 
 Öffnen Sie nach Abschluss der obigen Schritte den iTunes Connect-Datensatz Ihrer APP, und wählen Sie die Option zum Hinzufügen von tvos mithilfe der linken Rand Leiste aus:
 
-[![](itunes-connect-images/connect01.png "Add tvOS support using the left hand sidebar")](itunes-connect-images/connect01.png#lightbox)
+[![Hinzufügen von tvos-Unterstützung mithilfe der linken Rand Leiste](itunes-connect-images/connect01.png)](itunes-connect-images/connect01.png#lightbox)
 
 Die tvos-spezifischen Informationsbildschirme sind dann für den angegebenen iTunes Connect-Datensatz verfügbar:
 
-[![](itunes-connect-images/connect02.png "The tvOS specific information screen")](itunes-connect-images/connect02.png#lightbox)
+[![Der Bildschirm "tvos-spezifische Informationen"](itunes-connect-images/connect02.png)](itunes-connect-images/connect02.png#lightbox)
 
 <a name="tvOS-Version-Information"></a>
 
@@ -50,7 +50,7 @@ Die tvos-spezifischen Informationsbildschirme sind dann für den angegebenen iTu
 
 Wählen Sie in der linken Rand Leiste im Abschnitt "tvos-app" die Option " **1,0 Prepare for Submission** " aus:
 
-[![](itunes-connect-images/connect03.png "tvOS Version Information")](itunes-connect-images/connect03.png#lightbox)
+[![Informationen zur tvos-Version](itunes-connect-images/connect03.png)](itunes-connect-images/connect03.png#lightbox)
 
 Geben Sie auf diesem Bildschirm die folgenden Informationen an:
 
@@ -62,7 +62,7 @@ Geben Sie auf diesem Bildschirm die folgenden Informationen an:
 
 Nachdem Sie die erforderlichen Informationen eingegeben haben, klicken Sie in der oberen rechten Ecke des Bildschirms auf die Schaltfläche **Speichern** , um die Änderungen zu speichern:
 
-[![](itunes-connect-images/connect04.png "tvOS Version Information ready for submission")](itunes-connect-images/connect04.png#lightbox)
+[![tvos-Versionsinformationen, die für die Übermittlung bereit sind](itunes-connect-images/connect04.png)](itunes-connect-images/connect04.png#lightbox)
 
 <a name="Submitting-for-Review"></a>
 
@@ -70,7 +70,7 @@ Nachdem Sie die erforderlichen Informationen eingegeben haben, klicken Sie in de
 
 Wenn Sie Ihre xamarin. tvos-App zur Überprüfung an den Apple TV App Store übermitteln möchten, kehren Sie zum iTunes Connect-Datensatz der APP zurück, und klicken Sie in der oberen rechten Ecke des Bildschirms auf die Schaltfläche **zur Überprüfung einreichen** :
 
-[![](itunes-connect-images/connect05.png "Submit for Review")](itunes-connect-images/connect05.png#lightbox)
+[![Zur Überprüfung einreichen](itunes-connect-images/connect05.png)](itunes-connect-images/connect05.png#lightbox)
 
 <a name="Summary"></a>
 
@@ -78,7 +78,7 @@ Wenn Sie Ihre xamarin. tvos-App zur Überprüfung an den Apple TV App Store übe
 
 In diesem Artikel wurde eine Übersicht über die in iTunes Connect erforderliche tvos-spezifische Einstellung zum Freigeben einer tvos-App im Apple TV App Store angegeben.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/07/2017
-ms.openlocfilehash: 63aa344ec94730ebe448aba090e2d91af9da64b5
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0de41379800d3f8fcb26e2bc58497010b8e3bf95
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574040"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931377"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>Arbeiten mit tvos-Schaltflächen in xamarin
 
 Verwenden Sie eine Instanz der- `UIButton` Klasse, um eine Fokussier Bare, auswählbare Schaltfläche in einem tvos-Fenster zu erstellen. Wenn der Benutzer eine Schaltfläche auswählt, sendet er eine Aktions Meldung an das Zielobjekt, damit Ihre xamarin. tvos-App auf die Eingabe des Benutzers antwortet.
 
-[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
+[![Beispiel Schaltflächen](buttons-images/buttons01.png)](buttons-images/buttons01.png#lightbox)
 
 Weitere Informationen zum Arbeiten mit dem Fokus und zum Navigieren mit der Siri-Remote Dokumentation finden Sie in der Dokumentation [Arbeiten mit Navigation und Fokus](~/ios/tvos/app-fundamentals/navigation-focus.md) und [Siri-Remote-und Bluetooth-Controller](~/ios/tvos/platform/remote-bluetooth.md) .
 
@@ -28,7 +28,7 @@ Weitere Informationen zum Arbeiten mit dem Fokus und zum Navigieren mit der Siri
 
 In tvos werden Schaltflächen für App-spezifische Aktionen verwendet und können einen Titel, ein Symbol oder beides enthalten. Wenn der Benutzer die Benutzeroberfläche der App mithilfe von [Siri Remote](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)navigiert, verschiebt sich der Fokus auf die angegebene Schaltfläche, sodass Text-und Hintergrundfarben geändert werden. Ein Schatten wird auch auf die Schaltfläche zum Hinzufügen eines 3D-Effekts angewendet, sodass er über dem Rest der Benutzeroberfläche angezeigt wird.
 
-[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
+[![Beispiel Schaltflächen](buttons-images/buttons01.png)](buttons-images/buttons01.png#lightbox)
 
 Apple hat die folgenden Vorschläge zum Arbeiten mit Schaltflächen:
 
@@ -66,19 +66,19 @@ Die einfachste Möglichkeit, mit Schaltflächen in einer xamarin. tvos-APP zu ar
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie eine **Schaltfläche** aus der **Bibliothek** , und legen Sie Sie in der Ansicht ab: 
 
-    [![](buttons-images/storyboard01.png "A button")](buttons-images/storyboard01.png#lightbox)
+    [![A-Taste](buttons-images/storyboard01.png)](buttons-images/storyboard01.png#lightbox)
 1. Im **Eigenschaften-Explorer**können Sie mehrere Eigenschaften der Schaltfläche anpassen, z. b. **Titel** und **Textfarbe**: 
 
-    [![](buttons-images/storyboard02.png "Button properties")](buttons-images/storyboard02.png#lightbox)
+    [![Schaltflächen Eigenschaften](buttons-images/storyboard02.png)](buttons-images/storyboard02.png#lightbox)
 1. Wechseln Sie als nächstes zur **Registerkarte Ereignisse** , und richten Sie ein **Ereignis** über die **Schaltfläche** ein, und nennen Sie es `ButtonPressed` : 
 
-    [![](buttons-images/storyboard03.png "The Events Tab")](buttons-images/storyboard03.png#lightbox)
+    [![Registerkarte "Ereignisse"](buttons-images/storyboard03.png)](buttons-images/storyboard03.png#lightbox)
 1. Sie werden automatisch zu der Ansicht gewechselt, in der `ViewController.cs` Sie die neue Aktion mithilfe der nach- **oben** -und **nach-unten** -Taste in Ihrem Code platzieren können: 
 
-    [![](buttons-images/storyboard04.png "Placing a new Action in code")](buttons-images/storyboard04.png#lightbox)
+    [![Platzieren einer neuen Aktion im Code](buttons-images/storyboard04.png)](buttons-images/storyboard04.png#lightbox)
 1. Drücken Sie die **Eingabe** Taste, um den Speicherort auszuwählen: 
 
-    [![](buttons-images/storyboard05.png "The code editor")](buttons-images/storyboard05.png#lightbox)
+    [![Der Code-Editor](buttons-images/storyboard05.png)](buttons-images/storyboard05.png#lightbox)
 1. Speichern Sie die Änderungen an allen Dateien.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -86,13 +86,13 @@ Die einfachste Möglichkeit, mit Schaltflächen in einer xamarin. tvos-APP zu ar
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie eine **Schaltfläche** aus der **Bibliothek** , und legen Sie Sie in der Ansicht ab: 
 
-    [![](buttons-images/storyboard01vs.png "A button")](buttons-images/storyboard01vs.png#lightbox)
+    [![A-Taste](buttons-images/storyboard01vs.png)](buttons-images/storyboard01vs.png#lightbox)
 1. Im **Eigenschaften-Explorer**können Sie mehrere Eigenschaften der Schaltfläche anpassen, z. b. **Titel** und **Textfarbe**: 
 
-    [![](buttons-images/storyboard02vs.png "The Properties Explorer")](buttons-images/storyboard02vs.png#lightbox)
+    [![Der Eigenschaften-Explorer](buttons-images/storyboard02vs.png)](buttons-images/storyboard02vs.png#lightbox)
 1. Wechseln Sie als nächstes zur **Registerkarte Ereignisse** , und richten Sie ein **Ereignis** über die **Schaltfläche** ein, und nennen Sie es `ButtonPressed` : 
 
-    [![](buttons-images/storyboard03vs.png "The Events Tab")](buttons-images/storyboard03vs.png#lightbox)
+    [![Registerkarte "Ereignisse"](buttons-images/storyboard03vs.png)](buttons-images/storyboard03vs.png#lightbox)
 1. Speichern Sie die Änderungen an allen Dateien.
 
 Bearbeiten Sie die Ansichts Controller `ViewController.cs` Datei (Beispieldatei), und fügen Sie den folgenden Code hinzu, um die ausgewählte Schaltfläche zu behandeln:
@@ -252,7 +252,7 @@ Verwenden Sie die- `TintColor` Eigenschaft, um ein farbtint festzulegen, das sow
 
 In diesem Artikel wurde das Entwerfen und arbeiten mit Schaltflächen in einer xamarin. tvos-App behandelt. Es wurde gezeigt, wie mit Schaltflächen im IOS-Designer gearbeitet wird und wie Schaltflächen in c#-Code erstellt werden. Schließlich haben Sie erfahren, wie Sie den Titel einer Schaltfläche ändern und den Stil und die Darstellung ändern können.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

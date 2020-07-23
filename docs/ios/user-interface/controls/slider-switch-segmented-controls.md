@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: f7b27c9f1010be313810b4b0f289ef792efd47a3
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: cf0e617b225cc7535acffa0880a0bc089ae8da28
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568645"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934055"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Schieberegler, Switches und segmentierte Steuerelemente in xamarin. IOS
 
@@ -22,11 +22,11 @@ ms.locfileid: "84568645"
 
 Das Schieberegler-Steuerelement ermöglicht die einfache Auswahl eines numerischen Werts innerhalb eines Bereichs. Das Steuerelement ist standardmäßig auf einen Wert zwischen 0 und 1 gesetzt, aber diese Limits können angepasst werden.
 
- [![](slider-switch-segmented-controls-images/image25a.png "Slider")](slider-switch-segmented-controls-images/image25a.png#lightbox)
+ [![Schieberegler](slider-switch-segmented-controls-images/image25a.png)](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
 Der folgende Screenshot zeigt die Eigenschaften, die im Designer bearbeitet werden können:
 
- [![](slider-switch-segmented-controls-images/image26a.png "Slider Properties")](slider-switch-segmented-controls-images/image25a.png#lightbox)
+ [![Schieberegler-Eigenschaften](slider-switch-segmented-controls-images/image26a.png)](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
 Sie können diese Werte wie unten dargestellt im Code festlegen, einschließlich der Verknüpfung eines Handlers, um den aktuell ausgewählten Wert in einem-Steuerelement anzuzeigen `UILabel` :
 
@@ -47,7 +47,7 @@ slider1.MaximumTrackTintColor = UIColor.Green;
 
 Der angepasste Schieberegler sieht wie folgt aus:
 
- [![](slider-switch-segmented-controls-images/image27a.png "Custom Slider")](slider-switch-segmented-controls-images/image28a.png#lightbox)
+ [![Benutzerdefinierter Schieberegler](slider-switch-segmented-controls-images/image27a.png)](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
 > Zurzeit gibt es einen [Fehler](https://stackoverflow.com/a/19496179) , der bewirkt, dass der zur `ThumbTint` Laufzeit nicht wie erwartet gerrennt wird. Sie können die folgende Codezeile **vor** dem obigen Code als Problem Umgehung hinzufügen. [[Quelle](https://stackoverflow.com/a/21396794)]:
@@ -62,11 +62,11 @@ Der angepasste Schieberegler sieht wie folgt aus:
 
 IOS verwendet `UISwitch` als boolesche Eingabe, die auf anderen Plattformen durch eine Options Schaltfläche dargestellt werden kann. Der Benutzer kann das Steuerelement ändern, indem er den Ziehpunkt *zwischen den* ein **/aus-** Positionen verschiebt.
 
- [![](slider-switch-segmented-controls-images/image28a.png "Switch")](slider-switch-segmented-controls-images/image28a.png#lightbox)
+ [![Schalter](slider-switch-segmented-controls-images/image28a.png)](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 Die Darstellung des Schalters kann in der **Eigenschaftenpad** des Designers angepasst werden, sodass Sie den Standardzustand, ein **-oder Ausschalten von Tönungs** -Farben und ein ein **-/ausschalten**können. Dies wird in der folgenden Abbildung veranschaulicht:
 
- [![](slider-switch-segmented-controls-images/image29a.png "Switch Properties")](slider-switch-segmented-controls-images/image29a.png#lightbox)
+ [![Switch-Eigenschaften](slider-switch-segmented-controls-images/image29a.png)](slider-switch-segmented-controls-images/image29a.png#lightbox)
 
 Die Eigenschaften des Schalters können auch im Code festgelegt werden. der folgende Code zeigt z. b. einen Schalter mit dem Standardwert `On` :
 
@@ -80,19 +80,19 @@ switch1.On = true;
 
 Ein segmentiertes Steuerelement ist eine organisierte Methode, mit der Benutzer mit einer kleinen Anzahl von Optionen interagieren können. Die Anordnung erfolgt horizontal, und jedes Segment fungiert als separate Schaltfläche. Wenn Sie den Designer verwenden, befindet sich das segmentierte Steuerelement unter **Toolbox > Steuerelemente**und sollte wie in der folgenden Abbildung aussehen:
 
- [![](slider-switch-segmented-controls-images/segmentedcontrol.png "Segmented Control")](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
+ [![Segmentiertes Steuerelement](slider-switch-segmented-controls-images/segmentedcontrol.png)](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
 
 Eine einzigartige Funktion des Designers ermöglicht, dass die einzelnen Segmente auf der Entwurfs Oberfläche einzeln ausgewählt werden, wie unten dargestellt:
 
- [![](slider-switch-segmented-controls-images/segmentedcontrolselection.png "Segmented Control")](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
+ [![Segmentiertes Steuerelement](slider-switch-segmented-controls-images/segmentedcontrolselection.png)](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
 
 Dadurch kann die Eigenschaftenpad verwendet werden, um die Eigenschaften der einzelnen Segmente genauer zu steuern. Sie können die bearbeitbaren Eigenschaften im folgenden Screenshot sehen:
 
- [![](slider-switch-segmented-controls-images/segmentedcontrolproperties.png "Segmented Control")](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
+ [![Segmentiertes Steuerelement](slider-switch-segmented-controls-images/segmentedcontrolproperties.png)](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
 
 Beachten Sie, dass der segmentierte Steuerelement Stil in iOS7 veraltet ist und die Anpassungsoptionen in einer iOS7-Anwendung daher keine Auswirkung haben.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Steuerelemente (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
 - [Warnungs Controller](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 9f4e88cdc04431660376b885faef0a855e14efc2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b36ae9f9fe04ea060ef0238d5af25fb771cafe85
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572116"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932339"
 ---
 # <a name="text-input-in-xamarinios"></a>Text Eingabe in xamarin. IOS
 
@@ -20,9 +20,9 @@ Das akzeptieren von Benutzer Texteingaben wird mit dem `UITextField` für einzei
 
 Die folgenden Screenshots zeigen die Symbole für diese Steuerelemente, die sich im Toolbox-Pad in Visual Studio für Mac befinden:
 
- [![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png#lightbox)
+ [![UITextField](text-input-images/image11a.png)](text-input-images/image11a.png#lightbox)
 
- [![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png#lightbox)
+ [![UITextView](text-input-images/image13a.png)](text-input-images/image13a.png#lightbox)
 
 Nachdem Sie das Outlet benannt und die storyboarddatei gespeichert haben, wird Visual Studio für Mac die `.designer.cs` partielle Klasse aktualisieren, und Sie können c#-Code hinzufügen, der auf das Steuerelement verweist, auf die Klassendatei. Jedes Steuerelement verfügt über eigene eindeutige Eigenschaften und Ereignisse, auf die in Ihrem c#-Code zugegriffen werden kann.
 
@@ -32,7 +32,7 @@ Nachdem Sie das Outlet benannt und die storyboarddatei gespeichert haben, wird V
 
 Das `UITextField` Steuerelement wird am häufigsten verwendet, um eine einzelne Textzeile zu akzeptieren, z. b. einen Benutzernamen oder ein Kennwort. Einige der Optionen, die zum Anpassen des Steuer Elements verfügbar sind, werden hier angezeigt:
 
- [![](text-input-images/image15a.png "UITextField Properties")](text-input-images/image15a.png#lightbox)
+ [![UITextField-Eigenschaften](text-input-images/image15a.png)](text-input-images/image15a.png#lightbox)
 
 Diese Steuerelemente werden im folgenden erläutert:
 
@@ -74,7 +74,7 @@ View.Add(textfield1);
 
 Das- `UITextView` Steuerelement kann verwendet werden, um schreibgeschützten Text anzuzeigen oder mehrzeilige Texteingaben zu akzeptieren. Es verfügt über viele der gleichen Optionen wie die (z. b. Groß-/Kleinschreibung `UITextField` , Korrektur usw.).
 
- [![](text-input-images/image16a.png "UITextView Properties")](text-input-images/image16a.png#lightbox)
+ [![Uitextview-Eigenschaften](text-input-images/image16a.png)](text-input-images/image16a.png#lightbox)
 
 Zu den spezifischen Eigenschaften gehören:
 
@@ -89,6 +89,6 @@ textview1.Editable = true;
 textview1.DataDetectorTypes = UIDataDetectorType.PhoneNumber | UIDataDetectorType.Link;
 ```
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Steuerelemente (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)

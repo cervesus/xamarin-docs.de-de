@@ -6,12 +6,12 @@ ms.assetid: 852F8AB1-F9E2-4126-9C8A-12500315C599
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: fb96dab2d9979a365964d4993d9c7fc7fee299f5
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f27a95481bc590814b6031cbdd9fc9606fe0e19f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73016550"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932521"
 ---
 # <a name="multi-process-debugging"></a>Debuggen mit mehreren Prozessen
 
@@ -33,28 +33,28 @@ Visual Studio für Mac zeigt im Bereich **Projektmappenkonfiguration** der Debug
 
 Zum Starten und Debuggen mehrerer Prozesse in Visual Studio für Mac muss eine _Projektmappenkonfiguration_ erstellt werden. Eine Projektmappenkonfiguration beschreibt, welche Projekte in einer Projektmappe enthalten sein sollten, wenn eine Debugsitzung durch Klicken auf die Schaltfläche **Start** oder Drücken von &#8984;&#8617; (**Cmd-Eingabetaste**) initiiert wird. Der folgende Screenshot veranschaulicht beispielhaft eine Projektmappe in Visual Studio für Mac, die mehrere Projektmappenkonfigurationen aufweist:
 
-![](multi-process-debugging-images/mpd01-xs.png "A solution with multiple solution configurations")
+![Eine Projektmappe mit mehreren Projektmappenkonfigurationen](multi-process-debugging-images/mpd01-xs.png)
 
 ### <a name="parts-of-the-debug-toolbar"></a>Bestandteile der Debug-Symbolleiste
 
 Die Debug-Symbolleiste wurde geändert. Eine Projektmappenkonfiguration kann jetzt über ein Popupmenü ausgewählt werden. Der folgende Screenshot zeigt die Bestandteile der Debug-Symbolleiste:
 
-![](multi-process-debugging-images/mpd02-xs.png "The parts of the debug toolbar")
+![Bestandteile der Debugsymbolleiste](multi-process-debugging-images/mpd02-xs.png)
 
 1. **Projektmappenkonfiguration**: Die Projektmappenkonfiguration kann festgelegt werden, indem in der Debug-Symbolleiste auf „Projektmappenkonfiguration“ geklickt wird und die Konfiguration aus dem Popupmenü ausgewählt wird:
 
-    ![](multi-process-debugging-images/mpd03-xs.png "A sample popup with solution configurations")
+    ![Ein Beispiel für ein Popupfenster mit Projektmappenkonfigurationen](multi-process-debugging-images/mpd03-xs.png)
 
 2. **Buildziel**: Gibt das Buildziel für die Projekte an. Hier gibt es keine Veränderungen im Vergleich zu früheren Versionen von Visual Studio für Mac.
 3. **Geräteziele**: Wählt die Geräte aus, auf denen die Projektmappe ausgeführt wird. Für die einzelnen Projekte kann ein separates Gerät oder ein separater Emulator identifiziert werden:
 
-    ![](multi-process-debugging-images/mpd04-xs.png "Popup showing the devices for a project")
+    ![Popupfenster, in dem die Geräte für ein Projekt angezeigt werden](multi-process-debugging-images/mpd04-xs.png)
 
 ### <a name="multiple-debug-pads"></a>Mehrere Debug-Pads
 
 Wenn die Konfiguration mehrerer Projektmappen gestartet wird, werden einige der Visual Studio für Mac-Pads mehrfach angezeigt – eines für jeden Prozess. Der folgende Screenshot zeigt beispielsweise zwei **Anwendungsausgabe**-Pads für eine Projektmappe, die zwei Projekte ausführt:
 
-![](multi-process-debugging-images/mpd05-xs.png "Output Pad for a solution configuration")
+![Ausgabepad für eine Projektmappenkonfiguration](multi-process-debugging-images/mpd05-xs.png)
 
 ### <a name="multiple-processes-and-the-_active-thread_"></a>Mehrere Prozesse und der _aktive Thread_
 
@@ -64,7 +64,7 @@ Zur Behebung dieses Problems zeigt Visual Studio für Mac nur die Informationen 
 
 Im **Thread-Pad** werden Informationen für alle Prozesse und Threads angezeigt, die in der Projektmappenkonfiguration überprüft werden, und visuelle Hinweise zum aktiven Thread gegeben:
 
-![](multi-process-debugging-images/mpd06-xs.png "Thread pad for a solution configuration")
+![Threadpad für eine Projektmappenkonfiguration](multi-process-debugging-images/mpd06-xs.png)
 
 Die Threads werden nach dem Prozess gruppiert, der sie hostet. Der Projektname und die ID des aktiven Threads werden in fett formatiertem Text angezeigt, und im Bundsteg neben dem aktiven Thread wird ein nach rechts zeigender Pfeil angezeigt. Im vorherigen Screenshot ist **Thread Nr.1** unter der **Prozess-ID 48703** (**FirstProject**) der aktive Thread.
 
@@ -88,7 +88,7 @@ Wenn nur für eines der Projekte ein Breakpoint festgelegt ist, würde nur diese
 
 Ein Prozess kann angehalten oder fortgesetzt werden, indem mit der rechten Maustaste auf den Prozess geklickt wird und **Anhalten** oder **Fortsetzen** aus dem Kontextmenü ausgewählt wird:
 
-![](multi-process-debugging-images/mpd08-xs.png "Pause or resume in the Thread pad")
+![„Anhalten“ oder „Fortsetzen“ im Threadpad](multi-process-debugging-images/mpd08-xs.png)
 
 Abhängig von dem Status der Projekte, die gedebuggt werden, ändert sich die Darstellung der Debug-Symbolleiste. Wenn mehrere Projekte ausgeführt werden, werden in der Debug-Symbolleiste sowohl die Schaltfläche **Anhalten** als auch die Schaltfläche **Fortsetzen** angezeigt, wenn mindestens ein Projekt ausgeführt wird und ein Projekt angehalten wurde:
 
@@ -110,7 +110,7 @@ So erstellen Sie eine neue Projektmappenkonfiguration in Xamaring Studio:
 
 1. Öffnen Sie das Dialogfeld **Projektmappenoptionen** in Visual Studio für Mac, und wählen Sie **Ausführen > Konfigurationen** aus:
 
-    ![](multi-process-debugging-images/mpd10-xs.png "Solution Configuration in the Solution Options dialog")
+    ![Projektmappenkonfiguration im Dialogfeld „Projektmappenoptionen“](multi-process-debugging-images/mpd10-xs.png)
 
 2. Klicken Sie auf die Schaltfläche **Neu**, geben Sie den Namen der neuen Projektmappenkonfiguration ein, und klicken Sie anschließend auf **Erstellen**. Die neue Projektmappenkonfiguration erscheint im Fenster **Konfigurationen**:
 
@@ -118,7 +118,7 @@ So erstellen Sie eine neue Projektmappenkonfiguration in Xamaring Studio:
 
 3. Wählen Sie die neue Laufzeitkonfiguration aus der Konfigurationsliste aus. Im Dialogfeld **Projektmappenoptionen** werden die einzelnen Projekte in der Projektmappe angezeigt. Haken Sie jedes Projekt ab, das beim Initiieren einer Debugsitzung gestartet werden sollte:
 
-    ![](multi-process-debugging-images/mpd12-xs.png "Selecting the project to start")
+    ![Projekt auswählen, um zu beginnen](multi-process-debugging-images/mpd12-xs.png)
 
 Die **MultipleProjects**-Projektmappenkonfiguration wird jetzt in der **Debug-Symbolleiste** angezeigt. Dadurch kann ein Entwickler die zwei Projekte gleichzeitig debuggen.
 

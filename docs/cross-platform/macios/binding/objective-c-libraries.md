@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: 67e66d5d8f1023c0e7561791ff29ed2952ac040b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6508f7ec48d10196b47e0b51fc30e54e3c3668a6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571011"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930558"
 ---
 # <a name="binding-objective-c-libraries"></a>Binden von Ziel-C-Bibliotheken
 
@@ -39,14 +39,14 @@ Sie können das Beispiel Projekt für [IOS](https://github.com/xamarin/monotouch
 Die einfachste Möglichkeit zum Erstellen einer Bindung besteht darin, ein xamarin. IOS-Bindungs Projekt zu erstellen.
 Hierzu können Sie Visual Studio für Mac den Projekttyp, die **IOS-> Bibliothek > Bindungs Bibliothek**auswählen:
 
-[![](objective-c-libraries-images/00-sml.png "Do this from Visual Studio for Mac by selecting the project type, iOS Library Bindings Library")](objective-c-libraries-images/00.png#lightbox)
+[![Wählen Sie hierzu Visual Studio für Mac den Projekttyp, die IOS-Bibliotheks Bindungs Bibliothek aus.](objective-c-libraries-images/00-sml.png)](objective-c-libraries-images/00.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Die einfachste Möglichkeit zum Erstellen einer Bindung besteht darin, ein xamarin. IOS-Bindungs Projekt zu erstellen.
 Sie können dies in Visual Studio unter Windows durchführen, indem Sie den **Projekttyp, Visual c# > IOS > Bindungs Bibliothek (IOS)** auswählen:
 
-[![](objective-c-libraries-images/00vs-sml.png "iOS Bindings Library iOS")](objective-c-libraries-images/00vs.png#lightbox)
+[![IOS-Bindungs Bibliothek (IOS)](objective-c-libraries-images/00vs-sml.png)](objective-c-libraries-images/00vs.png#lightbox)
 
 > [!IMPORTANT]
 > Hinweis: Bindungs Projekte für **xamarin. Mac** werden nur in Visual Studio für Mac unterstützt.
@@ -104,7 +104,7 @@ Zum Herstellen einer kompletten Bindung arbeiten Sie in der Regel mit vier Kompo
 
 Dieses Diagramm zeigt die Beziehung zwischen den Dateien:
 
- [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png "This chart shows the relationship between the files")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
+ [![Dieses Diagramm zeigt die Beziehung zwischen den Dateien.](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png)](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
 
 Die API-Definitionsdatei enthält nur Namespaces und Schnittstellendefinitionen (mit allen Membern, die eine Schnittstelle enthalten kann) und sollte keine Klassen, Enumerationen, Delegaten oder Strukturen enthalten. Die API-Definitionsdatei ist lediglich der Vertrag, der zum Generieren der API verwendet wird.
 
@@ -135,7 +135,7 @@ Wenn Sie die Bibliothek aufbauen, wird Ihre Native Bindung erstellt.
 Um diese Bindung abzuschließen, sollten Sie die native Bibliothek zum Projekt hinzufügen.  Hierzu können Sie die native Bibliothek zu Ihrem Projekt hinzufügen, indem Sie die native Bibliothek von Finder auf das Projekt im Projektmappen-Explorer ziehen und ablegen oder indem Sie mit der rechten Maustaste auf das Projekt klicken und hinzufügen Dateien hinzu **fügen**auswählen,  >  **Add Files** um die native Bibliothek auszuwählen.
 Native Bibliotheken nach Konvention beginnen mit dem Wort "lib" und enden mit der Erweiterung ". a". Wenn Sie dies tun, werden Visual Studio für Mac zwei Dateien hinzufügen: die Datei ". a" und eine automatisch aufgefüllte c#-Datei, die Informationen über die Inhalte der nativen Bibliothek enthält:
 
- [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Native libraries by convention start with the word lib and end with the extension .a")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
+ [![Native Bibliotheken nach Konvention beginnen mit der Wort lib und enden mit der Erweiterung. a](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png)](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
 
 Der Inhalt der `libMagicChord.linkwith.cs` Datei enthält Informationen darüber, wie diese Bibliothek verwendet werden kann, und weist ihre IDE an, diese Binärdatei in die resultierende DLL-Datei zu packen:
 

@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cef3c2369bb4aee81a52ddd27d6ad732d7544dfa
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: df79a9b6a7b0ab44d4fcf03f12a7b4d8aabd0a82
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573845"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939268"
 ---
 # <a name="accessing-remote-data"></a>Zugreifen auf Remotedaten
 
@@ -54,7 +54,7 @@ Die- `CatalogService` Klasse wird verwendet, um den Datenabruf Vorgang aus dem C
 
 In Abbildung 10-1 wird die Interaktion von Klassen veranschaulicht, die Katalogdaten aus dem Katalog-mikrodienst zum Anzeigen von lesen `CatalogView` .
 
-[![](accessing-remote-data-images/catalogdata.png "Retrieving data from the catalog microservice")](accessing-remote-data-images/catalogdata-large.png#lightbox "Retrieving data from the catalog microservice")
+[![Abrufen von Daten aus dem Katalog-mikroservice](accessing-remote-data-images/catalogdata.png)](accessing-remote-data-images/catalogdata-large.png#lightbox "Abrufen von Daten aus dem Katalog-mikroservice")
 
 **Abbildung 10-1**: Abrufen von Daten aus dem Katalog-mikroservice
 
@@ -159,7 +159,7 @@ Die `BasketService` -Klasse wird verwendet, um den Datenabruf und den Update Pro
 
 In Abbildung 10-2 wird die Interaktion von Klassen gezeigt, die die von der angezeigten Korb Daten `BasketView` an den Warenkorb-microservice senden.
 
-[![](accessing-remote-data-images/basketdata.png "Sending data to the basket microservice")](accessing-remote-data-images/basketdata-large.png#lightbox "Sending data to the basket microservice")
+[![Senden von Daten an den Warenkorb-microservice](accessing-remote-data-images/basketdata.png)](accessing-remote-data-images/basketdata-large.png#lightbox "Senden von Daten an den Warenkorb-microservice")
 
 **Abbildung 10-2**: Senden von Daten an den Warenkorb-microservice
 
@@ -232,7 +232,7 @@ Diese Methode verwendet eine Instanz der- `RedisBasketRepository` Klasse, um die
 
 Abbildung 10-3 zeigt die Interaktionen von Klassen, die waren Korb Daten aus dem Warenkorb-microservice für das Löschen `CheckoutView` .
 
-![](accessing-remote-data-images/checkoutdata.png "Deleteing data from the basket microservice")
+![Daten aus dem Warenkorb-microservice](accessing-remote-data-images/checkoutdata.png)
 
 **Abbildung 10-3**: Löschen von Daten aus dem Warenkorb-microservice
 
@@ -372,7 +372,7 @@ Die Wiederholungs Strategie sollte so angepasst werden, dass Sie den geschäftli
 > [!NOTE]
 > Eine aggressive Wiederholungs Strategie mit minimaler Verzögerung zwischen versuchen und einer großen Anzahl von Wiederholungen könnte einen Remote Dienst beeinträchtigen, der in der Nähe der Kapazität oder der Kapazität ausgeführt wird. Außerdem könnte eine solche Wiederholungs Strategie auch die Reaktionsfähigkeit der APP beeinflussen, wenn Sie ständig versucht, einen fehlgeschlagenen Vorgang auszuführen.
 
-Wenn eine Anforderung nach einer Reihe von Wiederholungen weiterhin fehlschlägt, ist es für die APP besser, weitere Anforderungen an dieselbe Ressource zu verhindern und einen Fehler zu melden. Anschließend kann die APP nach einem bestimmten Zeitraum eine oder mehrere Anforderungen an die Ressource senden, um festzustellen, ob Sie erfolgreich sind. Weitere Informationen finden Sie unter [Circuit Breaker Pattern](#circuit-breaker-pattern) (Schutzschaltermuster).
+Wenn eine Anforderung nach einer Reihe von Wiederholungen weiterhin fehlschlägt, ist es für die APP besser, weitere Anforderungen an dieselbe Ressource zu verhindern und einen Fehler zu melden. Anschließend kann die APP nach einem bestimmten Zeitraum eine oder mehrere Anforderungen an die Ressource senden, um festzustellen, ob Sie erfolgreich sind. Weitere Informationen finden Sie unter Trenn [Schalter-Muster](#circuit-breaker-pattern).
 
 > [!TIP]
 > Implementieren Sie niemals einen endlosen Wiederholungsmechanismus. Verwenden Sie eine begrenzte Anzahl von Wiederholungen, oder implementieren Sie das Trenn [Schalter](/azure/architecture/patterns/circuit-breaker/) -Muster, damit ein Dienst wieder hergestellt werden kann.
@@ -409,7 +409,7 @@ Die Leistung einer APP kann durch das Zwischenspeichern von Daten, auf die häuf
 
 Bei der Kommunikation mit Web-APIs müssen Apps bei vorübergehenden Fehlern empfindlich sein. Vorübergehende Fehler umfassen den vorübergehenden Verlust der Netzwerk Konnektivität mit Diensten, die vorübergehende Nichtverfügbarkeit eines Diensts oder Timeouts, die auftreten, wenn ein Dienst ausgelastet ist. Diese Fehler werden häufig selbst korrigiert, und wenn die Aktion nach einer angemessenen Verzögerung wiederholt wird, ist es wahrscheinlich, dass Sie erfolgreich ausgeführt wird. Daher sollten apps alle Versuche, auf eine Web-API zuzugreifen, in Code einschließen, der einen Mechanismus zur Behandlung vorübergehender Fehler implementiert.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
 - [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

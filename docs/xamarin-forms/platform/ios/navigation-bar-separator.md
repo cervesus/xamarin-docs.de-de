@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 39d203cf0fb7fff026106d98cfb512aad42f83d2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c74f9bd17f8da5cd41a55f8b35a66e21df81a8d2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128244"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931182"
 ---
 # <a name="navigationpage-bar-separator-on-ios"></a>Trennzeichen für Navigations Seitenleiste unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Diese IOS-plattformspezifische verbirgt die Trennlinie und den Schatten, der sich am unteren Rand der Navigationsleiste eines befindet [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) . Sie wird in XAML verwendet, indem die [`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) bindbare Eigenschaft auf festgelegt wird `false` :
 
@@ -50,7 +50,7 @@ Die- `NavigationPage.On<iOS>` Methode gibt an, dass diese plattformspezifische n
 
 Das Ergebnis ist, dass das Navigationsleisten Trennzeichen auf einem [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ausgeblendet werden kann:
 
-![](navigation-bar-separator-images/navigationpage-hideseparatorbar.png "NavigationPage navigation bar hidden")
+![Navigationsleiste "navigationpage" ausgeblendet](navigation-bar-separator-images/navigationpage-hideseparatorbar.png)
 
 ## <a name="related-links"></a>Verwandte Links
 

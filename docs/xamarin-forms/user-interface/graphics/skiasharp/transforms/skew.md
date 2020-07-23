@@ -10,22 +10,22 @@ ms.date: 03/20/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 207b16f062a5c2137ac5fc3c21775d2486fda57d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 998584c3deebf5ab722758aeefe7560ba738f426
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135862"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939294"
 ---
 # <a name="the-skew-transform"></a>Die Scherungstransformation
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Sehen Sie, wie die Schiefe Transformation in skiasharp gekippte grafische Objekte erstellen kann_
 
 In skiasharp gibt die Schiefe-Transformation grafische Objekte, wie z. b. den Schatten in diesem Bild, aus:
 
-![](skew-images/skewexample.png "An example of skewing from the Skew Shadow Text program")
+![Ein Beispiel für eine schiefe aus dem Schiefe-Schatten Text Programm](skew-images/skewexample.png)
 
 Die Schiefe wandelt ein Rechteck in ein Parallelogramm um, aber eine Schiefe Ellipse ist nach wie vor eine Ellipse.
 
@@ -75,7 +75,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Werte des `xSkew` Arguments bewegen den unteren Rand des Texts nach rechts für positive Werte oder bei negativen Werten nach links. Werte für `ySkew` die Verschiebung der rechten Seite des Texts nach unten für positive Werte oder nach oben für negative Werte:
 
-[![](skew-images/skewexperiment-small.png "Triple screenshot of the Skew Experiment page")](skew-images/skewexperiment-large.png#lightbox "Triple screenshot of the Skew Experiment page")
+[![Dreifacher Screenshot der Verzerrungs Experiment Seite](skew-images/skewexperiment-small.png)](skew-images/skewexperiment-large.png#lightbox "Dreifacher Screenshot der Verzerrungs Experiment Seite")
 
 Wenn der `xSkew` Wert der negative Wert des `ySkew` Werts ist, ist das Ergebnis Drehung, aber auch etwas skaliert.
 
@@ -89,7 +89,7 @@ Bei einem positiven `xSkew` Wert wird der transformierte Wert beispielsweise ver
 
 Wenn ein Dreieck 200 Pixel breit und 100 Pixel hoch mit der oberen linken Ecke am Punkt (0,0) positioniert und mit dem Wert 1,5 gerendert wird `xSkew` , ergibt sich Folgendes Parallelogramm:
 
-![](skew-images/skeweffect.png "The effect of the skew transform on a rectangle")
+![Die Auswirkung der Schiefe-Transformation auf ein Rechteck](skew-images/skeweffect.png)
 
 Die Koordinaten des unteren Rands haben die `y` Werte 100, sodass Sie um 150 Pixel nach rechts verschoben werden.
 
@@ -111,7 +111,7 @@ Wenn `ySkew` 0 (null) ist, `px` wird der Wert nicht verwendet. Der-Wert ist irre
 
 Möglicherweise ist es besser, die Neigung als Neigungswinkel anzugeben, wie z. b. den Winkel "α" in diesem Diagramm:
 
-![](skew-images/skewangleeffect.png "The effect of the skew transform on a rectangle with a skewing angle indicated")
+![Die Auswirkung der Neigungs Transformation auf ein Rechteck, das einen Schiefe Winkel angibt](skew-images/skewangleeffect.png)
 
 Das Verhältnis zwischen der 150-Pixel-Verschiebung und der vertikalen 100 Pixel ist der Tangens dieses Winkels, in diesem Beispiel 56,3 Grad.
 
@@ -158,7 +158,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 Wenn ein Winkel positive oder negative 90 Grad erreicht, nähert sich der Tangens unendlich, aber Winkel bis zu etwa 80 Grad oder können verwendet werden:
 
-[![](skew-images/skewangleexperiment-small.png "Triple screenshot of the Skew Angle Experiment page")](skew-images/skewangleexperiment-large.png#lightbox "Triple screenshot of the Skew Angle Experiment page")
+[![Dreifacher Screenshot der Seite "schieden Winkel Versuch"](skew-images/skewangleexperiment-small.png)](skew-images/skewangleexperiment-large.png#lightbox "Dreifacher Screenshot der Seite "schieden Winkel Versuch"")
 
 Eine kleine negative horizontale Schiefe kann schrägen oder kursiv formatiert werden, wie die **schräge Textseite** zeigt. Die [`ObliqueTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) Klasse zeigt, wie Sie ausgeführt wird:
 
@@ -194,7 +194,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 Die- `TextAlign` Eigenschaft von `SKPaint` ist auf festgelegt `Center` . Ohne Transformationen würde der-Befehl `DrawText` mit Koordinaten von (0,0) den Text mit der horizontalen Mitte der Baseline in der oberen linken Ecke positionieren. Die vergrenzt `SkewDegrees` den Text horizontal um 20 Grad relativ zur Baseline. Der `Translate` -Befehl verschiebt den horizontalen Mittelpunkt der Baseline des Texts in den Mittelpunkt der Canvas:
 
-[![](skew-images/obliquetext-small.png "Triple screenshot of the Oblique Text page")](skew-images/obliquetext-large.png#lightbox "Triple screenshot of the Oblique Text page")
+[![Dreifacher Screenshot der schrägen Textseite](skew-images/obliquetext-small.png)](skew-images/obliquetext-large.png#lightbox "Dreifacher Screenshot der schrägen Textseite")
 
 Die **schiefe schattentextseite** zeigt, wie eine Kombination aus einer 45-Grad-Schiefe und vertikaler Skala verwendet wird, um einen Text Schatten zu erstellen, der aus dem Text entfernt wird. Hier ist der relevante Teil des `PaintSurface` Handlers:
 
@@ -227,11 +227,11 @@ using (SKPaint textPaint = new SKPaint())
 
 Zuerst wird der Schatten und dann der Text angezeigt:
 
-[![](skew-images/skewshadowtext1-small.png "Triple screenshot of the Skew Shadow Text page")](skew-images/skewshadowtext1-large.png#lightbox "Triple screenshot of the Skew Shadow Text page")
+[![Dreifacher Screenshot der Schiefe schattentextseite](skew-images/skewshadowtext1-small.png)](skew-images/skewshadowtext1-large.png#lightbox "Dreifacher Screenshot der Schiefe schattentextseite")
 
 Die an die Methode über gegebene vertikale Koordinate `DrawText` gibt die Position des Texts relativ zur Baseline an. Dies ist dieselbe vertikale Koordinate, die für den Mittelpunkt der Neigung verwendet wird. Diese Technik funktioniert nicht, wenn die Text Zeichenfolge Nachfolger Zeichen enthält. Ersetzen Sie z. b. das Wort "Quirky" für "Shadow", und hier ist das Ergebnis:
 
-[![](skew-images/skewshadowtext2-small.png "Triple screenshot of the Skew Shadow Text page with an alternative word with descenders")](skew-images/skewshadowtext2-large.png#lightbox "Triple screenshot of the Skew Shadow Text page with an alternative word with descenders")
+[![Dreifacher Screenshot der schiebschattentextseite mit einem alternativen Wort mit untergeordneten Zeichen](skew-images/skewshadowtext2-small.png)](skew-images/skewshadowtext2-large.png#lightbox "Dreifacher Screenshot der schiebschattentextseite mit einem alternativen Wort mit untergeordneten Zeichen")
 
 Der Schatten und der Text sind immer noch an der Baseline ausgerichtet, aber der Effekt sieht nur falsch aus. Um dieses Problem zu beheben, müssen Sie die Text Begrenzungen abrufen:
 
@@ -251,9 +251,9 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 
 Nun reicht der Schatten vom unteren Rand der nachfolgenden untergeordneten Elemente:
 
-[![](skew-images/skewshadowtext3-small.png "Triple screenshot of the Skew Shadow Text page with adjustments for descenders")](skew-images/skewshadowtext3-large.png#lightbox "Triple screenshot of the Skew Shadow Text page with adjustments for descenders")
+[![Dreifacher Screenshot der Schiefe schattentextseite mit Anpassungen für untergeordnete Elemente](skew-images/skewshadowtext3-small.png)](skew-images/skewshadowtext3-large.png#lightbox "Dreifacher Screenshot der Schiefe schattentextseite mit Anpassungen für untergeordnete Elemente")
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

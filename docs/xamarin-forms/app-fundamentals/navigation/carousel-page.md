@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms – CarouselPage" description: "Die Xamarin.Forms-CarouselPage ist eine Seite, die Benutzer hin und her wischen können, um durch Inhaltsseiten wie durch einen Katalog zu navigieren.'
-description: 'In diesem Artikel wird gezeigt, wie Sie mit einer CarouselPage durch eine Sammlung von Seiten navigieren können." ms.prod: xamarin ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 12/01/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms-CarouselPage
+description: Die Xamarin.Forms-CarouselPage ist eine Seite, die Benutzer hin und her wischen können, um durch Inhaltsseiten wie durch einen Katalog zu navigieren. In diesem Artikel wird gezeigt, wie Sie mit einer CarouselPage durch eine Sammlung von Seiten navigieren können.
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 896f652d69bca0f186e53185926ee5c46d87fa7c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c234af1a5d47446149c92a71e9ce592dc0366b8f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570673"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937461"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms-CarouselPage
 
@@ -28,15 +28,15 @@ _Die Xamarin.Forms-CarouselPage ist eine Seite, die Benutzer hin und her wischen
 
 Die folgenden Screenshots zeigen eine [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)-Klasse auf jeder Plattform:
 
-![](carousel-page-images/thirdpage.png "CarouselPage Third Item")
+![CarouselPage, drittes Element](carousel-page-images/thirdpage.png)
 
 Das Layout einer [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)-Klasse ist auf jeder Plattform identisch. Sie können durch Wischen von rechts nach links vorwärts durch die Sammlung navigieren oder durch Wischen von links nach rechts rückwärts durch die Sammlung navigieren. Die folgenden Screenshots zeigen die erste Seite in einer [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)-Instanz:
 
-![](carousel-page-images/firstpage.png "CarouselPage First Item")
+![CarouselPage, erstes Element](carousel-page-images/firstpage.png)
 
 Durch Wischen von rechts nach links gelangen Sie wie in den folgenden Screenshots gezeigt auf die zweite Seite:
 
-![](carousel-page-images/secondpage.png "CarouselPage Second Item")
+![CarouselPage, zweites Element](carousel-page-images/secondpage.png)
 
 Durch erneutes Wischen von rechts nach links gelangen Sie zur dritten Seite, durch Wischen von links nach rechts hingegen auf die vorherige Seite.
 

@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5ca30481fbc0e5631ff75000c688dd805793e670
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5bab1166ade7a5eeebbb720fa48f6116b4ec95d0
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128059"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933712"
 ---
 # <a name="safe-area-layout-guide-on-ios"></a>Handbuch zum Safe Area Layout unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Diese IOS-plattformspezifische wird verwendet, um sicherzustellen, dass der Seiten Inhalt in einem Bereich des Bildschirms positioniert ist, der für alle Geräte, die IOS 11 und höher verwenden, sicher ist. Insbesondere wird sichergestellt, dass der Inhalt nicht von abgerundeten Geräte Ecken, dem Start Indikator oder dem Sensorgehäuse auf einem iPhone X abgeschnitten wird. Sie wird in XAML verwendet, indem die `Page.UseSafeArea` angefügte-Eigenschaft auf einen Wert festgelegt wird `boolean` :
 
@@ -48,7 +48,7 @@ Die- `Page.On<iOS>` Methode gibt an, dass diese plattformspezifische nur unter I
 
 Das Ergebnis ist, dass der Seiten Inhalt in einem Bereich des Bildschirms positioniert werden kann, der für alle iPhones sicher ist:
 
-[![](page-safe-area-images/safe-area-layout.png "Safe Area Layout Guide")](page-safe-area-images/safe-area-layout-large.png#lightbox "Safe Area Layout Guide")
+[![Führungslinie für das Sicherheitsbereichslayout](page-safe-area-images/safe-area-layout.png)](page-safe-area-images/safe-area-layout-large.png#lightbox "Führungslinie für das Sicherheitsbereichslayout")
 
 > [!NOTE]
 > Der von Apple definierte sichere Bereich wird in verwendet Xamarin.Forms , um die [`Page.Padding`](xref:Xamarin.Forms.Page.Padding) -Eigenschaft festzulegen, und überschreibt alle vorherigen Werte dieser Eigenschaft, die festgelegt wurden.

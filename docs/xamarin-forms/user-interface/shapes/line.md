@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f97e6930f543f47383e2b8da09b36573bd3192d0
-ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
+ms.openlocfilehash: 9d79f232a77972b6abbce23ba65d9c277b090311
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243749"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935446"
 ---
 # <a name="xamarinforms-shapes-line"></a>Xamarin.FormsFormen: Linie
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Die `Line` -Klasse wird von der `Shape` -Klasse abgeleitet und kann zum Zeichnen von Linien verwendet werden. Informationen zu den Eigenschaften, die die `Line` Klasse von der-Klasse erbt `Shape` , finden Sie unter [ Xamarin.Forms Shapes](index.md).
 
@@ -55,7 +55,7 @@ Das folgende XAML-Beispiel zeigt, wie Sie eine Linie zeichnen:
 
 In diesem Beispiel wird eine rote diagonal Linie von (40, 0) bis (0120) gezeichnet:
 
-![Linie](line-images/line.png "Linie")
+![Line](line-images/line.png "Linie")
 
 Da die `X1` `Y1` Eigenschaften,, `X2` und die `Y2` Standardwerte 0 aufweisen, können einige Zeilen mit minimaler Syntax gezeichnet werden:
 

@@ -10,16 +10,16 @@ ms.date: 02/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6fa03cf5c18e21ce5ca9e7ea907f50c8de6f3e6c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1a3b9db435de49c438f458d1c4d85d3f81bbf749
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573260"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930686"
 ---
 # <a name="layout-options-in-xamarinforms"></a>Layoutoptionen inXamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
 
 _Jede Xamarin.Forms Ansicht verfügt über die Eigenschaften "horizontaloptions" und "verticaloptions" vom Typ "layoutoptions". In diesem Artikel werden die Auswirkungen der einzelnen layoutoptions-Werte auf die Ausrichtung und die Erweiterung einer Sicht erläutert._
 
@@ -94,7 +94,7 @@ Content = new StackLayout
 
 Der Code führt zu dem Layout, das in den folgenden Screenshots angezeigt wird:
 
-[![](layout-options-images/alignment.png "Alignment Layout Options")](layout-options-images/alignment-large.png#lightbox "Alignment Layout Options")
+[![Ausrichtungs Layout-Optionen](layout-options-images/alignment.png)](layout-options-images/alignment-large.png#lightbox "Ausrichtungs Layout-Optionen")
 
 ## <a name="expansion"></a>Erweiterung
 
@@ -147,7 +147,7 @@ Content = new StackLayout
 
 Der Code führt zu dem Layout, das in den folgenden Screenshots angezeigt wird:
 
-[![](layout-options-images/expansion.png "Expansion Layout Options")](layout-options-images/expansion-large.png#lightbox "Expansion Layout Options")
+[![Erweiterungs Layout-Optionen](layout-options-images/expansion.png)](layout-options-images/expansion-large.png#lightbox "Erweiterungs Layout-Optionen")
 
 Jede [`Label`](xref:Xamarin.Forms.Label) beansprucht die gleiche Menge an Speicherplatz in [`StackLayout`](xref:Xamarin.Forms.StackLayout) . Allerdings hat nur die letzte `Label`-Klasse, die ihre [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions)-Eigenschaft auf [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) festlegt, eine andere Größe. Darüber hinaus wird jeder `Label` durch einen kleinen roten getrennt [`BoxView`](xref:Xamarin.Forms.BoxView) , wodurch der Platz, den die `Label` einnimmt, problemlos angezeigt werden kann.
 
@@ -155,7 +155,7 @@ Jede [`Label`](xref:Xamarin.Forms.Label) beansprucht die gleiche Menge an Speich
 
 In diesem Artikel wurde erläutert, wie sich jeder [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) Struktur Wert auf die Ausrichtung und Erweiterung einer Ansicht bezieht, relativ zum übergeordneten Element. Die `Start` `Center` Felder,, `End` und `Fill` werden verwendet, um die Ausrichtung der Ansicht innerhalb des übergeordneten Layouts zu definieren. `StartAndExpand` die `CenterAndExpand` Felder,, `EndAndExpand` und `FillAndExpand` werden verwendet, um die Ausrichtungs Einstellung zu definieren und um zu bestimmen, ob die Ansicht in einer mehr Speicherplatz einnimmt (falls verfügbar) [`StackLayout`](xref:Xamarin.Forms.StackLayout) .
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Layoutoptions (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
 - [LayoutOptions](xref:Xamarin.Forms.LayoutOptions)

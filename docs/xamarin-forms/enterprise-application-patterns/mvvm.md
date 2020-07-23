@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c07fc9f42c4175b4e4569ab95a951b24c130c4f3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cc0528e7696130a772e93be67526ea9d6b10373f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572051"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936525"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>Model-View-ViewModel-Muster
 
@@ -27,7 +27,7 @@ Das Model-View-ViewModel (MVVM)-Muster hilft bei der ordnungsgemäßen Trennung 
 
 Es gibt drei Kernkomponenten im MVVM-Muster: das Modell, die Ansicht und das Ansichts Modell. Jeder dient einem bestimmten Zweck. In Abbildung 2-1 werden die Beziehungen zwischen den drei Komponenten dargestellt.
 
-![](mvvm-images/mvvm.png "The MVVM pattern")
+![Das MVVM-Muster](mvvm-images/mvvm.png)
 
 **Abbildung 2-1**: das MVVM-Muster
 
@@ -42,7 +42,7 @@ Die Verwendung des MVVM-Musters bietet folgende Vorteile:
 
 Der Schlüssel zur Verwendung von MVVM besteht darin, zu verstehen, wie der app-Code in die richtigen Klassen eingeteilt wird, und um zu verstehen, wie die Klassen interagieren. In den folgenden Abschnitten werden die Zuständigkeiten der einzelnen Klassen im MVVM-Muster erörtert.
 
-### <a name="view"></a>Ansicht
+### <a name="view"></a>Sicht
 
 Die Sicht ist dafür verantwortlich, die Struktur, das Layout und die Darstellung des Benutzers zu definieren, der auf dem Bildschirm angezeigt wird. Im Idealfall wird jede Ansicht in XAML definiert, mit einem eingeschränkten Code Behind, das keine Geschäftslogik enthält. In einigen Fällen kann der Code Behind jedoch UI-Logik enthalten, die ein visuelles Verhalten implementiert, das in XAML, wie z. b. Animationen, schwer auszudrücken ist.
 
@@ -363,7 +363,7 @@ Das Model-View-ViewModel (MVVM)-Muster hilft bei der ordnungsgemäßen Trennung 
 
 Mithilfe des MVVM-Musters werden die Benutzeroberfläche der APP und die zugrunde liegende Präsentations-und Geschäftslogik in drei separate Klassen unterteilt: die Sicht, die die Benutzeroberfläche und die Benutzeroberflächen Logik kapselt. das Ansichts Modell, das Darstellungs Logik und Zustand kapselt. und das Modell, das die Geschäftslogik und die Daten der APP kapselt.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
 - [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

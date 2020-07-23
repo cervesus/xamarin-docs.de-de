@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 56ee74e7a276edc960d2251bd33ccb90c1fa3cb4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 451e69be771a1a3214a772f0f9afc48893a6fa8d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80070366"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929583"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Einführung in C# für Objective-C-Entwickler
 
@@ -58,7 +58,7 @@ public static class UITextViewExtensions
 
 Wenn dann eine Instanz von `UITextView` im Code erstellt wird, steht die Methode in der Liste für die automatische Vervollständigung zur Verfügung, wie unten gezeigt:
 
- ![](primer-images/01-extensionmethodintellisense.png "The method available in the autocomplete")
+ ![Die für die Autovervollständigung verfügbare Methode](primer-images/01-extensionmethodintellisense.png)
 
 Beim Aufruf der Erweiterungsmethode wird die Instanz an das Argument übergeben, wie z. B. `textView` in diesem Beispiel.
 

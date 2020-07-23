@@ -1,6 +1,6 @@
 ---
-title: 'title: "Erstellen einer Xamarin.Forms-DataTemplateSelector-Instanz" description: "In diesem Artikel erfahren Sie, wie Sie eine DataTemplateSelector-Instanz erstellen und nutzen, die zum Auswählen einer DataTemplate-Instanz zur Laufzeit basierend auf dem Wert einer datengebundenen Eigenschaft verwendet werden kann."'
-description: 'ms.prod: xamarin ms.assetid: A4629E8F-2BAF-45CE-A76E-DF225FE8D26C ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 03/08/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Erstellen einer DataTemplateSelector-Klasse in Xamarin.Forms
+description: In diesem Artikel wird veranschaulicht, wie eine DataTemplateSelector-Klasse erstellt und genutzt wird, die zum Auswählen einer DataTemplate-Klasse zur Laufzeit verwendet werden kann, basierend auf dem Wert einer datengebundenen Eigenschaft.
 ms.prod: xamarin
 ms.assetid: A4629E8F-2BAF-45CE-A76E-DF225FE8D26C
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 03/08/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 74650eb2c52f1da9d0c539b711784896267ed183
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 7cbeeb9a0eed37ec109b2e71c46e3f04cd08822d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84135953"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936447"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>Erstellen einer DataTemplateSelector-Klasse in Xamarin.Forms
 
@@ -94,7 +94,7 @@ Zur Laufzeit ruft die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse die `Pers
 
 Die folgenden Screenshots zeigen das Ergebnis der [`ListView`](xref:Xamarin.Forms.ListView)-Klasse bei Anwendung des `PersonDataTemplateSelector`-Klasse auf jedes Objekt in der zugrunde liegenden Sammlung:
 
-![](selector-images/data-template-selector.png "ListView with a Data Template Selector")
+![ListView mit einer Datenvorlagenauswahl](selector-images/data-template-selector.png)
 
 Jedes `Person`-Objekt, das einen `DateOfBirth`-Eigenschaftswert größer oder gleich 1980 aufweist, wird in grün angezeigt, alle übrigen Objekte werden in rot angezeigt.
 

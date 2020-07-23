@@ -10,16 +10,16 @@ ms.date: 10/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8478db85bd9904ee6c5cfeab9b2af390e7d3096d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0c6e305287c97abac3500cba4771479b60381ac
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139502"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939801"
 ---
 # <a name="platform-specifics"></a>Plattformeigenschaften
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 _Platt Form Besonderheiten ermöglichen es Ihnen, Funktionen zu nutzen, die nur auf einer bestimmten Plattform verfügbar sind, ohne dass benutzerdefinierte Renderer oder Effekte implementiert werden._
 
@@ -58,7 +58,7 @@ Das Ergebnis der Bereitstellung eines Effekts als plattformspezifisch ist, dass 
 
 Die [Beispielanwendung](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) veranschaulicht einen `Shadow` plattformspezifischen, der dem Text, der von einem-Steuerelement angezeigt wird, einen Schatten hinzufügt [`Label`](xref:Xamarin.Forms.Label) :
 
-![](images/screenshots.png "Shadow Platform-Specific")
+![Schatten plattformspezifisch](images/screenshots.png)
 
 Die [Beispielanwendung](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) implementiert die `Shadow` plattformspezifischen plattformspezifischen auf den einzelnen Plattformen, um das Verständnis zu vereinfachen. Abgesehen von den einzelnen plattformspezifischen Effekt Implementierungen ist die Implementierung der Schatten Klasse für jede Plattform jedoch größtenteils identisch. Daher behandelt dieses Handbuch die Implementierung der Schatten Klasse und die damit verbundenen Auswirkungen auf eine einzelne Plattform.
 

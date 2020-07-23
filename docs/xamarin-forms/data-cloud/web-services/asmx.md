@@ -10,16 +10,16 @@ ms.date: 04/02/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f7a0d04d1e7b6abc9931c05c0e46ef49f8ba09c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: aa600974cdf25f8f85d9152edc4a377334cc8c78
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138462"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936551"
 ---
 # <a name="consume-an-aspnet-web-service-asmx"></a>Verwenden eines ASP.NET-Webdiensts (ASMX)
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 
 _ASMX bietet die Möglichkeit, Webdienste zu erstellen, die Nachrichten mithilfe von SOAP (Simple Object Access Protocol) senden. SOAP ist ein plattformunabhängiges und sprachunabhängiges Protokoll zum entwickeln und Zugreifen auf Webdienste. Consumer eines ASMX-Dienstanbieter müssen nichts über die Plattform, das Objektmodell oder die Programmiersprache wissen, die zur Implementierung des Dienstanbieter verwendet werden. Sie müssen nur wissen, wie SOAP-Nachrichten gesendet und empfangen werden. In diesem Artikel wird veranschaulicht, wie Sie einen ASMX-SOAP-Dienst aus einer- Xamarin.Forms Anwendung nutzen._
 
@@ -34,7 +34,7 @@ SOAP kann über viele Transportprotokolle, einschließlich http, SMTP, TCP und U
 
 Dieses Beispiel enthält die mobilen Anwendungen, die auf physischen oder emulierten Geräten ausgeführt werden, sowie einen ASMX-Dienst, der Methoden zum herunter-, hinzufügen, bearbeiten und Löschen von Daten bereitstellt. Wenn die mobilen Anwendungen ausgeführt werden, stellen Sie eine Verbindung mit dem lokal gehosteten ASMX-Dienst her, wie im folgenden Screenshot zu sehen:
 
-![](asmx-images/portal.png "Sample Application")
+![Beispielanwendung](asmx-images/portal.png)
 
 > [!NOTE]
 > In ios 9 und höher erzwingt App-Transport Sicherheit (app Transport Security, ATS) sichere Verbindungen zwischen Internetressourcen (z. b. dem Back-End-Server der APP) und der APP, wodurch eine versehentliche Offenlegung vertraulicher Informationen verhindert wird. Da ATS in apps, die für IOS 9 erstellt wurden, standardmäßig aktiviert ist, unterliegen alle Verbindungen den Sicherheitsanforderungen. Wenn Verbindungen diese Anforderungen nicht erfüllen, können Sie mit einer Ausnahme fehlschlagen.

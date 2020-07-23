@@ -6,12 +6,12 @@ ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: a06bc0cb91ff3d3894bb7be5bbb275aca35da07d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e2f874446b48726afc2218e5cdcac9b8736e1681
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570959"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930441"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>Native Verweise in Ios-, Mac-und Bindungs Projekten
 
@@ -73,13 +73,13 @@ Der folgende Schritt ist erforderlich, um ein Framework in ein xamarin. IOS-oder
 1. Erstellen Sie ein neues, oder öffnen Sie ein vorhandenes xamarin. IOS-, xamarin. Mac-oder-Bindungs Projekt.
 2. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie **hinzu**fügen  >  **nativer Verweis**hinzufügen aus: 
 
-    [![](native-references-images/ref01.png "In the Solution Explorer, right-click on the project name and select Add Native Reference")](native-references-images/ref01.png#lightbox)
+    [![Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen, und wählen Sie nativen Verweis hinzufügen aus.](native-references-images/ref01.png)](native-references-images/ref01.png#lightbox)
 3. Wählen Sie im Dialogfeld **Öffnen** den Namen des nativen Frameworks aus, das Sie einbetten möchten, und klicken Sie auf die Schaltfläche **Öffnen** : 
 
-    [![](native-references-images/ref02.png "Select the name of the Native Framework to embed and click the Open button")](native-references-images/ref02.png#lightbox)
+    [![Wählen Sie den Namen des Einbindungs Frameworks aus, und klicken Sie auf die Schaltfläche öffnen.](native-references-images/ref02.png)](native-references-images/ref02.png#lightbox)
 4. Das Framework wird der Struktur des Projekts hinzugefügt: 
 
-    [![](native-references-images/ref03.png "The framework will be added to the projects tree")](native-references-images/ref03.png#lightbox)
+    [![Das Framework wird der Projektstruktur hinzugefügt.](native-references-images/ref03.png)](native-references-images/ref03.png#lightbox)
 
 Wenn das Projekt kompiliert wird, wird das Native Framework in das Paket der APP eingebettet.
 

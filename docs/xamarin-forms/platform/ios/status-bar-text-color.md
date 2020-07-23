@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dcbc20139b989ced11f2d1d890ca7dd99a780e96
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ffadcf5153938a812fffbcdee90ec12430ebe531
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137058"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931442"
 ---
 # <a name="navigationpage-bar-text-color-mode-on-ios"></a>Navigations Seitenleiste-textfarbmodus unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Diese plattformspezifische steuert, ob die Textfarbe der Statusleiste für einen entsprechend [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) der Helligkeit der Navigationsleiste angepasst wird. Sie wird in XAML verwendet, indem die [`NavigationPage.StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty) angefügte-Eigenschaft auf einen Wert der-Enumeration festgelegt wird [`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) :
 
@@ -75,7 +75,7 @@ Außerdem ist [ `GetStatusBarTextColorMode` ] (Xref: Xamarin.Forms . Platformcon
 
 Das Ergebnis ist, dass die Textfarbe der Statusleiste auf einem [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) angepasst werden kann, um die Helligkeit der Navigationsleiste abzugleichen. In diesem Beispiel ändert sich die Textfarbe der Statusleiste, wenn der Benutzer zwischen [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) den [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) Seiten und eines wechselt [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) :
 
-![](status-bar-text-color-images/status-bar-text-color-mode.png "Status Bar Text Color Mode Platform-Specific")
+![Text Modus für die Status Leiste, plattformspezifisch](status-bar-text-color-images/status-bar-text-color-mode.png)
 
 ## <a name="related-links"></a>Verwandte Links
 

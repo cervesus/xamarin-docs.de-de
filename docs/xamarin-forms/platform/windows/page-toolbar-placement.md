@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 76b4633e6b224e234f9d5f693f4e01ed7a35d6db
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c2bbc89f503cfbaad24d8f1ac5d0635c1c22e48
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138046"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937812"
 ---
 # <a name="page-toolbar-placement-on-windows"></a>Platzierung der Seiten Symbolleiste unter Windows
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Diese universelle Windows-Plattform plattformspezifisch wird verwendet, um die Platzierung einer Symbolleiste in einem zu ändern [`Page`](xref:Xamarin.Forms.Page) , und wird in XAML verwendet, indem die [`Page.ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty) angefügte-Eigenschaft auf einen Wert der-Enumeration festgelegt wird [`ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) :
 
@@ -45,7 +45,7 @@ Die- `Page.On<Windows>` Methode gibt an, dass diese plattformspezifische nur unt
 
 Das Ergebnis ist, dass die angegebene Symbolleisten Platzierung auf die [`Page`](xref:Xamarin.Forms.Page) Instanz angewendet wird:
 
-[![](page-toolbar-placement-images/toolbar-placement.png "Toolbar Placement Platform-Specific")](page-toolbar-placement-images/toolbar-placement-large.png#lightbox "Toolbar Placement Platform-Specific")
+[![Plattformspezifische Symbolleisten Platzierung](page-toolbar-placement-images/toolbar-placement.png)](page-toolbar-placement-images/toolbar-placement-large.png#lightbox "Plattformspezifische Symbolleisten Platzierung")
 
 ## <a name="related-links"></a>Verwandte Links
 

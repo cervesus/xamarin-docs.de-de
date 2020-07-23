@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 41254fb6aac176cd796fba851478b31f774553d2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 6fa1357adc9cf2f545fbcdf3a30fef70280593bb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73023444"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938020"
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>Exemplarische Vorgehensweise: Verwenden des Apple-Tools „Instruments“
 
@@ -27,19 +27,19 @@ Laden Sie zunächst das [MemoryDemo-Beispiel](https://docs.microsoft.com/samples
 2. Laden Sie die Anwendung auf das Gerät hoch, indem Sie das Menüelement **Ausführen > Auf Gerät hochladen** verwenden.
 3. Wählen Sie die Vorlage **Zuordnungen** (orangefarbenes Symbol mit weißem Feld) aus.
 
-    ![](walkthrough-apples-instrument-images/00-allocations-tempate.png "Choose the Allocations template")
+    ![Auswählen der Vorlage „Zuordnungen“](walkthrough-apples-instrument-images/00-allocations-tempate.png)
 
 4. Wählen Sie die Anwendung **Memory Demo** aus der Liste **Choose a profiling template for:** (Profilerstellungsvorlage auswählen für:) im oberen Bereich des Fensters aus. Klicken Sie zunächst auf das iOS-Gerät, um das Menü zu erweitern, das die installierten Anwendungen anzeigt.
 
-    ![](walkthrough-apples-instrument-images/01-mem-demo.png "Select the Memory Demo application")
+    ![Auswählen der „Memory Demo“-Anwendung](walkthrough-apples-instrument-images/01-mem-demo.png)
 
 5. Drücken Sie auf die Schaltfläche **Auswählen** (unten rechts im Fenster), um **Instrumente** zu starten. Durch die Auswahl dieser Vorlage werden zwei Elemente im oberen Bereich angezeigt: „Allocations“ (Speicherbelegung) und „VM Tracker“ (VM-Tracker).
 
 6. Klicken Sie auf in Instruments auf die Schaltfläche **Aufnehmen** (roter Kreis oben links), um die Anwendung zu starten.
 
-7. Wählen Sie im oberen Bereich die Zeile **VM Tracker** aus. Da die App nun ausgeführt wird, werden zwei Abschnitte angezeigt: „Dirty Size“ (Größe des geänderten Speichers) und „Resident Size“ (Größe des belegten physischen Speichers). Wählen Sie im Bereich **Inspektor** die Option **Show Display Settings** (Anzeigeeinstellungen anzeigen) (das Zahnradsymbol) aus, und aktivieren Sie dann das Kontrollkästchen **Automatic Snapshotting** (Automatische Momentaufnahme), das unten rechts auf diesem Screenshot angezeigt wird:
+7. Wählen Sie im oberen Bereich die Zeile **VM-Tracker** aus. Da die App nun ausgeführt wird, enthält diese zwei Abschnitte: Dirty Size und Resident Size. Wählen Sie im Bereich **Inspektor** die Option **Show Display Settings** (Anzeigeeinstellungen anzeigen) (das Zahnradsymbol) aus, und aktivieren Sie dann das Kontrollkästchen **Automatic Snapshotting** (Automatische Momentaufnahme), das unten rechts auf diesem Screenshot angezeigt wird:
 
-    ![](walkthrough-apples-instrument-images/02-auto-snapshot.png "Choose the Show Display Settings option the gear icon then tick the Automatic Snapshotting checkbox")
+    ![Auswählen der Option „Show Display Settings“ (Anzeigeeinstellungen anzeigen) (Zahnradsymbol) und anschließendes Aktivieren des Kontrollkästchens „Automatic Snapshotting“ (Automatische Momentaufnahme)](walkthrough-apples-instrument-images/02-auto-snapshot.png)
 
 8. Wählen Sie im oberen Bereich die Zeile **Zuordnungen** aus. Da die App nun ausgeführt wird, zeigt diese *All Heap and Anonymous VM* (Alle Heaps und anonymen VMs) an.
 9. Wählen Sie im Bereich **Inspektor** die Option **Anzeigeeinstellungen anzeigen** (das Zahnradsymbol) aus, und klicken Sie dann auf die Schaltfläche **Mark Generation** (Markierungsgenerierung), um eine Baseline zu erstellen. Eine kleine rote Flagge wird im oberen Bereich des Fensters auf der Zeitachse angezeigt.
@@ -50,15 +50,15 @@ Laden Sie zunächst das [MemoryDemo-Beispiel](https://docs.microsoft.com/samples
 
 14. Beachten Sie, dass der Knoten **&lt;non-object>** einen übermäßigen Arbeitsspeicherzuwachs anzeigt. Klicken Sie auf den Pfeil neben diesem Knoten, um weitere Details anzuzeigen. Klicken Sie mit der rechten Maustaste auf die Stapelüberwachung, um einen **Quellort** zum Bereich hinzuzufügen:
 
-    ![](walkthrough-apples-instrument-images/03-mem-growth.png "Add Source Location to the pane")
+    ![Hinzufügen des Quellspeicherorts zum Bereich](walkthrough-apples-instrument-images/03-mem-growth.png)
 
 15. Sortieren Sie nach **Größe**, und zeigen Sie die Ansicht **Extended Detail** (Erweiterte Details) an:
 
-    ![](walkthrough-apples-instrument-images/04-extended-detail.png "Sort by Size and display the  Extended Detail view")
+    ![Sortieren nach Größe und Anzeigen der Ansicht „Extended Detail“ (Erweiterte Details)](walkthrough-apples-instrument-images/04-extended-detail.png)
 
 16. Klicken Sie auf den gewünschten Eintrag in der Aufrufliste, um den zugehörigen Code anzeigen zu lassen:
 
-    ![](walkthrough-apples-instrument-images/05-related-code.png "Viewing the related code")
+    ![Anzeigen von zugehörigem Code](walkthrough-apples-instrument-images/05-related-code.png)
 
 In diesem Fall wird ein neues Bild erstellt und für jede Zelle in einer Auflistung gespeichert. Die bestehenden Zellen der Auflistungsansicht werden nicht wiederverwendet.
 
@@ -83,7 +83,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 Nun, da die Anwendung ausgeführt wird, ist die Arbeitsspeicherauslastung erheblich reduziert. Das **Wachstum** der Generierungen wird nun in KiB (Kilobyte) statt wie vor dem Korrigieren des Codes in MiB (Megabyte) gemessen:
 
-![](walkthrough-apples-instrument-images/06-reduced-memory.png "Showing the app memory usage")
+![Anzeigen der Anwendungsspeichernutzung](walkthrough-apples-instrument-images/06-reduced-memory.png)
 
 Der verbesserte Code ist in Visual Studio für Mac in der Projektmappe **after** im [MemoryDemo-Beispiel](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo) verfügbar.
 

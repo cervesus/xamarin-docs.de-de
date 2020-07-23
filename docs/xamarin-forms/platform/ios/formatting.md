@@ -10,12 +10,12 @@ ms.date: 01/29/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 062dd77f1dc7b82f16bfbc6d46e44d4adeb73350
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4381b1fbe7b38c2695bce645903d599bdb792fc2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84564705"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937435"
 ---
 # <a name="adding-ios-specific-formatting"></a>Hinzufügen einer IOS-spezifischen Formatierung
 
@@ -42,11 +42,11 @@ nav.BarTextColor = Color.White;
 
 Das Ergebnis wird im folgenden Bildschirm Ausschnitt gezeigt. Beachten Sie, dass die Status leisten Elemente schwarz sind (Dies kann nicht innerhalb von festgelegt werden, Xamarin.Forms da es sich um ein plattformspezifisches Feature handelt).
 
-![](theme-images/status-default-sml.png "iOS Theming")
+![IOS-Themen](theme-images/status-default-sml.png)
 
 Im Idealfall ist die Statusleiste auch weiß, was wir direkt im IOS-Projekt erreichen können. Fügen Sie der Datei " **Info. plist** " die folgenden Einträge hinzu, um zu erzwingen, dass die Statusleiste weiß ist:
 
-![](theme-images/info-plist.png "iOS Info.plist Entries")
+![IOS Info. plist-Einträge](theme-images/info-plist.png)
 
 oder bearbeiten Sie die entsprechende Datei " **Info. plist** " direkt, um Folgendes einzuschließen:
 
@@ -59,7 +59,7 @@ oder bearbeiten Sie die entsprechende Datei " **Info. plist** " direkt, um Folge
 
 Wenn die App nun ausgeführt wird, ist die Navigationsleiste grün, und der Text ist weiß (aufgrund der Xamarin.Forms Formatierung), *und* der Status leisten Text ist dank der IOS-spezifischen Konfiguration ebenfalls weiß:
 
-![](theme-images/status-white-sml.png "iOS Theming")
+![IOS-Themen](theme-images/status-white-sml.png)
 
 ## <a name="uiappearance-api"></a>Uiappearance-API
 
@@ -88,7 +88,7 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 Standardmäßig wird das Symbol für die ausgewählte Registerkarten Leiste in einem[`TabbedPage`](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)
 ist blau:
 
-![](theme-images/tabbar-default.png "Default iOS Tab Bar Icon in TabbedPage")
+![Standardmäßiges IOS-Registerkarten Symbol in tabbedpage](theme-images/tabbar-default.png)
 
 Um dieses Verhalten zu ändern, legen Sie die- `UITabBar.Appearance` Eigenschaft fest:
 
@@ -98,7 +98,7 @@ UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); 
 
 Dies bewirkt, dass die ausgewählte Registerkarte grün ist:
 
-![](theme-images/tabbar-custom.png "Green iOS Tab Bar Icon in TabbedPage")
+![Grünes IOS-Registerkarten Symbol in tabbedpage](theme-images/tabbar-custom.png)
 
 Mit dieser API können Sie das Erscheinungsbild derXamarin.Forms
 `TabbedPage`unter IOS mit wenig Code. Weitere Informationen zur Verwendung eines benutzerdefinierten Renderers zum Festlegen einer bestimmten Schriftart für die Registerkarte finden Sie in der Anleitung zum [Anpassen von Registerkarten](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs) .
@@ -113,13 +113,13 @@ UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 
 Diese beiden Bildschirmaufzeichnungen zeigen das Standard `UISwitch` Steuerelement auf der linken Seite und die angepasste Version (Einstellung `Appearance` ) auf der rechten Seite im [TODO-Beispiel](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)an:
 
-![](theme-images/switch-default.png "Uiswitch-Standardfarbe") ![](theme-images/switch-custom.png "Angepasste uiswitch-Farbe")
+![Uiswitch-Standardfarbe](theme-images/switch-default.png) ![Angepasste uiswitch-Farbe](theme-images/switch-custom.png)
 
 ### <a name="other-controls"></a>Weitere Steuermöglichkeiten
 
 Viele IOS-Benutzeroberflächen-Steuerelemente können mithilfe der- [ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)ihre Standardfarben und andere Attribute festlegen.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Uiappearance](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)
 - [Anpassen von Registerkarten](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs)

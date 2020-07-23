@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: b9254afdcb6286edcffc67a1a69af8b049f08b6b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9bb76fd43b5761f15537d37262f6950d7da2b43a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573221"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933145"
 ---
 # <a name="ipa-support-in-xamarinios"></a>IPA-Unterstützung in Xamarin.iOS
 
@@ -60,7 +60,7 @@ Das Erstellen einer IPA-Datei ist nun in den neuen Veröffentlichungsworkflow in
 
 Bevor Sie mit dem Erstellen einer IPA-Datei für eine plattformübergreifende Lösung beginnen, stellen Sie sicher, das Sie das iOS-Projekt als Startprojekt ausgewählt haben:
 
-![](ipa-support-images/setasstartup.png "Selected the iOS project as the startup project")
+![Das iOS-Projekt als Startprojekt festlegen](ipa-support-images/setasstartup.png)
 
 ### <a name="build-your-archive"></a>Erstellen des Archivs
 
@@ -68,15 +68,15 @@ Um eine IPA-Datei erstellen zu können, müssen Sie ein _Archiv_ eines Releasebu
 
 1. Wählen Sie in Visual Studio für Mac die Konfiguration **Release | Gerät** aus:  !
 
-    ![](ipa-support-images/buildxs01new.png "Select the Release | Device configuration")
+    ![Die Konfiguration „Release | Gerät“ auswählen](ipa-support-images/buildxs01new.png)
 
 1. Wählen Sie aus dem **Build**-Menü die Option **Zur Veröffentlichung aktivieren**:
 
-    ![](ipa-support-images/buildxs02new.png "Select Archive for Publishing")
+    ![„Zur Veröffentlichung archivieren“ auswählen](ipa-support-images/buildxs02new.png)
 
 1. Sobald das Archiv erstellt wurde, wird die **Archivansicht** angezeigt:
 
-    ![](ipa-support-images/buildxs03new.png "The Archives view will be displayed")
+    ![Die Ansicht „Archive“ wird angezeigt.](ipa-support-images/buildxs03new.png)
 
 ### <a name="sign-and-distribute-your-app"></a>Signieren und Verteilen Ihrer App
 
@@ -90,23 +90,23 @@ Gehen Sie folgendermaßen vor, um Ihre App für die Verteilung zu signieren und 
 
 1. Klicken Sie wie unten dargestellt auf die Schaltfläche **Signieren und verteilen...** :
 
-    ![](ipa-support-images/buildxs04new.png "Select Sign and Distribute...")
+    ![„Signieren und verteilen...“ auswählen](ipa-support-images/buildxs04new.png)
 
 1. Dadurch wird der Veröffentlichungs-Assistent geöffnet. Entscheiden Sie sich zur Erstellung eines Pakets zwischen den Verteilungskanälen **Ad-hoc** und **Unternehmen** (Intern).
 
-    ![](ipa-support-images/distribute01.png "Select the Ad-Hoc or Enterprise In-House distribution")
+    ![Die interne Verteilung „Ad-hoc“ oder „Unternehmen“ auswählen](ipa-support-images/distribute01.png)
 
 1. Wählen Sie auf der Seite „Bereitstellungsprofil“ Ihre Signierungsidentität sowie das entsprechende Bereitstellungsprofil aus, oder signieren Sie mit einer anderen Identität erneut:
 
-    ![](ipa-support-images/distribute02.png "Select the signing identity and corresponding provisioning profile")
+    ![Die Signieridentität und das entsprechende Bereitstellungsprofil auswählen](ipa-support-images/distribute02.png)
 
 1. Überprüfen Sie die Details Ihres Pakets, und klicken Sie auf **Veröffentlichen**:
 
-    ![](ipa-support-images/distribute03.png "Verify the package details")
+    ![Die Paketdetails überprüfen](ipa-support-images/distribute03.png)
 
 1. Speichern Sie als Letztes die IPA-Datei auf Ihrem Computer:
 
-    ![](ipa-support-images/distribute04.png "Save the IPA to the computer")
+    ![Die IPA-Datei auf dem Computer speichern](ipa-support-images/distribute04.png)
 
 ### <a name="building-via-the-command-line-on-mac"></a>Erstellen über die Befehlszeile (auf einem Mac)
 
@@ -114,7 +114,7 @@ In einigen Fällen, wie z.B. in einer CI-Umgebung, ist es möglicherweise notwen
 
 1. Achten Sie darauf, dass **Projektoptionen > iOS IPA-Optionen > Include iTunesArtwork images** (iTunesArtwork-Bilder einbeziehen) und **Ad-hoc-/Enterprise-Paket erstellen (IPA)** aktiviert sind:
 
-    ![](ipa-support-images/imagexs04.png "Include iTunesArtwork images and Build ad-hoc/enterprise package IPA is checked")
+    ![„Include iTunesArtwork images“ (Umfasst iTunesArtwork-Bilder) und „Ad-hoc-/Enterprise-Paket erstellen (IPA)“ sind aktiviert](ipa-support-images/imagexs04.png)
 
     Wenn Sie möchten, können Sie auch stattdessen die **CSPROJ**-Datei im Text-Editor bearbeiten und manuell zwei entsprechende Eigenschaften in der `PropertyGroup` für die Konfiguration hinzufügen, die beim Erstellen der App verwendet wird.
 
@@ -125,7 +125,7 @@ In einigen Fällen, wie z.B. in einer CI-Umgebung, ist es möglicherweise notwen
 
 1. Wenn Sie eine optionale **iTunesMetadata.plist**-Datei einbeziehen, klicken Sie auf die Schaltfläche **...** , wählen Sie sie aus der Liste aus, und klicken Sie anschließend auf **OK**.
 
-     ![](ipa-support-images/imagexs03.png "Select iTunesMetadata.plist from the list")
+     ![„iTunesMetadata.plist“ aus der Liste auswählen](ipa-support-images/imagexs03.png)
 
 1. Rufen Sie **msbuild** direkt auf, und übergeben Sie diese Eigenschaft auf der Befehlszeile:
 
@@ -139,29 +139,29 @@ Sobald das Bereitstellungsprofil erstellt und ausgewählt und die optionale **iT
 
 1. Klicken Sie mit der rechten Maustaste im **Projektmappen-Explorer** auf den Xamarin.iOS-Projektnamen. Klicken Sie auf **Eigenschaften**, um diese für die Bearbeitung zu öffnen:
 
-    ![](ipa-support-images/imagevs01.png "Select Properties")
+    ![Auswählen von „Eigenschaften“](ipa-support-images/imagevs01.png)
 
 2. Klicken Sie in der Dropdownliste **Konfiguration** auf **iOS IPA-Optionen** und auf **Ad-hoc**:
 
-    ![](ipa-support-images/imagevs02.png "Select Ad-Hoc from the Configuration dropdown list")
+    ![„Ad-Hoc“ in der Dropdownliste „Konfiguration“ auswählen](ipa-support-images/imagevs02.png)
 
     > [!NOTE]
     > Die Ad-hoc-Konfiguration steht möglicherweise nicht für neuere Xamarin.iOS-Projekte zur Verfügung. Wenn Sie nicht verfügbar ist, wählen Sie die Konfiguration **Release** aus.
 
 3. Wenn Sie eine optionale **iTunesMetadata.plist**-Datei einbeziehen, klicken Sie auf die Schaltfläche **...** , wählen Sie sie aus der Liste aus, und klicken Sie anschließend auf **Öffnen**.
 
-    ![](ipa-support-images/imagevs03.png "Select iTunesMetadata.plist from the list")
+    ![„iTunesMetadata.plist“ aus der Liste auswählen](ipa-support-images/imagevs03.png)
 
 4. Sie können für die IPA-Datei optional einen **Paketnamen** angeben. Wird kein Paketname angegeben, erhält die Datei den gleichen Namen wie das Xamarin.iOS-Projekt.
 5. Speichern Sie die Änderungen an den Projekteigenschaften.
 6. Wählen Sie aus der Dropdownliste **Buildkonfiguration** die Option **Ad-hoc** aus: Wählen Sie andernfalls **Release** aus.
 
-    ![](ipa-support-images/imagevs05.png "Select Ad Hoc from the Build Configuration dropdown")
+    ![„Ad-Hoc“ in der Dropdownliste „Buildkonfiguration“ auswählen](ipa-support-images/imagevs05.png)
 
 7. Erstellen Sie das Projekt, um das IPA-Paket zu erstellen.
 8. Die IPA-Datei wird im Ordner **Bin > iOS-Gerät > Ad-hoc (oder Release)** erstellt:
 
-    ![](ipa-support-images/imagevs06.png "The IPA in the file explorer")
+    ![Die IPA-Datei im Datei-Explorer](ipa-support-images/imagevs06.png)
 
 -----
 
@@ -231,11 +231,11 @@ Die neue iOS-Anwendung wird im Bereich **Meine Apps** angezeigt. Dort können Si
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
- ![](ipa-support-images/installxs01.png "The new iOS application in the My Apps section")
+ ![Die neue iOS-Anwendung im Abschnitt „Meine Apps“](ipa-support-images/installxs01.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
- ![](ipa-support-images/installvs01.png "The new iOS application in the My Apps section")
+ ![Die neue iOS-Anwendung im Abschnitt „Meine Apps“](ipa-support-images/installvs01.png)
 
 -----
 

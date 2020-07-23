@@ -10,16 +10,16 @@ ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2e67acd0188e1147481005502ad9ccdaada645d9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 49aa0ffcf7e7fa4d22024ee08f8bdf509cafd73a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140269"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937799"
 ---
 # <a name="xamarinforms-carouselview-introduction"></a>Xamarin.FormsEinführung in carouselview
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)ist eine Ansicht für die Darstellung von Daten in einem Bild lauffähigen Layout, in dem Benutzer zum Durchlaufen einer Auflistung von Elementen schwenken können. In der Standardeinstellung `CarouselView` werden die Elemente in horizontaler Ausrichtung angezeigt. Auf dem Bildschirm wird ein einzelnes Element angezeigt, das eine Schwenkbewegung und eine rückwärts Navigation durch die Auflistung von Elementen zur Folge hat. Außerdem können Indikatoren angezeigt werden, die die einzelnen Elemente in der darstellen `CarouselView` :
 

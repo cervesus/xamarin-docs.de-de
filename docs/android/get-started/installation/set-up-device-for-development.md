@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 72e0a2adc79796b3df7b6fb4eca62448f1a1a7a4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0b0bfc650ffa271a7616d7c6e6a436fafa2664c8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79510730"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932599"
 ---
 # <a name="set-up-device-for-development"></a>Einrichten eines Geräts für die Entwicklung
 
@@ -77,7 +77,7 @@ Der letzte Schritt ist das Verbinden des Geräts mit dem Computer. Am einfachste
 
 Sie werden auf Ihrem Gerät dazu aufgefordert, dem Computer zu vertrauen (sofern Sie ihn nicht schon zuvor zum Debuggen verwendet haben). Wenn Sie diese Aufforderung nicht bei jeder Verbindung des Geräts erneut erhalten möchten, aktivieren Sie das Kontrollkästchen **Von diesem Computer immer zulassen**.
 
-![](set-up-device-for-development-images/trust-computer-for-usb-debugging.png "Google USB")
+![Google-USB](set-up-device-for-development-images/trust-computer-for-usb-debugging.png)
 
 ## <a name="alternate-connection-via-wifi"></a>Verbinden über WLAN
 
@@ -149,7 +149,7 @@ Alle anderen Android-Geräte sollten den [USB-Treiber des jeweiligen Herstellers
 
 Installieren Sie das **Google-USB-Treiberpaket**, indem Sie wie im folgenden Screenshot gezeigt den Android SDK-Manager starten und den Ordner **Extras** erweitern:
 
-![](set-up-device-for-development-images/google-usb-driver.png "Google USB driver selected")
+![Google-USB-Treiber ausgewählt](set-up-device-for-development-images/google-usb-driver.png)
 
 Aktivieren Sie das Kontrollkästchen **Google-USB-Treiber**, und klicken Sie auf die Schaltfläche **Änderungen übernehmen**.
 Die Treiberdateien werden an den folgenden Speicherort heruntergeladen:

@@ -10,22 +10,22 @@ ms.date: 05/24/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 680c924280f8f3a6080b2fcc1968ecaf308f33a0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2571375e7ad28acbf367870b5c48e19d3a7525e7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138059"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931247"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SVG-Pfaddaten in skiasharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Definieren von Pfaden mit Text Zeichenfolgen im Format der skalierbaren Vektorgrafiken_
 
 Die- [`SKPath`](xref:SkiaSharp.SKPath) Klasse unterstützt die Definition ganzer Pfad Objekte aus Text Zeichenfolgen in einem Format, das von der SVG-Spezifikation (Scalable Vector Graphics) festgelegt wird. Weiter unten in diesem Artikel erfahren Sie, wie Sie einen vollständigen Pfad, z. b. diesen, in einer Text Zeichenfolge darstellen können:
 
-![](path-data-images/pathdatasample.png "A sample path defined with SVG path data")
+![Ein mit SVG-Pfaddaten definierter Beispiel Pfad](path-data-images/pathdatasample.png)
 
 SVG ist eine XML-basierte Grafik Programmiersprache für Webseiten. Da SVG zulassen muss, dass Pfade im Markup und nicht in einer Reihe von Funktionsaufrufen definiert werden, bietet der SVG-Standard eine sehr präzise Möglichkeit, einen gesamten Grafik Pfad als Text Zeichenfolge anzugeben.
 
@@ -222,7 +222,7 @@ public class PathDataHelloPage : ContentPage
 
 Der Pfad füllt den Zeichenbereich, der beim Anzeigen im Querformat sinnvoller aussieht:
 
-[![](path-data-images/pathdatahello-small.png "Triple screenshot of the Path Data Hello page")](path-data-images/pathdatahello-large.png#lightbox "Triple screenshot of the Path Data Hello page")
+[![Dreifacher Screenshot der Pfad Daten-Hello-Seite](path-data-images/pathdatahello-small.png)](path-data-images/pathdatahello-large.png#lightbox "Dreifacher Screenshot der Pfad Daten-Hello-Seite")
 
 Die Seite **path Data Cat** ist ähnlich. Die Pfad-und Zeichnungsobjekte sind beide als Felder in der- [`PathDataCatPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) Klasse definiert:
 
@@ -293,7 +293,7 @@ public class PathDataCatPage : ContentPage
 
 Dies ist das Programm, das ausgeführt wird:
 
-[![](path-data-images/pathdatacat-small.png "Triple screenshot of the Path Data Cat page")](path-data-images/pathdatacat-large.png#lightbox "Triple screenshot of the Path Data Cat page")
+[![Dreifacher Screenshot der Seite "Path Data Cat"](path-data-images/pathdatacat-small.png)](path-data-images/pathdatacat-large.png#lightbox "Dreifacher Screenshot der Seite "Path Data Cat"")
 
 Wenn ein `SKPath` Objekt als Feld definiert ist, müssen die Konturen des Pfads normalerweise im Konstruktor oder einer anderen Methode definiert werden. Wenn Sie SVG-Pfaddaten verwenden, haben Sie jedoch gesehen, dass der Pfad vollständig in der Felddefinition angegeben werden kann.
 
@@ -430,9 +430,9 @@ public class PrettyAnalogClockPage : ContentPage
 
 Mit der zweiten Hand wird jedoch etwas besonderes erreicht. Da die Uhr alle 16 Millisekunden aktualisiert wird, kann die- `Millisecond` Eigenschaft des- `DateTime` Werts möglicherweise verwendet werden, um eine geleerte zweite Hand zu animieren, anstatt eine zu animieren, die in diskrete Sprünge von Sekunde zu Sekunde verschoben wird. Dieser Code lässt jedoch nicht zu, dass die Bewegung reibungslos ist. Stattdessen werden die Xamarin.Forms [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn) [`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut) Animations Funktionen und für eine andere Art von Bewegung verwendet. Diese Beschleunigungsfunktionen bewirken, dass die zweite Hand in eine jerkier-Weise verschoben wird, &mdash; bevor Sie verschoben wird, und dann etwas über das Ziel hinausgeht, was leider nicht in den statischen Screenshots reproduziert werden kann:
 
-[![](path-data-images/prettyanalogclock-small.png "Triple screenshot of the Pretty Analog Clock page")](path-data-images/prettyanalogclock-large.png#lightbox "Triple screenshot of the Pretty Analog Clock page")
+[![Dreifacher Screenshot der Seite mit der Recht analogen Uhr](path-data-images/prettyanalogclock-small.png)](path-data-images/prettyanalogclock-large.png#lightbox "Dreifacher Screenshot der Seite mit der Recht analogen Uhr")
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

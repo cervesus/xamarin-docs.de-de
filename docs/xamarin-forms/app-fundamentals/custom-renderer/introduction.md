@@ -10,12 +10,12 @@ ms.date: 01/19/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e2bed4d5e8f89efa2997fb085278c4b549870245
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0eb768f5d6cabbb41b07a5aad33269fc0f493237
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135320"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939528"
 ---
 # <a name="introduction-to-custom-renderers"></a>Einführung in benutzerdefinierte Renderer
 
@@ -59,7 +59,7 @@ Das `local`-Namespacepräfix kann beliebig gewählt werden. Die Werte `namespace
 
 Das benutzerdefinierte Steuerelement `MyEntry` wird dann auf jeder Plattform mit einem grauen Hintergrund gerendert, wie in den folgenden Screenshots gezeigt:
 
-![](introduction-images/screenshots.png "MyEntry Custom Control on each Platform")
+![Benutzerdefiniertes Steuerelement „MyEntry“ auf jeder Plattform](introduction-images/screenshots.png)
 
 Das Ändern der Hintergrundfarbe des Steuerelements auf jeder Plattform wurde ausschließlich über das Erstellen von Unterklassen für das Steuerelement erreicht. Die Leistung dieses Verfahrens ist jedoch eingeschränkt, da plattformspezifische Erweiterungen und Anpassungen nicht genutzt werden können. Wenn sie benötigt werden, müssen benutzerdefinierte Renderer implementiert werden.
 

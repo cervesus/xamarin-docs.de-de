@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 63d59d9f11932343c6ca57e0b3735077eabb6a9a
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: a8259cf47f8af6e356c9a860c61ad0eea0c8927a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571817"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932976"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS-Hintergrundverarbeitung mit Aufgaben
 
@@ -113,11 +113,11 @@ Die größte Änderung in ios 7 in Bezug auf Hintergrundaufgaben ist nicht, wie 
 
 Erinnern Sie sich daran, dass eine im Hintergrund ausgeführten Aufgaben vor IOS 7 600 Sekunden dauern musste. Ein Grund für diese Beschränkung ist, dass eine im Hintergrund ausgeführten Aufgabe das Gerät für die Dauer der Aufgabe wach hält:
 
- [![](ios-backgrounding-with-tasks-images/ios6.png "Graph of the task keeping the app awake pre-iOS 7")](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
+ [![Diagramm der Aufgabe, die die APP vor IOS 7 aktiv hält](ios-backgrounding-with-tasks-images/ios6.png)](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
 
 Die IOS 7-Hintergrundverarbeitung ist für eine längere Akku Lebensdauer optimiert. In ios 7 ist die Rückstellung zu opportunistisch: anstatt das Gerät wach zu halten, berücksichtigen Aufgaben, wann das Gerät in den Standbymodus wechselt, und führen stattdessen die Verarbeitung in Blöcken aus, wenn das Gerät aktiviert wird, um Telefonanrufe, Benachrichtigungen, eingehende e-Mails und andere häufige Unterbrechungen zu verarbeiten. Das folgende Diagramm bietet einen Einblick in die Art und Weise, wie eine Aufgabe aufgegliedert werden kann:
 
- [![](ios-backgrounding-with-tasks-images/ios7.png "Graph of the task being broken into chunks post-iOS 7")](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
+ [![Diagramm der Aufgabe, die in Blöcke nach IOS 7 aufgeteilt wird](ios-backgrounding-with-tasks-images/ios7.png)](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
 
 Da die Task Laufzeit nicht länger kontinuierlich ist, müssen Tasks, die Netzwerkübertragungen ausführen, in ios 7 anders gehandhabt werden. Entwicklern wird empfohlen, die `NSURlSession` API für die Handhabung von Netzwerkübertragungen zu verwenden. Der nächste Abschnitt stellt eine Übersicht über die Hintergrund Übertragungen dar.
 

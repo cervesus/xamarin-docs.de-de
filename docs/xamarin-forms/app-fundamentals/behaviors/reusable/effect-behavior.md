@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0a105548f869eb448a990a1cc12e6feff4197d48
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7ecc094abf816f11dcb16d9eba7d715c8c4e4ab1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135784"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939151"
 ---
 # <a name="reusable-effectbehavior"></a>Wiederverwendbare EffectBehavior-Klasse
 
@@ -160,7 +160,7 @@ Die `Group`- und `Name`-Eigenschaften des Verhaltens werden für die Effekt-Klas
 
 Zur Laufzeit, wenn das Verhalten dem [`Label`](xref:Xamarin.Forms.Label)-Steuerelement angefügt wird, wird die `Xamarin.LabelShadowEffect`-Klasse der [`Effects`](xref:Xamarin.Forms.Element.Effects)-Sammlung des Steuerelements hinzugefügt. Dadurch wird wie in den folgenden Screenshots dargestellt ein Schatten zu dem Text hinzugefügt, der vom `Label`-Steuerelement angezeigt wird:
 
-![](effect-behavior-images/screenshots.png "Sample Application with EffectsBehavior")
+![Beispielanwendung mit EffectsBehavior](effect-behavior-images/screenshots.png)
 
 Der Vorteil dieses Verhaltens zum Hinzufügen und Entfernen von Effekten bei Steuerelementen besteht darin, dass Sie Standardcode zum Verarbeiten von Effekten aus CodeBehind-Dateien entfernen können.
 

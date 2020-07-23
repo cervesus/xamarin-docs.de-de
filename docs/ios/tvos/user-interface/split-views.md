@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 98cedb1cf02f9688581946fa21a2cb40379f606f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 56b9f82fcc15afc8c75012b204588b4da65a32c4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566174"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939736"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Arbeiten mit tvos Split View Controllers in xamarin
 
 Ein Split View Controller stellt einen Master-und Detail Ansichts Controller nebeneinander und verwaltet Sie gleichzeitig auf dem Bildschirm. Geteilte Ansichts Controller werden verwendet, um persistente, Fokus nutzbare Inhalte in der Master Ansicht (der kleinere Abschnitt auf der linken Seite) und verwandte Details in der Detail Ansicht (der größere Abschnitt auf der rechten Seite) darzustellen.
 
-[![](split-views-images/intro01.png "Sample Split View")](split-views-images/intro01.png#lightbox)
+[![Beispiel für eine geteilte Ansicht](split-views-images/intro01.png)](split-views-images/intro01.png#lightbox)
 
 <a name="About-Split-View-Controllers"></a>
 
@@ -28,7 +28,7 @@ Wie bereits erwähnt, verwaltet ein Split View Controller einen Master-und einen
 
 Außerdem kann der Master Ansichts Controller ausgeblendet oder nach Bedarf angezeigt werden: 
 
-[![](split-views-images/intro02.png "The Master View Controller hidden")](split-views-images/intro02.png#lightbox)
+[![Der Master Ansichts Controller ist ausgeblendet.](split-views-images/intro02.png)](split-views-images/intro02.png#lightbox)
 
 Geteilte Ansichts Controller werden häufig verwendet, um eine Liste mit Filter barem Inhalt mit den Kategorien in der Master Ansicht und den gefilterten Ergebnissen in der Detail Ansicht darzustellen. Dies wird in der Regel als Tabellenansicht auf der linken Seite und in einer Auflistungs [Ansicht](~/ios/tvos/user-interface/collection-views.md) auf der rechten Seite dargestellt.
 
@@ -51,18 +51,18 @@ Die einfachste Möglichkeit, mit Split View-Controllern in einer xamarin. tvos-A
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie einen **geteilten Ansichts Controller** aus der **Toolbox** , und legen Sie ihn in der Ansicht ab: 
 
-    [![](split-views-images/activity01.png "A Split View Controller")](split-views-images/activity01.png#lightbox)
+    [![Einen geteilten Ansichts Controller](split-views-images/activity01.png)](split-views-images/activity01.png#lightbox)
 1. Standardmäßig installiert der IOS-Designer einen Navigations Controller und einen Ansichts Controller in der Master Ansicht. Wenn dies nicht den Anforderungen Ihrer APP entspricht, löschen Sie Sie einfach.
 1. Wenn Sie die standardmäßige Master Ansicht entfernen, ziehen Sie einen neuen Ansichts Controller auf die Entwurfs Oberfläche: 
 
-    [![](split-views-images/activity02.png "A View Controller")](split-views-images/activity02.png#lightbox)
+    [![Einen Ansichts Controller](split-views-images/activity02.png)](split-views-images/activity02.png#lightbox)
 1. Klicken Sie mit der Maustaste auf den geteilten Ansichts Controller, und ziehen Sie ihn auf den neuen Master Ansichts Controller. 
 1. Wählen Sie im **Popupmenü**die Option **Master** aus: 
 
-    [![](split-views-images/activity03.png "Select Master from the Popup Menu")](split-views-images/activity03.png#lightbox)
+    [![Master aus dem Popupmenü auswählen](split-views-images/activity03.png)](split-views-images/activity03.png#lightbox)
 1. Entwerfen Sie den Inhalt Ihrer Master-und Detail Ansichten: 
 
-    [![](split-views-images/activity04.png "Example layout")](split-views-images/activity04.png#lightbox)
+    [![Beispiel Layout](split-views-images/activity04.png)](split-views-images/activity04.png#lightbox)
 1. Weisen Sie **Namen** auf der **Registerkarte widget** des **Eigenschaftenpad** zu, um mit den UI-Steuerelementen in c#-Code zu arbeiten.
 1. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück.
 
@@ -71,18 +71,18 @@ Die einfachste Möglichkeit, mit Split View-Controllern in einer xamarin. tvos-A
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie einen **geteilten Ansichts Controller** aus der **Toolbox** , und legen Sie ihn in der Ansicht ab: 
 
-    [![](split-views-images/activity01-vs.png "A Split View Controller")](split-views-images/activity01-vs.png#lightbox)
+    [![Einen geteilten Ansichts Controller](split-views-images/activity01-vs.png)](split-views-images/activity01-vs.png#lightbox)
 1. Standardmäßig fügt der IOS-Designer in der Master Ansicht einen Navigations Controller und einen Ansichts Controller hinzu. Wenn dies nicht den Anforderungen Ihrer APP entspricht, löschen Sie Sie einfach.
 1. Wenn Sie die standardmäßige Master Ansicht entfernen, ziehen Sie einen neuen Ansichts Controller auf die Entwurfs Oberfläche: 
 
-    [![](split-views-images/activity02-vs.png "A View Controller")](split-views-images/activity02-vs.png#lightbox)
+    [![Einen Ansichts Controller](split-views-images/activity02-vs.png)](split-views-images/activity02-vs.png#lightbox)
 1. Klicken Sie mit der Maustaste auf den geteilten Ansichts Controller, und ziehen Sie ihn auf den neuen Master Ansichts Controller. 
 1. Wählen Sie im **Popupmenü**die Option **Master** aus: 
 
-    [![](split-views-images/activity03-vs.png "Select Master from the Popup Menu")](split-views-images/activity03-vs.png#lightbox)
+    [![Master aus dem Popupmenü auswählen](split-views-images/activity03-vs.png)](split-views-images/activity03-vs.png#lightbox)
 1. Entwerfen Sie den Inhalt Ihrer Master-und Detail Ansichten: 
 
-    [![](split-views-images/activity04.png "Content layout")](split-views-images/activity04.png#lightbox)
+    [![Inhalts Layout](split-views-images/activity04.png)](split-views-images/activity04.png#lightbox)
 1. Weisen Sie im **Eigenschaften-Explorer** auf der **Registerkarte widget** **Namen** zu, um mit den UI-Steuerelementen in c#-Code zu arbeiten.
 1. Speichern Sie die Änderungen.
 
@@ -172,7 +172,7 @@ Um den aktuellen Präsentations Zustand zu erhalten, verwenden Sie die- `Display
 
 In diesem Artikel wurde das Entwerfen und arbeiten mit Split View Controller in einer xamarin. tvos-App behandelt.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

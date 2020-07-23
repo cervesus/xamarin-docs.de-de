@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 0d5ec4bc10747a287def3fd9a83a703d2ec4b2a2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0f3c91e175e5ccdefeaf3d6c9c83e9eb3e012e14
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572376"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935394"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>Arbeiten mit tvos-Navigationsleisten in xamarin
 
 Navigationsleisten können am oberen Rand der Ansichten hinzugefügt werden, um eine Titel-und optionale Navigationsleisten Schaltfläche anzuzeigen. Normalerweise werden Sie verwendet, wenn der Benutzer von einer Hauptseite aus navigiert ist, z. b. eine Tabellenansicht, eine Auflistung oder ein Menü zu einer unter Ansicht, in der die Details des ausgewählten Elements angezeigt werden.
 
-[![](navigation-bars-images/navbar01.png "Sample Navigation Bar")](navigation-bars-images/navbar01.png#lightbox)
+[![Beispiel Navigationsleiste](navigation-bars-images/navbar01.png)](navigation-bars-images/navbar01.png#lightbox)
 
 Neben dem Titel (der in der Mitte angezeigt wird) können Navigationsleisten `UIBarButtonItem` auf der linken und rechten Seite der Leiste eine oder mehrere Navigationsleisten Schaltflächen () enthalten.
 
@@ -36,16 +36,16 @@ Die einfachste Möglichkeit, mit Navigationsleisten in einer xamarin. tvos-APP z
 1. Doppelklicken Sie im **Lösungspad**auf `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie eine **Navigationsleiste** aus der **Toolbox** , und legen Sie Sie in der Ansicht am oberen Rand des Bildschirms ab:
 
-    [![](navigation-bars-images/navbar02.png "A Navigation Bar")](navigation-bars-images/navbar02.png#lightbox)
+    [![Navigationsleiste](navigation-bars-images/navbar02.png)](navigation-bars-images/navbar02.png#lightbox)
 1. Doppelklicken Sie auf die **Navigationsleiste** , um das **Navigationselement**auszuwählen. Auf der Registerkarte **Widget** des **Eigenschaftenpad**können Sie den **Titel**festlegen:
 
-    [![](navigation-bars-images/navbar03.png "Set the Title")](navigation-bars-images/navbar03.png#lightbox)
+    [![Festlegen des Titels](navigation-bars-images/navbar03.png)](navigation-bars-images/navbar03.png#lightbox)
 1. Als nächstes können Sie am Ende der Leiste ein oder mehrere leisten- **Schaltflächen Elemente** hinzufügen:
 
-    [![](navigation-bars-images/navbar04.png "A Bar Button Item")](navigation-bars-images/navbar04.png#lightbox)
+    [![Ein leisten-Schaltflächen Element](navigation-bars-images/navbar04.png)](navigation-bars-images/navbar04.png#lightbox)
 1. Verknüpfen Sie schließlich die leisten- **Schaltflächen Elemente** mit Aktionen auf der Registerkarte **Ereignisse** des **Eigenschaften-Explorers**:
 
-    [![](navigation-bars-images/navbar05.png "A Bar Button Item Action")](navigation-bars-images/navbar05.png#lightbox)
+    [![Eine Schaltfläche für eine Element Aktion](navigation-bars-images/navbar05.png)](navigation-bars-images/navbar05.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -53,16 +53,16 @@ Die einfachste Möglichkeit, mit Navigationsleisten in einer xamarin. tvos-APP z
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie eine **Navigationsleiste** aus der **Toolbox** , und legen Sie Sie in der Ansicht am oberen Rand des Bildschirms ab:
 
-    [![](navigation-bars-images/navbar02-vs.png "A Navigation Bar")](navigation-bars-images/navbar02-vs.png#lightbox)
+    [![Navigationsleiste](navigation-bars-images/navbar02-vs.png)](navigation-bars-images/navbar02-vs.png#lightbox)
 1. Doppelklicken Sie auf die **Navigationsleiste** , um das **Navigationselement**auszuwählen. Auf der Registerkarte **Widget** des **Eigenschaften-Explorers**können Sie den **Titel**festlegen:
 
-    [![](navigation-bars-images/navbar03-vs.png "Set the Title")](navigation-bars-images/navbar03-vs.png#lightbox)
+    [![Festlegen des Titels](navigation-bars-images/navbar03-vs.png)](navigation-bars-images/navbar03-vs.png#lightbox)
 1. Als nächstes können Sie am Ende der Leiste ein oder mehrere leisten- **Schaltflächen Elemente** hinzufügen:
 
-    [![](navigation-bars-images/navbar04-vs.png "A Bar Button Items")](navigation-bars-images/navbar04-vs.png#lightbox)
+    [![Leisten-Schaltflächen Elemente](navigation-bars-images/navbar04-vs.png)](navigation-bars-images/navbar04-vs.png#lightbox)
 1. Verknüpfen Sie schließlich die leisten- **Schaltflächen Elemente** mit Aktionen auf der Registerkarte **Ereignisse** des **Eigenschaften-Explorers**:
 
-    [![](navigation-bars-images/navbar05-vs.png "A Bar Button Item Actions")](navigation-bars-images/navbar05-vs.png#lightbox)
+    [![Element Aktionen für eine leisten Schaltfläche](navigation-bars-images/navbar05-vs.png)](navigation-bars-images/navbar05-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 -----
@@ -131,7 +131,7 @@ Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-
 
 In diesem Artikel wurde das Entwerfen und arbeiten mit Navigationsleisten in einer xamarin. tvos-App behandelt.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

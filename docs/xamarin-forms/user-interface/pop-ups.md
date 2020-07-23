@@ -10,16 +10,16 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a7ddd9134b7214b84a883e171d7b0cadaba3390b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 75cc3070f552ef05c3e8702d27caf7c353ac0a8f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136317"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931871"
 ---
 # <a name="display-pop-ups"></a>Popup anzeigen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
 Wenn Sie eine Warnung anzeigen, einen Benutzer auffordern, eine Auswahl zu treffen oder eine Eingabeaufforderung anzuzeigen, ist dies eine gängige UI-Aufgabe. Xamarin.Formsverfügt über drei Methoden für die- [`Page`](xref:Xamarin.Forms.Page) Klasse für die Interaktion mit dem Benutzer über ein Popup: [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) , [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) und `DisplayPromptAsync` . Sie werden auf jeder Plattform mit entsprechenden nativen Steuerelementen gerendert.
 
@@ -31,7 +31,7 @@ Alle Xamarin.Forms unterstützten Plattformen verfügen über ein modales Popup,
 await DisplayAlert ("Alert", "You have been alerted", "OK");
 ```
 
-![](pop-ups-images/alert.png "Alert Dialog with One Button")
+![Warnungsdialogfeld mit einer Schaltfläche](pop-ups-images/alert.png)
 
 In diesem Beispiel werden keine Informationen des Benutzers erfasst. Die Warnung wird modal angezeigt und geschlossen, sobald der Benutzer erneut mit der Anwendung interagiert.
 
@@ -61,7 +61,7 @@ async void OnActionSheetSimpleClicked (object sender, EventArgs e)
 }
 ```
 
-![](pop-ups-images/action.png "ActionSheet Dialog")
+![ActionSheet-Dialogfeld](pop-ups-images/action.png)
 
 Die Schaltfläche `destroy` wird anders als die anderen gerendert. Sie kann den Wert `null` aufweisen oder als dritter Zeichenfolgenparameter festgelegt werden. Im folgenden Beispiel wird die `destroy`-Schaltfläche verwendet:
 

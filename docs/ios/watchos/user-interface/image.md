@@ -7,30 +7,30 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 9ab18e643038d4a61b3b201295d4298f2b5e1adc
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 3fd119828a953c002c7d66f248bf26b413018ae4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574183"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939697"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>watchos-Image-Steuerelemente in xamarin
 
 watchos bietet ein [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage) Steuerelement, um Bilder und einfache Animationen anzuzeigen. Einige Steuerelemente können auch über ein Hintergrundbild verfügen (z. b. Schaltflächen, Gruppen und Schnittstellen Controller).
 
-![](image-images/image-walkway.png "Bild Apple Watch angezeigt") ![](image-images/image-animation.png "Apple Watch mit einfacher Animation")
+![Apple Watch, die Bild ](image-images/image-walkway.png) ![ Apple Watch mit einfacher Animation anzeigt](image-images/image-animation.png)
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 Verwenden Sie Asset catalog-images, um Images zu Watch Kit-apps hinzuzufügen.
 Nur **@2x** Versionen sind erforderlich, da alle Überwachungsgeräte Retina-anzeigen aufweisen.
 
-![](image-images/asset-universal-sml.png "Only 2x versions are required, since all watch devices have Retina displays")
+![Nur 2X-Versionen sind erforderlich, da alle Überwachungsgeräte Retina-anzeigen aufweisen.](image-images/asset-universal-sml.png)
 
 Es wird empfohlen, sicherzustellen, dass die Bilder selbst die richtige Größe für die Anzeige Anzeige darstellen. *Vermeiden* Sie die Verwendung von Images mit falscher Größe (besonders große) und die Skalierung, um Sie auf dem Bildschirm anzuzeigen.
 
 Sie können die Watch Kit-Größen (38mm und 42mm) in einem Asset Catalog-Image verwenden, um unterschiedliche Images für jede Anzeige Größe anzugeben.
 
-![](image-images/asset-watch-sml.png "You can use the Watch Kit sizes 38mm and 42mm in an asset catalog image to specify different images for each display size")
+![Sie können das Watch Kit mit der Größe 38mm und 42mm in einem Asset Catalog-Image verwenden, um unterschiedliche Images für jede Anzeige Größe anzugeben.](image-images/asset-watch-sml.png)
 
 ## <a name="images-on-the-watch"></a>Bilder auf der Uhr
 
@@ -38,7 +38,7 @@ Die effizienteste Möglichkeit zum Anzeigen von Bildern besteht darin, *Sie in d
 
 Beispielsweise verfügt das [watchkitcatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/) -Beispiel über eine Reihe von Bildern, die einem Asset-Katalog im Überwachungs-App-Projekt hinzugefügt werden:
 
-![](image-images/asset-whale-sml.png "The WatchKitCatalog sample has a number of images added to an asset catalog in the watch app project")
+![Das watchkitcatalog-Beispiel enthält eine Reihe von Bildern, die einem Asset-Katalog im Überwachungs-App-Projekt hinzugefügt werden.](image-images/asset-whale-sml.png)
 
 Diese können mithilfe `SetImage` des Parameters "String Name" effizient geladen und auf der Überwachung angezeigt werden:
 
@@ -59,7 +59,7 @@ Wenn Sie Bilder aus der Watch-Erweiterung laden möchten, erstellen Sie `UIImage
 
 Beispielsweise hat das [watchkitcatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) -Beispiel ein Image mit dem Namen **Bumblebee** im Überwachungs Erweiterungsprojekt:
 
-![](image-images/asset-bumblebee-sml.png "The WatchKitCatalog sample has an image named Bumblebee in the watch extension project")
+![Das watchkitcatalog-Beispiel enthält ein Image mit dem Namen "Bumblebee" im Überwachungs Erweiterungsprojekt.](image-images/asset-bumblebee-sml.png)
 
 Der folgende Code führt zu folgendem:
 
@@ -78,7 +78,7 @@ Um einen Satz von Bildern zu animieren, sollten Sie alle mit dem gleichen Präfi
 
 Das [watchkitcatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) -Beispiel enthält eine Reihe nummerierter Images im Watch-App-Projekt mit dem **Bus** -Präfix:
 
-![](image-images/asset-bus-animation-sml.png "The WatchKitCatalog sample has a series of numbered images in the watch app project with the Bus prefix")
+![Das watchkitcatalog-Beispiel enthält eine Reihe nummerierter Images im Watch-App-Projekt mit dem Bus-Präfix.](image-images/asset-bus-animation-sml.png)
 
 Wenn Sie diese Bilder als Animation anzeigen möchten, laden Sie das Bild zuerst `SetImage` mit dem Präfix Namen, und klicken Sie dann auf `StartAnimating` :
 
@@ -122,7 +122,7 @@ Sie können den Inhalt des Image Caches im Code mithilfe von Abfragen `WKInterfa
 
 Der Cache ist ungefähr 20 MB groß. Sie wird über APP-Neustarts hinweg beibehalten, und wenn Sie ausgefüllt wird, liegt es in ihrer Verantwortung, Dateien mit `RemoveCachedImage` `RemoveAllCachedImages` der-Methode oder der-Methode für das-Objekt zu löschen `WKInterfaceDevice.CurrentDevice` .
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Watchkitcatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Image-Dokument von Apple](https://developer.apple.com/documentation/watchkit/wkinterfaceimage)

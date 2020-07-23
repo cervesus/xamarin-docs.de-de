@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a4b82552956ab0e75d0a76a14ce7c919c744e09a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cf7e3a260308a81dc40c4fe81be66e5436ed7c63
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565329"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935797"
 ---
 # <a name="validation-in-enterprise-apps"></a>Validierung in Unternehmens-apps
 
@@ -23,7 +23,7 @@ Jede APP, die Eingaben von Benutzern akzeptiert, sollte sicherstellen, dass die 
 
 Im Zusammenhang mit dem Model-View-ViewModel (MVVM)-Muster ist häufig ein Ansichts Modell oder-Modell erforderlich, um die Datenüberprüfung auszuführen und Validierungs Fehler an die Sicht zu senden, damit Sie vom Benutzer korrigiert werden kann. Die eshoponcontainers-Mobile App führt eine synchrone Client seitige Validierung der Ansichts Modell Eigenschaften aus und benachrichtigt den Benutzer über Validierungs Fehler, indem das Steuerelement hervorgehoben wird, das die ungültigen Daten enthält, und die Fehlermeldungen angezeigt werden, die den Benutzer darüber informieren, warum die Daten ungültig sind. Abbildung 6-1 zeigt die Klassen, die zum Ausführen der Validierung in den eshoponcontainers-Mobile App beteiligt sind.
 
-[![](validation-images/validation.png "Validation classes in the eShopOnContainers mobile app")](validation-images/validation-large.png#lightbox "Validation classes in the eShopOnContainers mobile app")
+[![Validierungs Klassen in der eshoponcontainers-Mobile App](validation-images/validation.png)](validation-images/validation-large.png#lightbox "Validierungs Klassen in der eshoponcontainers-Mobile App")
 
 **Abbildung 6-1**: Validierungs Klassen in der eshoponcontainers-Mobile App
 
@@ -215,7 +215,7 @@ Weitere Informationen zu Verhalten finden Sie unter [Implementieren von Verhalte
 
 Der eshoponcontainers-Mobile App benachrichtigt den Benutzer über Validierungs Fehler, indem das Steuerelement, das die ungültigen Daten enthält, durch eine rote Linie hervorgehoben wird, und zeigt eine Fehlermeldung an, die den Benutzer darüber informiert, warum die Daten unter dem Steuerelement mit den ungültigen Daten ungültig sind. Wenn die ungültigen Daten korrigiert werden, wird die Zeile in Schwarz geändert, und die Fehlermeldung wird entfernt. In Abbildung 6-2 wird die LoginView in den eshoponcontainers-Mobile App angezeigt, wenn Validierungs Fehler vorhanden sind.
 
-![](validation-images/validation-login.png "Displaying validation errors during login")
+![Anzeigen von Validierungs Fehlern während der Anmeldung](validation-images/validation-login.png)
 
 **Abbildung 6-2:** Anzeigen von Validierungs Fehlern während der Anmeldung
 
@@ -379,7 +379,7 @@ Die `OnAttached` -Methode ruft das Native-Steuerelement für das Xamarin.Forms [
 
 Wenn im Steuerelement gültige Daten eingegeben werden [`Entry`](xref:Xamarin.Forms.Entry) , wird am unteren Rand des Steuer Elements eine schwarze Linie angewendet, um anzugeben, dass kein Validierungs Fehler vorliegt. In Abbildung 6-3 wird ein Beispiel dafür gezeigt.
 
-![](validation-images/validation-blackline.png "Black line indicating no validation error")
+![Schwarze Zeile, die keinen Validierungs Fehler anzeigt.](validation-images/validation-blackline.png)
 
 **Abbildung 6-3**: schwarze Zeile, die keinen Validierungs Fehler anzeigt
 
@@ -402,7 +402,7 @@ Dem-Steuerelement wird [`Entry`](xref:Xamarin.Forms.Entry) auch ein [`DataTrigge
 
 Dadurch [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) wird die `UserName.IsValid` -Eigenschaft überwacht, und wenn der Wert ist, wird der `false` ausgeführt [`Setter`](xref:Xamarin.Forms.Setter) , der die `LineColor` angefügte-Eigenschaft des `LineColorBehavior` angefügten Verhaltens in "Red" ändert. In Abbildung 6-4 wird ein Beispiel dafür gezeigt.
 
-![](validation-images/validation-redline.png "Red line indicating validation error")
+![Rote Linie zur Angabe eines Validierungs Fehlers](validation-images/validation-redline.png)
 
 **Abbildung 6-4**: rote Linie zur Angabe eines Validierungs Fehlers
 
@@ -427,7 +427,7 @@ Der Mobile App eshoponcontainers führt eine synchrone Client seitige Validierun
 
 Die Anzeige von Modell Eigenschaften, die eine Überprüfung erfordern, ist vom Typ `ValidatableObject<T>` , und jeder `ValidatableObject<T>` Instanz werden Validierungsregeln hinzugefügt `Validations` . Die Validierung wird vom Ansichts Modell aufgerufen, indem die- `Validate` Methode der- `ValidatableObject<T>` Instanz aufgerufen wird, die die Validierungsregeln abruft und Sie für die- `ValidatableObject<T>` `Value` Eigenschaft ausführt. Alle Validierungs Fehler werden in der `Errors` -Eigenschaft der `ValidatableObject<T>` -Instanz platziert, und die- `IsValid` Eigenschaft der- `ValidatableObject<T>` Instanz wird aktualisiert, um anzugeben, ob die Überprüfung erfolgreich war oder fehlgeschlagen ist.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
 - [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

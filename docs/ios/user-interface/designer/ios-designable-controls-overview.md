@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: e8c38ec407d13a99e2990a6d4cf39b5a23728b1d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5c8a852a37e2cd5c679283bc4d078f19e6e5d241
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73003977"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939684"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Benutzerdefinierte Steuerelemente im Xamarin Designer für IOS
 
@@ -20,7 +20,7 @@ _Der Xamarin Designer für IOS unterstützt das Rendern von benutzerdefinierten 
 
 Der Xamarin Designer für IOS ist ein leistungsfähiges Tool zum Visualisieren der Benutzeroberfläche einer Anwendung und bietet Unterstützung für die WYSIWYG-Bearbeitung für die meisten IOS-Ansichten und Ansichts Controller. Ihre APP kann auch benutzerdefinierte Steuerelemente enthalten, mit denen die in ios integrierten Erweiterungen erweitert werden. Wenn diese benutzerdefinierten Steuerelemente mit wenigen Richtlinien geschrieben sind, können Sie auch durch den IOS-Designer gerendert werden, was eine noch umfassendere Bearbeitungsfunktion ermöglicht. Dieses Dokument befasst sich mit diesen Richtlinien.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Ein Steuerelement, das alle folgenden Anforderungen erfüllt, wird auf der Entwurfs Oberfläche gerendert:
 
@@ -45,9 +45,9 @@ Die-Eigenschaft kann auch mit einem [DisplayNameAttribute](xref:System.Component
 
 ## <a name="initialization"></a>Initialisierung
 
-Für `UIViewController`-Unterklassen sollten Sie die [viewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) -Methode für Code verwenden, der von Sichten abhängt, die Sie im Designer erstellt haben.
+Für `UIViewController` Unterklassen sollten Sie die [viewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) -Methode für Code verwenden, der von Sichten abhängt, die Sie im Designer erstellt haben.
 
-Bei `UIView` und anderen `NSObject` Unterklassen ist die [awakeFromNib](xref:Foundation.NSObject.AwakeFromNib) -Methode der empfohlene Ort, um die Initialisierung des benutzerdefinierten Steuer Elements auszuführen, nachdem es aus der Layoutdatei geladen wurde. Dies liegt daran, dass benutzerdefinierte Eigenschaften, die im Eigenschaften Panel festgelegt sind, nicht festgelegt werden, wenn der Konstruktor des Steuer Elements ausgeführt wird. Sie werden jedoch festgelegt, bevor `AwakeFromNib` aufgerufen wird:
+Für `UIView` und andere `NSObject` Unterklassen ist die [awakeFromNib](xref:Foundation.NSObject.AwakeFromNib) -Methode der empfohlene Ort, um die Initialisierung des benutzerdefinierten Steuer Elements auszuführen, nachdem es aus der Layoutdatei geladen wurde. Dies liegt daran, dass benutzerdefinierte Eigenschaften, die im Eigenschaften Panel festgelegt sind, nicht festgelegt werden, wenn der Konstruktor des Steuer Elements ausgeführt wird, aber vor dem Aufrufen von festgelegt wird `AwakeFromNib` :
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -122,16 +122,16 @@ public class CustomView : UIView {
 }
 ```
 
-Die `CustomView` Komponente macht eine `Counter` Eigenschaft verfügbar, die vom Entwickler innerhalb des IOS-Designers festgelegt werden kann. Unabhängig davon, welcher Wert innerhalb des Designers festgelegt wird, ist der Wert der `Counter`-Eigenschaft jedoch immer NULL (0). Erläuterung:
+Die `CustomView` Komponente macht eine `Counter` Eigenschaft verfügbar, die vom Entwickler innerhalb des IOS-Designers festgelegt werden kann. Unabhängig davon, welcher Wert innerhalb des Designers festgelegt wird, ist der Wert der- `Counter` Eigenschaft immer 0 (null). Erläuterung:
 
-- Eine Instanz des `CustomControl` wird aus der storyboarddatei aufgeblasen.
-- Alle Eigenschaften, die im IOS-Designer geändert wurden, werden festgelegt (z. b. das Festlegen des Werts der `Counter` auf zwei (2)).
-- Die `AwakeFromNib`-Methode wird ausgeführt, und es wird ein-Rückruf an die `Initialize`-Methode der Komponente durchgeführt.
-- In `Initialize` wird der Wert der `Counter`-Eigenschaft auf 0 (null) zurückgesetzt.
+- Eine Instanz von `CustomControl` wird aus der storyboarddatei aufgeblasen.
+- Alle Eigenschaften, die im IOS-Designer geändert wurden, werden festgelegt (z. b. das Festlegen des Werts von `Counter` auf zwei (2)).
+- Die `AwakeFromNib` -Methode wird ausgeführt, und es wird ein-Rückruf an die-Methode der Komponente vorgenommen `Initialize` .
+- Innerhalb `Initialize` des Werts der- `Counter` Eigenschaft wird auf 0 (null) zurückgesetzt.
 
-Um die oben beschriebene Situation zu beheben, initialisieren Sie entweder die `Counter`-Eigenschaft an einer anderen Stelle (z. b. im Konstruktor der Komponente), oder überschreiben Sie die `AwakeFromNib`-Methode nicht, und wenden Sie `Initialize` an, wenn die Komponente keine weitere Initialisierung außerhalb der aktuell wird von den Konstruktoren verarbeitet.
+Um die oben beschriebene Situation zu beheben, initialisieren Sie entweder die- `Counter` Eigenschaft an anderer Stelle (z. b. im Konstruktor der Komponente), oder überschreiben Sie die-Methode nicht, und Sie werden `AwakeFromNib` aufgerufen, `Initialize` Wenn die Komponente keine weitere Initialisierung erfordert, die außerhalb der aktuell von den Konstruktoren behandelten
 
-## <a name="design-mode"></a>Entwurfs Modus
+## <a name="design-mode"></a>Entwurfsmodus
 
 Auf der Entwurfs Oberfläche muss ein benutzerdefiniertes Steuerelement einige Einschränkungen einhalten:
 
@@ -163,24 +163,24 @@ public class DesignerAwareLabel : UILabel, IComponent {
 }
 ```
 
-Sie sollten die `Site`-Eigenschaft für `null` immer überprüfen, bevor Sie versuchen, auf eines seiner Member zuzugreifen. Wenn `Site` `null`ist, kann sicher angenommen werden, dass das Steuerelement nicht im Designer ausgeführt wird.
-Im Entwurfs Modus wird `Site` festgelegt, nachdem der Konstruktor des Steuer Elements ausgeführt wurde und bevor `AwakeFromNib` aufgerufen wird.
+Überprüfen Sie immer die- `Site` Eigenschaft für `null` , bevor Sie versuchen, auf eines seiner Member zuzugreifen. Wenn `Site` `null` den Wert hat, kann davon ausgegangen werden, dass das Steuerelement nicht im Designer ausgeführt wird.
+Im Entwurfs Modus `Site` wird festgelegt, nachdem der Konstruktor des Steuer Elements ausgeführt wurde und bevor `AwakeFromNib` aufgerufen wird.
 
-## <a name="debugging"></a>Debugging
+## <a name="debugging"></a>Debuggen
 
 Ein Steuerelement, das die oben genannten Anforderungen erfüllt, wird in der Toolbox angezeigt und auf der-Oberfläche gerendert.
 Wenn ein Steuerelement nicht gerendert wird, überprüfen Sie das Steuerelement auf Fehler oder eine seiner Abhängigkeiten.
 
 Die Entwurfs Oberfläche kann häufig Ausnahmen abfangen, die von einzelnen Steuerelementen ausgelöst werden, während andere Steuerelemente weitergegeben werden. Das fehlerhafte Steuerelement wird durch einen roten Platzhalter ersetzt, und Sie können die Ausnahme Ablauf Verfolgung anzeigen, indem Sie auf das Ausrufezeichen Symbol klicken:
 
- ![](ios-designable-controls-overview-images/exception-box.png "A faulty control as red placeholder and the exception details")
+ ![Ein fehlerhaftes Steuerelement als roter Platzhalter und Ausnahme Details](ios-designable-controls-overview-images/exception-box.png)
 
 Wenn für das Steuerelement Debugsymbole verfügbar sind, enthält die Ablauf Verfolgung Dateinamen und Zeilennummern.
 Wenn Sie in der Stapel Überwachung auf eine Zeile doppelklicken, wird diese Zeile im Quellcode angezeigt.
 
 Wenn der Designer das fehlerhafte Steuerelement nicht isolieren kann, wird oben in der Entwurfs Oberfläche eine Warnmeldung angezeigt:
 
- ![](ios-designable-controls-overview-images/info-bar.png "A warning message at the top of the design surface")
+ ![Eine Warnmeldung am oberen Rand der Entwurfs Oberfläche](ios-designable-controls-overview-images/info-bar.png)
 
 Das vollständige Rendering wird fortgesetzt, wenn das fehlerhafte Steuerelement korrigiert oder von der Entwurfs Oberfläche entfernt wurde.
 

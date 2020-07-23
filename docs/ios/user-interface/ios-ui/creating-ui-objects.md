@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ef54cebebb3881f5bb08aa6edfdc344169f179b4
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 729289c1764746f9777ef3d720e77865c9a71389
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574092"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937253"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Erstellen von Benutzeroberflächen Objekten in xamarin. IOS
 
@@ -42,17 +42,17 @@ Doppelklicken Sie auf eine storyboarddatei, um mit dem Erstellen Ihrer Benutzero
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
- [![](creating-ui-objects-images/image2b.png "Toolbox Pad")](creating-ui-objects-images/image2b.png#lightbox)
+ [![Toolbox-Pad](creating-ui-objects-images/image2b.png)](creating-ui-objects-images/image2b.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
- [![](creating-ui-objects-images/image2b-vs.png "Toolbox Pad - Visual Stuio")](creating-ui-objects-images/image2b.png#lightbox)
+ [![Toolbox-Pad-visuelle STUIO](creating-ui-objects-images/image2b-vs.png)](creating-ui-objects-images/image2b.png#lightbox)
 
 -----
 
 Wenn ein Steuerelement auf der Entwurfs Oberfläche ausgewählt wird, werden die Attribute für das Steuerelement **Eigenschaftenpad** angezeigt. Das **Widget > Identity > Name** -Feld, das im folgenden Screenshot aufgefüllt wird, wird als Name des *Ausgabenamens* verwendet. Auf diese Weise können Sie in c# auf das-Steuerelement verweisen:
 
- [![](creating-ui-objects-images/image3b.png "Properties Widget Pad")](creating-ui-objects-images/image3b.png#lightbox)
+ [![Eigenschaften-Widget-Pad](creating-ui-objects-images/image3b.png)](creating-ui-objects-images/image3b.png#lightbox)
 
 Einen tieferen Einblick in die Verwendung des IOS-Designers finden Sie unter [Einführung in den IOS-Designer](~/ios/user-interface/designer/introduction.md) -Leitfaden.
 
@@ -64,27 +64,27 @@ Um ein Storyboard in Xcode zu öffnen, klicken Sie mit der rechten Maustaste, um
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
- [![](creating-ui-objects-images/imagexcode.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
+ [![Storyboard-Kontextmenü-Xcode](creating-ui-objects-images/imagexcode.png)](creating-ui-objects-images/imagexcode.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](creating-ui-objects-images/imagexcode-vs.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
+[![Storyboard-Kontextmenü-Xcode](creating-ui-objects-images/imagexcode-vs.png)](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
 Steuerelemente können aus der unten dargestellten **Objektbibliothek** auf die Designoberfläche gezogen werden:
 
- [![](creating-ui-objects-images/image5a.png "Xcode Object Library")](creating-ui-objects-images/image5a.png#lightbox)
+ [![Xcode-Objektbibliothek](creating-ui-objects-images/image5a.png)](creating-ui-objects-images/image5a.png#lightbox)
 
 Wenn Sie die Benutzeroberfläche mit Interface Builder entwerfen, müssen Sie für jedes Steuerelement, auf das Sie in c# verweisen möchten, ein **Outlet** erstellen. Dies geschieht, indem Sie den **Assistenten-Editor** mithilfe der Schaltfläche Center- **Editor** auf der Xcode-Symbolleisten Schaltfläche einschalten:
 
- [![](creating-ui-objects-images/image6a.png "Assistant Editor button")](creating-ui-objects-images/image6a.png#lightbox)
+ [![Schaltfläche für den Assistenten](creating-ui-objects-images/image6a.png)](creating-ui-objects-images/image6a.png#lightbox)
 
 Klicken Sie auf ein Benutzeroberflächen Objekt. Ziehen Sie dann das **Steuer** Element in die h-Datei. Halten Sie die STRG-Taste gedrückt, und klicken Sie dann auf das Benutzeroberflächen Objekt, für das Sie das Outlet (oder die Aktion) erstellen, um das **ziehen zu steuern**. Halten Sie die Steuerelement Taste gedrückt, während Sie in die Header Datei ziehen. Beenden Sie den Zieh Abschnitt unterhalb der `@interface` Definition. Eine blaue Linie sollte mit einer Beschriftung INSERT-oder Outlet-Auflistung angezeigt werden, wie im folgenden Screenshot dargestellt.
 
 Wenn Sie den Klick freigeben, werden Sie aufgefordert, einen Namen für das Outlet anzugeben, der zum Erstellen einer c#-Eigenschaft verwendet wird, auf die im Code verwiesen werden kann:
 
- [![](creating-ui-objects-images/image8a.png "Creating an outlet")](creating-ui-objects-images/image8a.png#lightbox)
+ [![Erstellen eines Outlets](creating-ui-objects-images/image8a.png)](creating-ui-objects-images/image8a.png#lightbox)
 
 Weitere Informationen zur Integration von Xcode Interface Builder in Visual Studio für Mac finden Sie im Dokument zur [XIb-Code Generierung](~/ios/internals/xib-code-generation.md#generated) .
 
@@ -118,7 +118,7 @@ public override void ViewDidLoad () {
 
 Beim Hinzufügen von Ansichts Controllern zum Designoberfläche werden zwei entsprechende c#-Dateien im Projekt erstellt. In diesem Beispiel wurden `ControlsViewController.cs` und `ControlsViewController.designer.cs` automatisch erstellt:
 
- [![](creating-ui-objects-images/image9b.png "ViewController partial class")](creating-ui-objects-images/image9b.png#lightbox)
+ [![Partielle ViewController-Klasse](creating-ui-objects-images/image9b.png)](creating-ui-objects-images/image9b.png#lightbox)
 
 Die `ControlsViewController.cs` Datei ist für *Ihren Code*bestimmt. An dieser Stelle `View` werden die Lebenszyklus Methoden wie `ViewDidLoad` und `ViewWillAppear` implementiert, und Sie können Ihre eigenen Eigenschaften, Felder und Methoden hinzufügen.
 
@@ -169,6 +169,6 @@ Die `designer.cs` Datei sollte nicht manuell bearbeitet werden – die IDE (Visu
 
 Wenn Benutzeroberflächen Objekte Programm gesteuert zu einem oder hinzugefügt werden `View` `ViewController` , instanziieren und verwalten Sie die Objekt Verweise selbst. Daher ist keine Designer-Datei erforderlich.
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Steuerelemente (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)

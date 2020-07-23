@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 7e9010eb579f28e62b5f7ab72ac061e9898e7ecf
-ms.sourcegitcommit: a9b180651863cb7da31d3af14182fe3ad44796f7
+ms.openlocfilehash: 59ad6a11eecf629fc2a815e21a29493f4a1a1397
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76971531"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932222"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Anmerkungen und Überlagerungen in xamarin. IOS
 
 Die Anwendung, die in dieser exemplarischen Vorgehensweise erstellt wird, ist unten dargestellt:
 
- [![](ios-maps-walkthrough-images/00-map-overlay.png "An example MapKit app")](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
+ [![Ein Beispiel für eine MapKit-App](ios-maps-walkthrough-images/00-map-overlay.png)](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
 
 Den vollständigen Code finden Sie im [Beispiel zu Maps](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)Exemplarische Vorgehensweise.
 
@@ -26,7 +26,7 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
 
 ## <a name="viewcontroller"></a>ViewController
 
-1. Fügen Sie dem `ViewController`die folgenden Namespaces hinzu:
+1. Fügen Sie die folgenden Namespaces hinzu `ViewController` :
 
     ```csharp
     using MapKit;
@@ -35,7 +35,7 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
     using CoreGraphics
     ```
 
-1. Fügen Sie der-Klasse eine `MKMapView`-Instanzvariable zusammen mit einer `MapDelegate`-Instanz hinzu. Wir erstellen die `MapDelegate` in Kürze:
+1. Fügen Sie `MKMapView` der-Klasse eine Instanzvariable zusammen mit einer- `MapDelegate` Instanz hinzu. Wir erstellen die `MapDelegate` in Kürze:
 
     ```csharp
     public partial class ViewController : UIViewController
@@ -45,7 +45,7 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
         ...
     ```
 
-1. Fügen Sie in der `LoadView`-Methode des Controllers ein `MKMapView` hinzu, und legen Sie es auf die `View`-Eigenschaft des Controllers fest:
+1. Fügen Sie in der-Methode des Controllers `LoadView` ein hinzu, `MKMapView` und legen Sie es auf die- `View` Eigenschaft des Controllers fest:
 
     ```csharp
     public override void LoadView ()
@@ -57,7 +57,7 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
 
     Als Nächstes fügen Sie Code hinzu, um die Zuordnung in der viewDidLoad-Methode zu initialisieren.
 
-1. Zeigen Sie in `ViewDidLoad` Hinzufügen von Code zum Festlegen des Karten Typs den Benutzer Speicherort an, und lassen Sie das Zoomen und Schwenken zu:
+1. `ViewDidLoad`Zeigen Sie unter Code zum Festlegen des Karten Typs hinzufügen den Benutzer Speicherort an, und lassen Sie das Zoomen und Schwenken zu:
 
     ```csharp
     // change map type, show user location and allow zooming and panning
@@ -80,20 +80,20 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
 
     ```
 
-1. Erstellen Sie eine neue Instanz von `MapDelegate` und weisen Sie Sie dem `Delegate` des `MKMapView`zu. Auch hier implementieren wir den `MapDelegate` in Kürze:
+1. Erstellen Sie eine neue Instanz von `MapDelegate` , und weisen Sie Sie dem `Delegate` von zu `MKMapView` . Auch hier implementieren wir den `MapDelegate` in Kürze:
 
     ```csharp
     mapDelegate = new MapDelegate ();
     map.Delegate = mapDelegate;
     ```
 
-1. Ab IOS 8 sollten Sie die Autorisierung Ihres Benutzers anfordern, um seinen Speicherort zu verwenden. wir fügen das nun unserem Beispiel hinzu. Definieren Sie zunächst eine `CLLocationManager` auf Klassenebene:
+1. Ab IOS 8 sollten Sie die Autorisierung Ihres Benutzers anfordern, um seinen Speicherort zu verwenden. wir fügen das nun unserem Beispiel hinzu. Definieren Sie zunächst eine `CLLocationManager` Variable auf Klassenebene:
 
     ```csharp
     CLLocationManager locationManager = new CLLocationManager();
     ```
 
-1. In der `ViewDidLoad`-Methode möchten wir überprüfen, ob das Gerät, auf dem die Anwendung ausgeführt wird, IOS 8 verwendet. wenn dies der Fall ist, wird die Autorisierung angefordert, wenn die APP verwendet wird:
+1. In der- `ViewDidLoad` Methode möchten wir überprüfen, ob das Gerät, auf dem die Anwendung ausgeführt wird, IOS 8 verwendet. wenn es ist, wird die Autorisierung angefordert, wenn die APP verwendet wird:
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion(8,0)){
@@ -111,7 +111,7 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
 
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs – eine Klasse für benutzerdefinierte Anmerkungen
 
-1. Wir verwenden eine benutzerdefinierte Klasse für die Anmerkung namens "`ConferenceAnnotation`". Fügen Sie dem Projekt die folgende Klasse hinzu:
+1. Wir verwenden eine benutzerdefinierte Klasse für die Anmerkung, die aufgerufen wird `ConferenceAnnotation` . Fügen Sie dem Projekt die folgende Klasse hinzu:
 
     ```csharp
     using System;
@@ -149,13 +149,13 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
 
 ## <a name="viewcontroller---adding-the-annotation-and-overlay"></a>ViewController-hinzufügen der Anmerkung und der Überlagerung
 
-1. Wenn die `ConferenceAnnotation` vorhanden sind, können wir Sie der Karte hinzufügen. Fügen Sie in der `ViewDidLoad`-Methode der `ViewController`die-Anmerkung in der mittelkoordinate der Karte hinzu:
+1. Mit der `ConferenceAnnotation` Stelle können wir Sie der Karte hinzufügen. `ViewDidLoad`Fügen Sie in der-Methode von die `ViewController` -Anmerkung in der mittelkoordinate der Karte hinzu:
 
     ```csharp
     map.AddAnnotations (new ConferenceAnnotation ("Evolve Conference", mapCenter));
     ```
 
-1. Wir möchten auch über eine Überlagerung des Hotels verfügen. Fügen Sie den folgenden Code hinzu, um die `MKPolygon` mithilfe der Koordinaten für das angegebene Hotel zu erstellen, und fügen Sie Sie dem Map by-Aufruf`AddOverlay`hinzu:
+1. Wir möchten auch über eine Überlagerung des Hotels verfügen. Fügen Sie den folgenden Code hinzu, um das `MKPolygon` mithilfe der Koordinaten für das bereitgestellte Hotel zu erstellen, und fügen Sie es der Zuordnung nach dem folgenden Befehl hinzu `AddOverlay` :
 
     ```csharp
     // add an overlay of the hotel
@@ -176,11 +176,11 @@ Erstellen Sie zunächst ein neues **leeres IOS-Projekt**, und geben Sie ihm eine
     map.AddOverlay (hotelOverlay);
     ```
 
-Dadurch wird der Code in `ViewDidLoad`abgeschlossen. Nun müssen wir unsere `MapDelegate`-Klasse implementieren, um das Erstellen der Anmerkung und der Überlagerungs Sichten zu verarbeiten.
+Dadurch wird der Code in abgeschlossen `ViewDidLoad` . Nun müssen wir unsere Klasse implementieren `MapDelegate` , um das Erstellen der Anmerkung und der Überlagerungs Sichten zu verarbeiten.
 
-## <a name="mapdelegate"></a>MapDelegate
+## <a name="mapdelegate"></a>Mapdelegat
 
-1. Erstellen Sie eine Klasse mit dem Namen `MapDelegate`, die von `MKMapViewDelegate` erbt, und fügen Sie eine `annotationId` Variable ein, die als Verwendungs Bezeichner für die Anmerkung verwendet werden soll:
+1. Erstellen Sie eine Klasse mit dem Namen `MapDelegate` , die von erbt `MKMapViewDelegate` und eine `annotationId` Variable enthält, die als Verwendungs Bezeichner für die Anmerkung verwendet werden soll:
 
     ```csharp
     class MapDelegate : MKMapViewDelegate
@@ -192,7 +192,7 @@ Dadurch wird der Code in `ViewDidLoad`abgeschlossen. Nun müssen wir unsere `Map
 
     Wir haben hier nur eine Anmerkung, sodass der wiederzuverwendenden Code nicht unbedingt erforderlich ist, aber es wird empfohlen, ihn einzuschließen.
 
-1. Implementieren Sie die `GetViewForAnnotation`-Methode, um mithilfe des in dieser exemplarischen Vorgehensweise enthaltenen **Konferenz. png** -Bilds eine Ansicht für die `ConferenceAnnotation` zurückzugeben:
+1. Implementieren Sie die- `GetViewForAnnotation` Methode, um mithilfe des in dieser exemplarischen Vorgehensweise `ConferenceAnnotation` enthaltenen **conference.png** Bilds eine Ansicht für zurückzugeben:
 
     ```csharp
     public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObject annotation)
@@ -218,14 +218,14 @@ Dadurch wird der Code in `ViewDidLoad`abgeschlossen. Nun müssen wir unsere `Map
     }
     ```
 
-1. Wenn der Benutzer auf die Anmerkung tippt, soll ein Bild angezeigt werden, das die Stadt Austin anzeigt. Fügen Sie die folgenden Variablen der `MapDelegate` für das Bild und die Ansicht hinzu, um Sie anzuzeigen:
+1. Wenn der Benutzer auf die Anmerkung tippt, soll ein Bild angezeigt werden, das die Stadt Austin anzeigt. Fügen Sie die folgenden Variablen `MapDelegate` für das Bild und die Ansicht hinzu, um es anzuzeigen:
 
     ```csharp
     UIImageView venueView;
     UIImage venueImage;
     ```
 
-1. Um das Bild beim Tippen der Anmerkung anzuzeigen, müssen Sie die `DidSelectAnnotation`-Methode wie folgt implementieren:
+1. Um das Bild anzuzeigen, wenn die Anmerkung getippt wird, implementieren Sie die- `DidSelectAnnotation` Methode wie folgt:
 
     ```csharp
     public override void DidSelectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -245,7 +245,7 @@ Dadurch wird der Code in `ViewDidLoad`abgeschlossen. Nun müssen wir unsere `Map
     }
     ```
 
-1. Um das Bild auszublenden, wenn der Benutzer die Anmerkung deaktiviert, indem Sie auf eine beliebige andere Stelle auf der Karte tippen, implementieren Sie die `DidDeselectAnnotationView`-Methode wie folgt:
+1. Um das Bild auszublenden, wenn der Benutzer die Anmerkung durch Tippen auf eine andere Stelle auf der Karte deaktiviert, implementieren Sie die `DidDeselectAnnotationView` Methode wie folgt:
 
     ```csharp
     public override void DidDeselectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -260,9 +260,9 @@ Dadurch wird der Code in `ViewDidLoad`abgeschlossen. Nun müssen wir unsere `Map
     }
     ```
 
-    Der Code für die Anmerkung ist nun vorhanden. Sie müssen dem `MapDelegate` nur noch Code hinzufügen, um die Ansicht für die Überlagerung des Hotels zu erstellen.
+    Der Code für die Anmerkung ist nun vorhanden. Zum `MapDelegate` Erstellen der Ansicht für die Überlagerung des Hotels müssen Sie nur noch Code hinzufügen.
 
-1. Fügen Sie der `MapDelegate`die folgende Implementierung von `GetViewForOverlay` hinzu:
+1. Fügen Sie die folgende Implementierung von hinzu `GetViewForOverlay` `MapDelegate` :
 
     ```csharp
     public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject overlay)
@@ -278,13 +278,13 @@ Dadurch wird der Code in `ViewDidLoad`abgeschlossen. Nun müssen wir unsere `Map
 
 Führen Sie die Anwendung aus. Wir verfügen jetzt über eine interaktive Karte mit einer benutzerdefinierten Anmerkung und einem Overlay! Tippen Sie auf die Anmerkung, und das Bild von Austin wird angezeigt, wie unten dargestellt:
 
- [![](ios-maps-walkthrough-images/01-map-image.png "Tap on the annotation and the image of Austin is displayed")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
+ [![Tippen Sie auf die Anmerkung, und das Bild von Austin wird angezeigt.](ios-maps-walkthrough-images/01-map-image.png)](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel haben wir uns mit dem Hinzufügen einer Anmerkung zu einer Zuordnung und dem Hinzufügen einer Überlagerung für ein bestimmtes Polygon beschäftigt. Wir haben außerdem gezeigt, wie Sie der Anmerkung die Berührungs Unterstützung hinzufügen, um ein Bild über eine Karte zu animieren.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Exemplarische Vorgehensweise für Maps](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)
 - [Beispiel für eine Karten Demo](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)
