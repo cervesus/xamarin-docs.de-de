@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 1ad4ecad90238436f8d2a02727596186c6205eeb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8b1ffe54ad199acbc7bf3918c187e198d96b51c8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572090"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939398"
 ---
 # <a name="working-with-watchos-navigation-in-xamarin"></a>Arbeiten mit der watchos-Navigation in xamarin
 
@@ -49,7 +49,7 @@ Modale Bildschirme können entweder eine einzelne Szene sein oder ein Seiten bas
 
 Zeigt Szenen wie einen Stapel an, der wieder durch navigiert werden kann, ähnlich wie unter `UINavigationController` IOS. Szenen können auf den Navigations Stapel verschoben und ausgeschaltet werden (entweder Programm gesteuert oder durch Benutzer Auswahl).
 
-![](navigation-images/hierarchy-1.png "Szenen können auf den Navigations Stapel verschoben werden.") ![](navigation-images/hierarchy-2.png "Szenen können aus dem Navigations Stapel entfernt werden.")
+![Szenen können auf den Navigations Stapel verschoben werden.](navigation-images/hierarchy-1.png) ![Szenen können aus dem Navigations Stapel entfernt werden.](navigation-images/hierarchy-2.png)
 
 Wie bei IOS navigiert ein Left Edge-Swipe zurück zum übergeordneten Controller in einem hierarchischen Navigations Stapel.
 
@@ -95,7 +95,7 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 Seiten basierte Schnittstellen Schwenken von links nach rechts, ähnlich wie unter `UIPageViewController` IOS. Indikator Punkte werden am unteren Bildschirmrand angezeigt, um anzuzeigen, welche Seite derzeit angezeigt wird.
 
-![](navigation-images/paged-1.png "Erste Beispielseite") ![](navigation-images/paged-2.png "Beispiel für eine zweite Seite") ![](navigation-images/paged-5.png "Fünfte Beispielseite")
+![Erste Beispielseite](navigation-images/paged-1.png) ![Beispiel für eine zweite Seite](navigation-images/paged-2.png) ![Fünfte Beispielseite](navigation-images/paged-5.png)
 
 Verwenden Sie `ReloadRootControllers` mit einem Array von Schnittstellen Controllern und Kontexten, um eine Seiten basierte Schnittstelle als Hauptbenutzer Oberfläche für Ihre Watch-APP zu erstellen:
 
@@ -113,7 +113,7 @@ var contexts = new [] { "First", "Second", "Third", "Fourth", "Fifth" };
 PresentController (controllerNames, contexts);
 ```
 
-## <a name="related-links"></a>Verwandte Links
+## <a name="related-links"></a>Ähnliche Themen
 
 - [Watchkitcatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Watchtables (Beispiel)](https://developer.xamarin.com//samples/monotouch/watchOS/WatchTables/)

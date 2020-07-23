@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 86b526fff305b195221aca3fb6a86ad0823cb145
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e206c89de278c8b85848294e76e4431825eaee85
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569399"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938956"
 ---
 # <a name="datapages-controls-reference"></a>Verweis auf DataPages-Steuerelemente
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![Diese API befindet sich derzeit in der Vorschau Phase.](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages erfordert einen Design Xamarin.Forms Verweis zum Rendering. Dies umfasst die Installation von [ Xamarin.Forms . Design. basieren](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) Sie auf das nuget-Paket in Ihrem Projekt, gefolgt von dem [ Xamarin.Forms . Design. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) oder [ Xamarin.Forms . Design. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) nuget-Pakete.
@@ -62,11 +62,11 @@ Das- `HeroImage` Steuerelement verfügt über vier Eigenschaften:
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Heroimage-Steuerelement unter Android") ![](controls-images/heroimage-dark-android.png "Heroimage-Steuerelement unter Android")
+![Heroimage-Steuerelement unter Android](controls-images/heroimage-light-android.png) ![Heroimage-Steuerelement unter Android](controls-images/heroimage-dark-android.png)
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "Heroimage-Steuerelement unter IOS") ![](controls-images/heroimage-dark-ios.png "Heroimage-Steuerelement unter IOS")
+![Heroimage-Steuerelement unter IOS](controls-images/heroimage-light-ios.png) ![Heroimage-Steuerelement unter IOS](controls-images/heroimage-dark-ios.png)
 
 ### <a name="listitem"></a>ListItem
 
@@ -94,11 +94,11 @@ Diese Screenshots zeigen die `ListItem` auf IOS-und Android-Plattformen, die sow
 
 **Android**
 
-![](controls-images/listitem-light-android.png "ListItem-Steuerelement unter Android") ![](controls-images/listitem-dark-android.png "ListItem-Steuerelement unter Android")
+![ListItem-Steuerelement unter Android](controls-images/listitem-light-android.png) ![ListItem-Steuerelement unter Android](controls-images/listitem-dark-android.png)
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "ListItem-Steuerelement unter IOS") ![](controls-images/listitem-dark-ios.png "ListItem-Steuerelement unter IOS")
+![ListItem-Steuerelement unter IOS](controls-images/listitem-light-ios.png) ![ListItem-Steuerelement unter IOS](controls-images/listitem-dark-ios.png)
 
 ## <a name="custom-control-example"></a>Beispiel für einen benutzerdefinierten
 
@@ -124,11 +124,11 @@ Es sollte wie in den nachfolgenden Screenshots aussehen, indem Farben verwendet 
 
 **Android**
 
-![](controls-images/cardview-light-android.png "Benutzerdefiniertes Kartenansicht-Steuerelement unter Android") ![](controls-images/cardview-dark-android.png "Benutzerdefiniertes Kartenansicht-Steuerelement unter Android")
+![Benutzerdefiniertes Kartenansicht-Steuerelement unter Android](controls-images/cardview-light-android.png) ![Benutzerdefiniertes Kartenansicht-Steuerelement unter Android](controls-images/cardview-dark-android.png)
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "Benutzerdefiniertes Kartenansicht-Steuerelement unter IOS") ![](controls-images/cardview-dark-ios.png "Benutzerdefiniertes Kartenansicht-Steuerelement unter IOS")
+![Benutzerdefiniertes Kartenansicht-Steuerelement unter IOS](controls-images/cardview-light-ios.png) ![Benutzerdefiniertes Kartenansicht-Steuerelement unter IOS](controls-images/cardview-dark-ios.png)
 
 ### <a name="building-the-custom-cardview"></a>Aufbauen der benutzerdefinierten CardView
 

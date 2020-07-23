@@ -10,18 +10,18 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 52246ce5d54ba97e91777f598f25c187901f89c4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0cdbd39f0217b0e4d175eb2443250eb3df8dd046
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137773"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936174"
 ---
 # <a name="windows-platform-features"></a>Features der Windows-Plattform
 
 Xamarin.FormsZum Entwickeln von Anwendungen für Windows-Plattformen ist Visual Studio erforderlich. Die [Seite "Unterstützte Plattformen](~/get-started/supported-platforms.md) " enthält weitere Informationen zu den Voraussetzungen.
 
-![](images/allhanselman.png "Xamarin.Forms Applications Running on Windows")
+![Xamarin.FormsAnwendungen, die unter Windows ausgeführt werden](images/allhanselman.png)
 
 ## <a name="platform-specifics"></a>Plattformeigenschaften
 
