@@ -11,12 +11,12 @@ ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c7f5979b93ff35b14ec7c13418a4565604f46bd7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d2bd0bf696e652e95e0feb88cca7cf685b14433b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570634"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936499"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Anwendungsindizierung und Deep Linking
 
@@ -32,7 +32,7 @@ Anwendungsindizierung und Deep Linking von Xamarin.Forms stellen eine API für d
 
 In dieser Beispielanwendung wird eine Anwendung mit Aufgabenlisten (ToDoList) veranschaulicht, bei der die Daten in einer lokalen SQLite-Datenbank gespeichert sind, wie aus den folgenden Screenshots hervorgeht:
 
-![](deep-linking-images/screenshots.png "TodoList Application")
+![ToDoList-Anwendung](deep-linking-images/screenshots.png)
 
 Jede vom Benutzer erstellte `TodoItem`-Instanz wird indiziert. Anschließend kann die plattformspezifische Suche zum Auffinden der indizierten Daten aus der Anwendung verwendet werden. Wenn der Benutzer in den Suchergebnissen auf ein Element für die Anwendung tippt, wird die Anwendung gestartet, die Seite `TodoItemPage` wird aufgerufen, und die `TodoItem`-Instanz, auf die der Deep-Link verweist, wird angezeigt.
 
@@ -141,7 +141,7 @@ Dadurch wird die [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry)-Instanz der [
 
 Wenn Sie die [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry)-Instanz für die Indizierung registriert haben, kann sie in den Suchergebnissen angezeigt werden. Der folgende Screenshot zeigt den indizierten Inhalt, wie er auf der iOS-Plattform in den Suchergebnissen angezeigt wird:
 
-![](deep-linking-images/ios-search.png "Indexed Content in Search Results on iOS")
+![Indizierter Inhalt in den Suchergebnissen unter iOS](deep-linking-images/ios-search.png)
 
 ## <a name="de-registering-indexed-content"></a>Aufheben der Registrierung von indizierten Inhalten
 

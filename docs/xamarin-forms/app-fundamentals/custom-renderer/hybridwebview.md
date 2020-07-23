@@ -10,12 +10,12 @@ ms.date: 03/31/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c83742896af4a22bcff327df82c1b14ff983bb2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0653e46d2c349e05df8716e5114de8f631cab1a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138969"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939541"
 ---
 # <a name="customizing-a-webview"></a>Anpassen eines WebView-Elements
 
@@ -27,7 +27,7 @@ Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jed
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`View`](xref:Xamarin.Forms.View)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
-![](hybridwebview-images/webview-classes.png "Relationship Between the WebView Class and its Implementing Native Classes")
+![Beziehungen zwischen der WebView-Klasse und den durch sie implementierten nativen Klassen](hybridwebview-images/webview-classes.png)
 
 Der Renderingprozess kann genutzt werden, um Anpassungen für die Plattform zu implementieren, indem für eine [`WebView`](xref:Xamarin.Forms.WebView)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
@@ -155,11 +155,11 @@ Gehen Sie folgendermaßen vor, um eine Klasse für einen benutzerdefinierten Ren
 
 Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](hybridwebview-images/solution-structure.png "HybridWebView Custom Renderer Project Responsibilities")
+![Projektzuständigkeiten beim benutzerdefinierten Steuerelement HybridWebView](hybridwebview-images/solution-structure.png)
 
 Das benutzerdefinierte Steuerelement `HybridWebView` wird von Plattformrendererklassen gerendert, die unter iOS von der `WkWebViewRenderer`-Klasse und unter Android und UWP von der `WebViewRenderer`-Klasse abgeleitet werden. Dadurch werden wie in den folgenden Screenshots gezeigt alle benutzerdefinierten `HybridWebView`-Steuerelemente mit nativen Websteuerelementen gerendert:
 
-![](hybridwebview-images/screenshots.png "HybridWebView on each Platform")
+![HybridWebView auf jeder Plattform](hybridwebview-images/screenshots.png)
 
 Die Klassen `WkWebViewRenderer` und `WebViewRenderer` machen die Methode `OnElementChanged` verfügbar, die aufgerufen wird, wenn das benutzerdefinierte Xamarin.Forms-Steuerelement erstellt wird, um das entsprechende native Websteuerelement zu rendern. Diese Methode akzeptiert einen `VisualElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element dar, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `HybridWebView`-Instanz.
 

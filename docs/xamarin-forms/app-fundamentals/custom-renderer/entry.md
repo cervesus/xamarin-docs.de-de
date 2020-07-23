@@ -10,12 +10,12 @@ ms.date: 11/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d28a9079d27310dde0e5ea5bf80c83895bbcf1d4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d5a5dc7de2835038079a1bdf8af5be44a173f86e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571570"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939827"
 ---
 # <a name="customizing-an-entry"></a>Anpassen eines Eintrags
 
@@ -27,7 +27,7 @@ Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer f
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
-![](entry-images/entry-classes.png "Relationship Between Entry Control and Implementing Native Controls")
+![Beziehungen zwischen dem Entry-Steuerelement und den nativen Steuerelementen, die dieses implementieren](entry-images/entry-classes.png)
 
 Der Renderingprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für das [`Entry`](xref:Xamarin.Forms.Entry)-Steuerelement auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
@@ -108,11 +108,11 @@ Gehen Sie folgendermaßen vor, um eine Klasse für einen benutzerdefinierten Ren
 
 Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](entry-images/solution-structure.png "MyEntry Custom Renderer Project Responsibilities")
+![Projektzuständigkeiten beim benutzerdefinierten MyEntry-Renderer](entry-images/solution-structure.png)
 
 Das Steuerelement `MyEntry` wird von plattformspezifischen `MyEntryRenderer`-Klassen gerendert, die alle von der `EntryRenderer`-Klasse für jede Plattform abgeleitet werden. Dies führt dazu, dass jedes `MyEntry`-Steuerelement mit einer plattformspezifischen Hintergrundfarbe gerendert wird. Dies wird in folgenden Screenshots veranschaulicht:
 
-![](entry-images/screenshots.png "MyEntry Control on each Platform")
+![MyEntry-Steuerelement auf jeder Plattform](entry-images/screenshots.png)
 
 Die Klasse `EntryRenderer` macht die Methode `OnElementChanged` verfügbar, die bei der Erstellung des Xamarin.Forms-Steuerelements aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element dar, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf das `MyEntry`-Steuerelement.
 

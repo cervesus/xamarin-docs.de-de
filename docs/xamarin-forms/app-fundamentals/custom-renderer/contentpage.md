@@ -10,12 +10,12 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ca9a541c3d152d1b84ed682881c395f2199b9eaf
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: adbceca38fca2cbe65c739f0d7fe26f18bdf5450
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84574378"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939853"
 ---
 # <a name="customizing-a-contentpage"></a>Anpassen einer ContentPage
 
@@ -27,7 +27,7 @@ Jedes Xamarin.Forms-Steuerelement verfügt über einen entsprechenden Renderer f
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
-![](contentpage-images/contentpage-classes.png "Relationship Between ContentPage Class and Implementing Native Controls")
+![Beziehungen zwischen der ContentPage-Klasse und den nativen Steuerelementen, die diese implementieren](contentpage-images/contentpage-classes.png)
 
 Der Renderprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`ContentPage`](xref:Xamarin.Forms.ContentPage)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
@@ -102,11 +102,11 @@ Gehen Sie folgendermaßen vor, um eine Klasse für einen benutzerdefinierten Ren
 
 Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](contentpage-images/solution-structure.png "CameraPage Custom Renderer Project Responsibilities")
+![Projektzuständigkeiten beim benutzerdefinierten CameraPage-Renderer](contentpage-images/solution-structure.png)
 
 Die `CameraPage`-Instanz wird von plattformspezifischen `CameraPageRenderer`-Klassen gerendert, die alle von der `PageRenderer`-Klasse für diese Plattform abgeleitet werden. Wie in den folgenden Screenshots zu sehen ist, wird folglich jede `CameraPage`-Instanz mit einem Livekamerafeed gerendert:
 
-![](contentpage-images/screenshots.png "CameraPage on each Platform")
+![CameraPage auf jeder Plattform](contentpage-images/screenshots.png)
 
 Die `PageRenderer`-Klasse macht die `OnElementChanged`-Methode verfügbar, die bei der Erstellung der Xamarin.Forms-Seite aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element dar, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `CameraPage`-Instanz.
 

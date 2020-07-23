@@ -10,12 +10,12 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 06ff88f1d4f272d9b77737d2168418c007afe8bc
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4a9dca7556e9e08915e7e8915a0c01cd1ce6f676
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573897"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935719"
 ---
 # <a name="customizing-a-map-pin"></a>Anpassen einer Kartenstecknadel
 
@@ -27,7 +27,7 @@ Jede Xamarin.Forms-Ansicht verfügt über einen entsprechenden Renderer für jed
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`Map`](xref:Xamarin.Forms.Maps.Map)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
-![](map-pin-images/map-classes.png "Relationship Between the Map Control and the Implementing Native Controls")
+![Beziehungen zwischen dem Kartensteuerelement und den nativen Steuerelementen, die dieses implementieren](map-pin-images/map-classes.png)
 
 Der Renderingprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`Map`](xref:Xamarin.Forms.Maps.Map)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
@@ -135,11 +135,11 @@ Gehen Sie folgendermaßen vor, um eine Klasse für einen benutzerdefinierten Ren
 
 Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](map-pin-images/solution-structure.png "CustomMap Custom Renderer Project Responsibilities")
+![Projektzuständigkeiten beim benutzerdefinierten CustomMap-Renderer](map-pin-images/solution-structure.png)
 
 Das Steuerelement `CustomMap` wird von plattformspezifischen Rendererklassen gerendert, die von der `MapRenderer`-Klasse für jede Plattform abgeleitet werden. Das führt dazu, dass jedes `CustomMap`-Steuerelement mit plattformspezifischen Steuerelementen gerendert wird. Dies wird in folgenden Screenshots veranschaulicht:
 
-![](map-pin-images/screenshots.png "CustomMap on each Platform")
+![CustomMap auf jeder Plattform](map-pin-images/screenshots.png)
 
 Die `MapRenderer`-Klasse stellt die `OnElementChanged`-Methode zur Verfügung, die bei der Erstellung der benutzerdefinierten Xamarin.Forms-Karte aufgerufen wird, um das entsprechende native Steuerelement zu rendern. Diese Methode akzeptiert einen `ElementChangedEventArgs`-Parameter, der die Eigenschaften `OldElement` und `NewElement` enthält. Diese Eigenschaften stellen jeweils das Xamarin.Forms-Element, an das der Renderer angefügt *war*, und das Xamarin.Forms-Element dar, an das der Renderer angefügt *ist*. In der Beispielanwendung ist die `OldElement`-Eigenschaft `null`, und die `NewElement`-Eigenschaft enthält einen Verweis auf die `CustomMap`-Instanz.
 
@@ -174,7 +174,7 @@ In den folgenden Abschnitten wird die Implementierung jeder plattformspezifische
 
 Auf den folgenden Screenshots ist die Karte vor und nach der Anpassung zu sehen:
 
-![](map-pin-images/map-layout-ios.png "Map Control Before and After Customization")
+![Kartensteuerelement vor und nach der Anpassung](map-pin-images/map-layout-ios.png)
 
 Unter iOS wird die Stecknadel als *Anmerkung* bezeichnet und kann entweder aus einem benutzerdefinierten Bild oder aus einer systemdefinierten Stecknadel in verschiedenen Farben erstellt werden. Anmerkungen können optional eine *Legende* anzeigen. Diese wird angezeigt, wenn der Benutzer eine Anmerkung auswählt. Die Legende zeigt die `Label`- und `Address`-Eigenschaften der `Pin`-Instanz mit optionalen zusätzlichen Ansichten auf der linken oder rechten Seite an. Auf dem obigen Screenshot wird auf der linken Seite zusätzlich das Bild eines Affen angezeigt, während auf der rechten Seite eine *Informationsschaltfläche* angezeigt wird.
 
@@ -347,7 +347,7 @@ Weitere Informationen zum Anpassen von einer `MKMapView`-Instanz finden Sie unte
 
 Auf den folgenden Screenshots ist die Karte vor und nach der Anpassung zu sehen:
 
-![](map-pin-images/map-layout-android.png "Map Control Before and After Customization")
+![Kartensteuerelement vor und nach der Anpassung](map-pin-images/map-layout-android.png)
 
 Unter Android wird die Stecknadel als *Markierung* bezeichnet und kann entweder aus einem benutzerdefinierten Bild oder aus einer systemdefinierten Markierung in verschiedenen Farben erstellt werden. Markierungen können ein *Infofenster* anzeigen, wenn der Benutzer darauf tippt. Das Infofenster zeigt die `Label`- und `Address`-Eigenschaften der `Pin`-Instanz an und kann auch auf andere Inhalte angepasst werden. Es kann jedoch nur ein Infofenster gleichzeitig angezeigt werden.
 
@@ -510,7 +510,7 @@ Weitere Informationen zum Anpassen von einer `MapView`-Instanz finden Sie unter 
 
 Auf den folgenden Screenshots ist die Karte vor und nach der Anpassung zu sehen:
 
-![](map-pin-images/map-layout-uwp.png "Map Control Before and After Customization")
+![Kartensteuerelement vor und nach der Anpassung](map-pin-images/map-layout-uwp.png)
 
 Auf der Universellen Windows-Plattform wird die Stecknadel als *Kartensymbol* bezeichnet und kann aus einem benutzerdefinierten Bild oder einem systemdefinierten Standardbild erstellt werden. Ein Kartensymbol kann eine `UserControl`-Klasse anzeigen, wenn der Benutzer darauf tippt. Die `UserControl`-Klasse kann sämtliche Inhalte darstellen, einschließlich den `Label`- und `Address`-Eigenschaften der `Pin`-Instanz.
 

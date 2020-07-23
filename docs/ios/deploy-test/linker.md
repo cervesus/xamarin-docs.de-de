@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 263c48c5006ba0060756e1050497c38dfb7c8eae
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 7769e3d02acc9f1522c6028f88f37c1f522866af
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567774"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936759"
 ---
 # <a name="linking-xamarinios-apps"></a>Verknüpfen von Xamarin.iOS-Apps
 
@@ -30,7 +30,7 @@ Da der Linker ein statisches Tool ist, kann er nicht für Inklusionstypen und -m
 
 Der Verknüpfungsprozess kann in **Projektoptionen** über das Dropdownmenü „Linkerverhalten“ angepasst werden. Um auf dieses iOS-Projekt zuzugreifen, doppelklicken Sie darauf, und navigieren Sie zu **iOS-Build > Linkeroptionen**, wie unten dargestellt:
 
-[![](linker-images/image1.png "Linker Options")](linker-images/image1.png#lightbox)
+[![Linkeroptionen](linker-images/image1.png)](linker-images/image1.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -40,10 +40,10 @@ Führen Sie folgende Schritte aus:
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den **Projektnamen**, und wählen Sie **Eigenschaften** aus:
 
-    ![](linker-images/linking01w.png "Right-click on the Project Name in the Solution Explorer and select Properties")
+    ![Im Projektmappen-Explorer mit der rechten Maustaste auf Projektnamen klicken und „Eigenschaften“ auswählen](linker-images/linking01w.png)
 2. Wählen Sie in den **Projekteigenschaften** die Option **iOS-Build** aus:
 
-    ![](linker-images/linking02w.png "Select IOS Build")
+    ![„iOS-Build“ auswählen](linker-images/linking02w.png)
 3. Befolgen Sie die nachstehenden Anweisungen, um die Verknüpfungsoptionen zu ändern.
 
 -----
@@ -169,4 +169,4 @@ Befolgen Sie die [Anweisungen zum Erstellen einer Linkerkonfigurationsdatei](~/c
 
 - [Benutzerdefinierte Linkerkonfiguration](~/cross-platform/deploy-test/linker.md)
 - [Verknüpfung auf dem Mac](~/mac/deploy-test/linker.md)
-- [Linking on Android (Verknüpfung unter Android)](~/android/deploy-test/linker.md)
+- [Verknüpfung unter Android](~/android/deploy-test/linker.md)

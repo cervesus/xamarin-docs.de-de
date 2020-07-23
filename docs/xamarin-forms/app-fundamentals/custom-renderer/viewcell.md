@@ -10,12 +10,12 @@ ms.date: 12/07/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c908da816352e8b3790ded0bef932e1485170abd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: bb6167eae394b41583195911bfac9d691e48d361
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573871"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929375"
 ---
 # <a name="customizing-a-viewcell"></a>Anpassen einer ViewCell
 
@@ -27,7 +27,7 @@ Jede Xamarin.Forms-Zelle verfügt über einen entsprechenden Renderer für jede 
 
 Das folgende Diagramm veranschaulicht die Beziehungen zwischen dem [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Objekt und den entsprechenden nativen Steuerelementen, die dieses implementieren:
 
-![](viewcell-images/viewcell-classes.png "Relationship Between the ViewCell Control and the Implementing Native Controls")
+![Beziehungen zwischen dem ViewCell-Steuerelement und den nativen Steuerelementen, die dieses implementieren](viewcell-images/viewcell-classes.png)
 
 Der Renderprozess kann genutzt werden, um plattformspezifische Anpassungen zu implementieren, indem für eine [`ViewCell`](xref:Xamarin.Forms.ViewCell)-Klasse auf jeder Plattform ein benutzerdefinierter Renderer erstellt wird. Gehen Sie hierfür folgendermaßen vor:
 
@@ -164,11 +164,11 @@ Gehen Sie folgendermaßen vor, um eine Klasse für einen benutzerdefinierten Ren
 
 Das folgende Diagramm veranschaulicht die Zuständigkeiten jedes Projekts in der Beispielanwendung sowie deren Beziehungen zueinander:
 
-![](viewcell-images/solution-structure.png "NativeCell Custom Renderer Project Responsibilities")
+![Projektzuständigkeiten beim benutzerdefinierten NativeCell-Renderer](viewcell-images/solution-structure.png)
 
 Die benutzerdefinierte Zelle `NativeCell` wird von plattformspezifischen Rendererklassen gerendert, die alle von der `ViewCellRenderer`-Klasse für jede Plattform abgeleitet werden. Das führt dazu, dass jede benutzerdefinierte `NativeCell`-Zelle mit dem plattformspezifischen Layout gerendert wird. Dies wird in folgenden Screenshots veranschaulicht:
 
-![](viewcell-images/screenshots.png "NativeCell on each Platform")
+![NativeCell auf jeder Plattform](viewcell-images/screenshots.png)
 
 Die `ViewCellRenderer`-Klasse macht plattformspezifische Methoden zum Rendern der benutzerdefinierten Zelle verfügbar. Auf der iOS-Plattform ist dies die `GetCell`-Methode, auf der Android-Plattform die `GetCellCore`-Methode und auf der UWP die `GetTemplate`-Methode.
 
