@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5e1ea94e42e98609b3f77f0198e125b94e2b437d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134315"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928834"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin.FormsDataPages
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![Diese API befindet sich derzeit in der Vorschau Phase.](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages erfordert einen Design Xamarin.Forms Verweis zum Rendering. Dies umfasst die Installation von [ Xamarin.Forms . Design. basieren](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) Sie auf das nuget-Paket in Ihrem Projekt, gefolgt von dem [ Xamarin.Forms . Design. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) oder [ Xamarin.Forms . Design. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) nuget-Pakete.
@@ -30,7 +30,7 @@ DataPages bieten eine API, mit der eine Datenquelle schnell und einfach an vorge
 
 Sehen Sie sich die [Anleitung](get-started.md)für die ersten Schritte an.
 
-[![](images/demo-sml.png "DataPages Sample Application")](images/demo.png#lightbox "DataPages Sample Application")
+[![DataPages-Beispielanwendung](images/demo-sml.png)](images/demo.png#lightbox "DataPages-Beispielanwendung")
 
 ## <a name="introduction"></a>Einführung
 
