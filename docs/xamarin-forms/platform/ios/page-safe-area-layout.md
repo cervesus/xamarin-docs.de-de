@@ -19,7 +19,7 @@ ms.locfileid: "86933712"
 ---
 # <a name="safe-area-layout-guide-on-ios"></a>Handbuch zum Safe Area Layout unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Diese IOS-plattformspezifische wird verwendet, um sicherzustellen, dass der Seiten Inhalt in einem Bereich des Bildschirms positioniert ist, der für alle Geräte, die IOS 11 und höher verwenden, sicher ist. Insbesondere wird sichergestellt, dass der Inhalt nicht von abgerundeten Geräte Ecken, dem Start Indikator oder dem Sensorgehäuse auf einem iPhone X abgeschnitten wird. Sie wird in XAML verwendet, indem die `Page.UseSafeArea` angefügte-Eigenschaft auf einen Wert festgelegt wird `boolean` :
 

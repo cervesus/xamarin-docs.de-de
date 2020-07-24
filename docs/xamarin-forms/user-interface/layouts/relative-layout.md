@@ -19,7 +19,7 @@ ms.locfileid: "86937786"
 ---
 # <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 `RelativeLayout`wird verwendet, um Ansichten relativ zu Eigenschaften des Layout oder der gleich geordneten Sichten zu positionieren und zu verkleinern. Im `AbsoluteLayout` Gegensatz `RelativeLayout` zu verfügt nicht über das Konzept des Verschiebungs Ankers und verfügt nicht über Funktionen zum Positionieren von Elementen in Relation zum unteren oder rechten Rand des Layouts. `RelativeLayout`unterstützt das Positionieren von Elementen außerhalb ihrer eigenen Begrenzungen.
 
@@ -230,7 +230,7 @@ Der obige Code führt zum folgenden Layout:
 
 Beachten Sie, dass `RelativeLayouts` s geschachtelt sind, da in einigen Fällen die Schachtelung von Layouts einfacher sein kann, als alle Elemente innerhalb desselben Layouts darzustellen. Beachten Sie auch, dass einige Elemente sind `RelativeToView` , da dies ein einfacheres und intuitiveres Layout ermöglicht, wenn die Beziehungen zwischen Ansichten die Positionierung steuern.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Layout (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 - [Businesstumm Beispiel (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

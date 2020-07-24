@@ -10,12 +10,12 @@ ms.date: 12/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a69edd3bf014809cc479dcb7cba0e430dcefbe5b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f67543a6c678e2c3a1395f816e020d69af4bf873
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84564679"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936655"
 ---
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Speichern und Zugreifen auf Daten in Azure Storage vonXamarin.Forms
 
@@ -46,7 +46,7 @@ Weitere Informationen zu Azure Storage finden Sie unter [Einführung in Storage]
 
 BLOB Storage besteht aus drei Komponenten, die im folgenden Diagramm dargestellt sind:
 
-![](azure-storage-images/blob-storage.png "Blob Storage Concepts")
+![BLOB Storage Konzepte](azure-storage-images/blob-storage.png)
 
 Der gesamte Zugriff auf Azure Storage erfolgt über ein Speicherkonto. Ein Speicherkonto kann eine unbegrenzte Anzahl von Containern enthalten, und ein Container kann eine unbegrenzte Anzahl von BLOB-Speicher speichern, bis die Kapazitätsgrenze des Speicher Kontos erreicht ist.
 
@@ -65,11 +65,11 @@ Jedes Objekt, das in Azure Storage gespeichert ist, verfügt über eine eindeuti
 
 Die URL für den Zugriff auf ein Objekt in einem Speicherkonto wird durch Anhängen des Objektstandorts im Speicherkonto an den Endpunkt generiert. Beispielsweise hat eine BLOB-Adresse das Format `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob` .
 
-## <a name="setup"></a>Einrichten
+## <a name="setup"></a>Setup
 
 Der Prozess für die Integration eines Azure Storage Kontos in eine- Xamarin.Forms Anwendung sieht wie folgt aus:
 
-1. Erstellen Sie ein Speicherkonto. Weitere Informationen finden Sie unter [Erstellen eines Speicher Kontos](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account).
+1. Erstellen Sie ein Speicherkonto. Weitere Informationen finden Sie unter [Erstellen eines Speicherkontos](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account).
 1. Fügen Sie der Anwendung die [Azure Storage Client Bibliothek](https://www.nuget.org/packages/WindowsAzure.Storage/) hinzu Xamarin.Forms .
 1. Konfigurieren Sie die Speicher Verbindungs Zeichenfolge. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure Storage](#connecting-to-azure-storage).
 1. Fügen Sie `using` `Microsoft.WindowsAzure.Storage` `Microsoft.WindowsAzure.Storage.Blob` Klassen, die auf Azure Storage zugreifen, Direktiven für die Namespaces und hinzu.

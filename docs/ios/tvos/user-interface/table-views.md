@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 5c73f046f349598c9f0b0e8d7c7d6438c150c05c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: eb95970066f85bb62eb207f23cfc135dc1625a11
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566343"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937097"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Arbeiten mit tvos-Tabellen Ansichten in xamarin
 
@@ -22,7 +22,7 @@ In tvos wird eine Tabellenansicht als einzelne Spalte mit scrollzeilen dargestel
 
 Tabellen Sichten werden in der Regel auf einer Seite einer [geteilten Ansicht](~/ios/tvos/user-interface/split-views.md) als Navigation angezeigt, wobei die Details des ausgewählten Elements auf der gegenüberliegenden Seite angezeigt werden:
 
-[![](table-views-images/intro01.png "Sample table view")](table-views-images/intro01.png#lightbox)
+[![Beispiel Tabellenansicht](table-views-images/intro01.png)](table-views-images/intro01.png#lightbox)
 
 <a name="About-Table-Views"></a>
 
@@ -30,7 +30,7 @@ Tabellen Sichten werden in der Regel auf einer Seite einer [geteilten Ansicht](~
 
 Eine `UITableView` zeigt eine einzelne Spalte mit scrollbaren Zeilen als hierarchische Liste von Informationen an, die optional in Gruppen oder Abschnitte organisiert werden können: 
 
-[![](table-views-images/table01.png "A selected item")](table-views-images/table01.png#lightbox)
+[![Ein ausgewähltes Element](table-views-images/table01.png)](table-views-images/table01.png#lightbox)
 
 Apple hat die folgenden Vorschläge zum Arbeiten mit Tabellen:
 
@@ -66,92 +66,92 @@ Apple hat die folgenden Vorschläge zum Arbeiten mit Tabellen Ansichts Zellen:
 
 Die einfachste Möglichkeit zum Arbeiten mit Tabellen Sichten in einer xamarin. tvos-APP ist das Erstellen und Ändern ihrer Darstellung im Schnittstellen-Designer.
 
-Um zu beginnen, machen Sie Folgendes:
+Gehen Sie wie folgt vor, um zu beginnen:
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Starten Sie in Visual Studio für Mac ein neues tvos-App-Projekt, wählen Sie **tvos**  >  **App**  >  **Single View App** aus, und klicken Sie auf die Schaltfläche **weiter** : 
 
-    [![](table-views-images/table02.png "Select Single View App")](table-views-images/table02.png#lightbox)
+    [![Einzelansicht-App auswählen](table-views-images/table02.png)](table-views-images/table02.png#lightbox)
 1. Geben Sie einen **Namen** für die APP ein, und klicken Sie auf **weiter**: 
 
-    [![](table-views-images/table03.png "Enter a Name for the app")](table-views-images/table03.png#lightbox)
+    [![Geben Sie einen Namen für die APP ein.](table-views-images/table03.png)](table-views-images/table03.png#lightbox)
 1. Passen Sie entweder den **Projektnamen** und den Projektmappennamen an, oder übernehmen Sie die Standardeinstellungen, und klicken Sie auf die Schaltfläche **Erstellen** , um **Solution Name** 
 
-    [![](table-views-images/table04.png "The Project Name and Solution Name")](table-views-images/table04.png#lightbox)
+    [![Projektname und Projektmappenname](table-views-images/table04.png)](table-views-images/table04.png#lightbox)
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, um Sie im IOS-Designer zu öffnen: 
 
-    [![](table-views-images/table05.png "The Main.storyboard file")](table-views-images/table05.png#lightbox)
+    [![Die Datei "Main. Storyboard"](table-views-images/table05.png)](table-views-images/table05.png#lightbox)
 1. **Standard Ansichts Controller**auswählen und löschen: 
 
-    [![](table-views-images/table06.png "Select and delete the Default View Controller")](table-views-images/table06.png#lightbox)
+    [![Auswählen und Löschen des Standard Ansichts Controllers](table-views-images/table06.png)](table-views-images/table06.png#lightbox)
 1. Wählen Sie einen **Split View Controller** aus der **Toolbox** aus, und ziehen Sie ihn auf den Designoberfläche.
 1. Standardmäßig erhalten Sie eine [geteilte Ansicht](~/ios/tvos/user-interface/split-views.md) mit einem **Navigations Ansichts Controller** und einem **Tabellen Ansichts** Controller auf der linken Seite und einen **Ansichts Controller** auf der rechten Seite. Dies ist die empfohlene Verwendung einer Tabellenansicht in tvos in Apple: 
 
-    [![](table-views-images/table08.png "Add a Split View")](table-views-images/table08.png#lightbox)
+    [![Hinzufügen einer geteilten Ansicht](table-views-images/table08.png)](table-views-images/table08.png#lightbox)
 1. Sie müssen jeden Teil der Tabellenansicht auswählen und diesem im **Eigenschaften-Explorer** auf der Registerkarte " **Widget** " einen benutzerdefinierten **Klassennamen** zuweisen, damit Sie später in c#-Code darauf zugreifen können. Beispielsweise kann der **Tabellen Ansichts Controller**Folgendes: 
 
-    [![](table-views-images/table09.png "Assign a class name")](table-views-images/table09.png#lightbox)
+    [![Zuweisen eines Klassen namens](table-views-images/table09.png)](table-views-images/table09.png#lightbox)
 1. Stellen Sie sicher, dass Sie eine benutzerdefinierte Klasse für den **Tabellen Ansichts Controller**, die **Tabellenansicht** und beliebige **prototypzellen**erstellen. Visual Studio für Mac werden die benutzerdefinierten Klassen der Projektstruktur hinzugefügt, wenn Sie erstellt werden: 
 
-    [![](table-views-images/table10.png "The custom classes in the Project Tree")](table-views-images/table10.png#lightbox)
+    [![Die benutzerdefinierten Klassen in der Projektstruktur](table-views-images/table10.png)](table-views-images/table10.png#lightbox)
 1. Wählen Sie als nächstes die Tabellenansicht in der Designoberfläche aus, und passen Sie die Eigenschaften nach Bedarf an. Z. b. die Anzahl der **prototypzellen** und der **Stil** (einfach oder gruppiert): 
 
-    [![](table-views-images/table11.png "The widget tab")](table-views-images/table11.png#lightbox)
+    [![Die Widget-Registerkarte](table-views-images/table11.png)](table-views-images/table11.png#lightbox)
 1. Wählen Sie für jede **prototypzelle**diese aus, und weisen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen **Bezeichner** zu. Dieser Schritt ist _sehr wichtig_ , da Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle auffüllen. Beispiel: `AttrCell`: 
 
-    [![](table-views-images/table12.png "The Widget Tab")](table-views-images/table12.png#lightbox)
+    [![Die Widget-Registerkarte](table-views-images/table12.png)](table-views-images/table12.png#lightbox)
 1. Sie können auch auswählen, dass die Zelle als einer der [standardtabellenansichts-Zelltypen](#table-view-cell-types) über **die Dropdown** Liste Formatvorlagen angezeigt werden **soll, oder** Sie können den Designoberfläche verwenden, um die Zelle zu formatieren, indem Sie andere UI-Widgets aus der **Toolbox**ziehen: 
 
-    [![](table-views-images/table13.png "The cell layout")](table-views-images/table13.png#lightbox)
+    [![Das Zellen Layout](table-views-images/table13.png)](table-views-images/table13.png#lightbox)
 1. Weisen Sie jedem Benutzeroberflächen Element im prototypzellentwurf auf der Registerkarte **Widget** im Eigenschaften- **Explorer** einen eindeutigen **Namen** zu, damit Sie später in c#-Code darauf zugreifen können: 
 
-    [![](table-views-images/table14.png "Assign a name")](table-views-images/table14.png#lightbox)
+    [![Zuweisen eines Namens](table-views-images/table14.png)](table-views-images/table14.png#lightbox)
 1. Wiederholen Sie den obigen Schritt für alle prototypzellen in der Tabellenansicht.
 1. Weisen Sie anschließend dem restlichen Benutzeroberflächen Entwurf benutzerdefinierte Klassen zu, ordnen Sie die Detailansicht an, und weisen Sie jedem Benutzeroberflächen Element in der Detailansicht eindeutige **Namen** zu, sodass Sie auch in c# darauf zugreifen können. Beispiel: 
 
-    [![](table-views-images/table15.png "The UI layout")](table-views-images/table15.png#lightbox)
+    [![Das Layout der Benutzeroberfläche](table-views-images/table15.png)](table-views-images/table15.png#lightbox)
 1. Speichern Sie die Änderungen am Storyboard.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Starten Sie in Visual Studio ein neues tvos-App-Projekt, und wählen Sie **tvos**  >  **Single View App** aus, und geben Sie einen Namen für Ihre APP ein. Klicken Sie **auf die Schalt** Fläche OK, um eine neue Lösung zu erstellen: 
 
-    [![](table-views-images/table02-vs.png "Select Single View App")](table-views-images/table02-vs.png#lightbox)
+    [![Einzelansicht-App auswählen](table-views-images/table02-vs.png)](table-views-images/table02-vs.png#lightbox)
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, um Sie im IOS-Designer zu öffnen: 
 
-    [![](table-views-images/table05-vs.png "The Main.storyboard file")](table-views-images/table05-vs.png#lightbox)
+    [![Die Datei "Main. Storyboard"](table-views-images/table05-vs.png)](table-views-images/table05-vs.png#lightbox)
 1. **Standard Ansichts Controller**auswählen und löschen: 
 
-    [![](table-views-images/table06-vs.png "Select and delete the Default View Controller")](table-views-images/table06-vs.png#lightbox)
+    [![Auswählen und Löschen des Standard Ansichts Controllers](table-views-images/table06-vs.png)](table-views-images/table06-vs.png#lightbox)
 1. Wählen Sie einen **Split View Controller** aus der **Toolbox** aus, und ziehen Sie ihn auf den Designoberfläche: 
 
-    [![](table-views-images/table07-vs.png "A Split View Controller")](table-views-images/table07-vs.png#lightbox)
+    [![Einen geteilten Ansichts Controller](table-views-images/table07-vs.png)](table-views-images/table07-vs.png#lightbox)
 1. Standardmäßig erhalten Sie eine [geteilte Ansicht](~/ios/tvos/user-interface/split-views.md) mit einem **Navigations Ansichts Controller** und einem **Tabellen Ansichts** Controller auf der linken Seite und einen **Ansichts Controller** auf der rechten Seite. Dies ist die empfohlene Verwendung einer Tabellenansicht in tvos in Apple: 
 
-    [![](table-views-images/table08-vs.png "Layout the UI")](table-views-images/table08-vs.png#lightbox)
+    [![Layout der Benutzeroberfläche](table-views-images/table08-vs.png)](table-views-images/table08-vs.png#lightbox)
 1. Sie müssen jeden Teil der Tabellenansicht auswählen und diesem im **Eigenschaften-Explorer** auf der Registerkarte " **Widget** " einen benutzerdefinierten **Klassennamen** zuweisen, damit Sie später in c#-Code darauf zugreifen können. Beispielsweise kann der **Tabellen Ansichts Controller**Folgendes: 
 
-    [![](table-views-images/table09-vs.png "The Widget Tab")](table-views-images/table09-vs.png#lightbox)
+    [![Die Widget-Registerkarte](table-views-images/table09-vs.png)](table-views-images/table09-vs.png#lightbox)
 1. Stellen Sie sicher, dass Sie eine benutzerdefinierte Klasse für den **Tabellen Ansichts Controller**, die **Tabellenansicht** und beliebige **prototypzellen**erstellen. Visual Studio für Mac werden die benutzerdefinierten Klassen der Projektstruktur hinzugefügt, wenn Sie erstellt werden: 
 
-    [![](table-views-images/table10-vs.png "The custom classes in the Project Tree")](table-views-images/table10-vs.png#lightbox)
+    [![Die benutzerdefinierten Klassen in der Projektstruktur](table-views-images/table10-vs.png)](table-views-images/table10-vs.png#lightbox)
 1. Wählen Sie als nächstes die Tabellenansicht in der Designoberfläche aus, und passen Sie die Eigenschaften nach Bedarf an. Z. b. die Anzahl der **prototypzellen** und der **Stil** (einfach oder gruppiert): 
 
-    [![](table-views-images/table11-vs.png "The Widget Tab")](table-views-images/table11-vs.png#lightbox)
+    [![Die Widget-Registerkarte](table-views-images/table11-vs.png)](table-views-images/table11-vs.png#lightbox)
 1. Wählen Sie für jede **prototypzelle**diese aus, und weisen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen eindeutigen **Bezeichner** zu. Dieser Schritt ist _sehr wichtig_ , da Sie diesen Bezeichner später benötigen, wenn Sie die Tabelle auffüllen. Beispiel: `AttrCell`: 
 
-    [![](table-views-images/table12-vs.png "Assign an Identifier")](table-views-images/table12-vs.png#lightbox)
+    [![Zuweisen eines Bezeichners](table-views-images/table12-vs.png)](table-views-images/table12-vs.png#lightbox)
 1. Sie können auch auswählen, dass die Zelle als einer der [standardtabellenansichts-Zelltypen](#table-view-cell-types) über **die Dropdown** Liste Formatvorlagen angezeigt werden **soll, oder** Sie können den Designoberfläche verwenden, um die Zelle zu formatieren, indem Sie andere UI-Widgets aus der **Toolbox**ziehen: 
 
-    [![](table-views-images/table13-vs.png "The Style dropdown")](table-views-images/table13-vs.png#lightbox)
+    [![Die Dropdown Liste "Style"](table-views-images/table13-vs.png)](table-views-images/table13-vs.png#lightbox)
 1. Weisen Sie jedem Benutzeroberflächen Element im prototypzellentwurf auf der Registerkarte **Widget** im Eigenschaften- **Explorer** einen eindeutigen **Namen** zu, damit Sie später in c#-Code darauf zugreifen können: 
 
-    [![](table-views-images/table14-vs.png "The Widget Tab")](table-views-images/table14-vs.png#lightbox)
+    [![Die Widget-Registerkarte](table-views-images/table14-vs.png)](table-views-images/table14-vs.png#lightbox)
 1. Wiederholen Sie den obigen Schritt für alle prototypzellen in der Tabellenansicht.
 1. Weisen Sie anschließend dem restlichen Benutzeroberflächen Entwurf benutzerdefinierte Klassen zu, ordnen Sie die Detailansicht an, und weisen Sie jedem Benutzeroberflächen Element in der Detailansicht eindeutige **Namen** zu, sodass Sie auch in c# darauf zugreifen können. Beispiel: 
 
-    [![](table-views-images/table15.png "The UI Layout")](table-views-images/table15.png#lightbox)
+    [![Das Layout der Benutzeroberfläche](table-views-images/table15.png)](table-views-images/table15.png#lightbox)
 1. Speichern Sie die Änderungen am Storyboard.
 
 -----
@@ -168,13 +168,13 @@ Sehen Sie sich das Beispiel für eine Reise Reservierungs-APP an, die eine Liste
 
 Um das Datenmodell für eine **Attraktion**zu erstellen, klicken Sie im **Lösungspad** mit der rechten Maustaste auf den Projektnamen, und wählen Sie neue Datei **Hinzufügen**  >  **...** aus. Geben Sie `AttractionInformation` als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** : 
 
-[![](table-views-images/data01.png "Enter AttractionInformation for the Name")](table-views-images/data01.png#lightbox)
+[![Geben Sie "attractioninformation" für den Namen ein.](table-views-images/data01.png)](table-views-images/data01.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Um das Datenmodell für eine **Attraktion**zu erstellen, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen, und wählen Sie neues Element **Hinzufügen**  >  **...** aus. Wählen Sie **Klasse** aus, geben Sie `AttractionInformation` für den **Namen** ein, und klicken Sie auf die Schaltfläche **Add** 
 
-[![](table-views-images/data01-vs.png "Select Class and enter AttractionInformation for the Name")](table-views-images/data01-vs.png#lightbox)
+[![Wählen Sie Klasse aus, und geben Sie "attractioninformation" als Namen](table-views-images/data01-vs.png)](table-views-images/data01-vs.png#lightbox)
 
 -----
 
@@ -216,13 +216,13 @@ Diese Klasse stellt die Eigenschaften zum Speichern der Informationen über eine
 
 Klicken Sie als nächstes mit der rechten Maustaste auf den Projektnamen im **Lösungspad** , und wählen Sie neue Datei **Hinzufügen**  >  **...** aus. Geben Sie `CityInformation` als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** : 
 
-[![](table-views-images/data02.png "Enter CityInformation for the Name")](table-views-images/data02.png#lightbox)
+[![Geben Sie für den Namen cityinformation ein.](table-views-images/data02.png)](table-views-images/data02.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Klicken Sie als nächstes mit der rechten Maustaste auf den Projektnamen im **Projektmappen-Explorer** , und wählen Sie neues Element **Hinzufügen**  >  **...** aus. Geben Sie `CityInformation` als **Namen** ein, und klicken Sie auf **Hinzufügen** : 
 
-[![](table-views-images/data02-vs.png "Enter CityInformation for the Name")](table-views-images/data02-vs.png#lightbox)
+[![Geben Sie für den Namen cityinformation ein.](table-views-images/data02-vs.png)](table-views-images/data02-vs.png#lightbox)
 
 -----
 
@@ -733,7 +733,7 @@ Weitere Informationen zum Arbeiten mit einem finden `UITableViewController` Sie 
 
 Wie am Anfang dieses Dokuments angegeben, werden Tabellen Sichten in der Regel auf einer Seite einer [geteilten Ansicht](~/ios/tvos/user-interface/split-views.md) als Navigation angezeigt, wobei die Details des ausgewählten Elements auf der gegenüberliegenden Seite angezeigt werden. Beispiel: 
 
-[![](table-views-images/intro01.png "Sample app run")](table-views-images/intro01.png#lightbox)
+[![Ausführen der Beispiel-App](table-views-images/intro01.png)](table-views-images/intro01.png#lightbox)
 
 Da es sich hierbei um ein Standardmuster in tvos handelt, betrachten wir die abschließenden Schritte, um alles zusammenzuführen, und lassen Sie die linke und die Rechte Seite der geteilten Ansicht miteinander interagieren.
 

@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: be7e95df0ac247c5cd97c1715e4af67b48275180
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d30e1f86e2ef22250b9e25e2352501b6f2c05ade
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128114"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939138"
 ---
 # <a name="navigationpage-bar-translucency-on-ios"></a>Translustialisierung der Navigations Seitenleiste unter IOS
 
@@ -53,7 +53,7 @@ Die- `NavigationPage.On<iOS>` Methode gibt an, dass diese plattformspezifische n
 
 Das Ergebnis ist, dass die Transparenz der Navigationsleiste geändert werden kann:
 
-![](navigation-bar-translucent-images/translucent-navigation-bar.png "Translucent Navigation Bar Platform-Specific")
+![Plattformspezifischer Navigationsleiste](navigation-bar-translucent-images/translucent-navigation-bar.png)
 
 ## <a name="related-links"></a>Verwandte Links
 

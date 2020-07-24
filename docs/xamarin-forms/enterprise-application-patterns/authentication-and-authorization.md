@@ -10,12 +10,12 @@ ms.date: 08/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8b712b2a5d7eeb2ee5e71047b9e6c460eb10d72a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5550ea7a355492f724459449f3b37cdcb8d05b1e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573832"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932144"
 ---
 # <a name="authentication-and-authorization"></a>Authentifizierung und Autorisierung
 
@@ -42,7 +42,7 @@ Die Kombination von OpenID Connect und OAuth 2,0 kombiniert die beiden grundlege
 
 In Anwendungen, die die direkte Kommunikation zwischen Client und-Dienst verwenden, z. b. die eshoponcontainers-Referenz Anwendung, kann ein dedizierter authentifizierungsmikrodienst, der als Sicherheitstokendienst (STS) fungiert, zum Authentifizieren von Benutzern verwendet werden, wie in Abbildung 9-1 dargestellt. Weitere Informationen zur direkten Kommunikation zwischen Client und mikroservice finden Sie unter [Kommunikation zwischen Client und-Dienst](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication-between-client-and-microservices).
 
-![](authentication-and-authorization-images/authentication.png "Authentication by a dedicated authentication microservice")
+![Authentifizierung durch einen dedizierten authentifizierungmikrodienst](authentication-and-authorization-images/authentication.png)
 
 **Abbildung 9-1:** Authentifizierung durch einen dedizierten authentifizierungmikrodienst
 
@@ -224,7 +224,7 @@ Damit identityserver Token im Namen eines Benutzers ausgibt, muss sich der Benut
 
 Die eshoponcontainers-Mobile App authentifiziert sich mit identityserver mit dem Hybrid Authentifizierungs Fluss, der in Abbildung 9-2 veranschaulicht wird.
 
-![](authentication-and-authorization-images/sign-in.png "High-level overview of the sign-in process")
+![Allgemeine Übersicht über den Anmeldevorgang](authentication-and-authorization-images/sign-in.png)
 
 **Abbildung 9-2:** Allgemeine Übersicht über den Anmeldevorgang
 
@@ -232,7 +232,7 @@ Es erfolgt eine Anmelde Anforderung an `<base endpoint>:5105/connect/authorize` 
 
 Die eshoponcontainers-Mobile App von identityserver abgemeldet, indem eine Anforderung an `<base endpoint>:5105/connect/endsession` mit zusätzlichen Parametern gesendet wird. Nach der Abmeldung antwortet identityserver, indem er einen Umleitungs-URI nach der Abmeldung an den Mobile App zurücksendet. In Abbildung 9-3 wird dieser Prozess veranschaulicht.
 
-![](authentication-and-authorization-images/sign-out.png "High-level overview of the sign-out process")
+![Allgemeine Übersicht über den Abmeldevorgang](authentication-and-authorization-images/sign-out.png)
 
 **Abbildung 9-3:** Allgemeine Übersicht über den Abmeldevorgang
 
@@ -288,7 +288,7 @@ Diese Methode erstellt den URI für den [Autorisierungs Endpunkt](https://identi
 
 Der zurückgegebene URI wird in der- `LoginUrl` Eigenschaft der- `LoginViewModel` Klasse gespeichert. Wenn die- `IsLogin` Eigenschaft wird `true` , [`WebView`](xref:Xamarin.Forms.WebView) wird der in der `LoginView` sichtbar. Die `WebView` [`Source`](xref:Xamarin.Forms.WebView.Source) -Eigenschaft bindet die-Eigenschaft an die `LoginUrl` -Eigenschaft der `LoginViewModel` -Klasse und führt daher eine Anmelde Anforderung an identityserver aus, wenn die `LoginUrl` -Eigenschaft auf den Autorisierungs Endpunkt von identityserver festgelegt ist. Wenn identityserver diese Anforderung empfängt und der Benutzer nicht authentifiziert ist, `WebView` wird der an die konfigurierte Anmeldeseite umgeleitet, die in Abbildung 9-4 dargestellt wird.
 
-![](authentication-and-authorization-images/login.png "Login page displayed by the WebView")
+![Von der WebView angezeigte Anmeldeseite](authentication-and-authorization-images/login.png)
 
 **Abbildung 9-4:** Von der WebView angezeigte Anmeldeseite
 
@@ -388,7 +388,7 @@ Weitere Informationen zur Seitennavigation finden Sie unter [Navigation](~/xamar
 > [!NOTE]
 > Eshoponcontainers ermöglicht außerdem eine Mock-Abmeldung, wenn die APP für die Verwendung von mockdiensten in der settingsview konfiguriert ist. In diesem Modus kommuniziert die APP nicht mit identityserver und löscht stattdessen alle gespeicherten Token aus den Anwendungseinstellungen.
 
-## <a name="authorization"></a>Authorization
+## <a name="authorization"></a>Autorisierung
 
 Nach der Authentifizierung müssen ASP.net Core Web-APIs oft den Zugriff autorisieren, sodass ein Dienst APIs für einige authentifizierte Benutzer verfügbar machen kann, aber nicht für alle.
 
@@ -409,7 +409,7 @@ Wenn ein nicht autorisierter Benutzer versucht, auf einen Controller oder eine A
 
 Identityserver kann in den Autorisierungs Workflow integriert werden, sodass die Zugriffs Token, die es bereitstellt, die Autorisierung steuern. Diese Vorgehensweise ist in Abbildung 9-5 dargestellt.
 
-![](authentication-and-authorization-images/authorization.png "Authorization by access token")
+![Autorisierung durch Zugriffs Token](authentication-and-authorization-images/authorization.png)
 
 **Abbildung 9-5:** Autorisierung durch Zugriffs Token
 

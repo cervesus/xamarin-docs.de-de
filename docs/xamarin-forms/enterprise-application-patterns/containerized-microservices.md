@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3ebd3940cbd61342977bde60addc773460a08854
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3f85c6528a1bf599c38a39b4e88400bc8b0c4f05
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569568"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931988"
 ---
 # <a name="containerized-microservices"></a>Containermicroservices
 
@@ -23,7 +23,7 @@ Die Entwicklung von Client-Server-Anwendungen führte zu einem Schwerpunkt auf d
 
 Insbesondere in Bezug auf das Alter der Cloud besteht darin, dass einzelne Komponenten nicht problemlos skaliert werden können. Eine monolithische Anwendung enthält domänenspezifische Funktionen und wird in der Regel durch funktionale Ebenen wie Front-End, Geschäftslogik und Datenspeicher aufgeteilt. Eine monolithische Anwendung wird skaliert, indem die gesamte Anwendung auf mehreren Computern geklont wird, wie in Abbildung 8-1 dargestellt.
 
-![](containerized-microservices-images/monolithicapp.png "Monolithic application scaling approach")
+![Monolithischer Anwendungs Skalierungs Ansatz](containerized-microservices-images/monolithicapp.png)
 
 **Abbildung 8-1**: monolithischer Ansatz bei der Anwendungs Skalierung
 
@@ -33,7 +33,7 @@ Microservices bieten einen anderen Ansatz für die Entwicklung und Bereitstellun
 
 Im Vergleich zu riesigen monolithischen Anwendungen, die eine gemeinsame Skalierung durchgeführt haben, kann die Skalierung von-Diensten unabhängig voneinander Dies bedeutet, dass ein bestimmter Funktionsbereich, der eine höhere Verarbeitungsleistung oder Netzwerkbandbreite erfordert, zur Unterstützung von Anforderungen skaliert werden kann, anstatt unnötige horizontale Skalierung für andere Bereiche der Anwendung zu erfordern. In Abbildung 8-2 wird dieser Ansatz veranschaulicht, bei dem microservices unabhängig bereitgestellt und skaliert werden, indem Instanzen von Diensten auf mehreren Computern erstellt werden.
 
-![](containerized-microservices-images/microservicesapp.png "Microservices application scaling approach")
+![Microservices-Skalierungs Ansatz für Anwendungen](containerized-microservices-images/microservicesapp.png)
 
 **Abbildung 8-2**: Skalieren der Skalierungs Methode für microservices
 
@@ -67,7 +67,7 @@ Ein Container ist eine isolierte, Ressourcen gesteuerte und tragbare Betriebsumg
 
 Es gibt viele Ähnlichkeiten zwischen Containern und virtuellen Computern, wie in Abbildung 8-3 dargestellt.
 
-![](containerized-microservices-images/containersvsvirtualmachines.png "Microservices application scaling approach")
+![Microservices-Skalierungs Ansatz für Anwendungen](containerized-microservices-images/containersvsvirtualmachines.png)
 
 **Abbildung 8-3**: Vergleich von virtuellen Computern und Containern
 
@@ -87,7 +87,7 @@ Unternehmen nehmen bei der Implementierung von auf einem Dienst basierenden Anwe
 
 Die eshoponcontainers-Referenz Anwendung verwendet docker zum Hosten von vier containerisierten Back-End-microservices, wie in Abbildung 8-4 dargestellt.
 
-![](containerized-microservices-images/microservicesarchitecture.png "eShopOnContainers reference application back-end microservices")
+![eshoponcontainers Referenz für Anwendungs-Back-End-mikrodienste](containerized-microservices-images/microservicesarchitecture.png)
 
 **Abbildung 8-4**: eshoponcontainers Referenz für Anwendungs-Back-End-mikrodienste
 
@@ -101,7 +101,7 @@ Weitere Informationen zur Referenz Anwendung finden Sie unter [.net-microservice
 
 Der eshoponcontainers-Mobile App kommuniziert mit den containerisierten Back-End-microservices mithilfe der direkten Kommunikation zwischen *Client und microservice* , wie in Abbildung 8-5 dargestellt.
 
-![](containerized-microservices-images/directclienttomicroservicecommunication.png "Microservices application scaling approach")
+![Microservices-Skalierungs Ansatz für Anwendungen](containerized-microservices-images/directclienttomicroservicecommunication.png)
 
 **Abbildung 8-5**: direkte Kommunikation zwischen Client und verwaltdienst
 
@@ -120,19 +120,19 @@ Die asynchrone Messaging basierte ereignisgesteuerte Kommunikation ist wichtig, 
 
 Ein Ereignisbus ermöglicht das Veröffentlichen/Abonnieren der Kommunikation zwischen-Diensten, ohne dass die Komponenten einander explizit erkennen müssen, wie in Abbildung 8-6 dargestellt.
 
-![](containerized-microservices-images/eventbus.png "Publish-subscribe with an event bus")
+![Veröffentlichen: abonnieren mit einem Ereignisbus](containerized-microservices-images/eventbus.png)
 
 **Abbildung 8-6:** Veröffentlichen: abonnieren mit einem Ereignisbus
 
 Aus Anwendungs Sicht ist der Ereignisbus einfach ein veröffentlichen-abonnieren-Kanal, der über eine Schnittstelle verfügbar gemacht wird. Die Art und Weise, in der der Ereignisbus implementiert ist, kann jedoch variieren. Beispielsweise könnte eine Ereignisbus Implementierung rabbitmq, Azure Service Bus oder andere Dienst Busse wie nServiceBus und masstransit verwenden. In Abbildung 8-7 wird gezeigt, wie ein Ereignisbus in der eshoponcontainers-Referenz Anwendung verwendet wird.
 
-![](containerized-microservices-images/microservicesarchitecturewitheventbus.png "Asynchronous event-driven communication in the reference application")
+![Asynchrone ereignisgesteuerte Kommunikation in der Referenz Anwendung](containerized-microservices-images/microservicesarchitecturewitheventbus.png)
 
 **Abbildung 8-7:** Asynchrone ereignisgesteuerte Kommunikation in der Referenz Anwendung
 
 Der mit rabbitmq implementierte eshoponcontainers-Ereignisbus bietet eine 1: n-Funktion für asynchrone Veröffentlichung/abonnieren. Dies bedeutet, dass nach dem Veröffentlichen eines Ereignisses mehrere Abonnenten auf dasselbe Ereignis lauschen können. In Abbildung 8-9 wird diese Beziehung veranschaulicht.
 
-![](containerized-microservices-images/eventdrivencommunication.png "One-to-many communication")
+![1: n-Kommunikation](containerized-microservices-images/eventdrivencommunication.png)
 
 **Abbildung 8-9**: 1: n-Kommunikation
 

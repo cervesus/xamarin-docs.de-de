@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 7005b7a675af084db6d0563acd3ba4b9c0190832
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 4da0bd1c47c37430b278bed46f658b935a502e2d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572363"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937877"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Einheitliche Storyboards in xamarin. IOS
 
@@ -33,7 +33,7 @@ Geräte werden von Größenklassen in vertikalen und horizontalen Achsen definie
 
 Wenn die beiden Konzepte gleichzeitig verwendet werden, ist das Ergebnis ein 2 x 2-Raster, in dem die verschiedenen möglichen Größen definiert werden, die in den unterschiedlichen Ausrichtungen verwendet werden können, wie in der folgenden Abbildung dargestellt:
 
- [![](unified-storyboards-images/sizeclassgrid.png "A 2 x 2 grid that defines the different possible sizes that can be used in Regular and Compact orientations")](unified-storyboards-images/sizeclassgrid.png#lightbox)
+ [![Ein 2 x 2-Raster, das die verschiedenen möglichen Größen definiert, die in regulären und kompakten Ausrichtungen verwendet werden können](unified-storyboards-images/sizeclassgrid.png)](unified-storyboards-images/sizeclassgrid.png#lightbox)
 
 Der Entwickler kann einen Ansichts Controller erstellen, der eine der vier Möglichkeiten verwendet, die zu unterschiedlichen Layouts führen würden (wie in der obigen Grafik zu sehen).
 
@@ -41,13 +41,13 @@ Der Entwickler kann einen Ansichts Controller erstellen, der eine der vier Mögl
 
 Das iPad verfügt aufgrund der Größe über eine **reguläre** Klassengröße für beide Ausrichtungen.
 
- [![](unified-storyboards-images/image1.png "iPad Size Classes")](unified-storyboards-images/image1.png#lightbox)
+ [![iPad size-Klassen](unified-storyboards-images/image1.png)](unified-storyboards-images/image1.png#lightbox)
 
 ### <a name="iphone-size-classes"></a>iPhone size-Klassen
 
 Basierend auf der Ausrichtung des Geräts hat das iPhone verschiedene Größenklassen:
 
- [![](unified-storyboards-images/iphonesizeclasses.png "iPhone Size Classes")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
+ [![iPhone size-Klassen](unified-storyboards-images/iphonesizeclasses.png)](unified-storyboards-images/iphonesizeclasses.png#lightbox)
 
 - Wenn sich das Gerät im Hochformat befindet, hat der Bildschirm eine **kompakte** Klasse horizontal **und vertikal vertikal** .
 - Wenn sich das Gerät im Querformat befindet, werden die Bildschirm Klassen aus dem Hochformat Modus zurückgesetzt.
@@ -56,7 +56,7 @@ Basierend auf der Ausrichtung des Geräts hat das iPhone verschiedene Größenkl
 
 Die Größen sind identisch mit den früheren iPhones, wenn Sie in der Hochformat Ausrichtung, aber unterschiedlich sind:
 
-[![](unified-storyboards-images/iphone6sizeclasses.png "iPhone 6 Plus Size Classes")](unified-storyboards-images/iphone6sizeclasses.png#lightbox)
+[![iPhone 6 Plus Size-Klassen](unified-storyboards-images/iphone6sizeclasses.png)](unified-storyboards-images/iphone6sizeclasses.png#lightbox)
 
 Da das iPhone 6 Plus über einen ausreichend großen Bildschirm verfügt, kann es im Querformat eine Klasse mit regulärer Breite sein.
 
@@ -100,7 +100,7 @@ Der Entwickler verwendet die von einer Merkmals Umgebung zurückgegebene Merkmal
 
 Alle Merkmals Umgebungen machen eine Hierarchie wie in der folgenden Abbildung dargestellt:
 
- [![](unified-storyboards-images/viewhierarchy.png "The Trait Environments hierarchy diagram")](unified-storyboards-images/viewhierarchy.png#lightbox)
+ [![Das Hierarchie Diagramm für Merkmals Umgebungen](unified-storyboards-images/viewhierarchy.png)](unified-storyboards-images/viewhierarchy.png#lightbox)
 
 Die Merkmals Auflistung, die in den obigen Merkmals Umgebungen vorhanden ist, wird standardmäßig von der übergeordneten zur untergeordneten Umgebung geleitet.
 
@@ -115,7 +115,7 @@ Im folgenden finden Sie eine typische Merkmals Auflistung, die dem Entwickler m�
 |Eigenschaft|Wert|
 |--- |--- |
 |`HorizontalSizeClass`|Kompakt|
-|`VerticalSizeClass`|Regular|
+|`VerticalSizeClass`|Regulär|
 |`UserInterfaceIdom`|Phone|
 |`DisplayScale`|2.0|
 
@@ -188,17 +188,17 @@ Wenn sich ein iPhone im Querformat befindet, zeigt der Split View Controller sei
 
 Merkmals Umgebungen werden aus dem übergeordneten Container nach unten zu den untergeordneten Containern kaskadiert, wie in der folgenden Abbildung dargestellt, die einen Split View Controller auf einem iPad im Querformat anzeigt:
 
- [![](unified-storyboards-images/cascadingclasses01.png "A Split View Controller on an iPad in the landscape orientation")](unified-storyboards-images/cascadingclasses01.png#lightbox)
+ [![Einen geteilten Ansichts Controller auf einem iPad im Querformat](unified-storyboards-images/cascadingclasses01.png)](unified-storyboards-images/cascadingclasses01.png#lightbox)
 
 Da das iPad sowohl in horizontaler als auch vertikaler Ausrichtung über eine reguläre Größenklasse verfügt, werden in der geteilten Ansicht sowohl die Master-als auch die Detailansicht angezeigt.
 
 Auf einem iPhone, bei dem die Size-Klasse in beiden Ausrichtungen kompakt ist, zeigt der Split View Controller nur die Detailansicht an, wie unten gezeigt:
 
- [![](unified-storyboards-images/cascadingclasses02.png "The Split View Controller only displays the detail view")](unified-storyboards-images/cascadingclasses02.png#lightbox)
+ [![Der Split View Controller zeigt nur die Detailansicht an.](unified-storyboards-images/cascadingclasses02.png)](unified-storyboards-images/cascadingclasses02.png#lightbox)
 
 In einer Anwendung, in der der Entwickler sowohl die Master-als auch die Detailansicht auf einem iPhone im Querformat anzeigen möchte, muss der Entwickler einen übergeordneten Container für den Split View Controller einfügen und die Merkmals Auflistung überschreiben. Wie in der Abbildung unten gezeigt:
 
- [![](unified-storyboards-images/cascadingclasses03.png "The developer must insert a parent container for the Split View Controller and override the Trait Collection")](unified-storyboards-images/cascadingclasses03.png#lightbox)
+ [![Der Entwickler muss einen übergeordneten Container für den Split View Controller einfügen und die Merkmals Auflistung außer Kraft setzen.](unified-storyboards-images/cascadingclasses03.png)](unified-storyboards-images/cascadingclasses03.png#lightbox)
 
 Ein `UIView` wird als übergeordnetes Element des Split View-Controllers festgelegt, und die- `SetOverrideTraitCollection` Methode wird für die Ansicht aufgerufen, die eine neue Merkmals Auflistung übergibt und den Split View Controller als Ziel verwendet. Die neue Merkmals Auflistung überschreibt das `HorizontalSizeClass` , indem es auf festgelegt wird `Regular` , sodass der Split View Controller sowohl die Master-als auch die Detailansicht auf einem iPhone in der Querformat Ansicht anzeigt.
 
@@ -208,7 +208,7 @@ Beachten Sie, dass `VerticalSizeClass` auf festgelegt wurde `unspecified` , wodu
 
 In diesem Abschnitt wird ausführlich erläutert, wie sich die Merkmals Auflistungen bei der Änderung der Merkmals Umgebung übernehmen. Dies ist beispielsweise der Fall, wenn das Gerät von Hochformat in Querformat gedreht wird.
 
- [![](unified-storyboards-images/traittransitions01.png "The portrait to landscape Trait Changes overview")](unified-storyboards-images/traittransitions01.png#lightbox)
+ [![Übersicht über die Merkmale von hoch-zu Querformat Änderungen](unified-storyboards-images/traittransitions01.png)](unified-storyboards-images/traittransitions01.png#lightbox)
 
 Zuerst führt IOS 8 einige Setup Schritte aus, um den Übergang vorzubereiten. Im nächsten Schritt animiert das System den Übergangsstatus. Schließlich bereinigt IOS 8 alle temporären Zustände, die während des Übergangs erforderlich sind.
 
@@ -216,7 +216,7 @@ IOS 8 bietet mehrere Rückrufe, mit denen der Entwickler an der Merkmals Änderu
 
 |Phase|Rückruf|Beschreibung|
 |--- |--- |--- |
-|Einrichten|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Diese Methode wird zu Beginn einer Merkmals Änderung aufgerufen, bevor eine Merkmals Auflistung auf Ihren neuen Wert festgelegt wird.</li><li>Die-Methode wird aufgerufen, wenn sich der Wert der Merkmals Auflistung geändert hat, aber bevor eine Animation stattfindet.</li></ul>|
+|Setup|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Diese Methode wird zu Beginn einer Merkmals Änderung aufgerufen, bevor eine Merkmals Auflistung auf Ihren neuen Wert festgelegt wird.</li><li>Die-Methode wird aufgerufen, wenn sich der Wert der Merkmals Auflistung geändert hat, aber bevor eine Animation stattfindet.</li></ul>|
 |Animation|`WillTransitionToTraitCollection`|Der Übergangs Koordinator, der an diese Methode weitergegeben wird, verfügt über eine- `AnimateAlongside` Eigenschaft, die es dem Entwickler ermöglicht, Animationen hinzuzufügen, die zusammen mit den Standard Animationen ausgeführt werden.|
 |Bereinigung|`WillTransitionToTraitCollection`|Stellt eine Methode bereit, mit der Entwickler ihren eigenen Bereinigungs Code nach der Umstellung einschließen können.|
 
@@ -257,7 +257,7 @@ Entwickler können `ShowViewController` und `ShowDetailViewController` in ihren 
 
 In diesem Abschnitt wird erläutert, wie diese Methoden tatsächlich in ios 8 implementiert werden. Zuerst sehen wir uns die neue `GetTargetForAction` Methode an:
 
- [![](unified-storyboards-images/gettargetforaction.png "The new GetTargetForAction method")](unified-storyboards-images/gettargetforaction.png#lightbox)
+ [![Die neue gettargetforaction-Methode](unified-storyboards-images/gettargetforaction.png)](unified-storyboards-images/gettargetforaction.png#lightbox)
 
 Diese Methode durchläuft die Hierarchie Kette, bis der richtige Container Ansichts Controller gefunden wird. Beispiel:
 
@@ -292,7 +292,7 @@ Sehen wir uns nun genauer an, wie das Projekt für Adaptive Fotos mehrere der Gr
 
 Beim Ausführen der Anwendung für Adaptive Fotos auf einem iPhone zeigt der Split View Controller sowohl die Master-als auch die Detailansicht an, wenn der Benutzer das Gerät vom Hochformat in das Querformat dreht:
 
- [![](unified-storyboards-images/rotation.png "The Split View Controller will display both the master and details view as seen here")](unified-storyboards-images/rotation.png#lightbox)
+ [![Der geteilte Ansichts Controller zeigt die Master-und Detailansicht an, wie hier zu sehen ist.](unified-storyboards-images/rotation.png)](unified-storyboards-images/rotation.png#lightbox)
 
 Dies wird erreicht, indem die `UpdateConstraintsForTraitCollection` -Methode des Ansichts Controllers überschrieben und die Einschränkungen basierend auf dem Wert von angepasst werden `VerticalSizeClass` . Beispiel:
 
@@ -566,11 +566,11 @@ Standardmäßig werden in jedem neuen xamarin. IOS-Projektgrößen Klassen verwe
 
 Öffnen Sie hierzu das Storyboard, das in den IOS-Designer konvertiert werden soll, und aktivieren Sie das Kontrollkästchen **use size Classes** :
 
- [![](unified-storyboards-images/sizeclass01.png "The Use Size Classes check box")](unified-storyboards-images/sizeclass01.png#lightbox)
+ [![Das Kontrollkästchen "Größenklassen verwenden"](unified-storyboards-images/sizeclass01.png)](unified-storyboards-images/sizeclass01.png#lightbox)
 
 Der IOS-Designer bestätigt, dass der Entwickler das Format des Storyboards für die Verwendung von Größenklassen konvertieren möchte:
 
- [![](unified-storyboards-images/sizeclass02.png "The use Size Classes alert")](unified-storyboards-images/sizeclass02.png#lightbox)
+ [![Die Warnung "Größenklassen verwenden"](unified-storyboards-images/sizeclass02.png)](unified-storyboards-images/sizeclass02.png#lightbox)
 
 > [!IMPORTANT]
 > Das automatische Layout muss auch darauf geprüft werden, dass Größenklassen ordnungsgemäß funktionieren.
@@ -579,41 +579,41 @@ Der IOS-Designer bestätigt, dass der Entwickler das Format des Storyboards für
 
 Nachdem das Storyboard in die Verwendung von Größenklassen konvertiert wurde, wird es in der Designoberfläche erneut angezeigt, und die **Ansicht als** Gerät ist generisch:
 
- [![](unified-storyboards-images/sizeclass03.png "View as a Generic device type")](unified-storyboards-images/sizeclass03.png#lightbox)
+ [![Als generischen Gerätetyp anzeigen](unified-storyboards-images/sizeclass03.png)](unified-storyboards-images/sizeclass03.png#lightbox)
 
 Wenn der generische Gerätetyp ausgewählt ist, werden alle Ansichts Controller in ein 600 x 600-Quadrat geändert. Dieses Quadrat stellt die Größen beliebiger Breite und beliebiger Höhe dar. Wenn sich der IOS-Designer in diesem Modus befindet, werden alle bearbeitbaren Änderungen auf alle Größenklassen angewendet.
 
 Der Entwickler hat auch die Möglichkeit, die Entwurfs Oberfläche als iPhone anzuzeigen:
 
- [![](unified-storyboards-images/sizeclass04.png "Viewing the design surface as an iPhone")](unified-storyboards-images/sizeclass04.png#lightbox)
+ [![Anzeigen der Entwurfs Oberfläche als iPhone](unified-storyboards-images/sizeclass04.png)](unified-storyboards-images/sizeclass04.png#lightbox)
 
 Oder als iPad anzeigen:
 
- [![](unified-storyboards-images/sizeclass05.png "Viewing the design surface as an iPad")](unified-storyboards-images/sizeclass05.png#lightbox)
+ [![Anzeigen der Entwurfs Oberfläche als iPad](unified-storyboards-images/sizeclass05.png)](unified-storyboards-images/sizeclass05.png#lightbox)
 
 ### <a name="select-a-size-class"></a>Size-Klasse auswählen
 
 Die Auswahl Schaltfläche "Größenklasse" befindet sich in der linken oberen Ecke des Designoberfläche (in der Nähe der Dropdown Liste "Ansicht"). Sie ermöglicht es dem Entwickler, auszuwählen, welche Größenklassen aktuell bearbeitet werden:
 
- [![](unified-storyboards-images/sizeclass06.png "Select a Size Class")](unified-storyboards-images/sizeclass06.png#lightbox)
+ [![Size-Klasse auswählen](unified-storyboards-images/sizeclass06.png)](unified-storyboards-images/sizeclass06.png#lightbox)
 
 Der Selektor zeigt die Auswahl der Größenklasse als 3 x 3-Raster an. Jedes der Quadrate im Raster stellt eine Kombination aus einer Width-Klasse und einer Height-Klasse dar. Das mittlere Quadrat wählt die Klasse beliebige Breite/beliebige Höhen Größe aus (Dies ist die Standardansicht für ein einheitliches Storyboard). Wenn dieses Quadrat ausgewählt ist, bearbeitet der Entwickler das Standardlayout, das von allen anderen Konfigurationen geerbt wird.
 
 Das Quadrat in der oberen linken Ecke des Rasters stellt die Klasse Compact Width/Compact Height size dar:
 
- [![](unified-storyboards-images/sizeclass07.png "The Compact Width/Compact Height Size Class")](unified-storyboards-images/sizeclass07.png#lightbox)
+ [![Die Compact Width/Compact Height size-Klasse](unified-storyboards-images/sizeclass07.png)](unified-storyboards-images/sizeclass07.png#lightbox)
 
 Dieser Modus entspricht einem iPhone in der Querformat Ausrichtung. Das Quadrat in der unteren rechten Ecke des Rasters stellt die reguläre Width/Regular Height size-Klasse dar, die ein iPad darstellt:
 
- [![](unified-storyboards-images/sizeclass08.png "The Regular Width/Regular Height Size Class")](unified-storyboards-images/sizeclass08.png#lightbox)
+ [![Die reguläre Width/Regular Height size-Klasse.](unified-storyboards-images/sizeclass08.png)](unified-storyboards-images/sizeclass08.png#lightbox)
 
 Um das Layout für ein iPhone im Hochformat zu bearbeiten, wählen Sie das Quadrat in der unteren linken Ecke aus. Dies stellt die Klasse "Compact Width/Regular Height size" dar:
 
- [![](unified-storyboards-images/sizeclass09.png "The Compact Width/Regular Height Size Class")](unified-storyboards-images/sizeclass09.png#lightbox)
+ [![Die Klasse "Compact Width/Regular Height size"](unified-storyboards-images/sizeclass09.png)](unified-storyboards-images/sizeclass09.png#lightbox)
 
 Klicken Sie in das Quadrat, um es auszuwählen, und die Designoberfläche die Größe der Ansichts Controller so ändern, dass Sie der neuen Auswahl entspricht:
 
- [![](unified-storyboards-images/sizeclass10.png "The Design Surface will change the size of the View Controllers to match the new selection as shown")](unified-storyboards-images/sizeclass10.png#lightbox)
+ [![Der Designoberfläche ändert die Größe der Ansichts Controller so, dass Sie der neuen Auswahl entspricht, wie hier gezeigt.](unified-storyboards-images/sizeclass10.png)](unified-storyboards-images/sizeclass10.png#lightbox)
 
 Weitere Informationen zu Größenklassen und deren Auswirkungen auf das Layout von iPhones und iPads finden Sie im Abschnitt Größenklasse dieses Artikels.
 
@@ -628,49 +628,49 @@ Sehen Sie sich das Beispiel einer IOS 8-Anwendung an, die ein einheitliches Stor
 
 Um diesen Effekt zu erzielen, klicken Sie im IOS-Designer-Steuerelement auf die Schaltfläche, und ziehen Sie eine Linie zum Ansichts Controller, die angezeigt werden soll. Wenn die Maustaste losgelassen wird, wählen Sie `Show Detail` im Popup Menü segue-Typ aus:
 
- [![](unified-storyboards-images/segue01.png "Select Show Detail from the Segue Type Popup menu")](unified-storyboards-images/segue01.png#lightbox)
+ [![Wählen Sie im popuppopup-Popup Menü die Option Details anzeigen aus.](unified-storyboards-images/segue01.png)](unified-storyboards-images/segue01.png#lightbox)
 
 Der neue seegue wird zwischen der Schaltfläche und dem Ansichts Controller erstellt. Führen Sie die Anwendung jetzt im iPhone-Simulator aus, und das Hauptmenü wird angezeigt:
 
- [![](unified-storyboards-images/segue02.png "The Main Menu")](unified-storyboards-images/segue02.png#lightbox)
+ [![Das Hauptmenü](unified-storyboards-images/segue02.png)](unified-storyboards-images/segue02.png#lightbox)
 
 Klicken Sie auf die Schaltfläche " **Spiel auswählen** ", und der Ansichts Controller des Elements wird auf dem Navigations Stapel abgelegt:
 
- [![](unified-storyboards-images/segue03.png "The items View Controller will be pushed onto the Navigation Stack as shown")](unified-storyboards-images/segue03.png#lightbox)
+ [![Der Ansichts Controller der Elemente wird wie hier dargestellt auf den Navigations Stapel verschoben.](unified-storyboards-images/segue03.png)](unified-storyboards-images/segue03.png#lightbox)
 
 Starten Sie den iPhone-Simulator, und führen Sie die Anwendung im iPad-Simulator aus. Wechseln Sie zum Querformat, und das Hauptmenü wird erneut angezeigt:
 
- [![](unified-storyboards-images/segue04.png "The main menu displayed")](unified-storyboards-images/segue04.png#lightbox)
+ [![Das Hauptmenü wird angezeigt.](unified-storyboards-images/segue04.png)](unified-storyboards-images/segue04.png#lightbox)
 
 Klicken Sie erneut auf die Schaltfläche " **Spiel auswählen** ", und der Ansichts Controller des Elements wird im Abschnitt "Details" des Controllers "Split View Controller" angezeigt:
 
- [![](unified-storyboards-images/segue05.png "The items View Controller shown in the Details section of the Split View Controller")](unified-storyboards-images/segue05.png#lightbox)
+ [![Der Element Ansichts Controller, der im Detail Abschnitt des geteilten Ansichts Controllers angezeigt wird.](unified-storyboards-images/segue05.png)](unified-storyboards-images/segue05.png#lightbox)
 
 ### <a name="excluding-an-element-from-a-size-class"></a>Ausschließen eines Elements aus einer Size-Klasse
 
 Es gibt Zeiten, in denen ein angegebenes Element (z. b. eine Sicht, ein Steuerelement oder eine Einschränkung) nicht innerhalb einer bestimmten Größenklasse erforderlich ist. Um ein Element aus einer Größenklasse auszuschließen, wählen Sie das gewünschte Element aus, das im **Designoberfläche**ausgeschlossen werden soll. Scrollen Sie zum unteren Rand des **Eigenschaften-Explorers** , und klicken Sie auf das Dropdown Menü " **Zahnrad** ". Wählen Sie die Kombination aus **Breite** und **Höhe** aus, von der das Element ausgeschlossen werden soll:
 
-[![](unified-storyboards-images/exclude-a.png "Select the combination of Width and Height")](unified-storyboards-images/exclude-a.png#lightbox)
+[![Kombination aus Breite und Höhe auswählen](unified-storyboards-images/exclude-a.png)](unified-storyboards-images/exclude-a.png#lightbox)
 
 Dem Element unten im **Eigenschaften-Explorer**wird ein neuer *Ausschluss Fall* hinzugefügt. Deaktivieren Sie als nächstes das Kontrollkästchen **installiert** für die angegebene size-Klasse:
 
-[![](unified-storyboards-images/exclude-b.png "Uncheck the Installed checkbox")](unified-storyboards-images/exclude-b.png#lightbox)
+[![Deaktivieren Sie das Kontrollkästchen installiert.](unified-storyboards-images/exclude-b.png)](unified-storyboards-images/exclude-b.png#lightbox)
 
 Wechseln Sie die Designoberfläche zu der Breite und Höhe, von der das Element ausgeschlossen wurde. es wurde aus der angegebenen Größenklasse entfernt, jedoch nicht mit dem gesamten Benutzeroberflächen Entwurf:
 
- [![](unified-storyboards-images/exclude02.png "Switch the Design Surface to the Width and Height that the item was excluded from")](unified-storyboards-images/exclude02.png#lightbox)
+ [![Die Designoberfläche wird in die Breite und Höhe gewechselt, von der das Element ausgeschlossen wurde.](unified-storyboards-images/exclude02.png)](unified-storyboards-images/exclude02.png#lightbox)
 
 Wechseln zurück zur beliebigen Width/any Height size-Klasse, und das-Element ist noch vorhanden:
 
- [![](unified-storyboards-images/exclude03.png "Switching back to the Any Width/Any Height size class")](unified-storyboards-images/exclude03.png#lightbox)
+ [![Zurück wechseln zur beliebigen Width/any Height size-Klasse](unified-storyboards-images/exclude03.png)](unified-storyboards-images/exclude03.png#lightbox)
 
 Wenn die Anwendung im iPad-Simulator ausgeführt wird, wird das-Element angezeigt:
 
- [![](unified-storyboards-images/exclude04.png "The element shown when the running app in the iPad Simulator")](unified-storyboards-images/exclude04.png#lightbox)
+ [![Das Element, das angezeigt wird, wenn die laufende App im iPad-Simulator](unified-storyboards-images/exclude04.png)](unified-storyboards-images/exclude04.png#lightbox)
 
 Wenn die Anwendung auf dem iPhone-Simulator ausgeführt wird, fehlt das-Element:
 
- [![](unified-storyboards-images/exclude05.png "The element missing when the running app in the iPhone Simulator")](unified-storyboards-images/exclude05.png#lightbox)
+ [![Das Element, das bei der Ausführung der APP im iPhone-Simulator fehlt.](unified-storyboards-images/exclude05.png)](unified-storyboards-images/exclude05.png#lightbox)
 
 Um einen Ausschluss Fall aus einem Element zu entfernen, wählen Sie einfach das Element im **Designoberfläche**aus, Scrollen Sie zum unteren Rand des **Eigenschaften-Explorers** , und klicken Sie auf die **-** Schaltfläche neben dem Fall, den Sie entfernen möchten.
 
@@ -695,53 +695,53 @@ Dynamische Startbildschirme haben folgende Einschränkungen und Überlegungen:
 
 Beachten Sie bei den obigen Richtlinien, wie Sie einem vorhandenen xamarin IOS 8-Projekt einen dynamischen Startbildschirm hinzufügen.
 
-Gehen Sie folgendermaßen vor:
+Gehen Sie wie folgt vor:
 
 1. Öffnen Sie **Visual Studio für Mac** , und **Laden Sie die Projekt Mappe, um** den dynamischen Startbildschirm hinzuzufügen.
 2. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf die `MainStoryboard.storyboard` Datei, und wählen Sie **mit**  >  **Xcode Interface Builder**öffnen:
 
-    [![](unified-storyboards-images/dls01.png "Open With Xcode Interface Builder")](unified-storyboards-images/dls01.png#lightbox)
+    [![Öffnen mit Xcode Interface Builder](unified-storyboards-images/dls01.png)](unified-storyboards-images/dls01.png#lightbox)
 3. Wählen Sie in Xcode die Option **Datei**  >  **neue**  >  **Datei...** aus:
 
-    [![](unified-storyboards-images/dls02.png "Select File / New")](unified-storyboards-images/dls02.png#lightbox)
+    [![Datei auswählen/neu](unified-storyboards-images/dls02.png)](unified-storyboards-images/dls02.png#lightbox)
 4. Wählen Sie **IOS**  >  -**Benutzeroberfläche**  >  **starten** aus, und klicken Sie auf die Schaltfläche **weiter** :
 
-    [![](unified-storyboards-images/dls03.png "Select iOS / User Interface / Launch Screen")](unified-storyboards-images/dls03.png#lightbox)
+    [![Wählen Sie IOS/Benutzeroberfläche/Startbildschirm aus.](unified-storyboards-images/dls03.png)](unified-storyboards-images/dls03.png#lightbox)
 5. Benennen Sie die Datei, `LaunchScreen.xib` und klicken Sie auf die Schaltfläche **Erstellen** :
 
-    [![](unified-storyboards-images/dls04.png "Name the file LaunchScreen.xib")](unified-storyboards-images/dls04.png#lightbox)
+    [![Benennen Sie die Datei "launchscreen. XIb".](unified-storyboards-images/dls04.png)](unified-storyboards-images/dls04.png#lightbox)
 6. Bearbeiten Sie das Design des Startbildschirms, indem Sie grafische Elemente hinzufügen und Layouteinschränkungen verwenden, um Sie für die angegebenen Geräte, Ausrichtungen und Bildschirmgrößen zu positionieren:
 
-    [![](unified-storyboards-images/dls05.png "Editing the design of the launch screen")](unified-storyboards-images/dls05.png#lightbox)
+    [![Bearbeiten des Entwurfs des Startbildschirms](unified-storyboards-images/dls05.png)](unified-storyboards-images/dls05.png#lightbox)
 7. Speichern Sie die Änderungen in `LaunchScreen.xib`.
 8. Wählen Sie das **Anwendungs Ziel** und die Registerkarte **Allgemein** aus:
 
-    [![](unified-storyboards-images/dls06.png "Select the Applications Target and the General tab")](unified-storyboards-images/dls06.png#lightbox)
+    [![Wählen Sie das Anwendungs Ziel und die Registerkarte Allgemein aus.](unified-storyboards-images/dls06.png)](unified-storyboards-images/dls06.png#lightbox)
 9. Klicken Sie auf die Schaltfläche **Info. plist auswählen** , wählen Sie `Info.plist` für die xamarin-App aus, und klicken Sie auf die Schaltfläche **auswählen** :
 
-    [![](unified-storyboards-images/dls07.png "Select the Info.plist for the Xamarin app")](unified-storyboards-images/dls07.png#lightbox)
+    [![Wählen Sie die Datei "Info. plist" für die xamarin-app.](unified-storyboards-images/dls07.png)](unified-storyboards-images/dls07.png#lightbox)
 10. Öffnen Sie im Abschnitt **App-Symbole und Start Bilder** die Dropdown Liste **Startbildschirm Datei** , und wählen Sie die `LaunchScreen.xib` oben erstellte aus:
 
-    [![](unified-storyboards-images/dls08.png "Choose the LaunchScreen.xib")](unified-storyboards-images/dls08.png#lightbox)
+    [![Wählen Sie den launchscreen. XIb aus.](unified-storyboards-images/dls08.png)](unified-storyboards-images/dls08.png#lightbox)
 11. Speichern Sie die Änderungen in der Datei, und kehren Sie zu Visual Studio für Mac zurück.
 12. Warten Sie, bis Visual Studio für Mac die Synchronisierung von Änderungen mit Xcode abgeschlossen haben.
 13. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den **Ressourcen** Ordner, und wählen Sie hinzufügen Dateien hinzu **fügen**  >  **...** aus:
 
-    [![](unified-storyboards-images/dls09.png "Select Add / Add Files...")](unified-storyboards-images/dls09.png#lightbox)
+    [![Wählen Sie Dateien hinzufügen/hinzufügen aus.](unified-storyboards-images/dls09.png)](unified-storyboards-images/dls09.png#lightbox)
 14. Wählen Sie die `LaunchScreen.xib` oben erstellte Datei aus, und klicken Sie auf **Öffnen** :
 
-    [![](unified-storyboards-images/dls10.png "Select the LaunchScreen.xib file")](unified-storyboards-images/dls10.png#lightbox)
+    [![Wählen Sie die Datei launchscreen. XIb aus.](unified-storyboards-images/dls10.png)](unified-storyboards-images/dls10.png#lightbox)
 15. Erstellen Sie die Anwendung.
 
 ### <a name="testing-the-dynamic-launch-screen"></a>Testen des dynamischen Startbildschirms
 
 Wählen Sie in Visual Studio für Mac den iPhone 4 Retina-Simulator aus, und führen Sie die Anwendung aus. Der dynamische Startbildschirm wird im richtigen Format und in der richtigen Ausrichtung angezeigt:
 
-[![](unified-storyboards-images/dls11.png "The Dynamic Launch Screen displayed in the vertical orientation")](unified-storyboards-images/dls11.png#lightbox)
+[![Der dynamische Startbildschirm, der in vertikaler Ausrichtung angezeigt wird.](unified-storyboards-images/dls11.png)](unified-storyboards-images/dls11.png#lightbox)
 
 Beenden Sie die Anwendung in Visual Studio für Mac, und wählen Sie ein iPad IOS 8-Gerät aus. Führen Sie die Anwendung aus, und der Startbildschirm wird ordnungsgemäß für dieses Gerät und die folgende Ausrichtung formatiert:
 
-[![](unified-storyboards-images/dls12.png "The Dynamic Launch Screen displayed in the horizontal orientation")](unified-storyboards-images/dls12.png#lightbox)
+[![Der dynamische Startbildschirm, der in horizontaler Ausrichtung angezeigt wird.](unified-storyboards-images/dls12.png)](unified-storyboards-images/dls12.png#lightbox)
 
 Kehren Sie zu Visual Studio für Mac zurück, und verhindern Sie die Ausführung der Anwendung.
 

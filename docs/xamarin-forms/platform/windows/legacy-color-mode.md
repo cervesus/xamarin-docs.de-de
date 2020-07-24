@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3bcbee04edbeebf3949673a53edde4200856f5c6
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f1c438ec182119ffda1fe73916cbd8e971d421ab
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132110"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929700"
 ---
 # <a name="visualelement-legacy-color-mode-on-windows"></a>Visualelement-Legacy Farb Modus unter Windows
 
@@ -53,7 +53,7 @@ Die- `VisualElement.On<Windows>` Methode gibt an, dass diese plattformspezifisch
 
 Das Ergebnis ist, dass der Legacy Farb Modus deaktiviert werden kann, sodass die Farben, die für eine Ansicht durch den Benutzer festgelegt sind, auch dann beibehalten werden, wenn die Ansicht deaktiviert ist:
 
-![](legacy-color-mode-images/legacy-color-mode-disabled.png "Legacy color mode disabled")
+![Legacy Farb Modus deaktiviert](legacy-color-mode-images/legacy-color-mode-disabled.png)
 
 > [!NOTE]
 > Wenn Sie [`VisualStateGroup`](xref:Xamarin.Forms.VisualStateGroup) für eine Ansicht festlegen, wird der Legacy Farb Modus vollständig ignoriert. Weitere Informationen zu visuellen Zuständen finden Sie [unter Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).

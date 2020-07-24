@@ -188,7 +188,7 @@ Einstellungen ermöglichen die Trennung von Daten, die das Verhalten einer App a
 
 Die XAM. Plugins. Settings-Bibliothek bietet eine konsistente, typsichere und plattformübergreifende Methode zum beibehalten und Abrufen von App-und Benutzereinstellungen, und die Datenbindung kann verwendet werden, um auf die mit der Bibliothek erstellten Einstellungen zuzugreifen.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
 - [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

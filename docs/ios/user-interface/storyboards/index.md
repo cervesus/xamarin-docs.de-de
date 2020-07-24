@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 0eead476fe7842ac326b61771776a83c7a35461c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b61d851e793d3fb0ae5e97718b151dd87f37da61
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567384"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937045"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Einführung in Storyboards in xamarin. IOS
 
@@ -22,7 +22,7 @@ Bevor das Storyboard-Dateiformat von Apple als visuelle Darstellung der Benutzer
 
 Ein Storyboard kann mit dem xamarin IOS-Designer erstellt, geöffnet und bearbeitet werden. In dieser Anleitung wird auch erläutert, wie Sie den Designer verwenden, um Storyboards zu erstellen, während Sie c# verwenden, um die Navigation zu programmieren.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Storyboards können mit Xcode, dem IOS-Designer in Visual Studio für Mac und Visual Studio 2019 mit installierter xamarin-Workloads verwendet werden.
 
@@ -30,7 +30,7 @@ Storyboards können mit Xcode, dem IOS-Designer in Visual Studio für Mac und Vi
 
 Ein Storyboard ist die visuelle Darstellung aller Bildschirme in einer Anwendung. Sie enthält eine Abfolge von Szenen, wobei jede Szene einen *Ansichts Controller* und seine *Ansichten*darstellt. Diese Sichten können Objekte und Steuer [Elemente](~/ios/user-interface/controls/index.md) enthalten, die dem Benutzer die Interaktion mit Ihrer Anwendung ermöglichen. Diese Auflistung von Sichten und Steuerelementen (oder *unter Ansichten*) wird als *Hierarchie der Inhaltsansicht*bezeichnet. Szenen sind durch Segue-Objekte verbunden, die einen Übergang zwischen Ansichts Controllern darstellen. Dies wird normalerweise erreicht, indem ein segue zwischen einem Objekt in der Anfangs Ansicht und der Verbindungs Ansicht erstellt wird. Die Beziehungen auf der Entwurfs Oberfläche werden in der folgenden Abbildung veranschaulicht:
 
- [![](images/storyboardsview.png "The relationships on the design surface are illustrated in this image")](images/storyboardsview.png#lightbox)
+ [![Die Beziehungen auf der Entwurfs Oberfläche sind in dieser Abbildung dargestellt.](images/storyboardsview.png)](images/storyboardsview.png#lightbox)
 
 Wie gezeigt, erstellt das Storyboard jeden Ihrer Szenen mit Inhalt, der bereits gerendert wird, und veranschaulicht die Verbindungen zwischen Ihnen.  An dieser Stelle ist zu beachten, dass bei Szenen auf einem iPhone sicher angenommen werden kann, dass eine *Szene* auf dem Storyboard einem *Bildschirm* mit Inhalt auf dem Gerät entspricht. Bei einem iPad kann es jedoch vorkommen, dass mehrere Szenen gleichzeitig angezeigt werden – z. b. mit einem popover-Ansichts Controller.
 
@@ -45,22 +45,22 @@ Der Inhalt eines Storyboards wird als XML-Datei gespeichert. Zum Zeitpunkt der E
 
 Ein *segue*-oder *segue-Objekt*wird in der IOS-Entwicklung verwendet, um einen Übergang zwischen Szenen darzustellen. Halten Sie die **STRG** -Taste gedrückt, und klicken Sie auf von einer Szene in eine andere, um einen "*" zu erstellen. Wenn wir die Maus ziehen, wird ein blauer Connector angezeigt, der angibt, wo der segue (wie in der folgenden Abbildung gezeigt) zu sehen ist:
 
- [![](images/createsegue.png "A blue connector appears, indicating where the segue will lead as demonstrated in this image")](images/createsegue.png#lightbox)
+ [![Es wird ein blauer Connector angezeigt, der angibt, wo der segue in dieser Abbildung gezeigt wird.](images/createsegue.png)](images/createsegue.png#lightbox)
 
 Bei einem Mausklick wird ein Menü angezeigt, in dem wir die Aktion für den segue auswählen können. Es kann etwa wie folgt aussehen:
 
 **Klassen vor IOS 8 und Größe**:
 
-[![](images/segue1.png "The Action Segue dropdown without Size Classes")](images/segue1.png#lightbox)
+[![Die Dropdown Liste für die Aktion "*" ohne Größenklassen](images/segue1.png)](images/segue1.png#lightbox)
 
 **Bei der Verwendung von Größenklassen und adaptiven Klassen**:
 
-[![](images/16new.png "The Action Segue dropdown with Size Classes")](images/16new.png#lightbox)
+[![Die Dropdown Liste "action *" mit Größenklassen](images/16new.png)](images/16new.png#lightbox)
 
 > [!IMPORTANT]
 > Wenn Sie VMware für Ihren virtuellen Windows-Computer verwenden, wird der Strg-Klick standardmäßig mit der _rechten Maustaste_ angezeigt. Um einen segue zu erstellen, bearbeiten Sie Ihre Tastatur Einstellungen über die **Einstellungen**  >  **Tastatur & Maus**  >  **Zeiger** Verknüpfungen, und ordnen Sie die **sekundäre Schaltfläche** neu zu, wie unten dargestellt:
 >
-> [![](images/image22.png "Keyboard and Mouse preference settings")](images/image22.png#lightbox)
+> [![Einstellungen für Tastatur und Mauseinstellungen](images/image22.png)](images/image22.png#lightbox)
 >
 > Sie sollten jetzt in der Lage sein, einen "seegue" zwischen den Ansichts Controllern als normal hinzuzufügen.
 
@@ -72,7 +72,7 @@ Es gibt verschiedene Arten von Übergängen, die jeweils steuern, wie ein neuer 
 - Entladen **– ein** Entlade-/zusicherungstyp kann verwendet werden, um durch einen Push-oder modalen Status zurückzukehren – z. b. durch Verwerfen des modalen dargestellten Ansichts Controllers. Darüber hinaus können Sie nicht nur einen, sondern auch eine Reihe von Push-und modalen aufrufen und mehrere Schritte in der Navigations Hierarchie mit einer einzelnen Entlade Aktion zurückgehen. Um zu erfahren, wie Sie eine Entlade-*-Entladung in ios verwenden, lesen Sie die Anleitung zum Erstellen von Entlade [Gründen](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
 - **Sourbstbston** – ein Ressourcen loser Wert gibt die Szene an, die den anfänglichen Ansichts Controller enthält, und daher die Ansicht, die der Benutzer zuerst sehen wird. Sie wird durch den unten gezeigten-Abschnitt dargestellt:  
 
-    [![](images/sourcelesssegue.png "A sourceless segue")](images/sourcelesssegue.png#lightbox)
+    [![Ein Quellen loser-Eintrag](images/sourcelesssegue.png)](images/sourcelesssegue.png#lightbox)
 
 ### <a name="adaptive-segue-types"></a>Adaptive Enumerationstypen
 
@@ -80,7 +80,7 @@ Es gibt verschiedene Arten von Übergängen, die jeweils steuern, wie ein neuer 
 
 Jede Anwendung, die Größenklassen verwendet, verwendet auch die neuen [*adaptiven Segues*](~/ios/user-interface/storyboards/unified-storyboards.md). Beachten Sie bei der Verwendung von Größenklassen, dass wir das Wetter nicht direkt angeben, dass wir ein iPhone oder iPad verwenden. Anders ausgedrückt: Wir erstellen eine Benutzeroberfläche, die immer gleich aussieht, unabhängig davon, wie viel tatsächlich Sie verwendet werden muss. Adaptive Kalender arbeiten daran, die Umgebung zu beurteilen und zu bestimmen, wie Inhalte am besten präsentiert werden. Die adaptiven-Sekunden sind unten dargestellt:
 
-[![](images/adaptivesegue.png "The Adaptive Segues dropdown")](images/adaptivesegue.png#lightbox)
+[![Die Dropdown Liste "Adaptive Sekunden"](images/adaptivesegue.png)](images/adaptivesegue.png#lightbox)
 
 |Segue|Beschreibung|
 |--- |--- |
@@ -132,11 +132,11 @@ Gelegentlich müssen Sie möglicherweise ein Storyboard zu einer zuvor nicht-Sto
 
 1. Erstellen Sie eine neue Storyboard-Datei, indem Sie zu **Datei > neue Datei > IOS > Storyboard**navigieren, wie unten dargestellt:
 
-    [![](images/new-storyboard-xs.png "The new file dialog")](images/new-storyboard-xs.png#lightbox)
+    [![Dialogfeld "neue Datei"](images/new-storyboard-xs.png)](images/new-storyboard-xs.png#lightbox)
 
 2. Fügen Sie den Storyboardnamen zum **Haupt Schnittstellen** Abschnitt der Datei " **Info. plist**" hinzu, wie unten dargestellt:
 
-    [![](images/infoplist.png "The Info.plist editor")](images/infoplist.png#lightbox)
+    [![Der Info. plist-Editor](images/infoplist.png)](images/infoplist.png#lightbox)
 
     Dies entspricht der Instanziierung des anfänglichen Ansichts Controllers in der- `FinishedLaunching` Methode innerhalb des App-Delegaten. Wenn diese Option festgelegt ist, instanziiert die Anwendung ein Fenster (siehe unten), lädt das Haupt Storyboard und weist eine Instanz des anfänglichen Ansichts Controllers des Storyboards (der neben dem sourloads-segue) als `RootViewController` Eigenschaft des Fensters zu. Anschließend wird das Fenster auf dem Bildschirm angezeigt.
 
@@ -153,11 +153,11 @@ Gelegentlich müssen Sie möglicherweise ein Storyboard zu einer zuvor nicht-Sto
 
 1. Erstellen Sie eine neue Storyboard-Datei, indem Sie mit der rechten Maustaste auf das Projekt klicken, um **> neue Datei > IOS > leeres Storyboard hinzuzufügen**, wie unten dargestellt:
 
-    [![](images/new-storyboard-vs.png "The new item dialog")](images/new-storyboard-vs.png#lightbox)
+    [![Das Dialogfeld "Neues Element"](images/new-storyboard-vs.png)](images/new-storyboard-vs.png#lightbox)
 
 2. Fügen Sie den Storyboardnamen zum **Haupt Schnittstellen** Abschnitt der IOS-Anwendung hinzu, wie unten dargestellt:
 
-    [![](images/ios-app.png "The Info.plist editor")](images/ios-app.png#lightbox)
+    [![Der Info. plist-Editor](images/ios-app.png)](images/ios-app.png#lightbox)
 
     Dies entspricht der Instanziierung des anfänglichen Ansichts Controllers in der- `FinishedLaunching` Methode innerhalb des App-Delegaten. Wenn diese Option festgelegt ist, instanziiert die Anwendung ein Fenster (siehe unten), lädt das Haupt Storyboard und weist eine Instanz des anfänglichen Ansichts Controllers des Storyboards (der neben dem sourloads-segue) als `RootViewController` Eigenschaft des Fensters zu. Anschließend wird das Fenster auf dem Bildschirm angezeigt.
 
@@ -184,37 +184,37 @@ Der folgende Screenshot zeigt zwei Ansichts Controller auf unserer Entwurfs Ober
 
 1. Fügen Sie einem vorhandenen Projekt Projekt ein _leeres iPhone-Storyboard_ hinzu:
 
-    [![](images/add-storyboard2.png "Adding storyboard")](images/add-storyboard2.png#lightbox)
+    [![Hinzufügen eines Storyboards](images/add-storyboard2.png)](images/add-storyboard2.png#lightbox)
 
 2. Klicken Sie mit der rechten Maustaste auf die storyboarddatei, und wählen Sie **Öffnen mit > Xcode Interface Builder** aus, um Sie in Xcode zu öffnen
 
     *Wenn Sie den Xcode Interface Builder standardmäßig verwenden möchten, können Sie ihn in den Visual Studio für Mac Einstellungen unter **Projekte > IOS**auswählen:*
 
-![](images/set-preferred-designer-tool.png "Selecting the preferred designer tool")
+![Auswählen des bevorzugten Designer Tools](images/set-preferred-designer-tool.png)
 
 3. Öffnen Sie in Xcode die Bibliothek (über **Ansicht > Bibliothek anzeigen** oder *Umschalt + Befehl + L*), um eine Liste von Objekten anzuzeigen, die dem Storyboard hinzugefügt werden können. Fügen Sie dem `Navigation Controller` Storyboard ein hinzu, indem Sie das Objekt aus der Liste auf das Storyboard ziehen. Standardmäßig werden von `Navigation Controller` zwei Bildschirme bereitgestellt. der Bildschirm auf der rechten Seite ist ein, den `TableViewController` wir durch eine einfachere Ansicht ersetzen, sodass er entfernt werden kann, indem ich auf die Ansicht klicke und die ENTF-Taste drückt.
 
-    [![](images/add-navigation-controller.png "Adding a NavigationController from the Library")](images/add-navigation-controller.png#lightbox)
+    [![Hinzufügen eines navigationcontroller aus der Bibliothek](images/add-navigation-controller.png)](images/add-navigation-controller.png#lightbox)
 
 4. Dieser Ansichts Controller verfügt über eine eigene benutzerdefinierte Klasse und benötigt auch eine eigene Storyboard-ID. Wenn Sie auf das Kontrollkästchen oberhalb dieser neu hinzugefügten Ansicht klicken, werden drei Symbole angezeigt, von denen der linke Teil den Ansichts Controller für die Ansicht darstellt. Wenn Sie dieses Symbol auswählen, können Sie die Klassen-und ID-Werte auf der Registerkarte Identität des rechten Bereichs festlegen. Legen Sie diese Werte auf fest, `MainViewController` und stellen Sie sicher, dass Sie überprüfen `Use Storyboard ID` .
 
-    [![](images/identity-panel.png "Setting the MainViewController in the identity panel")](images/identity-panel.png#lightbox)
+    [![Festlegen von "mainviewcontroller" im Identitäts Panel](images/identity-panel.png)](images/identity-panel.png#lightbox)
 
 5. Wenn Sie die Bibliothek erneut verwenden, ziehen Sie einen Ansichts Controller auf den Bildschirm. Diese wird als root View Controller festgelegt. Wenn Sie die Steuertaste gedrückt halten, klicken und ziehen Sie vom Navigations Controller auf der linken Seite auf den neu hinzugefügten Ansichts Controller auf der rechten Seite, und klicken Sie im Menü auf *root View Controller* .
 
-    [![](images/add-view-controller.png "Adding a NavigationController from the Library and setting the MainViewController as a Root View Controller")](images/add-view-controller.png#lightbox)
+    [![Hinzufügen eines navigationcontroller aus der Bibliothek und Festlegen von "mainviewcontroller" als root View Controller](images/add-view-controller.png)](images/add-view-controller.png#lightbox)
 
 6. Diese APP wird zu einer anderen Ansicht navigiert. Fügen Sie dem Storyboard also genau wie zuvor eine weitere Ansicht hinzu. Dies wird als bezeichnet `PinkViewController` , und diese Werte können auf die gleiche Weise wie mit dem festgelegt werden `MainViewController` .
 
-    [![](images/add-additional-view-controller.png "Adding an additional View Controller")](images/add-additional-view-controller.png#lightbox)
+    [![Hinzufügen eines zusätzlichen Ansichts Controllers](images/add-additional-view-controller.png)](images/add-additional-view-controller.png#lightbox)
 
 7. Da der Ansichts Controller einen rosa Hintergrund hat, kann diese Eigenschaft im Attribute-Panel mithilfe der Dropdown Liste neben festgelegt werden `Background` .
 
-    [![](images/set-pink-background.png "Adding an additional View Controller")](images/set-pink-background.png#lightbox)
+    [![Hinzufügen eines zusätzlichen Ansichts Controllers](images/set-pink-background.png)](images/set-pink-background.png#lightbox)
 
 8. Der `MainViewController` `PinkViewController` erste benötigt eine Schaltfläche für die Interaktion mit, um zum zu navigieren. Mithilfe der-Bibliothek können Sie eine Schaltfläche Hinzufügen `MainViewController` .
 
-    [![](images/add-button.png "Adding a Button to the MainViewController")](images/add-button.png#lightbox)
+    [![Hinzufügen einer Schaltfläche zum mainviewcontroller](images/add-button.png)](images/add-button.png#lightbox)
 
 Das Storyboard ist vollständig, aber wenn wir das Projekt jetzt bereitstellen, wird ein leerer Bildschirm angezeigt. Das liegt daran, dass wir die IDE weiterhin auffordern müssen, unser Storyboard zu verwenden, und einen Stamm Ansichts Controller einrichten, der als erste Ansicht fungiert. Normalerweise kann dies über unsere Projektoptionen erfolgen, wie oben gezeigt. In diesem Beispiel erzielen wir jedoch dasselbe Ergebnis im Code, indem wir Folgendes zum **appdelegaten**hinzufügen:
 
@@ -302,7 +302,7 @@ public partial class MainViewController : UIViewController
 
 Beim Ausführen der Anwendung wird eine Anwendung mit zwei Bildschirmen erzeugt:
 
-![](images/finishedstoryboard.png "Sample app run screens")
+![Beispiel-App-Lauf Schirme](images/finishedstoryboard.png)
 
 ## <a name="conditional-segues"></a>Bedingte Sekunden
 
@@ -324,13 +324,13 @@ Bevor wir beginnen, befolgen Sie die obigen Schritte 1 – 8. In den folgenden S
         - Zeilen: 2
         - Kontrollkästchen ' ausgeblendet ' aktiviert    
 
-    [![](images/passwordvc.png "Center Lines")](images/passwordvc.png#lightbox)
+    [![Linien zentrieren](images/passwordvc.png)](images/passwordvc.png#lightbox)
 
 2. Erstellen Sie einen segue zwischen der Schaltfläche Gehe zu Rosa und dem Ansichts Controller, indem Sie von der *PinkButton-Taste* auf den *pinkviewcontroller*ziehen und bei der Maus auf **Push drücken** .
 
 3. Klicken Sie auf den Namen, und legen Sie ihm den *Bezeichner* `SegueToPink` :
 
-    [![](images/namesegue.png "Click on the Segue and give it the Identifier SegueToPink")](images/namesegue.png#lightbox)  
+    [![Klicken Sie auf den Namen "*", und versehen Sie ihn mit dem Bezeichner "".](images/namesegue.png)](images/namesegue.png#lightbox)  
 
 4. Fügen Sie schließlich der-Klasse die folgende "dendperformabgue"-Methode hinzu `MainViewController` :
 
@@ -374,29 +374,29 @@ Gehen Sie folgendermaßen vor, um einen Verweis auf ein externes Storyboard hinz
 
 1. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektnamen, und wählen Sie neue Datei **Hinzufügen**  >  **...**  >  aus. **IOS**  >  **Storyboard**. Geben Sie einen **Namen** für das neue Storyboard ein, und klicken Sie auf die Schaltfläche **neu** :
 
-    [![](images/ref01.png "The New File Dialog")](images/ref01.png#lightbox)
+    [![Dialog Feld "neue Datei"](images/ref01.png)](images/ref01.png#lightbox)
 
 2. Entwerfen Sie das Layout der neuen Storyboard-Szenen wie gewohnt, und speichern Sie die Änderungen:
 
-    [![](images/ref02.png "The layout of the new scene")](images/ref02.png#lightbox)
+    [![Layout der neuen Szene](images/ref02.png)](images/ref02.png#lightbox)
 
 3. Öffnen Sie das Storyboard, dem Sie den Verweis hinzufügen möchten, im IOS-Designer.
 
 4. Ziehen Sie einen **storyboardverweis** aus der **Toolbox** auf den Designoberfläche:
 
-    [![](images/ref03.png "A Storyboard Reference")](images/ref03.png#lightbox)
+    [![Referenz zu einem Storyboard](images/ref03.png)](images/ref03.png#lightbox)
 
 5. Wählen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** den Namen des **Storyboards** aus, das Sie oben erstellt haben:
 
-    [![](images/ref04.png "The Widget tab")](images/ref04.png#lightbox)
+    [![Die Widget-Registerkarte](images/ref04.png)](images/ref04.png#lightbox)
 
 6. Klicken Sie mit der Maus auf ein UI-Widget (z. b. eine Schaltfläche) in einer vorhandenen Szene, und erstellen Sie eine neue Tabelle für den **storyboardverweis** , den Sie soeben erstellt haben:
 
-    [![](images/ref05.png "Creating a segue")](images/ref05.png#lightbox)
+    [![Erstellen eines "*"](images/ref05.png)](images/ref05.png#lightbox)
 
 7. Wählen Sie im Popupmenü die Option **anzeigen** aus, um den Vorgang abzuschließen:
 
-    [![](images/ref06.png "Selecting Show to complete the Segue")](images/ref06.png#lightbox)
+    [![Auswählen von "anzeigen", um den Vorgang abzuschließen](images/ref06.png)](images/ref06.png#lightbox)
 
 8. Speichern Sie die Änderungen am Storyboard.
 
@@ -412,29 +412,29 @@ Gehen Sie folgendermaßen vor, um einen Verweis auf eine bestimmte Szene zu eine
 
 2. Fügen Sie eine neue Szene hinzu, und entwerfen Sie das Layout wie gewohnt:
 
-    [![](images/ref07.png "The new scene layout")](images/ref07.png#lightbox)
+    [![Das neue Szenen Layout](images/ref07.png)](images/ref07.png#lightbox)
 
 3. Geben Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** eine **Storyboard-ID** für den Ansichts Controller der neuen Szene ein:
 
-    [![](images/ref08.png "Enter a Storyboard ID for the new Scenes View Controller")](images/ref08.png#lightbox)
+    [![Geben Sie eine Storyboard-ID für den neuen Szenen Ansichts Controller ein.](images/ref08.png)](images/ref08.png#lightbox)
 
 4. Öffnen Sie das Storyboard, dem Sie den Verweis hinzufügen möchten, im IOS-Designer.
 
 5. Ziehen Sie einen **storyboardverweis** aus der **Toolbox** auf den Designoberfläche:
 
-    [![](images/ref03.png "A Storyboard Reference")](images/ref03.png#lightbox)
+    [![Referenz zu einem Storyboard](images/ref03.png)](images/ref03.png#lightbox)
 
 6. Wählen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** den Namen des **Storyboards** und die **Verweis-ID** (Storyboard-ID) der Szene aus, die Sie oben erstellt haben:
 
-    [![](images/ref09.png "The Widget tab ")](images/ref09.png#lightbox)
+    [![Die Widget-Registerkarte](images/ref09.png)](images/ref09.png#lightbox)
 
 7. Klicken Sie mit der Maus auf ein UI-Widget (z. b. eine Schaltfläche) in einer vorhandenen Szene, und erstellen Sie eine neue Tabelle für den **storyboardverweis** , den Sie soeben erstellt haben:
 
-    [![](images/ref10.png "Creating a segue")](images/ref10.png#lightbox)
+    [![Erstellen eines "*"](images/ref10.png)](images/ref10.png#lightbox)
 
 8. Wählen Sie im Popupmenü die Option **anzeigen** aus, um den Vorgang abzuschließen:
 
-    [![](images/ref06.png "Selecting Show to complete the Segue")](images/ref06.png#lightbox)
+    [![Auswählen von "anzeigen", um den Vorgang abzuschließen](images/ref06.png)](images/ref06.png#lightbox)
 
 9. Speichern Sie die Änderungen am Storyboard.
 
@@ -450,27 +450,27 @@ Gehen Sie folgendermaßen vor, um einem Storyboard einen Verweis auf eine bestim
 
 2. Fügen Sie eine neue Szene hinzu, und entwerfen Sie das Layout wie gewohnt:
 
-    [![](images/ref11.png "The new scene layout")](images/ref11.png#lightbox)
+    [![Das neue Szenen Layout](images/ref11.png)](images/ref11.png#lightbox)
 
 3. Geben Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** eine **Storyboard-ID** für den Ansichts Controller der neuen Szene ein:
 
-    [![](images/ref12.png "The Widget tab")](images/ref12.png#lightbox)
+    [![Die Widget-Registerkarte](images/ref12.png)](images/ref12.png#lightbox)
 
 4. Ziehen Sie einen **storyboardverweis** aus der **Toolbox** auf den Designoberfläche:
 
-   [![](images/ref03.png "A Storyboard Reference")](images/ref03.png#lightbox)
+   [![Referenz zu einem Storyboard](images/ref03.png)](images/ref03.png#lightbox)
 
 5. Wählen Sie im **Eigenschaften-Explorer**auf der Registerkarte **Widget** die **Verweis-ID** (Storyboard-ID) der Szene aus, die Sie oben erstellt haben:
 
-    [![](images/ref13.png "The Widget tab")](images/ref13.png#lightbox)
+    [![Die Widget-Registerkarte](images/ref13.png)](images/ref13.png#lightbox)
 
 6. Klicken Sie mit der Maus auf ein UI-Widget (z. b. eine Schaltfläche) in einer vorhandenen Szene, und erstellen Sie eine neue Tabelle für den **storyboardverweis** , den Sie soeben erstellt haben:
 
-    [![](images/ref14.png "Creating a segue")](images/ref14.png#lightbox)
+    [![Erstellen eines "*"](images/ref14.png)](images/ref14.png#lightbox)
 
 7. Wählen Sie im Popupmenü die Option **anzeigen** aus, um den Vorgang abzuschließen:
 
-    [![](images/ref06.png "Selecting Show to complete the Segue")](images/ref06.png#lightbox)
+    [![Auswählen von "anzeigen", um den Vorgang abzuschließen](images/ref06.png)](images/ref06.png#lightbox)
 
 8. Speichern Sie die Änderungen am Storyboard.
 

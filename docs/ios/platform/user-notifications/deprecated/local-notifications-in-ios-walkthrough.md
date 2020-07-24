@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 764be6319e95b16dc043bebd2abfb27ba0696457
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b0a45207ba036f73c2d1066ea292a02ebcc45064
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031403"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934627"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>Exemplarische Vorgehensweise: Verwenden von lokalen Benachrichtigungen in xamarin. IOS
 
-_in diesem Abschnitt wird erläutert, wie lokale Benachrichtigungen in einer xamarin. IOS-Anwendung verwendet werden. Es veranschaulicht die Grundlagen der Erstellung und Veröffentlichung einer Benachrichtigung, mit der eine Warnung angezeigt wird, wenn Sie von der APP empfangen wird._
+_In diesem Abschnitt wird erläutert, wie lokale Benachrichtigungen in einer xamarin. IOS-Anwendung verwendet werden. Es veranschaulicht die Grundlagen der Erstellung und Veröffentlichung einer Benachrichtigung, mit der eine Warnung angezeigt wird, wenn Sie von der APP empfangen wird._
 
 > [!IMPORTANT]
 > Die Informationen in diesem Abschnitt beziehen sich auf IOS 9 und ältere Versionen, die Sie für ältere IOS-Versionen unterstützen. Informationen zu IOS 10 und höher finden Sie im [Handbuch zum Benutzer Benachrichtigungs Framework](~/ios/platform/user-notifications/index.md) , das sowohl lokale als auch Remote Benachrichtigungen auf einem IOS-Gerät unterstützt.
@@ -25,11 +25,11 @@ _in diesem Abschnitt wird erläutert, wie lokale Benachrichtigungen in einer xam
 
 Erstellen Sie eine einfache Anwendung, in der lokale Benachrichtigungen in Aktion angezeigt werden. Diese Anwendung verfügt über eine einzelne Schaltfläche. Wenn Sie auf die Schaltfläche klicken, wird eine lokale Benachrichtigung erstellt. Nachdem der angegebene Zeitraum abgelaufen ist, wird die Benachrichtigung angezeigt.
 
-1. Erstellen Sie in Visual Studio für Mac eine neue Einzelansicht-IOS-Lösung, und nennen Sie Sie `Notifications`.
-1. Öffnen Sie die Datei `Main.storyboard`, und ziehen Sie eine Schaltfläche auf die Ansicht. Benennen Sie die Schaltflächen **Schaltfläche**, und geben Sie Ihr den Titel **Benachrichtigung hinzufügen**. Sie können auch einige [Einschränkungen](~/ios/user-interface/designer/designer-auto-layout.md) für die Schaltfläche an diesem Punkt festlegen: 
+1. Erstellen Sie in Visual Studio für Mac eine neue Einzelansicht-IOS-Lösung, und rufen Sie Sie auf `Notifications` .
+1. Öffnen Sie die `Main.storyboard` Datei, und ziehen Sie eine Schaltfläche auf die Ansicht. Benennen Sie die Schaltflächen **Schaltfläche**, und geben Sie Ihr den Titel **Benachrichtigung hinzufügen**. Sie können auch einige [Einschränkungen](~/ios/user-interface/designer/designer-auto-layout.md) für die Schaltfläche an diesem Punkt festlegen: 
 
-    ![](local-notifications-in-ios-walkthrough-images/image3.png "Setting some constraints on the button")
-1. Bearbeiten Sie die `ViewController`-Klasse, und fügen Sie der viewDidLoad-Methode den folgenden Ereignishandler hinzu:
+    ![Festlegen einiger Einschränkungen auf der Schaltfläche](local-notifications-in-ios-walkthrough-images/image3.png)
+1. Bearbeiten `ViewController` Sie die-Klasse, und fügen Sie der viewDidLoad-Methode den folgenden Ereignishandler hinzu:
 
     ```csharp
     button.TouchUpInside += (sender, e) =>
@@ -57,7 +57,7 @@ Erstellen Sie eine einfache Anwendung, in der lokale Benachrichtigungen in Aktio
 
     Mit diesem Code wird eine Benachrichtigung erstellt, die einen Sound verwendet, den Wert des Symbol Badge auf 1 festlegt und eine Warnung für den Benutzer anzeigt.
 
-1. Bearbeiten Sie als nächstes die Datei `AppDelegate.cs`, und fügen Sie zunächst den folgenden Code in die `FinishedLaunching`-Methode ein. Wir haben geprüft, ob auf dem Gerät IOS 8 ausgeführt wird. wenn dies der Fall ist **, müssen wir** die Berechtigung des Benutzers anfordern, Benachrichtigungen zu empfangen:
+1. Als nächstes Bearbeiten Sie die Datei `AppDelegate.cs` , und fügen Sie zuerst der-Methode den folgenden Code hinzu `FinishedLaunching` . Wir haben geprüft, ob auf dem Gerät IOS 8 ausgeführt wird. wenn dies der Fall ist **, müssen wir** die Berechtigung des Benutzers anfordern, Benachrichtigungen zu empfangen:
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
@@ -69,7 +69,7 @@ Erstellen Sie eine einfache Anwendung, in der lokale Benachrichtigungen in Aktio
     }
     ```
 
-1. Fügen Sie in `AppDelegate.cs`die folgende Methode hinzu, die aufgerufen wird, wenn eine Benachrichtigung empfangen wird:
+1. `AppDelegate.cs`Fügen Sie in noch die folgende Methode hinzu, die aufgerufen wird, wenn eine Benachrichtigung empfangen wird:
 
     ```csharp
     public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
@@ -85,7 +85,7 @@ Erstellen Sie eine einfache Anwendung, in der lokale Benachrichtigungen in Aktio
     }
     ```
 
-1. Der Fall, in dem die Benachrichtigung aufgrund einer lokalen Benachrichtigung gestartet wurde, muss behandelt werden. Bearbeiten Sie die Methode `FinishedLaunching` im `AppDelegate`, um den folgenden Code Ausschnitt einzuschließen:
+1. Der Fall, in dem die Benachrichtigung aufgrund einer lokalen Benachrichtigung gestartet wurde, muss behandelt werden. Bearbeiten Sie die-Methode `FinishedLaunching` in der `AppDelegate` , um den folgenden Code Ausschnitt einzuschließen:
 
     ```csharp
     // check for a notification
@@ -112,8 +112,7 @@ Erstellen Sie eine einfache Anwendung, in der lokale Benachrichtigungen in Aktio
 
 1. Führen Sie schließlich die Anwendung aus. Unter IOS 8 werden Sie aufgefordert, Benachrichtigungen zuzulassen. Klicken Sie auf **OK** und dann auf die Schaltfläche **Benachrichtigung hinzufügen** . Nach einer kurzen Pause sollte das Dialogfeld "Warnung" angezeigt werden, wie in den folgenden Screenshots zu sehen:
 
-    ![](local-notifications-in-ios-walkthrough-images/image0.png "Bestätigung der Fähigkeit zum Senden von Benachrichtigungen") ![](local-notifications-in-ios-walkthrough-images/image1.png "Schaltfläche "Benachrichtigung hinzufügen"")
-    ![](local-notifications-in-ios-walkthrough-images/image2.png "The notification alert dialog")
+    ![Bestätigung der Möglichkeit zum Senden von Benachrichtigungen über die ](local-notifications-in-ios-walkthrough-images/image0.png) ![ Schaltfläche Benachrichtigung hinzufügen ](local-notifications-in-ios-walkthrough-images/image1.png) ![ im Dialogfeld Benachrichtigungs Warnung](local-notifications-in-ios-walkthrough-images/image2.png)
 
 ## <a name="summary"></a>Zusammenfassung
 

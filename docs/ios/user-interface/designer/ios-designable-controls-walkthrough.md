@@ -16,7 +16,7 @@ ms.locfileid: "86934692"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>Verwenden benutzerdefinierter Steuerelemente im iOS-Designer
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Der Xamarin Designer für IOS ist in Visual Studio für Mac und Visual Studio 2017 und höher unter Windows verfügbar.
 
@@ -264,7 +264,7 @@ Wenn ein `ExportAttribute` und ein `BrowsableAttribute` mit dem-Argument auf fes
 
 In diesem Artikel haben wir erläutert, wie Sie ein benutzerdefiniertes Steuerelement erstellen und es in einer IOS-Anwendung mit dem IOS-Designer nutzen. Wir haben gesehen, wie das Steuerelement erstellt und erstellt wird, um es für eine Anwendung in der **Toolbox**des Designers verfügbar zu machen. Außerdem wurde erläutert, wie das Steuerelement implementiert wird, sodass es sowohl zur Entwurfszeit als auch zur Laufzeit ordnungsgemäß gerendert wird, und wie benutzerdefinierte Steuerelement Eigenschaften im Designer verfügbar gemacht werden.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Scratchticket (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/scratchticket)
 - [erforderliche Images (Beispiel)](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)

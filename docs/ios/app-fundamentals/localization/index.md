@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: c42b41f9b853fba58ef70b8bd2f8ab20a3369647
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1f5f9e13607d672a6fdec5ed8fb116466973a260
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569242"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938033"
 ---
 # <a name="localization-in-xamarinios"></a>Lokalisierung in xamarin. IOS
 
@@ -163,7 +163,7 @@ Dies ist ein Beispiel für **es/lokalisierbare. Strings** (d.h. Spanisch) aus de
 "Delete" = "Eliminar";
 ```
 
-### <a name="images"></a>Bilder
+### <a name="images"></a>Abbilder
 
 So lokalisieren Sie ein Image in ios:
 
@@ -173,9 +173,9 @@ So lokalisieren Sie ein Image in ios:
     UIImage.FromBundle("flag");
     ```
 
-2. Platzieren Sie das standardbilddatei- **Flag. png** in **base. lproj** (dem Verzeichnis der systemeigenen Entwicklungssprache).
+2. Platzieren Sie die Standard Abbild Datei **flag.png** in **base. lproj** (dem Verzeichnis der systemeigenen Entwicklungssprache).
 
-3. Platzieren Sie optional lokalisierte Versionen des Bilds in **lproj** -Ordnern für jede Sprache (z. b. **es. lproj**, **Ja. lproj**). Verwenden Sie in jedem Sprachverzeichnis das gleiche Dateiname- **Flag. png** .
+3. Platzieren Sie optional lokalisierte Versionen des Bilds in **lproj** -Ordnern für jede Sprache (z. b. **es. lproj**, **Ja. lproj**). Verwenden Sie in jedem Sprachverzeichnis denselben Dateinamen **flag.png** .
 
 Wenn ein Bild nicht für eine bestimmte Sprache vorhanden ist, greift IOS auf den standardmäßigen systemeigenen Sprachordner zurück und lädt das Image von dort.
 
@@ -255,9 +255,9 @@ IOS bietet eine Reihe von Features zur Unterstützung beim Entwickeln von apps, 
 
 Die folgenden Screenshots zeigen das [lokalisierte Tasky-Beispiel](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) in Arabisch und Hebräisch an (Obwohl Englisch in den Feldern eingegeben wurde):
 
-[![](images/rtl-ar-sml.png "Localization in Arabic")](images/rtl-ar.png#lightbox "Arabic")
+[![Lokalisierung auf Arabisch](images/rtl-ar-sml.png)](images/rtl-ar.png#lightbox "Arabisch")
 
-[![](images/rtl-he-sml.png "Localization in Hebrew")](images/rtl-he.png#lightbox "Hebrew")
+[![Lokalisierung in Hebräisch](images/rtl-he-sml.png)](images/rtl-he.png#lightbox "Hebräisch")
 
 IOS kehrt automatisch zurück `UINavigationController` , und die anderen Steuerelemente werden in das `UIStackView` automatische Layout eingefügt oder darauf ausgerichtet.
 Der RTL-Text wird mithilfe von **. Strings** -Dateien auf dieselbe Weise wie der Ltr-Text lokalisiert.
@@ -270,7 +270,7 @@ Im Beispiel [Tasky (lokalisiert in Code)](https://github.com/conceptdev/xamarin-
 
 ### <a name="project-structure"></a>Projektstruktur
 
-![](images/solution-code.png "Resources tree")
+![Ressourcenstruktur](images/solution-code.png)
 
 ### <a name="localizablestrings-file"></a>Lokalisierbare Strings-Datei
 
@@ -311,7 +311,7 @@ Das Verzeichnis " **base. lproj** " enthält das Storyboard und sollte auch alle
 
 Die anderen sprach Verzeichnisse enthalten eine **Lokalisierbare Strings** -Datei für alle Zeichen folgen Ressourcen, auf die im Code verwiesen wird, sowie die Datei " **mainstoryboard. Strings** ", die Übersetzungen für Text im Storyboard enthält.
 
-![](images/solution-storyboard.png "Resources tree")
+![Ressourcenstruktur](images/solution-storyboard.png)
 
 Die sprach Verzeichnisse sollten eine Kopie aller lokalisierten Bilder enthalten, um die in " **base. lproj**" vorhandene Grafik zu überschreiben.
 
@@ -324,7 +324,7 @@ Wenn Sie Steuerelemente in einem Storyboard erstellen und bearbeiten, wählen Si
 
 Dieser Zeichen folgen Wert hat häufig ein Formular wie z. b. "NF3-h8-XMR", wie im folgenden Screenshot zu sehen:
 
-![](images/xs-designer-localization-id.png "Xcode view of Storyboard localization")
+![Xcode-Ansicht der Storyboard-Lokalisierung](images/xs-designer-localization-id.png)
 
 Dieser Wert wird in der **Strings** -Datei verwendet, um jedem Steuerelement automatisch übersetzten Text zuzuweisen.
 
@@ -347,7 +347,7 @@ Im Beispiel **mainstoryboard. Strings** unten sehen Sie `UITextField` , dass s �
 > [!IMPORTANT]
 > Die Verwendung eines Storyboards mit Größenklassen kann zu Übersetzungen führen, die in der Anwendung nicht angezeigt werden. [Die Xcode-Versions Anmerkungen von Apple](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html) geben an, dass ein Storyboard oder XIb nicht ordnungsgemäß lokalisiert wird, wenn drei Dinge zutreffen: es verwendet Größenklassen, die Basis Lokalisierung und das Buildziel werden auf Universal festgelegt, und der Build zielt auf IOS 7,0 ab. Die Korrektur besteht darin, die storyboardzeichenfolgen-Datei in zwei identische Dateien zu duplizieren: **mainstoryboard ~ iPhone. Strings** und **mainstoryboard ~ iPad. Strings**, wie im folgenden Screenshot zu sehen:
 >
-> ![](images/xs-dup-strings.png "Strings files")
+> ![Zeichen folgen Dateien](images/xs-dup-strings.png)
 
 <a name="appstore"></a>
 

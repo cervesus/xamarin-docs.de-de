@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: dd453ab5397e409cc9a7ccef9b4b845d47f32a8b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1b2b9cdc08f20e2867d51c3b9c413f45c7cbdf69
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573728"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939320"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Veröffentlichen im Apple TV App Store
 
@@ -47,7 +47,7 @@ Apple unterhält außerdem eine Liste der Tipps für die Übermittlung von Apple
 
 [iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa) ist eine Suite von webbasierten Tools, die unter anderem die Verwaltung Ihrer tvos-apps im Apple TV App Store unterstützen. Ihre xamarin. tvos-app muss in iTunes Connect ordnungsgemäß eingerichtet und konfiguriert werden, bevor Sie zur Überprüfung an Apple übermittelt werden kann, und schließlich für den Verkauf oder als kostenlose App im Apple TV App Store veröffentlicht werden kann.
 
-Gehen Sie folgendermaßen vor:
+Gehen Sie wie folgt vor:
 
 1. Gehen Sie in iTunes Connect zum Abschnitt **Vereinbarungen, Steuern und Bankgeschäfte**. Stellen Sie sicher, dass die Vereinbarungen richtig eingerichtet und auf dem neuesten Stand sind, um eine iOS-Anwendung kostenlos oder zum Verkauf freizugeben.
 2. Erstellen Sie einen neuen **iTunes Connect-Datensatz** für die Anwendung, und geben Sie den **anzeigen Amen** an (wie im Apple TV App Store zu sehen).
@@ -125,7 +125,7 @@ Eine ausführliche Anleitung finden Sie unter [Creating a Distribution Profile](
 
 Wenn Sie eine neue xamarin. tvos-app erstellen, werden standardmäßig _Buildkonfigurationen_ sowohl für die **Debug** -als auch für die **releasebereitstellung** erstellt. Vor der endgültigen Erstellung Ihrer APP, die Sie an Apple übermitteln, müssen Sie einige Änderungen an der Basis **Releasekonfiguration** vornehmen.
 
-Gehen Sie folgendermaßen vor:
+Gehen Sie wie folgt vor:
 
 1. Klicken Sie mit der rechten Maustaste auf den **Projektnamen** in den **Projektmappen-Explorer** -und Auswahl **Optionen** , um Sie zur Bearbeitung zu öffnen.
 2. Wenn Sie auf eine bestimmte Version von tvos abzielen, wählen Sie diese unter **tvos Build**  >  **IOS SDK-Version**aus. Legen Sie für die Vorschauversion der tvos-Unterstützung diesen Wert auf **default**fest.
@@ -145,15 +145,15 @@ Wenn Sie Ihre xamarin. tvos-App ordnungsgemäß konfiguriert haben, können Sie 
 
 1. Wählen Sie in Visual Studio für Mac die Konfiguration **Release | Gerät** aus:
 
-    ![](app-store-publishing-images/buildxs01new.png "Select the Release configuration")
-2. Wählen Sie im Menü **Erstellen** die Option **Archive for Publishing**aus:
+    ![Auswählen der Releasekonfiguration](app-store-publishing-images/buildxs01new.png)
+2. Wählen Sie aus dem **Build**-Menü die Option **Zur Veröffentlichung aktivieren**:
 
-    [![](app-store-publishing-images/buildxs02new.png "Select Archive for Publishing")](app-store-publishing-images/buildxs02new.png#lightbox)
-3. Sobald das Archiv erstellt wurde, wird die **Archiv**-Ansicht angezeigt:
+    [![„Zur Veröffentlichung archivieren“ auswählen](app-store-publishing-images/buildxs02new.png)](app-store-publishing-images/buildxs02new.png#lightbox)
+3. Sobald das Archiv erstellt wurde, wird die **Archivansicht** angezeigt:
 
-    [![](app-store-publishing-images/buildxs03new.png "The Archives view")](app-store-publishing-images/buildxs03new.png#lightbox)
+    [![Die Archivansicht](app-store-publishing-images/buildxs03new.png)](app-store-publishing-images/buildxs03new.png#lightbox)
 
-### <a name="sign-and-distribute-your-app"></a>Signieren und Verteilen der App
+### <a name="sign-and-distribute-your-app"></a>Signieren und Verteilen Ihrer App
 
 Beim Erstellen Ihrer Anwendung für das Archiv wird automatisch die *Archivansicht* geöffnet. Darin werden alle archivierten Projekte nach Projektmappe gruppiert angezeigt. Standardmäßig wird in dieser Ansicht nur die aktuelle geöffnete Projektmappe angezeigt. Klicken Sie auf **Alle Archive anzeigen**, um alle Projektmappen mit Archiven anzuzeigen.
 
@@ -163,19 +163,19 @@ Gehen Sie folgendermaßen vor, um Ihre App für die Verteilung zu signieren und 
 
 1. Wählen Sie das unten dargestellte **Vorzeichen und verteilen...** aus:
 
-    [![](app-store-publishing-images/buildxs04new.png ", Select theSign and Distribute...")](app-store-publishing-images/buildxs04new.png#lightbox)
+    [![, Wählen Sie die Option für das Signieren und verteilen...](app-store-publishing-images/buildxs04new.png)](app-store-publishing-images/buildxs04new.png#lightbox)
 2. Dadurch wird der Veröffentlichungs-Assistent geöffnet. Wählen Sie den Verteilungskanal **App Store** aus, um ein Paket zu erstellen, und öffnen Sie den Application Loader:
 
-    [![](app-store-publishing-images/distribute01.png "Select the App Store distribution channel")](app-store-publishing-images/distribute01.png#lightbox)
+    [![Wählen Sie den Verteilungs Kanal für App Store aus.](app-store-publishing-images/distribute01.png)](app-store-publishing-images/distribute01.png#lightbox)
 3. Wählen Sie auf dem Bildschirm "Bereitstellungs Profil" Ihre Signierungs Identität und das zugehörige Bereitstellungs Profil aus, oder signieren Sie mit einer anderen Identität erneut:
 
-    [![](app-store-publishing-images/distribute02.png "Select the signing identity and corresponding provisioning profile")](app-store-publishing-images/distribute02.png#lightbox)
+    [![Die Signieridentität und das entsprechende Bereitstellungsprofil auswählen](app-store-publishing-images/distribute02.png)](app-store-publishing-images/distribute02.png#lightbox)
 4. Überprüfen Sie die Details Ihres Pakets, und klicken Sie zum Speichern des `.ipa`-Pakets auf **Veröffentlichen**:
 
-    [![](app-store-publishing-images/distribute03.png "Verify the details of the package")](app-store-publishing-images/distribute03.png#lightbox)
+    [![Überprüfen Sie die Details des Pakets.](app-store-publishing-images/distribute03.png)](app-store-publishing-images/distribute03.png#lightbox)
 5. Sobald die `.ipa` gespeichert wurde, kann Ihre App über den Application Loader in iTunes Connect hochgeladen werden:
 
-    [![](app-store-publishing-images/distribute04.png "Uploaded to iTunes Connect via the Application Loader")](app-store-publishing-images/distribute04.png#lightbox)
+    [![Hochgeladen über das Anwendungs Lade Modul in iTunes Connect](app-store-publishing-images/distribute04.png)](app-store-publishing-images/distribute04.png#lightbox)
 
 Nachdem Ihr Verteilungsbuild erstellt und archiviert wurde, können Sie nun Ihre Anwendung an iTunes Connect übermitteln.
 
@@ -189,15 +189,15 @@ Der Archivierungs Workflow in Visual Studio für Mac öffnet das Anwendungs Lade
 
 1. Wählen Sie *Ihre App übermitteln* aus, und klicken Sie auf die Schaltfläche *Auswählen*:
 
-    [![](app-store-publishing-images/publishvs01.png "Select Deliver Your App")](app-store-publishing-images/publishvs01.png#lightbox)
+    [![Auswählen von „Ihre App übermitteln“](app-store-publishing-images/publishvs01.png)](app-store-publishing-images/publishvs01.png#lightbox)
 
 2. Wählen Sie die zuvor erstellte ZIP- oder IPA-Datei aus, und klicken Sie auf die Schaltfläche **OK**.
 3. Die Datei wird durch den Application Loader überprüft:
 
-    [![](app-store-publishing-images/publishvs02.png "The Application Loader validation screen")](app-store-publishing-images/publishvs02.png#lightbox)
+    [![Der Validierungs Bildschirm des Anwendungs Lade Moduls](app-store-publishing-images/publishvs02.png)](app-store-publishing-images/publishvs02.png#lightbox)
 4. Klicken Sie auf die Schaltfläche *Weiter*. Die Anwendung wird nun für den App Store überprüft:
 
-    [![](app-store-publishing-images/publishvs03.png "The application being validated against the App Store")](app-store-publishing-images/publishvs03.png#lightbox)
+    [![Die Anwendung, die anhand des App Store überprüft wird.](app-store-publishing-images/publishvs03.png)](app-store-publishing-images/publishvs03.png#lightbox)
 5. Klicken Sie auf die Schaltfläche **Senden**, um die Anwendung zur Überprüfung an Apple zu senden.
 6. Sie werden vom Application Loader informiert, sobald die Datei erfolgreich hochgeladen wurde.
 
@@ -207,7 +207,7 @@ Der Archivierungs Workflow in Visual Studio für Mac öffnet das Anwendungs Lade
 
 Wenn Sie sich bei iTunes Connect anmelden und Ihre APP aus der Liste der verfügbaren apps auswählen, sollte der Status in iTunes Connect nun anzeigen, dass er **auf die Überprüfung wartet** (während der Verarbeitung den **Upload** möglicherweise vorübergehend lesen):
 
-[![](app-store-publishing-images/image21.png "The status in iTunes Connect showing Waiting for Review")](app-store-publishing-images/image21.png#lightbox)
+[![Der Status in iTunes Connect, der auf die Überprüfung wartet](app-store-publishing-images/image21.png)](app-store-publishing-images/image21.png#lightbox)
 
 <a name="Troubleshooting"></a>
 

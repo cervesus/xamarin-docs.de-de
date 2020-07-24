@@ -10,12 +10,12 @@ ms.date: 03/23/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38a895c9064fc012aec35b37eac78bb16ff009a9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1e5f3b6cb84081f5e167d9afe7e7f2f2dffce247
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131507"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938111"
 ---
 # <a name="listview-data-sources"></a>ListView-Datenquellen
 
@@ -63,7 +63,7 @@ listView.ItemsSource = new string[]
 };
 ```
 
-![](data-and-databinding-images/itemssource-simple.png "ListView Displaying List of Strings")
+![ListView, das eine Liste von Zeichen folgen anzeigt](data-and-databinding-images/itemssource-simple.png)
 
 Diese Vorgehensweise füllt den `ListView` mit einer Liste von Zeichen folgen auf. Standardmäßig `ListView` wird von aufgerufen, `ToString` und das Ergebnis wird in einer `TextCell` für jede Zeile angezeigt. Informationen zum Anpassen der Anzeige von Daten finden Sie unter [Zellen](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)Darstellung.
 
@@ -144,7 +144,7 @@ Der folgende Code Ausschnitt veranschaulicht eine `ListView` , die an eine Liste
 
 In diesem XAML-Beispiel wird ein definiert `ContentPage` , das eine enthält `ListView` . Die Datenquelle der `ListView` wird über das Attribut `ItemsSource` festgelegt. Das Layout der einzelnen Zeilen in der `ItemsSource` wird im Element `ListView.ItemTemplate` definiert. Dies führt zu den folgenden Screenshots:
 
-![](data-and-databinding-images/bound-data.png "ListView using Data Binding")
+![ListView mithilfe der Datenbindung](data-and-databinding-images/bound-data.png)
 
 > [!WARNING]
 > `ObservableCollection` ist nicht threadsicher. Das Ändern einer `ObservableCollection` bewirkt, dass UI-Aktualisierungen in demselben Thread durchgeführt werden, der die Änderungen durchgeführt hat. Wenn der Thread nicht der primäre UI-Thread ist, wird eine Ausnahme ausgelöst.

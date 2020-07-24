@@ -10,12 +10,12 @@ ms.date: 05/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8d7ae5eb16b8a94f16b6eca013b4ec7a93f427bd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 972a5ac99ff775ea7301f803c333d8239ae7f193
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198125"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938189"
 ---
 # <a name="consume-a-restful-web-service"></a>Nutzen eines Rest-Webdiensts
 
@@ -43,7 +43,7 @@ Die Einfachheit von Rest hat dazu beigetragen, dass Sie die primäre Methode fü
 
 Wenn die Beispielanwendung ausgeführt wird, wird eine Verbindung mit einem lokal gehosteten Rest-Dienst hergestellt, wie im folgenden Screenshot zu sehen:
 
-![](rest-images/portal.png "Sample Application")
+![Beispielanwendung](rest-images/portal.png)
 
 > [!NOTE]
 > In ios 9 und höher erzwingt App-Transport Sicherheit (app Transport Security, ATS) sichere Verbindungen zwischen Internetressourcen (z. b. dem Back-End-Server der APP) und der APP, wodurch eine versehentliche Offenlegung vertraulicher Informationen verhindert wird. Da ATS in apps, die für IOS 9 erstellt wurden, standardmäßig aktiviert ist, unterliegen alle Verbindungen den Sicherheitsanforderungen. Wenn Verbindungen diese Anforderungen nicht erfüllen, können Sie mit einer Ausnahme fehlschlagen.
@@ -59,7 +59,7 @@ Der Rest-Dienst wird mit ASP.net Core geschrieben und bietet die folgenden Vorg�
 |Abrufen einer Liste von To-Do-Elementen|GET|/api/todoitems/|
 |Neues to-do-Element erstellen|POST|/api/todoitems/|Ein JSON-formatiertes "$ doitem"|
 |Aktualisieren eines To-Do-Elements|PUT|/api/todoitems/|Ein JSON-formatiertes "$ doitem"|
-|Löschen eines To-Do-Elements|Delete|/api/todoitems/{id}|
+|Löschen eines To-Do-Elements|DELETE|/api/todoitems/{id}|
 
 Die meisten URIs enthalten die `TodoItem` ID im Pfad. Um z. b. das zu löschen `TodoItem` , dessen ID ist `6bb8a868-dba1-4f1a-93b7-24ebce87e243` , sendet der Client eine DELETE-Anforderung an `http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243` . Weitere Informationen zum Datenmodell, das in der Beispielanwendung verwendet wird, finden Sie unter [Modellieren der Daten](~/xamarin-forms/data-cloud/web-services/introduction.md).
 

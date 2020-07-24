@@ -1,6 +1,6 @@
 ---
-title: E-Book zu Mustern von Unternehmensanwendungen mithilfe von Xamarin.Forms
-description: Dieses e-Book bietet Architektur Anleitungen zum entwickeln anpassbarer, verwaltebarer und testbarer Xamarin.Forms Unternehmensanwendungen.
+title: 'E-Book zu Mustern von Unternehmensanwendungen mithilfe von :::no-loc(Xamarin.Forms):::'
+description: 'Dieses e-Book bietet Architektur Anleitungen zum entwickeln anpassbarer, verwaltebarer und testbarer :::no-loc(Xamarin.Forms)::: Unternehmensanwendungen.'
 ms.prod: xamarin
 ms.assetid: 28cfed6c-6175-4223-a8cc-798d40bf0832
 ms.technology: xamarin-forms
@@ -8,20 +8,20 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1d993afa7163beb0b24e496b0c876d903f2396e7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+- ':::no-loc(Xamarin.Forms):::'
+- ':::no-loc(Xamarin.Essentials):::'
+ms.openlocfilehash: 549fe496cdb1d68d091d5fb3ed247ccef5a111a8
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934289"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996161"
 ---
-# <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>E-Book zu Mustern von Unternehmensanwendungen mithilfe von Xamarin.Forms
+# <a name="enterprise-application-patterns-using-no-locxamarinforms-ebook"></a>E-Book zu Mustern von Unternehmensanwendungen mithilfe von :::no-loc(Xamarin.Forms):::
 
-_Architektur Leit Faden für die Entwicklung anpassbarer, verwaltebarer und testbarer Xamarin.Forms Unternehmensanwendungen_
+_Architektur Leit Faden für die Entwicklung anpassbarer, verwaltebarer und testbarer :::no-loc(Xamarin.Forms)::: Unternehmensanwendungen_
 
-![E-Book zu Mustern von Unternehmensanwendungen mithilfe von Xamarin.Forms](images/cover-sml.png)
+![Unternehmens Anwendungs Muster mit::: NO-LOC (xamarin. Forms)::: eBook](images/cover-sml.png)
 
 Dieses e-Book enthält Anleitungen dazu, wie das Model-View-ViewModel (MVVM)-Muster, die Abhängigkeitsinjektion, Navigation, Validierung und Konfigurations Verwaltung implementiert wird, während die lose Kopplung beibehalten wird. Außerdem gibt es Anleitungen zum Durchführen von Authentifizierung und Autorisierung mit identityserver, zum Zugreifen auf Daten aus containerisierten microservices und Unittests.
 
@@ -45,11 +45,11 @@ Abhängigkeits einschleusungs Container reduzieren die Kopplung zwischen Objekte
 
 ## <a name="communicating-between-loosely-coupled-components"></a>[Kommunikation zwischen lose gekoppelten Komponenten](communicating-between-loosely-coupled-components.md)
 
-Die Xamarin.Forms-Klasse [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) implementiert das Veröffentlichen-Abonnieren-Muster und ermöglicht so eine nachrichtenbasierte Kommunikation zwischen Komponenten, für die eine Verknüpfung über Objekt- und Typverweise ungünstig ist. Dieser Mechanismus ermöglicht es Verlegern und Abonnenten, ohne einen Verweis aufeinander zu kommunizieren, sodass Abhängigkeiten zwischen Komponenten reduziert werden können, während Komponenten unabhängig entwickelt und getestet werden können.
+Die :::no-loc(Xamarin.Forms):::-Klasse [`MessagingCenter`](xref::::no-loc(Xamarin.Forms):::.MessagingCenter) implementiert das Veröffentlichen-Abonnieren-Muster und ermöglicht so eine nachrichtenbasierte Kommunikation zwischen Komponenten, für die eine Verknüpfung über Objekt- und Typverweise ungünstig ist. Dieser Mechanismus ermöglicht es Verlegern und Abonnenten, ohne einen Verweis aufeinander zu kommunizieren, sodass Abhängigkeiten zwischen Komponenten reduziert werden können, während Komponenten unabhängig entwickelt und getestet werden können.
 
 ## <a name="navigation"></a>[Navigation](navigation.md)
 
-Xamarin.Formsbietet Unterstützung für die Seitennavigation, die in der Regel aus der Interaktion des Benutzers mit der Benutzeroberfläche oder aus der APP selbst resultiert, weil interne, Logik gesteuerte Zustandsänderungen auftreten. Allerdings kann die Navigation in apps, die das MVVM-Muster verwenden, komplex sein.
+:::no-loc(Xamarin.Forms):::bietet Unterstützung für die Seitennavigation, die in der Regel aus der Interaktion des Benutzers mit der Benutzeroberfläche oder aus der APP selbst resultiert, weil interne, Logik gesteuerte Zustandsänderungen auftreten. Allerdings kann die Navigation in apps, die das MVVM-Muster verwenden, komplex sein.
 
 In diesem Kapitel `NavigationService` wird eine-Klasse vorgestellt, die verwendet wird, um die Ansicht Model-First-Navigation von Ansichts Modellen auszuführen. Das Platzieren der Navigations Logik in Ansichts Modellklassen bedeutet, dass die Logik durch automatisierte Tests ausgeführt werden kann. Außerdem kann das Ansichts Modell eine Logik zum Steuern der Navigation implementieren, um sicherzustellen, dass bestimmte Geschäftsregeln erzwungen werden.
 
@@ -69,7 +69,7 @@ Microservices bieten einen Ansatz für die Anwendungsentwicklung und-Bereitstell
 
 ## <a name="authentication-and-authorization"></a>[Authentifizierung und Autorisierung](authentication-and-authorization.md)
 
-Es gibt viele Ansätze für die Integration von Authentifizierung und Autorisierung in eine- Xamarin.Forms app, die mit einer ASP.NET MVC-Webanwendung kommuniziert. Hier werden Authentifizierung und Autorisierung mit einem containerisierten Identitäts-microservice ausgeführt, der "identityserver 4" verwendet. Identityserver ist ein OpenID Connect-und OAuth 2,0-Open-Source-Framework für ASP.net Core, die in ASP.net Core Identity integriert ist, um bearertokenauthentifizierung auszuführen.
+Es gibt viele Ansätze für die Integration von Authentifizierung und Autorisierung in eine- :::no-loc(Xamarin.Forms)::: app, die mit einer ASP.NET MVC-Webanwendung kommuniziert. Hier werden Authentifizierung und Autorisierung mit einem containerisierten Identitäts-microservice ausgeführt, der "identityserver 4" verwendet. Identityserver ist ein OpenID Connect-und OAuth 2,0-Open-Source-Framework für ASP.net Core, die in ASP.net Core Identity integriert ist, um bearertokenauthentifizierung auszuführen.
 
 ## <a name="accessing-remote-data"></a>[Zugreifen auf Remotedaten](accessing-remote-data.md)
 
@@ -79,11 +79,11 @@ Viele moderne webbasierte Lösungen nutzen Webdienste, die von Webservern gehost
 
 Das Testen von Modellen und Anzeigen von Modellen von MVVM-Anwendungen ist identisch mit dem Testen anderer Klassen, und es können dieselben Tools und Techniken verwendet werden. Es gibt jedoch einige Muster, die typisch für das Modellieren und Anzeigen von Modellklassen sind, die von speziellen Verfahren für Unittests profitieren können.
 
-## <a name="feedback"></a>Feedback
+## <a name="community-site"></a>Communitysite
 
 Dieses Projekt verfügt über eine Community-Website, auf der Sie Fragen stellen und Feedback geben können. Die Community-Website befindet sich auf [GitHub](https://github.com/dotnet-architecture/eShopOnContainers). Alternativ können Sie Feedback zu dem e-book per e-Mail senden [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com) .
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Download-e-Book (2 MB PDF)](https://aka.ms/xamarinpatternsebook)
 - [eshoponcontainers (GitHub) (Beispiel)](https://github.com/dotnet-architecture/eShopOnContainers)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: a97d3da4f451051dcb17c68da54cadf7d841fd50
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 743bdf4d843d9e427e2343bf58cc29b98ec07e2b
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566226"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997045"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri-Remote-und Bluetooth-Controller für tvos in xamarin
 
@@ -20,7 +20,7 @@ Benutzer Ihrer xamarin. tvos-App interagieren nicht direkt mit ihrer Schnittstel
 
 Wenn Ihre APP ein Spiel ist, können Sie optional auch Unterstützung für Drittanbieter erstellen, die für IOS- [Spiele Controller](#Bluetooth-Game-Controllers) (MFI) in ihrer App erstellt wurden.
 
-[![](remote-bluetooth-images/intro01.png "The Bluetooth Remote and Game Controller")](remote-bluetooth-images/intro01.png#lightbox)
+[![Bluetooth-Remote-und Game Controller](remote-bluetooth-images/intro01.png)](remote-bluetooth-images/intro01.png#lightbox)
 
 In diesem Artikel werden die Remote-Schaltflächen " [Siri](#The-Siri-Remote)", " [touchsurface](#Touch-Surface-Gestures) " und " [Siri](#Siri-Remote-Buttons) " beschrieben, und es wird gezeigt, wie Sie mit Ihnen über [Gesten und Storyboards](#Gestures-and-Storyboards), [Gesten und Code](#Gestures-and-Code) und eine [Ereignis Behandlung auf niedriger Ebene](#Low-Level-Event-Handling)arbeiten Schließlich wird die [Arbeit mit Spiel Controllern](#Working-with-Game-Controllers) in einer xamarin. tvos-App erläutert.
 
@@ -32,17 +32,17 @@ Die Hauptmethode, mit der Benutzer mit dem Apple TV und ihrer xamarin. tvos-App 
 
 Die Herausforderung als tvos-App-Entwickler besteht darin, eine schnelle, benutzerfreundliche und visuell überzeugende Benutzeroberfläche zu erstellen, die die Berührungs Oberfläche von Siri, den Beschleunigungsmesser, das Gyroskop und Schaltflächen nutzt.
 
-[![](remote-bluetooth-images/remote01.png "The Siri Remote")](remote-bluetooth-images/remote01.png#lightbox)
+[![Die Siri-Remote](remote-bluetooth-images/remote01.png)](remote-bluetooth-images/remote01.png#lightbox)
 
 Der Siri-Remote Computer verfügt über folgende Features und erwartete Verwendungen in ihrer tvos-App:
 
 |Funktion|Allgemeine App-Nutzung|Spiele-App-Verwendung|
 |---|---|---|
-|**Berührungs Oberfläche**<br />Wischen Sie, um zu navigieren, und drücken Sie, um Kontextmenüs auszuwählen und zu halten.|**Tippen/schwenken**<br />UI-Navigation zwischen fokussierbaren Elementen.<br /><br />**Klicken**<br />Aktiviert das ausgewählte (im Fokus) Element.|**Tippen/schwenken**<br />Hängt vom Spiel Entwurf ab und kann als D-Pad durch Tippen auf die Ränder verwendet werden.<br /><br />**Klicken**<br />Ausführen der primären Schaltflächen Funktion.|
-|**Stehen**<br />Drücken Sie, um zum vorherigen Bildschirm oder Menü zurückzukehren.|Kehrt zum vorherigen Bildschirm zurück und beendet den Apple TV-Startbildschirm über den Hauptbildschirm der app.|Anhalten und Fortsetzen des Spiels, zurück zum vorherigen Bildschirm und Beenden des Apple TV-Startbildschirms über den Bildschirm der Haupt-app.|
+|**Berührungs Oberfläche**<br />Wischen Sie, um zu navigieren, und drücken Sie, um Kontextmenüs auszuwählen und zu halten.|**Tippen/schwenken**<br />UI-Navigation zwischen fokussierbaren Elementen.<br /><br />**Sie**<br />Aktiviert das ausgewählte (im Fokus) Element.|**Tippen/schwenken**<br />Hängt vom Spiel Entwurf ab und kann als D-Pad durch Tippen auf die Ränder verwendet werden.<br /><br />**Sie**<br />Ausführen der primären Schaltflächen Funktion.|
+|**Menü**<br />Drücken Sie, um zum vorherigen Bildschirm oder Menü zurückzukehren.|Kehrt zum vorherigen Bildschirm zurück und beendet den Apple TV-Startbildschirm über den Hauptbildschirm der app.|Anhalten und Fortsetzen des Spiels, zurück zum vorherigen Bildschirm und Beenden des Apple TV-Startbildschirms über den Bildschirm der Haupt-app.|
 |**Siri/Suche**<br />Klicken Sie in Ländern mit Siri auf Sprachsteuerung, und in allen anderen Ländern wird Suchbildschirm angezeigt.|–|–|
 |**Wiedergabe/Anhalten**<br />Wiedergabe und Pause von Medien oder Bereitstellen einer sekundären Funktion in-apps.|Startet die Medienwiedergabe und hält die Wiedergabe wieder auf.|Führt eine sekundäre Schaltflächen Funktion aus oder überspringt das Intro-Video (sofern vorhanden).|
-|**Start**<br />Drücken Sie, um zum Startbildschirm zurückzukehren, doppelklicken Sie, um ausgestellte apps anzuzeigen, und halten Sie das Gerät gedrückt.|–|–|
+|**Home**<br />Drücken Sie, um zum Startbildschirm zurückzukehren, doppelklicken Sie, um ausgestellte apps anzuzeigen, und halten Sie das Gerät gedrückt.|–|–|
 |**Umfang**<br />Steuert das Volume für angefügte audiovolumes und Videogeräte.|–|–|
 
 <a name="Touch-Surface-Gestures"></a>
@@ -53,7 +53,7 @@ Die Touch-Oberfläche von Siri ist in der Lage, eine Vielzahl von Einzel Fingerg
 
 |Wischen|Klicken|Tippen|
 |---|---|---|
-|![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
+|![Verschiebt die Auswahl](remote-bluetooth-images/Gesture01.png)|![Aktiviert das ausgewählte Element.](remote-bluetooth-images/Gesture02.png)|![Richtungs Schaltflächen](remote-bluetooth-images/Gesture03.png)|
 |Verschiebt die Auswahl (Fokus) zwischen den Benutzeroberflächen Elementen auf dem Bildschirm (nach oben, nach links, rechts). Mithilfe von Striping können Sie mithilfe von Trägheit schnell durch große Inhaltslisten scrollen.|Aktiviert das ausgewählte (im Fokus) Element oder verhält sich wie die primäre Schaltfläche in einem Spiel. Durch Klicken und halten können Kontextmenüs oder sekundäre Funktionen aktiviert werden.|Das leichte Tippen auf die Berührungs Oberfläche der Kanten verhält sich wie direktionale Schaltflächen auf einem D-Pad, wobei der Fokus abhängig von der gekippten Fläche nach oben, unten, Links oder rechts verschoben wird. Abhängig von der APP kann verwendet werden, um ausgeblendete Steuerelemente anzuzeigen.|
 
 Apple bietet die folgenden Vorschläge zum Arbeiten mit touchoberflächen Gesten:
@@ -85,14 +85,14 @@ Gehen Sie folgendermaßen vor, um eine Gestenerkennung hinzuzufügen:
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zum Bearbeiten des Schnittstellen-Designers.
 2. Ziehen Sie eine **Tap-Gestenerkennung** aus der **Bibliothek** , und legen Sie Sie in der Ansicht ab:
 
-    [![](remote-bluetooth-images/storyboard01.png "A Tap Gesture Recognizer")](remote-bluetooth-images/storyboard01.png#lightbox)
+    [![Eine Tap-Gestenerkennung](remote-bluetooth-images/storyboard01.png)](remote-bluetooth-images/storyboard01.png#lightbox)
 3. Aktivieren **Sie im** **Schalt** Flächen Abschnitt des **Attribut Inspektors**Folgendes:
 
-    [![](remote-bluetooth-images/storyboard02.png "Check Select")](remote-bluetooth-images/storyboard02.png#lightbox)
+    [![Auswahl aktivieren](remote-bluetooth-images/storyboard02.png)](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **Select** bedeutet, dass die Geste auf den Benutzer reagiert, indem er auf die **Touchoberfläche** der Siri-Remote klickt. Sie haben auch die Möglichkeit, auf die Schaltflächen **Menü**, wieder **Gabe/Pause**, nach **oben**, **nach unten**, **Links** und **Rechts** zu antworten.
 5. Richten Sie als nächstes eine **Aktion** aus dem **Tap-Gesten Erkennungs** Modul ein, und nennen Sie es `TouchSurfaceClicked` :
 
-    [![](remote-bluetooth-images/storyboard03.png "An Action from the Tap Gesture Recognizer")](remote-bluetooth-images/storyboard03.png#lightbox)
+    [![Eine Aktion aus der TAP-Gestenerkennung.](remote-bluetooth-images/storyboard03.png)](remote-bluetooth-images/storyboard03.png#lightbox)
 6. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück.
 
 Bearbeiten Sie die Ansichts Controller `FirstViewController.cs` Datei (Beispieldatei), und fügen Sie den folgenden Code hinzu, um die ausgelöste Bewegung zu behandeln:
@@ -271,7 +271,7 @@ Wie bei `UITouch` Ereignissen sollten Sie alle vier implementieren, wenn Sie ein
 
 Zusätzlich zu den standardmäßigen Siri-Remote Geräten, die mit dem Apple TV ausgeliefert werden, können Drittanbieter für IOS-Spiele Controller (MFI) mit dem Apple TV gekoppelt und zum Steuern ihrer xamarin. tvos-App verwendet werden.
 
-[![](remote-bluetooth-images/game01.png "Bluetooth Game Controllers")](remote-bluetooth-images/game01.png#lightbox)
+[![Bluetooth-Spielcontroller](remote-bluetooth-images/game01.png)](remote-bluetooth-images/game01.png#lightbox)
 
 Spiele Controller können verwendet werden, um das Spiel zu verbessern und ein Gefühl für das Eintauchen in ein Spiel zu bieten. Sie können auch verwendet werden, um die standardmäßige Apple TV-Schnittstelle zu steuern, sodass die Verwendung nicht zwischen dem Remote-und dem Controller wechseln muss.
 
@@ -287,7 +287,7 @@ Ein Game Controller verfügt über die folgenden Features und erwarteten Verwend
 |**B**|Kehrt zum vorherigen Bildschirm zurück oder beendet den Startbildschirm, wenn er auf dem Hauptbildschirm der App angezeigt wird.|Führt die Funktion der sekundären Schaltfläche aus oder kehrt zum vorherigen Bildschirm zurück.|
 |**X**|Startet die Medienwiedergabe oder hält die Wiedergabe an.|Hängt von Spiel ab.|
 |**J**|–|Hängt von Spiel ab.|
-|**Stehen**|Kehrt zum vorherigen Bildschirm zurück oder beendet den Startbildschirm, wenn er auf dem Hauptbildschirm der App angezeigt wird.|Das Anhalten/Fortsetzen des Spiels wird zum vorherigen Bildschirm zurückgegeben oder auf dem Startbildschirm angezeigt, wenn es auf dem Hauptbildschirm der App angezeigt wird.|
+|**Menü**|Kehrt zum vorherigen Bildschirm zurück oder beendet den Startbildschirm, wenn er auf dem Hauptbildschirm der App angezeigt wird.|Das Anhalten/Fortsetzen des Spiels wird zum vorherigen Bildschirm zurückgegeben oder auf dem Startbildschirm angezeigt, wenn es auf dem Hauptbildschirm der App angezeigt wird.|
 |**Linke Schulter Schaltfläche**|Navigiert nach links.|Hängt von Spiel ab.|
 |**Linker-Auslösung**|Navigiert nach links.|Hängt von Spiel ab.|
 |**Schaltfläche mit rechter Schulter**|Navigiert nach rechts.|Hängt von Spiel ab.|
@@ -329,7 +329,7 @@ Apple hat mehrere spezielle Anforderungen, die erfüllt sein müssen, wenn Ihre 
 
 Um die Spiele Controller Unterstützung in ihrer xamarin. tvos-APP zu aktivieren, doppelklicken Sie auf die `Info.plist` Datei im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen:
 
-[![](remote-bluetooth-images/game02.png "The Info.plist editor")](remote-bluetooth-images/game02.png#lightbox)
+[![Der Info. plist-Editor](remote-bluetooth-images/game02.png)](remote-bluetooth-images/game02.png#lightbox)
 
 Platzieren Sie im Abschnitt **Game Controller** eine Prüfung, indem Sie **Game Controller aktivieren**, und überprüfen Sie dann alle Spiele Controller Typen, die von der App unterstützt werden.
 

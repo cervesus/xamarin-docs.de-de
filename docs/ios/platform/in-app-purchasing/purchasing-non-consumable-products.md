@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 2341d90a297d6241c47a5f03fbe8fffa89dd34b0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6d87f99ae504346d55c4ddf86a093799ba9ddbd5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032311"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936720"
 ---
 # <a name="purchasing-non-consumable-products-in-xamarinios"></a>Erwerben nicht nutzbarer Produkte in xamarin. IOS
 
@@ -24,13 +24,13 @@ Der [inapppurchasesample-Code](https://docs.microsoft.com/samples/xamarin/ios-sa
 
 Der Kaufvorgang wird in dieser Reihe von Screenshots angezeigt – die Schaltfläche " **kaufen** " wird zur Funktions Aktivierungs Schaltfläche:   
 
- [![](purchasing-non-consumable-products-images/image34.png "The purchase process is shown in this series of screenshots")](purchasing-non-consumable-products-images/image34.png#lightbox)   
+ [![Der Kaufvorgang wird in dieser Reihe von Screenshots gezeigt.](purchasing-non-consumable-products-images/image34.png)](purchasing-non-consumable-products-images/image34.png#lightbox)   
 
 Der Kaufvorgang ist identisch mit einem nutzbaren Produkt. der Hauptunterschied besteht darin, wie der Kauf im Anwendungscode nachverfolgt wird. In diesem Beispiel ist die Schaltfläche "kaufen" nur verfügbar, wenn das Produkt nicht bereits gekauft wurde. andernfalls aktiviert die Schaltfläche die Funktion selbst.   
 
 Das folgende Diagramm zeigt die Interaktionen zwischen Klassen und dem App Store-Server, um einen nicht nutzbaren Produktkauf durchzuführen:   
 
- [![](purchasing-non-consumable-products-images/image35.png "The interactions between classes and the App Store server to perform a non-consumable product purchase")](purchasing-non-consumable-products-images/image35.png#lightbox)   
+ [![Interaktionen zwischen Klassen und dem App Store-Server, um einen nicht nutzbaren Produkt Einkauf auszuführen](purchasing-non-consumable-products-images/image35.png)](purchasing-non-consumable-products-images/image35.png#lightbox)   
 
 Der Hauptunterschied zum nutzbaren Beispiel besteht darin, dass nach Abschluss des Kaufs die Benutzeroberfläche aktualisiert wird, um einen erneuten Einkauf zu verhindern. In diesem Beispiel aktualisiert die Benachrichtigung einer erfolgreichen Transaktion die Benutzeroberfläche, sodass die Schaltfläche " **kaufen** " in eine Schaltfläche konvertiert wird, die das Feature selbst aktiviert.
 
@@ -47,5 +47,5 @@ Es gibt Situationen, in denen eine Anwendung nicht erkennen kann, ob bereits ein
 Der Codepfad in diesem Szenario ist genau mit einem regulären Kauf identisch. die einzigen Unterschiede sind:
 
 - Der Benutzer wird für das Produkt nicht erneut in Rechnung gestellt.
-- Das `SKPaymentTransaction`-Objekt, das an die Anwendung übermittelt wird, verfügt über eine `OriginalTransaction`-Eigenschaft, die auf die Transaktion verweist, die beim anfänglichen Erwerb des Produkts generiert wurde. 
+- Das `SKPaymentTransaction` an die Anwendung über gegebene-Objekt verfügt über eine- `OriginalTransaction` Eigenschaft, die auf die Transaktion verweist, die beim anfänglichen Erwerb des Produkts generiert wurde. 
 - Anwendungen, die nicht nutzbare Produkte verkaufen, müssen auch die **Wiederherstellungs** Funktion von storekit implementieren, damit Benutzer vorhandene Einkäufe abrufen können. 

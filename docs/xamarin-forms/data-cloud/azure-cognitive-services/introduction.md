@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c2a63c40d1006c7d83c9dde871e17d4b194bdca
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cce5b0fc9c3d1d04c20b1be242197e3bc9e4f901
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129713"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929336"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Formsund Azure Cognitive Services Introduction
 
@@ -42,17 +42,17 @@ Tasks werden in einer lokalen SQLite-Datenbank gespeichert. Weitere Informatione
 
 `TodoListPage`Wird angezeigt, wenn die Anwendung gestartet wird. Auf dieser Seite wird eine Liste aller Aufgaben angezeigt, die in der lokalen Datenbank gespeichert sind, und der Benutzer kann eine neue Aufgabe erstellen oder die Anwendung bewerten:
 
-![](introduction-images/sample-application-1.png "TodoListPage")
+!["-Listpage"](introduction-images/sample-application-1.png)
 
 Neue Elemente können erstellt werden, indem Sie auf die *+* Schaltfläche klicken, die zu der navigiert `TodoItemPage` . Auf diese Seite kann auch durch Auswählen einer Aufgabe navigiert werden:
 
-![](introduction-images/sample-application-2.png "TodoItemPage")
+!["" Zu ""](introduction-images/sample-application-2.png)
 
 `TodoItemPage`Ermöglicht das Erstellen, bearbeiten, überschreiben, übersetzen, speichern und Löschen von Tasks. Die Spracherkennung kann verwendet werden, um eine Aufgabe zu erstellen oder zu bearbeiten. Dies wird erreicht, indem Sie auf die Mikrofon Schaltfläche klicken, um die Aufzeichnung zu starten, und indem Sie die gleiche Schaltfläche ein zweites Mal drücken, um Bing-Spracheingabe die Aufzeichnung zu unterbinden
 
 Durch Klicken auf die Schaltfläche Smilies auf der `TodoListPage` navigiert zum `RateAppPage` , das zum Durchführen der Emotions Erkennung für ein Bild eines Gesichtsausdrucks verwendet wird:
 
-![](introduction-images/sample-application-3.png "RateAppPage")
+![Rateapppage](introduction-images/sample-application-3.png)
 
 `RateAppPage`Ermöglicht es dem Benutzer, ein Foto seines Gesichts zu erfassen, das an die Gesichtserkennungs-API übermittelt wird, wenn die zurückgegebene Emotion angezeigt wird.
 
@@ -66,7 +66,7 @@ Das Projekt mit dem freigegebenen Code für die Beispielanwendung besteht aus f�
 |Repositorys|Enthält die `ITodoItemRepository` Schnittstelle und die `TodoItemRepository` Klasse, die zum Ausführen von Daten Bank Vorgängen verwendet werden.|
 |Dienste|Enthält die Schnittstellen und Klassen, die für den Zugriff auf verschiedene Microsoft Cognitive Service-APIs verwendet werden, sowie Schnittstellen, die von der-Klasse verwendet werden, `DependencyService` um die Klassen zu finden, die die Schnittstellen in Platt Form Projekten implementieren.|
 |Utils|Enthält die- `Timer` Klasse, die von der-Klasse verwendet wird, `AuthenticationService` um ein JWT-Zugriffs Token alle 9 Minuten zu erneuern.|
-|Ansichten|Enthält die Seiten für die Anwendung.|
+|Sichten|Enthält die Seiten für die Anwendung.|
 
 Das Projekt mit frei gegebenem Code enthält auch einige wichtige Dateien:
 

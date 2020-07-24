@@ -72,7 +72,7 @@ var stackLayout = new StackLayout {
 
 In diesem Artikel wurde der Unterschied zwischen den [`Margin`](xref:Xamarin.Forms.View.Margin) Eigenschaften und erläutert [`Padding`](xref:Xamarin.Forms.Layout.Padding) und erläutert, wie Sie festgelegt werden. Die Eigenschaften steuern das Layoutverhalten, wenn ein Element in der Benutzeroberfläche gerendert wird.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [V](xref:Xamarin.Forms.View.Margin)
 - [Auffüllen](xref:Xamarin.Forms.Layout.Padding)

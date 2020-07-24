@@ -10,16 +10,16 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 462948905f40679e2b931d4aa0039308c64a0a8f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cf5d3924a726247ea1884acc75720566d76c76e4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136494"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929215"
 ---
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselview-Bildlauf
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
@@ -27,7 +27,7 @@ ms.locfileid: "84136494"
 
 - `HorizontalScrollBarVisibility`vom Typ `ScrollBarVisibility` , der angibt, wann die horizontale Schiebe Leiste sichtbar ist.
 - `IsDragging`vom Typ `bool` , der angibt, ob der Bildlauf durch `CarouselView` führt. Dies ist eine schreibgeschützte Eigenschaft, deren Standardwert ist `false` .
-- `IsScrollAnimated`vom Typ `bool` , der angibt, ob beim Scrollen von eine Animation ausgeführt wird `CarouselView` . Standardwert: `true`.
+- `IsScrollAnimated`vom Typ `bool` , der angibt, ob beim Scrollen von eine Animation ausgeführt wird `CarouselView` . Der Standardwert ist `true`.
 - `ItemsUpdatingScrollMode`vom Typ `ItemsUpdatingScrollMode` , der das Scrollverhalten von darstellt, `CarouselView` Wenn diesem neue Elemente hinzugefügt werden.
 - `VerticalScrollBarVisibility`vom Typ `ScrollBarVisibility` , der angibt, wann die vertikale Schiebe Leiste sichtbar ist.
 

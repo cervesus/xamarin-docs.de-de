@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 0e6edaccb9e0c163ee46c59ed11769476037aa90
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: a462e3adf4109cc9a7a2e17e775609e2c3c81906
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573546"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938878"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Arbeiten mit tvos-Registerkarten leisten-Controllern in xamarin
 
 Für viele Arten von tvos-apps wird die primäre Navigation als Registerkarte angezeigt, die im oberen Bildschirmbereich ausgeführt wird. Der Benutzer wird nach links und rechts in die Liste der möglichen Kategorien und der Inhalts Bereich unterhalb der Änderungen geändert, um die Auswahl des Benutzers widerzuspiegeln.
 
-[![](tab-bars-images/tab01.png "Sample Tab Bar")](tab-bars-images/tab01.png#lightbox)
+[![Beispiel Registerkarten Leiste](tab-bars-images/tab01.png)](tab-bars-images/tab01.png#lightbox)
 
 Die Registerkarten Leiste ist standardmäßig übersichtlich und wird immer am oberen Rand des Bildschirms angezeigt. Im Fokusbereich deckt eine Registerkarten Leiste die oberen 140 Pixel des Bildschirms ab, wird jedoch schnell verschoben, wenn sich der Fokus auf den folgenden Inhalts Bereich verschiebt.
 
@@ -62,22 +62,22 @@ Die einfachste Möglichkeit, mit Tabstopp leisten in einer xamarin. tvos-APP zu 
 
 1. Starten Sie eine neue xamarin. tvos-APP, und wählen Sie die **tvos**-App im Registerkarten Format aus  >  **App**  >  **Tabbed App**: 
 
-    [![](tab-bars-images/tab02.png "Select Tabbed App")](tab-bars-images/tab02.png#lightbox)
+    [![Auswählen der APP im Registerkarten Format](tab-bars-images/tab02.png)](tab-bars-images/tab02.png#lightbox)
 1. Befolgen Sie alle Aufforderungen, um eine neue xamarin. tvos-Lösung zu erstellen.
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Um das **Symbol** oder den **Titel** für eine bestimmte Kategorie zu ändern, wählen Sie in der **Dokument**Gliederung das Element der **Registerkarten Leiste** für den **Ansichts Controller** aus:
 
-    [![](tab-bars-images/tab03a.png "The Tab Bar Item for the View Controller in the Document Outline")](tab-bars-images/tab03a.png#lightbox)
+    [![Das Element der Registerkarten Leiste für den Ansichts Controller in der Dokument Gliederung.](tab-bars-images/tab03a.png)](tab-bars-images/tab03a.png#lightbox)
 1. Legen Sie dann im **Eigenschaften-Explorer**auf der **Registerkarte widget** die erforderlichen Eigenschaften fest: 
 
-    [![](tab-bars-images/tab03.png "The Widget Tab")](tab-bars-images/tab03.png#lightbox)
+    [![Die Widget-Registerkarte](tab-bars-images/tab03.png)](tab-bars-images/tab03.png#lightbox)
 1. Legen Sie zum Hinzufügen einer neuen Kategorie (Registerkarte) einen **Ansichts Controller** auf der Entwurfs Oberfläche ab: 
 
-    [![](tab-bars-images/tab04.png "A View Controller")](tab-bars-images/tab04.png#lightbox)
+    [![Einen Ansichts Controller](tab-bars-images/tab04.png)](tab-bars-images/tab04.png#lightbox)
 1. Klicken und ziehen Sie von der **Registerkarte Ansicht Controller** auf den neuen **Ansichts Controller**.
 1. Wählen Sie im Popup Fenster **Controller anzeigen** aus, um die neue Ansicht als Registerkarte (Kategorie) hinzuzufügen: 
 
-    [![](tab-bars-images/tab05.png "Select Tab")](tab-bars-images/tab05.png#lightbox)
+    [![Registerkarte auswählen](tab-bars-images/tab05.png)](tab-bars-images/tab05.png#lightbox)
 1. Entwerfen Sie das Layout der Benutzeroberfläche für jeden Inhalt Bereich der einzelnen Kategorien wie üblich, indem Sie Benutzeroberflächen Elemente im IOS-Designer hinzufügen.
 1. Machen Sie alle erforderlichen Ereignisse verfügbar, um mit ihren UI-Steuerelementen in c#-Code zu arbeiten.
 1. Benennen Sie alle UI-Steuerelemente, die Sie in c#-Code verfügbar machen möchten.
@@ -87,22 +87,22 @@ Die einfachste Möglichkeit, mit Tabstopp leisten in einer xamarin. tvos-APP zu 
 
 1. Starten Sie eine neue xamarin. tvos-APP, und wählen Sie die **tvos**-App im Registerkarten Format aus  >  **App**  >  **Tabbed App**: 
 
-    [![](tab-bars-images/tab02vs.png "Select Tabbed App")](tab-bars-images/tab02vs.png#lightbox)
+    [![Auswählen der APP im Registerkarten Format](tab-bars-images/tab02vs.png)](tab-bars-images/tab02vs.png#lightbox)
 1. Befolgen Sie alle Aufforderungen, um eine neue xamarin. tvos-Lösung zu erstellen.
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Um das **Symbol** oder den **Titel** für eine bestimmte Kategorie zu ändern, wählen Sie in der **Dokument**Gliederung das Element der **Registerkarten Leiste** für den **Ansichts Controller** aus:
 
-    [![](tab-bars-images/tab03avs.png "The View Controller in the Document Outline")](tab-bars-images/tab03avs.png#lightbox)
+    [![Der Ansichts Controller in der Dokument Gliederung](tab-bars-images/tab03avs.png)](tab-bars-images/tab03avs.png#lightbox)
 1. Legen Sie dann im **Eigenschaften-Explorer**auf der **Registerkarte widget** die erforderlichen Eigenschaften fest: 
 
-    [![](tab-bars-images/tab03vs.png "The Widget Tab")](tab-bars-images/tab03vs.png#lightbox)
+    [![Die Widget-Registerkarte](tab-bars-images/tab03vs.png)](tab-bars-images/tab03vs.png#lightbox)
 1. Ziehen Sie zum Hinzufügen einer neuen Kategorie (Registerkarte) einen **Ansichts Controller** aus der **Toolbox** , und legen Sie ihn auf der Entwurfs Oberfläche ab: 
 
-    [![](tab-bars-images/tab04vs.png "A View Controller")](tab-bars-images/tab04vs.png#lightbox)
+    [![Einen Ansichts Controller](tab-bars-images/tab04vs.png)](tab-bars-images/tab04vs.png#lightbox)
 1. Klicken und ziehen Sie von der **Registerkarte Ansicht Controller** auf den neuen **Ansichts Controller**.
 1. Wählen Sie im Popup Fenster **Controller anzeigen** aus, um die neue Ansicht als Registerkarte (Kategorie) hinzuzufügen: 
 
-    [![](tab-bars-images/tab05vs.png "Select Tab")](tab-bars-images/tab05vs.png#lightbox)
+    [![Registerkarte auswählen](tab-bars-images/tab05vs.png)](tab-bars-images/tab05vs.png#lightbox)
 1. Entwerfen Sie das Layout der Benutzeroberfläche für jeden Inhalt Bereich der einzelnen Kategorien wie üblich, indem Sie Benutzeroberflächen Elemente im IOS-Designer hinzufügen.
 1. Machen Sie alle erforderlichen Ereignisse verfügbar, um mit ihren UI-Steuerelementen in c#-Code zu arbeiten.
 1. Benennen Sie alle UI-Steuerelemente, die Sie in c#-Code verfügbar machen möchten.
@@ -134,7 +134,7 @@ TabBar.Items [2].BadgeValue = "10";
 
 Dies führt zu folgenden Ergebnissen, wenn Sie ausgeführt werden:
 
-[![](tab-bars-images/tab06.png "A Tab Bar Item with badge")](tab-bars-images/tab06.png#lightbox)
+[![Ein Tabstopp leisten Element mit Badge](tab-bars-images/tab06.png)](tab-bars-images/tab06.png#lightbox)
 
 Verwenden `Title` Sie die-Eigenschaft des `UITabBarItem` , um den Titel und die- `Image` Eigenschaft zu ändern, um das Symbol zu ändern.
 

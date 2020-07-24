@@ -19,7 +19,7 @@ ms.locfileid: "86933314"
 ---
 # <a name="soft-keyboard-input-mode-on-android"></a>Weicher Tastatureingabe Modus unter Android
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Diese Android-plattformspezifische wird verwendet, um den Betriebsmodus für einen Soft Tastatureingabe Bereich festzulegen, und wird in XAML verwendet, indem die [`Application.WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty) angefügte-Eigenschaft auf einen Wert der-Enumeration festgelegt wird [`WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) :
 

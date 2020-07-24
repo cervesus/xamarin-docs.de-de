@@ -1,5 +1,5 @@
 ---
-title: Benachrichtigungen in xamarin. IOS
+title: Benachrichtigungen in Xamarin.iOS
 description: In diesem Abschnitt wird gezeigt, wie lokale Benachrichtigungen in xamarin. IOS implementiert werden. Darin werden die verschiedenen Benutzeroberflächen Elemente einer IOS-Benachrichtigung erläutert, und es wird erläutert, welche API zum Erstellen und Anzeigen einer Benachrichtigung beteiligt ist.
 ms.prod: xamarin
 ms.assetid: 5BB76915-5DB0-48C7-A267-FA9F7C50793E
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/13/2018
-ms.openlocfilehash: 0cd0937229e8679af46313d0bce4c62792c0f36b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 04631993d47a1d51858ab24948ab61170d37bb6e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031380"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939878"
 ---
-# <a name="notifications-in-xamarinios"></a>Benachrichtigungen in xamarin. IOS
+# <a name="notifications-in-xamarinios"></a>Benachrichtigungen in Xamarin.iOS
 
 > [!IMPORTANT]
 > Die Informationen in diesem Abschnitt beziehen sich auf IOS 9 und früher. Informationen zu IOS 10 und höher finden Sie im [Handbuch zum Benutzer Benachrichtigungs Framework](~/ios/platform/user-notifications/index.md).
@@ -43,7 +43,7 @@ application.RegisterUserNotificationSettings(notificationSettings);
 
 [![Bestätigung der Möglichkeit zum Senden einer lokalen Benachrichtigung](local-notifications-in-ios-images/image0-sml.png "Bestätigung der Möglichkeit zum Senden einer lokalen Benachrichtigung")](local-notifications-in-ios-images/image0.png#lightbox)
 
-Um eine lokale Benachrichtigung zu planen, erstellen Sie ein `UILocalNotification` Objekt, legen Sie den `FireDate`fest, und planen Sie ihn über die `ScheduleLocalNotification`-Methode für das `UIApplication.SharedApplication` Objekt. Der folgende Code Ausschnitt zeigt, wie Sie eine Benachrichtigung planen, die in der Zukunft eine Minute auslösen wird, und eine Warnung mit einer Meldung anzeigen:
+Um eine lokale Benachrichtigung zu planen, erstellen `UILocalNotification` Sie ein-Objekt, legen `FireDate` Sie fest, und planen Sie es über die- `ScheduleLocalNotification` Methode für das- `UIApplication.SharedApplication` Objekt. Der folgende Code Ausschnitt zeigt, wie Sie eine Benachrichtigung planen, die in der Zukunft eine Minute auslösen wird, und eine Warnung mit einer Meldung anzeigen:
 
 ```csharp
 UILocalNotification notification = new UILocalNotification();
@@ -56,7 +56,7 @@ UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 
 Der folgende Screenshot zeigt, wie diese Warnung aussieht:
 
-[![](local-notifications-in-ios-images/image2-sml.png "An example alert")](local-notifications-in-ios-images/image2.png#lightbox)
+[![Beispiel für eine Warnung](local-notifications-in-ios-images/image2-sml.png)](local-notifications-in-ios-images/image2.png#lightbox)
 
 Beachten Sie, dass nichts angezeigt wird, wenn der Benutzer Benachrichtigungen *nicht zulässt* .
 
@@ -79,7 +79,7 @@ Wenn der Benachrichtigungs Sound länger als 30 Sekunden ist, übernimmt IOS sta
 
 ## <a name="handling-notifications"></a>Behandeln von Benachrichtigungen
 
-IOS-Anwendungen verarbeiten Remote Benachrichtigungen und lokale Benachrichtigungen fast genauso. Wenn eine Anwendung ausgeführt wird, wird die `ReceivedLocalNotification`-Methode oder die `ReceivedRemoteNotification`-Methode der `AppDelegate`-Klasse aufgerufen, und die Benachrichtigungs Informationen werden als Parameter übergeben.
+IOS-Anwendungen verarbeiten Remote Benachrichtigungen und lokale Benachrichtigungen fast genauso. Wenn eine Anwendung ausgeführt wird, `ReceivedLocalNotification` wird die-Methode oder die `ReceivedRemoteNotification` -Methode der `AppDelegate` -Klasse aufgerufen, und die Benachrichtigungs Informationen werden als Parameter übergeben.
 
 Eine Anwendung kann eine Benachrichtigung auf unterschiedliche Weise verarbeiten. Beispielsweise zeigt die Anwendung möglicherweise nur eine Warnung an, die Benutzer an ein Ereignis erinnert. Die Benachrichtigung kann auch verwendet werden, um dem Benutzer eine Warnung anzuzeigen, dass ein Prozess abgeschlossen wurde, z. b. das Synchronisieren von Dateien mit einem Server.
 
@@ -99,7 +99,7 @@ public override void ReceivedLocalNotification(UIApplication application, UILoca
 }
 ```
 
-Wenn die Anwendung nicht ausgeführt wird, übernimmt IOS den Sound und/oder aktualisiert das Symbol Badge nach Bedarf. Wenn der Benutzer die Anwendung startet, die der Warnung zugeordnet ist, wird die Anwendung gestartet, und die `FinishedLaunching`-Methode des App-Delegaten wird aufgerufen, und die Benachrichtigungs Informationen werden über den `launchOptions`-Parameter übergeben. Wenn das Options Wörterbuch den Schlüssel `UIApplication.LaunchOptionsLocalNotificationKey`enthält, weiß der `AppDelegate`, dass die Anwendung von einer lokalen Benachrichtigung aus gestartet wurde. Der folgende Code Ausschnitt veranschaulicht diesen Prozess:
+Wenn die Anwendung nicht ausgeführt wird, übernimmt IOS den Sound und/oder aktualisiert das Symbol Badge nach Bedarf. Wenn der Benutzer die Anwendung startet, die der Warnung zugeordnet ist, wird die Anwendung gestartet, und die `FinishedLaunching` -Methode im App-Delegaten wird aufgerufen, und die Benachrichtigungs Informationen werden über den- `launchOptions` Parameter übergeben. Wenn das Options Wörterbuch den Schlüssel enthält `UIApplication.LaunchOptionsLocalNotificationKey` , `AppDelegate` weiß das, dass die Anwendung von einer lokalen Benachrichtigung aus gestartet wurde. Der folgende Code Ausschnitt veranschaulicht diesen Prozess:
 
 ```csharp
 // check for a local notification
@@ -119,7 +119,7 @@ if (launchOptions.ContainsKey(UIApplication.LaunchOptionsLocalNotificationKey))
 }
 ```
 
-Bei einer Remote Benachrichtigung verfügen `launchOptions` über eine `LaunchOptionsRemoteNotificationKey` mit einem zugeordneten `NSDictionary`, das die Remote Benachrichtigungs Nutzlast enthält. Sie können die Benachrichtigungs Nutzlast über die Schlüssel `alert`, `badge`und `sound` extrahieren. Der folgende Code Ausschnitt zeigt, wie Sie Remote Benachrichtigungen erhalten:
+Bei einer Remote Benachrichtigung `launchOptions` verfügt über einen `LaunchOptionsRemoteNotificationKey` mit einem zugeordneten, `NSDictionary` der die Remote Benachrichtigungs Nutzlast enthält. Sie können die Benachrichtigungs Nutzlast über die `alert` `badge` Schlüssel, und extrahieren `sound` . Der folgende Code Ausschnitt zeigt, wie Sie Remote Benachrichtigungen erhalten:
 
 ```csharp
 NSDictionary remoteNotification = options[UIApplication.LaunchOptionsRemoteNotificationKey];
@@ -131,12 +131,12 @@ if(remoteNotification != null)
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Abschnitt wurde gezeigt, wie eine Benachrichtigung in xamarin. IOS erstellt und veröffentlicht wird. Es zeigt, wie eine Anwendung auf Benachrichtigungen reagieren kann, indem Sie die `ReceivedLocalNotification`-Methode oder die `ReceivedRemoteNotification`-Methode im `AppDelegate`überschreibt.
+In diesem Abschnitt wurde gezeigt, wie eine Benachrichtigung in xamarin. IOS erstellt und veröffentlicht wird. Es zeigt, wie eine Anwendung möglicherweise auf Benachrichtigungen reagiert, indem Sie die- `ReceivedLocalNotification` Methode oder die- `ReceivedRemoteNotification` Methode in der überschreibt `AppDelegate` .
 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Lokale Benachrichtigungen (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications)
 - [Lokale und Pushbenachrichtigungen für Entwickler](https://developer.apple.com/notifications/)
-- [Programmier Handbuch für lokale und Pushbenachrichtigungen](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
+- [Apple Apple Local and Push Notification Programming Guide](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
 - [UIApplication](https://docs.microsoft.com/dotnet/api/uikit.uiapplication)
 - [Uilocalnotification](https://docs.microsoft.com/dotnet/api/uikit.UILocalNotification)

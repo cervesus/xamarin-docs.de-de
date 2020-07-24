@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/11/2016
-ms.openlocfilehash: 3ff868ed10d59a7c1026a222f314a1166a8de45e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 588dadbfe63a46bc7658d5d29a052cebe52be65c
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930194"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997409"
 ---
 # <a name="cloudkit-in-xamarinios"></a>Cloudkit in xamarin. IOS
 
@@ -23,7 +23,7 @@ Entwickler können sich auf Ihre Client seitigen Anwendungen konzentrieren und e
 > [!IMPORTANT]
 > Apple [stellt Tools zur Verfügung](https://developer.apple.com/support/allowing-users-to-manage-data/), die Entwickler dabei unterstützen, die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union umzusetzen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Folgendes ist erforderlich, um die in diesem Artikel beschriebenen Schritte auszuführen:
 
@@ -218,7 +218,7 @@ Daten Satz Bezeichner werden im cloudkit-Framework über die-Klasse verfügbar g
 var recordID =  new CKRecordID("My Record");
 ```
 
-### <a name="references"></a>Referenzen
+### <a name="references"></a>References
 
 Verweise stellen Beziehungen zwischen verknüpften Datensätzen in einer bestimmten Datenbank bereit:
 
@@ -712,7 +712,7 @@ Cloudkit ist standardmäßig so konzipiert, dass der Datenschutz des aktuell ang
 
 In diesen Fällen kann die Anwendung anfordern, dass der Benutzer diese Informationen offen legt. Dem Benutzer wird ein Dialogfeld angezeigt, in dem Sie aufgefordert werden, seine Kontoinformationen verfügbar zu machen.
 
-#### <a name="discovery"></a>Suche
+#### <a name="discovery"></a>Ermittlung
 
 Angenommen, der Benutzer hat sich angemeldet, um der Anwendung den eingeschränkten Zugriff auf die Benutzerkontoinformationen zu gestatten, Sie kann für andere Benutzer der Anwendung erkennbar sein:
 
@@ -790,7 +790,7 @@ Vor dem Bereitstellen der Anwendung kann der Entwickler das Schema und die Daten
 
 Vor dem Versand einer Anwendung, die cloudkit verwendet, muss Sie für die **cloudkit-Produktionsumgebung** konfiguriert werden, oder die Anwendung wird von Apple abgelehnt.
 
-Gehen Sie folgendermaßen vor:
+Gehen Sie wie folgt vor:
 
 1. Kompilieren Sie die Anwendung für das IOS- **Freigabe**Gerät in Visual Studio für MA  >  **iOS Device**:
 
@@ -811,7 +811,7 @@ Gehen Sie folgendermaßen vor:
 
 6. Wählen Sie das Archiv der Anwendung aus, und klicken Sie auf die Schaltfläche **exportieren...** :
 
-    [![](intro-to-cloudkit-images/shipping05.png "The application's archive")](intro-to-cloudkit-images/shipping05.png#lightbox)
+    [![Das Archiv der Anwendung](intro-to-cloudkit-images/shipping05.png)](intro-to-cloudkit-images/shipping05.png#lightbox)
 
 7. Wählen Sie eine Export Methode aus, und klicken Sie auf die Schaltfläche **weiter** :
 

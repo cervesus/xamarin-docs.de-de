@@ -105,7 +105,7 @@ Das Bild unten zeigt nun beide segmentierten Steuerelemente, deren Darstellung a
 
 Ausführlichere Informationen finden Sie unter [Einführung in die](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) Darstellungs-API.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Darstellung (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/appearance)
 - [Uiappearance-Protokoll Referenz](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/)

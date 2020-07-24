@@ -119,7 +119,7 @@ Diese beiden Bildschirmaufzeichnungen zeigen das Standard `UISwitch` Steuereleme
 
 Viele IOS-Benutzeroberflächen-Steuerelemente können mithilfe der- [ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)ihre Standardfarben und andere Attribute festlegen.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Uiappearance](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)
 - [Anpassen von Registerkarten](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs)

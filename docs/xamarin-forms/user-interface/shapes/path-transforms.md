@@ -1,6 +1,6 @@
 ---
-title: 'Xamarin.FormsFormen: Pfad Transformationen'
-description: Eine Xamarin.Forms Transformation definiert, wie ein Pfad Objekt von einem Koordinaten Bereich in einen anderen Koordinaten Bereich transformiert wird.
+title: ':::no-loc(Xamarin.Forms):::Formen: Pfad Transformationen'
+description: 'Eine :::no-loc(Xamarin.Forms)::: Transformation definiert, wie ein Pfad Objekt von einem Koordinaten Bereich in einen anderen Koordinaten Bereich transformiert wird.'
 ms.prod: xamarin
 ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
 ms.technology: xamarin-forms
@@ -8,31 +8,31 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/02/2020
 no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 41de95c452212dce77d6365265e4813170c9b9b9
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+- ':::no-loc(Xamarin.Forms):::'
+- ':::no-loc(Xamarin.Essentials):::'
+ms.openlocfilehash: 30036fdde589fdc5d47735c215196b52a32dd732
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853051"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997435"
 ---
-# <a name="xamarinforms-shapes-path-transforms"></a>Xamarin.FormsFormen: Pfad Transformationen
+# <a name="no-locxamarinforms-shapes-path-transforms"></a>:::no-loc(Xamarin.Forms):::Formen: Pfad Transformationen
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Eine `Transform` definiert, wie ein- `Path` Objekt von einem Koordinaten Bereich in einen anderen Koordinaten Bereich transformiert wird. Wenn eine Transformation auf ein-Objekt angewendet wird `Path` , wird die Darstellung des Objekts in der Benutzeroberfläche geändert.
 
-Transformationen können in vier allgemeine Klassifizierungen eingeteilt werden: Drehung, Skalierung, Schiefe und Übersetzung. Xamarin.Formsdefiniert eine Klasse für jede dieser Transformations Klassifizierungen:
+Transformationen können in vier allgemeine Klassifizierungen eingeteilt werden: Drehung, Skalierung, Schiefe und Übersetzung. :::no-loc(Xamarin.Forms):::definiert eine Klasse für jede dieser Transformations Klassifizierungen:
 
 - `RotateTransform`, die eine `Path` durch einen angegebenen rotiert `Angle` .
 - `ScaleTransform`, wodurch ein `Path` -Objekt durch angegebene `ScaleX` -und-Beträge skaliert wird `ScaleY` .
 - `SkewTransform`, das ein `Path` -Objekt durch angegebene `AngleX` -und-Beträge vergrenzt `AngleY` .
 - `TranslateTransform`, wodurch ein `Path` -Objekt durch angegebene `X` -und-Beträge verschoben wird `Y` .
 
-Xamarin.Formsbietet außerdem die folgenden Klassen zum Erstellen komplexerer Transformationen:
+:::no-loc(Xamarin.Forms):::bietet außerdem die folgenden Klassen zum Erstellen komplexerer Transformationen:
 
 - `TransformGroup`stellt eine zusammengesetzte Transformation dar, die aus mehreren Transformations Objekten besteht.
 - `CompositeTransform`, wodurch mehrere Transformations Vorgänge auf ein- `Path` Objekt angewendet werden.
@@ -52,7 +52,7 @@ Die- `RotateTransform` Klasse, die von der- `Transform` Klasse abgeleitet wird, 
 - `CenterX``double`stellt die x-Koordinate des Mittelpunkts der Drehung dar. Der Standardwert dieser Eigenschaft ist 0,0.
 - `CenterY``double`stellt die y-Koordinate des Mittelpunkts der Drehung dar. Der Standardwert dieser Eigenschaft ist 0,0.
 
-Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
+Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
 
 Die `CenterX` `CenterY` Eigenschaften und geben den Punkt an, an dem das `Path` Objekt gedreht wird. Dieser Mittelpunkt wird im Koordinaten Bereich des Objekts ausgedrückt, das transformiert wird. Standardmäßig wird die Drehung auf (0,0) angewendet. Dies ist die linke obere Ecke des `Path` Objekts.
 
@@ -86,7 +86,7 @@ Die- `ScaleTransform` Klasse, die von der- `Transform` Klasse abgeleitet wird, d
 - `CenterX`vom Typ `double` , der die x-Koordinate des Mittelpunkts dieser Transformation darstellt. Der Standardwert dieser Eigenschaft ist 0,0.
 - `CenterY`vom Typ `double` , der die y-Koordinate des Mittelpunkts dieser Transformation darstellt. Der Standardwert dieser Eigenschaft ist 0,0.
 
-Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
+Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
 
 Der Wert von `ScaleX` und `ScaleY` hat eine große Auswirkung auf die resultierende Skalierung:
 
@@ -131,7 +131,7 @@ Die- `SkewTransform` Klasse, die von der- `Transform` Klasse abgeleitet wird, de
 - `CenterX`vom Typ `double` , der die x-Koordinate des Transformations Mittelpunkts darstellt. Der Standardwert dieser Eigenschaft ist 0,0.
 - `CenterY`vom Typ `double` , der die y-Koordinate des Transformations Mittelpunkts darstellt. Der Standardwert dieser Eigenschaft ist 0,0.
 
-Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
+Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
 
 Um die Auswirkung einer Schiefe-Transformation vorherzusagen, sollten Sie die `AngleX` x-Achsen Werte relativ zum ursprünglichen Koordinatensystem neigen. Daher wird `AngleX` die y-Achse für eine von 30 um 30 Grad über den Ursprung rotiert und die Werte in x um 30 Grad von diesem Ursprung. Ebenso wird `AngleY` die y-Werte des-Objekts durch eine von 30 `Path` um 30 Grad vom Ursprung entfernt.
 
@@ -167,7 +167,7 @@ Die- `TranslateTransform` Klasse, die von der- `Transform` Klasse abgeleitet wir
 - `X`vom Typ `double` , der den Abstand zum Verschieben entlang der x-Achse darstellt. Der Standardwert dieser Eigenschaft ist 0,0.
 - `Y`vom Typ `double` , der den Abstand zum Verschieben entlang der y-Achse darstellt. Der Standardwert dieser Eigenschaft ist 0,0.
 
-Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
+Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
 
 Negative `X` Werte verschieben ein Objekt nach links, während positive Werte ein Objekt nach rechts verschieben. Mit negativen `Y` Werten wird ein Objekt nach oben verschoben, während positive Werte ein Objekt nach unten verschieben.
 
@@ -191,13 +191,13 @@ In diesem Beispiel wird das `Path` Objekt 50 geräteunabhängige Einheiten nach 
 
 ## <a name="multiple-transforms"></a>Mehrere Transformationen
 
-Xamarin.Formsverfügt über zwei Klassen, die das Anwenden mehrerer Transformationen auf ein-Objekt unterstützen `Path` . Dies sind `TransformGroup` , und `CompositeTransform` . Eine `TransformGroup` führt Transformationen in beliebiger Reihenfolge durch, während eine `CompositeTransform` Transformationen in einer bestimmten Reihenfolge ausführt.
+:::no-loc(Xamarin.Forms):::verfügt über zwei Klassen, die das Anwenden mehrerer Transformationen auf ein-Objekt unterstützen `Path` . Dies sind `TransformGroup` , und `CompositeTransform` . Eine `TransformGroup` führt Transformationen in beliebiger Reihenfolge durch, während eine `CompositeTransform` Transformationen in einer bestimmten Reihenfolge ausführt.
 
 ### <a name="transform-groups"></a>Transformieren von Gruppen
 
 Transformationsgruppen stellen zusammengesetzte Transformationen dar, die aus mehreren `Transform` Objekten bestehen.
 
-Die- `TransformGroup` Klasse, die von der- `Transform` Klasse abgeleitet wird, definiert eine `Children` Eigenschaft vom Typ `TransformCollection` , die eine Auflistung von- `Transform` Objekten darstellt. Diese Eigenschaft wird von einem [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekt unterstützt. Dies bedeutet, dass es sich um das Ziel der Daten Bindungen handeln und formatiert werden kann.
+Die- `TransformGroup` Klasse, die von der- `Transform` Klasse abgeleitet wird, definiert eine `Children` Eigenschaft vom Typ `TransformCollection` , die eine Auflistung von- `Transform` Objekten darstellt. Diese Eigenschaft wird von einem [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) -Objekt unterstützt. Dies bedeutet, dass es sich um das Ziel der Daten Bindungen handeln und formatiert werden kann.
 
 Die Reihenfolge der Transformationen ist in einer zusammengesetzten Transformation wichtig, in der die-Klasse verwendet wird `TransformGroup` . Wenn Sie z. b. zuerst drehen, dann skalieren und dann übersetzen, erhalten Sie ein anderes Ergebnis als bei der ersten Übersetzung, dann drehen und skalieren. Eine Grundordnung ist wichtig, wenn Transformationen wie Drehung und Skalierung in Bezug auf den Ursprung des Koordinatensystems ausgeführt werden. Das Skalieren eines Objekts, das sich auf den Ursprung konzentriert, erzeugt ein anderes Ergebnis für das Skalieren eines Objekts, das vom Ursprung entfernt wurde. Entsprechend erzeugt das Drehen eines Objekts, das am Ursprung zentriert ist, ein anderes Ergebnis als das Drehen eines Objekts, das vom Ursprung entfernt wurde.
 
@@ -238,7 +238,7 @@ Die- `CompositeTransform` Klasse, die von der- `Transform` Klasse abgeleitet wir
 - `TranslateX`vom Typ `double` , der den Abstand zum Verschieben entlang der x-Achse darstellt. Der Standardwert dieser Eigenschaft ist 0,0.
 - `TranslateY`vom Typ `double` , der den Abstand zum Verschieben entlang der y-Achse darstellt. Der Standardwert dieser Eigenschaft ist 0,0.
 
-Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
+Diese Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) . Dies bedeutet, dass Sie Ziele von Daten Bindungen und formatiert sein können.
 
 Ein `CompositeTransform` wendet Transformationen in dieser Reihenfolge an:
 
@@ -294,13 +294,41 @@ Die `OffsetX` -Eigenschaft und die-Eigenschaft `OffsetY` werden so benannt, dass
 
 Außerdem stellt die `Matrix` Struktur eine Reihe von Methoden zur Verfügung, die zum Bearbeiten der Matrix Werte verwendet werden können, `Append` einschließlich `Invert` , `Multiply` , `Prepend` und vieles mehr.
 
-Die folgende Tabelle zeigt die Struktur einer Xamarin.Forms Matrix:
+Die folgende Tabelle zeigt die Struktur einer :::no-loc(Xamarin.Forms)::: Matrix:
 
-| | | |
-|---------|---------|-----|
-| M11     | M12     | 0,0 |
-| M21     | M22     | 0,0 |
-| OffsetX | OffsetY | 1.0 |
+:::row:::
+    :::column:::
+        M11
+    :::column-end:::
+    :::column:::
+        M12
+    :::column-end:::
+    :::column:::
+        0,0
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        M21
+    :::column-end:::
+    :::column:::
+        M22
+    :::column-end:::
+    :::column:::
+        0,0
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        OffsetX
+    :::column-end:::
+    :::column:::
+        OffsetY
+    :::column-end:::
+    :::column:::
+        1.0
+    :::column-end:::
+:::row-end:::
 
 > [!NOTE]
 > Die letzte Spalte einer affinen Transformationsmatrix ist gleich (0,0), sodass nur die Elemente in den ersten beiden Spalten angegeben werden müssen.
@@ -309,7 +337,7 @@ Durch die Bearbeitung von Matrix Werten können Objekte gedreht, skaliert, verze
 
 ## <a name="custom-transforms"></a>Benutzerdefinierte Transformationen
 
-Die- `MatrixTransform` Klasse, die von der- `Transform` Klasse abgeleitet wird, definiert eine `Matrix` Eigenschaft vom Typ `Matrix` , die die Matrix darstellt, die die Transformation definiert. Diese Eigenschaft wird von einem [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) -Objekt unterstützt. Dies bedeutet, dass es sich um das Ziel der Daten Bindungen handeln und formatiert werden kann.
+Die- `MatrixTransform` Klasse, die von der- `Transform` Klasse abgeleitet wird, definiert eine `Matrix` Eigenschaft vom Typ `Matrix` , die die Matrix darstellt, die die Transformation definiert. Diese Eigenschaft wird von einem [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) -Objekt unterstützt. Dies bedeutet, dass es sich um das Ziel der Daten Bindungen handeln und formatiert werden kann.
 
 Jede Transformation, die Sie mit einem-,-,-oder-Objekt beschreiben können, `TranslateTransform` `ScaleTransform` `RotateTransform` `SkewTransform` kann gleichermaßen von einem beschrieben werden `MatrixTransform` . Die `TranslateTransform` `ScaleTransform` Klassen,, `RotateTransform` und sind jedoch `SkewTransform` einfacher zu konzipieren, als die Vektor Komponenten in einem festzulegen `Matrix` . Daher wird die-Klasse in der `MatrixTransform` Regel verwendet, um benutzerdefinierte Transformationen zu erstellen, die nicht von den `RotateTransform` `ScaleTransform` Klassen,, oder bereitgestellt werden `SkewTransform` `TranslateTransform` .
 
@@ -336,7 +364,7 @@ Im folgenden Beispiel wird gezeigt, wie ein- `Path` Objekt mit einem transformie
 
 In diesem Beispiel ist das `Path` Objekt in der X-und der Y-Dimension gestreckt, verzerrt und versetzt.
 
-Alternativ kann dies in einer vereinfachten Form geschrieben werden, die einen Typkonverter verwendet, der in integriert ist Xamarin.Forms :
+Alternativ kann dies in einer vereinfachten Form geschrieben werden, die einen Typkonverter verwendet, der in integriert ist :::no-loc(Xamarin.Forms)::: :
 
 ```xaml
 <Path Stroke="Black"
@@ -364,4 +392,4 @@ Außerdem kann das vorherige Beispiel noch weiter vereinfacht werden, indem die 
 ## <a name="related-links"></a>Verwandte Links
 
 - [Shapedemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.FormsFormen](index.md)
+- [:::no-loc(Xamarin.Forms):::Formen](index.md)

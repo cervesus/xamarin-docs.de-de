@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 1ae7e4c39a07ccfcb472f7add580bf5109166c3d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: dcfa727499859164d950ca9abc24fb935b3d76f9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022058"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937006"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>Manuelle Kamera Steuerelemente in xamarin. IOS
 
-Die manuellen Kamera Steuerelemente, die vom `AVFoundation Framework` in ios 8 bereitgestellt werden, ermöglichen einer mobilen Anwendung die vollständige Kontrolle über die Kamera eines IOS-Geräts. Diese differenzierte Steuerungsebene kann verwendet werden, um professionelle Kamera Anwendungen zu erstellen und Künstler Kompositionen bereitzustellen, indem Sie die Parameter der Kamera optimieren, während gleichzeitig ein Bild oder Video erstellt wird.
+Die manuellen Kamera Steuerelemente, die von der `AVFoundation Framework` in ios 8 bereitgestellt werden, ermöglichen einer mobilen Anwendung die vollständige Kontrolle über die Kamera eines IOS-Geräts. Diese differenzierte Steuerungsebene kann verwendet werden, um professionelle Kamera Anwendungen zu erstellen und Künstler Kompositionen bereitzustellen, indem Sie die Parameter der Kamera optimieren, während gleichzeitig ein Bild oder Video erstellt wird.
 
 Diese Steuerelemente können auch nützlich sein, wenn Sie wissenschaftliche oder industrielle Anwendungen entwickeln, bei denen die Ergebnisse weniger auf die Richtigkeit oder Schönheit des Bilds ausgerichtet sind und Sie eher darauf ausgerichtet sind, ein Feature oder Element des Abbilds hervorzuheben.
 
@@ -24,9 +24,9 @@ Diese Steuerelemente können auch nützlich sein, wenn Sie wissenschaftliche ode
 
 Unabhängig davon, ob Sie Videos oder Bilder mithilfe der Kamera auf einem IOS-Gerät aufnehmen, ist der Prozess, der zum Erfassen dieser Images verwendet wird, größtenteils identisch. Dies gilt für Anwendungen, die die standardmäßigen automatisierten Kamera Steuerelemente verwenden, oder für Anwendungen, die die neuen manuellen Kamera Steuerelemente nutzen:
 
- [![](intro-to-manual-camera-controls-images/image1.png "AVFoundation Capture Objects overview")](intro-to-manual-camera-controls-images/image1.png#lightbox)
+ [![Übersicht über die AVFoundation Capture-Objekte](intro-to-manual-camera-controls-images/image1.png)](intro-to-manual-camera-controls-images/image1.png#lightbox)
 
-Eingaben werden mithilfe eines `AVCaptureConnection`aus einer `AVCaptureDeviceInput` in eine `AVCaptureSession` entnommen. Das Ergebnis wird entweder als Bild oder als Videostream ausgegeben. Der gesamte Prozess wird von einem `AVCaptureDevice`gesteuert.
+Die Eingabe wird von einem-Wert `AVCaptureDeviceInput` in einem über einen verwendet `AVCaptureSession` `AVCaptureConnection` . Das Ergebnis wird entweder als Bild oder als Videostream ausgegeben. Der gesamte Prozess wird von einem gesteuert `AVCaptureDevice` .
 
 ## <a name="manual-controls-provided"></a>Manuell bereitgestellte Steuerelemente
 
@@ -44,7 +44,7 @@ Die Erfassung in Klammern basiert auf den Einstellungen der oben dargestellten m
 
 Die in Klammern gefasste Erfassung ist ein Burst von Bildern, die mit einer Vielzahl von Einstellungen von Bild zu Bild erstellt wurden.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
 Folgende Schritte sind erforderlich, um die in diesem Artikel beschriebenen Schritte auszuführen:
 
@@ -54,7 +54,7 @@ Folgende Schritte sind erforderlich, um die in diesem Artikel beschriebenen Schr
 
 ## <a name="general-av-capture-setup"></a>Allgemeines Einrichten der AV-Erfassung
 
-Beim Aufzeichnen von Videos auf einem IOS-Gerät gibt es einen allgemeinen Installationscode, der immer erforderlich ist. In diesem Abschnitt wird das minimale Setup behandelt, das zum Aufzeichnen von Videos von der Kamera des IOS-Geräts und zum Anzeigen des Videos in Echtzeit in einem `UIImageView`erforderlich ist.
+Beim Aufzeichnen von Videos auf einem IOS-Gerät gibt es einen allgemeinen Installationscode, der immer erforderlich ist. In diesem Abschnitt wird das minimale Setup behandelt, das zum Aufzeichnen von Videos von der Kamera des IOS-Geräts und zum Anzeigen des Videos in Echtzeit in einer erforderlich ist `UIImageView` .
 
 ### <a name="output-sample-buffer-delegate"></a>Ausgabe Beispiel-Puffer Delegat
 
@@ -159,13 +159,13 @@ namespace ManualCameraControls
 }
 ```
 
-Wenn diese Routine eingerichtet ist, kann die `AppDelegate` so geändert werden, dass eine AV-Erfassungs Sitzung geöffnet wird, um einen livevideofeed aufzuzeichnen.
+Wenn diese Routine vorhanden ist, `AppDelegate` kann geändert werden, um eine AV-Erfassungs Sitzung zu öffnen und einen Live Videofeed aufzuzeichnen.
 
 ### <a name="creating-an-av-capture-session"></a>Erstellen einer AV-Erfassungs Sitzung
 
-Die AV-Erfassungs Sitzung dient zum Steuern der Aufzeichnung von Livevideos von der Kamera des IOS-Geräts und ist erforderlich, um Videos in einer IOS-Anwendung zu erhalten. Da im Beispiel `ManualCameraControl` Beispielanwendung die Erfassungs Sitzung an verschiedenen Stellen verwendet wird, wird Sie im `AppDelegate` konfiguriert und für die gesamte Anwendung zur Verfügung gestellt.
+Die AV-Erfassungs Sitzung dient zum Steuern der Aufzeichnung von Livevideos von der Kamera des IOS-Geräts und ist erforderlich, um Videos in einer IOS-Anwendung zu erhalten. Da die Beispiel `ManualCameraControl` Anwendung die Erfassungs Sitzung an verschiedenen Stellen verwendet, wird Sie im konfiguriert `AppDelegate` und für die gesamte Anwendung zur Verfügung gestellt.
 
-Gehen Sie folgendermaßen vor, um die `AppDelegate` der Anwendung zu ändern und den erforderlichen Code hinzuzufügen:
+Gehen Sie folgendermaßen vor, um die Anwendung zu ändern `AppDelegate` und den erforderlichen Code hinzuzufügen:
 
 1. Doppelklicken Sie auf die `AppDelegate.cs` Datei im Projektmappen-Explorer, um Sie für die Bearbeitung zu öffnen.
 1. Fügen Sie die folgenden "using"-Anweisungen am Anfang der Datei ein:
@@ -184,7 +184,7 @@ Gehen Sie folgendermaßen vor, um die `AppDelegate` der Anwendung zu ändern und
     using CoreFoundation;
     ```
 
-1. Fügen Sie der `AppDelegate`-Klasse die folgenden privaten Variablen und berechneten Eigenschaften hinzu:
+1. Fügen Sie der-Klasse die folgenden privaten Variablen und berechneten Eigenschaften hinzu `AppDelegate` :
 
     ```csharp
     #region Private Variables
@@ -274,11 +274,11 @@ Wenn der Endbenutzer die Steuerung des Fokus direkt übernehmen kann, kann eine 
 
 Beispielsweise kann ein professioneller Fotograf den Fokus eines Bilds abschwächen, um einen [Bokeh-Effekt](https://en.wikipedia.org/wiki/Bokeh)zu erzielen:
 
-[![](intro-to-manual-camera-controls-images/image2.png "A Bokeh Effect")](intro-to-manual-camera-controls-images/image2.png#lightbox)
+[![Ein Bokeh-Effekt](intro-to-manual-camera-controls-images/image2.png)](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
 Oder erstellen Sie einen [Fokus-Pull-Effekt](http://www.mediacollege.com/video/camera/focus/pull.html), wie z. b.:
 
-[![](intro-to-manual-camera-controls-images/image3.png "The Focus Pull Effect")](intro-to-manual-camera-controls-images/image3.png#lightbox)
+[![Der Fokus-Pull-Effekt](intro-to-manual-camera-controls-images/image3.png)](intro-to-manual-camera-controls-images/image3.png#lightbox)
 
 Für Analysten oder einen Writer von medizinischen Anwendungen kann die Anwendung den Bereich für Experimente Programm gesteuert verschieben. Die neue API ermöglicht es entweder dem Endbenutzer oder der Anwendung, die Kontrolle über den Fokus zu nehmen, wenn das Image erstellt wird.
 
@@ -286,7 +286,7 @@ Für Analysten oder einen Writer von medizinischen Anwendungen kann die Anwendun
 
 Vor der Erörterung der Details zum Steuern des Fokus in einer IOS 8-Anwendung. Werfen wir einen kurzen Blick auf die Funktionsweise des Fokus auf einem IOS-Gerät:
 
-[![](intro-to-manual-camera-controls-images/image4.png "How focus works in an iOS device")](intro-to-manual-camera-controls-images/image4.png#lightbox)
+[![Funktionsweise des Fokus auf einem IOS-Gerät](intro-to-manual-camera-controls-images/image4.png)](intro-to-manual-camera-controls-images/image4.png#lightbox)
 
 Light wechselt in den Kamera-und auf dem IOS-Gerät und konzentriert sich auf einen Bildsensor. Der Abstand des Bilds von der Sensor steuert, wo der Fokuspunkt (der Bereich, in dem das Bild als Sharpest angezeigt wird) in Beziehung zum Sensor ist. Je weiter der Fokus vom Sensor entfernt wird, Entfernungs Objekte scheinen klügsten, und die Näheres naheliegenden Objekte scheinen klügsten zu sein.
 
@@ -306,20 +306,20 @@ Mit diesen Begriffen und Kenntnissen können die neuen manuellen Fokus Steuerele
 
 ### <a name="existing-focus-controls"></a>Vorhandene Fokus Steuerelemente
 
-IOS 7 und frühere Versionen haben vorhandene Fokus Steuerungen über `FocusMode`Eigenschaft wie folgt bereitgestellt:
+IOS 7 und frühere Versionen haben vorhandene Fokus Steuerelemente über die `FocusMode` Eigenschaft wie folgt bereitgestellt:
 
-- `AVCaptureFocusModeLocked` – der Fokus wird an einem einzelnen Fokuspunkt gesperrt.
-- `AVCaptureFocusModeAutoFocus` – die Kamera durchläuft alle Mittelpunkte, bis Sie den Spitzen Fokus findet und dort bleibt.
-- `AVCaptureFocusModeContinuousAutoFocus` – die Kamera konzentriert sich immer wieder, wenn eine Bedingung außerhalb des Fokus entdeckt wird.
+- `AVCaptureFocusModeLocked`– Der Fokus ist an einem einzelnen Fokuspunkt gesperrt.
+- `AVCaptureFocusModeAutoFocus`– Die Kamera durchläuft alle Mittelpunkte, bis Sie den Spitzen Fokus findet und dort bleibt.
+- `AVCaptureFocusModeContinuousAutoFocus`– Die Kamera konzentriert sich immer wieder, wenn eine nicht fokussierte Bedingung erkannt wird.
 
-Die vorhandenen Steuerelemente haben auch über die`FocusPointOfInterest`-Eigenschaft eine festleg Bare Point of Interest bereitgestellt, sodass der Benutzer auf einen bestimmten Bereich konzentrieren kann. Die Anwendung kann auch die Bewegung des Durchsatzes nachverfolgen, indem Sie die `IsAdjustingFocus`-Eigenschaft überwacht.
+Die vorhandenen Steuerelemente haben auch eine festleg Bare Point of Interest über die-Eigenschaft bereitgestellt `FocusPointOfInterest` , sodass der Benutzer auf einen bestimmten Bereich konzentrieren kann. Die Anwendung kann die Linsen Bewegung auch durch Überwachen der- `IsAdjustingFocus` Eigenschaft verfolgen.
 
-Außerdem wurde die Bereichs Einschränkung durch die `AutoFocusRangeRestriction`-Eigenschaft wie folgt bereitgestellt:
+Außerdem wurde die Bereichs Einschränkung von der-Eigenschaft wie folgt bereitgestellt `AutoFocusRangeRestriction` :
 
-- `AVCaptureAutoFocusRangeRestrictionNear` – schränkt den Autofocus auf die nahe gelegene Tiefe ein. Nützlich in Situationen wie dem Scannen eines QR-Codes oder Barcode.
-- `AVCaptureAutoFocusRangeRestrictionFar` – schränkt den Autofocus auf eine entfernte Tiefe ein. Nützlich in Situationen, in denen Objekte, die bekanntermaßen irrelevant sind, im Sichtfeld (z. a. einem Fensterrahmen) angezeigt werden.
+- `AVCaptureAutoFocusRangeRestrictionNear`– Schränkt den Autofocus auf die nahe gelegene Tiefe ein. Nützlich in Situationen wie dem Scannen eines QR-Codes oder Barcode.
+- `AVCaptureAutoFocusRangeRestrictionFar`– Schränkt den Autofocus auf eine entfernte Tiefe ein. Nützlich in Situationen, in denen Objekte, die bekanntermaßen irrelevant sind, im Sichtfeld (z. a. einem Fensterrahmen) angezeigt werden.
 
-Schließlich gibt es die `SmoothAutoFocus`-Eigenschaft, die den Algorithmus für den automatischen Fokus verlangsamt und in kleineren Schritten durchläuft, um das Verschieben von Artefakten beim Aufzeichnen von Videos zu vermeiden.
+Schließlich gibt es die `SmoothAutoFocus` -Eigenschaft, die den Algorithmus für den automatischen Fokus verlangsamt und in kleineren Schritten durchläuft, um das Verschieben von Artefakten beim Aufzeichnen von Videos zu vermeiden.
 
 ### <a name="new-focus-controls-in-ios-8"></a>Neue Fokus Steuerelemente in ios 8
 
@@ -328,13 +328,13 @@ Zusätzlich zu den Features, die bereits von IOS 7 und höher bereitgestellt wer
 - Vollständige manuelle Steuerung der Linsen Position beim Sperren des Fokus.
 - Die Schlüssel-Wert-Beobachtung der Linsen Position in einem beliebigen Fokus Modus.
 
-Um die oben genannten Funktionen zu implementieren, wurde die `AVCaptureDevice` Klasse so geändert, dass Sie eine schreibgeschützte `LensPosition` Eigenschaft enthält, die verwendet wird, um die aktuelle Position des Kamera-Lens zu erhalten.
+Um die oben genannten Funktionen zu implementieren, wurde die- `AVCaptureDevice` Klasse so geändert, dass Sie eine schreibgeschützte Eigenschaft enthält, `LensPosition` die verwendet wird, um die aktuelle Position des Kamera-Lens zu erhalten.
 
 Das Erfassungsgerät muss sich im gesperrten Fokus Modus befinden, damit die Position des Ablaufens manuell gesteuert werden kann. Beispiel:
 
  `CaptureDevice.FocusMode = AVCaptureFocusMode.Locked;`
 
-Mit der `SetFocusModeLocked`-Methode des Aufzeichnungs Geräts wird die Position der Kameralinse angepasst. Eine optionale Rückruf Routine kann bereitgestellt werden, um eine Benachrichtigung zu erhalten, wenn die Änderung wirksam wird. Beispiel:
+Mit der- `SetFocusModeLocked` Methode des Aufzeichnungs Geräts wird die Position der Kameralinse angepasst. Eine optionale Rückruf Routine kann bereitgestellt werden, um eine Benachrichtigung zu erhalten, wenn die Änderung wirksam wird. Beispiel:
 
 ```csharp
 ThisApp.CaptureDevice.LockForConfiguration(out Error);
@@ -346,15 +346,15 @@ Wie im obigen Code gezeigt, muss das Erfassungsgerät für die Konfiguration ges
 
 ### <a name="manual-focus-example"></a>Beispiel für einen manuellen Fokus
 
-Mit dem allgemeinen Installationscode für die AV-Erfassung kann eine `UIViewController` dem Storyboard der Anwendung hinzugefügt und wie folgt konfiguriert werden:
+Mit dem allgemeinen Installationscode für die AV `UIViewController` -Erfassung kann ein dem Storyboard der Anwendung hinzugefügt und wie folgt konfiguriert werden:
 
-[![](intro-to-manual-camera-controls-images/image5.png "A UIViewController can be added to the applications Storyboard and configured as shown here")](intro-to-manual-camera-controls-images/image5.png#lightbox)
+[![Ein UIViewController kann dem Anwendungs Storyboard hinzugefügt und wie hier gezeigt konfiguriert werden.](intro-to-manual-camera-controls-images/image5.png)](intro-to-manual-camera-controls-images/image5.png#lightbox)
 
 Die-Sicht enthält die folgenden Hauptelemente:
 
-- Eine `UIImageView`, die den Videofeed anzeigt.
-- Eine `UISegmentedControl`, mit der der Fokus Modus von automatisch in gesperrt geändert wird.
-- Eine `UISlider`, mit der die aktuelle Position des-anlens angezeigt und aktualisiert wird.
+- Ein `UIImageView` , der den Videofeed anzeigt.
+- Ein `UISegmentedControl` , der den Fokus Modus von automatisch in gesperrt ändert.
+- Ein `UISlider` , der die aktuelle Position des Lens anzeigt und aktualisiert.
 
 Gehen Sie folgendermaßen vor, um den Ansichts Controller für die manuelle Steuerung des Fokus zu verknüpfen:
 
@@ -395,7 +395,7 @@ Gehen Sie folgendermaßen vor, um den Ansichts Controller für die manuelle Steu
     #endregion
     ```
 
-1. Überschreiben Sie die `ViewDidLoad`-Methode, und fügen Sie folgenden Code hinzu:
+1. Überschreiben `ViewDidLoad` Sie die-Methode, und fügen Sie folgenden Code hinzu:
 
     ```csharp
     public override void ViewDidLoad ()
@@ -459,7 +459,7 @@ Gehen Sie folgendermaßen vor, um den Ansichts Controller für die manuelle Steu
     }
     ```
 
-1. Überschreiben Sie die `ViewDidAppear`-Methode, und fügen Sie Folgendes hinzu, um aufzuzeichnen, wenn die Ansicht geladen wird:
+1. Überschreiben `ViewDidAppear` Sie die-Methode, und fügen Sie Folgendes hinzu, um aufzuzeichnen, wenn die Ansicht geladen wird:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
@@ -479,10 +479,10 @@ Gehen Sie folgendermaßen vor, um den Ansichts Controller für die manuelle Steu
 
 1. Wenn sich die Kamera im Auto-Modus befindet, wird der Schieberegler automatisch verschoben, wenn die Kamera den Fokus anpasst:
 
-    [![](intro-to-manual-camera-controls-images/image6.png "The slider will move automatically as the camera adjusts focus in this sample app")](intro-to-manual-camera-controls-images/image6.png#lightbox)
+    [![Der Schieberegler wird automatisch verschoben, wenn die Kamera den Fokus in dieser Beispiel-App anpasst.](intro-to-manual-camera-controls-images/image6.png)](intro-to-manual-camera-controls-images/image6.png#lightbox)
 1. Tippen Sie auf das gesperrte Segment, und ziehen Sie den Schieberegler, um die Position des Zieh Punkts manuell anzupassen
 
-    [![](intro-to-manual-camera-controls-images/image7.png "Manually adjusting the lens position")](intro-to-manual-camera-controls-images/image7.png#lightbox)
+    [![Manuelles Anpassen der Linsen Position](intro-to-manual-camera-controls-images/image7.png)](intro-to-manual-camera-controls-images/image7.png#lightbox)
 1. Beendet die Anwendung.
 
 Der obige Code hat gezeigt, wie die Position des Bild Laufes überwacht wird, wenn sich die Kamera im automatischen Modus befindet, oder einen Schieberegler zum Steuern der Position im gesperrten Modus verwenden.
@@ -493,7 +493,7 @@ Der obige Code hat gezeigt, wie die Position des Bild Laufes überwacht wird, we
 
 Mithilfe der manuellen verfügbar machung von Steuerelementen kann der Benutzer ein Bild von unrealistischer zu dunkel und von Moody machen:
 
-[![](intro-to-manual-camera-controls-images/image8.png "A sample an image showing exposure from unrealistically bright to dark and moody")](intro-to-manual-camera-controls-images/image8.png#lightbox)
+[![Ein Beispiel für ein Bild, das eine nicht realistische helle-dunkel-und-Moody-Darstellung anzeigt](intro-to-manual-camera-controls-images/image8.png)](intro-to-manual-camera-controls-images/image8.png#lightbox)
 
 Dies kann auch automatisch mithilfe der programmgesteuerten Steuerung für wissenschaftliche Anwendungen oder über manuelle Steuerelemente erfolgen, die von der Benutzeroberfläche der Anwendungen bereitgestellt werden. In beiden Fällen bieten die neuen API-APIs für die Verfügbarkeit von IOS 8 eine präzisere Kontrolle über die Einstellungen der Kamera.
 
@@ -501,7 +501,7 @@ Dies kann auch automatisch mithilfe der programmgesteuerten Steuerung für wisse
 
 Vor der Erörterung der Details zum Steuern der Verfügbarkeit in einer IOS 8-Anwendung. Werfen wir einen kurzen Blick darauf, wie die Verfügbarkeit funktioniert:
 
-[![](intro-to-manual-camera-controls-images/image9.png "How exposure works")](intro-to-manual-camera-controls-images/image9.png#lightbox)
+[![Funktionsweise von Verfügbarkeit](intro-to-manual-camera-controls-images/image9.png)](intro-to-manual-camera-controls-images/image9.png#lightbox)
 
 Die drei grundlegenden Elemente, die zur Steuerung des verfügbar sind, sind:
 
@@ -513,7 +513,7 @@ Die drei grundlegenden Elemente, die zur Steuerung des verfügbar sind, sind:
 
 Bevor Sie sich mit der manuellen Funktionsweise vertraut machen, empfiehlt es sich, zu verstehen, wie die kontinuierliche automatische Verfügbarkeit auf einem IOS-Gerät funktioniert.
 
-[![](intro-to-manual-camera-controls-images/image10.png "How continuous auto exposure works in an iOS device")](intro-to-manual-camera-controls-images/image10.png#lightbox)
+[![Funktionsweise der kontinuierlichen automatischen verfügbar machung auf einem IOS-Gerät](intro-to-manual-camera-controls-images/image10.png)](intro-to-manual-camera-controls-images/image10.png#lightbox)
 
 Der erste ist der automatische zulegungs Block, er hat die Aufgabe, eine optimale Verfügbarkeit zu berechnen, und wird kontinuierlich über eine Messungs Statistik versorgt. Diese Informationen werden verwendet, um die optimale Mischung aus ISO und der Auslösegeschwindigkeit zu berechnen, damit die Szene gut beleuchtet wird. Dieser Cycle wird als AE-Schleife bezeichnet.
 
@@ -521,18 +521,18 @@ Der erste ist der automatische zulegungs Block, er hat die Aufgabe, eine optimal
 
 Als nächstes untersuchen wir, wie das Sperr Risiko auf IOS-Geräten funktioniert.
 
-[![](intro-to-manual-camera-controls-images/image11.png "How locked exposure works in iOS devices")](intro-to-manual-camera-controls-images/image11.png#lightbox)
+[![Funktionsweise der gesperrten Gefährdung in IOS-Geräten](intro-to-manual-camera-controls-images/image11.png)](intro-to-manual-camera-controls-images/image11.png#lightbox)
 
 Auch hier haben Sie den automatischen zulegungs Block, der versucht, die optimalen Werte für IOS und Duration zu berechnen. In diesem Modus wird der AE-Block jedoch von der Messungs Statistik-Engine getrennt.
 
 ### <a name="existing-exposure-controls"></a>Vorhandene verfügbar machen
 
-IOS 7 und höher: Stellen Sie die folgenden vorhandenen verfügbar machung-Steuerelemente über die `ExposureMode`-Eigenschaft bereit:
+IOS 7 und höher: Stellen Sie die folgenden vorhandenen verfügbar machung-Steuerelemente über die- `ExposureMode` Eigenschaft bereit:
 
-- `AVCaptureExposureModeLocked` – die Szene einmal als Stichprobe und verwendet diese Werte in der Szene.
-- `AVCaptureExposureModeContinuousAutoExposure` – durchläuft die Szene fortlaufend, um sicherzustellen, dass Sie gut beleuchtet ist.
+- `AVCaptureExposureModeLocked`– Prüft die Szene einmal und verwendet diese Werte in der gesamten Szene.
+- `AVCaptureExposureModeContinuousAutoExposure`– Prüft die Szene fortlaufend, um sicherzustellen, dass Sie gut beleuchtet ist.
 
-Der `ExposurePointOfInterest` kann verwendet werden, um die Szene verfügbar zu machen, indem Sie ein Zielobjekt auswählen, das verfügbar gemacht werden soll, und die Anwendung kann die `AdjustingExposure` Eigenschaft überwachen, um festzustellen, wann die Offenlegung angepasst wird.
+Der `ExposurePointOfInterest` kann verwendet werden, um die Szene verfügbar zu machen, indem ein Zielobjekt ausgewählt wird, das verfügbar gemacht werden soll, und die Anwendung kann die-Eigenschaft überwachen, `AdjustingExposure` um festzustellen, wann die Offenlegung angepasst wird
 
 ### <a name="new-exposure-controls-in-ios-8"></a>Neue verfügbar machen von Steuerelementen in ios 8
 
@@ -541,7 +541,7 @@ Zusätzlich zu den Features, die bereits von IOS 7 und höher bereitgestellt wer
 - Vollständig manuelle benutzerdefinierte verfügbar machung.
 - "Get", "Set" und "Key-Value" beobachten IOS und die Zeitspanne (Dauer).
 
-Um die oben genannten Features zu implementieren, wurde ein neuer `AVCaptureExposureModeCustom` Modus hinzugefügt. Wenn die Kamera in der benutzerdefinierte Modus ist, kann der folgende Code verwendet werden, um die Gültigkeitsdauer und ISO anzupassen:
+Um die oben genannten Funktionen zu implementieren, wurde ein neuer `AVCaptureExposureModeCustom` Modus hinzugefügt. Wenn die Kamera in der benutzerdefinierte Modus ist, kann der folgende Code verwendet werden, um die Gültigkeitsdauer und ISO anzupassen:
 
 ```csharp
 CaptureDevice.LockForConfiguration(out Error);
@@ -570,15 +570,15 @@ Wie im obigen Code gezeigt, muss das Erfassungsgerät für die Konfiguration ges
 
 ### <a name="manual-exposure-example"></a>Beispiel für manuelle Übersetzung
 
-Mit dem allgemeinen Installationscode für die AV-Erfassung kann eine `UIViewController` dem Storyboard der Anwendung hinzugefügt und wie folgt konfiguriert werden:
+Mit dem allgemeinen Installationscode für die AV `UIViewController` -Erfassung kann ein dem Storyboard der Anwendung hinzugefügt und wie folgt konfiguriert werden:
 
-[![](intro-to-manual-camera-controls-images/image12.png "A UIViewController can be added to the applications Storyboard and configured as shown here")](intro-to-manual-camera-controls-images/image12.png#lightbox)
+[![Ein UIViewController kann dem Anwendungs Storyboard hinzugefügt und wie hier gezeigt konfiguriert werden.](intro-to-manual-camera-controls-images/image12.png)](intro-to-manual-camera-controls-images/image12.png#lightbox)
 
 Die-Sicht enthält die folgenden Hauptelemente:
 
-- Eine `UIImageView`, die den Videofeed anzeigt.
-- Eine `UISegmentedControl`, mit der der Fokus Modus von automatisch in gesperrt geändert wird.
-- Vier `UISlider` Steuerelemente, die Offset, Dauer, ISO und Bias anzeigen und aktualisieren.
+- Ein `UIImageView` , der den Videofeed anzeigt.
+- Ein `UISegmentedControl` , der den Fokus Modus von automatisch in gesperrt ändert.
+- Vier Steuer `UISlider` Elemente, die Offset, Dauer, ISO und Bias anzeigen und aktualisieren.
 
 Gehen Sie folgendermaßen vor, um den Ansichts Controller für manuelles verfügbar machen von Steuerelementen zu verknüpfen:
 
@@ -621,7 +621,7 @@ Gehen Sie folgendermaßen vor, um den Ansichts Controller für manuelles verfüg
     #endregion
     ```
 
-1. Überschreiben Sie die `ViewDidLoad`-Methode, und fügen Sie folgenden Code hinzu:
+1. Überschreiben `ViewDidLoad` Sie die-Methode, und fügen Sie folgenden Code hinzu:
 
     ```csharp
     public override void ViewDidLoad ()
@@ -752,7 +752,7 @@ Gehen Sie folgendermaßen vor, um den Ansichts Controller für manuelles verfüg
     }
     ```
 
-1. Überschreiben Sie die `ViewDidAppear`-Methode, und fügen Sie Folgendes hinzu, um aufzuzeichnen, wenn die Ansicht geladen wird:
+1. Überschreiben `ViewDidAppear` Sie die-Methode, und fügen Sie Folgendes hinzu, um aufzuzeichnen, wenn die Ansicht geladen wird:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
@@ -772,13 +772,13 @@ Gehen Sie folgendermaßen vor, um den Ansichts Controller für manuelles verfüg
 
 1. Wenn sich die Kamera im Auto-Modus befindet, werden die Schieberegler automatisch verschoben, wenn die Kamera die Verfügbarkeit anpasst:
 
-    [![](intro-to-manual-camera-controls-images/image13.png "The sliders will move automatically as the camera adjusts exposure")](intro-to-manual-camera-controls-images/image13.png#lightbox)
+    [![Die Schieberegler werden automatisch verschoben, wenn die Kamera den Bedarf anpasst.](intro-to-manual-camera-controls-images/image13.png)](intro-to-manual-camera-controls-images/image13.png#lightbox)
 1. Tippen Sie auf das gesperrte Segment, und ziehen Sie den Schieberegler "Bias", um den Schieberegler manuell anzupassen:
 
-    [![](intro-to-manual-camera-controls-images/image14.png "Adjusting the bias of the automatic exposure manually")](intro-to-manual-camera-controls-images/image14.png#lightbox)
+    [![Manuelles Anpassen der Verschiebung der automatischen verfügbar machung](intro-to-manual-camera-controls-images/image14.png)](intro-to-manual-camera-controls-images/image14.png#lightbox)
 1. Tippen Sie auf das benutzerdefinierte Segment, und ziehen Sie die Dauer-und ISO-Schieberegler, um die Anzeige
 
-    [![](intro-to-manual-camera-controls-images/image15.png "Drag the Duration and ISO sliders to manually control exposure")](intro-to-manual-camera-controls-images/image15.png#lightbox)
+    [![Ziehen Sie die Schieberegler Dauer und ISO, um die Verfügbarkeit manuell](intro-to-manual-camera-controls-images/image15.png)](intro-to-manual-camera-controls-images/image15.png#lightbox)
 1. Beendet die Anwendung.
 
 Der obige Code hat gezeigt, wie die Einstellungen für die Verfügbarkeit überwacht werden, wenn sich die Kamera im automatischen Modus befindet, und wie Schieberegler verwendet werden, um die Verfügbarkeit zu steuern, wenn Sie sich im gesperrten oder benutzerdefinierten Modus befindet.
@@ -787,7 +787,7 @@ Der obige Code hat gezeigt, wie die Einstellungen für die Verfügbarkeit überw
 
 Mit den Steuerelementen "White Balance" können Benutzer das Gleichgewicht von "kolsr" in einem Bild anpassen, damit Sie realistischer werden. Unterschiedliche Lichtquellen haben unterschiedliche Farbtemperaturen, und die Kameraeinstellungen zum Erfassen eines Bilds müssen so angepasst werden, dass diese Unterschiede kompensiert werden. Durch die Möglichkeit, das Benutzer Steuerelement über den weißen Saldo zuzulassen, können Sie auch professionelle Anpassungen vornehmen, mit denen die automatischen Routinen keine künstlerischen Auswirkungen erreichen können.
 
-[![](intro-to-manual-camera-controls-images/image16.png "A sample image showing Manual White Balance adjustments")](intro-to-manual-camera-controls-images/image16.png#lightbox)
+[![Ein Beispiel Bild mit manuellen Änderungen an einem weißen Gleichgewicht](intro-to-manual-camera-controls-images/image16.png)](intro-to-manual-camera-controls-images/image16.png#lightbox)
 
 Beispielsweise hat die Sommerzeit eine blueish-Umwandlung, wohingegen Wolfram-Incandescent-Glühbirnen ein gewärtes, gelb orangefarbenes tint haben. (Verwirrend ist, dass "kalte" Farben höhere Farbtemperaturen als "warme" Farben aufweisen. Farbtemperaturen sind ein physisches Measure, kein perperer Wert.)
 
@@ -801,7 +801,7 @@ Vor der Erörterung der Details zum Steuern des weißen Ausgleichs in einer IOS 
 
 In der Studie der Farbwahrnehmung sind der [CIE 1931 RGB-Farbraum und der CIE 1931 XYZ-Farbraum](https://en.wikipedia.org/wiki/CIE_1931_color_space) die ersten mathematisch definierten Farbbereiche. Sie wurden von der International Commission on Illumination (CIE) in 1931 erstellt.
 
-[![](intro-to-manual-camera-controls-images/image17.png "The CIE 1931 RGB color space and CIE 1931 XYZ color space")](intro-to-manual-camera-controls-images/image17.png#lightbox)
+[![Der CIE 1931 RGB-Farbraum und der CIE 1931 XYZ-Farbraum](intro-to-manual-camera-controls-images/image17.png)](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
 Das obige Diagramm zeigt alle Farben, die für das menschliche Auge sichtbar sind, von Deep Blue bis hellgrün bis hellrot. Jeder Punkt im Diagramm kann mit einem X-und Y-Wert gezeichnet werden, wie im obigen Diagramm gezeigt.
 
@@ -815,12 +815,12 @@ IOS-Geräte kompensieren Farb Umwandlungen, indem Sie den entgegengesetzten farb
 
 ### <a name="existing-white-balance-controls"></a>Vorhandene Steuerelemente für weißen Ausgleich
 
-IOS 7 und höher stellte die folgenden vorhandenen weißen Steuerelemente über `WhiteBalanceMode` Eigenschaft bereit:
+IOS 7 und höher stellte die folgenden vorhandenen weißen Steuerelemente über die `WhiteBalanceMode` Eigenschaft bereit:
 
-- `AVCapture WhiteBalance ModeLocked` – eine Stichprobe der Szene und die Verwendung dieser Werte in der gesamten Szene.
-- `AVCapture WhiteBalance ModeContinuousAutoExposure` – die Szene ständig abgleichen, um sicherzustellen, dass Sie gut ausgeglichen ist.
+- `AVCapture WhiteBalance ModeLocked`– Prüft die Szene einmal und verwendet diese Werte in der Szene.
+- `AVCapture WhiteBalance ModeContinuousAutoExposure`– Prüft die Szene fortlaufend, um sicherzustellen, dass Sie gut ausgeglichen ist.
 
-Und die Anwendung kann die `AdjustingWhiteBalance`-Eigenschaft überwachen, um festzustellen, wann die Gefährdung angepasst wird.
+Und die Anwendung kann die- `AdjustingWhiteBalance` Eigenschaft überwachen, um festzustellen, wann die Verfügbarkeit angepasst wird.
 
 ### <a name="new-white-balance-controls-in-ios-8"></a>Neue Steuerelemente für das weiße Gleichgewicht in ios 8
 
@@ -837,23 +837,23 @@ Um die oben genannten Funktionen zu implementieren, wurde die `AVCaptureWhiteBal
 - `GreenGain`
 - `BlueGain`
 
-Der Höchstwert für den weißen Saldo beträgt derzeit vier (4) und kann über die `MaxWhiteBalanceGain`-Eigenschaft vorbereitet werden. Der zulässige Bereich liegt also zwischen 1 und `MaxWhiteBalanceGain` (4).
+Der Höchstwert für den weißen Saldo beträgt derzeit vier (4) und kann über die-Eigenschaft vorbereitet werden `MaxWhiteBalanceGain` . Der zulässige Bereich liegt also zwischen 1 (1) und `MaxWhiteBalanceGain` (4).
 
-Die `DeviceWhiteBalanceGains`-Eigenschaft kann verwendet werden, um die aktuellen Werte zu beobachten. Verwenden Sie `SetWhiteBalanceModeLockedWithDeviceWhiteBalanceGains`, um die Balance zu ändern, wenn sich die Kamera im gesperrten weißen Ausgleichs Modus befindet.
+Die- `DeviceWhiteBalanceGains` Eigenschaft kann verwendet werden, um die aktuellen Werte zu beobachten. Verwenden `SetWhiteBalanceModeLockedWithDeviceWhiteBalanceGains` Sie, um den Saldo zu ändern, wenn sich die Kamera im gesperrten weißen Ausgleichs Modus befindet.
 
 #### <a name="conversion-routines"></a>Konvertierungs Routinen
 
 Konvertierungs Routinen wurden IOS 8 hinzugefügt, um die Konvertierung in und aus geräteunabhängigen Farbraum zu unterstützen. Um die Konvertierungs Routinen zu implementieren, wurde die `AVCaptureWhiteBalanceChromaticityValues` Struktur mit den folgenden Membern hinzugefügt:
 
-- `X`: ein Wert zwischen 0 und 1.
-- `Y`: ein Wert zwischen 0 und 1.
+- `X`-ist ein Wert zwischen 0 (null) und 1.
+- `Y`-ist ein Wert zwischen 0 (null) und 1.
 
-Eine `AVCaptureWhiteBalanceTemperatureAndTintValues` Struktur wurde auch mit den folgenden Membern hinzugefügt:
+Eine- `AVCaptureWhiteBalanceTemperatureAndTintValues` Struktur wurde auch mit den folgenden Membern hinzugefügt:
 
-- `Temperature`: ein Gleit Komma Wert in Grad Kelvin.
-- `Tint`-ist ein Offset von grün oder Magenta zwischen 0 und 150 mit positiven Werten in Richtung der grünen Richtung und negative Richtung in der Magenta.
+- `Temperature`-ist ein Gleit Komma Wert in Grad Kelvin.
+- `Tint`-ist ein Offset von grün oder Magenta zwischen 0 und 150 mit positiven Werten in Richtung der grünen Richtung und negative Richtung in Magenta.
 
-Verwenden Sie die Methoden `CaptureDevice.GetTemperatureAndTintValues`und `CaptureDevice.GetDeviceWhiteBalanceGains`, um zwischen Temperatur-und tint-, Chromaticity-und RGB-Farbräumen zu konvertieren.
+Verwenden `CaptureDevice.GetTemperatureAndTintValues` `CaptureDevice.GetDeviceWhiteBalanceGains` Sie die Methoden und, um zwischen Temperatur-und tint-, Chromaticity-und RGB-Farbräumen zu konvertieren.
 
 > [!NOTE]
 > Die Konvertierungs Routinen sind genauer, je näher der zu konvertierende Wert dem planckian-Locus entspricht.
@@ -862,24 +862,24 @@ Verwenden Sie die Methoden `CaptureDevice.GetTemperatureAndTintValues`und `Captu
 
 Apple verwendet den Begriff "graue Welt", um auf die in ios 8 integrierte Unterstützung für graue Karten zu verweisen. Der Benutzer kann sich auf eine physische graue Karte konzentrieren, die mindestens 50% der Mitte des Frames abdeckt und diese zum Anpassen des weißen Ausgleichs verwendet. Der Zweck der grauen Karte besteht darin, weiß, dass es sich um eine neutrale Karte handelt.
 
-Dies kann in einer Anwendung implementiert werden, indem der Benutzer aufgefordert wird, eine physische graue Karte vor der Kamera zu platzieren, die `GrayWorldDeviceWhiteBalanceGains`-Eigenschaft zu überwachen und zu warten, bis die Werte abgefragt werden.
+Dies kann in einer Anwendung implementiert werden, indem der Benutzer aufgefordert wird, eine physische graue Karte vor der Kamera zu platzieren, die `GrayWorldDeviceWhiteBalanceGains` -Eigenschaft zu überwachen und zu warten, bis die Werte abgefragt werden.
 
-Die Anwendung würde dann den weißen Saldo für die `SetWhiteBalanceModeLockedWithDeviceWhiteBalanceGains` Methode mithilfe der Werte aus der `GrayWorldDeviceWhiteBalanceGains`-Eigenschaft sperren, um die Änderungen zu übernehmen.
+Die Anwendung sperrt dann den weißen Saldo für die `SetWhiteBalanceModeLockedWithDeviceWhiteBalanceGains` Methode mithilfe der Werte aus der- `GrayWorldDeviceWhiteBalanceGains` Eigenschaft, um die Änderungen zu übernehmen.
 
 Das Erfassungsgerät muss für die Konfiguration gesperrt sein, bevor eine Änderung des weißen Ausgleichs vorgenommen werden kann.
 
 ### <a name="manual-white-balance-example"></a>Beispiel für manuelles weißen Gleichgewicht
 
-Mit dem allgemeinen Installationscode für die AV-Erfassung kann eine `UIViewController` dem Storyboard der Anwendung hinzugefügt und wie folgt konfiguriert werden:
+Mit dem allgemeinen Installationscode für die AV `UIViewController` -Erfassung kann ein dem Storyboard der Anwendung hinzugefügt und wie folgt konfiguriert werden:
 
-[![](intro-to-manual-camera-controls-images/image18.png "A UIViewController can be added to the applications Storyboard and configured as shown here")](intro-to-manual-camera-controls-images/image18.png#lightbox)
+[![Ein UIViewController kann dem Anwendungs Storyboard hinzugefügt und wie hier gezeigt konfiguriert werden.](intro-to-manual-camera-controls-images/image18.png)](intro-to-manual-camera-controls-images/image18.png#lightbox)
 
 Die-Sicht enthält die folgenden Hauptelemente:
 
-- Eine `UIImageView`, die den Videofeed anzeigt.
-- Eine `UISegmentedControl`, mit der der Fokus Modus von automatisch in gesperrt geändert wird.
-- Zwei `UISlider` Steuerelemente, die die Temperatur und das tint anzeigen und aktualisieren.
-- Eine `UIButton`, die verwendet wird, um ein Beispiel für eine graue Karte (grauer Welt) zu verwenden und den weißen Saldo mithilfe dieser Werte festzulegen.
+- Ein `UIImageView` , der den Videofeed anzeigt.
+- Ein `UISegmentedControl` , der den Fokus Modus von automatisch in gesperrt ändert.
+- Zwei Steuer `UISlider` Elemente, die die Temperatur und das tint anzeigen und aktualisieren.
+- Ein `UIButton` , der verwendet wird, um ein Beispiel für eine graue Karte (grauer Welt) zu verwenden und den weißen Saldo mithilfe dieser Werte festzulegen.
 
 Gehen Sie folgendermaßen vor, um den Ansichts Controller für manuelles Steuerelement für den weißen Ausgleich zu verknüpfen:
 
@@ -955,7 +955,7 @@ Gehen Sie folgendermaßen vor, um den Ansichts Controller für manuelles Steuere
     #endregion
     ```
 
-1. Überschreiben Sie die `ViewDidLoad`-Methode, und fügen Sie folgenden Code hinzu:
+1. Überschreiben `ViewDidLoad` Sie die-Methode, und fügen Sie folgenden Code hinzu:
 
     ```csharp
     public override void ViewDidLoad ()
@@ -1060,7 +1060,7 @@ Gehen Sie folgendermaßen vor, um den Ansichts Controller für manuelles Steuere
     }
     ```
 
-1. Überschreiben Sie die `ViewDidAppear`-Methode, und fügen Sie Folgendes hinzu, um aufzuzeichnen, wenn die Ansicht geladen wird:
+1. Überschreiben `ViewDidAppear` Sie die-Methode, und fügen Sie Folgendes hinzu, um aufzuzeichnen, wenn die Ansicht geladen wird:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
@@ -1081,13 +1081,13 @@ Gehen Sie folgendermaßen vor, um den Ansichts Controller für manuelles Steuere
 1. Speichern Sie den in Code, und führen Sie die Anwendung aus.
 1. Wenn sich die Kamera im Auto-Modus befindet, werden die Schieberegler automatisch verschoben, wenn die Kamera den weißen Saldo anpasst:
 
-    [![](intro-to-manual-camera-controls-images/image19.png "The sliders will move automatically as the camera adjusts white balance")](intro-to-manual-camera-controls-images/image19.png#lightbox)
+    [![Die Schieberegler werden automatisch verschoben, wenn die Kamera den weißen Saldo anpasst](intro-to-manual-camera-controls-images/image19.png)](intro-to-manual-camera-controls-images/image19.png#lightbox)
 1. Tippen Sie auf das gesperrte Segment, und ziehen Sie die Schieberegler Temp und tint, um den weißen Saldo manuell anzupassen:
 
-    [![](intro-to-manual-camera-controls-images/image20.png "Drag the Temp and Tint sliders to adjust the white balance manually")](intro-to-manual-camera-controls-images/image20.png#lightbox)
+    [![Ziehen Sie die Schieberegler Temp und tint, um den weißen Saldo manuell anzupassen.](intro-to-manual-camera-controls-images/image20.png)](intro-to-manual-camera-controls-images/image20.png#lightbox)
 1. Wenn das gesperrte Segment noch ausgewählt ist, platzieren Sie eine physische graue Karte vor der Kamera, und tippen Sie auf die graue Karten Schaltfläche, um den weißen Saldo an die graue Welt anzupassen:
 
-    [![](intro-to-manual-camera-controls-images/image21.png "Tap the Gray Card button to adjust white balance to the Gray World")](intro-to-manual-camera-controls-images/image21.png#lightbox)
+    [![Tippen Sie auf die graue Karten Schaltfläche, um den Leerraum für die graue Welt anzupassen](intro-to-manual-camera-controls-images/image21.png)](intro-to-manual-camera-controls-images/image21.png#lightbox)
 1. Beendet die Anwendung.
 
 Der obige Code hat gezeigt, wie Sie die Einstellungen für den weißen Saldo überwachen, wenn sich die Kamera im automatischen Modus befindet, oder Schieberegler verwenden, um den weißen Saldo im gesperrten Modus zu steuern.
@@ -1098,7 +1098,7 @@ Die Erfassung in Klammern basiert auf den Einstellungen der oben dargestellten m
 
 Die in Klammern gefasste Erfassung ist ein Burst von Bildern, die mit einer Vielzahl von Einstellungen von Bild zu Bild erstellt wurden.
 
-[![](intro-to-manual-camera-controls-images/image22.png "How Bracketed Capture works")](intro-to-manual-camera-controls-images/image22.png#lightbox)
+[![Funktionsweise der Erfassung in Klammern](intro-to-manual-camera-controls-images/image22.png)](intro-to-manual-camera-controls-images/image22.png#lightbox)
 
 Mithilfe der in Klammern gesetzten Erfassung in ios 8 kann eine Anwendung eine Reihe manueller Kamera Steuerelemente vorsetzen, einen einzelnen Befehl ausgeben und die aktuelle Szene für jede manuelle Voreinstellungen eine Reihe von Bildern zurückgeben lassen.
 
@@ -1112,35 +1112,35 @@ Auch hier ist die Erfassung in Klammern ein Burst von Bildern, die mit unterschi
 
 ### <a name="new-bracketed-capture-controls-in-ios-8"></a>Neue Erfassungs Steuerelemente in Klammern in ios 8
 
-Alle Aufzeichnungs Befehle in Klammern werden in der `AVCaptureStillImageOutput`-Klasse implementiert. Verwenden Sie die `CaptureStillImageBracket`-Methode, um eine Reihe von Bildern mit dem angegebenen Array von Einstellungen zu erhalten.
+Alle Aufzeichnungs Befehle in Klammern werden in der- `AVCaptureStillImageOutput` Klasse implementiert. Verwenden Sie die- `CaptureStillImageBracket` Methode, um eine Reihe von Bildern mit dem angegebenen Array von Einstellungen zu erhalten.
 
 Es wurden zwei neue Klassen implementiert, um die Einstellungen zu behandeln:
 
-- `AVCaptureAutoExposureBracketedStillImageSettings` – Sie verfügt über eine Eigenschaft, `ExposureTargetBias`, die verwendet wird, um die Verschiebung für eine Klammer für die automatische Verfügbarkeit festzulegen.
-- `AVCaptureManual``ExposureBracketedStillImageSettings` – es verfügt über zwei Eigenschaften: `ExposureDuration` und `ISO`, mit denen die Auslösegeschwindigkeit und ISO für eine manuelle Klammer für die festgelegte Klammer festgelegt wird.
+- `AVCaptureAutoExposureBracketedStillImageSettings`– Es verfügt über eine Eigenschaft, `ExposureTargetBias` , die verwendet wird, um die Verschiebung für eine Klammer mit automatischer Verfügbarkeit festzulegen.
+- `AVCaptureManual`  `ExposureBracketedStillImageSettings`– Es verfügt über zwei Eigenschaften, `ExposureDuration` und `ISO` , die zum Festlegen der Auslösegeschwindigkeit und der ISO-Datei für eine manuelle Klammer verwendet werden.
 
 ### <a name="bracketed-capture-controls-dos-and-donts"></a>Erfassungs Steuerelemente in Klammern
 
-#### <a name="dos"></a>So
+#### <a name="dos"></a>Empfohlene Vorgehensweisen
 
 Im folgenden finden Sie eine Liste der Dinge, die durchgeführt werden sollten, wenn in ios 8 die in Klammern stehenden Erfassungs Steuerelemente verwendet werden:
 
-- Bereiten Sie die APP auf die schlechteste Erfassungs Situation vor, indem Sie die `PrepareToCaptureStillImageBracket`-Methode aufrufen.
+- Bereiten Sie die APP auf die schlechteste Erfassungs Situation vor, indem Sie die- `PrepareToCaptureStillImageBracket` Methode aufrufen.
 - Angenommen, die Beispiel Puffer stammen aus demselben freigegebenen Pool.
-- Um den Arbeitsspeicher freizugeben, der von einem vorherigen Vorbereitungs aufrufzeichen zugewiesen wurde, können Sie `PrepareToCaptureStillImageBracket` erneut aufzurufen und ein Array mit einem Objekt senden.
+- Um den Arbeitsspeicher freizugeben, der von einem vorherigen Prepare-Befehl zugewiesen wurde, wird erneut aufgerufen, `PrepareToCaptureStillImageBracket` und es wird ein Array mit einem Objekt gesendet.
 
 #### <a name="donts"></a>Vergabe
 
 Im folgenden finden Sie eine Liste der Dinge, die nicht durchgeführt werden sollten, wenn in ios 8 die in Klammern stehenden Erfassungs Steuerelemente verwendet werden:
 
 - Kombinieren Sie die Erfassungs Einstellungs Typen in Klammern nicht in einer einzigen Erfassung.
-- Fordern Sie nicht mehr als `MaxBracketedCaptureStillImageCount` Images in einer einzigen Erfassung an.
+- Fordern Sie nicht mehr als `MaxBracketedCaptureStillImageCount` Bilder in einer einzigen Erfassung an.
 
 ### <a name="bracketed-capture-details"></a>Details zur Erfassung in Klammern
 
 Die folgenden Details sollten bei der Arbeit mit der Erfassung in Klammern in ios 8 berücksichtigt werden:
 
-- Einstellungen in Klammern überschreiben vorübergehend die `AVCaptureDevice` Einstellungen.
+- Einstellungen in Klammern überschreiben die `AVCaptureDevice` Einstellungen vorübergehend.
 - Die Einstellungen für die Flash-und Bildstabilisierung werden ignoriert.
 - Alle Bilder müssen das gleiche Ausgabeformat (JPEG, PNG usw.) verwenden.
 - Die Video Vorschau kann Frames löschen.
@@ -1150,16 +1150,16 @@ Sehen wir uns anhand dieser Informationen ein Beispiel für die Verwendung der E
 
 ### <a name="bracket-capture-example"></a>Beispiel für Klammer Erfassung
 
-Mit dem allgemeinen Installationscode für die AV-Erfassung kann eine `UIViewController` dem Storyboard der Anwendung hinzugefügt und wie folgt konfiguriert werden:
+Mit dem allgemeinen Installationscode für die AV `UIViewController` -Erfassung kann ein dem Storyboard der Anwendung hinzugefügt und wie folgt konfiguriert werden:
 
-[![](intro-to-manual-camera-controls-images/image23.png "A UIViewController can be added to the applications Storyboard and configured as shown here")](intro-to-manual-camera-controls-images/image23.png#lightbox)
+[![Ein UIViewController kann dem Anwendungs Storyboard hinzugefügt und wie hier gezeigt konfiguriert werden.](intro-to-manual-camera-controls-images/image23.png)](intro-to-manual-camera-controls-images/image23.png#lightbox)
 
 Die-Sicht enthält die folgenden Hauptelemente:
 
-- Eine `UIImageView`, die den Videofeed anzeigt.
-- Drei `UIImageViews`, die die Ergebnisse der Erfassung anzeigen.
-- Eine `UIScrollView`, um den Videofeed und die Ergebnis Ansicht zu beherbergen.
-- Eine `UIButton`, die verwendet wird, um eine in Klammern gefasste Erfassung mit einigen vordefinierten Einstellungen zu erstellen.
+- Ein `UIImageView` , der den Videofeed anzeigt.
+- Drei `UIImageViews` , die die Ergebnisse der Erfassung anzeigen.
+- Ein `UIScrollView` , um den Videofeed und die Ergebnis Ansichten zu beherbergen.
+- Eine `UIButton` , die verwendet wird, um eine in Klammern gefasste Erfassung mit einigen vordefinierten Einstellungen zu erstellen.
 
 Gehen Sie folgendermaßen vor, um den Ansichts Controller für die Erfassung in Klammern zu verknüpfen:
 
@@ -1228,7 +1228,7 @@ Gehen Sie folgendermaßen vor, um den Ansichts Controller für die Erfassung in 
     #endregion
     ```
 
-1. Überschreiben Sie die `ViewDidLoad`-Methode, und fügen Sie folgenden Code hinzu:
+1. Überschreiben `ViewDidLoad` Sie die-Methode, und fügen Sie folgenden Code hinzu:
 
     ```csharp
     public override void ViewDidLoad ()
@@ -1286,7 +1286,7 @@ Gehen Sie folgendermaßen vor, um den Ansichts Controller für die Erfassung in 
     }
     ```
 
-1. Überschreiben Sie die `ViewDidAppear`-Methode, und fügen Sie folgenden Code hinzu:
+1. Überschreiben `ViewDidAppear` Sie die-Methode, und fügen Sie folgenden Code hinzu:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
@@ -1307,10 +1307,10 @@ Gehen Sie folgendermaßen vor, um den Ansichts Controller für die Erfassung in 
 1. Speichern Sie den in Code, und führen Sie die Anwendung aus.
 1. Erstellen Sie eine Szene, und tippen Sie auf die Schaltfläche Aufnahme Klammer
 
-    [![](intro-to-manual-camera-controls-images/image24.png "Frame a scene and tap the Capture Bracket button")](intro-to-manual-camera-controls-images/image24.png#lightbox)
+    [![Rahmen einer Szene und tippen auf die Schaltfläche "Klammer erfassen"](intro-to-manual-camera-controls-images/image24.png)](intro-to-manual-camera-controls-images/image24.png#lightbox)
 1. Wischen Sie von rechts nach links, um die drei Bilder anzuzeigen, die von der Erfassung in Klammern übernommen werden:
 
-    [![](intro-to-manual-camera-controls-images/image25.png "Swipe right to left to see the three images taken by the Bracketed Capture")](intro-to-manual-camera-controls-images/image25.png#lightbox)
+    [![Wischen Sie von rechts nach links, um die drei Bilder anzuzeigen, die von der Erfassung in Klammern entnommen wurden.](intro-to-manual-camera-controls-images/image25.png)](intro-to-manual-camera-controls-images/image25.png#lightbox)
 1. Beendet die Anwendung.
 
 Der obige Code hat gezeigt, wie Sie in ios 8 eine automatische Erfassung in Klammern konfigurieren und eine automatische verfügbar machen.
@@ -1319,7 +1319,7 @@ Der obige Code hat gezeigt, wie Sie in ios 8 eine automatische Erfassung in Klam
 
 In diesem Artikel haben wir eine Einführung in die neuen manuellen Kamera Steuerelemente von IOS 8 behandelt und die Grundlagen der Aufgaben und deren Funktionsweise erläutert. Wir haben Beispiele für den manuellen Fokus, manuelles verfügbar machen und manuellen Leerstand angegeben. Zum Schluss haben wir ein Beispiel mit einer Erfassung in Klammern mit den zuvor beschriebenen manuellen Kamera Steuerelementen erstellt.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Manualcameracontrols (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/manualcameracontrols)
 - [Einführung in iOS 8](~/ios/platform/introduction-to-ios8.md)

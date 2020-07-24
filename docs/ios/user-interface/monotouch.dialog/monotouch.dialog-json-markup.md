@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: fc6066155a4171b106e772c1fe6fe7ee3e5c67cf
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 023a85451ca83df6c15e8b3bbc3169f2884a0a46
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573507"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936564"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog-JSON-Markup
 
@@ -77,7 +77,7 @@ Beginnen wir mit einem Beispiel. Im folgenden finden Sie eine umfassende JSON-Da
 
 Mit dem obigen Markup wird die folgende Benutzeroberfläche erzeugt:
 
- [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "The UI created by the given markup")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
+ [![Die Benutzeroberfläche, die durch das angegebene Markup erstellt wurde.](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png)](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
 
 Jedes Element in der Struktur kann die-Eigenschaft enthalten `"id"` . Es ist möglich, zur Laufzeit auf einzelne Abschnitte oder Elemente mit dem jsonelement-Indexer zu verweisen. Dies sieht folgendermaßen aus:
 
@@ -257,7 +257,7 @@ Die folgenden Schriftart Spezifikationen sind gültig:
 
 ### <a name="linebreak"></a>linebreak
 
-Bestimmt, wie Linien untergliedert werden. Mögliche Werte sind:
+Bestimmt, wie Linien untergliedert werden. Mögliche Werte:
 
 - `character-wrap`
 - `clip`
@@ -297,10 +297,10 @@ Wenn dieser Wert auf 0 (null) festgelegt ist, wird die automatische Größe des 
 
  <a name="style"></a>
 
-### <a name="style"></a>Format
+### <a name="style"></a>style
 
 Der Stil bestimmt die Art des Zellstils, der zum Rendering des Inhalts verwendet wird, und entspricht den uitableviewcellstyle-Enumerationswerten.
-Mögliche Werte sind:
+Mögliche Werte:
 
 - `"default"`
 - `"value1"`
@@ -330,7 +330,7 @@ Der sekundäre Wert, der im Rendering-Element angezeigt werden soll. Das Layout 
 
 ## <a name="boolean-elements"></a>Boolesche Elemente
 
-Boolesche Elemente müssen den Typ auf festlegen `"bool"` , können ein-Element enthalten, das angezeigt werden soll, `"caption"` und `"value"` ist entweder auf true oder false festgelegt. Wenn die `"on"` `"off"` Eigenschaften und festgelegt sind, werden Sie als Bilder angenommen. Die Bilder werden relativ zum aktuellen Arbeitsverzeichnis in der Anwendung aufgelöst. Wenn Sie auf Paket relative Dateien verweisen möchten, können Sie die `"~"` als Verknüpfung verwenden, um das Anwendungs Bündel Verzeichnis darzustellen. Beispielsweise `"~/favorite.png"` ist die Datei "Favorit. png", die in der Bundle-Datei enthalten ist. Beispiel:
+Boolesche Elemente müssen den Typ auf festlegen `"bool"` , können ein-Element enthalten, das angezeigt werden soll, `"caption"` und `"value"` ist entweder auf true oder false festgelegt. Wenn die `"on"` `"off"` Eigenschaften und festgelegt sind, werden Sie als Bilder angenommen. Die Bilder werden relativ zum aktuellen Arbeitsverzeichnis in der Anwendung aufgelöst. Wenn Sie auf Paket relative Dateien verweisen möchten, können Sie die `"~"` als Verknüpfung verwenden, um das Anwendungs Bündel Verzeichnis darzustellen. Dies ist beispielsweise `"~/favorite.png"` der favorite.png, der in der Paketdatei enthalten ist. Beispiel:
 
 ```json
 { 
@@ -397,7 +397,7 @@ Bestimmt den für den Eintrag zu verwendenden automatischen Korrektur Stil. Mög
 
 ### <a name="capitalization"></a>Groß-/Kleinschreibung
 
-Der für den Eintrag zu verwendende groß Schriftstil. Mögliche Werte sind:
+Der für den Eintrag zu verwendende groß Schriftstil. Mögliche Werte:
 
 - `all`
 - `none`
@@ -414,7 +414,7 @@ Die Beschriftung, die für den Eintrag verwendet werden soll.
 
 ### <a name="keyboard"></a>Tastatur
 
-Der für die Dateneingabe zu verwendende Tastatur-Typ. Mögliche Werte sind:
+Der für die Dateneingabe zu verwendende Tastatur-Typ. Mögliche Werte:
 
 - `ascii`
 - `decimal`
@@ -436,7 +436,7 @@ Der Hinweis Text, der angezeigt wird, wenn der Eintrag einen leeren Wert aufweis
 
 ### <a name="return-key"></a>Return-Key
 
-Die Bezeichnung, die für die Rückgabetaste verwendet wird. Mögliche Werte sind:
+Die Bezeichnung, die für die Rückgabetaste verwendet wird. Mögliche Werte:
 
 - `default`
 - `done`

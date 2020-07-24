@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: b69328b00778b0c3c03cd4d954b2e0bef33e4784
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d50f104b8b6e3e82fb7e9d6dbea45757742a5739
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574599"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937032"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Einführung in 3D-Fingereingabe in xamarin. IOS
 
 _In diesem Artikel wird die Verwendung der neuen iPhone 6S-und iPhone 6S plus 3D-Touchgesten in Ihrer APP behandelt._
 
-[![](3d-touch-images/info01.png "Examples of 3D Touch enabled apps")](3d-touch-images/info01.png#lightbox)
+[![Beispiele für 3D-apps mit aktiviertem Touchscreen](3d-touch-images/info01.png)](3d-touch-images/info01.png#lightbox)
 
 Dieser Artikel bietet eine Einführung in die Verwendung der neuen 3D-touchapis, um Ihren xamarin. IOS-apps, die auf den neuen iPhone 6S-und iPhone 6S Plus-Geräten ausgeführt werden, druckempfindliche Gesten hinzuzufügen.
 
@@ -39,7 +39,7 @@ der 3D-Fingerabdruck bietet die folgenden Features für Ihre APP:
 
 Wie bereits erwähnt, können Sie mithilfe neuer Eigenschaften der [uitouch](xref:UIKit.UITouch) -Klasse den Druck Aufwand Messen, den der Benutzer auf den Bildschirm des IOS-Geräts anwendet, und diese Informationen auf der Benutzeroberfläche verwenden. Beispielsweise wird ein Pinselstrich basierend auf der Druckmenge besser durchsichtig oder nicht transparent gemacht.
 
-[![](3d-touch-images/pressure01.png "A brush stroke rendered as more translucent or opaque based on the amount of pressure")](3d-touch-images/pressure01.png#lightbox)
+[![Ein Pinselstrich, der je nach Menge des Drucks als durchsichtig oder nicht transparent gerendert wird](3d-touch-images/pressure01.png)](3d-touch-images/pressure01.png#lightbox)
 
 Wenn Ihre APP auf IOS 9 (oder höher) ausgeführt wird und das IOS-Gerät die 3D-Fingereingabe unterstützen kann, wird das Ereignis durch Änderungen der Druckvorgänge `TouchesMoved` ausgelöst.
 
@@ -77,7 +77,7 @@ der 3D-Fingerabdruck bietet Benutzern neue Möglichkeiten, um schneller als je z
 
 Wenn Ihre APP z. b. eine Tabelle mit Nachrichten anzeigt, kann der Benutzer auf ein Element hart drücken, um seine Inhalte in einer über Lagerungs Ansicht anzuzeigen (was Apple als *Peek*bezeichnet).
 
-[![](3d-touch-images/peekandpop01.png "An example of Peeking at content")](3d-touch-images/peekandpop01.png#lightbox)
+[![Beispiel für das Einsehen von Inhalten](3d-touch-images/peekandpop01.png)](3d-touch-images/peekandpop01.png#lightbox)
 
 Wenn der Benutzer härter drückt, wird er in die reguläre Meldungs Ansicht (in der Ansicht als *Pop*-Ping bezeichnet) eingegeben.
 
@@ -205,7 +205,7 @@ Mithilfe von 3D-toucheingaben und schnellen Aktionen können Sie in der APP übe
 
 Wie bereits erwähnt, können Sie sich schnell Aktionen wie die Kontextmenüs vorstellen, die per Popup angezeigt werden können, wenn ein Benutzer mit der rechten Maustaste auf ein Element in einer Desktop-App klickt. Sie sollten schnelle Aktionen verwenden, um Verknüpfungen zu den gängigsten Funktionen oder Features Ihrer APP bereitzustellen.
 
-[![](3d-touch-images/quickactions01.png "An example of a Quick Actions menu")](3d-touch-images/quickactions01.png#lightbox)
+[![Beispiel für ein schnelles Aktionsmenü](3d-touch-images/quickactions01.png)](3d-touch-images/quickactions01.png#lightbox)
 
 ### <a name="defining-static-quick-actions"></a>Definieren statischer schneller Aktionen
 
@@ -270,7 +270,7 @@ Hier definieren wir zwei statische Elemente für schnelle Aktionen mit den folge
   - `UIApplicationShortcutIconTypeTime`
   - `UIApplicationShortcutIconTypeUpdate`
 
-  ![](3d-touch-images/uiapplicationshortcuticontype.png "UIApplicationShortcutIconType imagery")
+  ![Uiapplicationshortcuticontype-Bilder](3d-touch-images/uiapplicationshortcuticontype.png)
 
 - `UIApplicationShortcutItemSubtitle`: Definiert den Untertitel für das Element.
 - `UIApplicationShortcutItemTitle`: Definiert den Titel des Elements.
@@ -430,7 +430,7 @@ Wenn Sie die neueste Version von Xcode und den IOS-Simulator auf einem kompatibl
 
 Um diese Funktionalität zu aktivieren, führen Sie jede app in simulierter iPhone-Hardware aus, die 3D-Fingereingabe (iPhone 6S und höher) unterstützt. Wählen Sie als nächstes im IOS-Simulator das Menü **Hardware** aus, und aktivieren Sie das Menü Element **Trackpad-Force für 3D-Toucheingabe verwenden** :
 
-[![](3d-touch-images/simulator01.png "Select the Hardware menu in the iOS Simulator and enable the Use Trackpad Force for 3D touch menu item")](3d-touch-images/simulator01.png#lightbox)
+[![Wählen Sie im IOS-Simulator das Menü Hardware aus, und aktivieren Sie das Menü Element Trackpad-Force für 3D-Toucheingabe verwenden.](3d-touch-images/simulator01.png)](3d-touch-images/simulator01.png#lightbox)
 
 Wenn Sie diese Funktion aktiv haben, können Sie auf der Trackpad-Seite von Mac auf "schwerer" klicken, um die 3D-Toucheingabe zu aktivieren.
 

@@ -10,12 +10,12 @@ ms.date: 02/28/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d714b4c9d598d8cca26ae992abf3f15df703d11b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cd9815c6448efae0bb0af982c8807c47263ae13e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139177"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938205"
 ---
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsEinführung in Webdienste
 
@@ -34,8 +34,8 @@ In allen Fällen werden die Aufgaben in einem Back-End gespeichert, auf das übe
 
 Wenn die Anwendung gestartet wird, wird eine Seite mit allen vom Webdienst abgerufenen Tasks angezeigt, und der Benutzer kann eine neue Aufgabe erstellen. Wenn Sie auf eine Aufgabe klicken, wird die Anwendung auf eine zweite Seite navigiert, auf der die Aufgabe bearbeitet, gespeichert, gelöscht und gesprochen werden kann. Die fertige Anwendung wird unten gezeigt:
 
-![](introduction-images/app-example-1.png "Todo application - first page")
-![](introduction-images/app-example-2.png "Todo application - second page")
+![ToDo-Anwendung: erste Seite ](introduction-images/app-example-1.png)
+ ![ ToDo-Anwendung-zweite Seite](introduction-images/app-example-2.png)
 
 Jedes Thema in dieser Anleitung enthält einen Download Link zu einer *anderen* Version der Anwendung, die einen bestimmten Typ von Webdienst-Back-End veranschaulicht. Herunterladen des relevanten Beispielcodes auf der Seite, die sich auf die einzelnen Webdienst Stile bezieht.
 
@@ -47,7 +47,7 @@ Das freigegebene Code Projekt für jede Beispielanwendung besteht aus drei Haupt
 |--- |--- |
 |Daten|Enthält die Klassen und Schnittstellen, mit denen Datenelemente verwaltet und mit dem Webdienst kommuniziert werden. Dies schließt mindestens die-Klasse ein `TodoItemManager` , die durch eine Eigenschaft in der-Klasse verfügbar gemacht wird, `App` um Webdienst Vorgänge aufzurufen.|
 |Modelle|Enthält die Datenmodell Klassen für die Anwendung. Dies schließt mindestens die-Klasse ein `TodoItem` , die ein einzelnes Datenelement modelliert, das von der Anwendung verwendet wird. Der Ordner kann auch alle zusätzlichen Klassen enthalten, die zum Modellieren von Benutzerdaten verwendet werden.|
-|Ansichten|Enthält die Seiten für die Anwendung. Dies umfasst normalerweise die `TodoListPage` `TodoItemPage` Klassen und sowie alle zusätzlichen Klassen, die zu Authentifizierungs Zwecken verwendet werden.|
+|Sichten|Enthält die Seiten für die Anwendung. Dies umfasst normalerweise die `TodoListPage` `TodoItemPage` Klassen und sowie alle zusätzlichen Klassen, die zu Authentifizierungs Zwecken verwendet werden.|
 
 Das freigegebene Code Projekt für jede Anwendung besteht auch aus einer Reihe wichtiger Dateien:
 

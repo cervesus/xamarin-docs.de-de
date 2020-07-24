@@ -10,12 +10,12 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3706139a2c15d01af67203c2bd09b281de80ed52
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 855fde62483dcbc6f8769e7a8eb66d84aadfe1da
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140204"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934978"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>3D-Drehungen in skiasharp
 
@@ -25,7 +25,7 @@ _Verwenden Sie nicht-affine Transformationen, um 2D-Objekte im 3D-Raum zu drehen
 
 Eine gängige Anwendung von nicht affinen Transformationen ist das Simulieren der Drehung eines 2D-Objekts im 3D-Raum:
 
-![](3d-rotation-images/3drotationsexample.png "A text string rotated in 3D space")
+![Eine Text Zeichenfolge, gedreht in 3D](3d-rotation-images/3drotationsexample.png)
 
 Dieser Auftrag umfasst das Arbeiten mit dreidimensionalen Drehungen und das anschließende Ableiten einer nicht affinen `SKMatrix` Transformation, die diese 3D-Rotationen ausführt.
 
@@ -412,7 +412,7 @@ public partial class Rotation3DPage : ContentPage
 
 Wenn Sie mit dem vierten Schieberegler experimentieren, werden Sie feststellen, dass die unterschiedlichen tiefeneinstellungen das Objekt nicht weiter vom Viewer verschieben, sondern stattdessen den Umfang des perspektivischen Effekts ändern:
 
-[![](3d-rotation-images/rotation3d-small.png "Triple screenshot of the Rotation 3D page")](3d-rotation-images/rotation3d-large.png#lightbox "Triple screenshot of the Rotation 3D page")
+[![Dreifacher Screenshot der Drehung 3D-Seite](3d-rotation-images/rotation3d-small.png)](3d-rotation-images/rotation3d-large.png#lightbox "Dreifacher Screenshot der Drehung 3D-Seite")
 
 Die **animierte Drehung 3D** verwendet auch `SKMatrix44` , um eine Text Zeichenfolge im 3D-Raum zu animieren. Das `textPaint` Objekt, das als Feld festgelegt wird, wird im Konstruktor verwendet, um die Begrenzungen des Texts zu bestimmen:
 
@@ -536,7 +536,7 @@ public class AnimatedRotation3DPage : ContentPage
 
 Diese 3D-Drehung ist mit mehreren 2D-Transformationen umgeben, um den Mittelpunkt der Drehung in den Mittelpunkt des Bildschirms zu verschieben und die Größe der Text Zeichenfolge so zu skalieren, dass Sie die gleiche Breite wie der Bildschirm hat:
 
-[![](3d-rotation-images/animatedrotation3d-small.png "Triple screenshot of the Animated Rotation 3D page")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Triple screenshot of the Animated Rotation 3D page")
+[![Dreifacher Screenshot der 3D-Seite für animierte Drehung](3d-rotation-images/animatedrotation3d-small.png)](3d-rotation-images/animatedrotation3d-large.png#lightbox "Dreifacher Screenshot der 3D-Seite für animierte Drehung")
 
 ## <a name="related-links"></a>Verwandte Links
 

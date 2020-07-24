@@ -10,12 +10,12 @@ ms.date: 09/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f5738f376e2a814ef1af455178c2e68135184402
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6de2caf95d4ce983f7e97e0bc017932df534aedb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140165"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931858"
 ---
 # <a name="touch-manipulations"></a>Manipulationen durch Toucheingaben
 
@@ -25,7 +25,7 @@ _Verwenden von Matrix Transformationen zum Implementieren von Drag & Drop, Pinch
 
 In Multitouch-Umgebungen, wie z. b. auf mobilen Geräten, verwenden Benutzer häufig ihre Finger zum Bearbeiten von Objekten auf dem Bildschirm. Gängige Gesten, wie z. b. ein Drag & Drop mit einem Finger, können Objekte verschieben und skalieren oder sogar drehen. Diese Gesten werden im Allgemeinen mithilfe von Transformations Matrizen implementiert, und in diesem Artikel wird erläutert, wie Sie das tun.
 
-![](touch-images/touchmanipulationsexample.png "A bitmap subjected to translation, scaling, and rotation")
+![Eine Bitmap, die der Übersetzung, Skalierung und Drehung unterliegt.](touch-images/touchmanipulationsexample.png)
 
 Alle hier gezeigten Beispiele verwenden den Xamarin.Forms in dem Artikel [**Aufrufen von Ereignissen aus Effekten**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)dargestellten Fingerabdruck Effekt.
 
@@ -920,7 +920,7 @@ public partial class TouchManipulationPage : ContentPage
 
 Der `PaintSurface` Handler schließt den Abschluss eines-Objekts ein, `MatrixDisplay` das die akkumulierte Berührungs Matrix anzeigt:
 
-[![](touch-images/touchmanipulation-small.png "Triple screenshot of the Touch Manipulation page")](touch-images/touchmanipulation-large.png#lightbox "Triple screenshot of the Touch Manipulation page")
+[![Dreifacher Screenshot der Seite mit der Berührungs Bearbeitung](touch-images/touchmanipulation-small.png)](touch-images/touchmanipulation-large.png#lightbox "Dreifacher Screenshot der Seite mit der Berührungs Bearbeitung")
 
 ## <a name="manipulating-multiple-bitmaps"></a>Bearbeiten mehrerer Bitmaps
 
@@ -1058,7 +1058,7 @@ public partial class BitmapScatterViewPage : ContentPage
 
 Der Code durchläuft die Auflistung und zeigt den Stapel von Bitmaps vom Anfang der Auflistung bis zum Ende an:
 
-[![](touch-images/bitmapscatterview-small.png "Triple screenshot of the Bitmap Scatter View page")](touch-images/bitmapscatterview-large.png#lightbox "Triple screenshot of the Bitmap Scatter View page")
+[![Dreifacher Screenshot der bitmapscatter-Ansichts Seite](touch-images/bitmapscatterview-small.png)](touch-images/bitmapscatterview-large.png#lightbox "Dreifacher Screenshot der bitmapscatter-Ansichts Seite")
 
 ## <a name="single-finger-scaling"></a>Skalierung mit nur einem Finger
 

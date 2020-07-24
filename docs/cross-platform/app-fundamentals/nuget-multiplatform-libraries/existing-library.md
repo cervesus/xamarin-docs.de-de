@@ -44,6 +44,6 @@ Dieser Screenshot zeigt den Inhalt eines PCL-basierten nuget-– es ist nur eine
 
 ![Im nuget-Paket enthaltene Dateien](existing-library-images/nuget-output.png)
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Metadatenhandbuch](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)

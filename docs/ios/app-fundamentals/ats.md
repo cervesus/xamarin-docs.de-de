@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: a7534ec706633a856e5e095369e29f5fdef5f6a7
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 74647a3c9128496373917e714755f5aaa7f73187
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574222"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931689"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>App-Transport Sicherheit in xamarin. IOS
 
@@ -87,7 +87,7 @@ Abhängig von dem Server, mit dem Sie kommunizieren (insbesondere wenn es sich u
 
 Zum Festlegen der httpclient-Implementierung, die von einer IOS-App verwendet wird, doppelklicken Sie auf das **Projekt** im **Projektmappen-Explorer** , um die **Projektoptionen**zu öffnen. Navigieren Sie zu **IOS Build** , und wählen Sie in der Dropdown Liste **HttpClient-Implementierung** den gewünschten Clienttyp aus:
 
-![](ats-images/client01.png "Setting the iOS Build Options")
+![Festlegen der IOS-Buildoptionen](ats-images/client01.png)
 
 #### <a name="managed-handler"></a>Verwalteter Handler
 
@@ -212,7 +212,7 @@ Wenn Ihre xamarin. IOS-App eine Anforderung an eine unsichere Domäne richten mu
 
 Doppelklicken Sie in Visual Studio für Mac auf die `Info.plist` Datei im **Projektmappen-Explorer**, wechseln Sie zur **Quell** Ansicht, und fügen Sie die obigen Schlüssel hinzu:
 
-[![](ats-images/ats01.png "The Source view of the Info.plist file")](ats-images/ats01.png#lightbox)
+[![Die Quell Ansicht der Datei "Info. plist"](ats-images/ats01.png)](ats-images/ats01.png#lightbox)
 
 Wenn Ihre APP Webinhalte von nicht sicheren Websites laden und anzeigen muss, fügen Sie der Datei " **Info. plist** " Ihrer APP Folgendes hinzu, damit Webseiten ordnungsgemäß geladen werden können, während der Apple Transport Security (ATS)-Schutz weiterhin für den Rest der App aktiviert ist:
 
@@ -236,7 +236,7 @@ Optional können Sie die folgenden Änderungen an der Datei " **Info. plist** " 
 
 Doppelklicken Sie in Visual Studio für Mac auf die `Info.plist` Datei im **Projektmappen-Explorer**, wechseln Sie zur **Quell** Ansicht, und fügen Sie die obigen Schlüssel hinzu:
 
-[![](ats-images/ats02.png "The Source view of the Info.plist file")](ats-images/ats02.png#lightbox)
+[![Die Quell Ansicht der Datei "Info. plist"](ats-images/ats02.png)](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
 > Wenn Ihre Anwendung eine Verbindung mit einer unsicheren Website erfordert, sollten Sie die Domäne **immer** als Ausnahme mit eingeben, `NSExceptionDomains` anstatt sie vollständig mithilfe von zu deaktivieren `NSAllowsArbitraryLoads` . `NSAllowsArbitraryLoads`sollte nur in extrem Notfällen verwendet werden.

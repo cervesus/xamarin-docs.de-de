@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/26/2018
-ms.openlocfilehash: c8c5b8d0417fb7fd1069d2bf6fa5d9887d569453
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e2beb12ea366918219d2c83532e8a62d94e688b5
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001570"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996265"
 ---
 # <a name="working-with-watchos-icons-in-xamarin"></a>Arbeiten mit watchos-Symbolen in xamarin
 
@@ -23,7 +23,7 @@ Apple Watch Lösungen erfordern zwei Sätze von Symbolen:
 
 ## <a name="apple-watch-icons"></a>Apple Watch Symbole
 
-| | | |
+|Symbol|Beschreibung|Darstellung|
 |-|-|-|
 |Symbol für IOS-App|Wird auf dem iPhone angezeigt und startet die übergeordnete App|![Symbol für IOS-App](icons-images/icon-ios.png)|
 |Symbol "App ansehen"|Wird auf dem Apple Watch-Startbildschirm angezeigt.|![watchos-App-Symbol](icons-images/icon-home.png)|
@@ -34,7 +34,7 @@ Apple Watch Lösungen erfordern zwei Sätze von Symbolen:
 
 Um sicherzustellen, dass Ihre IOS-APP und die Watch-App den richtigen Namen und das richtige Symbol anzeigen, befolgen Sie die folgenden Anweisungen für jedes Projekt:
 
-### <a name="ios-app"></a>IOS-App
+### <a name="ios-app"></a>iOS-App
 
 Lesen Sie den [Leitfaden für IOS-Anwendungs Symbole](~/ios/app-fundamentals/images-icons/app-icons.md) , um sicherzustellen, dass die Symbole ihrer IOS-APP richtig konfiguriert sind.
 
@@ -42,7 +42,7 @@ Lesen Sie den [Leitfaden für IOS-Anwendungs Symbole](~/ios/app-fundamentals/ima
 
 Die Zeichenfolge, die neben ihrer Watch-app in der [Apple Watch Einstellungs-APP](~/ios/watchos/app-fundamentals/settings.md) angezeigt wird, wird in der Datei " **Info. plist**" der IOS-App konfiguriert.
 
-Vergewissern Sie sich, dass die Datei " **Info. plist** " einen `CFBundleName` Schlüssel und-Wert aufweist (Hinweis: Dies unterscheidet sich vom `CFBundleDisplayName`, Sie können beides aufweisen):
+Vergewissern Sie sich, dass die Datei " **Info. plist** " einen `CFBundleName` Schlüssel und einen Wert aufweist (Hinweis: Dies unterscheidet sich von `CFBundleDisplayName` , Sie können beides aufweisen):
 
 ```xml
 <key>CFBundleName</key>
@@ -53,23 +53,23 @@ Vergewissern Sie sich, dass die Datei " **Info. plist** " einen `CFBundleName` S
 
 Nachdem die Symbole ihrer über [geordneten App](~/ios/watchos/app-fundamentals/parent-app.md) konfiguriert wurden, müssen Sie der Watch-APP einen Anwendungssymbol-Ressourcen Katalog hinzufügen.
 
-1. Klicken Sie mit der rechten Maustaste auf das App-Projekt überwachen, und wählen Sie **Datei > > neue Datei hinzufügen... > IOS > Asset Catalog** ein, um dem Projekt einen Ressourcen Katalog hinzuzufügen.
+1. Klicken Sie mit der rechten Maustaste auf das App-Projekt überwachen, und wählen Sie **Datei > > neue Datei hinzufügen... > IOS > Asset Catalog** aus, um dem Projekt einen Ressourcen Katalog hinzuzufügen.
 
-    ![](icons-images/newasset.png "Add an asset catalog to the project")
+    ![Hinzufügen eines Ressourcen Katalogs zum Projekt](icons-images/newasset.png)
 
-2. Doppelklicken Sie auf die Datei " **AppIcon. appianset/Contents. JSON** ".
+2. Doppelklicken Sie auf **AppIcon. appianset/Contents.jsin** der Datei.
 
-    ![](icons-images/xcassets-iconset-sml.png "The AppIcon contents")
+    ![Der AppIcon-Inhalt](icons-images/xcassets-iconset-sml.png)
 
 3. Fügen Sie alle watchos-Images hinzu, wie in diesem Screenshot gezeigt:
 
-    [![](icons-images/appicons-sml.png "Add all the watchOS images, as shown in this screenshot")](icons-images/appicons.png#lightbox)
+    [![Fügen Sie alle watchos-Images hinzu, wie in diesem Screenshot gezeigt.](icons-images/appicons-sml.png)](icons-images/appicons.png#lightbox)
 
     Informationen zu den erforderlichen Größen (die Dimensionen werden auch auf dem Bildschirm angezeigt) finden Sie in den [Symbol Richtlinien von Apple](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/) . Beachten Sie, dass diese Symbole automatisch abgeschnitten werden, um Sie in einem Kreis zu renderten.
 
     Die Symbolliste sollte in etwa wie folgt aussehen:
 
-    ![](icons-images/xcassets-complete-sml.png "The icon list in the Solution Explorer")
+    ![Die Symbolliste im Projektmappen-Explorer](icons-images/xcassets-complete-sml.png)
 
 4. Um sicherzustellen, dass der Asset-Katalog in der App enthalten ist, fügen Sie der Datei " **Info. plist" der Watch-App**den folgenden Schlüssel und Wert hinzu:
 

@@ -10,12 +10,12 @@ ms.date: 12/13/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c7fdecdb0ce209c88dbe9e6f4e6e6588ec4fd3fd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: be8dd5d29aebf29395885d650fbd28082013d0d1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139918"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929163"
 ---
 # <a name="listview-appearance"></a>ListView-Darstellung
 
@@ -114,7 +114,7 @@ Dieser XAML-Code führt die folgenden Aktionen aus:
 
 Der folgende Screenshot zeigt die resultierende Benutzeroberfläche:
 
-![](customizing-list-appearance-images/grouping-depth.png "ListView Grouping Example")
+![ListView-Gruppierungs Beispiel](customizing-list-appearance-images/grouping-depth.png)
 
 ### <a name="customizing-grouping"></a>Anpassen der Gruppierung
 
@@ -163,7 +163,7 @@ Eine ListView kann eine Kopfzeile und eine Fußzeile darstellen, die mit den Ele
 
 Sie können den `Header` Wert für und/oder `Footer` auf einen `string` Wert festlegen, oder Sie können ihn auf ein komplexeres Layout festlegen. Außerdem gibt es `HeaderTemplate` die `FooterTemplate` Eigenschaften und, mit denen Sie komplexere Layouts für die Kopf-und Fußzeile erstellen können, die die Datenbindung unterstützen.
 
-Zum Erstellen einer einfachen Kopfzeile/Fußzeile legen Sie die Kopf-oder Fußzeilen Eigenschaften auf den Text fest, den Sie anzeigen möchten. Im Code:
+Zum Erstellen einer einfachen Kopfzeile/Fußzeile legen Sie die Kopf-oder Fußzeilen Eigenschaften auf den Text fest, den Sie anzeigen möchten. In Code:
 
 ```csharp
 ListView HeaderList = new ListView()
@@ -183,7 +183,7 @@ In XAML:
 </ListView>
 ```
 
-![](customizing-list-appearance-images/header-default.png "ListView with Header and Footer")
+![ListView mit Kopf-und Fußzeile](customizing-list-appearance-images/header-default.png)
 
 Um eine angepasste Kopfzeile und Fußzeile zu erstellen, definieren Sie die Kopf-und Fußzeilen Ansichten:
 
@@ -204,7 +204,7 @@ Um eine angepasste Kopfzeile und Fußzeile zu erstellen, definieren Sie die Kopf
 </ListView.Footer>
 ```
 
-![](customizing-list-appearance-images/header-custom.png "ListView with Customized Header and Footer")
+![ListView mit angepasstem Kopf-und Fußzeile](customizing-list-appearance-images/header-custom.png)
 
 ## <a name="scrollbar-visibility"></a>Sichtbarkeit der Scrollleiste
 
@@ -235,7 +235,7 @@ XAML:
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="Default" />
 ```
 
-![](customizing-list-appearance-images/separator-default.png "ListView with Default Row Separators")
+![ListView mit Standardzeilen Trennzeichen](customizing-list-appearance-images/separator-default.png)
 
 Keine:
 
@@ -251,7 +251,7 @@ XAML:
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="None" />
 ```
 
-![](customizing-list-appearance-images/separator-none.png "ListView without Row Separators")
+![ListView ohne Zeilen Trennzeichen](customizing-list-appearance-images/separator-none.png)
 
 Sie können die Farbe der Trennlinie auch über die- `SeparatorColor` Eigenschaft festlegen:
 
@@ -267,7 +267,7 @@ XAML:
 <ListView x:Name="SeparatorDemoListView" SeparatorColor="Green" />
 ```
 
-![](customizing-list-appearance-images/separator-custom.png "ListView with Green Row Separators")
+![ListView mit grünen Zeilen Trennzeichen](customizing-list-appearance-images/separator-custom.png)
 
 > [!NOTE]
 > Wenn Sie eine dieser Eigenschaften auf Android festlegen, nachdem das geladen wurde, kommt es zu `ListView` einer hohen Leistungs Einbuße.
@@ -295,7 +295,7 @@ XAML:
 <ListView x:Name="RowHeightDemoListView" RowHeight="100" />
 ```
 
-![](customizing-list-appearance-images/height-custom.png "ListView with Fixed Row Height")
+![ListView mit fester Zeilenhöhe](customizing-list-appearance-images/height-custom.png)
 
 ### <a name="uneven-rows"></a>Ungleichmäßige Zeilen
 
@@ -313,7 +313,7 @@ XAML:
 <ListView x:Name="RowHeightDemoListView" HasUnevenRows="true" />
 ```
 
-![](customizing-list-appearance-images/height-uneven.png "ListView with Uneven Rows")
+![ListView mit ungeraden Zeilen](customizing-list-appearance-images/height-uneven.png)
 
 ### <a name="resize-rows-at-runtime"></a>Ändern der Größe von Zeilen zur Laufzeit
 
@@ -334,7 +334,7 @@ void OnImageTapped (object sender, EventArgs args)
 
 Der `OnImageTapped` Ereignishandler wird als Reaktion auf einen [`Image`](xref:Xamarin.Forms.Image) in einer zu gezapften Zelle ausgeführt und erhöht die Größe des `Image` in der Zelle angezeigten, sodass er problemlos angezeigt werden kann.
 
-![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView with Runtime Row Resizing")
+![ListView mit Lauf Zeit Größe für Zeilen](customizing-list-appearance-images/dynamic-row-resizing.png)
 
 > [!WARNING]
 > Eine übermäßige Verwendung der Lauf Zeit Zeilengröße kann zu Leistungseinbußen führen.

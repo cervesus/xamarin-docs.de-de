@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: f496a831c226e377f62e2a6fab8ed328bf1be0b9
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: dab6d1ff573f0f74b3b230732aa4669ba9fda0d5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571069"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934861"
 ---
 # <a name="localization"></a>Lokalisierung
 
@@ -59,7 +59,7 @@ Deutsche Zeichen folgen (z. b.) können sehr lang sein. Manchmal wird ein relati
 
 Vergleichen Sie die Zeichen folgen Längen für einige Elemente auf dem IOS-Startbildschirm auf Englisch, Deutsch und Japanisch:
 
-[![](localization-images/language-compare-sml.png "German vs Japanese string length")](localization-images/language-compare.png#lightbox)
+[![Deutsch und Japanisch Zeichen folgen Länge](localization-images/language-compare-sml.png)](localization-images/language-compare.png#lightbox)
 
 Beachten Sie, dass die **Einstellungen** in Englisch (8 Zeichen) 13 Zeichen für die deutsche Übersetzung, aber nur 2 Zeichen in Japanisch erfordern.
 
@@ -155,7 +155,7 @@ Dies kann sich auch auf externe Links zu Audiospuren oder Videos auswirken – w
 
 ### <a name="dont-over-translate"></a>Nicht übersetzen
 
-Einige Zeichen folgen in Ihrer APP müssen möglicherweise nicht übersetzt werden, oder Sie benötigen zumindest eine besondere Aufmerksamkeit durch den Übersetzer. Beispiele:
+Einige Zeichen folgen in Ihrer APP müssen möglicherweise nicht übersetzt werden, oder Sie benötigen zumindest eine besondere Aufmerksamkeit durch den Übersetzer. Dazu können beispielsweise folgende Aufgaben gehören:
 
 - URLs – Wenn Sie eine URL auflisten, muss Sie möglicherweise nach Sprache angepasst werden. Facebook.com erfordert z. b. keine automatische Übersetzung, wenn die Sprache am Hauptstandort automatisch erkannt wird. Andere Standorte verfügen über Gebiets Schema spezifischen Inhalt, und Sie möchten möglicherweise eine andere URL anbieten, z. b. yahoo.com im Vergleich zu Yahoo.fr oder Yahoo.it.
 - Telefonnummern – insbesondere diejenigen mit unterschiedlichen Ländercodes oder Zahlen für Aufrufer, die eine bestimmte Sprache sprechen.

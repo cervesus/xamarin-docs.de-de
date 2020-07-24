@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: c4bec7d77e7778d8922640c75d23f4b1464f864f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8ed83ee8f0bded6258b695f7a6383cda1929f542
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573923"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997084"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>Erstellen von benutzerdefinierten Steuerelementen in xamarin. Mac
 
@@ -20,7 +20,7 @@ Wenn Sie mit c# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zug
 
 MacOS bietet zwar eine Vielzahl integrierter Benutzer Steuerelemente, es kann jedoch vorkommen, dass Sie ein benutzerdefiniertes Steuerelement erstellen müssen, um Funktionen bereitzustellen, die nicht standardmäßig bereitgestellt werden, oder um ein benutzerdefiniertes UI-Design (z. b. eine spielschnittstelle) abzugleichen.
 
-[![](custom-controls-images/intro01.png "Example of a custom UI control")](custom-controls-images/intro01.png#lightbox)
+[![Beispiel für ein benutzerdefiniertes UI-Steuerelement](custom-controls-images/intro01.png)](custom-controls-images/intro01.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Erstellung eines wiederverwendbaren benutzerdefinierten Benutzeroberflächen Steuer Elements in einer xamarin. Mac-Anwendung behandelt. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , durcharbeiten, da er wichtige Konzepte und Techniken behandelt, die wir in diesem Artikel verwenden werden.
 
@@ -48,7 +48,7 @@ Da das benutzerdefinierte Steuerelement, das wir erstellen, auf die Benutzereing
 
 Öffnen Sie in Visual Studio für Mac das xamarin. Mac-Projekt, für das Sie ein benutzerdefiniertes Steuerelement für die Benutzeroberfläche erstellen möchten (oder erstellen Sie ein neues). Fügen Sie eine neue Klasse hinzu, und nennen Sie Sie `NSFlipSwitch` :
 
-[![](custom-controls-images/custom01.png "Adding a new class")](custom-controls-images/custom01.png#lightbox)
+[![Hinzufügen einer neuen Klasse](custom-controls-images/custom01.png)](custom-controls-images/custom01.png#lightbox)
 
 Bearbeiten Sie als nächstes die `NSFlipSwitch.cs` -Klasse, und machen Sie Sie wie folgt:
 
@@ -334,19 +334,19 @@ Wenn das benutzerdefinierte Steuerelement vollständig definiert ist, können wi
 
 Um das Steuerelement mithilfe von Interface Builder hinzuzufügen, führen Sie zunächst eine saubere Erstellung des xamarin. Mac-Projekts aus, und doppelklicken Sie dann `Main.storyboard` auf die Datei, um Sie in Interface Builder zu öffnen:
 
-[![](custom-controls-images/custom02.png "Editing the storyboard in Xcode")](custom-controls-images/custom02.png#lightbox)
+[![Bearbeiten des Storyboards in Xcode](custom-controls-images/custom02.png)](custom-controls-images/custom02.png#lightbox)
 
 Ziehen Sie als nächstes eine `Custom View` in den Benutzeroberflächen Entwurf:
 
-[![](custom-controls-images/custom03.png "Selecting a Custom View from the Library")](custom-controls-images/custom03.png#lightbox)
+[![Auswählen einer benutzerdefinierten Ansicht aus der Bibliothek](custom-controls-images/custom03.png)](custom-controls-images/custom03.png#lightbox)
 
 Wenn die benutzerdefinierte Ansicht noch ausgewählt ist, wechseln Sie zum **Identitäts Inspektor** , und ändern Sie die **Klasse** der Ansicht in `NSFlipSwitch` :
 
-[![](custom-controls-images/custom04.png "Setting the View's class")](custom-controls-images/custom04.png#lightbox)
+[![Festlegen der Klasse der Sicht](custom-controls-images/custom04.png)](custom-controls-images/custom04.png#lightbox)
 
 Wechseln Sie zum **Assistenten-Editor** , und erstellen Sie ein **Outlet** für das benutzerdefinierte Steuerelement (stellen Sie sicher, dass es in der `ViewController.h` Datei und nicht in der Datei gebunden wird `.m` ):
 
-[![](custom-controls-images/custom05.png "Configuring a new Outlet")](custom-controls-images/custom05.png#lightbox)
+[![Konfigurieren eines neuen Outlets](custom-controls-images/custom05.png)](custom-controls-images/custom05.png#lightbox)
 
 Speichern Sie die Änderungen, kehren Sie zu Visual Studio für Mac zurück, und lassen Sie die Synchronisierung zu. Bearbeiten Sie die `ViewController.cs` Datei, und führen Sie die `ViewDidLoad` Methode wie folgt aus:
 
@@ -367,7 +367,7 @@ Hier reagieren wir auf das Ereignis, das `ValueChanged` wir oben in der Klasse d
 
 Optional könnten wir zu Interface Builder zurückkehren und eine **Aktion** für das Steuerelement definieren:
 
-[![](custom-controls-images/custom06.png "Configuring a new Action")](custom-controls-images/custom06.png#lightbox)
+[![Konfigurieren einer neuen Aktion](custom-controls-images/custom06.png)](custom-controls-images/custom06.png#lightbox)
 
 Bearbeiten Sie die Datei erneut, `ViewController.cs` und fügen Sie die folgende Methode hinzu:
 

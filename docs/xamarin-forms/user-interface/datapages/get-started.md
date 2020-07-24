@@ -10,25 +10,25 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bb08d359048d53639a700cc5ff526f26d6b077b6
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 325aa7be9e8a1eb6da816ef4ec6403c2882c6ed4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571466"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928912"
 ---
 # <a name="getting-started-with-datapages"></a>Ersten Einstieg in DataPages
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![Diese API befindet sich derzeit in der Vorschau Phase.](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages erfordert einen Design Xamarin.Forms Verweis zum Rendering. Dies umfasst die Installation von [ Xamarin.Forms . Design. basieren](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) Sie auf das nuget-Paket in Ihrem Projekt, gefolgt von dem [ Xamarin.Forms . Design. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) oder [ Xamarin.Forms . Design. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) nuget-Pakete.
 
 Führen Sie die folgenden Schritte aus, um mit dem Aufbau einer einfachen datengesteuerten Seite mithilfe der DataPages-Vorschau zu beginnen. In dieser Demo wird ein hart codierter Stil ("Ereignisse") in den Preview-Builds verwendet, der nur mit dem spezifischen JSON-Format im Code funktioniert.
 
-[![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
+[![DataPages-Beispielanwendung](get-started-images/demo-sml.png)](get-started-images/demo.png#lightbox "DataPages-Beispielanwendung")
 
 ## <a name="1-add-nuget-packages"></a>1. Hinzufügen von nuget-Paketen
 
@@ -140,7 +140,7 @@ Ein Beispiel für die JSON-Daten aus der Demo Quelle finden Sie unten:
 
 Die oben aufgeführten Schritte sollten zu einer Arbeitsdaten Seite führen:
 
-[![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
+[![DataPages-Beispielanwendung](get-started-images/demo-sml.png)](get-started-images/demo.png#lightbox "DataPages-Beispielanwendung")
 
 Dies funktioniert, weil der vorgefertigte Stil **"Ereignisse"** im Design "lighttheme" im Design "Light" vorhanden ist und Stile definiert sind, die mit der Datenquelle (z. b. "Title", "Bild", "Presenter").
 
@@ -169,7 +169,7 @@ Der geerbte Stil kann überschrieben werden, indem eine Vorlage angegeben und Da
 
 Durch Bereitstellen von `DataTemplate` überschreibt dieser Code den `StyleClass` und verwendet stattdessen das Standardlayout für einen `ListItemControl` .
 
-[![](get-started-images/custom-sml.png "DataPages Sample Application")](get-started-images/custom.png#lightbox "DataPages Sample Application")
+[![DataPages-Beispielanwendung](get-started-images/custom-sml.png)](get-started-images/custom.png#lightbox "DataPages-Beispielanwendung")
 
 Entwickler, die c# in XAML bevorzugen, können auch Datenquellen Bindungen erstellen (Beachten Sie, dass Sie eine- `using Xamarin.Forms.Pages;` Anweisung einschließen):
 

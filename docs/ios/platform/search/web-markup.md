@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 3d5db2f060b59fc689bea99141342b0447ac8933
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: cd9e5e3fc604fc6e6993b10424a209aa6c382a10
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031525"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935056"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Suche mit webmarkup in xamarin. IOS
 
@@ -20,12 +20,12 @@ Für apps, die den Zugriff auf Ihre Inhalte über eine Website ermöglichen (nic
 
 Wenn Ihre IOS-App bereits Mobile Deep Linking unterstützt und Ihre Website Deep-Links zu Inhalten in Ihrer APP präsentiert, indiziert Apple _applebot_ Web Crawler diesen Inhalt und fügt ihn automatisch dem cloudindex hinzu:
 
-[![](web-markup-images/webmarkup01.png "Cloud Index overview")](web-markup-images/webmarkup01.png#lightbox)
+[![Übersicht über den cloudindex](web-markup-images/webmarkup01.png)](web-markup-images/webmarkup01.png#lightbox)
 
 Apple zeigt diese Ergebnisse in Spotlight-Suche und Safari-Suchergebnissen an.
 Wenn der Benutzer auf eines dieser Ergebnisse tippt (und die APP installiert ist), werden Sie an den Inhalt in Ihrer APP weitergeleitet:
 
-[![](web-markup-images/webmarkup02.png "Deep linking from a website in search results")](web-markup-images/webmarkup02.png#lightbox)
+[![Deep Linking von einer Website in den Suchergebnissen](web-markup-images/webmarkup02.png)](web-markup-images/webmarkup02.png#lightbox)
 
 ## <a name="enabling-web-content-indexing"></a>Aktivieren der Webinhalts Indizierung
 
@@ -87,7 +87,7 @@ Weitere Informationen finden Sie in der Dokumentation der Facebook- [App-Links](
 
 ## <a name="opening-deep-links"></a>Öffnen von Deep-Links
 
-Sie müssen Unterstützung für das Öffnen und Anzeigen von Deep-Links in ihrer xamarin. IOS-app hinzufügen. Bearbeiten Sie die Datei **AppDelegate.cs** , und überschreiben Sie die `OpenURL` Methode, um das benutzerdefinierte URL-Format zu verarbeiten Beispiel:
+Sie müssen Unterstützung für das Öffnen und Anzeigen von Deep-Links in ihrer xamarin. IOS-app hinzufügen. Bearbeiten Sie die Datei **AppDelegate.cs** , und `OpenURL` Überschreiben Sie die Methode, um das benutzerdefinierte URL-Format zu verarbeiten Beispiel:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -113,7 +113,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 }
 ```
 
-Im obigen Code suchen wir nach einer URL, die `/appname` enthält und den Wert `query` (`123` in diesem Beispiel) an einen benutzerdefinierten Ansichts Controller in unserer App übergibt, um dem Benutzer den angeforderten Inhalt anzuzeigen.
+Im obigen Code suchen wir nach einer URL, `/appname` die enthält und den Wert von `query` ( `123` in diesem Beispiel) an einen benutzerdefinierten Ansichts Controller in unserer App übergibt, um dem Benutzer den angeforderten Inhalt anzuzeigen.
 
 ## <a name="providing-rich-results-with-structured-data"></a>Bereitstellen umfangreicher Ergebnisse mit strukturierten Daten
 
@@ -152,7 +152,7 @@ Die gleichen Informationen können im JSON-LD-Format von Schema. org dargestellt
 
 Im folgenden finden Sie ein Beispiel für Metadaten von Ihrer Website, die dem Endbenutzer umfangreiche Suchergebnisse bieten:
 
-[![](web-markup-images/deeplink01.png "Rich search results via Structured Data Markup")](web-markup-images/deeplink01.png#lightbox)
+[![Umfassende Suchergebnisse über strukturiertes Daten Markup](web-markup-images/deeplink01.png)](web-markup-images/deeplink01.png#lightbox)
 
 Apple unterstützt derzeit die folgenden Schema Typen von Schema.org:
 
@@ -160,9 +160,9 @@ Apple unterstützt derzeit die folgenden Schema Typen von Schema.org:
 - Imageobject
 - Interaktioncount
 - Angebote
-- Ordnung
-- Pricerange
-- Tions
+- Organization
+- PriceRange
+- Rezept
 - SearchAction
 
 Weitere Informationen zu diesen Schema Typen finden Sie unter [Schema.org](https://schema.org).

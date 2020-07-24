@@ -19,7 +19,7 @@ ms.locfileid: "86937201"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Grundlagen der Bitmap in skiasharp
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Laden Sie Bitmaps aus verschiedenen Quellen, und zeigen Sie Sie an._
 
@@ -249,7 +249,7 @@ Wenn noch keine Bitmap aus der Bildbibliothek geladen wurde, zeigt der- `else` B
 
 Sie können Bitmaps mit unterschiedlichen Grad an Transparenz anzeigen, und im nächsten Artikel über [**skiasharp-Transparenz**](transparency.md) wird beschrieben, wie.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

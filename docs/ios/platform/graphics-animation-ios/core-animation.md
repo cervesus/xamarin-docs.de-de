@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 74d6dfb2b6a722e5af4dc97cdf23b84aa4bd95d0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: ddd46da0787f853e949d08c45dff5be17b9451fd
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565043"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932755"
 ---
 # <a name="core-animation-in-xamarinios"></a>Core-Animation in xamarin. IOS
 
@@ -70,7 +70,7 @@ PresentViewController (vc2, true, null);
 
 Der folgende Screenshot zeigt, wie der Übergang für den `PartialCurl` Fall aussieht:
 
- ![](core-animation-images/06-view-transitions.png "This screenshot shows the PartialCurl transition")
+ ![Dieser Screenshot zeigt den partialcurl-Übergang.](core-animation-images/06-view-transitions.png)
 
 ### <a name="view-transitions"></a>Übergänge anzeigen
 
@@ -92,7 +92,7 @@ UIView.Transition (
 
 Der folgende Screenshot zeigt den animierten Übergang zwischen den Bildansichten, wenn `TransitionFlipFromTop` verwendet wird:
 
- ![](core-animation-images/07-animated-transition.png "This screenshot shows the animated transition between the image views when TransitionFlipFromTop is used")
+ ![Dieser Screenshot zeigt den animierten Übergang zwischen den Bildansichten, wenn transitionflipfromtop verwendet wird.](core-animation-images/07-animated-transition.png)
 
 ### <a name="view-property-animations"></a>Anzeigen von Eigenschafts Animationen
 
@@ -125,11 +125,11 @@ UIView.Animate (
 
 Dies führt dazu, dass ein Bild über den oberen Bildschirmrand hin und her animiert wird, wie unten dargestellt:
 
- ![](core-animation-images/08-animate-center.png "An image animating back and forth across the top of the screen as the output")
+ ![Ein Bild, das auf der oberen Seite des Bildschirms als Ausgabe hin und her animiert.](core-animation-images/08-animate-center.png)
 
 Wie bei der- `Transition` Methode `Animate` ermöglicht die Festlegung der Dauer zusammen mit der Beschleunigungs Funktion. In diesem Beispiel wurde auch die- `UIViewAnimationOptions.Autoreverse` Option verwendet, die bewirkt, dass die Animation von dem Wert zurück zum ersten wird. Der Code legt jedoch auch die `Center` auf den Anfangswert in einem Abschluss Handler zurück. Während eine Animation Eigenschaftswerte im Laufe der Zeit interpolieren kann, ist der tatsächliche Modell Wert der Eigenschaft immer der endgültige Wert, der festgelegt wurde. In diesem Beispiel ist der Wert ein Punkt in der Nähe der rechten Seite der übergeordneten Ansicht. Wenn `Center` Sie nicht auf den Anfangspunkt festlegen, an dem die Animation abgeschlossen ist, weil `Autoreverse` Sie festgelegt wird, wird das Bild nach Abschluss der Animation wieder nach rechts ausgerichtet, wie unten dargestellt:
 
- ![](core-animation-images/09-animation-complete.png "Without setting the Center to the initial point, the image would snap back to the right side after the animation completes")
+ ![Wenn die Mitte nicht auf den ersten Punkt festgelegt ist, wird das Bild nach Abschluss der Animation wieder nach rechts ausgerichtet.](core-animation-images/09-animation-complete.png)
 
 ## <a name="using-core-animation"></a>Verwenden der Core-Animation
 
@@ -184,11 +184,11 @@ Mit diesem Code werden auch die Ebenen der Ebene animiert, bei der es sich `Posi
 
 Die folgende Abbildung zeigt die Position und den Ankerpunkt:
 
- ![](core-animation-images/10-postion-anchorpt.png "This figure shows the position and anchor point")
+ ![Diese Abbildung zeigt die Position und den Ankerpunkt.](core-animation-images/10-postion-anchorpt.png)
 
 Wenn das Beispiel ausgeführt wird, werden `Position` die `BorderWidth` -und `BorderColor` animiert, wie in den folgenden Screenshots gezeigt:
 
- ![](core-animation-images/11-implicit-animation.png "When the example is run, the Position, BorderWidth and BorderColor animate as shown")
+ ![Wenn das Beispiel ausgeführt wird, werden die Position, die BorderWidth-und die BorderColor-Animation wie dargestellt animiert.](core-animation-images/11-implicit-animation.png)
 
 ### <a name="explicit-animations"></a>Explizite Animationen
 
@@ -229,7 +229,7 @@ Dieser Code ändert den `Position` der Ebene durch Erstellen eines Pfads, der da
 
 Die folgenden Screenshots zeigen die Ebene mit dem Bild, das die Animation durch den angegebenen Pfad enthält:
 
- ![](core-animation-images/12-explicit-animation.png "This screenshot shows the layer containing the image animating through the specified path")
+ ![Dieser Screenshot zeigt die Ebene mit dem Bild, das die Animation durch den angegebenen Pfad enthält.](core-animation-images/12-explicit-animation.png)
 
 ## <a name="summary"></a>Zusammenfassung
 

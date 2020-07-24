@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5e2ad97eb5e7db3b832e8fb4340c86904b766b9a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d6f3304c9eeb87405ab303a80450a1cd8b2af267
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139998"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938059"
 ---
 # <a name="imagebutton-drop-shadows-on-android"></a>ImageButton-Dropdown Schatten unter Android
 
@@ -76,7 +76,7 @@ Die- `ImageButton.On<Android>` Methode gibt an, dass diese plattformspezifische 
 
 Das Ergebnis ist, dass ein Ablage Schatten für eine aktiviert werden kann `ImageButton` :
 
-![](imagebutton-drop-shadow-images/imagebutton-drop-shadow.png "ImageButton with drop shadow")
+![ImageButton mit Schlag Schatten](imagebutton-drop-shadow-images/imagebutton-drop-shadow.png)
 
 ## <a name="related-links"></a>Verwandte Links
 

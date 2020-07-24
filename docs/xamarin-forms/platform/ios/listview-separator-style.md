@@ -19,7 +19,7 @@ ms.locfileid: "86937058"
 ---
 # <a name="listview-separator-style-on-ios"></a>ListView-Trennzeichen Stil unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Mit diesem IOS-plattformspezifischen Steuerelement wird gesteuert, ob das Trennzeichen zwischen den Zellen in einer [`ListView`](xref:Xamarin.Forms.ListView) die vollständige Breite des verwendet `ListView` . Sie wird in XAML verwendet, indem die [`ListView.SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty) angefügte-Eigenschaft auf einen Wert der-Enumeration festgelegt wird [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) :
 

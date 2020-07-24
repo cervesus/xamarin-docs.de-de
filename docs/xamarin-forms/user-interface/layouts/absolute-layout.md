@@ -10,12 +10,12 @@ ms.date: 11/25/2015
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 110b01d6482fbe3e23a772c90194b6bf40d54877
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 923f7643bd1e137192bfb80dbbc7c5d2c25b5471
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570530"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938423"
 ---
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
@@ -23,7 +23,7 @@ ms.locfileid: "84570530"
 
 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)Positionen und Größen untergeordnete Elemente sind proportional zu ihrer eigenen Größe und Position oder mit absoluten Werten. Untergeordnete Ansichten können mithilfe von proportionalen Werten oder statischen Werten positioniert und vergrößert werden, und proportionale und statische Werte können gemischt werden.
 
-[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
+[![Xamarin.FormsLayouts](absolute-layout-images/layouts-sml.png)](absolute-layout-images/layouts.png#lightbox "[! Schel. Nicht-Loc (xamarin. Forms)] Layouts")
 
 In diesem Artikel wird Folgendes behandelt:
 
@@ -53,9 +53,9 @@ Aufgrund des Positionierungs Modells von `AbsoluteLayout` ist das Layout relativ
 
 Beachten Sie im folgenden Screenshot, dass der Anker des Felds ein weißer Punkt ist. Beachten Sie die Beziehung zwischen dem Anker und dem Feld beim Durchlaufen des Layouts:
 
-![](absolute-layout-images/anchor-start.png "Anchor at Start")
-![](absolute-layout-images/anchor-center.png "Anchor at Center")
-![](absolute-layout-images/anchor-end.png "Anchor at End")
+![Anker am Anfang des Ankers am ](absolute-layout-images/anchor-start.png)
+ ![ Mittelpunkt am ](absolute-layout-images/anchor-center.png)
+ ![ Ende](absolute-layout-images/anchor-end.png)
 
 ### <a name="specifying-values"></a>Angeben von Werten
 
@@ -109,7 +109,7 @@ Title="Absolute Layout Exploration">
 </ContentPage>
 ```
 
-![](absolute-layout-images/exploration.png "AbsoluteLayout Examples")
+![Beispiele für "AbsoluteLayout"](absolute-layout-images/exploration.png)
 
 Beachten Sie Folgendes:
 
@@ -275,7 +275,7 @@ Title="AbsoluteLayout">
 
 Der obige Code führt zum folgenden Layout:
 
-![](absolute-layout-images/abs.png "Complex AbsoluteLayout")
+![Komplexes AbsoluteLayout](absolute-layout-images/abs.png)
 
 Beachten Sie, dass `AbsoluteLayout` s geschachtelt sind, da in einigen Fällen die Schachtelung von Layouts einfacher sein kann, als alle Elemente innerhalb desselben Layouts darzustellen.
 

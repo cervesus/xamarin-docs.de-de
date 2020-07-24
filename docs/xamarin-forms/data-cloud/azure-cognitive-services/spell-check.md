@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1703f0049408381a86da73fb28696ef8708cc790
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4c07f2667230695c6b884eb4902e68f7f4120f6b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139294"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939502"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Rechtschreibprüfung mit der Bing-Rechtschreibprüfung-API
 
@@ -157,9 +157,9 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 
 Dieser Code durchläuft die `FlaggedTokens` -Auflistung und ersetzt alle falsch geschriebenen oder ungültigen Wörter im Quelltext durch den ersten Vorschlag. Die folgenden Screenshots zeigen vor und nach der Rechtschreibprüfung:
 
-![](spell-check-images/before-spell-check.png "Before Spell Check")
+![Vor Rechtschreibprüfung](spell-check-images/before-spell-check.png)
 
-![](spell-check-images/after-spell-check.png "After Spell Check")
+![Nach Rechtschreibprüfung](spell-check-images/after-spell-check.png)
 
 > [!NOTE]
 > Im obigen Beispiel `Replace` wird der Einfachheit halber verwendet, aber über eine große Menge an Text kann das falsche Token ersetzt werden. Die API stellt den `offset` Wert bereit, der in Produktions-Apps verwendet werden soll, um die richtige Position im Quelltext zum Ausführen eines Updates zu identifizieren.

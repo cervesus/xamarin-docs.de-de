@@ -28,7 +28,7 @@ Dieses Dokument enthält einfache Beispiele für:
 
 Diese Beispiele sollen Ihnen beim Einstieg in Ihre xamarin. IOS-Anwendungen helfen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Sie müssen die neueste Version von Xcode verwenden.
 
@@ -220,7 +220,7 @@ Jeder aufgeführte Filter wurde als Klasse in xamarin. IOS verfügbar gemacht, s
 
 In diesem Artikel wurde gezeigt, wie Sie einige der neuen Features für den IOS 5-Kern Image-Frameworks wie Gesichtserkennung und Anwenden von Filtern auf ein Abbild verwenden können. Im Framework sind Dutzende verschiedener Bild Filter verfügbar, die Sie verwenden können.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Core-Image (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/coreimage)
 - [Anpassen des Vertrags und der Helligkeit eines Bild Rezept](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)

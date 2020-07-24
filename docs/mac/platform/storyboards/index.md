@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 395ac62cd4db62c02863e352ed5643958348dcff
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8b911be4b1bf547a9a1ad5d6b795894ddba3c26d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574389"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939060"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Einführung in Storyboards in xamarin. Mac
 
@@ -20,7 +20,7 @@ _Dieser Artikel bietet eine Einführung in die Arbeit mit Storyboards in einer x
 
 Storyboards ermöglichen es Ihnen, eine Benutzeroberfläche für die xamarin. Mac-app zu entwickeln, die nicht nur die Fenster Definitionen und Steuerelemente enthält, sondern auch die Verknüpfungen zwischen verschiedenen Fenstern (über Seiten und Ansichts Zuständen) enthält.
 
-[![](images/intro01.png "A sample UI in Xcode")](images/intro01.png#lightbox)
+[![Eine Beispiel Benutzeroberfläche in Xcode](images/intro01.png)](images/intro01.png#lightbox)
 
 Dieser Artikel bietet eine Einführung in die Verwendung von Storyboards zum Definieren der Benutzeroberfläche einer xamarin. Mac-app.
 
@@ -36,11 +36,11 @@ Mithilfe von Storyboards kann die gesamte Benutzeroberfläche einer xamarin. Mac
 
 Wie bereits erwähnt, definiert ein Storyboard alle Benutzeroberflächen für eine bestimmte APP, die in einer funktionalen Übersicht der zugehörigen _Ansichts Controller_aufgeschlüsselt sind. In der Interface Builder von Xcode befindet sich jeder dieser Controller in einer eigenen _Szene_.
 
-[![](images/intro02.png "An example view controller")](images/intro02.png#lightbox)
+[![Ein Beispiel für einen Ansichts Controller](images/intro02.png)](images/intro02.png#lightbox)
 
 Jede Szene stellt ein angegebenes Ansichts-und Ansichts Controller Paar mit einem Satz von Zeilen (sogenannten Segues) dar, die jede Szene in der Benutzeroberfläche verbinden und so ihre Beziehungen anzeigen. Einige-Elemente definieren, wie ein Ansichts Controller eine oder mehrere untergeordnete Sichten oder Ansichts Controller enthält. Andere Segues definieren Übergänge zwischen Ansichts Controller (z. b. das Anzeigen eines popover oder Dialog Felds). 
 
-[![](images/intro03.png "A sample segue")](images/intro03.png#lightbox)
+[![Ein Beispiel für einen anderen.](images/intro03.png)](images/intro03.png#lightbox)
 
 Wichtig zu beachten ist, dass jeder-Typ den Datenfluss zwischen dem angegebenen Element der Benutzeroberfläche der APP darstellt.
 
@@ -50,7 +50,7 @@ Wichtig zu beachten ist, dass jeder-Typ den Datenfluss zwischen dem angegebenen 
 
 Ansichts Controller definieren die Beziehungen zwischen einer bestimmten Ansicht von Informationen in einer Mac-app und dem Datenmodell, das diese Informationen bereitstellt. Jede Szene der obersten Ebene im Storyboard stellt einen Ansichts Controller im Code der xamarin. Mac-app dar.
 
-[![](images/intro04.png "An example slips view controller")](images/intro04.png#lightbox)
+[![Ein Beispiel für den Ansichts Controller](images/intro04.png)](images/intro04.png#lightbox)
 
 Auf diese Weise ist jeder Ansichts Controller eine eigenständige, wiederverwendbare Kopplung der visuellen Darstellung der Informationen (Ansicht) und der Logik, um diese Informationen darzustellen und zu steuern.
 

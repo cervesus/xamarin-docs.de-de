@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: bcf293b29d6ddca10ab60ae061491b60f1e30520
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.openlocfilehash: a70095c5897163d3699d03ec42c33826f6d40419
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77495637"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997149"
 ---
 # <a name="ios-platform-features-overview"></a>Übersicht über IOS-Platt Form Features
 
@@ -20,9 +20,9 @@ Auf dieser Seite werden die aktuellen IOS-Releases aufgeführt und einige der Ap
 
 ## <a name="ios-releases"></a>IOS-Releases
 
-|  |  |
+| Release | Beschreibung |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Einführung in ios 13](~/ios/platform/ios13/index.md) | In diesem Dokument wird xamarin. IOS 13 beschrieben.|
+| [Einführung in iOS 13](~/ios/platform/ios13/index.md) | In diesem Dokument wird xamarin. IOS 13 beschrieben.|
 | [Einführung in iOS 12](~/ios/platform/introduction-to-ios12/index.md) | In diesem Dokument werden die IOS 12-Funktionen beschrieben, die zum Entwickeln von xamarin. IOS-Anwendungen verfügbar sind.|
 | [Einführung in iOS 11](~/ios/platform/introduction-to-ios11/index.md) | In diesem Dokument werden die neuen und aktualisierten Features in ios 11 und Xcode 9 beschrieben, z. b. Arkit, Core ml, Core NFC, Drag & Drop, MapKit, PDFKit, Sirikit und Vision. Es enthält Links zu Anleitungen, in denen beschrieben wird, wie diese Funktionen mit xamarin. IOS verwendet werden. |
 | [Einführung in iOS 10](~/ios/platform/introduction-to-ios10/index.md) | IOS 10 umfasst mehrere neue APIs und Dienste, mit denen Sie Apps mit neuen Features und Funktionen entwickeln können. IOS 10 verfügt über neue Funktionen, wie z. b. das Erweitern von Karten, Nachrichten, Telefon und Siri. In diesem Abschnitt wird erläutert, wie Sie diese Features in einer xamarin. IOS-App nutzen können. |
@@ -41,7 +41,7 @@ Die neue callkit-API in ios 10 bietet eine Möglichkeit für VoIP-Apps, mit der 
 
 ## <a name="contacts-and-contactsui"></a>[Kontakte und ContactsUI](~/ios/platform/contacts.md)
 
-Mit der Einführung von IOS 9 hat Apple zwei neue Frameworks, `Contacts` und `ContactsUI`freigegeben, die das vorhandene Adressbuch und die Benutzeroberflächen-Frameworks der Adressbücher ersetzen, die von IOS 8 und früher verwendet werden.
+Mit der Einführung von IOS 9 hat Apple zwei neue Frameworks (und) veröffentlicht, `Contacts` `ContactsUI` die das vorhandene Adressbuch und die Benutzeroberflächen-Frameworks des Adressbuchs ersetzen, die von IOS 8 und früher verwendet werden.
 
 ## <a name="document-picker"></a>[Dokumentauswahl](~/ios/platform/document-picker.md)
 
@@ -53,13 +53,13 @@ IOS verfügt über zwei integrierte Kalender bezogene Anwendungen: die Kalendera
 
 ## <a name="ios-extensions"></a>[IOS-Erweiterungen](~/ios/platform/extensions.md)
 
-Erweiterungen, die in ios 8 eingeführt werden, sind spezialisierte `UIViewControllers`, die von IOS in Standard Kontexten wie z. b. innerhalb des **Benachrichtigungs Centers**präsentiert werden, als benutzerdefinierte Tastaturtypen, die vom Benutzer angefordert werden, um spezialisierte Eingaben oder andere Kontexte wie das Bearbeiten eines Fotos auszuführen, bei dem die Erweiterung spezielle Effektfilter bereitstellen kann.
+Erweiterungen, wie in ios 8 eingeführt, sind spezialisiert, `UIViewControllers` die von IOS in Standard Kontexten wie z. b. innerhalb des **Benachrichtigungs Centers**präsentiert werden, als benutzerdefinierte Tastaturtypen, die vom Benutzer angefordert werden, um spezialisierte Eingaben oder andere Kontexte auszuführen, wie z. b. die Bearbeitung eines Fotos, bei dem die Erweiterung spezielle Effektfilter
 
-## <a name="graphics-and-animation-in-ios"></a>[Grafiken und Animationen in ios](~/ios/platform/graphics-animation-ios/index.md)
+## <a name="graphics-and-animation-in-ios"></a>[Grafiken und Animationen in iOS](~/ios/platform/graphics-animation-ios/index.md)
 
 Grafiken und Animationen in ios decken grundlegende Grafik Konzepte in ios ab, wie z. b. CoreImage, Core-Grafiken und Core-Animationen.
 
-## <a name="handoff"></a>[Handoff](~/ios/platform/handoff.md)
+## <a name="handoff"></a>[Übergabe](~/ios/platform/handoff.md)
 
 Apple hat die Übergabe in ios 8 und OS X Yosemite (10,10) eingeführt, um dem Benutzer einen allgemeinen Mechanismus zum Übertragen von Aktivitäten zu ermöglichen, die auf einem seiner Geräte gestartet werden, auf ein anderes Gerät, auf dem dieselbe APP oder eine andere app ausgeführt wird, die dieselbe Aktivität unterstützt.
 
@@ -99,7 +99,7 @@ Photo Kit ist ein neues Framework, das es Anwendungen ermöglicht, die System Im
 
 ## <a name="request-app-review"></a>[App-Überprüfung anfordern](~/ios/platform/request-app-review.md)
 
-Neu bei IOS 10,3, mit der `RequestReview()`-Methode kann eine IOS-App den Benutzer auffordern, ihn zu bewerten oder zu überprüfen. Wenn diese Methode in einer Versand-app aufgerufen wird, die der Benutzer aus dem App Store installiert hat, übernimmt IOS 10 den gesamten Bewertungs-und Überprüfungsprozess für den Entwickler. Da dieser Prozess von der App Store-Richtlinie gesteuert wird, wird möglicherweise eine Warnung angezeigt oder nicht angezeigt.
+Neu bei IOS 10,3, mit der- `RequestReview()` Methode kann eine IOS-App den Benutzer auffordern, ihn zu bewerten oder zu überprüfen. Wenn diese Methode in einer Versand-app aufgerufen wird, die der Benutzer aus dem App Store installiert hat, übernimmt IOS 10 den gesamten Bewertungs-und Überprüfungsprozess für den Entwickler. Da dieser Prozess von der App Store-Richtlinie gesteuert wird, wird möglicherweise eine Warnung angezeigt oder nicht angezeigt.
 
 ## <a name="search-apis"></a>[Such-APIs](~/ios/platform/search/index.md)
 
@@ -139,11 +139,11 @@ IOS 10 und macOS Sierra verbessern die Unterstützung für erweiterte Pixel Form
 
 ## <a name="binding-objective-c"></a>[Binden von Objective-C](binding-objective-c/index.md)
 
-Bei der Arbeit mit IOS kann es vorkommen, dass Sie eine Ziel-C-Bibliothek eines Drittanbieters verwenden möchten. In diesen Fällen können Sie die Bindungs Projekte von MonoTouch verwenden, um eine C# Bindung mit den nativen Ziel-C-Bibliotheken zu erstellen. Das Projekt verwendet die gleichen Tools, mit denen die IOS-APIs verwendet werden C#. In diesem Dokument wird beschrieben, wie Sie die Ziel-C-APIs binden.
+Bei der Arbeit mit IOS kann es vorkommen, dass Sie eine Ziel-C-Bibliothek eines Drittanbieters verwenden möchten. In diesen Fällen können Sie die Bindungs Projekte von MonoTouch zum Erstellen einer c#-Bindung mit den nativen Ziel-C-Bibliotheken verwenden. Das Projekt verwendet die gleichen Tools, die wir verwenden, um die IOS-APIs in c# zu verwenden. In diesem Dokument wird beschrieben, wie Sie die Ziel-C-APIs binden.
 
-## <a name="bind-ios-swift-libraries"></a>[Binden von IOS SWIFT-Bibliotheken](binding-swift/index.md)
+## <a name="bind-ios-swift-libraries"></a>[Binden von iOS Swift-Bibliotheken](binding-swift/index.md)
 
-In diesem Dokument wird beschrieben, C# wie Bindungen für SWIFT-Code erstellt werden, sodass Native Bibliotheken und cocoapods in einer xamarin. IOS-Anwendung verwendet werden können.
+In diesem Dokument wird beschrieben, wie Sie c#-Bindungen für SWIFT-Code erstellen, sodass Sie Native Bibliotheken und cocoapods in einer xamarin. IOS-Anwendung nutzen können.
 
 ## <a name="referencing-native-libraries"></a>[Verweisen auf Native Bibliotheken](native-interop.md)
 

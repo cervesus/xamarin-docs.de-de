@@ -10,12 +10,12 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7e1fb6342db4c97ea6946db366d356267c8c1b90
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 05547e960ba1ea141a830396f803dfc265283627
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570556"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936460"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>Authentifizieren von Benutzern mit einer Azure Cosmos DB-dokumentdatenbank undXamarin.Forms
 
@@ -36,7 +36,7 @@ Wenn Sie einen Hauptschlüssel verfügbar machen, öffnet sich ein Cosmos DB Kon
 
 Ein typischer Ansatz zum anfordern, erstellen und bereitzustellen von Ressourcen Token an eine mobile Anwendung ist die Verwendung eines ressourcentokenbrokers. Das folgende Diagramm zeigt eine allgemeine Übersicht darüber, wie die Beispielanwendung einen ressourcentokenbroker verwendet, um den Zugriff auf die Dokument Datenbankdaten zu verwalten:
 
-![](azure-cosmosdb-auth-images/documentdb-authentication.png "Document Database Authentication Process")
+![Prozess für die Dokument Daten Bank Authentifizierung](azure-cosmosdb-auth-images/documentdb-authentication.png)
 
 Beim ressourcentokenbroker handelt es sich um einen in Azure App Service gehosteten Web-API-Dienst der mittleren Ebene, der über den Hauptschlüssel des Cosmos DB Kontos verfügt. Die Beispielanwendung verwendet den ressourcentokenbroker, um den Zugriff auf die Dokumenten Datenbankdaten wie folgt zu verwalten:
 
@@ -51,7 +51,7 @@ Beim ressourcentokenbroker handelt es sich um einen in Azure App Service gehoste
 
 Weitere Informationen zur Cosmos DB Partitionierung finden [Sie unter Partitionieren und Skalieren in Azure Cosmos DB](/azure/cosmos-db/partition-data/). Weitere Informationen zur Cosmos DB Access Control finden Sie unter [Sichern des Zugriffs auf Cosmos DB Daten](/azure/cosmos-db/secure-access-to-data/) und [Zugriffs Steuerung in der SQL-API](/rest/api/documentdb/access-control-on-documentdb-resources/).
 
-## <a name="setup"></a>Einrichten
+## <a name="setup"></a>Setup
 
 Der Vorgang zum Integrieren des ressourcentokenbrokers in eine- Xamarin.Forms Anwendung lautet wie folgt:
 
@@ -85,7 +85,7 @@ Der Vorgang zum Hosting des ressourcentokenbrokers in Azure App Service lautet w
 
     Der folgende Screenshot veranschaulicht diese Konfiguration:
 
-    [![](azure-cosmosdb-auth-images/azure-web-app-settings.png "App Service Web App Settings")](azure-cosmosdb-auth-images/azure-web-app-settings-large.png#lightbox "App Service Web App Settings")
+    [![App Service von Web-App-Einstellungen](azure-cosmosdb-auth-images/azure-web-app-settings.png)](azure-cosmosdb-auth-images/azure-web-app-settings-large.png#lightbox "App Service von Web-App-Einstellungen")
 
 1. Veröffentlichen Sie die ressourcentokenbroker-Lösung in der Azure App Service-Web-App.
 
@@ -102,7 +102,7 @@ Der Prozess zum Erstellen einer Facebook-App zum Durchführen der Authentifizier
 
   Der folgende Screenshot veranschaulicht diese Konfiguration:
 
-  ![](azure-cosmosdb-auth-images/facebook-oauth-settings.png "Facebook Login OAuth Settings")
+  ![OAuth-Einstellungen für Facebook-Anmeldung](azure-cosmosdb-auth-images/facebook-oauth-settings.png)
 
 Weitere Informationen finden Sie unter [Registrieren Ihrer Anwendung bei Facebook](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-nameregister-aregister-your-application-with-facebook).
 
@@ -117,7 +117,7 @@ Der Prozess für die Konfiguration App Service einfachen Authentifizierung laute
 
     Der folgende Screenshot veranschaulicht diese Konfiguration:
 
-    [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service Web App Authentication Settings")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service Web App Authentication Settings")
+    [![Authentifizierungs Einstellungen für App Service Web-App](azure-cosmosdb-auth-images/app-service-authentication-settings.png)](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "Authentifizierungs Einstellungen für App Service Web-App")
 
 Außerdem sollte die APP Service Web-App für die Kommunikation mit der Facebook-App konfiguriert werden, um den Authentifizierungs Ablauf zu aktivieren. Wählen Sie hierzu den Facebook-Identitäts Anbieter aus, und geben Sie die Werte für **App-ID** und **App-Geheimnis** aus den Facebook-App-Einstellungen im Facebook Developer Center ein. Weitere Informationen finden Sie [unter Hinzufügen von Facebook-Informationen zu Ihrer Anwendung](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application).
 
@@ -144,7 +144,7 @@ var auth = new Xamarin.Auth.WebRedirectAuthenticator(
 
 Dies bewirkt, dass ein OAuth-Authentifizierungs Fluss zwischen Azure App Service und Facebook initiiert wird, der die Facebook-Anmeldeseite anzeigt:
 
-![](azure-cosmosdb-auth-images/login.png "Facebook Login")
+![Facebook-Anmeldung](azure-cosmosdb-auth-images/login.png)
 
 Der Anmelde Name kann durch Drücken der Schaltfläche " **Abbrechen** " unter IOS oder durch Drücken der Schaltfläche " **zurück** " unter Android abgebrochen werden. in diesem Fall bleibt der Benutzer nicht authentifiziert, und die Benutzeroberfläche des Identitäts Anbieters wird vom Bildschirm entfernt.
 

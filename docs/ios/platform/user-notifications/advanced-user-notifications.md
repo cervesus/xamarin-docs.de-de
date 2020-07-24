@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: 75ee2c4df9c7f54fa0200272ebc1e9682622ab31
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: edf224428103c318307f3a05dc79e1e8d286f512
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031445"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935114"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Erweiterte Benutzer Benachrichtigungen in xamarin. IOS
 
@@ -53,7 +53,7 @@ Unabhängig davon, wo eine Benutzer Benachrichtigung in ios 10 angezeigt wird, w
 
 In ios 8 hat Apple Aktions fähige Benachrichtigungen eingeführt, bei denen der Entwickler benutzerdefinierte Aktionen an eine Benachrichtigung anfügen und dem Benutzer die Möglichkeit geben kann, eine Benachrichtigung zu übernehmen, ohne die app starten zu müssen. In ios 9 hat Apple Aktions fähige Benachrichtigungen mit Quick Reply verbessert, sodass der Benutzer auf eine Benachrichtigung mit Texteingabe Antworten kann.
 
-Da Benutzer Benachrichtigungen ein wesentlicher Bestandteil der Benutzeroberfläche in ios 10 sind, hat Apple die umsetzbaren Benachrichtigungen erweitert, um die 3D-Toucheingabe zu unterstützen, wobei der Benutzer auf eine Benachrichtigung drückt und eine benutzerdefinierte Benutzeroberfläche angezeigt wird, um umfangreiche Interaktionen zu ermöglichen. mit der Benachrichtigung.
+Da Benutzer Benachrichtigungen ein wesentlicher Bestandteil der Benutzeroberfläche in ios 10 sind, hat Apple die umsetzbaren Benachrichtigungen erweitert, um die 3D-Toucheingabe zu unterstützen, wobei der Benutzer auf eine Benachrichtigung drückt und eine benutzerdefinierte Benutzeroberfläche angezeigt wird, um eine umfassende Interaktion mit der Benachrichtigung zu ermöglichen.
 
 Wenn die Benutzeroberfläche für benutzerdefinierte Benutzer Benachrichtigungen angezeigt wird und der Benutzer mit Aktionen interagiert, die an die Benachrichtigung angefügt sind, kann die benutzerdefinierte Benutzeroberfläche sofort aktualisiert werden, um Feedback zu den geänderten Änderungen bereitzustellen.
 
@@ -61,7 +61,7 @@ Neu bei IOS 10: mit der UI-API für Benutzer Benachrichtigungen kann eine xamari
 
 ## <a name="adding-media-attachments"></a>Hinzufügen von Medien Anlagen
 
-Eines der gängigeren Elemente, die von Benutzern gemeinsam genutzt werden, sind Fotos. IOS 10 hat die Möglichkeit hinzugefügt, eine Medien Aufgabe (z. b. ein Foto) direkt an eine Benachrichtigung anzufügen, wo Sie dem Benutzer angezeigt wird und wie der Rest des Conte der Benachrichtigung steht. Eis.
+Eines der gängigeren Elemente, die von Benutzern gemeinsam genutzt werden, sind Fotos. IOS 10 hat die Möglichkeit hinzugefügt, eine Medien Aufgabe (z. b. ein Foto) direkt an eine Benachrichtigung anzufügen, wo Sie dem Benutzer angezeigt und bereitgestellt wird, sowie den restlichen Inhalt der Benachrichtigung.
 
 Aufgrund der Größen, die beim Senden eines kleinen Bilds anfallen, ist das Anfügen an eine Remote Benachrichtigungs Nutzlast jedoch unpraktisch. Um diese Situation zu beheben, kann der Entwickler die neue Dienst Erweiterung in ios 10 verwenden, um das Image aus einer anderen Quelle (z. b. einem cloudkit-Datenspeicher) herunterzuladen und es an den Inhalt der Benachrichtigung anzufügen, bevor es dem Benutzer angezeigt wird.
 
@@ -79,9 +79,9 @@ Damit eine Remote Benachrichtigung von einer Dienst Erweiterung geändert werden
 
 Sehen Sie sich die folgende Übersicht über den Prozess an:
 
-[![](advanced-user-notifications-images/extension02.png "Adding Media Attachments process")](advanced-user-notifications-images/extension02.png#lightbox)
+[![Hinzufügen von Medien Anlagen Prozess](advanced-user-notifications-images/extension02.png)](advanced-user-notifications-images/extension02.png#lightbox)
 
-Nachdem die Remote Benachrichtigung an das Gerät übermittelt wurde (über APNs), kann die Dienst Erweiterung das erforderliche Image über eine beliebige gewünschte Methode herunterladen (z. b. ein `NSURLSession`). Nachdem das Image empfangen wurde, kann es den Inhalt der Benachrichtigung ändern und es anzeigen. der Benutzer.
+Nachdem die Remote Benachrichtigung an das Gerät übermittelt wurde (über APNs), kann die Dienst Erweiterung das erforderliche Image über eine beliebige gewünschte Methode herunterladen (z. b. ein `NSURLSession` ). Nachdem das Image empfangen wurde, kann es den Inhalt der Benachrichtigung ändern und dem Benutzer anzeigen.
 
 Im folgenden finden Sie ein Beispiel dafür, wie dieser Prozess im Code verarbeitet werden kann:
 
@@ -134,11 +134,11 @@ namespace MonkeyNotification
 }
 ```
 
-Wenn die Benachrichtigung von APNs empfangen wird, wird die benutzerdefinierte Adresse des Images aus dem Inhalt gelesen, und die Datei wird vom Server heruntergeladen. Anschließend wird eine `UNNotificationAttachement` mit einer eindeutigen ID und dem lokalen Speicherort des Images (als `NSUrl`) erstellt. Eine änderbare Kopie des Benachrichtigungs Inhalts wird erstellt, und Medien Anlagen werden hinzugefügt. Schließlich wird die Benachrichtigung für den Benutzer angezeigt, indem die `contentHandler`aufgerufen wird.
+Wenn die Benachrichtigung von APNs empfangen wird, wird die benutzerdefinierte Adresse des Images aus dem Inhalt gelesen, und die Datei wird vom Server heruntergeladen. Anschließend `UNNotificationAttachement` wird eine mit einer eindeutigen ID und dem lokalen Speicherort des Bilds (als `NSUrl` ) erstellt. Eine änderbare Kopie des Benachrichtigungs Inhalts wird erstellt, und Medien Anlagen werden hinzugefügt. Schließlich wird die Benachrichtigung für den Benutzer angezeigt, indem aufgerufen wird `contentHandler` .
 
 Nachdem einer Benachrichtigung eine Anlage hinzugefügt wurde, übernimmt das System die Verschiebung und Verwaltung der Datei.
 
-Zusätzlich zu den oben dargestellten Remote Benachrichtigungen werden Medien Anlagen auch von lokalen Benachrichtigungen unterstützt, bei denen die `UNNotificationAttachement` erstellt und zusammen mit dem Inhalt an die Benachrichtigung angefügt wird.
+Zusätzlich zu den oben dargestellten Remote Benachrichtigungen werden Medien Anlagen auch von lokalen Benachrichtigungen unterstützt, bei denen das `UNNotificationAttachement` erstellt und zusammen mit dem Inhalt an die Benachrichtigung angefügt wird.
 
 Die Benachrichtigung in ios 10 unterstützt Medien Anlagen von Bildern (statisch und GIFs), Audiodaten und Videos, und das System zeigt automatisch die korrekte benutzerdefinierte Benutzeroberfläche für diese Art von Anlagen an, wenn dem Benutzer die Benachrichtigung angezeigt wird.
 
@@ -155,7 +155,7 @@ Zur Unterstützung der Benutzerinteraktion mit einer Benutzer Benachrichtigung s
 
 Wenn Benutzern eine Benutzer Benachrichtigung mit einer benutzerdefinierten Benutzeroberfläche angezeigt wird, verfügen Sie über die folgenden Elemente:
 
-[![](advanced-user-notifications-images/customui01.png "A User Notification with a Custom UI elements")](advanced-user-notifications-images/customui01.png#lightbox)
+[![Eine Benutzer Benachrichtigung mit benutzerdefinierten Benutzeroberflächen Elementen](advanced-user-notifications-images/customui01.png)](advanced-user-notifications-images/customui01.png#lightbox)
 
 Wenn der Benutzer mit den benutzerdefinierten Aktionen interagiert (die unter der Benachrichtigung angezeigt werden), kann die Benutzeroberfläche aktualisiert werden, um dem Benutzer Feedback zu geben, was geschehen ist, als eine bestimmte Aktion aufgerufen wurde.
 
@@ -165,27 +165,27 @@ Gehen Sie folgendermaßen vor, um eine benutzerdefinierte Benutzeroberfläche f�
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 1. Öffnen Sie die Projekt Mappe der app in Visual Studio für Mac.
-2. Klicken Sie im **Lösungspad** mit der rechten Maustaste auf den Projektmappennamen, und wählen Sie **Hinzufügen** > **Neues Projekt hinzu**fügen
-3. Wählen Sie **IOS** - > **Erweiterungen** > **Erweiterungen für Inhalts Erweiterungen** aus, und klicken Sie auf **weiter** : 
+2. Klicken Sie im **Lösungspad** mit der rechten Maustaste auf den Projektmappennamen, und wählen Sie **hinzu**fügen  >  **Neues Projekt**hinzufügen
+3. Wählen Sie **IOS**  >  **Extensions**  >  **Benachrichtigungs Inhalts Erweiterungen** aus, und klicken Sie auf **weiter** : 
 
-    [![](advanced-user-notifications-images/notify01.png "Select Notification Content Extensions")](advanced-user-notifications-images/notify01.png#lightbox)
+    [![Erweiterungen für Benachrichtigungs Inhalt auswählen](advanced-user-notifications-images/notify01.png)](advanced-user-notifications-images/notify01.png#lightbox)
 4. Geben Sie einen **Namen** für die Erweiterung ein, und klicken Sie auf die Schaltfläche **weiter** : 
 
-    [![](advanced-user-notifications-images/notify02.png "Enter a Name for the extension")](advanced-user-notifications-images/notify02.png#lightbox)
-5. Passen Sie den **Projektnamen** und/oder Projektmappennamen bei Bedarf an, und klicken Sie auf die Schaltfläche **Erstellen** 
+    [![Geben Sie einen Namen für die Erweiterung ein.](advanced-user-notifications-images/notify02.png)](advanced-user-notifications-images/notify02.png#lightbox)
+5. Passen Sie den **Projektnamen** und/oder Projektmappennamen bei Bedarf an, und klicken Sie auf die Schaltfläche **Erstellen** **Solution Name** 
 
-    [![](advanced-user-notifications-images/notify03.png "Adjust the Project Name and/or Solution Name")](advanced-user-notifications-images/notify03.png#lightbox)
+    [![Anpassen des Projekt namens und/oder Projektmappennamens](advanced-user-notifications-images/notify03.png)](advanced-user-notifications-images/notify03.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Öffnen Sie die Projekt Mappe der app in Visual Studio für Mac.
-2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappennamen, und wählen Sie **> Neues Projekt hinzufügen...** aus.
-3. Wählen **Sie C# Visual > IOS-Erweiterungen > Erweiterung für Benachrichtigungs Inhalt**aus:
+2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappennamen, und wählen Sie **> neues Projekt hinzufügen...** aus.
+3. Wählen Sie **Visual c# > IOS-Erweiterungen > Erweiterung für Benachrichtigungs Inhalt**aus:
 
-    [![](advanced-user-notifications-images/notify01.w157-sml.png "Select Notification Content Extensions")](advanced-user-notifications-images/notify01.w157.png#lightbox)
+    [![Erweiterungen für Benachrichtigungs Inhalt auswählen](advanced-user-notifications-images/notify01.w157-sml.png)](advanced-user-notifications-images/notify01.w157.png#lightbox)
 4. Geben Sie einen **Namen** für die Erweiterung ein, und klicken Sie auf die Schaltfläche **OK** .
 
 -----
@@ -193,8 +193,8 @@ Gehen Sie folgendermaßen vor, um eine benutzerdefinierte Benutzeroberfläche f�
 Wenn die Erweiterung für Benachrichtigungs Inhalte der Projekt Mappe hinzugefügt wird, werden im Projekt der Erweiterung drei Dateien erstellt:
 
 1. `NotificationViewController.cs`: Dies ist der Haupt Ansichts Controller für die Erweiterung für Benachrichtigungs Inhalte.
-2. `MainInterface.storyboard`: der Entwickler legt die sichtbare Benutzeroberfläche für die Erweiterung für Benachrichtigungs Inhalte im IOS-Designer fest.
-3. `Info.plist`: steuert die Konfiguration der Erweiterung für Benachrichtigungs Inhalte.
+2. `MainInterface.storyboard`: Der Entwickler legt die sichtbare Benutzeroberfläche für die Erweiterung für Benachrichtigungs Inhalte im IOS-Designer fest.
+3. `Info.plist`-Steuert die Konfiguration der Erweiterung für Benachrichtigungs Inhalte.
 
 Die Standard `NotificationViewController.cs` Datei sieht wie folgt aus:
 
@@ -240,67 +240,67 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-Die `DidReceiveNotification`-Methode wird aufgerufen, wenn die Benachrichtigung vom Benutzer erweitert wird, sodass die Erweiterung für Benachrichtigungs Inhalte die benutzerdefinierte Benutzeroberfläche mit dem Inhalt des `UNNotification`auffüllen kann. Im obigen Beispiel wurde der Sicht eine Bezeichnung hinzugefügt, die für Code mit dem Namen `label` verfügbar gemacht wird und verwendet wird, um den Text der Benachrichtigung anzuzeigen.
+Die- `DidReceiveNotification` Methode wird aufgerufen, wenn die Benachrichtigung vom Benutzer erweitert wird, sodass die Erweiterung für Benachrichtigungs Inhalte die benutzerdefinierte Benutzeroberfläche mit dem Inhalt des auffüllen kann `UNNotification` . Im obigen Beispiel wurde der Sicht eine Bezeichnung hinzugefügt, die für Code mit dem Namen verfügbar gemacht `label` wird und zum Anzeigen des Text der Benachrichtigung verwendet wird.
 
 ### <a name="setting-the-notification-content-extensions-categories"></a>Festlegen der Kategorien von Benachrichtigungs Inhalts Erweiterungen
 
-Das System muss darüber informiert werden, wie die Benachrichtigungs Inhalts Erweiterung der App basierend auf den spezifischen Kategorien gefunden werden kann, auf die es antwortet. Führen Sie folgende Schritte aus:
+Das System muss darüber informiert werden, wie die Benachrichtigungs Inhalts Erweiterung der App basierend auf den spezifischen Kategorien gefunden werden kann, auf die es antwortet. Gehen Sie wie folgt vor:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-1. Doppelklicken Sie auf die `Info.plist` Datei der Erweiterung im **Lösungspad** , um Sie für die Bearbeitung zu öffnen.
-2. Wechseln Sie zur **Quell** Ansicht.
-3. Erweitern Sie die `NSExtension`-Taste.
-4. Fügen Sie den `UNNotificationExtensionCategory` Schlüssel als Typ **Zeichenfolge** mit dem Wert der Kategorie hinzu, zu der die Erweiterung gehört (in diesem Beispiel "Event-INVITE"): 
+1. Doppelklicken Sie auf die Datei der Erweiterung `Info.plist` im **Lösungspad** , um Sie für die Bearbeitung zu öffnen.
+2. Wechseln Sie zur Ansicht **Quelle**.
+3. Erweitern Sie den `NSExtension` Schlüssel.
+4. Fügen Sie den `UNNotificationExtensionCategory` Schlüssel als Type- **Zeichenfolge** mit dem Wert der Kategorie hinzu, zu der die Erweiterung gehört (in diesem Beispiel "Event-INVITE"): 
 
-    [![](advanced-user-notifications-images/customui02.png "Add the UNNotificationExtensionCategory key")](advanced-user-notifications-images/customui02.png#lightbox)
+    [![Fügen Sie den unnotificationextensioncategory-Schlüssel hinzu.](advanced-user-notifications-images/customui02.png)](advanced-user-notifications-images/customui02.png#lightbox)
 5. Speichern Sie die Änderungen.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Doppelklicken Sie auf die `Info.plist` Datei der Erweiterung im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
-2. Erweitern Sie die `NSExtension`-Taste.
-3. Fügen Sie den `UNNotificationExtensionCategory` Schlüssel als Typ **Zeichenfolge** mit dem Wert der Kategorie hinzu, zu der die Erweiterung gehört (in diesem Beispiel "Event-INVITE"): 
+1. Doppelklicken Sie auf die Datei der Erweiterung `Info.plist` im **Projektmappen-Explorer** , um Sie für die Bearbeitung zu öffnen.
+2. Erweitern Sie den `NSExtension` Schlüssel.
+3. Fügen Sie den `UNNotificationExtensionCategory` Schlüssel als Type- **Zeichenfolge** mit dem Wert der Kategorie hinzu, zu der die Erweiterung gehört (in diesem Beispiel "Event-INVITE"): 
 
-    [![](advanced-user-notifications-images/customui02w.png "Add the UNNotificationExtensionCategory key")](advanced-user-notifications-images/customui02w.png#lightbox)
+    [![Fügen Sie den unnotificationextensioncategory-Schlüssel hinzu.](advanced-user-notifications-images/customui02w.png)](advanced-user-notifications-images/customui02w.png#lightbox)
 4. Speichern Sie die Änderungen.
 
 -----
 
-Erweiterungs Kategorien für Benachrichtigungs Inhalte (`UNNotificationExtensionCategory`) verwenden die gleichen Kategoriewerte, die zum Registrieren von Benachrichtigungs Aktionen verwendet werden. Wechseln Sie in der Situation, in der die APP dieselbe Benutzeroberfläche für mehrere Kategorien verwendet, `UNNotificationExtensionCategory` in das **typanray** , und stellen Sie alle erforderlichen Kategorien bereit. Beispiel:
+Erweiterungs Kategorien für Benachrichtigungs Inhalte ( `UNNotificationExtensionCategory` ) verwenden die gleichen Kategoriewerte, die zum Registrieren von Benachrichtigungs Aktionen verwendet werden. Wechseln Sie in der Situation, in der die APP dieselbe Benutzeroberfläche für mehrere Kategorien verwendet, in `UNNotificationExtensionCategory` das **typanray** , und stellen Sie alle erforderlichen Kategorien bereit. Beispiel:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](advanced-user-notifications-images/customui03.png "Notification Content Extension Categories")](advanced-user-notifications-images/customui03.png#lightbox)
+[![Kategorien von Benachrichtigungs Inhalts Erweiterungen](advanced-user-notifications-images/customui03.png)](advanced-user-notifications-images/customui03.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](advanced-user-notifications-images/customui03w.png "Notification Content Extension Categories")](advanced-user-notifications-images/customui03w.png#lightbox)
+[![Kategorien von Benachrichtigungs Inhalts Erweiterungen](advanced-user-notifications-images/customui03w.png)](advanced-user-notifications-images/customui03w.png#lightbox)
 
 -----
 
 ### <a name="hiding-the-default-notification-content"></a>Ausblenden des Standard Benachrichtigungs Inhalts
 
-In dem Fall, in dem die benutzerdefinierte Benachrichtigungs-UI denselben Inhalt wie die Standard Benachrichtigung anzeigt (Titel, Untertitel und Text werden automatisch am unteren Rand der Benachrichtigungs-UI angezeigt), können diese Standardinformationen ausgeblendet werden, indem Sie die `UNNotificationExtensionDefaultContentHidden` Schlüssel für den `NSExtensionAttributes` Schlüssel als Typ **boolescher** Wert mit dem Wert `YES` in der `Info.plist` Datei der Erweiterung:
+In der Situation, in der die benutzerdefinierte Benachrichtigungs-UI denselben Inhalt wie die Standard Benachrichtigung anzeigt (Titel, Untertitel und Text werden automatisch am unteren Rand der Benachrichtigungs-UI angezeigt), können diese Standardinformationen ausgeblendet werden, indem der `UNNotificationExtensionDefaultContentHidden` Schlüssel dem `NSExtensionAttributes` Schlüssel als **boolescher** Typ mit dem Wert `YES` in der Datei der Erweiterung hinzugefügt wird `Info.plist` :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](advanced-user-notifications-images/customui04.png "Finding default information")](advanced-user-notifications-images/customui04.png#lightbox)
+[![Suchen nach Standardinformationen](advanced-user-notifications-images/customui04.png)](advanced-user-notifications-images/customui04.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](advanced-user-notifications-images/customui04w.png "Finding default information")](advanced-user-notifications-images/customui04w.png#lightbox)
+[![Suchen nach Standardinformationen](advanced-user-notifications-images/customui04w.png)](advanced-user-notifications-images/customui04w.png#lightbox)
 
 -----
 
 ### <a name="designing-the-custom-ui"></a>Entwerfen der benutzerdefinierten Benutzeroberfläche
 
-Wenn Sie die benutzerdefinierte Benutzeroberfläche der Erweiterung für Benachrichtigungs Inhalte entwerfen möchten, doppelklicken Sie auf die `MainInterface.storyboard` Datei, um Sie im IOS-Designer zur Bearbeitung zu öffnen, und ziehen Sie die Elemente, die Sie zum Erstellen der gewünschten Schnittstelle benötigen (z. b. `UILabels` und `UIImageViews`).
+Wenn Sie die benutzerdefinierte Benutzeroberfläche der Benachrichtigungs Inhalts Erweiterung entwerfen möchten, doppelklicken Sie auf die `MainInterface.storyboard` Datei, um Sie im IOS-Designer zur Bearbeitung zu öffnen, und ziehen Sie die Elemente, die Sie zum Erstellen der gewünschten Schnittstelle benötigen (z. b `UILabels` `UIImageViews` . und).
 
 > [!NOTE]
 > Ab IOS 12 kann eine Erweiterung für Benachrichtigungs Inhalte interaktive Steuerelemente enthalten, z. b. Schaltflächen und Textfelder. Weitere Informationen finden Sie in der Dokumentation zu [interaktiven Benachrichtigungen in IOS 12](~/ios/platform/introduction-to-ios12/notifications/interactive.md) .
 
-Nachdem Sie die Benutzeroberfläche angelegt und die erforderlichen Steuerelemente für C# Code verfügbar gemacht haben, öffnen Sie die`NotificationViewController.cs`für die Bearbeitung, und ändern Sie die`DidReceiveNotification`-Methode, um die Benutzeroberfläche zu füllen, wenn der Benutzer die Benachrichtigung erweitert. Beispiel:
+Nachdem die Benutzeroberfläche angelegt wurde und die erforderlichen Steuerelemente für c#-Code verfügbar gemacht wurden, öffnen Sie die `NotificationViewController.cs` für die Bearbeitung, und ändern `DidReceiveNotification` Sie die Methode, um die Benutzeroberfläche zu füllen, wenn der Benutzer die Benachrichtigung erweitert. Beispiel:
 
 ```csharp
 using System;
@@ -357,19 +357,19 @@ namespace MonkeyChatNotifyExtension
 
 ### <a name="setting-the-content-area-size"></a>Festlegen der Größe des Inhalts Bereichs
 
-Zum Anpassen der Größe des Inhalts Bereichs, der dem Benutzer angezeigt wird, wird im folgenden Code die `PreferredContentSize`-Eigenschaft in der `ViewDidLoad`-Methode auf die gewünschte Größe festgelegt. Diese Größe kann auch durch Anwenden von Einschränkungen auf die Ansicht im IOS-Designer angepasst werden. Sie wird dem Entwickler überlassen, die Methode auszuwählen, die am besten für Sie geeignet ist.
+Zum Anpassen der Größe des Inhalts Bereichs, der dem Benutzer angezeigt wird, wird im folgenden Code die- `PreferredContentSize` Eigenschaft in der- `ViewDidLoad` Methode auf die gewünschte Größe festgelegt. Diese Größe kann auch durch Anwenden von Einschränkungen auf die Ansicht im IOS-Designer angepasst werden. Sie wird dem Entwickler überlassen, die Methode auszuwählen, die am besten für Sie geeignet ist.
 
 Da das Benachrichtigungssystem bereits ausgeführt wird, bevor die Erweiterung für Benachrichtigungs Inhalte aufgerufen wird, wird der Inhalts Bereich vollständig gestartet und auf die angeforderte Größe animiert, wenn er dem Benutzer angezeigt wird.
 
-Um diesen Effekt zu vermeiden, bearbeiten Sie die `Info.plist` Datei für die Erweiterung, und legen Sie den `UNNotificationExtensionInitialContentSizeRatio`-Schlüssel des `NSExtensionAttributes` Schlüssels auf Type **Number** mit einem Wert fest, der das gewünschte Verhältnis darstellt. Beispiel:
+Um diesen Effekt auszuschließen, bearbeiten Sie die `Info.plist` Datei für die Erweiterung, und legen `UNNotificationExtensionInitialContentSizeRatio` Sie den Schlüssel des `NSExtensionAttributes` Schlüssels auf Type **Number** mit einem Wert fest, der das gewünschte Verhältnis darstellt. Beispiel:
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](advanced-user-notifications-images/customui05.png "The UNNotificationExtensionInitialContentSizeRatio key")](advanced-user-notifications-images/customui05.png#lightbox)
+[![Der unnotificationextensioninitialcontentsizeratio-Schlüssel](advanced-user-notifications-images/customui05.png)](advanced-user-notifications-images/customui05.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](advanced-user-notifications-images/customui05w.png "The UNNotificationExtensionInitialContentSizeRatio key")](advanced-user-notifications-images/customui05w.png#lightbox)
+[![Der unnotificationextensioninitialcontentsizeratio-Schlüssel](advanced-user-notifications-images/customui05w.png)](advanced-user-notifications-images/customui05w.png#lightbox)
 
 -----
 
@@ -377,7 +377,7 @@ Um diesen Effekt zu vermeiden, bearbeiten Sie die `Info.plist` Datei für die Er
 
 Da Medien Anlagen (wie im Abschnitt [Hinzufügen von Medien Anlagen](#adding-media-attachments) oben) Teil der Benachrichtigungs Nutzlast sind, können Sie auf Sie zugreifen und in der Erweiterung für Benachrichtigungs Inhalte angezeigt werden, so wie Sie in der standardmäßigen Benachrichtigungs-UI angezeigt werden.
 
-Wenn z. b. die oben gezeigte benutzerdefinierte Benutzeroberfläche eine `UIImageView` enthält C# , die für Code verfügbar gemacht wurde, kann der folgende Code verwendet werden, um Sie von mit der Medien Anlage auszufüllen:
+Wenn z. b. die oben genannte benutzerdefinierte Benutzeroberfläche eine enthält, die `UIImageView` für c#-Code verfügbar gemacht wurde, könnte der folgende Code verwendet werden, um Sie von mit der Medien Anlage aufzufüllen:
 
 ```csharp
 using System;
@@ -440,7 +440,7 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-Da die Medien Anlage vom System verwaltet wird, befindet Sie sich außerhalb des Sandkastens der app. Die Erweiterung muss das System informieren, dass Sie Zugriff auf die Datei hat, indem Sie die `StartAccessingSecurityScopedResource`-Methode aufrufen. Wenn die Erweiterung mit der Datei abgeschlossen ist, muss Sie den `StopAccessingSecurityScopedResource` zum Freigeben der Verbindung aufzurufen.
+Da die Medien Anlage vom System verwaltet wird, befindet Sie sich außerhalb des Sandkastens der app. Die Erweiterung muss das System darüber informieren, dass der Zugriff auf die Datei durch Aufrufen der-Methode erforderlich ist `StartAccessingSecurityScopedResource` . Wenn die Erweiterung mit der Datei abgeschlossen ist, muss sie aufgerufen werden, `StopAccessingSecurityScopedResource` um die Verbindung freizugeben.
 
 ### <a name="adding-custom-actions-to-a-custom-ui"></a>Hinzufügen von benutzerdefinierten Aktionen zu einer benutzerdefinierten Benutzeroberfläche
 
@@ -453,7 +453,7 @@ Zusätzlich zu den benutzerdefinierten Aktionen kann die Erweiterung für Benach
 
 Erweiterungen für Benachrichtigungs Inhalte können auch Ihre Benutzeroberfläche aktualisieren, wenn der Benutzer eine der benutzerdefinierten Aktionen aufruft, z. b. Wenn ein Datum als akzeptiert angezeigt wird, wenn der Benutzer auf die Schaltfläche "benutzerdefinierte Aktion **annehmen** " tippt. Darüber hinaus können die Erweiterungen für Benachrichtigungs Inhalte dem System mitteilen, dass die Kündigung der Benachrichtigungs-UI verzögert wird, damit der Benutzer die Auswirkungen seiner Aktion sehen kann, bevor die Benachrichtigung geschlossen wird.
 
-Dies erfolgt durch Implementieren einer zweiten Version der `DidReceiveNotification`-Methode, die einen Abschluss Handler enthält. Beispiel:
+Dies erfolgt durch Implementieren einer zweiten Version der- `DidReceiveNotification` Methode, die einen Abschluss Handler enthält. Beispiel:
 
 ```csharp
 using System;
@@ -527,7 +527,7 @@ namespace myApp {
 }
 ```
 
-Durch Hinzufügen des `Server.PostEventResponse` Handlers zur `DidReceiveNotification`-Methode der Erweiterung für Benachrichtigungs Inhalte *muss* die Erweiterung alle benutzerdefinierten Aktionen verarbeiten. Die Erweiterung kann die benutzerdefinierten Aktionen auch an die enthaltende App weiterleiten, indem die `UNNotificationContentExtensionResponseOption`geändert wird. Beispiel:
+Durch Hinzufügen des `Server.PostEventResponse` Handlers zur- `DidReceiveNotification` Methode der Erweiterung für Benachrichtigungs Inhalte *muss* die Erweiterung alle benutzerdefinierten Aktionen verarbeiten. Die Erweiterung kann die benutzerdefinierten Aktionen auch an die enthaltende App weiterleiten, indem Sie den ändern `UNNotificationContentExtensionResponseOption` . Beispiel:
 
 ```csharp
 // Close Notification
@@ -676,7 +676,7 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-Mit diesem Code wird eine neue Texteingabe Aktion erstellt und der Kategorie der Erweiterung (in der `MakeExtensionCategory`) hinzugefügt. In der `DidReceive` Überschreibungs Methode verarbeitet Sie den Benutzer, der Text mit folgendem Code eingibt:
+Mit diesem Code wird eine neue Texteingabe Aktion erstellt und der Kategorie der Erweiterung (in der- `MakeExtensionCategory` Methode) hinzugefügt. In der `DidReceive` Überschreibungs Methode verarbeitet Sie den Benutzer, der Text mit folgendem Code eingibt:
 
 ```csharp
 // Is text input?

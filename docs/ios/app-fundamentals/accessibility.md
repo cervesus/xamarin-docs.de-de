@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/18/2016
-ms.openlocfilehash: 2259566fc6342a40a8c0a94bacd1c146b6509d52
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e976f5bf0789ca6c703a14b667e75b05a7f47819
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574157"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937851"
 ---
 # <a name="accessibility-on-ios"></a>Barrierefreiheit unter IOS
 
@@ -29,7 +29,7 @@ Einige Steuerelemente müssen möglicherweise nicht zugänglich sein (z. b. eine
 
 Die **Eigenschaftenpad** enthält einen Abschnitt zur Barrierefreiheit, mit dem diese Einstellungen bearbeitet werden können, wenn ein Steuerelement im IOS-Benutzeroberflächen-Designer ausgewählt wird:
 
-![](accessibility-images/ios-designer-sml.png "Accessibility Settings")
+![Barrierefreiheits Einstellungen](accessibility-images/ios-designer-sml.png)
 
 **C#**
 
@@ -115,7 +115,7 @@ Weitere Informationen zum Lokalisieren von Inhalten finden Sie im [IOS-Lokalisie
 
 VoiceOver ist in der App " **Einstellungen** " aktiviert, indem Sie zu **Allgemein > Barrierefreiheits > VoiceOver**navigieren:
 
-![](accessibility-images/settings-sml.png "Setting the speaking rate")
+![Festlegen der Sprech Rate](accessibility-images/settings-sml.png)
 
 Der Bildschirm **Barrierefreiheit** enthält auch Einstellungen für Zoom, Textgröße, Farbe & Kontrast Optionen, Spracheinstellungen und andere Konfigurationsoptionen.
 
@@ -125,12 +125,12 @@ Befolgen Sie diese [VoiceOver-Anweisungen](https://developer.apple.com/library/i
 
 Wenn Sie im Simulator testen, steht Ihnen der **Barrierefreiheits Inspektor** zur Verfügung, um zu überprüfen, ob Barrierefreiheits Eigenschaften und Ereignisse richtig konfiguriert sind. Aktivieren Sie den Inspektor in der App " **Einstellungen** ", indem Sie zu **Allgemein > Barrierefreiheit > Barrierefreiheits Inspektor**navigieren:
 
-![](accessibility-images/settings-inspector-sml.png "Enable Accessibility Inspector")
+![Zugriffs Inspektor aktivieren](accessibility-images/settings-inspector-sml.png)
 
 Nach der Aktivierung zeigt das Inspektor-Fenster jederzeit auf den IOS-Bildschirm.
 Im folgenden finden Sie ein Beispiel für die Ausgabe, wenn eine Tabellen Ansichts Zeile ausgewählt ist – beachten Sie, dass die **Bezeichnung** einen Satz enthält, der den Inhalt der Zeile und auch "Done" enthält (d. h. der Tick ist sichtbar):
 
-![](accessibility-images/tableview-a11y-sml.png "Using Accessibility Inspector")
+![Verwenden des Zugriffs Inspektors](accessibility-images/tableview-a11y-sml.png)
 
 Während der Inspektor sichtbar ist, verwenden Sie das Symbol "X" in der oberen linken Ecke, um das Overlay vorübergehend anzuzeigen und auszublenden und Barrierefreiheits Einstellungen zu aktivieren/deaktivieren.
 

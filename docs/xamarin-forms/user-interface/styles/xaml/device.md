@@ -10,18 +10,18 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b835847fea39e1c2f968e7b81fb9d22f68ea461c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 04669479bb321da4fee6c45fd0f2c00deb5bbf1a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140100"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929726"
 ---
 # <a name="device-styles-in-xamarinforms"></a>Geräte Stile inXamarin.Forms
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
-_Xamarin. Forms enthält sechs dynamische Stile, die als Geräte Stile bezeichnet werden, in der Device. Styles-Klasse._
+_Xamarin.Formsenthält sechs dynamische Stile, die als Geräte Stile bezeichnet werden, in der Device. Styles-Klasse._
 
 Die *Geräte* Stile lauten:
 
@@ -70,7 +70,7 @@ Im folgenden Codebeispiel wird die Verwendung der *Geräte* Stile in einer XAML-
 
 Die Geräte Stile werden mithilfe der `DynamicResource` Markup Erweiterung an gebunden. Die dynamische Natur der Stile kann in ios angezeigt werden, indem die **Barrierefreiheits** Einstellungen für die Textgröße geändert werden. Die Darstellung der *Geräte* Stile ist auf den einzelnen Plattformen anders, wie in den folgenden Screenshots zu sehen:
 
-![](device-images/device-styles.png "Device Styles on Each Platform")
+![Geräte Stile auf jeder Plattform](device-images/device-styles.png)
 
 *Geräte* Stile können auch von abgeleitet werden, indem die- [`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey) Eigenschaft auf den Schlüsselnamen für den Geräte Stil festgelegt wird. Im obigen Codebeispiel `myBodyStyle` erbt von [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle) und legt eine Textfarbe mit Akzent fest. Weitere Informationen zur Vererbung dynamischer Stile finden Sie unter [dynamische Stil Vererbung](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance).
 
@@ -120,11 +120,11 @@ Die *Geräte* Stile berücksichtigen Barrierefreiheits Einstellungen, sodass sic
 
 Die folgenden Screenshots veranschaulichen die Geräte Stile auf jeder Plattform mit der kleinsten zugänglichen Schriftart Größe:
 
-[![](device-images/minimum-size.png "Accessible Small Device Styles on Each Platform")](device-images/minimum-size-large.png#lightbox "Accessible Small Device Styles on Each Platform")
+[![Barrierefreie kleine Geräte Stile auf jeder Plattform](device-images/minimum-size.png)](device-images/minimum-size-large.png#lightbox "Barrierefreie kleine Geräte Stile auf jeder Plattform")
 
 Die folgenden Screenshots veranschaulichen die Geräte Stile auf jeder Plattform mit dem größten zugänglichen Schrift Grad:
 
-![](device-images/maximum-size.png "Accessible Large Device Styles on Each Platform")
+![Barrierefreie große Geräte Stile auf jeder Plattform](device-images/maximum-size.png)
 
 ## <a name="related-links"></a>Verwandte Links
 

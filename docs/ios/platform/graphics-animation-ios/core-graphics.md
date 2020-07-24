@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: ac746c8489dae600bc2d8c6d1752d8fb10d4e016
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 84e21378a8ac7b61bc1a389352eb53b75881592a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84564718"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929648"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Kern Grafiken in xamarin. IOS
 
@@ -133,7 +133,7 @@ Nachdem der Pfad erstellt wurde, wird er dem Grafik Kontext hinzugefügt, sodass
 
 Die resultierende Ansicht wird unten dargestellt:
 
- ![](core-graphics-images/00-bluetriangle.png "The sample output triangle")
+ ![Das Beispielausgabe Dreieck](core-graphics-images/00-bluetriangle.png)
 
 ## <a name="creating-gradient-fills"></a>Erstellen von Verlaufs Füllungen
 
@@ -167,7 +167,7 @@ Wenn der aktuelle Pfad als clippingpfad festgelegt wird, werden alle nachfolgend
 
 Diese Änderungen führen zu einer Farbverlaufsfüllung, wie unten dargestellt:
 
- ![](core-graphics-images/01-gradient-fill.png "The example with a gradient fill")
+ ![Das Beispiel mit einer Farbverlaufsfüllung](core-graphics-images/01-gradient-fill.png)
 
 ## <a name="modifying-line-patterns"></a>Ändern von Zeilen Mustern
 
@@ -180,7 +180,7 @@ g.SetLineDash (0, new nfloat[] { 10, 4 * (nfloat)Math.PI });
 
 Wenn Sie diesen Code vor allen Zeichnungs Vorgängen hinzufügen, führt dies zu einem gestrichelten Strich von 10 Einheiten, der vier Einheiten Abstand zwischen den Bindestrichen aufweist, wie unten dargestellt:
 
- ![](core-graphics-images/02-dashed-stroke.png "Adding this code before any drawing operations results in dashed strokes")
+ ![Durch das Hinzufügen dieses Codes vor Zeichnungs Vorgängen werden gestrichelte Striche erzielt.](core-graphics-images/02-dashed-stroke.png)
 
 Beachten Sie, dass der Arraytyp bei Verwendung des Unified API in xamarin. IOS ein sein muss `nfloat` und außerdem explizit in Math. PI umgewandelt werden muss.
 
@@ -203,7 +203,7 @@ public override void Draw (CGRect rect)
 
 Dies führt jedoch zu einem Bild, das oben nach unten gezeichnet wird, wie unten dargestellt:
 
- ![](core-graphics-images/03-upside-down-monkey.png "An image drawn upside down")
+ ![Ein Bild, das nach oben gezeichnet wird](core-graphics-images/03-upside-down-monkey.png)
 
 Der Grund hierfür ist, dass der Ursprung der Grafik Quelle für die Bild Zeichnung unten links ist, während die Ansicht den Ursprung in der linken oberen Ecke hat. Damit das Bild ordnungsgemäß angezeigt wird, muss der Ursprung geändert werden. Dies kann durch Ändern der *aktuellen Transformations Matrix* *(CTM)* erreicht werden. CTM definiert, wo Punkte aktiv sind, auch als *Benutzerbereich*bezeichnet. Wenn Sie die CTM-Achse in der y-Richtung umkehren und Sie um die Höhe der Begrenzungen in der negativen y-Richtung verschieben, kann das Bild kippen.
 
@@ -225,7 +225,7 @@ public override void Draw (CGRect rect)
 
 Das resultierende Bild wird dann aufsteigenden angezeigt:
 
- ![](core-graphics-images/04-upright-monkey.png "The sample image displayed upright")
+ ![Das angezeigte Beispiel Bild](core-graphics-images/04-upright-monkey.png)
 
 > [!IMPORTANT]
 > Änderungen am Grafik Kontext gelten für alle nachfolgenden Zeichnungsvorgänge. Wenn die CTM-Datei transformiert wird, wirkt sich dies auf alle zusätzlichen Zeichnungen aus. Wenn Sie z. b. das Dreieck hinter der CTM-Transformation gezeichnet haben, wird es in der obigen Ecke angezeigt.
@@ -264,7 +264,7 @@ Wie Sie sehen können, ähnelt das Festlegen des Grafik Zustands für die Text Z
 
 Der resultierende Text wird mit dem Bild angezeigt, wie unten dargestellt:
 
- ![](core-graphics-images/05-text-on-image.png "The resulting text is displayed with the image")
+ ![Der resultierende Text wird mit dem Bild angezeigt.](core-graphics-images/05-text-on-image.png)
 
 ## <a name="memory-backed-images"></a>Speicher gestützte Images
 

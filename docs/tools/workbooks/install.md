@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: a044169f86b46abff4158011e99320c528180ffc
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 99ecf661679f02bda6cfffa6093bd4a904676bce
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573884"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939346"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Arbeitsmappen-Installation und-Anforderungen
 
@@ -35,7 +35,7 @@ ms.locfileid: "84573884"
 
 -----
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 #### <a name="supported-operating-systems"></a>Unterstützte Betriebssysteme
 
@@ -128,7 +128,7 @@ Wenn Sie Arbeitsmappen selbst mit einem heruntergeladenen Installationsprogramm 
 
 > **Starten der > Einstellungen > System > apps & Features**
 
-![](install-images/windows-remove.png "Xamarin Workbooks as listed in &quot;Apps &amp; features&quot;")
+![Xamarin Workbooks wie unter &quot; App- &amp; Features aufgelistet&quot;](install-images/windows-remove.png)
 
 **Befolgen Sie die Schritte für die Visual Studio-Installer, um sicherzustellen, dass Arbeitsmappen ohne ihr wissen nicht neu installiert werden.**
 

@@ -10,12 +10,12 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 91a639b2d3c2f6a8437a09a70808dc6d793ba76b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b4c6569acbade7edf64c9aaf54237ebaa342ea54
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131754"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936642"
 ---
 # <a name="non-affine-transforms"></a>Nicht affine Transformationen
 
@@ -27,7 +27,7 @@ _Erstellen von Perspektiven und tapro-Effekten mit der dritten Spalte der Transf
 
 Skiasharp kann jedoch auch nicht affine Transformationen bieten, die die Möglichkeit haben, ein Rechteck in eine beliebige, Viereck Weise zu transformieren:
 
-![](non-affine-images/nonaffinetransformexample.png "A bitmap transformed into a convex quadrilateral")
+![Eine Bitmap, die in ein-und Viereck konvertiert wird.](non-affine-images/nonaffinetransformexample.png)
 
 Ein "intervexes vierlateral" ist eine vierseitige Abbildung mit inneren Winkeln, die immer kleiner als 180 Grad und Seiten sind, die sich nicht gegenseitig überschreiten.
 
@@ -99,7 +99,7 @@ Verwenden Sie diese Transformation nun, um eine auf dem Ursprung positionierte 1
 
 Wenn x 100 ist, dann ist der z-Nenner 2, sodass die x-und y-Koordinaten tatsächlich halbiert werden. Die Rechte Seite des Felds wird kürzer als die linke Seite:
 
-![](non-affine-images/nonaffinetransform.png "A box subjected to a non-affine transform")
+![Ein Feld, das einer nicht affinen Transformation unterliegt](non-affine-images/nonaffinetransform.png)
 
 Der `Persp` Teil dieser Zellen Namen bezieht sich auf "Perspective", da die Vorhersage darauf hinweist, dass das Feld nun mit der rechten Seite des Viewers gekippt wird.
 
@@ -233,7 +233,7 @@ public partial class TestPerspectivePage : ContentPage
 
 Im folgenden finden Sie einige Beispiel Bilder:
 
-[![](non-affine-images/testperspective-small.png "Triple screenshot of the Test Perspective page")](non-affine-images/testperspective-large.png#lightbox "Triple screenshot of the Test Perspective page")
+[![Dreifacher Screenshot der Seite "Test Perspektive"](non-affine-images/testperspective-small.png)](non-affine-images/testperspective-large.png#lightbox "Dreifacher Screenshot der Seite "Test Perspektive"")
 
 Wenn Sie mit den Schiebereglern experimentieren, werden Sie feststellen, dass die Werte über 0,0066 oder niedriger – 0,0066 bewirken, dass das Bild plötzlich Bruch und inkohärent wird. Die zu transformierende Bitmap ist 300-Pixel-Quadrat. Es wird relativ zu seiner Mitte transformiert, sodass die Koordinaten des Bitmap von – 150 bis 150 liegen. Erinnern Sie sich daran, dass der Wert von z ' ist:
 
@@ -245,7 +245,7 @@ Im Allgemeinen werden Sie nicht `Persp0` und isoliert festgelegt `Persp1` . Es i
 
 Eine solche nicht affinen Transformation ist eine *tapro-Transformation*. Dieser Typ einer nicht affinen Transformation behält die Gesamt Dimensionen eines Rechtecks bei, aber eine Seite:
 
-![](non-affine-images/tapertransform.png "A box subjected to a taper transform")
+![Ein Feld, das einer tapro-Transformation unterliegt](non-affine-images/tapertransform.png)
 
 Die- [`TaperTransform`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) Klasse führt eine verallgemeinerte Berechnung einer nicht affinen Transformation basierend auf diesen Parametern aus:
 
@@ -397,13 +397,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Im Folgenden finden Sie einige Beispiele:
 
-[![](non-affine-images/tapertransform-small.png "Triple screenshot of the Taper Transform page")](non-affine-images/tapertransform-large.png#lightbox "Triple screenshot of the Taper Transform page")
+[![Dreifacher Screenshot der Seite "tapro Transform"](non-affine-images/tapertransform-small.png)](non-affine-images/tapertransform-large.png#lightbox "Dreifacher Screenshot der Seite "tapro Transform"")
 
 Ein anderer Typ generalisierter nicht affininer Transformationen ist die 3D-Drehung, die im nächsten Artikel [**3D-Drehungen**](3d-rotation.md)veranschaulicht wird.
 
 Die nicht affine Transformation kann ein Rechteck in eine beliebige, Viereck-und Viereck Umwandlung umwandeln. Dies wird auf der Seite **nicht-affine Matrix anzeigen** veranschaulicht. Sie ähnelt der Seite **affine Matrix anzeigen** im Artikel [**Matrix Transformationen**](matrix.md) , mit der Ausnahme, dass Sie über ein viertes `TouchPoint` Objekt verfügt, um die vierte Ecke der Bitmap zu bearbeiten:
 
-[![](non-affine-images/shownonaffinematrix-small.png "Triple screenshot of the Show Non-Affine Matrix page")](non-affine-images/shownonaffinematrix-large.png#lightbox "Triple screenshot of the Show Non-Affine Matrix page")
+[![Dreifacher Screenshot der Seite "nicht affine Matrix anzeigen"](non-affine-images/shownonaffinematrix-small.png)](non-affine-images/shownonaffinematrix-large.png#lightbox "Dreifacher Screenshot der Seite "nicht affine Matrix anzeigen"")
 
 Solange Sie nicht versuchen, einen inneren Winkel von einer der Ecken der Bitmap größer als 180 Grad zu machen, oder zwei Seiten nebeneinander machen, berechnet das Programm die Transformation erfolgreich mithilfe dieser Methode aus der- [`ShowNonAffineMatrixPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) Klasse:
 

@@ -7,28 +7,28 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 2ed16c651d0b373e33d58bb73591977d3484d6e0
-ms.sourcegitcommit: be8ce3449afab22673e48b546d857431c071d66f
+ms.openlocfilehash: d5830fcc4eab2feb5002253a519d72099d6bcdde
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76162939"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929986"
 ---
 # <a name="using-adonet-with-xamarinios"></a>Verwenden von ADO.net mit xamarin. IOS
 
-Xamarin verfügt über integrierte Unterstützung für die SQLite-Datenbank, die unter IOS verfügbar ist und mit vertrauter ADO.NET-Syntax verfügbar gemacht wird. Die Verwendung dieser APIs erfordert das Schreiben von SQL-Anweisungen, die von SQLite verarbeitet werden, z. b. `CREATE TABLE`, `INSERT` und `SELECT` Anweisungen.
+Xamarin verfügt über integrierte Unterstützung für die SQLite-Datenbank, die unter IOS verfügbar ist und mit vertrauter ADO.NET-Syntax verfügbar gemacht wird. Die Verwendung dieser APIs erfordert das Schreiben von SQL-Anweisungen, die von SQLite verarbeitet werden, z `CREATE TABLE` `INSERT` . b.-und- `SELECT` Anweisungen.
 
 ## <a name="assembly-references"></a>Assemblyverweise
 
 Wenn Sie Access SQLite über ADO.NET verwenden möchten, müssen Sie `System.Data` und `Mono.Data.Sqlite` Verweise auf Ihr IOS-Projekt hinzufügen, wie hier gezeigt (Beispiele in Visual Studio für Mac und Visual Studio):
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
- ![](using-adonet-images/image4.png "Assembly References in Visual Studio for Mac")
+ ![Assemblyverweise in Visual Studio für Mac](using-adonet-images/image4.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  ![](using-adonet-images/image6.png "Assembly References in Visual Studio")
+  ![Assemblyverweise in Visual Studio](using-adonet-images/image6.png)
 
 -----
 
@@ -36,16 +36,16 @@ Klicken Sie mit der rechten Maustaste auf **Verweise > Verweise bearbeiten...** 
 
 ## <a name="about-monodatasqlite"></a>Informationen zu Mono. Data. sqlite
 
-Wir verwenden die `Mono.Data.Sqlite.SqliteConnection`-Klasse, um eine leere Datenbankdatei zu erstellen und dann `SqliteCommand` Objekte zu instanziieren, die wir zum Ausführen von SQL-Anweisungen für die Datenbank verwenden können.
+Wir verwenden die `Mono.Data.Sqlite.SqliteConnection` -Klasse zum Erstellen einer leeren Datenbankdatei und zum Instanziieren von `SqliteCommand` Objekten, die zum Ausführen von SQL-Anweisungen für die Datenbank verwendet werden können.
 
-1. **Erstellen einer leeren Datenbank** : Ruft die `CreateFile`-Methode mit einem gültigen (IE. beschreibbaren) Dateipfad auf. Sie sollten überprüfen, ob die Datei bereits vorhanden ist, bevor Sie diese Methode aufrufen. andernfalls wird eine neue (leere) Datenbank oberhalb der alten erstellt, und die Daten in der alten Datei gehen verloren:
+1. **Erstellen einer leeren Datenbank** : Ruft die- `CreateFile` Methode mit einem gültigen (IE. beschreibbaren) Dateipfad auf. Sie sollten überprüfen, ob die Datei bereits vorhanden ist, bevor Sie diese Methode aufrufen. andernfalls wird eine neue (leere) Datenbank oberhalb der alten erstellt, und die Daten in der alten Datei gehen verloren:
 
     `Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);`
 
     > [!NOTE]
     > Die `dbPath` Variable sollte gemäß den zuvor in diesem Dokument beschriebenen Regeln bestimmt werden.
 
-2. **Erstellen einer Datenbankverbindung** : Nachdem die SQLite-Datenbankdatei erstellt wurde, können Sie ein Verbindungs Objekt erstellen, um auf die Daten zuzugreifen. Die Verbindung wird mit einer Verbindungs Zeichenfolge erstellt, die das Format `Data Source=file_path`annimmt, wie hier gezeigt:
+2. **Erstellen einer Datenbankverbindung** : Nachdem die SQLite-Datenbankdatei erstellt wurde, können Sie ein Verbindungs Objekt erstellen, um auf die Daten zuzugreifen. Die Verbindung wird mit einer Verbindungs Zeichenfolge erstellt, die das Format `Data Source=file_path` hat, wie hier gezeigt:
 
     ```csharp
     var connection = new SqliteConnection ("Data Source=" + dbPath);
@@ -71,7 +71,7 @@ Beim direkten Ausführen von SQL für die Datenbank sollten Sie die normalen Vor
 
 Der *DataAccess_Basic* Beispielcode für dieses Dokument sieht wie folgt aus, wenn er unter IOS ausgeführt wird:
 
- ![](using-adonet-images/image9.png "iOS ADO.NET sample")
+ ![IOS ADO.NET Beispiel](using-adonet-images/image9.png)
 
 Der folgende Code veranschaulicht, wie einfache SQLite-Vorgänge durchgeführt und die Ergebnisse in als Text im Hauptfenster der Anwendung angezeigt werden.
 
@@ -149,7 +149,7 @@ public static string DoSomeDataAccess ()
 Da SQLite das Ausführen beliebiger SQL-Befehle für die Daten ermöglicht, können Sie beliebige Anweisungen zum Erstellen, einfügen, aktualisieren, löschen oder auswählen ausführen. Informationen zu den SQL-Befehlen, die von SQLite unterstützt werden, finden Sie auf der SQLite-Website. Die SQL-Anweisungen werden mit einer von drei Methoden auf einem sqlitecommand-Objekt ausgeführt:
 
 - **ExecuteNonQuery** – wird in der Regel zur Tabellenerstellung oder zum Einfügen von Daten verwendet. Der Rückgabewert für einige Vorgänge ist die Anzahl der betroffenen Zeilen, andernfalls "-1".
-- **ExecuteReader** – wird verwendet, wenn eine Auflistung von Zeilen als `SqlDataReader` zurückgegeben werden soll.
+- **ExecuteReader** – wird verwendet, wenn eine Auflistung von Zeilen als zurückgegeben werden soll `SqlDataReader` .
 - **ExecuteScalar** – Ruft einen einzelnen Wert (z. b. ein Aggregat) ab.
 
 ### <a name="executenonquery"></a>EXECUTENONQUERY
@@ -208,11 +208,11 @@ using (var contents = connection.CreateCommand ()) {
 }
 ```
 
-Der Rückgabetyp der `ExecuteScalar` Methode ist `object` – Sie sollten das Ergebnis in Abhängigkeit von der Datenbankabfrage umwandeln. Das Ergebnis kann eine ganze Zahl aus einer count-Abfrage oder eine Zeichenfolge aus einer einzelnen Spalte SELECT-Abfrage sein. Beachten Sie, dass sich dies von anderen Execute-Methoden unterscheidet, die ein Reader-Objekt oder eine Anzahl der betroffenen Zeilen zurückgeben.
+Der `ExecuteScalar` Rückgabetyp der Methode ist `object` – Sie sollten das Ergebnis in Abhängigkeit von der Datenbankabfrage umwandeln. Das Ergebnis kann eine ganze Zahl aus einer count-Abfrage oder eine Zeichenfolge aus einer einzelnen Spalte SELECT-Abfrage sein. Beachten Sie, dass sich dies von anderen Execute-Methoden unterscheidet, die ein Reader-Objekt oder eine Anzahl der betroffenen Zeilen zurückgeben.
 
 ## <a name="microsoftdatasqlite"></a>Microsoft.Data.Sqlite
 
-Es gibt eine weitere Bibliothek `Microsoft.Data.Sqlite`, die über [nuget installiert](https://www.nuget.org/packages/Microsoft.Data.Sqlite)werden kann, die funktionell gleichwertig mit `Mono.Data.Sqlite` ist und die gleichen Abfrage Typen zulässt.
+Es gibt eine andere Bibliothek `Microsoft.Data.Sqlite` , die [von nuget installiert](https://www.nuget.org/packages/Microsoft.Data.Sqlite)werden kann, die funktionell äquivalent zu ist `Mono.Data.Sqlite` und die gleichen Abfrage Typen zulässt.
 
 Es gibt einen [Vergleich zwischen den beiden Bibliotheken](https://docs.microsoft.com/dotnet/standard/data/sqlite/compare) und einigen [xamarin-spezifischen Details](https://docs.microsoft.com/dotnet/standard/data/sqlite/xamarin). Besonders wichtig für xamarin. IOS-apps müssen Sie einen Initialisierungs aufzurufen einschließen:
 
@@ -221,7 +221,7 @@ Es gibt einen [Vergleich zwischen den beiden Bibliotheken](https://docs.microsof
 SQLitePCL.Batteries_V2.Init();
 ```
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [DataAccess Basic (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess (erweitert) (Beispiel)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)

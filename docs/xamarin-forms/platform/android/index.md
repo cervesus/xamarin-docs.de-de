@@ -10,12 +10,12 @@ ms.date: 12/11/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3045db1248aa16529d4e43b9a8afc97377cfd9cb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9e5aeedb7dd51717a9bb987e90dffdcd9b514da0
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128946"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937942"
 ---
 # <a name="android-platform-features"></a>Android-Plattformfeatures
 
@@ -68,11 +68,11 @@ Xamarin.FormsBefolgen Sie die [Installationsanweisungen für die AppCompat-Unter
 
 Hier ist das **TODO** -Beispiel mit dem Standardwert `FormsApplicationActivity` :
 
-[![](images/before-appcompat-sml.png "Todo Sample Application Without AppCompat")](images/before-appcompat.png#lightbox "Todo Sample Application Without AppCompat")
+[![TODO-Beispielanwendung ohne AppCompat](images/before-appcompat-sml.png)](images/before-appcompat.png#lightbox "TODO-Beispielanwendung ohne AppCompat")
 
 Dies ist der gleiche Code, nachdem das Projekt für die Verwendung `FormsAppCompatActivity` von (und das Hinzufügen zusätzlicher Design Informationen) aktualisiert wurde:
 
-[![](images/post-appcompat-sml.png "Todo Sample Application With AppCompat and Theming")](images/post-appcompat.png#lightbox "Todo Sample Application With AppCompat and Theming")
+[![TODO-Beispielanwendung mit AppCompat und Design](images/post-appcompat-sml.png)](images/post-appcompat.png#lightbox "TODO-Beispielanwendung mit AppCompat und Design")
 
 > [!NOTE]
 > Bei Verwendung `FormsAppCompatActivity` von unterscheiden sich die [Basisklassen für einige benutzerdefinierte Android-Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md) .

@@ -77,7 +77,7 @@ Beachten Sie, dass die blauen und grünen Trennzeichen, die nicht die vollständ
 Ohne das `Label` -,-,-, `Image` `Button` `Switch` `Slider` `Map` -,-und andere Steuer [Elemente](~/ios/watchos/user-interface/index.md)wäre kein Layout ohne das Layout.
 Diese können in ihren Layouts mithilfe von **Gruppen** oder den Positions-und Größen Einstellungen der einzelnen Steuerelemente positioniert werden.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Watchkitcatalog (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Apple-layoutverweis](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/Layout.html)

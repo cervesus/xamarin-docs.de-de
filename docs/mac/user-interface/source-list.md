@@ -622,7 +622,7 @@ Wenn wir die Anwendung ausführen, wird Folgendes angezeigt:
 
 In diesem Artikel wurde die Arbeit mit Quell Listen in einer xamarin. Mac-Anwendung ausführlich erläutert. Wir haben gesehen, wie Sie Quell Listen in Xcode-Interface Builder erstellen und verwalten und wie Sie mit Quell Listen in c#-Code arbeiten können.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Macskizziert (Beispiel)](https://docs.microsoft.com/samples/xamarin/mac-samples/macoutlines)
 - [Hello, Mac (Hallo Mac)](~/mac/get-started/hello-mac.md)

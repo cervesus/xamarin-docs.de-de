@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 13d1709f77b312dbdf357c8ce1871727b2073fef
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 5d10f1def56d73c6837587bbbd47299d208a345a
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574430"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997474"
 ---
 # <a name="building-modern-macos-apps"></a>Erstellen moderner macOS-Apps
 
@@ -24,7 +24,7 @@ _In diesem Artikel werden verschiedene Tipps, Features und Techniken behandelt, 
 
 Ein modernes Erscheinungsbild enthält ein modernes Fenster und Symbolleisten Darstellung, wie z. b. die unten gezeigte Beispiel-App:
 
-[![](modern-cocoa-apps-images/content08.png "An example of a modern Mac app UI")](modern-cocoa-apps-images/content08.png#lightbox)
+[![Beispiel für eine moderne Mac-App-Benutzeroberfläche](modern-cocoa-apps-images/content08.png)](modern-cocoa-apps-images/content08.png#lightbox)
 
 <a name="Enabling-Full-Sized-Content-Views"></a>
 
@@ -64,7 +64,7 @@ namespace MacModern
 
 Diese Funktion kann auch im Interface Builder von Xcode aktiviert werden, indem Sie das Fenster auswählen und die **Inhaltsansicht in voller Größen**Ordnung überprüfen:
 
-[![](modern-cocoa-apps-images/content01.png "Editing the main storyboard in Xcode's Interface Builder")](modern-cocoa-apps-images/content01.png#lightbox)
+[![Bearbeiten des Haupt Storyboards in der Interface Builder von Xcode](modern-cocoa-apps-images/content01.png)](modern-cocoa-apps-images/content01.png#lightbox)
 
 Wenn eine Inhaltsansicht in voller Größe verwendet wird, muss der Entwickler den Inhalt möglicherweise unterhalb der Titel-und Symbolleisten Bereiche verschieben, damit spezifischer Inhalt (z. b. Bezeichnungen) nicht darunter verschoben wird.
 
@@ -145,11 +145,11 @@ topConstraint.Active = true;
 
 Ein normales macOS-Fenster enthält eine Standard Titelleiste an der Ausführung bis zum oberen Rand des Fensters. Wenn das Fenster auch eine Symbolleiste enthält, wird es unter diesem Titelleisten Bereich angezeigt:
 
-[![](modern-cocoa-apps-images/content02.png "A standard Mac Toolbar")](modern-cocoa-apps-images/content02.png#lightbox)
+[![Eine Standard-Mac-Symbolleiste](modern-cocoa-apps-images/content02.png)](modern-cocoa-apps-images/content02.png#lightbox)
 
 Wenn Sie eine optimierte Symbolleiste verwenden, wird der Titelbereich ausgeblendet, und die Symbolleiste wechselt in die Position der Titelleiste, Inline mit den Schaltflächen Fenster schließen, minimieren und maximieren:
 
-[![](modern-cocoa-apps-images/content03.png "A streamlined Mac Toolbar")](modern-cocoa-apps-images/content03.png#lightbox)
+[![Eine optimierte Mac-Symbolleiste](modern-cocoa-apps-images/content03.png)](modern-cocoa-apps-images/content03.png#lightbox)
 
 Die optimierte Symbolleiste wird durch Überschreiben der `ViewWillAppear` -Methode von aktiviert, `NSViewController` sodass Sie wie folgt aussieht:
 
@@ -163,7 +163,7 @@ public override void ViewWillAppear ()
 }
 ```
 
-Dieser Effekt wird in der Regel für _Shoebox-Anwendungen_ (eine Window-APP) wie Karten, Kalender, Notizen und System Einstellungen verwendet. 
+Dieser Effekt wird in der Regel für _Shoebox-Anwendungen_ (eine Window-APP) wie Karten, Kalender, Notizen und System Einstellungen verwendet.
 
 <a name="Using-Accessory-View-Controllers"></a>
 
@@ -171,22 +171,22 @@ Dieser Effekt wird in der Regel für _Shoebox-Anwendungen_ (eine Window-APP) wie
 
 Abhängig vom Entwurf der APP möchte der Entwickler möglicherweise auch den Titelleisten Bereich durch einen Zubehör Ansichts Controller ergänzen, der direkt unterhalb des Titels/Symbolleisten Bereichs angezeigt wird, um dem Benutzer kontextabhängige Steuerelemente basierend auf der Aktivität bereitzustellen, in der Sie derzeit beteiligt sind:
 
-[![](modern-cocoa-apps-images/content04.png "An example Accessory View Controller")](modern-cocoa-apps-images/content04.png#lightbox)
+[![Ein Beispiel für einen Zubehör Ansichts Controller](modern-cocoa-apps-images/content04.png)](modern-cocoa-apps-images/content04.png#lightbox)
 
 Der Zubehör Ansichts Controller wird vom System ohne Eingriff des Entwicklers automatisch verwischt und seine Größe geändert.
 
 Gehen Sie folgendermaßen vor, um einen Zubehör Ansichts Controller hinzuzufügen:
 
 1. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei `Main.storyboard`, um sie zur Bearbeitung zu öffnen.
-2. Ziehen Sie einen **benutzerdefinierten Ansichts Controller** in die Hierarchie des Fensters: 
+2. Ziehen Sie einen **benutzerdefinierten Ansichts Controller** in die Hierarchie des Fensters:
 
-    [![](modern-cocoa-apps-images/content05.png "Adding a new Custom View Controller")](modern-cocoa-apps-images/content05.png#lightbox)
-3. Layout der Benutzeroberfläche der Zubehör Ansicht: 
+    [![Hinzufügen eines neuen benutzerdefinierten Ansichts Controllers](modern-cocoa-apps-images/content05.png)](modern-cocoa-apps-images/content05.png#lightbox)
+3. Layout der Benutzeroberfläche der Zubehör Ansicht:
 
-    [![](modern-cocoa-apps-images/content06.png "Designing the new view")](modern-cocoa-apps-images/content06.png#lightbox)
-4. Machen Sie die Zubehör Ansicht als **Outlet** und alle anderen **Aktionen** oder **Outlets** für die Benutzeroberfläche verfügbar: 
+    [![Entwerfen der neuen Ansicht](modern-cocoa-apps-images/content06.png)](modern-cocoa-apps-images/content06.png#lightbox)
+4. Machen Sie die Zubehör Ansicht als **Outlet** und alle anderen **Aktionen** oder **Outlets** für die Benutzeroberfläche verfügbar:
 
-    [![](modern-cocoa-apps-images/content07.png "Adding the required OUtlet")](modern-cocoa-apps-images/content07.png#lightbox)
+    [![Hinzufügen des erforderlichen Outlets](modern-cocoa-apps-images/content07.png)](modern-cocoa-apps-images/content07.png#lightbox)
 5. Speichern Sie die Änderungen.
 6. Kehren Sie zu Visual Studio für Mac zurück, um die Änderungen zu synchronisieren.
 
@@ -248,7 +248,7 @@ Da macOS nun vollständig lokalisiert ist, `Left` sind die-Eigenschaft und die-E
 
 Außerdem kann das macOS-System dem Fenster der APP Zubehör Ansichts Controller hinzufügen. Beispielsweise zum Erstellen von Fenstern im Registerkarten Format, in denen mehrere der App-Fenster in einem virtuellen Fenster zusammengeführt werden:
 
-[![](modern-cocoa-apps-images/content08.png "An example of a tabbed Mac Window")](modern-cocoa-apps-images/content08.png#lightbox)
+[![Ein Beispiel für ein Mac-Fenster im Register Format](modern-cocoa-apps-images/content08.png)](modern-cocoa-apps-images/content08.png#lightbox)
 
 Der Entwickler muss in der Regel eingeschränkte Maßnahmen zum Verwenden von Fenstern im Registerkarten Format in ihren xamarin. Mac-Apps verwenden. das System behandelt diese automatisch wie folgt:
 
@@ -302,7 +302,7 @@ namespace MacModern
 
             // Display
             controller.ShowWindow (this);
-        } 
+        }
         #endregion
     }
 }
@@ -430,7 +430,7 @@ Außerdem schlägt Apple die Verwendung von ebenengestützten Sichten vor, ansta
 
 Die Ebenenunterstützung kann aktiviert werden, indem der `WantsLayer` von einem `NSView` auf `true` oder innerhalb von Xcode-Interface Builder unter dem **View Effects Inspector** durch das Überprüfen der **Kern Animations Ebene**festgelegt wird:
 
-[![](modern-cocoa-apps-images/content09.png "The View Effects Inspector")](modern-cocoa-apps-images/content09.png#lightbox)
+[![Der Ansichts Effekt Inspektor](modern-cocoa-apps-images/content09.png)](modern-cocoa-apps-images/content09.png#lightbox)
 
 <a name="Redrawing-Views-with-Layers"></a>
 
@@ -496,7 +496,7 @@ namespace MacModern
         {
             base.UpdateLayer ();
 
-            // Draw view 
+            // Draw view
             Layer.BackgroundColor = NSColor.Red.CGColor;
         }
         #endregion
@@ -571,7 +571,7 @@ namespace MacModern
         {
             // Return required pasteboard writer
             ...
-            
+
             // Pasteboard writer failed
             return null;
         }
@@ -733,7 +733,7 @@ Der static-Vorgang `NSTableViewRowAction.FromStyle` wird verwendet, um eine neue
 
 <a name="Scroll-View-Enhancements"></a>
 
-## <a name="scroll-view-enhancements"></a>Erweiterungen der scrollansicht 
+## <a name="scroll-view-enhancements"></a>Erweiterungen der scrollansicht
 
 Wenn Sie eine Bild Lauf Ansicht ( `NSScrollView` ) direkt oder als Teil eines anderen Steuer Elements (z. b. `NSTableView` ) verwenden, kann der Inhalt der scrollansicht unter den Bereichen Titel und Symbolleiste in einer xamarin. Mac-app mit einem modernen Aussehen und Ansichten gleiten.
 
@@ -760,9 +760,9 @@ Weitere Informationen finden Sie in der [Internationalisierungs-und Lokalisierun
 
 <a name="Implementing-Base-Internationalization"></a>
 
-### <a name="implementing-base-internationalization"></a>Implementieren der grundlegenden Internationalisierung 
+### <a name="implementing-base-internationalization"></a>Implementieren der grundlegenden Internationalisierung
 
-Durch Implementieren der Basis Internationalisierung kann der Entwickler eine einzelne storyboarddatei bereitstellen, um die Benutzeroberfläche der APP darzustellen und alle Benutzer seitigen Zeichen folgen voneinander zu trennen. 
+Durch Implementieren der Basis Internationalisierung kann der Entwickler eine einzelne storyboarddatei bereitstellen, um die Benutzeroberfläche der APP darzustellen und alle Benutzer seitigen Zeichen folgen voneinander zu trennen.
 
 Wenn der Entwickler die anfängliche storyboarddatei (oder Dateien) erstellt, die die Benutzeroberfläche der app definieren, werden diese in der Basis Internationalisierung erstellt (die Sprache, die der Entwickler spricht).
 
@@ -792,7 +792,7 @@ Apple schlägt vor, Folgendes zu tun:
 
 Apple hat mehrere Features in der Interface Builder von Xcode bereitgestellt, die der Entwickler beim Entwerfen oder Bearbeiten der Benutzeroberfläche einer App zur Unterstützung der Lokalisierung verwenden kann. Mithilfe des Abschnitts **Textrichtung** des **Attribut Inspektors** kann der Entwickler Hinweise dazu bereitstellen, wie die Richtung verwendet und in einer ausgewählten Text basierten Ansicht aktualisiert werden soll (z. b. `NSTextField` ):
 
-[![](modern-cocoa-apps-images/content10.png "The Text Direction options")](modern-cocoa-apps-images/content10.png#lightbox)
+[![Die Optionen für die Text Richtung](modern-cocoa-apps-images/content10.png)](modern-cocoa-apps-images/content10.png#lightbox)
 
 Es gibt drei mögliche Werte für die **Text Richtung**:
 
@@ -851,7 +851,7 @@ var button2 = NSButton.CreateButton (myTitle, myImage, () => {
 
 Moderne macOS-Apps können eine neue Darstellung der dunklen Oberfläche übernehmen, die sich gut für die Image Erstellung, Bearbeitung oder Präsentation von apps eignet:
 
-[![](modern-cocoa-apps-images/content11.png "An example of a dark Mac Window UI")](modern-cocoa-apps-images/content11.png#lightbox)
+[![Beispiel für eine Benutzeroberfläche des dunklen Mac-Fensters](modern-cocoa-apps-images/content11.png)](modern-cocoa-apps-images/content11.png#lightbox)
 
 Dies kann erreicht werden, indem eine Codezeile hinzugefügt wird, bevor das Fenster angezeigt wird. Beispiel:
 
@@ -865,7 +865,7 @@ namespace MacModern
     public partial class ViewController : NSViewController
     {
         ...
-    
+
         #region Override Methods
         public override void ViewWillAppear ()
         {
@@ -898,7 +898,7 @@ Storyboards ermöglichen es dem Entwickler nicht, nur die einzelnen Elemente zu 
 
 Controller ermöglichen es dem Entwickler, Elemente in einer Zusammenfassungs Einheit und in einer abstrakter Struktur zu erfassen und den typischen "Verbindungs Code" zu entfernen, der für das Verschieben in der Ansichts Hierarchie erforderlich ist:
 
-[![](modern-cocoa-apps-images/content12.png "Editing the UI in Xcode's Interface Builder")](modern-cocoa-apps-images/content12.png#lightbox)
+[![Bearbeiten der Benutzeroberfläche in der Interface Builder von Xcode](modern-cocoa-apps-images/content12.png)](modern-cocoa-apps-images/content12.png#lightbox)
 
 Weitere Informationen finden Sie [in unserer Einführung in die Storyboards](~/mac/platform/storyboards/index.md) -Dokumentation.
 

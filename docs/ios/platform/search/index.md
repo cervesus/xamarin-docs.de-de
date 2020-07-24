@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: ec63407189b635a9586b02e848647518aaf0170f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d95261a3b884507d3fc4a68018d57c5d3e3a2c84
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031566"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939411"
 ---
 # <a name="search-apis-in-xamarinios"></a>APIs in xamarin. IOS suchen
 
@@ -22,7 +22,7 @@ Die Suche wurde in ios 9 erweitert und bietet hervorragend neue Möglichkeiten f
 
 Außerdem vereinfachen die neuen Such-APIs das Integrieren der Suche in Ihre APP, ohne dass eine vorherige Such Implementierung möglich ist. Daher beansprucht Apple in der Regel einige Stunden, bis der Inhalt einer IOS 9-APP über die APP-Suche universell durchsuchbar ist.
 
-[![](images/intro01.png "An example of iOS 9 app content universally searchable using App Search")](images/intro01.png#lightbox)
+[![Beispiel für IOS 9-APP-Inhalte, die universell mithilfe der APP-Suche durchsucht werden](images/intro01.png)](images/intro01.png#lightbox)
 
 Die APP-Suche besteht aus drei separaten APIs:
 
@@ -64,7 +64,7 @@ Apple bietet die folgenden Vorschläge, welche Inhalte und Aktionen für Such In
 Kernspotlight in ios 10 bietet verschiedene Verbesserungen bei der APP-Suche, wie z.b.:
 
 - **Crowdsource Deep-Link-Beliebtheit (mit differenziellen Datenschutz)** : bietet eine Möglichkeit zum herauf Stufen von Deep-verknüpften App-Inhalten in den Suchergebnissen.
-- **In-App-Suche** : Verwenden Sie die neue `CSSearchQuery`-Klasse, um eine in-App-Spotlight-Suchfunktion bereitzustellen, ähnlich der Funktionsweise von Mail-, Nachrichten-und Notizen
+- **In-App-Suche** : Verwenden Sie die neue- `CSSearchQuery` Klasse, um in-App-Spotlight-Suchfunktionen wie die Funktionsweise der Mail-, Nachrichten-und Notes-apps bereitzustellen
 - **Such Fortsetzung** : ermöglicht einem Benutzer das Starten einer Suche in Spotlight oder Safari, das Öffnen einer APP und das Fortsetzen der Suche.
 - **Visualisierung der Überprüfungs Ergebnisse** : das [Validierungs Tool der App Search-API](https://search.developer.apple.com/appsearch-validation-tool) von Apple zeigt nun eine visuelle Darstellung des Markups einer Website und die Deep-Verknüpfung bei der Vorbildung von Tests an.
 - **Nachrichten-APP-Image Freigabe** : ermöglicht beliebte in-App-Images, die für die Freigabe in Nachrichten (über eine Nachrichten-APP-Erweiterung) bereitgestellt werden, um Sie in Spotlight

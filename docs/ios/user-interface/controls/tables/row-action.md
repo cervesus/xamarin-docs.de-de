@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: cc83fa65fd040b30d71a30fb703da866c5d0824c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 40640f903ad82c5f154dbb74307c0003d7271561
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570816"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936603"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Arbeiten mit Zeilen Aktionen in xamarin. IOS
 
@@ -175,7 +175,7 @@ table.Delegate = tableDelegate;
 
 Wenn der obige Code ausgeführt wird und der Benutzer in einer Tabellenzeile nach links drückt, wird die Schaltfläche " **Hi** " anstelle der standardmäßig angezeigten Schaltfläche " **Löschen** " angezeigt:
 
-[![](row-action-images/action01.png "The Hi button being displayed instead of the Delete button")](row-action-images/action01.png#lightbox)
+[![Die angezeigte Schaltfläche "Hi" anstelle der Schaltfläche "Löschen"](row-action-images/action01.png)](row-action-images/action01.png#lightbox)
 
 Wenn der Benutzer auf die Schaltfläche " **Hi** " tippt, `Hello World!` wird in Visual Studio für Mac oder Visual Studio in die Konsole geschrieben, wenn die Anwendung im Debugmodus ausgeführt wird.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 72c10d10e65194171479d66845d597e313281cdf
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 69ea9b0786170345109f0845f3af6e5fd01d2b7c
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573780"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997110"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Arbeiten mit tvos-Symbolen und-Bildern in xamarin
 
@@ -32,7 +32,7 @@ Das Erstellen von faszinierenden Symbolen und Bildern ist ein wichtiger Bestandt
 
 ## <a name="launch-image"></a>Bild starten
 
-Das Startimage ist das erste, was angezeigt wird, wenn Ihre xamarin. tvos-App anfänglich im Apple TV gestartet wird. Daher muss jede tvos-App ein Launch-Image bereitstellen. 
+Das Startimage ist das erste, was angezeigt wird, wenn Ihre xamarin. tvos-App anfänglich im Apple TV gestartet wird. Daher muss jede tvos-App ein Launch-Image bereitstellen.
 
 Das Startbild erscheint schnell und gibt den Eindruck, dass Ihre APP schnell und reaktionsfähig ist. Das Apple TV ersetzt das Startbild durch den ersten Bildschirm der app in Kürze.
 
@@ -55,15 +55,15 @@ Apple gibt die folgenden Vorschläge zum Entwerfen des Start Images Ihrer APP an
 
 Gehen Sie folgendermaßen vor, um das Start Image für Ihr tvos-Projekt festzulegen:
 
-1. Doppelklicken Sie im **Projektmappen-Explorer**, `Assets.xcassets` um es zur Bearbeitung zu öffnen: 
+1. Doppelklicken Sie im **Projektmappen-Explorer**, `Assets.xcassets` um es zur Bearbeitung zu öffnen:
 
-    [![](icons-images-images/asset01.png "The Assets.xcassets file")](icons-images-images/asset01.png#lightbox)
-2. Klicken Sie im **Asset-Editor**auf das Medien `LaunchImages` Objekt: 
+    [![Die Datei Assets. xcassets](icons-images-images/asset01.png)](icons-images-images/asset01.png#lightbox)
+2. Klicken Sie im **Asset-Editor**auf das Medien `LaunchImages` Objekt:
 
-    [![](icons-images-images/asset02.png "The LaunchImages asset")](icons-images-images/asset02.png#lightbox)
-3. Klicken Sie auf den Eintrag **1X Apple TV** , und wählen Sie das Startbild aus, oder ziehen Sie optional ein neues Bild aus dem Dateisystem: 
+    [![Das launchimages-Asset](icons-images-images/asset02.png)](icons-images-images/asset02.png#lightbox)
+3. Klicken Sie auf den Eintrag **1X Apple TV** , und wählen Sie das Startbild aus, oder ziehen Sie optional ein neues Bild aus dem Dateisystem:
 
-    [![](icons-images-images/asset03.png "Select a Launch Image")](icons-images-images/asset03.png#lightbox)
+    [![Startbild auswählen](icons-images-images/asset03.png)](icons-images-images/asset03.png#lightbox)
 4. Speichern Sie die Änderungen.
 
 <a name="Layered-Images"></a>
@@ -74,7 +74,7 @@ In der Abbildung von Apple TV haben mehrstufige Bilder mit den Parametern der ei
 
 Geschichtete Bilder enthalten zwei (2) bis fünf (5) separate Ebenen, die kombiniert werden, um ein Abbild zu bilden. Mit Ausnahme der Hintergrund Ebene verwendet jede Schicht die Z-Reihenfolge zusammen mit Transparenz, um eine Illusion von Tiefe zu erzeugen. Wenn der Benutzer mit einem geschichteten Bild interagiert, werden höhere Z-geordnete Ebenen skaliert und überlappen, um diesen Effekt zu erzeugen.
 
-[![](icons-images-images/layered01.png "Layered Images Z-ordered diagram")](icons-images-images/layered01.png#lightbox)
+[![In Ebenen aufgeschichtete Bilder Z-geordnetes Diagramm](icons-images-images/layered01.png)](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
 > Für die Symbole Ihrer APP sind geschichtete Bilder erforderlich und für andere [Fokussier Bare Elemente](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (z. b. das Top-Regal Bild) optional. Apple schlägt jedoch vor, dass Sie für jedes Bild, das in Ihrer APP den Fokus erhält, geschichtete Bilder verwenden können.
@@ -96,7 +96,7 @@ Wenn möglich, sollten Sie immer die integrierten Steuerelemente verwenden, um d
 
 Beachten Sie, dass Sie einen _sicheren Zonen_ Rahmen in jede Schicht einschließen müssen, die ihr geschichtetes Bild bilden wird. Da die einzelnen Ebenen während des-Parametern skaliert und zugeschnitten werden können, kann der Inhalt der Ebenen abgeschnitten werden, wenn er zu nah am Rand der Ebene ist:
 
-[![](icons-images-images/layered02.png "35 pixel border")](icons-images-images/layered02.png#lightbox)
+[![35 Pixel Rahmen](icons-images-images/layered02.png)](icons-images-images/layered02.png#lightbox)
 
 <a name="Creating-Layered-Images"></a>
 
@@ -115,7 +115,7 @@ tvos funktioniert mit mehrschichtigen Bildern in den folgenden Formaten:
 
 Apple hat die " [Parser](https://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) "-Vorschau für die Vorschau und Erstellung von geschichteten Bildern erstellt, die für App-Symbole und optionale Fokussier Bare Elemente erforderlich sind. Der Vorschau zeigt jede Ebene, die das abgeschlossene geschichtete Bild bildet:
 
-[![](icons-images-images/layered03.png "The Parallax Previewer")](icons-images-images/layered03.png#lightbox)
+[![Die "Parser"-Vorschau](icons-images-images/layered03.png)](icons-images-images/layered03.png#lightbox)
 
 Beim Anzeigen einer Vorschau eines geschichteten Bilds können Sie die Maus verwenden, um das Bild zu drehen und die Vorschau des Parametern anzuzeigen. Verwenden **+** Sie die Schaltflächen (plus) und **-** (minus) zum Hinzufügen und Entfernen von Ebenen.
 
@@ -129,13 +129,13 @@ Weitere Informationen zum Erstellen und in der Vorschau von geschichteten Bilder
 
 Ihre xamarin. tvos-App benötigt nicht nur ein App-Symbol für den Apple TV-Startbildschirm, sondern auch ein Symbol für den App Store. Das App-Symbol ist die erste Änderung, mit der Sie sich einen guten Eindruck von Ihrem potenziellen Benutzer verschaffen und den Zweck Ihrer APP auf einen Blick vermitteln sollten.
 
-[![](icons-images-images/icon01.png "The App Icon")](icons-images-images/icon01.png#lightbox)
+[![Das App-Symbol](icons-images-images/icon01.png)](icons-images-images/icon01.png#lightbox)
 
 Jede APP muss sowohl eine kleine als auch eine große Version des App-Symbols bereitstellen. Das kleine Symbol wird bei der Installation der APP auf dem Apple TV-Startbildschirm verwendet. Die umfangreiche Version wird vom App Store verwendet. Das Symbol für große apps sollte das Aussehen und Gefühl der kleinen Symbol Version imitieren.
 
-|Kleines Symbol||Großes Symbol||
+|Kleines Symbol|Lösung|Großes Symbol|Lösung|
 |---|---|---|---|
-|Tatsächliche Größe|400x240 px|Size|1280x768px|
+|Tatsächliche Größe|400x240 px||1280x768px|
 |Größe der sicheren Zone|370x222px|||
 |Größe ohne Fokus|300 x 180px|||
 |Fokus Größe|370x222px|||
@@ -160,18 +160,18 @@ Apple bietet die folgenden Vorschläge zum Erstellen Ihrer APP-Symbole:
 
 Gehen Sie folgendermaßen vor, um die für Ihr tvos-Projekt erforderlichen App-Symbole festzulegen:
 
-1. Doppelklicken Sie im **Projektmappen-Explorer**, `Assets.xcassets` um es zur Bearbeitung zu öffnen: 
+1. Doppelklicken Sie im **Projektmappen-Explorer**, `Assets.xcassets` um es zur Bearbeitung zu öffnen:
 
-    [![](icons-images-images/asset01.png "The Assets.xcassets fileg")](icons-images-images/asset01.png#lightbox)
-2. Erweitern Sie im **Asset-Editor**das `App Icon & Top Shelf Image` Objekt: 
+    [![Die Assets. xcassets-Datei](icons-images-images/asset01.png)](icons-images-images/asset01.png#lightbox)
+2. Erweitern Sie im **Asset-Editor**das `App Icon & Top Shelf Image` Objekt:
 
-    [![](icons-images-images/asset04.png "Expand the Top Shelf Image asset")](icons-images-images/asset04.png#lightbox)
-3. Erweitern Sie als nächstes das Medien `App Icon - Small` Objekt: 
+    [![Erweitern Sie das Objekt des obersten Regal Bilds.](icons-images-images/asset04.png)](icons-images-images/asset04.png#lightbox)
+3. Erweitern Sie als nächstes das Medien `App Icon - Small` Objekt:
 
-    [![](icons-images-images/asset05.png "Expand the App Icon - Small asset")](icons-images-images/asset05.png#lightbox)
-4. Erweitern Sie dann das `Back` Objekt, und klicken Sie auf den `Contents` Eintrag: 
+    [![Erweitern Sie das App-Symbol-Small Asset](icons-images-images/asset05.png)](icons-images-images/asset05.png#lightbox)
+4. Erweitern Sie dann das `Back` Objekt, und klicken Sie auf den `Contents` Eintrag:
 
-    [![](icons-images-images/asset06.png "Then expand the Back asset")](icons-images-images/asset06.png#lightbox)
+    [![Erweitern Sie dann das Back-Asset.](icons-images-images/asset06.png)](icons-images-images/asset06.png#lightbox)
 5. Klicken Sie auf den **Eintrag 1X Apple TV** , und wählen Sie eine Bilddatei aus.
 6. Wiederholen Sie die obigen Schritte für die `Front` `Middle` Objekte und.
 7. Wiederholen Sie dann die gleichen Schritte, um das Medienobjekt zu definieren `App Icon - Large` .
@@ -183,7 +183,7 @@ Gehen Sie folgendermaßen vor, um die für Ihr tvos-Projekt erforderlichen App-S
 
 Wenn der Benutzer die xamarin. tvos-app in der obersten Zeile des Apple TV-Startbildschirms abgelegt hat, wird ein großes hoch Regal Bild angezeigt, wenn die APP vom Benutzer ausgewählt wird. Dieses Bild sollte die Features Ihrer APP hervorheben oder direkte Links zu den Inhalten bereitstellen.
 
-[![](icons-images-images/topshelf01.png "Top Shelf Image example")](icons-images-images/topshelf01.png#lightbox)
+[![Beispiel für das Top-Regal Bild](icons-images-images/topshelf01.png)](icons-images-images/topshelf01.png#lightbox)
 
 Das Top-Regal Bild kann entweder als einzelne statische `.png` Datei oder Datei bereitgestellt werden `.lsr` (siehe [Erstellen von geschichteten Bildern](#Creating-Layered-Images)), oder es kann zur Laufzeit dynamisch als einzelne Zeile mit Fokus nutzbaren Elementen erstellt werden (siehe [dynamischer Top-Shelf-Inhalt](#Dynamic-Top-Shelf-Content) unten).
 
@@ -203,15 +203,15 @@ Apple bietet die folgenden Vorschläge zum Erstellen Ihrer Top-Regal-Images:
 
 Gehen Sie folgendermaßen vor, um das oberste Regal Bild festzulegen, das für Ihr tvos-Projekt erforderlich ist:
 
-1. Doppelklicken Sie im **Projektmappen-Explorer**, `Assets.xcassets` um es zur Bearbeitung zu öffnen: 
+1. Doppelklicken Sie im **Projektmappen-Explorer**, `Assets.xcassets` um es zur Bearbeitung zu öffnen:
 
-    [![](icons-images-images/asset01.png "The Assets.xcassets file")](icons-images-images/asset01.png#lightbox)
-2. Erweitern Sie im **Asset-Editor**das `App Icon & Top Shelf Image` Objekt: 
+    [![Die Datei Assets. xcassets](icons-images-images/asset01.png)](icons-images-images/asset01.png#lightbox)
+2. Erweitern Sie im **Asset-Editor**das `App Icon & Top Shelf Image` Objekt:
 
-    [![](icons-images-images/asset04.png "Expand the Top Shelf Image asset")](icons-images-images/asset04.png#lightbox)
-3. Klicken Sie auf das Medien `Top Shelf Image` Objekt: 
+    [![Erweitern Sie das Objekt des obersten Regal Bilds.](icons-images-images/asset04.png)](icons-images-images/asset04.png#lightbox)
+3. Klicken Sie auf das Medien `Top Shelf Image` Objekt:
 
-    [![](icons-images-images/asset07.png "The Top Shelf Image asset")](icons-images-images/asset07.png#lightbox)
+    [![Das Top-Regal Bild Asset](icons-images-images/asset07.png)](icons-images-images/asset07.png#lightbox)
 4. Klicken Sie auf den **Eintrag 1X Apple TV** , und wählen Sie eine Bilddatei aus.
 5. Speichern Sie die Änderungen.
 
@@ -231,7 +231,7 @@ Der Inhalt wird als einzelne, horizontale Bildlauf-Inhaltsliste dargestellt, wob
 
 Die folgenden Inhalts Größen sind erforderlich:
 
-||Poster (2:3)|Square (1:1)|HDTV (16:9)|
+|Size|Poster (2:3)|Square (1:1)|HDTV (16:9)|
 |---|---|---|---|
 |Tatsächliche Größe|404x608px|608x608px|908x512 px|
 |Größe der sicheren Zone|380x570px|570x570px|852x479px|
@@ -253,7 +253,7 @@ Zusätzlich zum automatischen Bildlauf kann der Benutzer die Kontrolle über die
 
 **Banner Bild (extra breit)**
 
-|   |   |
+| Size | Lösung |
 |---|---|
 |Tatsächliche Größe|1940× 624px|
 |Größe der sicheren Zone|1740x620px|
@@ -279,7 +279,7 @@ Wenn Ihre xamarin. tvos-App ein Spiel ist und Sie Game Center Support eingeschlo
 - **Dashboard-Grafik** : Sie können ein optionales Bild bereitstellen, das im oberen Bereich des App-dashGame Center Boards angezeigt wird. Diese Bilder können nicht verwendet werden.
 - **Leaderboard-Grafik** : Sie müssen zwischen einem (1) und drei (3) 16:9-Seitenverhältnis-Bild für jede Bestenlisten bereitstellen, die ihre App unterstützt. Dabei kann es sich entweder um statische `.png` oder geschichtete `.lsr` Dateien handeln. Die Leaderboard-Grafik kann als Fokus verwendet werden.
 
-||Symbol "Erfolge"|Dashboard-Grafik|Leaderboard-Grafik|
+|Size|Symbol "Erfolge"|Dashboard-Grafik|Leaderboard-Grafik|
 |---|---|---|---|
 |Sichtbare Größe|200x200px|923x150px|–|
 |Tatsächliche Größe|320x320 px|–|659x371px|
@@ -301,14 +301,14 @@ Da tvos 9 eine Teilmenge von IOS 9 ist, funktionieren die gleichen Techniken zum
 
 Wie bereits erwähnt, erfordern alle tvos-apps ein [Start Image](#Launch-Image)und ein [App-Symbol](#App-Icons). In diesem Abschnitt wird beschrieben, wie Sie das Symbol Start Bild und App für Ihr xamarin. tvos-App-Projekt auswählen, nachdem Sie in einem Ressourcen Katalog festgelegt wurden.
 
-Gehen Sie folgendermaßen vor:
+Gehen Sie wie folgt vor:
 
-1. Doppelklicken Sie in der **Projektmappen-Explorer**auf das, `Info.plist` um es zur Bearbeitung zu öffnen: 
+1. Doppelklicken Sie in der **Projektmappen-Explorer**auf das, `Info.plist` um es zur Bearbeitung zu öffnen:
 
-    [![](icons-images-images/info01.png "The Info.plist file")](icons-images-images/info01.png#lightbox)
-2. Wählen Sie im **Info. plist-Editor**den Ressourcen Katalog (oben im Abschnitt [Festlegen der APP-Symbole](#Setting-the-App-Icons) konfiguriert) für die **App-Symbole**aus: 
+    [![Die Datei "Info. plist"](icons-images-images/info01.png)](icons-images-images/info01.png#lightbox)
+2. Wählen Sie im **Info. plist-Editor**den Ressourcen Katalog (oben im Abschnitt [Festlegen der APP-Symbole](#Setting-the-App-Icons) konfiguriert) für die **App-Symbole**aus:
 
-    [![](icons-images-images/info02.png "The Info.Plist Editor")](icons-images-images/info02.png#lightbox)
+    [![Der Info. plist-Editor](icons-images-images/info02.png)](icons-images-images/info02.png#lightbox)
 3. Wählen Sie als nächstes den Ressourcen Katalog (oben im Abschnitt [Festlegen des Start Abbilds](#Setting-the-Launch-Image) konfiguriert) für die **Start Images**aus.
 4. Speichern Sie die Änderungen.
 

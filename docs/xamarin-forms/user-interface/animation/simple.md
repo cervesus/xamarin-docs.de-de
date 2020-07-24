@@ -10,12 +10,12 @@ ms.date: 11/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 89f0182bfebc4d018eb083904595f0fbb211e3ba
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b13ec7ab079dcf7069b5f4b0dccbb52faf25f927
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573377"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933795"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>Einfache Animationen inXamarin.Forms
 
@@ -53,7 +53,7 @@ Weitere Informationen zum- `await` Operator finden Sie [unter async-Unterstützu
 
 Jede Erweiterungsmethode in [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) implementiert einen einzelnen Animations Vorgang, der eine Eigenschaft in einem bestimmten Zeitraum progressiv von einem Wert in einen anderen Wert ändert. In diesem Abschnitt wird jeder Animations Vorgang erläutert.
 
-### <a name="rotation"></a>Drehung
+### <a name="rotation"></a>Rotation
 
 Im folgenden Codebeispiel wird die Verwendung von [ `RotateTo` ] (Xref:) veranschaulicht Xamarin.Forms . Viewextensions. rotateTo ( Xamarin.Forms . Visualelement, System. Double, System. UInt32, Xamarin.Forms . Beschleunigung)) Methode zum Animieren der [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) Eigenschaft eines [`Image`](xref:Xamarin.Forms.Image) :
 
@@ -66,7 +66,7 @@ Dieser Code animiert die [`Image`](xref:Xamarin.Forms.Image) Instanz, indem Sie 
 
 Die folgenden Screenshots zeigen die Drehung, die auf den einzelnen Plattformen ausgeführt wird:
 
-![](simple-images/rotateto.png "Rotation Animation")
+![Rotations Animation](simple-images/rotateto.png)
 
 > [!NOTE]
 > Zusätzlich zu [ `RotateTo` ] (Xref: Xamarin.Forms . Viewextensions. rotateTo ( Xamarin.Forms . Visualelement, System. Double, System. UInt32, Xamarin.Forms . Beschleunigung))-Methode, es gibt auch [ `RotateXTo` ] (Xref: Xamarin.Forms . Viewextensions. rotatexto ( Xamarin.Forms . Visualelement, System. Double, System. UInt32, Xamarin.Forms . Beschleunigung)) und [ `RotateYTo` ] (Xref: Xamarin.Forms . Viewextensions. rotateyto ( Xamarin.Forms . Visualelement, System. Double, System. UInt32, Xamarin.Forms . Beschleunigung)) Methoden, die die [`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX) -Eigenschaft bzw. die-Eigenschaft animieren [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY) .
@@ -83,7 +83,7 @@ Dieser Code animiert die [`Image`](xref:Xamarin.Forms.Image) Instanz, indem Sie 
 
 Die folgenden Screenshots zeigen die relative Drehung, die auf den einzelnen Plattformen ausgeführt wird:
 
-![](simple-images/relrotateto.png "Relative Rotation Animation")
+![Relative Rotations Animation](simple-images/relrotateto.png)
 
 ### <a name="scaling"></a>Skalierung
 
@@ -97,7 +97,7 @@ Mit diesem Code wird die- [`Image`](xref:Xamarin.Forms.Image) Instanz animiert, 
 
 Die folgenden Screenshots zeigen, wie die Skalierung auf den einzelnen Plattformen ausgeführt wird:
 
-![](simple-images/scaleto.png "Scaling Animation")
+![Skalieren der Animation](simple-images/scaleto.png)
 
 > [!NOTE]
 > Zusätzlich zur [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) -Methode gibt es auch `ScaleXTo` -und- `ScaleYTo` Methoden, die die [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) -Eigenschaft und die-Eigenschaft animieren [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) .
@@ -126,7 +126,7 @@ await image.RotateTo(360, 2000);
 
 Um die [`Image`](xref:Xamarin.Forms.Image) Instanz um die Mitte des Layouts zu drehen, [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX) müssen die-Eigenschaft und die-Eigenschaft auf- [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY) Werte festgelegt werden, die relativ zur Breite und Höhe von sind `Image` . In diesem Beispiel wird der Mittelpunkt des `Image` -Werts so definiert, dass er sich in der Mitte des Layouts befindet, sodass der Standard `AnchorX` Wert 0,5 nicht geändert werden muss. Die- `AnchorY` Eigenschaft wird jedoch neu definiert, sodass Sie ein Wert von der obersten Position des `Image` bis zum Mittelpunkt des Layouts ist. Dadurch wird sichergestellt, dass die `Image` eine vollständige Drehung um 360 Grad um den Mittelpunkt des Layouts führt, wie in den folgenden Screenshots gezeigt:
 
-![](simple-images/rotate-anchors.png "Rotation Animation with Anchors")
+![Rotations Animation mit Anker](simple-images/rotate-anchors.png)
 
 ### <a name="translation"></a>Sprachübersetzung
 
@@ -140,7 +140,7 @@ Mit diesem Code wird die [`Image`](xref:Xamarin.Forms.Image) -Instanz animiert, 
 
 Die folgenden Screenshots zeigen die Übersetzung, die auf jeder Plattform durchgeführt wird:
 
-![](simple-images/translateto.png "Translation Animation")
+![Übersetzungs Animation](simple-images/translateto.png)
 
 > [!NOTE]
 > Wenn ein Element anfänglich aus dem Bildschirm entfernt und dann auf den Bildschirm übersetzt wird, bleibt das Eingabe Layout des Elements nach der Übersetzung deaktiviert, sodass der Benutzer nicht mit dem Bildschirm interagieren kann. Daher empfiehlt es sich, eine Ansicht an der endgültigen Position und dann alle erforderlichen Übersetzungen zu überprüfen.
@@ -158,7 +158,7 @@ Mit diesem Code wird die-Instanz animiert, [`Image`](xref:Xamarin.Forms.Image) i
 
 Die folgenden Screenshots zeigen, wie die einzelnen Plattformen ausgeblendet werden:
 
-![](simple-images/fadeto.png "Fading Animation")
+![Ausblenden der Animation](simple-images/fadeto.png)
 
 ## <a name="compound-animations"></a>Verbund Animationen
 
@@ -218,7 +218,7 @@ In diesem Beispiel enthält der `Task.WhenAll` Methodenaufrufe drei Aufgaben, di
 
 Die folgenden Screenshots zeigen, wie viele Drehungen auf den einzelnen Plattformen ausgeführt werden:
 
-![](simple-images/multiple-rotations.png "Composite Animation")
+![Zusammengesetzte Animation](simple-images/multiple-rotations.png)
 
 ## <a name="canceling-animations"></a>Abbrechen von Animationen
 

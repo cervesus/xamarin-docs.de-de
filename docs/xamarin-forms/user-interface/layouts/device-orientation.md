@@ -10,12 +10,12 @@ ms.date: 04/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0b1a47d4dcc92fca4d280708a2cbbe9374c17da8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: de5ebf086af7fa8d7c6360bf3a1f48f57b834e44
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573292"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938436"
 ---
 # <a name="device-orientation"></a>Geräteausrichtung
 
@@ -123,11 +123,11 @@ protected override void OnSizeAllocated(double width, double height)
 
 Nachdem eine Änderung der Geräte Orientierung erkannt wurde, können Sie der Benutzeroberfläche weitere Ansichten hinzufügen oder von ihr entfernen, um auf die Änderung des verfügbaren Speicherplatzes zu reagieren. Sehen Sie sich beispielsweise den integrierten Rechner auf jeder Plattform im Hochformat an:
 
-![](device-orientation-images/calculator-portrait.png "Calculator Application in Portrait")
+![Rechner Anwendung im Hochformat](device-orientation-images/calculator-portrait.png)
 
 und Querformat:
 
-![](device-orientation-images/calculator-landscape.png "Calculator Application in Landscape")
+![Rechner Anwendung im Querformat](device-orientation-images/calculator-landscape.png)
 
 Beachten Sie, dass die apps den verfügbaren Speicherplatz nutzen, indem Sie mehr Funktionalität in Landscape hinzufügen.
 
@@ -147,11 +147,11 @@ Die oben genannten Regeln gelten auch für die Implementierung von Schnittstelle
 
 Beachten Sie die folgende Anwendung, die im Hochformat angezeigt wird:
 
-![](device-orientation-images/photo-stack-portrait.png "Photo Application in Portrait")
+![Foto Anwendung im Hochformat](device-orientation-images/photo-stack-portrait.png)
 
 und Querformat:
 
-![](device-orientation-images/photo-stack-landscape.png "Photo Application in Landscape")
+![Foto Anwendung im Querformat](device-orientation-images/photo-stack-landscape.png)
 
 Dies wird mit dem folgenden XAML erreicht:
 
@@ -221,11 +221,11 @@ Beachten Sie Folgendes:
 
 Beachten Sie die folgende Anwendung, die im Hochformat angezeigt wird:
 
-![](device-orientation-images/photo-abs-portrait.png "Photo Application in Portrait")
+![Foto Anwendung im Hochformat](device-orientation-images/photo-abs-portrait.png)
 
 und Querformat:
 
-![](device-orientation-images/photo-abs-landscape.png "Photo Application in Landscape")
+![Foto Anwendung im Querformat](device-orientation-images/photo-abs-landscape.png)
 
 Dies wird mit dem folgenden XAML erreicht:
 
@@ -273,11 +273,11 @@ Beachten Sie Folgendes:
 
 Beachten Sie die folgende Anwendung, die im Hochformat angezeigt wird:
 
-![](device-orientation-images/photo-rel-portrait.png "Photo Application in Portrait")
+![Foto Anwendung im Hochformat](device-orientation-images/photo-rel-portrait.png)
 
 und Querformat:
 
-![](device-orientation-images/photo-rel-landscape.png "Photo Application in Landscape")
+![Foto Anwendung im Querformat](device-orientation-images/photo-rel-landscape.png)
 
 Dies wird mit dem folgenden XAML erreicht:
 
@@ -364,11 +364,11 @@ Beachten Sie Folgendes:
 
 Beachten Sie die folgende Anwendung, die im Hochformat angezeigt wird:
 
-![](device-orientation-images/photo-grid-portrait.png "Photo Application in Portrait")
+![Foto Anwendung im Hochformat](device-orientation-images/photo-grid-portrait.png)
 
 und Querformat:
 
-![](device-orientation-images/photo-grid-landscape.png "Photo Application in Landscape")
+![Foto Anwendung im Querformat](device-orientation-images/photo-grid-landscape.png)
 
 Dies wird mit dem folgenden XAML erreicht:
 

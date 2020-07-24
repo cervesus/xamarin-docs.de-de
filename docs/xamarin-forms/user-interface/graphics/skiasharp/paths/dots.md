@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8698bacd7257df431b12166c749f5826e8d6fd3c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 47182578a6583dde34cb7f06e3433cdb2703f6ba
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138449"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937682"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>Punkte und Bindestriche in skiasharp
 
@@ -25,7 +25,7 @@ _Die Feinheiten der Zeichnung gepunkteter und gestrichelter Linien in skiasharp 
 
 Skiasharp ermöglicht das Zeichnen von Zeilen, die nicht Solid sind, sondern aus Punkten und Bindestrichen bestehen:
 
-![](dots-images/dottedlinesample.png "Dotted line")
+![Gepunktete Linie](dots-images/dottedlinesample.png)
 
 Dies erfolgt mit einem *Pfad Effekt*, bei dem es sich um eine Instanz der-Klasse handelt, die [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) Sie auf die-Eigenschaft von festgelegt haben [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) `SKPaint` . Mithilfe einer der statischen Erstellungs Methoden, die von definiert werden, können Sie einen Pfad Effekt erstellen (oder Pfad Effekte kombinieren) `SKPathEffect` . ( `SKPathEffect` ist einer von sechs Effekten, die von skiasharp unterstützt werden; die anderen werden im Abschnitt [**skiasharp-Effekt**](../effects/index.md)beschrieben.)
 
@@ -153,7 +153,7 @@ float[] GetPickerArray(Picker picker)
 
 In den folgenden Screenshots zeigt der IOS-Bildschirm ganz links eine gepunktete Linie:
 
-[![](dots-images/dotsanddashes-small.png "Triple screenshot of the Dots and Dashes page")](dots-images/dotsanddashes-large.png#lightbox "Triple screenshot of the Dots and Dashes page")
+[![Dreifacher Screenshot der Seite "Punkte und Bindestriche"](dots-images/dotsanddashes-small.png)](dots-images/dotsanddashes-large.png#lightbox "Dreifacher Screenshot der Seite "Punkte und Bindestriche"")
 
 Der Android-Bildschirm sollte jedoch auch eine gepunktete Linie mit dem Array "{10, 10}" anzeigen, aber die Linie ist "Solid". Was ist passiert? Das Problem besteht darin, dass auf dem Android-Bildschirm auch eine Strich Obergrenzen von festgelegt ist `Square` . Dadurch werden alle Bindestriche um die Hälfte der Strichbreite erweitert, sodass Sie die Lücken auffüllen.
 
@@ -214,7 +214,7 @@ public class AnimatedSpiralPage : ContentPage
 
 Natürlich müssen Sie das Programm tatsächlich ausführen, um die Animation zu sehen:
 
-[![](dots-images/animatedspiral-small.png "Triple screenshot of the Animated Spiral page")](dots-images/animatedspiral-large.png#lightbox "Triple screenshot of the Animated Spiral page")
+[![Dreifacher Screenshot der animierten Spiral Seite](dots-images/animatedspiral-small.png)](dots-images/animatedspiral-large.png#lightbox "Dreifacher Screenshot der animierten Spiral Seite")
 
 ## <a name="related-links"></a>Verwandte Links
 

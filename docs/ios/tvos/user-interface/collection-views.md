@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: aa03ab7a3663fa5e0704a605116b19147f14a10b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: fd1bf68e45fa163588d91640147d9e9dbf8ff237
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572584"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939489"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>Arbeiten mit tvos-Auflistungs Ansichten in xamarin
 
 Mithilfe von Sammlungs Ansichten kann eine Gruppe von Inhalten mit beliebigen Layouts angezeigt werden. Mithilfe integrierter Unterstützung ermöglichen Sie die einfache Erstellung von Raster ähnlichen oder linearen Layouts, während gleichzeitig auch benutzerdefinierte Layouts unterstützt werden.
 
-[![](collection-views-images/collection01.png "Sample collection view")](collection-views-images/collection01.png#lightbox)
+[![Beispiel Sammlungsansicht](collection-views-images/collection01.png)](collection-views-images/collection01.png#lightbox)
 
 Die Auflistungs Ansicht verwaltet eine Auflistung von Elementen, die sowohl einen Delegaten als auch eine Datenquelle verwenden, um die Benutzerinteraktion und den Inhalt der Auflistung bereitzustellen. Da die Auflistungs Ansicht auf einem layoutsubsystem basiert, das unabhängig von der Sicht ist, kann die Bereitstellung eines anderen Layouts die Darstellung der Daten der Sammlungsansicht im Handumdrehen ändern.
 
@@ -100,36 +100,36 @@ Führen Sie die folgenden Schritte aus:
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie im IOS-Designer.
 1. Fügen Sie der vorhandenen Ansicht eine Bildansicht, eine Bezeichnung und eine Schaltfläche hinzu, und konfigurieren Sie Sie so, dass Sie wie folgt aussieht: 
 
-    [![](collection-views-images/collection02.png "Sample layout")](collection-views-images/collection02.png#lightbox)
+    [![Beispiel Layout](collection-views-images/collection02.png)](collection-views-images/collection02.png#lightbox)
 1. Weisen Sie der Bildansicht und der Bezeichnung im **Eigenschaften-Explorer**auf der **Registerkarte widget** einen **Namen** zu. Beispiel: 
 
-    [![](collection-views-images/collection03.png "Setting the name")](collection-views-images/collection03.png#lightbox)
+    [![Festlegen des Namens](collection-views-images/collection03.png)](collection-views-images/collection03.png#lightbox)
 1. Ziehen Sie als nächstes einen Sammlungs Ansichts Controller auf das Storyboard: 
 
-    [![](collection-views-images/collection04.png "A Collection View Controller")](collection-views-images/collection04.png#lightbox)
+    [![Einen Sammlungs Ansichts Controller](collection-views-images/collection04.png)](collection-views-images/collection04.png#lightbox)
 1. Steuerelement: ziehen Sie von der Schaltfläche auf den Sammlungs Ansichts Controller, und wählen Sie im Popup Fenster **Push** aus: 
 
-    [![](collection-views-images/collection05.png "Select Push from the popup")](collection-views-images/collection05.png#lightbox)
+    [![Auswählen von Push aus dem Popup](collection-views-images/collection05.png)](collection-views-images/collection05.png#lightbox)
 1. Wenn die app ausgeführt wird, wird die Sammlungsansicht immer dann angezeigt, wenn der Benutzer auf die Schaltfläche klickt.
 1. Wählen Sie die Sammlungsansicht aus, und geben Sie im **Eigenschaften-Explorer**auf der **Registerkarte Layout** die folgenden Werte ein: 
 
-    [![](collection-views-images/collection06.png "The Properties Explorer")](collection-views-images/collection06.png#lightbox)
+    [![Der Eigenschaften-Explorer](collection-views-images/collection06.png)](collection-views-images/collection06.png#lightbox)
 1. Dadurch wird die Größe der einzelnen Zellen und der Rahmen zwischen den Zellen und dem äußeren Rand der Auflistungs Ansicht gesteuert.
 1. Wählen Sie den Sammlungs Ansichts Controller aus, und legen Sie seine Klasse auf `CityCollectionViewController` der **Registerkarte widget**auf fest: 
 
-    [![](collection-views-images/collection07.png "Set the class to CityCollectionViewController")](collection-views-images/collection07.png#lightbox)
+    [![Legen Sie die Klasse auf citycollectionviewcontroller fest.](collection-views-images/collection07.png)](collection-views-images/collection07.png#lightbox)
 1. Wählen Sie die Sammlungsansicht aus, und legen Sie Ihre Klasse auf `CityCollectionView` der **Registerkarte widget**auf fest: 
 
-    [![](collection-views-images/collection08.png "Set the class to CityCollectionView")](collection-views-images/collection08.png#lightbox)
+    [![Legen Sie die Klasse auf citycollectionview fest.](collection-views-images/collection08.png)](collection-views-images/collection08.png#lightbox)
 1. Wählen Sie die Zelle der Sammlungsansicht aus, und legen Sie Ihre Klasse auf `CityCollectionViewCell` der **Registerkarte widget**auf fest: 
 
-    [![](collection-views-images/collection09.png "Set the class to CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
+    [![Legen Sie die Klasse auf citycollectionviewcell fest.](collection-views-images/collection09.png)](collection-views-images/collection09.png#lightbox)
 1. Stellen Sie auf der **Registerkarte widget** sicher, dass das **Layout** lautet `Flow` und die **Scrollrichtung** `Vertical` für die Sammlungsansicht gilt: 
 
-    [![](collection-views-images/collection10.png "The Widget Tab")](collection-views-images/collection10.png#lightbox)
+    [![Die Widget-Registerkarte](collection-views-images/collection10.png)](collection-views-images/collection10.png#lightbox)
 1. Wählen Sie die Zelle der Sammlungsansicht aus, und legen Sie Ihre **Identität** auf `CityCell` der **Registerkarte widget**auf fest: 
 
-    [![](collection-views-images/collection11.png "Set the Identity to CityCell")](collection-views-images/collection11.png#lightbox)
+    [![Legen Sie die Identität auf citycell fest.](collection-views-images/collection11.png)](collection-views-images/collection11.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -138,34 +138,34 @@ Führen Sie die folgenden Schritte aus:
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie im IOS-Designer.
 1. Fügen Sie der vorhandenen Ansicht eine Bildansicht, eine Bezeichnung und eine Schaltfläche hinzu, und konfigurieren Sie Sie so, dass Sie wie folgt aussieht: 
 
-    [![](collection-views-images/collection02vs.png "Configure the layout")](collection-views-images/collection02vs.png#lightbox)
+    [![Layout konfigurieren](collection-views-images/collection02vs.png)](collection-views-images/collection02vs.png#lightbox)
 1. Weisen Sie der Bildansicht und der Bezeichnung im **Eigenschaften-Explorer**auf der **Registerkarte widget** einen **Namen** zu. Beispiel: 
 
-    [![](collection-views-images/collection03vs.png "The Properties Explorer")](collection-views-images/collection03vs.png#lightbox)
+    [![Der Eigenschaften-Explorer](collection-views-images/collection03vs.png)](collection-views-images/collection03vs.png#lightbox)
 1. Ziehen Sie als nächstes einen Sammlungs Ansichts Controller auf das Storyboard: 
 
-    [![](collection-views-images/collection04vs.png "A Collection View Controller")](collection-views-images/collection04vs.png#lightbox)
+    [![Einen Sammlungs Ansichts Controller](collection-views-images/collection04vs.png)](collection-views-images/collection04vs.png#lightbox)
 1. Steuerelement: ziehen Sie von der Schaltfläche auf den Sammlungs Ansichts Controller, und wählen Sie im Popup Fenster **Push** aus: 
 
-    [![](collection-views-images/collection05vs.png "Select Push from the popup")](collection-views-images/collection05vs.png#lightbox)
+    [![Auswählen von Push aus dem Popup](collection-views-images/collection05vs.png)](collection-views-images/collection05vs.png#lightbox)
 1. Wenn die app ausgeführt wird, wird die Sammlungsansicht immer dann angezeigt, wenn der Benutzer auf die Schaltfläche klickt.
 1. Wählen Sie die Sammlungsansicht aus, und geben Sie im **Eigenschaften-Explorer** auf der **Registerkarte Layout** die **Breite** als _361_ und **height** als _256_ ein. 
 1. Dadurch wird die Größe der einzelnen Zellen und der Rahmen zwischen den Zellen und dem äußeren Rand der Auflistungs Ansicht gesteuert.
 1. Wählen Sie den Sammlungs Ansichts Controller aus, und legen Sie seine Klasse auf `CityCollectionViewController` der **Registerkarte widget**auf fest: 
 
-    [![](collection-views-images/collection07vs.png "Set the class to CityCollectionViewController")](collection-views-images/collection07vs.png#lightbox)
+    [![Legen Sie die Klasse auf citycollectionviewcontroller fest.](collection-views-images/collection07vs.png)](collection-views-images/collection07vs.png#lightbox)
 1. Wählen Sie die Sammlungsansicht aus, und legen Sie Ihre Klasse auf `CityCollectionView` der **Registerkarte widget**auf fest: 
 
-    [![](collection-views-images/collection08vs.png "Set the class to CityCollectionView")](collection-views-images/collection08vs.png#lightbox)
+    [![Legen Sie die Klasse auf citycollectionview fest.](collection-views-images/collection08vs.png)](collection-views-images/collection08vs.png#lightbox)
 1. Wählen Sie die Zelle der Sammlungsansicht aus, und legen Sie Ihre Klasse auf `CityCollectionViewCell` der **Registerkarte widget**auf fest: 
 
-    [![](collection-views-images/collection09vs.png "Set the class to CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
+    [![Legen Sie die Klasse auf citycollectionviewcell fest.](collection-views-images/collection09vs.png)](collection-views-images/collection09vs.png#lightbox)
 1. Stellen Sie auf der **Registerkarte widget** sicher, dass das **Layout** lautet `Flow` und die **Scrollrichtung** `Vertical` für die Sammlungsansicht gilt: 
 
-    [![](collection-views-images/collection10vs.png "Tthe Widget Tab")](collection-views-images/collection10vs.png#lightbox)
+    [![Registerkarte "Widget"](collection-views-images/collection10vs.png)](collection-views-images/collection10vs.png#lightbox)
 1. Wählen Sie die Zelle der Sammlungsansicht aus, und legen Sie Ihre **Identität** auf `CityCell` der **Registerkarte widget**auf fest: 
 
-    [![](collection-views-images/collection11vs.png "Set the Identity to CityCell")](collection-views-images/collection11vs.png#lightbox)
+    [![Legen Sie die Identität auf citycell fest.](collection-views-images/collection11vs.png)](collection-views-images/collection11vs.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 -----
@@ -797,17 +797,17 @@ public override void ViewWillAppear (bool animated)
 
 Wenn Sie die APP erstellen und ausführen, wird die Hauptansicht mit der Standard Stadt angezeigt:
 
-[![](collection-views-images/run01.png "The main screen")](collection-views-images/run01.png#lightbox)
+[![Der Hauptbildschirm](collection-views-images/run01.png)](collection-views-images/run01.png#lightbox)
 
 Wenn der Benutzer auf die Schaltfläche " **Ansicht auswählen** " klickt, wird die Sammlungsansicht angezeigt:
 
-[![](collection-views-images/run02.png "The collection view")](collection-views-images/run02.png#lightbox)
+[![Die Auflistungs Ansicht](collection-views-images/run02.png)](collection-views-images/run02.png#lightbox)
 
 Jede Stadt, deren- `CanSelect` Eigenschaft auf festgelegt ist, `false` wird abgeblendet angezeigt, und der Benutzer kann den Fokus nicht darauf festlegen. Wenn der Benutzer ein Element hervorhebt (in den Fokus setzen), wird der Titel angezeigt, und Sie können den Wert des Parametern verwenden, um das Bild in 3D zu kippen.
 
 Wenn der Benutzer auf ein ausgewähltes Bild klickt, wird die Sammlungsansicht geschlossen und die Hauptansicht mit dem neuen Bild erneut angezeigt:
 
-[![](collection-views-images/run03.png "A new image on the home screen")](collection-views-images/run03.png#lightbox)
+[![Ein neues Bild auf dem Startbildschirm](collection-views-images/run03.png)](collection-views-images/run03.png#lightbox)
 
 <a name="Creating-Custom-Layout-and-Reordering-Items"></a>
 

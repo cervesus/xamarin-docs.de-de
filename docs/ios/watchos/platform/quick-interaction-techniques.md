@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 8b851721aa5b2b993ad64b89d90d02b5f2bd0ee3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e57b6df0f0137d5a8a8f2c0ba68793008986ba18
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028187"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932183"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Schnell Interaktions Techniken für watchos 3 in xamarin
 
@@ -22,7 +22,7 @@ Das Bereitstellen von schnellen Benutzerinteraktionen ist wichtig für das Erste
 
 ## <a name="what-are-quick-interactions"></a>Was sind schnelle Interaktionen?
 
-Für einen Entwickler, der zum Erstellen von Anwendungen für IOS oder macOS verwendet wird (wenn die Zeitspanne, in der ein Benutzer die Interaktion mit der APP verbringt, in Minuten oder Stunden gemessen wird), kann das Entwerfen einer erfolgreichen App für die Apple Watch eine Herausforderung sein und eine andere annäher.
+Für einen Entwickler, der zum Erstellen von Anwendungen für IOS oder macOS verwendet wird (wobei die Zeitspanne, in der ein Benutzer mit der APP interagiert, in Minuten oder Stunden gemessen wird), kann das Entwerfen einer erfolgreichen App für den Apple Watch eine Herausforderung darstellen und einen anderen Ansatz erfordern.
 
 In watchos möchte der Benutzer in der Regel sein Handgelenk erhöhen, schnell mit einer APP interagieren (in der Regel ein paar Sekunden), das Handumdrehen ablegen und den Vorgang fortsetzen.
 
@@ -63,11 +63,11 @@ Wenn der Entwickler Gesten Erkennungs Tools in ios implementiert hat, sollten Si
 watchos 3 unterstützt die vier folgenden Gesten Erkennungs Tools:
 
 - Diskrete Gesten Typen:
-  - Die Schwenkbewegung (`WKSwipeGestureRecognizer`).
-  - Die Tap-Geste (`WKTapGestureRecognizer`).
+  - Die Schwenkbewegung ( `WKSwipeGestureRecognizer` ).
+  - Die Tap-Geste ( `WKTapGestureRecognizer` ).
 - Fortlaufende Gesten Typen:
-  - Die Schwenkbewegung (`WKPanGestureRecognizer`).
-  - Die lange Press Bewegung (`WKLongPressGestureRecognizer`).
+  - Die schwenken-Bewegung ( `WKPanGestureRecognizer` ).
+  - Die lange Press Bewegung ( `WKLongPressGestureRecognizer` ).
 
 Wenn Sie eine der neuen Gesten Erkennungs Tools implementieren möchten, ziehen Sie Sie einfach auf eine Entwurfs Oberfläche im IOS-Designer in Visual Studio für Mac und konfigurieren Sie die zugehörigen Eigenschaften.
 
@@ -75,19 +75,19 @@ Reagieren Sie im Code auf die Aktion der Erkennung, um die vom Benutzer ausgelö
 
 #### <a name="discrete-gesture-states"></a>Diskrete Gesten Zustände
 
-Bei diskreten Gesten wird die Aktion aufgerufen, wenn die Geste erkannt wird und ein Zustand (`WKGestureRecognizerState`) wie folgt zugewiesen wird:
+Bei diskreten Gesten wird die Aktion aufgerufen, wenn die Geste erkannt wird und ein Zustand ( `WKGestureRecognizerState` ) wie folgt zugewiesen wird:
 
-[![](quick-interaction-techniques-images/quick01.png "Discrete Gesture States")](quick-interaction-techniques-images/quick01.png#lightbox)
+[![Diskrete Gesten Zustände](quick-interaction-techniques-images/quick01.png)](quick-interaction-techniques-images/quick01.png#lightbox)
 
-Alle diskreten Gesten beginnen im `Possible` Status und wechseln entweder in den `Failed`-oder `Recognized` Zustand. Bei der Verwendung diskreter Gesten behandelt der Entwickler im Allgemeinen nicht direkt den Zustand. Stattdessen verlassen Sie sich auf die Aktion, die aufgerufen wird, wenn die Geste nur erkannt wird.
+Alle diskreten Gesten beginnen im `Possible` -Zustand und wechseln entweder in den Zustand `Failed` oder `Recognized` . Bei der Verwendung diskreter Gesten behandelt der Entwickler im Allgemeinen nicht direkt den Zustand. Stattdessen verlassen Sie sich auf die Aktion, die aufgerufen wird, wenn die Geste nur erkannt wird.
 
 #### <a name="continuous-gesture-states"></a>Fortlaufende Gesten Zustände
 
 Fortlaufende Gesten unterscheiden sich geringfügig von diskreten Gesten, bei denen die Aktion mehrmals aufgerufen wird, während die Geste erkannt wird:
 
-[![](quick-interaction-techniques-images/quick02.png "Continuous Gesture States")](quick-interaction-techniques-images/quick02.png#lightbox)
+[![Fortlaufende Gesten Zustände](quick-interaction-techniques-images/quick02.png)](quick-interaction-techniques-images/quick02.png#lightbox)
 
-Auch in diesem Fall werden fortlaufende Gesten im `Possible` Zustand gestartet, aber Sie werden über mehrere Updates ausgeführt. Hier muss der Entwickler den Zustand der Erkennung in Erwägung gezogen und die Benutzeroberfläche der APP während der `Changed` Phase aktualisieren, bis die Geste zum Schluss `Recognized` oder `Canceled`ist.
+Auch hier beginnen fortlaufende Gesten im- `Possible` Zustand, Sie werden jedoch über mehrere Updates ausgeführt. Hier muss der Entwickler den Zustand der Erkennung in Erwägung gezogen und die Benutzeroberfläche der APP während der `Changed` Phase aktualisieren, bis die Geste schließlich `Recognized` oder ist `Canceled` .
 
 #### <a name="gesture-recognizer-usage-tips"></a>Verwendungs Tipps für Gestenerkennung
 
@@ -103,9 +103,9 @@ Apple empfiehlt Folgendes bei der Arbeit mit Gesten Erkennungs Programmen in wat
 
 Wenn Sie Digital Crown Unterstützung in ihren watchos 3-apps implementieren, kann ein Entwickler eine bessere Navigations Geschwindigkeit und Genauigkeits Interaktionen für Ihre Benutzer bereitstellen.
 
-Seit watchos 2 könnte Apple Watch APP das `WKInterfacePicker`-Objekt verwenden, um auf die Digital Crown zuzugreifen, indem eine Liste von `WKPickerItems` und eine Auswahlliste (Listen-, gestapelte oder Bildsequenz) bereitgestellt wird. watchos gestattet dem Benutzer dann die Verwendung der Digital Crown, um ein Element aus der Liste auszuwählen.
+Seit watchos 2 könnte Apple Watch-APP das-Objekt verwenden, `WKInterfacePicker` um auf die Digital Crown zuzugreifen, indem eine Liste von und eine Auswahl Formatvorlage `WKPickerItems` (Listen-, gestapelte oder Bildsequenz) bereitgestellt wird. watchos gestattet dem Benutzer dann die Verwendung der Digital Crown, um ein Element aus der Liste auszuwählen.
 
-Wenn Sie einen `WKInterfacePicker`verwenden, verarbeitet watchkit den größten Teil der Arbeit wie folgt:
+Wenn Sie einen verwenden `WKInterfacePicker` , verarbeitet watchkit den größten Teil der Arbeit wie folgt:
 
 - Zeichnen der Liste und der einzelnen Schnittstellen Elemente.
 - Die Digital Crown Ereignisse werden verarbeitet.
@@ -115,12 +115,12 @@ Neu bei watchos 3: der Entwickler verfügt jetzt über direkten Zugriff auf die 
 
 Digital Crown Zugriff wird von folgenden Elementen bereitgestellt:
 
-- `WKCrownSequencer`: ermöglicht den Zugriff auf Drehungen pro Sekunde.
-- `WKCrownDelegate`: ermöglicht den Zugriff auf Rotelle Delta Ereignisse.
+- `WKCrownSequencer`-Ermöglicht den Zugriff auf Drehungen pro Sekunde.
+- `WKCrownDelegate`-Ermöglicht den Zugriff auf Rotelle Delta Ereignisse.
 
 #### <a name="rotations-per-second"></a>Rotationen pro Sekunde
 
-Der Zugriff auf die Rotationen pro Sekunde aus dem Digital Crown ist bei der Arbeit mit Physik basierten Animationen nützlich. Um auf die Drehungen pro Sekunde zuzugreifen, verwenden Sie die `CrownSequencer`-Eigenschaft des `WKInterfaceController` der Watch-Erweiterung. Beispiel:
+Der Zugriff auf die Rotationen pro Sekunde aus dem Digital Crown ist bei der Arbeit mit Physik basierten Animationen nützlich. Um auf die Drehungen pro Sekunde zuzugreifen, verwenden Sie die- `CrownSequencer` Eigenschaft des der `WKInterfaceController` Watch-Erweiterung. Beispiel:
 
 ```csharp
 var rotationsPerSecond = CrownSequencer.RotationsPerSecond;
@@ -128,7 +128,7 @@ var rotationsPerSecond = CrownSequencer.RotationsPerSecond;
 
 #### <a name="rotational-deltas"></a>Rotale Delta
 
-Verwenden Sie die Rotations Delta aus der Digital Crown, um die Anzahl der Rotationen zu zählen. Verwenden Sie die `CrownDidRotate` Überschreibungs Methode des `WKCrownDelegate`, um auf die Rotations Delta zuzugreifen. Beispiel:
+Verwenden Sie die Rotations Delta aus der Digital Crown, um die Anzahl der Rotationen zu zählen. Verwenden `CrownDidRotate` Sie die Überschreibungs Methode von `WKCrownDelegate` , um auf die Rotations Delta zuzugreifen. Beispiel:
 
 ```csharp
 using System;
@@ -162,13 +162,13 @@ namespace MonkeyWatch.MonkeySeeExtension
 }
 ```
 
-Hier verwaltet die APP einen Akkumulator (`AccumulatedRotations`), um die Anzahl der Rotationen zu bestimmen. Eine vollständige Drehung des Digital Crown ist gleich einem akkumulierten Delta von `1.0`, und eine halbe Drehung wäre `0.5`.
+Hier verwaltet die APP einen Akkumulator ( `AccumulatedRotations` ), um die Anzahl der Rotationen zu bestimmen. Eine vollständige Drehung des Digital Crown ist gleich einem akkumulierten Delta von, `1.0` und eine halbe Drehung wäre `0.5` .
 
 Apple hat es dem Entwickler ausgelassen, um zu bestimmen, wie die rotationszähler der Vertraulichkeit von Änderungen auf dem zu aktualisierenden Benutzeroberflächen Element entsprechen.
 
-Das Vorzeichen (`+/-`) des rotationdeltas gibt die Richtung an, in der der Benutzer die Digital Crown schaltet:
+Das Zeichen ( `+/-` ) des rotierenden Deltas gibt die Richtung an, in der der Benutzer den Digital Crown schaltet:
 
-[![](quick-interaction-techniques-images/quick03.png "The sign of the Rotational Delta indicates the direction that the user is turning the Digital Crown")](quick-interaction-techniques-images/quick03.png#lightbox)
+[![Das Vorzeichen des rotationdeltas gibt die Richtung an, in der der Benutzer den Digital Crown](quick-interaction-techniques-images/quick03.png)](quick-interaction-techniques-images/quick03.png#lightbox)
 
 Wenn der Benutzer einen Bildlauf nach oben durchführt, gibt watchkit positive Delta-Elemente zurück. Wenn Sie den Bildlauf nach unten durchführen, werden negative Delta-Elemente zurückgegeben, unabhängig davon, in welcher Richtung der Benutzer die Überwachung durchführt.
 
@@ -186,17 +186,17 @@ Es ist für den Entwickler von Bedeutung, zu bestimmen, wann sein benutzerdefini
 
 ### <a name="vertical-paging"></a>Vertikales Paging
 
-Die Standardmethode, mit der ein Benutzer eine Tabellenansicht in einer watchos-App navigiert, besteht darin, einen Bildlauf zu den gewünschten Daten vorzunehmen, auf eine bestimmte Zeile zu tippen, um die ausführliche Ansicht anzuzeigen, und dann auf die Schaltfläche "zurück", um die Details anzuzeigen und den Vorgang für alle anderen Informationen wiederholen, die y ist an der Tabelle in der Tabelle interessiert:
+Die Standardmethode, mit der ein Benutzer eine Tabellenansicht in einer watchos-App navigiert, besteht darin, einen Bildlauf zu den gewünschten Daten vorzunehmen, auf eine bestimmte Zeile zu tippen, um die ausführliche Ansicht anzuzeigen, und dann auf die Schaltfläche "zurück" zu klicken, wenn Sie die Details anzeigen und den Vorgang für alle anderen Informationen wiederholen, die für Sie von Interesse sind
 
-[![](quick-interaction-techniques-images/quick04.png "Moving between a table and the Detail view")](quick-interaction-techniques-images/quick04.png#lightbox)
+[![Verschieben zwischen einer Tabelle und der Detail Ansicht](quick-interaction-techniques-images/quick04.png)](quick-interaction-techniques-images/quick04.png#lightbox)
 
 Neu bei watchos 3, der Entwickler kann das vertikale Paging auf den Tabellen Sicht-Steuerelementen aktivieren. Wenn diese Funktion aktiviert ist, kann der Benutzer einen Bildlauf durchführen, um eine Tabellen Ansichts Zeile zu suchen und auf die Zeile zu tippen, um Details wie zuvor anzuzeigen Allerdings können Sie jetzt nach oben navigieren, um die nächste Zeile in der Tabelle oder nach unten zu wählen, um die vorherige Zeile auszuwählen (oder die Digital Crown zu verwenden), ohne dass Sie zuerst zur Tabellenansicht zurückkehren müssen:
 
-[![](quick-interaction-techniques-images/quick05.png "Moving between a table and the Detail view and swiping up and down to move between the other rows")](quick-interaction-techniques-images/quick05.png#lightbox)
+[![Verschieben zwischen einer Tabelle und der Detail Ansicht und schwenken nach oben und unten, um zwischen den anderen Zeilen zu wechseln](quick-interaction-techniques-images/quick05.png)](quick-interaction-techniques-images/quick05.png#lightbox)
 
 Öffnen Sie zum Aktivieren dieses Modus das Storyboard der watchos-app in Xcode für die Bearbeitung, wählen Sie die Tabellenansicht aus, und aktivieren Sie das Kontrollkästchen **vertikale Detail Auslagerung** :
 
-[![](quick-interaction-techniques-images/quick06.png "Check the Vertical Detail Paging checkbox")](quick-interaction-techniques-images/quick06.png#lightbox)
+[![Aktivieren des Kontrollkästchens "vertikale Detail Auslagerung"](quick-interaction-techniques-images/quick06.png)](quick-interaction-techniques-images/quick06.png#lightbox)
 
 Stellen Sie sicher, dass in der Tabelle mithilfe von-Listen die ausführliche Ansicht angezeigt wird, und speichern Sie die Änderungen im Storyboard, und kehren Sie zur Synchronisierung zurück Visual Studio für Mac.
 
@@ -244,7 +244,7 @@ In watchos 3 können lokale Benachrichtigungen auf dem Apple Watch geplant werde
 
 Durch einschließen desselben Benachrichtigungs Bezeichners sowohl in der Apple Watch-als auch in der iPhone-Version der Benachrichtigungen wird verhindert, dass doppelte Benachrichtigungen auf der Überwachung angezeigt werden. Die Apple Watch Version der Benachrichtigung hat Vorrang vor der iPhone-Version.
 
-Da watchos 3 dasselbe `UINotification` API-Framework wie IOS 10 verwendet, finden Sie weitere Informationen in unserer Dokumentation zum IOS 10 [User Notification Framework](~/ios/platform/user-notifications/index.md) .
+Da watchos 3 dasselbe API- `UINotification` Framework wie IOS 10 verwendet, finden Sie weitere Informationen in unserer Dokumentation zum IOS 10- [Benutzer Benachrichtigungs Framework](~/ios/platform/user-notifications/index.md) .
 
 ### <a name="using-spritekit-and-scenekit"></a>Verwenden von spritekit und scenekit
 
@@ -252,12 +252,12 @@ Neu bei watchos 3: der Entwickler kann nun sowohl spritkit-als auch scenekit-Obj
 
 Zur Unterstützung dieses Features wurden zwei neue Schnittstellen Klassen hinzugefügt:
 
-- `WKInterfaceSKScene` für das Arbeiten mit spritekit 2D-Grafiken.
-- `WKInterfaceSCNScene` für das Arbeiten mit scenekit 3D-Grafiken.
+- `WKInterfaceSKScene`: Für die Arbeit mit spritekit 2D-Grafiken.
+- `WKInterfaceSCNScene`-Für die Arbeit mit scenekit 3D-Grafiken.
 
 Um diese Objekte zu verwenden, ziehen Sie Sie einfach auf die Entwurfs Oberfläche innerhalb des Storyboards der Watch-app in der Interface Builder von Xcode, und verwenden Sie den **Attribute Inspector** , um Sie zu konfigurieren.
 
-An diesem Punkt funktioniert das Arbeiten mit den spritekit-oder scenekit-Szenen genauso wie in einer IOS-app. Die Watch-APP zeigt eine `WKInterfaceSKScene` an, indem eine der `Present` Methoden aufgerufen wird. Legen Sie für scenekit einfach die `Scene`-Eigenschaft des `WKInterfaceSCNScene`-Objekts fest.
+An diesem Punkt funktioniert das Arbeiten mit den spritekit-oder scenekit-Szenen genauso wie in einer IOS-app. Die Watch-App stellt eine `WKInterfaceSKScene` durch Aufrufen einer der- `Present` Methoden dar. Legen Sie für scenekit einfach die- `Scene` Eigenschaft des- `WKInterfaceSCNScene` Objekts fest.
 
 ## <a name="actionable-complications"></a>Ausführbare Komplikationen
 
@@ -310,9 +310,9 @@ Apple empfiehlt das Suchen nach Möglichkeiten, um alle neuen schnell Interaktio
 
 Ein gut konzipiertes schnelles Interaktions Verhalten bietet dem Benutzer die Zuversicht, das Handgelenk zu löschen (und sich mit der APP zu lösen), wenn die aktuelle Interaktion abgeschlossen ist.
 
-Dies ist insbesondere dann der Fall, wenn die Watch-App eine beliebige Art von Netzwerkverbindung oder Freigabe Informationen mit der begleitenden iPhone-App durch nimmt. Dies kann häufig zu einem wartenden Indikator führen, während die Transaktion stattfindet, was bei einer schnellen Interaktion nicht wünschenswert ist. Betrachten Sie das folgende Beispiel:
+Dies ist insbesondere dann der Fall, wenn die Watch-App eine beliebige Art von Netzwerkverbindung oder Freigabe Informationen mit der begleitenden iPhone-App durch nimmt. Dies kann häufig zu einem wartenden Indikator führen, während die Transaktion stattfindet, was bei einer schnellen Interaktion nicht wünschenswert ist. Sehen Sie sich das folgende Beispiel an.
 
-[![](quick-interaction-techniques-images/quick07.png "Diagram of the watch app doing a network connection and sharing information with its companion iPhone app")](quick-interaction-techniques-images/quick07.png#lightbox)
+[![Diagramm der Watch-APP, die eine Netzwerkverbindung erstellt und Informationen mit der begleitenden iPhone-App freigibt](quick-interaction-techniques-images/quick07.png)](quick-interaction-techniques-images/quick07.png#lightbox)
 
 1. Der Benutzer wählt ein Element aus, das Sie bei der Überwachung erwerben möchten.
 2. Sie tippen auf die Schaltfläche "kaufen".
@@ -324,7 +324,7 @@ Ab dem Zeitpunkt, an dem der Benutzer auf die Schaltfläche "kaufen" tippt, bis 
 
 Verwenden Sie das von Apple vorgeschlagene Modell, und sehen Sie sich die gleiche schnelle Interaktion erneut an:
 
-[![](quick-interaction-techniques-images/quick08.png "Apples suggested model diagram")](quick-interaction-techniques-images/quick08.png#lightbox)
+[![Vom Apple vorgeschlagene Modell Diagramm](quick-interaction-techniques-images/quick08.png)](quick-interaction-techniques-images/quick08.png#lightbox)
 
 1. Der Benutzer wählt ein Element aus, das Sie bei der Überwachung erwerben möchten.
 2. Sie tippen auf die Schaltfläche "kaufen".
@@ -334,7 +334,7 @@ Verwenden Sie das von Apple vorgeschlagene Modell, und sehen Sie sich die gleich
 
 Sobald der Benutzer auf die Schaltfläche "kaufen" tippt, wird eine Meldung mit dem Hinweis angezeigt, dass der Kauf gestartet wurde, sodass er das Handgelenk und die schnelle Interaktion zu diesem Zeitpunkt zuverlässig ablegen kann. Später werden Sie über den Erfolg oder Misserfolg der Transaktion in einer Benutzer Benachrichtigung informiert. Auf diese Weise interagiert der Benutzer nur während der "aktiven" Phasen des Prozesses mit der app.
 
-Für apps, die Netzwerke ausführen, können Sie eine Hintergrund `NSURLSession` verwenden, um die Netzwerkkommunikation mit einer Download Aufgabe zu verarbeiten. Dadurch kann die APP im Hintergrund reaktiviert werden, um die heruntergeladenen Informationen zu verarbeiten. Verwenden Sie für eine APP, die eine Hintergrundverarbeitung erfordert, eine Hintergrundaufgaben Erklärung, um die erforderliche Verarbeitung zu verarbeiten.
+Für apps, die Netzwerke ausführen, können Sie einen Hintergrund verwenden, `NSURLSession` um die Netzwerkkommunikation mit einer Download Aufgabe zu bewältigen. Dadurch kann die APP im Hintergrund reaktiviert werden, um die heruntergeladenen Informationen zu verarbeiten. Verwenden Sie für eine APP, die eine Hintergrundverarbeitung erfordert, eine Hintergrundaufgaben Erklärung, um die erforderliche Verarbeitung zu verarbeiten.
 
 ## <a name="quick-interaction-design-tips"></a>Entwurfs Tipps für die schnelle Interaktion
 

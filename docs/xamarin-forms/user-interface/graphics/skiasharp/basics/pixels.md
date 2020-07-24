@@ -19,7 +19,7 @@ ms.locfileid: "86937305"
 ---
 # <a name="pixels-and-device-independent-units"></a>Pixel und geräteunabhängige Einheiten
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Untersuchen der Unterschiede zwischen skiasharp-Koordinaten und- Xamarin.Forms Koordinaten_
 
@@ -166,7 +166,7 @@ SKRect rect = new SKRect(strokeWidth / 2,
 canvas.DrawOval(rect, paint);
 ```
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Skiasharp-APIs](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [Skiasharpformsdemos (Beispiel)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

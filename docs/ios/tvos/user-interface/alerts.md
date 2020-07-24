@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: ed58694073f8d04d16cf19840a07f5210f0afb91
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1274fc409cd20b974c44fecd87b6d1b175591710
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574066"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930168"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>Arbeiten mit tvos-Warnungen in xamarin
 
@@ -20,7 +20,7 @@ _In diesem Artikel wird das Arbeiten mit uialertcontroller erläutert, um dem Be
 
 Wenn Sie den tvos-Benutzer aufmerksam machen oder die Berechtigung zum Ausführen einer destruktiven Aktion (z. b. zum Löschen einer Datei) anfordern müssen, können Sie eine Warnmeldung mit dem anzeigen `UIAlertViewController` :
 
-[![](alerts-images/alert01.png "An example UIAlertViewController")](alerts-images/alert01.png#lightbox)
+[![Ein Beispiel für uialertviewcontroller](alerts-images/alert01.png)](alerts-images/alert01.png#lightbox)
 
 Wenn Sie eine Meldung hinzufügen, können Sie einer Warnung Schaltflächen und Textfelder hinzufügen, damit der Benutzer auf Aktionen Antworten und Feedback bereitstellen kann.
 
@@ -30,7 +30,7 @@ Wenn Sie eine Meldung hinzufügen, können Sie einer Warnung Schaltflächen und 
 
 Wie bereits erwähnt, werden Warnungen verwendet, um die Aufmerksamkeit des Benutzers zu erhalten und Sie über den Status Ihrer APP zu informieren oder Feedback anzufordern. Warnungen müssen einen Titel enthalten, Sie können optional eine Meldung und eine oder mehrere Schaltflächen oder Textfelder enthalten.
 
-[![](alerts-images/alert04.png "An example alert")](alerts-images/alert04.png#lightbox)
+[![Beispiel für eine Warnung](alerts-images/alert04.png)](alerts-images/alert04.png#lightbox)
 
 Apple hat die folgenden Vorschläge zum Arbeiten mit Warnungen:
 
@@ -117,11 +117,11 @@ Die `AddAction` -Methode fügt die angegebene Aktion dem hinzu, `UIAlertViewCont
 
 Zusätzlich zum Hinzufügen von Aktionen (Schaltflächen) zur Warnung können Sie der Warnung Text Felder hinzufügen, um dem Benutzer das Ausfüllen von Informationen wie Benutzer-IDs und Kenn Wörtern zu ermöglichen:
 
-[![](alerts-images/alert02.png "Text Field in an alert")](alerts-images/alert02.png#lightbox)
+[![Textfeld in einer Warnung](alerts-images/alert02.png)](alerts-images/alert02.png#lightbox)
 
 Wenn der Benutzer das Textfeld auswählt, wird die Standardtastatur von tvos angezeigt, sodass Sie einen Wert für das Feld eingeben können:
 
-[![](alerts-images/alert03.png "Entering text")](alerts-images/alert03.png#lightbox)
+[![Eingeben von Text](alerts-images/alert03.png)](alerts-images/alert03.png#lightbox)
 
 Der folgende Code zeigt eine OK/Cancel-Warnung mit einem einzelnen Textfeld für die Eingabe eines Werts an:
 

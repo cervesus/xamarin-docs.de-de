@@ -7,12 +7,12 @@ ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: e117fce77e9cdc8d9e9dc8b9ed7b3aa22eca4e39
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ee3897f14c460149e840fcea8b3fb533beeab935
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001716"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931624"
 ---
 # <a name="working-with-watchos-app-groups-in-xamarin"></a>Arbeiten mit watchos-App-Gruppen in xamarin
 
@@ -28,15 +28,15 @@ Der freigegebene Speicherort wird mit einer [App-Gruppe](https://developer.apple
 
 ### <a name="provisioning"></a>Bereitstellung
 
-Die APP-Gruppe verfügt über einen Bezeichner, bei dem es sich in der Regel um die Bündel-ID mit einem `group.` Präfix Beispielsweise können wir die Bündel-ID `com.xamarin.WatchSettings` und die APP-Gruppe `group.com.xamarin.WatchSettings`verwenden.
+Die APP-Gruppe verfügt über einen Bezeichner, der in der Regel die Bündel-ID mit einem `group.` Präfix ist. Beispielsweise könnten wir die Bündel `com.xamarin.WatchSettings` -ID und die APP-Gruppe verwenden `group.com.xamarin.WatchSettings` .
 
-[![](app-groups-images/app-group-sml.png "Use the Bundle ID com.xamarin.WatchSettings and the app group   group.com.xamarin.WatchSettings")](app-groups-images/app-group.png#lightbox)
+[![Verwenden Sie die Bündel-ID com. xamarin. watchsettings und die APP-Gruppen Gruppe. com. xamarin. watchsettings.](app-groups-images/app-group-sml.png)](app-groups-images/app-group.png#lightbox)
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
 Aktivieren Sie auch das Bereitstellungs Profil, **Aktivieren Sie App-Gruppen** in der Liste " **Berechtigungen. plist** ", und geben Sie die ID ein, die Sie ausgewählt haben:
 
-[![](app-groups-images/entitlements-sml.png "Configure the plist and enter the ID")](app-groups-images/entitlements.png#lightbox)
+[![Plist konfigurieren und die ID eingeben](app-groups-images/entitlements-sml.png)](app-groups-images/entitlements.png#lightbox)
 
 ### <a name="deployment"></a>Bereitstellung
 

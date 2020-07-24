@@ -10,12 +10,12 @@ ms.date: 06/27/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e86224ffb5da3f4b300c82a2821cee0a9b17469d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135706"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939333"
 ---
 # <a name="adding-appcompat-and-material-design"></a>Hinzufügen von AppCompat und Material Design
 
@@ -37,7 +37,7 @@ Stellen Sie sicher, dass die Lösung Xamarin.Forms 2,0 oder höher verwendet. Ak
 
 Stellen Sie sicher, dass das Ziel Framework des Android-Projekts Android 6,0 (Marshmallow) ist. Aktivieren Sie das **Android-Projekt > Optionen > Build > allgemeinen** Einstellungen, um sicherzustellen, dass das Corrent-Framework ausgewählt ist:
 
- ![](appcompat-images/target-android-6-sml.png "Android General Build Configuration")
+ ![Allgemeine Android-Buildkonfiguration](appcompat-images/target-android-6-sml.png)
 
 ### <a name="3-add-new-themes-to-support-material-design"></a>3. Hinzufügen von neuen Designs zur Unterstützung von Material Design
 

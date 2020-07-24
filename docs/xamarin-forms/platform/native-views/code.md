@@ -10,12 +10,12 @@ ms.date: 04/27/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 18cdeccbdff86a6b20aab4b33db259f1f06ee096
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4cad46bdee1b49c316947bc56bdb69a3b9e9a270
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139593"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938209"
 ---
 # <a name="native-views-in-c"></a>Native Ansichten in C\#
 
@@ -29,7 +29,7 @@ Jedes Xamarin.Forms Steuerelement, das `Content` festgelegt werden kann oder das
 
 Die folgenden Screenshots veranschaulichen plattformspezifische Sichten, die zu einem hinzugefügt wurden Xamarin.Forms [`StackLayout`](xref:Xamarin.Forms.StackLayout) :
 
-[![](code-images/screenshots-sml.png "StackLayout Containing Platform-Specific Views")](code-images/screenshots.png#lightbox "StackLayout Containing Platform-Specific Views")
+[![Stacklayout mit plattformspezifischen Ansichten](code-images/screenshots-sml.png)](code-images/screenshots.png#lightbox "Stacklayout mit plattformspezifischen Ansichten")
 
 Die Möglichkeit, plattformspezifische Ansichten einem Layout hinzuzufügen, Xamarin.Forms wird auf jeder Plattform durch zwei Erweiterungs Methoden ermöglicht:
 
@@ -132,7 +132,7 @@ stackLayout.Children.Add (customControl);
 
 Da die Überschreibung jedoch `CustomControl.SizeThatFits` immer die Höhe 150 zurückgibt, wird die Ansicht mit einem leeren Bereich oberhalb und darunter angezeigt, wie im folgenden Screenshot zu sehen:
 
-![](code-images/ios-bad-measurement.png "iOS CustomControl with Bad SizeThatFits Implementation")
+![IOS CustomControl mit fehlerhafter size-fits-Implementierung](code-images/ios-bad-measurement.png)
 
 Eine Lösung für dieses Problem besteht darin, eine-Implementierung bereitzustellen `GetDesiredSizeDelegate` , wie im folgenden Codebeispiel gezeigt:
 
@@ -163,7 +163,7 @@ stackLayout.Children.Add (customControl, FixSize);
 
 Dies führt dazu, dass die benutzerdefinierte Ansicht ordnungsgemäß angezeigt wird, ohne dass ein leerer Leerraum oberhalb und unterhalb angezeigt wird, wie im folgenden Screenshot zu sehen:
 
-![](code-images/ios-good-measurement.png "iOS CustomControl with GetDesiredSize Override")
+![IOS CustomControl mit getdesiredsize-außer Kraft Setzung](code-images/ios-good-measurement.png)
 
 ### <a name="android"></a>Android
 
@@ -201,7 +201,7 @@ stackLayout.Children.Add (customControl);
 
 Da die Überschreibung jedoch `CustomControl.OnMeasure` immer die Hälfte der angeforderten Breite zurückgibt, wird die Ansicht nur die Hälfte der verfügbaren Breite des Geräts angezeigt, wie im folgenden Screenshot zu sehen:
 
-![](code-images/android-bad-measurement.png "Android CustomControl with Bad OnMeasure Implementation")
+![Android CustomControl mit fehlerhafter onmeasure-Implementierung](code-images/android-bad-measurement.png)
 
 Eine Lösung für dieses Problem besteht darin, eine-Implementierung bereitzustellen `GetDesiredSizeDelegate` , wie im folgenden Codebeispiel gezeigt:
 
@@ -230,7 +230,7 @@ stackLayout.Children.Add (customControl, FixSize);
 
 Dies führt dazu, dass die benutzerdefinierte Ansicht ordnungsgemäß angezeigt wird, wobei die Breite des Geräts belegt wird, wie im folgenden Screenshot zu sehen:
 
-![](code-images/android-good-measurement.png "Android CustomControl with Custom GetDesiredSize Delegate")
+![Android CustomControl mit benutzerdefiniertem getdesiredsize-Delegaten](code-images/android-good-measurement.png)
 
 ### <a name="universal-windows-platform"></a>Universelle Windows-Plattform
 
@@ -298,7 +298,7 @@ stackLayout.Children.Add(brokenControl);
 
 Da die Überschreibung jedoch `CustomControl.ArrangeOverride` immer die Hälfte der angeforderten Breite zurückgibt, wird die Ansicht auf die Hälfte der verfügbaren Breite des Geräts zugeschnitten, wie im folgenden Screenshot zu sehen:
 
-![](code-images/winrt-bad-measurement.png "UWP CustomControl with Bad ArrangeOverride Implementation")
+![UWP CustomControl mit fehlerhafter ArrangeOverride-Implementierung](code-images/winrt-bad-measurement.png)
 
 Eine Lösung für dieses Problem besteht darin, eine-Implementierung bereitzustellen `ArrangeOverrideDelegate` , wenn die Ansicht hinzugefügt wird [`StackLayout`](xref:Xamarin.Forms.StackLayout) , wie im folgenden Codebeispiel gezeigt:
 
@@ -317,7 +317,7 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 
 Diese Methode verwendet die von der-Methode bereitgestellte Breite `CustomControl.ArrangeOverride` , multipliziert Sie jedoch mit zwei. Dies führt dazu, dass die benutzerdefinierte Ansicht ordnungsgemäß angezeigt wird, wobei die Breite des Geräts belegt wird, wie im folgenden Screenshot zu sehen:
 
-![](code-images/winrt-good-measurement.png "UWP CustomControl with ArrangeOverride Delegate")
+![UWP CustomControl mit ArrangeOverride-Delegaten](code-images/winrt-good-measurement.png)
 
 ## <a name="summary"></a>Zusammenfassung
 

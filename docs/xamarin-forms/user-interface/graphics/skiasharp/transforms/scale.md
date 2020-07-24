@@ -10,12 +10,12 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bdf33f499bf43d99436cef815c03d35b27866b80
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5cb43bfe572b98a6530dfeb8d923ac71b5b633a7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140178"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932041"
 ---
 # <a name="the-scale-transform"></a>Die Skalierungstransformation
 
@@ -25,7 +25,7 @@ _Entdecken Sie die skiasharp-Skalierungs Transformation zum Skalieren von Objekt
 
 Wie Sie im Artikel [**übersetzen der Transformation**](translate.md) gesehen haben, kann die Translation-Transformation ein grafisches Objekt von einem Speicherort zu einem anderen verschieben. Im Gegensatz dazu ändert die Skalierungs Transformation die Größe des grafischen Objekts:
 
-![](scale-images/scaleexample.png "A tall word scaled in size")
+![Ein großes Wort, das in Größe skaliert ist](scale-images/scaleexample.png)
 
 Die Skalierungs Transformation bewirkt auch häufig, dass Grafik Koordinaten verschoben werden, wenn Sie größer werden.
 
@@ -109,7 +109,7 @@ Sie Fragen sich vielleicht: Wie wirken sich die Skalierungsfaktoren auf den von 
 
 Wie Sie sehen, nimmt alles, was nach dem-aufzurufen gezeichnet wird, `Scale` proportional zu:
 
-[![](scale-images/basicscale-small.png "Triple screenshot of the Basic Scale page")](scale-images/basicscale-large.png#lightbox "Triple screenshot of the Basic Scale page")
+[![Dreifacher Screenshot der grundlegenden Skalierungs Seite](scale-images/basicscale-small.png)](scale-images/basicscale-large.png#lightbox "Dreifacher Screenshot der grundlegenden Skalierungs Seite")
 
 Der Text, die Breite der gestrichelten Linie, die Länge der Bindestriche in dieser Zeile, die Rundung der Ecken und der 10-Pixel-Rand zwischen dem linken und oberen Rand des Canvas und das abgerundete Rechteck unterliegen den gleichen Skalierungsfaktoren.
 
@@ -171,7 +171,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 In der oberen linken Ecke des gerundeten Rechtecks werden `margin` Pixel von der linken Seite des Zeichen Bereichs und `margin` Pixel vom oberen Rand positioniert. Die letzten zwei Argumente der- `Scale` Methode werden auf diese Werte festgelegt, zuzüglich der Breite und Höhe des Texts, bei der es sich auch um die Breite und Höhe des gerundeten Rechtecks handelt. Dies bedeutet, dass die gesamte Skalierung relativ zum Mittelpunkt dieses Rechtecks ist:
 
-[![](scale-images/centeredscale-small.png "Triple screenshot of the Centered Scale page")](scale-images/centeredscale-large.png#lightbox "Triple screenshot of the Centered Scale page")
+[![Dreifacher Screenshot der zentrierten Skalierungs Seite](scale-images/centeredscale-small.png)](scale-images/centeredscale-large.png#lightbox "Dreifacher Screenshot der zentrierten Skalierungs Seite")
 
 Die `Slider` Elemente in diesem Programm haben einen Bereich von &ndash; 10 bis 10. Wie Sie sehen können, bewirken negative Werte vertikaler Skalierung (z. b. auf dem Android-Bildschirm in der Mitte), dass Objekte um die horizontale Achse kippen, die den Mittelpunkt der Skalierung durchläuft. Negative Werte der horizontalen Skalierung (z. b. im UWP-Bildschirm auf der rechten Seite) bewirken, dass Objekte um die vertikale Achse kippen, die den Mittelpunkt der Skalierung durchläuft.
 
@@ -252,7 +252,7 @@ using (SKPaint strokePaint = new SKPaint
 
 Das `pathBounds` Rechteck wird in der Nähe des oberen Bereichs dieses Codes abgerufen und später mit der Breite und Höhe des Zeichen Bereichs im-Befehl verwendet `Scale` . Durch diesen eigenständigen Aufrufe werden die Koordinaten des Pfads skaliert, wenn er durch den-Befehl gerendert wird, `DrawPath` aber der Stern wird in der oberen rechten Ecke der Canvas zentriert. Es muss nach unten und nach links verschoben werden. Dies ist die Aufgabe des `Translate` Aufrufes. Diese beiden Eigenschaften von `pathBounds` sind ungefähr – 100, sodass die Übersetzungs Faktoren ungefähr 100 betragen. Da der `Translate` -Rückruf nach dem `Scale` -Befehl erfolgt, werden diese Werte effektiv durch die Skalierungsfaktoren skaliert, sodass Sie den Mittelpunkt des Stern in den Mittelpunkt der Canvas verschieben:
 
-[![](scale-images/anisotropicscaling-small.png "Triple screenshot of the Anisotropic Scaling page")](scale-images/anisotropicscaling-large.png#lightbox "Triple screenshot of the Anisotropic Scaling page")
+[![Dreifacher Screenshot der Seite "anisotrope skalieren"](scale-images/anisotropicscaling-small.png)](scale-images/anisotropicscaling-large.png#lightbox "Dreifacher Screenshot der Seite "anisotrope skalieren"")
 
 Eine andere Möglichkeit `Scale` , die-und- `Translate` Aufrufe zu überprüfen, besteht darin, die Auswirkung in umgekehrter Reihenfolge zu bestimmen: der `Translate` Aufruf verschiebt den Pfad so, dass er vollständig sichtbar ist, aber in der oberen linken Ecke der Canvas ausgerichtet ist. `Scale`Mit der-Methode wird dieser Stern dann relativ zur oberen linken Ecke vergrößert.
 
@@ -295,7 +295,7 @@ using (SKPaint textPaint = new SKPaint
 
 Es handelt sich um eine ähnliche Logik, und der Text wird auf der Grundlage des Text Begrenzungen-Rechtecks, das von zurückgegeben wird, auf die Größe der Seite erweitert `MeasureText` :
 
-[![](scale-images/anisotropictext-small.png "Triple screenshot of the Anisotropic Test page")](scale-images/anisotropictext-large.png#lightbox "Triple screenshot of the Anisotropic Test page")
+[![Dreifacher Screenshot der anisotrope-Testseite](scale-images/anisotropictext-small.png)](scale-images/anisotropictext-large.png#lightbox "Dreifacher Screenshot der anisotrope-Testseite")
 
 Wenn Sie das Seitenverhältnis der grafischen Objekte beibehalten müssen, sollten Sie die isotrope Skalierung verwenden. Die Seite für die **isotrope Skalierung** zeigt dies für den 11-pointierten Stern. Konzeptionell sind die Schritte zum Anzeigen eines grafischen Objekts in der Mitte der Seite mit der isotropischen Skalierung:
 
@@ -344,7 +344,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Der Code zeigt auch den Stern 10 mehrmals an, wobei der Skalierungsfaktor um 10% verringert und die Farbe von rot in blau geändert wird:
 
-[![](scale-images/isotropicscaling-small.png "Triple screenshot of the Isotropic Scaling page")](scale-images/isotropicscaling-large.png#lightbox "Triple screenshot of the Isotropic Scaling page")
+[![Dreifacher Screenshot der Seite für die isotrope Skalierung](scale-images/isotropicscaling-small.png)](scale-images/isotropicscaling-large.png#lightbox "Dreifacher Screenshot der Seite für die isotrope Skalierung")
 
 ## <a name="related-links"></a>Verwandte Links
 

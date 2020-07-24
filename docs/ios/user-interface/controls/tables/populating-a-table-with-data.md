@@ -290,6 +290,6 @@ public override string TitleForFooter (UITableView tableView, nint section)
 
 Sie können die Darstellung der Kopf-und Fußzeile mit einem Ansichts Objekt weiter anpassen, indem Sie die `GetViewForHeader` -Methode und die- `GetViewForFooter` Methode überschreibt `UITableViewSource` .
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Workingwithtables (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

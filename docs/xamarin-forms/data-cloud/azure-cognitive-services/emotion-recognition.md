@@ -19,7 +19,7 @@ ms.locfileid: "86936369"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>Wahrgenommene Emotionen erkennen mithilfe der Gesichtserkennungs-API
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 Der Gesichtserkennungs-API kann eine Emotions Erkennung durchführen, um Ärger, Verachtung, Verschleierung, Angst, Glück, neutral, traurig und überraschend in einem Gesichtsausdruck zu erkennen, der auf wahrgenommenen Anmerkungen durch menschliche Programmierer basiert. Es ist jedoch wichtig zu beachten, dass Gesichtsausdrücke nicht notwendigerweise die internen Zustände von Personen darstellen.
 
@@ -54,8 +54,8 @@ Wenn ein gültiger API-Schlüssel nicht an die Gesichtserkennungs-API übergeben
 
 Die Emotions Erkennung wird durchgeführt, indem eine Post-Anforderung mit einem Bild an die `detect` API unter gesendet `https://[location].api.cognitive.microsoft.com/face/v1.0` wird, wobei `[location]]` die Region ist, die Sie zum Abrufen ihres API-Schlüssels verwendet haben. Die optionalen Anforderungs Parameter lauten wie folgt:
 
-- `returnFaceId`– Gibt an, ob fakeids der erkannten Gesichter zurückgegeben werden sollen. Standardwert: `true`.
-- `returnFaceLandmarks`– Gibt an, ob Gesichtspunkte der erkannten Gesichter zurückgegeben werden sollen. Standardwert: `false`.
+- `returnFaceId`– Gibt an, ob fakeids der erkannten Gesichter zurückgegeben werden sollen. Der Standardwert ist `true`.
+- `returnFaceLandmarks`– Gibt an, ob Gesichtspunkte der erkannten Gesichter zurückgegeben werden sollen. Der Standardwert ist `false`.
 - `returnFaceAttributes`– Gibt an, ob ein oder mehrere angegebene Gesichts Attribute analysiert und zurückgegeben werden sollen. Zu den unterstützten Gesichts Attributen zählen `age` , `gender` , `headPose` , `smile` , `facialHair` , `glasses` , `emotion` , `hair` , `makeup` , `occlusion` , `accessories` , `blur` , `exposure` und `noise` . Beachten Sie, dass die Gesichts Attribut Analyse zusätzliche Berechnungs-und Zeit Kosten hat.
 
 Bildinhalte müssen im Text der Post-Anforderung als URL oder Binärdaten abgelegt werden.

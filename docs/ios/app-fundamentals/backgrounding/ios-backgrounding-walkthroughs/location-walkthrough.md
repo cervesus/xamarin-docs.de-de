@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: b357a6e1531c8f587c8fc0f86e2b56d6fecc2923
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: bbb0dfbc9a6bf1396c8d517cc2c3289e2857a836
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488321"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938397"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>Exemplarische Vorgehensweise: Hintergrund Speicherort in xamarin. IOS
 
 In diesem Beispiel erstellen wir eine IOS-Location-Anwendung, die Informationen zum aktuellen Speicherort ausgibt: Breitengrad, Längengrad und andere Parameter auf dem Bildschirm. Diese Anwendung veranschaulicht, wie Standort Aktualisierungen ordnungsgemäß durchgeführt werden, während die Anwendung aktiv oder mit einem Hintergrund ausgeführt wird.
 
-In dieser exemplarischen Vorgehensweise werden einige wichtige Grundkonzepte erläutert, darunter das Registrieren einer App als Hintergrund erforderliche Anwendung, das Anhalten von Aktualisierungen der Benutzeroberfläche, wenn die APP sich im Hintergrund befindet, und das Arbeiten mit den `WillEnterBackground`-und `WillEnterForeground` `AppDelegate` Methoden.
+In dieser exemplarischen Vorgehensweise werden einige wichtige Grundkonzepte erläutert, darunter das Registrieren einer App als Hintergrund erforderliche Anwendung, das Anhalten von Aktualisierungen der Benutzeroberfläche, wenn die APP sich im Hintergrund befindet, und das Arbeiten mit den `WillEnterBackground` `WillEnterForeground` `AppDelegate` Methoden und.
 
 ## <a name="application-set-up"></a>Anwendungs Einrichtung
 
-1. Erstellen Sie zunächst eine neue **IOS-> app > Single View ApplicationC#()** . Nennen Sie ihn _Location_ , und stellen Sie sicher, dass sowohl iPad als auch iPhone ausgewählt wurden.
+1. Erstellen Sie zunächst eine neue **IOS-> App > Single View Application (c#)**. Nennen Sie ihn _Location_ , und stellen Sie sicher, dass sowohl iPad als auch iPhone ausgewählt wurden.
 
 1. Eine Location-Anwendung ist als Hintergrund erforderliche Anwendung in ios qualifiziert. Registrieren Sie die Anwendung als Location-Anwendung, indem Sie die **Info. plist** -Datei für das Projekt bearbeiten.
 
@@ -30,7 +30,7 @@ In dieser exemplarischen Vorgehensweise werden einige wichtige Grundkonzepte erl
 
     In Visual Studio für Mac sieht es in etwa wie folgt aus:
 
-    [![](location-walkthrough-images/image7.png "Place a check by both the Enable Background Modes and the Location Updates checkboxes")](location-walkthrough-images/image7.png#lightbox)
+    [![Aktivieren Sie die Kontrollkästchen hintergrundmodi aktivieren und Speicherort Updates.](location-walkthrough-images/image7.png)](location-walkthrough-images/image7.png#lightbox)
 
     In Visual Studio muss " **Info. plist** " manuell aktualisiert werden, indem das folgende Schlüssel-Wert-Paar hinzugefügt wird:
 
@@ -41,9 +41,9 @@ In dieser exemplarischen Vorgehensweise werden einige wichtige Grundkonzepte erl
     </array>
     ```
 
-1. Nachdem die Anwendung registriert wurde, können Sie Standortdaten vom Gerät erhalten. In IOS wird die `CLLocationManager`-Klasse für den Zugriff auf Standortinformationen verwendet und kann Ereignisse, die Standort Aktualisierungen bereitstellen, Auswerfen.
+1. Nachdem die Anwendung registriert wurde, können Sie Standortdaten vom Gerät erhalten. In IOS wird die `CLLocationManager` -Klasse für den Zugriff auf Standortinformationen verwendet, und es können Ereignisse mit Standort Aktualisierungen bereitgestellt werden.
 
-1. Erstellen Sie im Code eine neue Klasse mit dem Namen `LocationManager`, die eine einzige Stelle für verschiedene Bildschirme und Code zum Abonnieren von Standort Aktualisierungen bereitstellt. Legen Sie in der `LocationManager`-Klasse eine Instanz der-`CLLocationManager` als `LocMgr`bezeichnet:
+1. Erstellen Sie im Code eine neue Klasse mit dem Namen `LocationManager` , die eine einzige Stelle für verschiedene Bildschirme und Code zum Abonnieren von Standort Aktualisierungen bereitstellt. Erstellen Sie in der- `LocationManager` Klasse eine Instanz von mit dem `CLLocationManager` Namen `LocMgr` :
 
     ```csharp
     public class LocationManager
@@ -73,18 +73,18 @@ In dieser exemplarischen Vorgehensweise werden einige wichtige Grundkonzepte erl
 
     Der obige Code legt eine Reihe von Eigenschaften und Berechtigungen für die Klasse [cllocationmanager](xref:CoreLocation.CLLocationManager) fest:
 
-    - `PausesLocationUpdatesAutomatically` – Dies ist ein boolescher Wert, der abhängig davon festgelegt werden kann, ob das Systemstandort Aktualisierungen anhalten darf. Auf einigen Geräten wird standardmäßig `true`, was dazu führen kann, dass das Gerät nach ca. 15 Minuten keine Updates für den Hintergrund Speicherort mehr erhält.
-    - `RequestAlwaysAuthorization`: Sie sollten diese Methode übergeben, um dem App-Benutzer die Möglichkeit zu geben, den Zugriff auf den Speicherort im Hintergrund zuzulassen. `RequestWhenInUseAuthorization` können auch übergeben werden, wenn Sie dem Benutzer die Möglichkeit geben möchten, den Zugriff auf den Speicherort nur zuzulassen, wenn sich die APP im Vordergrund befindet.
-    - `AllowsBackgroundLocationUpdates` – Dies ist eine boolesche Eigenschaft in ios 9, die so festgelegt werden kann, dass eine APP Standort Aktualisierungen empfangen kann, wenn Sie angehalten wird.
+    - `PausesLocationUpdatesAutomatically`– Dies ist ein boolescher Wert, der abhängig davon festgelegt werden kann, ob das Systemstandort Aktualisierungen anhalten darf. Auf einigen Geräten wird standardmäßig auf festgelegt `true` , was dazu führen kann, dass das Gerät nach ungefähr 15 Minuten keine Updates für den Hintergrund Speicherort mehr erhält.
+    - `RequestAlwaysAuthorization`-Sie sollten diese Methode übergeben, um dem App-Benutzer die Möglichkeit zu geben, den Zugriff auf den Speicherort im Hintergrund zuzulassen. `RequestWhenInUseAuthorization`kann auch übergeben werden, wenn Sie dem Benutzer die Möglichkeit geben möchten, den Zugriff auf den Speicherort nur zuzulassen, wenn sich die APP im Vordergrund befindet.
+    - `AllowsBackgroundLocationUpdates`– Dies ist eine boolesche Eigenschaft, die in ios 9 eingeführt wurde und so festgelegt werden kann, dass eine APP bei angehaltenem Speicherort Updates empfangen kann.
 
     > [!IMPORTANT]
     > IOS 8 (und höher) erfordert auch einen Eintrag in der **Info. plist** -Datei, um den Benutzer als Teil der Autorisierungs Anforderung anzuzeigen.
 
-1. Hinzufügen von " **Info. plist** "-Schlüsseln für die Berechtigungs Typen, die die APP benötigt – `NSLocationAlwaysUsageDescription`, `NSLocationWhenInUseUsageDescription`und/oder `NSLocationAlwaysAndWhenInUseUsageDescription` – mit einer Zeichenfolge, die dem Benutzer in der Warnung angezeigt wird, die den Zugriff auf Standortdaten anfordert.
+1. Hinzufügen von " **Info. plist** "-Schlüsseln für die Berechtigungs Typen die APP benötigt – `NSLocationAlwaysUsageDescription` , `NSLocationWhenInUseUsageDescription` und/oder `NSLocationAlwaysAndWhenInUseUsageDescription` – mit einer Zeichenfolge, die dem Benutzer in der Warnung angezeigt wird, die den Zugriff auf Standortdaten anfordert.
 
-1. IOS 9 erfordert, dass bei Verwendung `AllowsBackgroundLocationUpdates` die Datei " **Info. plist** " den Schlüssel `UIBackgroundModes` mit dem Wert `location`enthält. Wenn Sie Schritt 2 dieser exemplarischen Vorgehensweise abgeschlossen haben, sollte diese bereits in der Datei "Info. plist" vorhanden sein.
+1. IOS 9 erfordert, dass bei Verwendung `AllowsBackgroundLocationUpdates` von " **Info. plist** " der Schlüssel `UIBackgroundModes` mit dem Wert enthält `location` . Wenn Sie Schritt 2 dieser exemplarischen Vorgehensweise abgeschlossen haben, sollte diese bereits in der Datei "Info. plist" vorhanden sein.
 
-1. Erstellen Sie innerhalb der `LocationManager`-Klasse eine Methode mit dem Namen `StartLocationUpdates` mit dem folgenden Code. Dieser Code zeigt, wie Sie mit dem empfangen von Speicherort Aktualisierungen von der `CLLocationManager`beginnen:
+1. Erstellen Sie in der- `LocationManager` Klasse eine Methode `StartLocationUpdates` mit dem Namen mit dem folgenden Code. Dieser Code zeigt, wie Sie mit dem empfangen von Speicherort Updates von beginnen `CLLocationManager` :
 
     ```csharp
     if (CLLocationManager.LocationServicesEnabled) {
@@ -99,20 +99,20 @@ In dieser exemplarischen Vorgehensweise werden einige wichtige Grundkonzepte erl
     }
     ```
 
-    Bei dieser Methode gibt es einige wichtige Dinge. Zuerst führen wir eine Prüfung durch, um festzustellen, ob die Anwendung Zugriff auf Standortdaten auf dem Gerät hat. Wir überprüfen dies durch Aufrufen von `LocationServicesEnabled` auf der `CLLocationManager`. Diese Methode gibt **false** zurück, wenn der Benutzer den Anwendungs Zugriff auf Standortinformationen verweigert hat.
+    Bei dieser Methode gibt es einige wichtige Dinge. Zuerst führen wir eine Prüfung durch, um festzustellen, ob die Anwendung Zugriff auf Standortdaten auf dem Gerät hat. Wir überprüfen dies durch Aufrufen von `LocationServicesEnabled` für `CLLocationManager` . Diese Methode gibt **false** zurück, wenn der Benutzer den Anwendungs Zugriff auf Standortinformationen verweigert hat.
 
-1. Geben Sie als nächstes den Location Manager an, wie häufig aktualisiert werden soll. `CLLocationManager` bietet viele Optionen zum Filtern und Konfigurieren von Standortdaten, einschließlich der Häufigkeit von Updates. Legen Sie in diesem Beispiel die `DesiredAccuracy` so fest, dass Sie immer dann aktualisiert wird, wenn sich der Speicherort um eine Weitere Informationen zum Konfigurieren von Speicherort Aktualisierungshäufigkeit und anderen Einstellungen finden Sie in der [Referenz zur cllocationmanager-Klasse](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) in der Apple-Dokumentation.
+1. Geben Sie als nächstes den Location Manager an, wie häufig aktualisiert werden soll. `CLLocationManager`bietet viele Optionen zum Filtern und Konfigurieren von Standortdaten, einschließlich der Häufigkeit von Updates. Legen Sie in diesem Beispiel den so fest, dass `DesiredAccuracy` immer dann aktualisiert wird, wenn sich der Speicherort um eine Meter Weitere Informationen zum Konfigurieren von Speicherort Aktualisierungshäufigkeit und anderen Einstellungen finden Sie in der [Referenz zur cllocationmanager-Klasse](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) in der Apple-Dokumentation.
 
-1. Zum Schluss wird `StartUpdatingLocation` für die `CLLocationManager`-Instanz aufgerufen. Dadurch wird der Location Manager aufgefordert, eine anfängliche Korrektur am aktuellen Speicherort zu erhalten und mit dem Senden von Updates zu beginnen.
+1. Zum Schluss wird `StartUpdatingLocation` für die- `CLLocationManager` Instanz aufgerufen. Dadurch wird der Location Manager aufgefordert, eine anfängliche Korrektur am aktuellen Speicherort zu erhalten und mit dem Senden von Updates zu beginnen.
 
-Bisher wurde der Location Manager erstellt, mit den Datentypen konfiguriert, die wir empfangen möchten, und hat den ursprünglichen Speicherort festgelegt. Der Code muss nun die Speicherort Daten auf der Benutzeroberfläche darstellen. Hierfür können Sie ein benutzerdefiniertes Ereignis verwenden, das eine `CLLocation` als Argument annimmt:
+Bisher wurde der Location Manager erstellt, mit den Datentypen konfiguriert, die wir empfangen möchten, und hat den ursprünglichen Speicherort festgelegt. Der Code muss nun die Speicherort Daten auf der Benutzeroberfläche darstellen. Hierfür können Sie ein benutzerdefiniertes Ereignis verwenden, das ein `CLLocation` als Argument annimmt:
 
 ```csharp
 // event for the location changing
 public event EventHandler<LocationUpdatedEventArgs>LocationUpdated = delegate { };
 ```
 
-Der nächste Schritt besteht darin, Location-Updates aus der `CLLocationManager`zu abonnieren und das benutzerdefinierte `LocationUpdated` Ereignis zu erhöhen, wenn neue Standortdaten verfügbar werden, wobei der Speicherort als Argument übergeben wird. Erstellen Sie zu diesem Zweck eine neue Klasse **LocationUpdateEventArgs.cs**. Dieser Code ist innerhalb der Hauptanwendung zugänglich und gibt den Speicherort des Geräts zurück, wenn das Ereignis ausgelöst wird:
+Der nächste Schritt besteht darin, Location-Updates aus dem zu abonnieren `CLLocationManager` und das benutzerdefinierte `LocationUpdated` Ereignis zu erhöhen, wenn neue Standortdaten verfügbar werden, wobei der Speicherort als Argument übergeben wird. Erstellen Sie zu diesem Zweck eine neue Klasse **LocationUpdateEventArgs.cs**. Dieser Code ist innerhalb der Hauptanwendung zugänglich und gibt den Speicherort des Geräts zurück, wenn das Ereignis ausgelöst wird:
 
 ```csharp
 public class LocationUpdatedEventArgs : EventArgs
@@ -139,9 +139,9 @@ public class LocationUpdatedEventArgs : EventArgs
 
     Das Layout sollte etwa wie folgt aussehen:
 
-    ![](location-walkthrough-images/image8.png "An example UI layout in the iOS Designer")
+    ![Ein Beispiel für ein Benutzeroberflächen Layout im IOS-Designer](location-walkthrough-images/image8.png)
 
-1. Doppelklicken Sie im Lösungspad auf die Datei `ViewController.cs`, und bearbeiten Sie Sie, um eine neue Instanz von Locationmanager zu erstellen und `StartLocationUpdates`darauf aufzurufen.
+1. Doppelklicken Sie im Lösungspad auf die `ViewController.cs` Datei, und bearbeiten Sie Sie, um eine neue Instanz von Locationmanager zu erstellen, und rufen Sie Sie `StartLocationUpdates` auf.
   Ändern Sie den Code so, dass er wie folgt aussieht:
 
     ```csharp
@@ -166,7 +166,7 @@ public class LocationUpdatedEventArgs : EventArgs
 
     Dadurch werden die Standort Aktualisierungen beim Anwendungsstart gestartet, obwohl keine Daten angezeigt werden.
 
-1. Nachdem Sie die Standort Aktualisierungen empfangen haben, aktualisieren Sie den Bildschirm mit den Informationen zum Speicherort. Mit der folgenden Methode wird der Speicherort des `LocationUpdated` Ereignisses abgerufen und in der Benutzeroberfläche angezeigt:
+1. Nachdem Sie die Standort Aktualisierungen empfangen haben, aktualisieren Sie den Bildschirm mit den Informationen zum Speicherort. Mit der folgenden Methode wird der Speicherort aus dem `LocationUpdated` Ereignis abgerufen und in der Benutzeroberfläche angezeigt:
 
     ```csharp
     #region Public Methods
@@ -186,7 +186,7 @@ public class LocationUpdatedEventArgs : EventArgs
     #endregion
     ```
 
-Wir müssen das `LocationUpdated`-Ereignis weiterhin in unserem appdelegaten abonnieren und die neue Methode zum Aktualisieren der Benutzeroberfläche anrufen. Fügen Sie den folgenden Code in `ViewDidLoad,` direkt nach dem `StartLocationUpdates`-Befehl ein:
+Wir müssen das `LocationUpdated` Ereignis weiterhin in unserem appdelegaten abonnieren und die neue Methode zum Aktualisieren der Benutzeroberfläche aufzurufen. Fügen Sie den folgenden Code `ViewDidLoad,` direkt nach dem-Befehl ein `StartLocationUpdates` :
 
 ```csharp
 public override void ViewDidLoad ()
@@ -202,11 +202,11 @@ public override void ViewDidLoad ()
 
 Wenn die Anwendung ausgeführt wird, sollte Sie nun etwa wie folgt aussehen:
 
-[![](location-walkthrough-images/image5.png "An example app run")](location-walkthrough-images/image5.png#lightbox)
+[![Ein Beispiel für eine APP-Laufzeit](location-walkthrough-images/image5.png)](location-walkthrough-images/image5.png#lightbox)
 
 ## <a name="handling-active-and-background-states"></a>Behandeln von aktiven und Hintergrund Zuständen
 
-1. Von der Anwendung werden Standort Aktualisierungen ausgegeben, während Sie sich im Vordergrund befinden und aktiv sind. Um zu veranschaulichen, was geschieht, wenn die app in den Hintergrund wechselt, überschreiben Sie die `AppDelegate` Methoden, die Änderungen des Anwendungs Zustands nachverfolgen, sodass die Anwendung beim Übergang zwischen dem Vordergrund und dem Hintergrund in die Konsole schreibt:
+1. Von der Anwendung werden Standort Aktualisierungen ausgegeben, während Sie sich im Vordergrund befinden und aktiv sind. Um zu veranschaulichen, was geschieht, wenn die app in den Hintergrund wechselt, überschreiben `AppDelegate` Sie die Methoden, die Änderungen des Anwendungs Zustands nachverfolgen, sodass die Anwendung in die Konsole schreibt, wenn Sie zwischen dem Vordergrund und dem Hintergrund übergeht:
 
     ```csharp
     public override void DidEnterBackground (UIApplication application)
@@ -220,7 +220,7 @@ Wenn die Anwendung ausgeführt wird, sollte Sie nun etwa wie folgt aussehen:
     }
     ```
 
-    Fügen Sie den folgenden Code in der `LocationManager` hinzu, um aktualisierte Positionsdaten fortlaufend in der Anwendungs Ausgabe auszugeben, um zu überprüfen, ob die Standortinformationen weiterhin im Hintergrund verfügbar sind:
+    Fügen Sie den folgenden Code im hinzu `LocationManager` , um aktualisierte Positionsdaten fortlaufend in der Anwendungs Ausgabe auszugeben, um zu überprüfen, ob die Standortinformationen weiterhin im Hintergrund verfügbar sind:
 
     ```csharp
     public class LocationManager
@@ -248,7 +248,7 @@ Wenn die Anwendung ausgeführt wird, sollte Sie nun etwa wie folgt aussehen:
 
     IOS gibt uns Benachrichtigungen, wenn die APP im Begriff ist, zu einem anderen Anwendungs Status zu wechseln. In diesem Fall können wir die `ObserveDidEnterBackground` Benachrichtigung abonnieren.
 
-    Der folgende Code Ausschnitt zeigt, wie Sie eine Benachrichtigung verwenden, um anzuzeigen, wann Aktualisierungen der Benutzeroberfläche angehalten werden sollen. Dies erfolgt in `ViewDidLoad`:
+    Der folgende Code Ausschnitt zeigt, wie Sie eine Benachrichtigung verwenden, um anzuzeigen, wann Aktualisierungen der Benutzeroberfläche angehalten werden sollen. Dies erfolgt in `ViewDidLoad` :
 
     ```csharp
     UIApplication.Notifications.ObserveDidEnterBackground ((sender, args) => {
@@ -258,7 +258,7 @@ Wenn die Anwendung ausgeführt wird, sollte Sie nun etwa wie folgt aussehen:
 
     Wenn die app ausgeführt wird, sieht die Ausgabe in etwa wie folgt aus:
 
-    ![](location-walkthrough-images/image6.png "Example of the location output in the console")
+    ![Beispiel für die Ausgabe des Speicher Orts in der Konsole](location-walkthrough-images/image6.png)
 
 1. Die Anwendung druckt Standort Aktualisierungen auf dem Bildschirm, wenn Sie im Vordergrund ausgeführt wird, und druckt weiterhin Daten im Anwendungs Ausgabefenster, während Sie im Hintergrund arbeiten.
 
@@ -276,7 +276,7 @@ Nun wird die Benutzeroberfläche aktualisiert, wenn die Anwendung zum ersten Mal
 
 In dieser exemplarischen Vorgehensweise haben wir eine gut verhaltene, Hintergrund fähige IOS-Anwendung erstellt, die Standortdaten sowohl auf dem Bildschirm als auch im Anwendungs Ausgabefenster ausgibt.
 
-## <a name="related-links"></a>Verwandte Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Standort (Teil 4) (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/location)
 - [Core Location Framework-Referenz](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CoreLocation_Framework/_index.html)

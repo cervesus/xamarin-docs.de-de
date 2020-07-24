@@ -10,12 +10,12 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9e763184f38719cda4526eb0a2dfdf39b2191a03
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 60f53fb00786b183f36f7cfefa6af9062bb682db
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137695"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938163"
 ---
 # <a name="integrating-with-xamarinforms"></a>Integration inXamarin.Forms
 
@@ -25,7 +25,7 @@ _Erstellen von skiasharp-Grafiken, die auf berühren und Xamarin.Forms Elemente 
 
 Skiasharp-Grafiken können Xamarin.Forms auf verschiedene Arten in den Rest von integriert werden. Sie können eine skiasharp-Canvas und- Xamarin.Forms Elemente auf derselben Seite kombinieren und sogar Xamarin.Forms Elemente oberhalb eines skiasharp-Canvas positionieren:
 
-![](integration-images/integrationexample.png "Selecting a color with sliders")
+![Auswählen einer Farbe mit Schiebereglern](integration-images/integrationexample.png)
 
 Ein weiterer Ansatz zum Erstellen interaktiver skiasharp-Grafiken in Xamarin.Forms ist die Berührungs Weise.
 Die zweite Seite im [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Programm hat den Titel **Tap UMSCHALT**Taste. Er zeichnet einen einfachen Kreis auf zwei Arten &mdash; ohne Füllung und mit einem durch Tippen umgeschalteten Füllvorgang &mdash; . Die- [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Klasse zeigt, wie Sie skiasharp-Grafiken als Reaktion auf Benutzereingaben ändern können.
@@ -240,7 +240,7 @@ Im HSV-Modell ergeben sich reine Farben, wenn die Sättigung und der Wert 100 si
 
 Die beste Möglichkeit, ein Gefühl für die beiden Modelle zu bekommen, besteht darin, sich selbst mit Ihnen zu experimentieren:
 
-[![](integration-images/colorexplore-large.png "Triple screenshot of the Color Explore page")](integration-images/colorexplore-small.png#lightbox "Triple screenshot of the Color Explore page")
+[![Dreifacher Screenshot der Seite zum Durchsuchen von Farben](integration-images/colorexplore-large.png)](integration-images/colorexplore-small.png#lightbox "Dreifacher Screenshot der Seite zum Durchsuchen von Farben")
 
 ## <a name="related-links"></a>Verwandte Links
 

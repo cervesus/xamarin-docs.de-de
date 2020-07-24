@@ -19,7 +19,7 @@ ms.locfileid: "86937669"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Verwenden von urhusharp inXamarin.Forms
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
 
 ## <a name="what-is-urhosharp"></a>Was ist urhusharp?
 
@@ -217,7 +217,7 @@ Die Animationen am [oberen Rand der Seite](#what-is-urhosharp) zeigen das Beispi
 
 Diese Seite zeigt, wie urhusharp verwendet werden kann, um 3D-Datenvisualisierung hinzuzufügen Xamarin.Forms . Weitere Informationen zum Erstellen von Urho-Szenen, die mithilfe der oben gezeigten Methode in Apps integriert werden können, finden Sie in der [urhusharp-Dokumentation](~/graphics-games/urhosharp/index.md) Xamarin.Forms .
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Beispiel für Diagramme (c# 6)](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
 - [UrhoSharp](~/graphics-games/urhosharp/index.md)

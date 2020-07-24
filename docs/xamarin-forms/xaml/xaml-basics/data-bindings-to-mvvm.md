@@ -11,12 +11,12 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 047cf963394325e8f88759ffe9da7dcf2ca3ad12
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 805bdef812b33d3f4329346a437e1202a16fe3ae
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127529"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937318"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Teil 5. Von Datenbindungen zu MVVM
 
@@ -65,7 +65,7 @@ Im **One-Shot-DateTime** -Programm enthalten zwei der untergeordneten Elemente B
 
 Das Problem besteht darin, dass das Datum und die Uhrzeit einmal festgelegt werden, wenn die Seite erstmalig erstellt wird, und sich nie ändern:
 
-[![](data-bindings-to-mvvm-images/oneshotdatetime.png "View Displaying Date and Time")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "View Displaying Date and Time")
+[![Anzeigen von Datum und Uhrzeit](data-bindings-to-mvvm-images/oneshotdatetime.png)](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "Anzeigen von Datum und Uhrzeit")
 
 In einer XAML-Datei kann eine Uhr angezeigt werden, die immer die aktuelle Zeit anzeigt, aber Sie benötigt etwas Code, um Sie zu unterstützen. Bei der Betrachtung von MVVM sind Model und ViewModel Klassen, die vollständig im Code geschrieben sind. Die Sicht ist häufig eine XAML-Datei, die auf Eigenschaften verweist, die im ViewModel durch Daten Bindungen definiert werden.
 
@@ -148,7 +148,7 @@ Beachten `ClockViewModel` Sie, dass der `BindingContext` mithilfe von Eigenschaf
 
 Die `Binding` Markup Erweiterung in der- `Text` Eigenschaft des `Label` formatiert die- `DateTime` Eigenschaft. Hier sehen Sie die Anzeige:
 
-[![](data-bindings-to-mvvm-images/clock.png "View Displaying Date and Time via ViewModel")](data-bindings-to-mvvm-images/clock-large.png#lightbox "View Displaying Date and Time via ViewModel")
+[![Anzeigen von Datum und Uhrzeit über ViewModel](data-bindings-to-mvvm-images/clock.png)](data-bindings-to-mvvm-images/clock-large.png#lightbox "Anzeigen von Datum und Uhrzeit über ViewModel")
 
 Es ist auch möglich, auf einzelne Eigenschaften der `DateTime` Eigenschaft von ViewModel zuzugreifen, indem die Eigenschaften durch Zeiträume getrennt werden:
 
@@ -298,7 +298,7 @@ Die folgende XAML-Datei enthält eine, `BoxView` deren- `Color` Eigenschaft an d
 
 Die Bindung für jeden `Label` ist die Standardeinstellung `OneWay` . Der Wert muss nur angezeigt werden. Die Bindung für jeden `Slider` ist jedoch `TwoWay` . Dadurch kann der `Slider` aus ViewModel initialisiert werden. Beachten Sie, dass die- `Color` Eigenschaft auf festgelegt wird, `Aqua` Wenn das ViewModel-Objekt instanziiert wird. Eine Änderung in muss jedoch `Slider` auch einen neuen Wert für die-Eigenschaft in ViewModel festlegen, der dann eine neue Farbe berechnet.
 
-[![](data-bindings-to-mvvm-images/hslcolorscroll.png "MVVM using Two-Way Data Bindings")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM using Two-Way Data Bindings")
+[![MVVM mithilfe von bidirektionalen Daten Bindungen](data-bindings-to-mvvm-images/hslcolorscroll.png)](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM mithilfe von bidirektionalen Daten Bindungen")
 
 ## <a name="commanding-with-viewmodels"></a>Befehls mit "ViewModels"
 
@@ -559,7 +559,7 @@ Der folgende Tastatur ist nicht so visuell ausgereift wie möglich. Stattdessen 
 
 Die- `Command` Eigenschaft der ersten `Button` , die in diesem Markup angezeigt wird, ist an gebunden `DeleteCharCommand` . der Rest wird `AddCharCommand` mit einem gebunden, der mit dem `CommandParameter` auf dem Gesicht angezeigten Zeichen identisch ist `Button` . Hier ist das Programm in Aktion:
 
-[![](data-bindings-to-mvvm-images/keypad.png "Calculator using MVVM and Commands")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "Calculator using MVVM and Commands")
+[![Rechner mit MVVM und Befehlen](data-bindings-to-mvvm-images/keypad.png)](data-bindings-to-mvvm-images/keypad-large.png#lightbox "Rechner mit MVVM und Befehlen")
 
 ### <a name="invoking-asynchronous-methods"></a>Aufrufen von asynchronen Methoden
 
@@ -684,7 +684,7 @@ Die XAML-Datei für `MainPage` definiert eine, `ListBox` deren `ItemsSource` -Ei
 
 Die Seiten werden in einer Bild lauffähigen Liste angezeigt:
 
-[![](data-bindings-to-mvvm-images/mainpage.png "Scrollable list of pages")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "Scrollable list of pages")
+[![Scrollbare Liste von Seiten](data-bindings-to-mvvm-images/mainpage.png)](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "Scrollbare Liste von Seiten")
 
 Der Handler in der Code-Behind-Datei wird ausgelöst, wenn der Benutzer ein Element auswählt. Der Handler legt die `SelectedItem` -Eigenschaft des `ListBox` -Objekts auf fest, `null` instanziiert die ausgewählte Seite und navigiert zu ihr:
 

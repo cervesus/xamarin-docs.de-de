@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: cf74c31b149c24bc6e515c0f00803a60b10d5d1c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 690aaf81ee2600bd792a36f14b81df3d15e2d21b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032537"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930272"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>Eingebettete Frameworks in xamarin. IOS
 
@@ -34,17 +34,17 @@ Es gibt zwei Möglichkeiten, Frameworks in xamarin. IOS zu nutzen:
 
 - Systemeigene Verweise aus dem Kontextmenü hinzufügen
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio für Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
 Klicken Sie mit der rechten Maustaste auf Projekt, und navigieren Sie zu systemeigenen verweisen
 
-![](embedded-frameworks-images/xam-native-refs.png "Select Add native references in Visual Studio for Mac")
+![Wählen Sie systemeigene Verweise hinzufügen in Visual Studio für Mac](embedded-frameworks-images/xam-native-refs.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Klicken Sie mit der rechten Maustaste auf Projekt, und navigieren Sie zu systemeigenen verweisen
 
-![](embedded-frameworks-images/vs-native-refs.png "Select Add native references in Visual Studio")
+![Wählen Sie systemeigene Verweise hinzufügen in Visual Studio aus.](embedded-frameworks-images/vs-native-refs.png)
 
 -----
 
@@ -70,7 +70,7 @@ Apps ohne Erweiterungen werden weiterhin statisch mit der Mono-Laufzeit verknüp
 
 Dieses Verhalten kann vom App-Entwickler überschrieben werden, indem Folgendes als zusätzliches mberührungs-Argument in den IOS-Buildoptionen des Projekts hinzugefügt wird:
 
-- `--mono:static`: Links mit der Mono-Laufzeit statisch.
+- `--mono:static`: Verknüpft eine statische Verbindung mit der Mono-Laufzeit.
 - `--mono:framework`: Verknüpft mit der Mono-Laufzeit als Framework.
 
-Ein Szenario für die Verknüpfung mit der Mono-Laufzeit als Framework auch für apps ohne Erweiterungen besteht darin, die Größe der ausführbaren Datei zu verringern, um alle Größen Einschränkungen zu überwinden, die Apple für die ausführbare Datei erzwingt Zur Referenz addiert die Mono-Laufzeit ungefähr 1,7 MB pro Architektur (ab xamarin. IOS 8,12, aber die variiert zwischen Releases und sogar zwischen Apps). Das Mono-Framework addiert ungefähr 2,3 MB pro Architektur. Dies bedeutet, dass für eine einzelne Architektur-App ohne Erweiterungen die APP-Verknüpfung mit der Mono-Laufzeit als Framework verringert und die ausführbare Datei um ~ 1.7 MB verkleinert wird. in einer größeren App mit einer Größe von ca. 0,6 MB.
+Ein Szenario für die Verknüpfung mit der Mono-Laufzeit als Framework auch für apps ohne Erweiterungen besteht darin, die Größe der ausführbaren Datei zu verringern, um alle Größen Einschränkungen zu überwinden, die Apple für die ausführbare Datei erzwingt Zur Referenz addiert die Mono-Laufzeit ungefähr 1,7 MB pro Architektur (ab xamarin. IOS 8,12, aber die variiert zwischen Releases und sogar zwischen Apps). Das Mono-Framework addiert ungefähr 2,3 MB pro Architektur, was bedeutet, dass für eine Einzel Architektur-App ohne Erweiterungen die APP-Verknüpfung mit der Mono-Laufzeit als Framework verringert wird, indem Sie die ausführbare Datei um ~ 1.7 MB verkleinert, aber ein ~ 2.3 MB-Framework hinzugefügt wird, was zu einer größeren 64-MB-App führt.

@@ -10,16 +10,16 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9c9d0621cdd5bb85690771d8bdfd0060b6a352cb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 94fa094f579ad33947f1cc89e0d36c862c824472
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136252"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938943"
 ---
 # <a name="xamarinforms-swipeview"></a>Xamarin.FormsSwidansicht
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
 
@@ -147,7 +147,7 @@ Nachdem ein Schwenk Element ausgeführt wurde, werden die Schwenk Elemente ausge
 
 ## <a name="swipe-items"></a>Elemente schwenken
 
-Die `LeftItems` `RightItems` -, `TopItems` -,-und-Auflistungen `BottomItems` sind vom Typ `SwipeItems` . Die- `SwipeItems` Klasse definiert die folgenden Eigenschaften:
+Die `LeftItems` `RightItems` -, `TopItems` -,-und-Auflistungen `BottomItems` sind vom Typ `SwipeItems` . Die `SwipeItems`-Klasse definiert die folgenden Eigenschaften:
 
 - `Mode`vom Typ `SwipeMode` , der die Auswirkung einer Schwenk Interaktion angibt. Weitere Informationen zum wischen-Modus finden Sie unter [wischen-Modus](#swipe-mode).
 - `SwipeBehaviorOnInvoked`vom Typ `SwipeBehaviorOnInvoked` , der angibt, wie sich ein `SwipeView` verhält, nachdem ein wischen-Element aufgerufen wurde. Weitere Informationen zum wischen-Verhalten finden Sie unter [wischen-Verhalten](#swipe-behavior).

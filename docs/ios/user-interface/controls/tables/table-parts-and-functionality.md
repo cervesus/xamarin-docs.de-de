@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: bf023543d3159f5d5baf7f7036a576b8a746cf9e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6002e5cc62dfe30c14f21943c690a5a1b15a0c12
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572129"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936590"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Tabellen Teile und-Funktionen in xamarin. IOS
 
@@ -21,12 +21,12 @@ Eine uitableview kann einen "gruppierten" oder "Plain"-Stil aufweisen und besteh
 - [Abschnitts Kopfzeile](#Section_Header)
 - [Zellen](#Cells) (oder Zeilen, wenn Sie möchten)
 - [Abschnitts Fußzeile](#Section_Footer)
-- [Sin](#Index)
+- [Index](#Index)
 - [Bearbeitungsmodus](#Edit_Features) (enthält "Swipe zum Löschen" und Zieh Punkte zum Ändern der Zeilen Reihenfolge) 
 
 Diese Screenshots zeigen, wie Abschnitts Zeilen, Kopfzeilen, Fußzeilen, Bearbeitungs Steuerelemente und der Index angezeigt werden.
 
- [![](table-parts-and-functionality-images/image1a.png "These screenshots show how section rows, headers, footers, edit controls and the index are displayed")](table-parts-and-functionality-images/image1a.png#lightbox)
+ [![Diese Screenshots zeigen, wie Abschnitts Zeilen, Kopfzeilen, Fußzeilen, Bearbeitungs Steuerelemente und der Index angezeigt werden.](table-parts-and-functionality-images/image1a.png)](table-parts-and-functionality-images/image1a.png#lightbox)
 
 Diese Teile werden im folgenden ausführlicher beschrieben:
 
@@ -72,7 +72,7 @@ Im restlichen Teil dieses Dokuments wird gezeigt, wie alle diese uitableview-Fun
 
 Die primären Klassen, die zum Anzeigen von Tabellen Sichten verwendet werden, werden hier angezeigt:
 
-[![](table-parts-and-functionality-images/classdiagram.png "The primary classes used to display table views are shown here")](table-parts-and-functionality-images/classdiagram.png#lightbox)
+[![Die primären Klassen, die zum Anzeigen von Tabellen Sichten verwendet werden, werden hier angezeigt](table-parts-and-functionality-images/classdiagram.png)](table-parts-and-functionality-images/classdiagram.png#lightbox)
 
 Der Zweck der einzelnen Klassen wird im folgenden beschrieben:
 

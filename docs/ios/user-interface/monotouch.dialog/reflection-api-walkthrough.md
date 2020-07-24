@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 1a6391c0e626c60fe35acee61f55f2f202f077b8
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: bdbff7760e7680173c57e5fc83cecb80967c0a51
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573442"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996096"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Erstellen einer xamarin. IOS-Anwendung mit der Reflection-API
 
@@ -27,12 +27,12 @@ UV. D wird mit xamarin. IOS verteilt. Um es zu verwenden, klicken Sie mit der re
 Die Verwendung der reflektionserapi ist so einfach wie die folgenden:
 
 1. Erstellen einer mit MT ergänzten Klasse D-Attribute.
-1. Erstellen einer- `BindingContext` Instanz, indem Sie eine Instanz der obigen Klasse übergibt. 
-1. Erstellen eines- `DialogViewController` und übergeben des `BindingContext’s` `RootElement` . 
+1. Erstellen einer- `BindingContext` Instanz, indem Sie eine Instanz der obigen Klasse übergibt.
+1. Erstellen eines- `DialogViewController` und übergeben des `BindingContext’s` `RootElement` .
 
 Sehen wir uns ein Beispiel an, um die Verwendung der reflektionsszenarios zu veranschaulichen. In diesem Beispiel erstellen wir einen einfachen Dateneingabe-Bildschirm, wie unten dargestellt:
 
- [![](reflection-api-walkthrough-images/01-expense-entry.png "In this example, we'll build a simple data entry screen as shown here")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
+ [![In diesem Beispiel erstellen wir einen einfachen Dateneingabe Bildschirm, wie hier gezeigt.](reflection-api-walkthrough-images/01-expense-entry.png)](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
 ## <a name="creating-a-class-with-mtd-attributes"></a>Erstellen einer Klasse mit Mt. D-Attribute
 
@@ -45,13 +45,13 @@ public class Expense
 
     [Entry("Enter expense name")]
     public string Name;
-        
+
     [Section("Expense Details")]
-  
+
     [Caption("Description")]
     [Entry]
     public string Details;
-        
+
     [Checkbox]
     public bool IsApproved = true;
 }
@@ -81,14 +81,14 @@ UIWindow window;
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 {   
     window = new UIWindow (UIScreen.MainScreen.Bounds);
-            
+
     var expense = new Expense ();
     var bctx = new BindingContext (null, expense, "Create a task");
     var dvc = new DialogViewController (bctx.Root);
-            
+
     window.RootViewController = dvc;
     window.MakeKeyAndVisible ();
-            
+
     return true;
 }
 ```
@@ -106,7 +106,7 @@ window.RootViewController = nav;
 
 Wenn Sie nun die Anwendung ausführen, wird der Titel in der `UINavigationController’s` Navigationsleiste angezeigt, wie im folgenden Screenshot gezeigt:
 
- [![](reflection-api-walkthrough-images/02-create-task.png "Now when we run the application, the title appears in the UINavigationControllers navigation bar")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
+ [![Wenn Sie nun die Anwendung ausführen, wird der Titel in der UINavigationControllers-Navigationsleiste angezeigt.](reflection-api-walkthrough-images/02-create-task.png)](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
 Wenn Sie einen einschließen `UINavigationController` , können wir nun andere Features von MT nutzen. D, für die eine Navigation erforderlich ist. Beispielsweise können wir der-Klasse eine Enumeration hinzufügen, `Expense` um die Kategorie für die Ausgaben und MT zu definieren. D erstellt automatisch einen Auswahlbildschirm. Um dies zu veranschaulichen, ändern Sie die `Expense` Klasse so, dass Sie ein `ExpenseCategory` Feld wie folgt enthält:
 
@@ -117,7 +117,7 @@ public enum Category
     Lodging,
     Books
 }
-        
+
 public class Expense
 {
     …
@@ -129,11 +129,11 @@ public class Expense
 
 Das Ausführen der Anwendung führt jetzt zu einer neuen Zeile in der Tabelle für die Kategorie, wie in der folgenden Abbildung dargestellt:
 
- [![](reflection-api-walkthrough-images/03-set-details.png "Running the application now results in a new row in the table for the category as shown")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
+ [![Wenn Sie die Anwendung ausführen, wird nun eine neue Zeile in der Tabelle für die Kategorie angezeigt.](reflection-api-walkthrough-images/03-set-details.png)](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
 Wenn die Zeile ausgewählt wird, navigiert die Anwendung zu einem neuen Bildschirm mit Zeilen, die der-Enumeration entsprechen, wie unten dargestellt:
 
- [![](reflection-api-walkthrough-images/04-set-category.png "Selecting the row results in the application navigating to a new screen with rows corresponding to the enumeration")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
+ [![Wenn die Zeile ausgewählt wird, navigiert die Anwendung zu einem neuen Bildschirm mit Zeilen, die der-Enumeration entsprechen.](reflection-api-walkthrough-images/04-set-category.png)](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 
  <a name="Summary"></a>
 

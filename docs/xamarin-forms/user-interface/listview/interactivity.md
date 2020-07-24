@@ -10,12 +10,12 @@ ms.date: 09/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5142965216b328172ae7fa04cdc0c13590f5ff38
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 287b116d9ba2cb84e4e196fff080b8212e4eca3b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139885"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938410"
 ---
 # <a name="listview-interactivity"></a>ListView-Interaktivität
 
@@ -48,7 +48,7 @@ Wenn ein Element ausgewählt wurde und die- [`SelectionMode`](xref:Xamarin.Forms
 
 Die folgenden Screenshots zeigen eine [`ListView`](xref:Xamarin.Forms.ListView) mit dem Standardauswahl Modus:
 
-![](interactivity-images/selection-default.png "ListView with Selection Enabled")
+![ListView mit aktivierter Auswahl](interactivity-images/selection-default.png)
 
 ### <a name="disable-selection"></a>Auswahl deaktivieren
 
@@ -66,7 +66,7 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 
 Häufig möchten Benutzeraktionen für ein Element in einem ausführen `ListView` . Stellen Sie sich z. b. eine Liste von e-Mails in der Mail-APP vor. Unter IOS können Sie eine Nachricht löschen, um eine Nachricht zu löschen:
 
-![](interactivity-images/context-default.png "ListView with Context Actions")
+![ListView mit Kontext Aktionen](interactivity-images/context-default.png)
 
 Kontext Aktionen können in c# und XAML implementiert werden. Unten finden Sie bestimmte Leitfäden für beide, aber zunächst sehen wir uns einige wichtige Implementierungsdetails für beides an.
 
@@ -181,11 +181,11 @@ listView.RefreshControlColor = Color.Red;
 
 Die folgenden Screenshots zeigen Pull-to-refresh-Vorgänge, während der Benutzer den Abruf durchläuft:
 
-![](interactivity-images/refresh-start.png "ListView Pull to Refresh In-Progress")
+![ListView-Pull zum Aktualisieren in Bearbeitung](interactivity-images/refresh-start.png)
 
 Die folgenden Screenshots zeigen die Pull-zu-aktualisieren, nachdem der Benutzer den Pull losgelassen hat, während der Spinner angezeigt wird, während [`ListView`](xref:Xamarin.Forms.ListView) aktualisiert wird:
 
-![](interactivity-images/refresh-in-progress.png "ListView Pull to Refresh Complete")
+![ListView-Pull zum Aktualisieren wird beendet.](interactivity-images/refresh-in-progress.png)
 
 [`ListView`](xref:Xamarin.Forms.ListView)Löst das [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) -Ereignis aus, um die Aktualisierung zu initiieren, und die- [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing) Eigenschaft wird auf festgelegt `true` . Der Code, der zum Aktualisieren des Inhalts von erforderlich ist `ListView` , sollte dann vom Ereignishandler für das- `Refreshing` Ereignis oder durch die-Methode, die von ausgeführt wird, ausgeführt werden [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) . Nachdem `ListView` aktualisiert wurde, sollte die- `IsRefreshing` Eigenschaft auf festgelegt werden `false` , oder die- [`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh) Methode sollte aufgerufen werden, um anzugeben, dass die Aktualisierung beendet ist.
 

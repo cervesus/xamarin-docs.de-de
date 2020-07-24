@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: e90ee165073dbbe792e4ca1916463517ad86255d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 39a18a775946c2f139b4c032d2c360bc5680a0e7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572298"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937916"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Alternative App-Symbole in xamarin. IOS
 
@@ -25,7 +25,7 @@ Apple hat eine Reihe von Erweiterungen zu IOS 10,3 hinzugefügt, die es einer AP
 - `AlternateIconName`-Gibt den Namen des alternativen Symbols zurück, das derzeit ausgewählt ist, oder, `null` Wenn das primäre Symbol verwendet wird.
 - `SetAlternameIconName`-Verwenden Sie diese Methode, um das Symbol der APP auf das angegebene Alternative Symbol zu wechseln.
 
-![](alternate-app-icons-images/icons04.png "A sample alert when an app changes its icon")
+![Eine Beispiel Warnung, wenn eine APP Ihr Symbol ändert](alternate-app-icons-images/icons04.png)
 
 <a name="Adding-Alternate-Icons"></a>
 
@@ -33,19 +33,19 @@ Apple hat eine Reihe von Erweiterungen zu IOS 10,3 hinzugefügt, die es einer AP
 
 Damit eine APP auf ein alternatives Symbol umgestellt werden kann, muss eine Auflistung von Symbolbildern im xamarin. IOS-App-Projekt enthalten sein. Diese Bilder können dem Projekt nicht mithilfe der typischen Methode hinzugefügt werden `Assets.xcassets` . Sie müssen direkt dem **Ressourcen** Ordner hinzugefügt werden.
 
-Gehen Sie folgendermaßen vor:
+Gehen Sie wie folgt vor:
 
 1. Wählen Sie die erforderlichen Symbolbilder in einem Ordner aus, wählen Sie alle aus, und ziehen Sie Sie in der **Projektmappen-Explorer**in den Ordner **Ressourcen** :
 
-    ![](alternate-app-icons-images/icons00.png "Select the icons images from a folder")
+    ![Symbole aus einem Ordner auswählen](alternate-app-icons-images/icons00.png)
 
 2. Wenn Sie dazu aufgefordert werden, wählen Sie **Kopieren** **aus, verwenden Sie die gleiche Aktion für alle ausgewählten Dateien** , und klicken Sie auf **OK** :
 
-    ![](alternate-app-icons-images/icons02.png "The Add File to Folder dialog box")
+    ![Dialogfeld "Datei zum Ordner hinzufügen"](alternate-app-icons-images/icons02.png)
 
 3. Der Ordner **Ressourcen** sollte wie folgt aussehen:
 
-    ![](alternate-app-icons-images/icons01.png "The Resources folder should look like this")
+    ![Der Ordner "Resources" sollte wie folgt aussehen.](alternate-app-icons-images/icons01.png)
 
 <a name="Modifying-the-Info.plist-File"></a>
 
@@ -53,10 +53,10 @@ Gehen Sie folgendermaßen vor:
 
 Nachdem die erforderlichen Images dem **Ressourcen** Ordner hinzugefügt wurden, muss der Schlüssel " [cfbundlealternative Eicons](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW13) " der Datei " **Info. plist** " des Projekts hinzugefügt werden. Mit diesem Schlüssel werden der Name des neuen Symbols und die Bilder definiert, aus denen es besteht.
 
-Gehen Sie folgendermaßen vor:
+Gehen Sie wie folgt vor:
 
 1. Doppelklicken Sie auf die **info.plist**-Datei im **Projektmappen-Explorer**, um sie zu öffnen und zu bearbeiten.
-2. Wechseln Sie zur **Quell** Ansicht.
+2. Wechseln Sie zur Ansicht **Quelle**.
 3. Fügen Sie einen Schlüssel für die **Bündel Symbole** hinzu, und belassen Sie den **Typ** " **Dictionary**".
 4. Fügen Sie einen `CFBundleAlternateIcons` Schlüssel hinzu, und legen Sie den **Typ** auf **Dictionary**fest.
 5. Fügen Sie einen `AppIcon2` Schlüssel hinzu, und legen Sie den **Typ** auf **Dictionary**fest. Dabei handelt es sich um den Namen des neuen alternativen App-Symbol Satzes.
@@ -67,7 +67,7 @@ Gehen Sie folgendermaßen vor:
 
 Die resultierende Datei " **Info. plist** " sollte wie folgt aussehen:
 
-![](alternate-app-icons-images/icons03.png "The completed Info.plist file")
+![Die fertige Datei "Info. plist"](alternate-app-icons-images/icons03.png)
 
 Oder wie folgt, wenn Sie in einem Text-Editor geöffnet ist:
 
@@ -158,11 +158,11 @@ partial void UseAlternateIcon (Foundation.NSObject sender)
 
 Wenn die app ausgeführt wird und der Benutzer ein alternatives Symbol auswählt, wird eine Warnung wie die folgende angezeigt:
 
-![](alternate-app-icons-images/icons04.png "A sample alert when an app changes its icon")
+![Eine Beispiel Warnung, wenn eine APP Ihr Symbol ändert](alternate-app-icons-images/icons04.png)
 
 Wenn der Benutzer wieder zum primären Symbol wechselt, wird eine Warnung wie die folgende angezeigt:
 
-![](alternate-app-icons-images/icons05.png "A sample alert when an app changes to the primary icon")
+![Eine Beispiel Warnung, wenn eine app in das primäre Symbol geändert wird](alternate-app-icons-images/icons05.png)
 
 <a name="Summary"></a>
 

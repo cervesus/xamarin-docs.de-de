@@ -92,7 +92,7 @@ Dadurch kann die Eigenschaftenpad verwendet werden, um die Eigenschaften der ein
 
 Beachten Sie, dass der segmentierte Steuerelement Stil in iOS7 veraltet ist und die Anpassungsoptionen in einer iOS7-Anwendung daher keine Auswirkung haben.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Steuerelemente (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
 - [Warnungs Controller](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

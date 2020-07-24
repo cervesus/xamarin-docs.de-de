@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 5aa3baa6aba76483866911d905687be6c3a5ae4e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 44297e32821721d483a265e7d2a69016f4e1a87b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569828"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86940022"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatisches Layout mit dem Xamarin Designer für IOS
 
@@ -20,7 +20,7 @@ Das automatische Layout (auch als "Adaptive Layout" bezeichnet) ist ein reaktion
 
 In dieser Anleitung werden Einschränkungen eingeführt und erläutert, wie Sie im xamarin IOS-Designer verwendet werden. Dieses Handbuch behandelt nicht Programm gesteuert das Arbeiten mit Einschränkungen. Informationen zur programmgesteuerten Verwendung des automatischen Layouts finden Sie in der [Apple-Dokumentation](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Der Xamarin Designer für IOS ist in Visual Studio für Mac in Visual Studio 2017 und höher unter Windows verfügbar.
 
@@ -45,13 +45,13 @@ Die Standardkonfiguration für den IOS-Designer hat den Einschränkungs Modus ak
 1. Klicken Sie auf einen leeren Bereich auf der Entwurfs Oberfläche. Dadurch werden alle Elemente deaktiviert und die Eigenschaften für das Storyboard-Dokument angezeigt.
 1. Aktivieren oder deaktivieren Sie das Kontrollkästchen " **AutoLayout verwenden** " im Eigenschaften Panel:
 
-    ![](designer-auto-layout-images/image01.png "The Use Autolayout checkbox in the property panel")
+    ![Das Kontrollkästchen "AutoLayout verwenden" im Eigenschaften Panel](designer-auto-layout-images/image01.png)
 
 Standardmäßig werden keine Einschränkungen auf der-Oberfläche erstellt oder sichtbar. Stattdessen werden Sie zum Zeitpunkt der Kompilierung automatisch aus den Frame Informationen abgeleitet. Zum Hinzufügen von Einschränkungen müssen wir ein Element auf der Entwurfs Oberfläche auswählen und Einschränkungen hinzufügen. Dazu können Sie die Einschränkungs **Symbolleiste**verwenden.
 
 ## <a name="constraints-toolbar"></a>Einschränkungs Symbolleiste
 
- [![](designer-auto-layout-images/toolbarnew.png "The Context Menu Commands")](designer-auto-layout-images/toolbarnew.png#lightbox)
+ [![Die Kontextmenü Befehle](designer-auto-layout-images/toolbarnew.png)](designer-auto-layout-images/toolbarnew.png#lightbox)
 
 Die Einschränkungs Symbolleiste wurde aktualisiert und besteht nun aus zwei Hauptteilen:
 
@@ -93,7 +93,7 @@ Die vier T-förmigen Handles auf jeder Seite des Elements definieren den *oberen
 
 Wählen Sie zum Erstellen einer Einschränkung ein Handle aus, und ziehen Sie es an eine beliebige Stelle auf der Entwurfs Oberfläche. Wenn Sie den Zieh Vorgang starten, werden auf der Oberfläche eine Reihe von grünen Linien/Feldern angezeigt, die Sie darüber informieren, was Sie einschränken können. Beispielsweise beschränken wir im folgenden Screenshot die obere Seite der mittleren Schaltfläche:
 
- [![](designer-auto-layout-images/image07.png "Constraining the top side of the middle button")](designer-auto-layout-images/image07.png#lightbox)
+ [![Einschränken der oberen Seite der mittleren Schaltfläche](designer-auto-layout-images/image07.png)](designer-auto-layout-images/image07.png#lightbox)
 
 Beachten Sie die drei gestrichelten grünen Linien für die anderen beiden Schaltflächen. Die grünen Linien geben Ablage *Bereiche*oder die Attribute anderer Elemente an, die eingeschränkt werden können. Im obigen Screenshot bieten die anderen beiden Schaltflächen drei vertikale Ablage Bereiche ( *unten*, *CenterY*, *Top*), um die Schaltfläche einzuschränken. Die gestrichelte grüne Linie am oberen Rand der Ansicht bedeutet, dass der Ansichts Controller am oberen Rand der Ansicht eine Einschränkung bietet, und das solide grüne Feld bedeutet, dass der Ansichts Controller eine Einschränkung unterhalb des oberen layouthandbuchs bietet.
 
@@ -106,13 +106,13 @@ In den nächsten drei Abschnitten wird die Arbeit mit verschiedenen Einschränku
 
 Mit Größenbeschränkungen ( *Höhe* und *Breite* ) haben Sie zwei Möglichkeiten. Die erste Option besteht darin, das Handle zu ziehen, um eine benachbarte Elementgröße einzuschränken, wie im obigen Beispiel veranschaulicht. Die andere Option besteht darin, auf das Handle zu doppelklicken, um eine selbst Einschränkung zu erstellen. Auf diese Weise können wir einen konstanten Größen Wert angeben, wie im folgenden Screenshot veranschaulicht:
 
- [![](designer-auto-layout-images/sizec.png "Drag the handle to constrain to a neighbor element size, as illustrated here")](designer-auto-layout-images/sizec.png#lightbox)
+ [![Ziehen Sie das Handle, um die Größe des Nachbar Elements einzuschränken, wie hier gezeigt.](designer-auto-layout-images/sizec.png)](designer-auto-layout-images/sizec.png#lightbox)
 
 ### <a name="center-constraints"></a>Center-Einschränkungen
 
 Das quadratische Handle erstellt eine *CenterX* -oder *CenterY* -Einschränkung, abhängig vom Kontext. Wenn Sie den quadratischen Zieh Punkt ziehen, werden die anderen Elemente so angezeigt, dass Sie sowohl vertikale als auch horizontale Ablage Bereiche bieten, wie im folgenden Screenshot veranschaulicht:
 
- [![](designer-auto-layout-images/centerc.png "Center Constraints")](designer-auto-layout-images/centerc.png#lightbox)
+ [![Center-Einschränkungen](designer-auto-layout-images/centerc.png)](designer-auto-layout-images/centerc.png#lightbox)
 
 Wenn Sie einen vertikalen Ablage Bereich auswählen, wird eine *CenterY* -Einschränkung erstellt. Wenn Sie einen horizontalen Ablage Bereich auswählen, wird die Einschränkung auf " *CenterX*" basieren.
 
@@ -120,17 +120,17 @@ Wenn Sie einen vertikalen Ablage Bereich auswählen, wird eine *CenterY* -Einsch
 
 Zum Erstellen von Gleichheits-und Größen Gleichheits Einschränkungen zwischen zwei Elementen können Sie Elemente aus einer oberen Symbolleiste auswählen, um die Reihenfolge der Reihenfolge der horizontalen Ausrichtung, die vertikale Ausrichtung und Größe von equalitäten anzugeben, wie im folgenden Screenshot veranschaulicht:
 
- [![](designer-auto-layout-images/image06.png "Combinational Constraints")](designer-auto-layout-images/image06.png#lightbox)
+ [![Combinational-Einschränkungen](designer-auto-layout-images/image06.png)](designer-auto-layout-images/image06.png#lightbox)
 
 ### <a name="visualizing-and-editing-constraints"></a>Visualisieren und Bearbeiten von Einschränkungen
 
 Wenn Sie eine Einschränkung hinzufügen, wird Sie auf der Entwurfs Oberfläche als blaue Linie angezeigt, wenn Sie ein Element auswählen:
 
- [![](designer-auto-layout-images/image09.png "Visualizing Constraints")](designer-auto-layout-images/image09.png#lightbox)
+ [![Visualisieren von Einschränkungen](designer-auto-layout-images/image09.png)](designer-auto-layout-images/image09.png#lightbox)
 
 Sie können eine Einschränkung auswählen, indem Sie auf eine blaue Linie klicken und die Einschränkungs Werte direkt im Eigenschaften Panel bearbeiten. Wenn Sie auf eine blaue Linie doppelklicken, wird ein popover angezeigt, mit dem Sie die Werte direkt auf der Entwurfs Oberfläche bearbeiten können:
 
- [![](designer-auto-layout-images/image08.png "Editing Constraints")](designer-auto-layout-images/image08.png#lightbox)
+ [![Bearbeitungs Einschränkungen](designer-auto-layout-images/image08.png)](designer-auto-layout-images/image08.png#lightbox)
 
 ## <a name="constraint-issues"></a>Einschränkungs Probleme
 
@@ -146,27 +146,27 @@ In diesem Abschnitt werden die drei oben aufgeführten Probleme erläutert, und 
 
 Widersprüchliche Einschränkungen sind rot markiert und weisen ein Warnsymbol auf. Wenn Sie mit dem Mauszeiger auf die Warn Symbole zeigen, wird ein Popup mit Informationen über den Konflikt angezeigt:
 
- [![](designer-auto-layout-images/image11.png "Conflicting Constraints warning")](designer-auto-layout-images/image11.png#lightbox)
+ [![Warnung zu Konflikten in Konflikt](designer-auto-layout-images/image11.png)](designer-auto-layout-images/image11.png#lightbox)
 
 ### <a name="underconstrained-items"></a>Unter beschränkte Elemente
 
 Unter beschränkte Elemente werden Orange angezeigt und zeigen die Darstellung eines orangefarbenen markersymbols in der Ansichts Controller-Objekt Leiste an:
 
- [![](designer-auto-layout-images/image02.png "Underconstrained items appear in orange")](designer-auto-layout-images/image02.png#lightbox)
+ [![Unter beschränkte Elemente werden Orange angezeigt](designer-auto-layout-images/image02.png)](designer-auto-layout-images/image02.png#lightbox)
 
 Wenn Sie auf dieses Markierungs Symbol klicken, können Sie Informationen zu unter beschränkten Elementen in der Szene erhalten und die Probleme lösen, indem Sie Sie entweder vollständig einschränken oder indem Sie Ihre Einschränkungen entfernen, wie im folgenden Screenshot veranschaulicht:
 
- [![](designer-auto-layout-images/image10.png "Fixing Underconstrained Items")](designer-auto-layout-images/image10.png#lightbox)
+ [![Beheben von unter beschränkten Elementen](designer-auto-layout-images/image10.png)](designer-auto-layout-images/image10.png#lightbox)
 
 ### <a name="frame-misplacement"></a>Frame-fehl-Element
 
 Der Frame-"-fehlpunkt" verwendet denselben Farbcode wie unter beschränkte Elemente. Das Element wird immer auf der-Oberfläche gerendert, indem es seinen systemeigenen Frame verwendet, aber im Fall eines Frame-fehl Zeichens wird ein rotes Rechteck gekennzeichnet, wo das Element am Ende der Anwendung ausgeführt wird, wie im folgenden Screenshot veranschaulicht:
 
- [![](designer-auto-layout-images/image05.png "Sample Frame Misplacement view")](designer-auto-layout-images/image05.png#lightbox)
+ [![Beispiel Ansicht für Frame-fehlpunkt](designer-auto-layout-images/image05.png)](designer-auto-layout-images/image05.png#lightbox)
 
 Wählen Sie zum Auflösen von Frame-Fehler behebe Fehlern auf der Symbolleiste Einschränkungen die Schaltfläche **Frames basierend auf Einschränkungen aktualisieren** aus (ganz rechts auf die Schaltfläche):
 
- [![](designer-auto-layout-images/image03.png "Update Frames based on Constraints toolbar button")](designer-auto-layout-images/image03.png#lightbox)
+ [![Schaltfläche "Frames auf der Grundlage von Einschränkungen aktualisieren"](designer-auto-layout-images/image03.png)](designer-auto-layout-images/image03.png#lightbox)
 
 Dadurch wird der Element Rahmen automatisch so angepasst, dass er den von den Steuerelementen definierten Positionen entspricht.
 
@@ -181,10 +181,10 @@ Um auf eine Einschränkung im Code zuzugreifen, müssen Sie Sie zunächst im IOS
 1. Erstellen Sie die Einschränkung wie gewohnt (mit einer der oben aufgeführten Methoden).
 2. Suchen Sie im Dokument Gliederungs- **Explorer**die gewünschte Einschränkung, und wählen Sie Sie aus:
 
-    [![](designer-auto-layout-images/modify01.png "The Document Outline Explorer")](designer-auto-layout-images/modify01.png#lightbox)
+    [![Der Dokument Gliederungs-Explorer](designer-auto-layout-images/modify01.png)](designer-auto-layout-images/modify01.png#lightbox)
 3. Weisen Sie der Einschränkung im nächsten Schritt im **Eigenschaften-Explorer**auf der Registerkarte **Widget** einen **Namen** zu:
 
-    [![](designer-auto-layout-images/modify02.png "The Widget Tab")](designer-auto-layout-images/modify02.png#lightbox)
+    [![Die Widget-Registerkarte](designer-auto-layout-images/modify02.png)](designer-auto-layout-images/modify02.png#lightbox)
 4. Speichern Sie die Änderungen.
 
 Nachdem Sie die obigen Änderungen vorgenommen haben, können Sie im Code auf die Einschränkung zugreifen und ihre Eigenschaften ändern. Beispielsweise können Sie Folgendes verwenden, um die Höhe der angefügten Ansicht auf NULL festzulegen:
@@ -195,7 +195,7 @@ ViewInfoHeight.Constant = 0;
 
 Mit der folgenden Einstellung für die Einschränkung im IOS-Designer:
 
-[![](designer-auto-layout-images/modify03.png "Editing a Constraint in the Property Explorer")](designer-auto-layout-images/modify03.png#lightbox)
+[![Bearbeiten einer Einschränkung im Eigenschaften-Explorer](designer-auto-layout-images/modify03.png)](designer-auto-layout-images/modify03.png#lightbox)
 
 ### <a name="the-deferred-layout-pass"></a>Der verzögerte Layoutdurchlauf.
 

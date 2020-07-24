@@ -19,7 +19,7 @@ ms.locfileid: "86931871"
 ---
 # <a name="display-pop-ups"></a>Popup anzeigen
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
 Wenn Sie eine Warnung anzeigen, einen Benutzer auffordern, eine Auswahl zu treffen oder eine Eingabeaufforderung anzuzeigen, ist dies eine gängige UI-Aufgabe. Xamarin.Formsverfügt über drei Methoden für die- [`Page`](xref:Xamarin.Forms.Page) Klasse für die Interaktion mit dem Benutzer über ein Popup: [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) , [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) und `DisplayPromptAsync` . Sie werden auf jeder Plattform mit entsprechenden nativen Steuerelementen gerendert.
 

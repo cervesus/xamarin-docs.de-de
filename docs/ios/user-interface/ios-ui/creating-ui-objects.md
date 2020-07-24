@@ -169,6 +169,6 @@ Die `designer.cs` Datei sollte nicht manuell bearbeitet werden – die IDE (Visu
 
 Wenn Benutzeroberflächen Objekte Programm gesteuert zu einem oder hinzugefügt werden `View` `ViewController` , instanziieren und verwalten Sie die Objekt Verweise selbst. Daher ist keine Designer-Datei erforderlich.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Steuerelemente (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)

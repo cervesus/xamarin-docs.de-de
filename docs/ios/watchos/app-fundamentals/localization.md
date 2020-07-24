@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 82b739697705ac4c90390a36405d755a5f523159
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9e33f843d836ed5b66ed36397c9367dc671c51ed
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028407"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996252"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>Arbeiten mit der watchos-Lokalisierung in xamarin
 
 _Anpassen Ihrer watchos-Apps für mehrere Sprachen_
 
-![](localization-images/both-languages-sml.png "Apple Watch displaying localized content")
+![Apple Watch Anzeigen lokalisierter Inhalte](localization-images/both-languages-sml.png)
 
 watchos-apps werden mithilfe der standardmäßigen IOS-Methoden lokalisiert:
 
@@ -35,7 +35,7 @@ Der lokalisierte Text und die Ressourcen *unterscheiden* sich in der Watch-APP u
 
 ## <a name="watch-app"></a>Watch-App
 
-Die Watch-app enthält das Storyboard, das die Benutzeroberfläche der APP beschreibt. Alle Steuerelemente (z. b. `Label` und `Image`), die die Lokalisierung unterstützen, haben eine **Lokalisierungs-ID**
+Die Watch-app enthält das Storyboard, das die Benutzeroberfläche der APP beschreibt. Alle Steuerelemente (z `Label` . b. und `Image` ), die die Lokalisierung unterstützen, haben eine **Lokalisierungs-ID**
 
 Jedes sprachspezifische **. lproj** -Verzeichnis sollte **. Strings** -Dateien mit den Übersetzungen für jedes Element (mit der **Lokalisierungs-ID**) sowie Bilder enthalten, auf die das Storyboard verweist.
 
@@ -48,7 +48,7 @@ Die Erweiterung sollte auch sprachspezifische **lproj** -Verzeichnisse enthalten
 ## <a name="globalizing-the-watch-solution"></a>Globalisieren der Überwachungslösung
 
 Die Globalisierung ist der Prozess, bei dem eine Anwendung lokalisierbar ist.
-Für Watch-apps bedeutet dies, dass das Storyboard mit unterschiedlichen Textlängen entworfen wird. Dadurch wird sichergestellt, dass jedes Bildschirmlayout entsprechend dem angezeigten Text ordnungsgemäß angepasst wird. Außerdem müssen Sie sicherstellen, dass alle Zeichen folgen, auf die im Überwachungs Erweiterungs Code verwiesen wird, mit der `LocalizedString`-Methode übersetzt werden können.
+Für Watch-apps bedeutet dies, dass das Storyboard mit unterschiedlichen Textlängen entworfen wird. Dadurch wird sichergestellt, dass jedes Bildschirmlayout entsprechend dem angezeigten Text ordnungsgemäß angepasst wird. Außerdem müssen Sie sicherstellen, dass alle Zeichen folgen, auf die im Überwachungs Erweiterungs Code verwiesen wird, mithilfe der-Methode übersetzt werden können `LocalizedString` .
 
 ### <a name="watch-app"></a>Watch-App
 
@@ -56,21 +56,21 @@ Standardmäßig ist die Watch-APP nicht für die Lokalisierung konfiguriert. Sie
 
 1. Erstellen Sie das Basisverzeichnis " **. lproj** ", und verschieben Sie das **Interface. Storyboard** in dieses Verzeichnis.
 
-2. Erstellen Sie **\<Sprache >. lproj** -Verzeichnisse für jede Sprache, die Sie unterstützen möchten.
+2. Erstellen Sie ** \<language> lproj** -Verzeichnisse für jede Sprache, die Sie unterstützen möchten.
 
 3. Die **lproj** -Verzeichnisse sollten eine **Interface. Strings** -Textdatei enthalten (der Dateiname sollte dem Namen des storboards entsprechen). Optional können Sie alle Bilder platzieren, die in diesen Verzeichnissen lokalisiert werden müssen.
 
 Das Überwachungs-App-Projekt sieht wie folgt aus, nachdem diese Änderungen vorgenommen wurden (es wurden nur englische und spanische Sprachdateien hinzugefügt):
 
-  ![](localization-images/watchapp-solution.png "The watch app project with English and Spanish language files")
+  ![Das Watch-App-Projekt mit englischen und spanischen Sprachdateien](localization-images/watchapp-solution.png)
 
 #### <a name="storyboard-text"></a>Storyboardtext
 
 Wenn Sie das Storyboard bearbeiten, wählen Sie jedes Element aus, und beachten Sie die **Lokalisierungs-ID** , die im **eigenschaftenpad** angezeigt wird:
 
-  [![](localization-images/storyboard-sml.png "The Localization ID that appears in the Properties pad")](localization-images/storyboard.png#lightbox)
+  [![Die Lokalisierungs-ID, die im eigenschaftenpad angezeigt wird.](localization-images/storyboard-sml.png)](localization-images/storyboard.png#lightbox)
 
-Erstellen Sie im Ordner **base. lproj** die Schlüssel-Wert-Paare wie unten dargestellt, wobei der Schlüssel durch die **Lokalisierungs-ID** und einen Eigenschaftsnamen im Steuerelement gebildet wird, verknüpft durch einen Punkt (`.`).
+Erstellen Sie im Ordner " **base. lproj** " Schlüssel-Wert-Paare wie unten dargestellt, wobei der Schlüssel durch die **Lokalisierungs-ID** und einen Eigenschaftsnamen im Steuerelement gebildet wird, verknüpft durch einen Punkt ( `.` ).
 
 ```csharp
 "AgC-eL-Hgc.title" = "WatchL10nEN"; // interface controller title
@@ -81,25 +81,25 @@ Erstellen Sie im Ordner **base. lproj** die Schlüssel-Wert-Paare wie unten darg
 "39.text" = "Second screen";
 ```
 
-Beachten Sie in diesem Beispiel, dass eine **Lokalisierungs-ID** eine einfache Zahlen Zeichenfolge sein kann (z. b. "0", "1" usw.) oder eine komplexere Zeichenfolge (z. b. "AGC-El-HGC"). `Label` Steuerelemente über eine `Text`-Eigenschaft verfügen und `Button`s über eine `Title`-Eigenschaft verfügen, die sich in der Art und Weise der Festlegung ihrer lokalisierten Werte widerspiegelt, sollten Sie den Namen der Kleinbuchstaben verwenden, wie im obigen Beispiel gezeigt.
+Beachten Sie in diesem Beispiel, dass eine **Lokalisierungs-ID** eine einfache Zahlen Zeichenfolge sein kann (z. b. "0", "1" usw.) oder eine komplexere Zeichenfolge (z. b. "AGC-El-HGC"). `Label`Steuerelemente verfügen über eine `Text` -Eigenschaft, und die-Eigenschaft `Button` verfügt über eine `Title` -Eigenschaft, die sich in der Art und Weise widerspiegelt, in der Ihre lokalisierten Werte festgelegt sind. verwenden Sie den Namen der Kleinbuchstaben, wie im obigen Beispiel
 
 Wenn das Storyboard auf der Überwachung gerendert wird, werden die korrekten Werte automatisch extrahiert und entsprechend der vom Benutzer ausgewählten Sprache angezeigt.
 
 #### <a name="storyboard-images"></a>Storyboard-Bilder
 
-Die Beispiellösung umfasst auch ein **gradient@2x.png** Image in jedem Sprachordner. Dieses Bild kann sich für jede Sprache unterscheiden (z. b. Möglicherweise ist ein eingebetteter Text vorhanden, der übersetzt werden muss oder lokalisierte iconographie verwendet werden muss.
+Die Beispiellösung umfasst auch ein **gradient@2x.png** Bild in jedem Sprachordner. Dieses Bild kann sich für jede Sprache unterscheiden (z. b. Möglicherweise ist ein eingebetteter Text vorhanden, der übersetzt werden muss oder lokalisierte iconographie verwendet werden muss.
 
 Legen Sie einfach die **Image** -Eigenschaft des Bilds im Storyboard fest, und das richtige Bild wird auf der Überwachung entsprechend der vom Benutzer ausgewählten Sprache gerendert.
 
-![](localization-images/storyboard-image.png "Set the images Image property in the storyboard")
+![Festlegen der Image-Image-Eigenschaft im Storyboard](localization-images/storyboard-image.png)
 
-Hinweis: da alle Apple Watch Retina-anzeigen haben, ist nur die **@2x** Version des Bilds erforderlich. Sie müssen **@2x** im Storyboard nicht angeben.
+Hinweis: da alle Apple Watch Retina-anzeigen haben, ist nur die **@2x** Version des Bilds erforderlich. Im Storyboard muss nicht angegeben werden **@2x** .
 
 ### <a name="watch-extension"></a>Erweiterung überwachen
 
-Die Watch-Erweiterung erfordert eine ähnliche Verzeichnisstruktur zur Unterstützung der Lokalisierung, aber es ist kein Storyboard vorhanden. Die lokalisierten Zeichen folgen in der Erweiterung sind nur die C# , auf die durch Code verwiesen wird.
+Die Watch-Erweiterung erfordert eine ähnliche Verzeichnisstruktur zur Unterstützung der Lokalisierung, aber es ist kein Storyboard vorhanden. Die lokalisierten Zeichen folgen in der Erweiterung sind nur die, auf die durch c#-Code verwiesen wird.
 
-![](localization-images/watchextension-solution.png "The watch extension directory structure to support localization")
+![Die Verzeichnisstruktur der Überwachungs Erweiterung zur Unterstützung der Lokalisierung](localization-images/watchextension-solution.png)
 
 #### <a name="strings-in-code"></a>Zeichen folgen im Code
 
@@ -112,7 +112,7 @@ Die **Lokalisierbare Strings** -Datei hat eine etwas andere Struktur, als wenn S
 "Bed time" = "Bed time!"; // night
 ```
 
-Die `NSBundle.MainBundle.LocalizedString`-Methode wird verwendet, um Zeichen folgen in Ihre übersetzten Entsprechungen aufzulösen, wie im folgenden Code dargestellt.
+Die- `NSBundle.MainBundle.LocalizedString` Methode wird verwendet, um Zeichen folgen in Ihre übersetzten Entsprechungen aufzulösen, wie im folgenden Code dargestellt.
 
 ```csharp
 var display = "Breakfast time";
@@ -125,13 +125,13 @@ displayText.SetText (localizedDisplay);
 
 Bilder, die durch Code aufgefüllt werden, können auf zwei Arten festgelegt werden.
 
-1. Sie können ein `Image` Steuerelement ändern, indem Sie dessen Wert auf den Zeichen folgen Namen eines Images festlegen, das bereits in der Watch-app vorhanden ist, z. b.
+1. Sie können ein Steuerelement ändern `Image` , indem Sie seinen Wert auf den Zeichen folgen Namen eines Images festlegen, das bereits in der Watch-app vorhanden ist, z. b.
 
     ```csharp
     displayImage.SetImage("gradient"); // image in Watch App (as shown above)
     ```
 
-2. Sie können ein Bild von der Erweiterung in die Überwachung mithilfe `FromBundle` verschieben, und die APP wählt automatisch das richtige Bild für die Sprachauswahl des Benutzers aus. In der Beispiellösung wird ein Bild **language@2x.png** in jedem Sprachordner angezeigt, und es wird auf `DetailController` mit folgendem Code angezeigt:
+2. Sie können ein Bild von der Erweiterung in die Überwachung mithilfe von verschieben, `FromBundle` und die APP wählt automatisch das richtige Bild für die Sprachauswahl des Benutzers aus. In der Beispiel Projekt Mappe befindet sich ein Bild **language@2x.png** in jedem Sprachordner, und es wird unter `DetailController` Verwendung des folgenden Codes angezeigt:
 
     ```csharp
     using (var image = UIImage.FromBundle ("language")) {
@@ -139,7 +139,7 @@ Bilder, die durch Code aufgefüllt werden, können auf zwei Arten festgelegt wer
     }
     ```
 
-    Beachten Sie, dass Sie die **@2x** nicht angeben müssen, wenn Sie auf den Dateinamen des Bilds verweisen.
+    Beachten Sie, dass Sie beim **@2x** Verweis auf den Dateinamen des Bilds nicht angeben müssen.
 
 Die zweite Methode ist auch anwendbar, wenn Sie ein Abbild von einem Remote Server herunterladen, um es auf der Uhr zu Rendering. in diesem Fall sollten Sie jedoch sicherstellen, dass das Abbild, das Sie herunterladen, gemäß den Einstellungen des Benutzers ordnungsgemäß lokalisiert wird.
 
@@ -185,7 +185,7 @@ Die (maschinell übersetzt) spansish Language Strings:
 "Bed time" = "la hora de dormir"; // night
 ```
 
-## <a name="testing"></a>Test
+## <a name="testing"></a>Testen
 
 Die Methode zum Ändern der Spracheinstellungen unterscheidet sich zwischen dem Simulator und physischen Geräten.
 
@@ -193,13 +193,13 @@ Die Methode zum Ändern der Spracheinstellungen unterscheidet sich zwischen dem 
 
 Wählen Sie im Simulator die zu testende Sprache mithilfe der IOS- **Einstellungs** -App aus (das graue Zahnrad Symbol auf dem Startbildschirm des Simulators).
 
-  ![](localization-images/sim-settings-sml.png "The iOS Settings app Localization settings")
+  ![Die IOS-Einstellungen App-Lokalisierungs Einstellungen](localization-images/sim-settings-sml.png)
 
 ### <a name="watch-device"></a>Gerät überwachen
 
 Wenn Sie mit einer Überwachung testen, ändern Sie die Sprache der Uhr in der **Apple Watch** -App auf dem gekoppelten iPhone.
 
-  ![](localization-images/phone-settings-sml.png "Change the watch's language in the Apple Watch app on the paired iPhone")
+  ![Ändern der Sprache der Uhr in der Apple Watch-App auf dem gekoppelten iPhone](localization-images/phone-settings-sml.png)
 
 ## <a name="related-links"></a>Verwandte Links
 

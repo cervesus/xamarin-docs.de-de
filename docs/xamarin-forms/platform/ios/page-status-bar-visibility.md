@@ -19,7 +19,7 @@ ms.locfileid: "86936824"
 ---
 # <a name="page-status-bar-visibility-on-ios"></a>Sichtbarkeit von Seiten Status Leiste unter IOS
 
-[![Beispiel herunterladen](~/media/shared/download.png) Herunterladen des Beispiels](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Diese plattformspezifische IOS-Datei wird verwendet, um die Sichtbarkeit der Statusleiste eines festzulegen [`Page`](xref:Xamarin.Forms.Page) , und bietet die Möglichkeit, zu steuern, wie die Statusleiste in das-Element gelangt oder Sie verlässt `Page` . Sie wird in XAML verwendet, indem die `Page.PrefersStatusBarHidden` angefügte-Eigenschaft auf einen Wert der `StatusBarHiddenMode` -Enumeration festgelegt wird, und optional die `Page.PreferredStatusBarUpdateAnimation` angefügte-Eigenschaft auf einen Wert der- `UIStatusBarAnimation` Enumeration:
 

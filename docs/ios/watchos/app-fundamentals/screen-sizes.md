@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: aeaa1bb1273bc062e0ac76eaa09722827f15797f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 18720ee396952cfe1feaaa8de35a425f60575eae
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028393"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930116"
 ---
 # <a name="working-with-watchos-screen-sizes-in-xamarin"></a>Arbeiten mit watchos-Bildschirmgrößen in xamarin
 
@@ -30,11 +30,11 @@ Beim Entwerfen und Testen Ihrer Apps sollten Sie die Bildschirmgröße berücksi
 
 Standardmäßig zeigt der Visual Studio für Mac-Designer in **jeder Apple Watch**Überwachungsschnittstellen Controller an.
 
-![](screen-sizes-images/screen-any-sml.png "The Designer displays watch interface controllers at Any Apple Watch")
+![Der Designer zeigt die Überwachungsschnittstellen Controller an allen Apple Watch](screen-sizes-images/screen-any-sml.png)
 
 Verwenden Sie das Menü Größe, um Ihr Storyboard in einer der verfügbaren Bildschirmgrößen zu bearbeiten und in der Vorschau anzuzeigen: **38mm** oder **42 mm**:
 
-![](screen-sizes-images/screen-menu-sml.png "Selecting the 38mm or 42mm size")
+![Auswählen der Größe von 38mm oder 42 mm](screen-sizes-images/screen-menu-sml.png)
 
 In der größeren Bildschirmgröße werden manchmal Inhalte angezeigt, die auf dem kleineren Bildschirm abgeschnitten/ausgeblendet werden.
 Achten Sie darauf, beide Größen zu testen.
@@ -43,7 +43,7 @@ Achten Sie darauf, beide Größen zu testen.
 
 Ihre APP sollte denselben Inhalt unabhängig von der Größe auf dem Bildschirm anzeigen und die Elemente nach Bedarf erweitern oder verkleinern. Im Visual Studio für Mac-Designer sollten Sie im Attribut Inspektor **relativ zum Container** oder zur Größe verwenden, **um den Inhalt** bevorzugt an die Größe fester Größe anzupassen.
 
-![](screen-sizes-images/sizeattributepanel-sml.png "Use Relative to Container or Size to Fit Content in preference to fixed sizes")
+![Verwenden Sie relativ zum Container oder zur Größe, um Inhalte für die Größe von fester Größe anzupassen.](screen-sizes-images/sizeattributepanel-sml.png)
 
 Da der Bildschirm "überwachen" von einem schwarzen Bezel umgeben ist, wird die Bereitstellung der Oberfläche nicht empfohlen. Lassen Sie die Elemente sich am Bildschirmrand befinden, und lassen Sie das Bild einen natürlichen Rahmen um die APP bilden.
 
@@ -51,13 +51,13 @@ Da der Bildschirm "überwachen" von einem schwarzen Bezel umgeben ist, wird die 
 
 Beim Testen auf dem Simulator können Sie problemlos zwischen den beiden Bildschirmgrößen wechseln, indem Sie das Menü **Hardware > Gerät** verwenden.
 
-![](screen-sizes-images/simulator.png "The simulator can switch between the two screen sizes using the Hardware Device menu")
+![Der Simulator kann mit dem Menü Hardware Gerät zwischen den beiden Bildschirmgrößen wechseln.](screen-sizes-images/simulator.png)
 
 ## <a name="image-resources"></a>Bild Ressourcen
 
 Sie sollten mehrere Bildmedien Objekte verwenden, wenn ein einzelnes Medienobjekt nicht in unterschiedlichen Größen gut aussieht. Mit Image-Asset-Katalogen können separate Bitmaps für jede Größe angegeben werden:
 
-![](screen-sizes-images/images-xcassets.png "Image asset catalog editor")
+![Bild-Asset-Katalog-Editor](screen-sizes-images/images-xcassets.png)
 
 ```csharp
 // specify the asset name, the correct size will automatically be loaded

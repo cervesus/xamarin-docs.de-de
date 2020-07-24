@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 69886a0da53d419a0c40bdf34f91d301c9efe504
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d9e8d91b03a5a82373012da215bd29a747e67d3e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573715"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939450"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>Arbeiten mit der tvos-Navigation und dem Fokus in xamarin
 
@@ -20,7 +20,7 @@ _In diesem Artikel wird das Konzept des Fokus behandelt und erläutert, wie es v
 
 In diesem Artikel wird das Konzept des [Fokus](#Focus-and-Selection) behandelt und erläutert, wie es verwendet wird, um die [Navigation](#Navigation) in einer xamarin. tvos-App-Benutzeroberfläche zu verarbeiten. Wir untersuchen, wie die integrierten tvos-Navigations Steuerelemente Fokus, Hervorhebung und Auswahl verwenden, um die Navigation in der Benutzeroberfläche der xamarin. tvos-App bereitzustellen.
 
-[![](navigation-focus-images/intro01.png "tvOS apps User Interface Navigation")](navigation-focus-images/intro01.png#lightbox)
+[![Navigation in der Benutzeroberfläche von tvos apps](navigation-focus-images/intro01.png)](navigation-focus-images/intro01.png#lightbox)
 
 Als nächstes sehen wir uns an, wie der [Fokus mit unter](#Focus-and-Parallax) schiedlichen und *geschichteten Bildern* verwendet werden kann, um visuelle Hinweise für den aktuellen Navigations Zustand für den Endbenutzer bereitzustellen.
 
@@ -34,7 +34,7 @@ Benutzer Ihrer xamarin. tvos-App interagieren nicht direkt mit ihrer Schnittstel
 
 Eine erfolgreiche tvos-App implementiert die Navigation auf eine Weise, die den Zweck der APP und die Struktur der Daten, die Sie darstellt, problemlos unterstützt, ohne dass auf die Navigation selbst geachtet wird. Entwerfen Sie Ihre Navigation so, dass Sie sich auf natürliche und vertraute Weise Verhalten kann, ohne die Benutzeroberfläche zu dominieren oder den Fokus von der Inhalte und der App-Benutzeroberfläche zu ziehen.
 
-[![](navigation-focus-images/nav01.png "The tvOS settings app")](navigation-focus-images/nav01.png#lightbox)
+[![Die tvos-Einstellungs-APP](navigation-focus-images/nav01.png)](navigation-focus-images/nav01.png#lightbox)
 
 Bei der Verwendung eines Apple TV navigiert der Benutzer in der Regel durch eine gestapelte Reihe von Bildschirmen, die jeweils einen bestimmten Satz von Inhalten darstellen. Jeder neue Bildschirm kann wiederum zu einem oder mehreren untergeordneten Bildschirmen mit Standard Steuerelementen der Benutzeroberfläche, z. b. [Schalt](~/ios/tvos/user-interface/buttons.md)Flächen, [Register](~/ios/tvos/user-interface/tab-bars.md)Karten, Tabellen, [Sammlungs Ansichten](~/ios/tvos/user-interface/collection-views.md) oder [geteilte Sichten](~/ios/tvos/user-interface/split-views.md), führen.
 
@@ -57,7 +57,7 @@ Apple empfiehlt Folgendes, wenn Sie die Navigation für Ihre tvos-App entwerfen:
 
 Im Apple TV wird ein Bild, eine Schaltfläche oder ein anderes UI-Element als _Fokus_ betrachtet, wenn es das Ziel der aktuellen Navigation ist.
 
-[![](navigation-focus-images/focus01.png "Focus and Selection example")](navigation-focus-images/focus01.png#lightbox)
+[![Beispiel für Fokus und Auswahl](navigation-focus-images/focus01.png)](navigation-focus-images/focus01.png#lightbox)
 
 Anders als bei IOS-Geräten, bei denen der Benutzer direkt mit Elementen auf dem Touchscreen des Geräts interagiert, interagieren Benutzer mit tvos-Elementen über den Raum mithilfe von Siri Remote. Zum präsentieren und Verarbeiten dieser Benutzerinteraktion verwendet das Apple TV ein _Fokus_ basiertes Modell.
 
@@ -134,7 +134,7 @@ Es kann jedoch vorkommen, dass es aufgrund der Grundbedürfnisse des UI-Entwurfs
 
 Betrachten Sie das folgende Benutzeroberflächen Layout für ein Beispiel:
 
- [![](navigation-focus-images/guide01.png "Working with Focus Guides example")](navigation-focus-images/guide01.png#lightbox)
+ [![Beispiel für das Arbeiten mit Fokus Handbüchern](navigation-focus-images/guide01.png)](navigation-focus-images/guide01.png#lightbox)
 
 Da die Schaltfläche " **Weitere Informationen** " nicht auf ein horizontales und Vertikales Raster mit der Schaltfläche " **kaufen** " fällt, ist der Benutzer nicht darauf zugreifen können. Dies kann jedoch problemlos mithilfe eines _Schwerpunkt Handbuchs_ korrigiert werden, um Bewegungs Hinweise für die Fokus-Engine bereitzustellen. 
 
@@ -164,9 +164,9 @@ public override void ViewDidLoad ()
 
 Zuerst wird ein neuer `UIFocusGuide` erstellt und mithilfe der-Methode der layoutführungsauflistung der Ansicht hinzugefügt `AddLayoutGuide` .
 
-Im nächsten Schritt werden die Anker der oberen, linken, breiten und Höhen der Vordergrund Linie relativ zu den Schaltflächen " **Weitere Informationen** " und " **kaufen** " angepasst, um Sie zwischen Ihnen zu positionieren. Thema
+Im nächsten Schritt werden die Anker der oberen, linken, breiten und Höhen der Vordergrund Linie relativ zu den Schaltflächen " **Weitere Informationen** " und " **kaufen** " angepasst, um Sie zwischen Ihnen zu positionieren. Siehe:
 
-[![](navigation-focus-images/guide02.png "Example Focus Guide")](navigation-focus-images/guide02.png#lightbox)
+[![Leitfaden zum Beispiel Fokus](navigation-focus-images/guide02.png)](navigation-focus-images/guide02.png#lightbox)
 
 Es ist auch wichtig zu beachten, dass die neuen Einschränkungen durch Festlegen der-Eigenschaft auf aktiviert werden, wenn Sie erstellt werden `Active` `true` :
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: d390ff40a964101297e205060b892b4108fe2281
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: eccd0415fdc1db357f904b843a015df60a35a488
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569906"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939606"
 ---
 # <a name="collection-views-in-xamarinios"></a>Auflistungs Ansichten in xamarin. IOS
 
@@ -36,7 +36,7 @@ Die `UICollectionView` Klasse besteht aus drei unterschiedlichen Elementen:
 
 Zellen sind Objekte, die ein einzelnes Element in dem DataSet darstellen, das von der Auflistungs Ansicht angezeigt wird. Jede Zelle ist eine Instanz der- `UICollectionViewCell` Klasse, die aus drei verschiedenen Ansichten besteht, wie in der folgenden Abbildung dargestellt:
 
- [![](uicollectionview-images/01-uicollectionviewcell.png "Each cell is composed of three different views, as shown here")](uicollectionview-images/01-uicollectionviewcell.png#lightbox)
+ [![Jede Zelle besteht aus drei verschiedenen Ansichten, wie hier gezeigt.](uicollectionview-images/01-uicollectionviewcell.png)](uicollectionview-images/01-uicollectionviewcell.png#lightbox)
 
 Die- `UICollectionViewCell` Klasse verfügt für jede dieser Sichten über die folgenden Eigenschaften:
 
@@ -46,7 +46,7 @@ Die- `UICollectionViewCell` Klasse verfügt für jede dieser Sichten über die f
 
 Wenn Sie die Einstellung so festlegen, `ContentView` dass Sie kleiner als `BackgroundView` und ist `SelectedBackgroundView` , `BackgroundView` kann verwendet werden, um den Inhalt visuell zu gestalten, während der `SelectedBackgroundView` angezeigt wird, wenn eine Zelle ausgewählt wird, wie unten dargestellt:
 
- [![](uicollectionview-images/02-cells.png "The different cell elements")](uicollectionview-images/02-cells.png#lightbox)
+ [![Die unterschiedlichen Zellen Elemente](uicollectionview-images/02-cells.png)](uicollectionview-images/02-cells.png#lightbox)
 
 Die Zellen im obigen Screenshot werden erstellt, indem Sie von Erben `UICollectionViewCell` und die `ContentView` -, `SelectedBackgroundView` -und-Eigenschaften festlegen, `BackgroundView` wie im folgenden Code gezeigt:
 
@@ -90,7 +90,7 @@ Ergänzende Sichten sind Sichten, die Informationen darstellen, die den einzelne
 
 Beispielsweise kann eine ergänzende Ansicht verwendet werden, um einen Header für einen bestimmten Abschnitt darzustellen, wie in der folgenden Abbildung dargestellt:
 
- [![](uicollectionview-images/02a-supplementary-view.png "A Supplementary View used to present a header for a particular section, as shown here")](uicollectionview-images/02a-supplementary-view.png#lightbox)
+ [![Eine ergänzende Ansicht, die verwendet wird, um einen Header für einen bestimmten Abschnitt darzustellen, wie hier gezeigt.](uicollectionview-images/02a-supplementary-view.png)](uicollectionview-images/02a-supplementary-view.png#lightbox)
 
 Um eine ergänzende Ansicht zu verwenden, muss Sie zuerst in der-Methode registriert werden `ViewDidLoad` :
 
@@ -119,7 +119,7 @@ Sie können an einer beliebigen Stelle in der Sammlungsansicht positioniert werd
 
 Dekorations Ansichten sind reine visuelle Ansichten, die in einem angezeigt werden können `UICollectionView` . Im Gegensatz zu Zellen und ergänzenden Ansichten sind Sie nicht Daten gesteuert. Sie werden immer in der Unterklasse eines Layouts erstellt und können anschließend als Layout des Inhalts geändert werden. So kann z. b. eine-anfügeansicht verwendet werden, um eine Hintergrund Ansicht anzuzeigen, die mit dem Inhalt im scrollt `UICollectionView` , wie unten dargestellt:
 
- [![](uicollectionview-images/02c-decoration-view.png "Decoration View with a red background")](uicollectionview-images/02c-decoration-view.png#lightbox)
+ [![Ansicht "Dekoration" mit rotem Hintergrund](uicollectionview-images/02c-decoration-view.png)](uicollectionview-images/02c-decoration-view.png#lightbox)
 
  Der folgende Code Ausschnitt ändert in der Samples-Klasse den Hintergrund in rot `CircleLayout` :
 
@@ -149,7 +149,7 @@ Der Zweck der- `UICollectionViewController` Klasse ist die-Klasse verfügbar. Di
 Wie bei `UITableView` Ruft die- `UICollectionView` Klasse nur Ihre Datenquelle auf, um Zellen für Elemente zu erhalten, die sich auf dem Bildschirm befinden.
 Zellen, die auf dem Bildschirm scrollen, werden zur Wiederverwendung in eine Warteschlange eingefügt, wie in der folgenden Abbildung veranschaulicht:
 
- [![](uicollectionview-images/03-cell-reuse.png "Cells that scroll off the screen are placed in to a queue for reuse as shown here")](uicollectionview-images/03-cell-reuse.png#lightbox)
+ [![Zellen, die auf dem Bildschirm scrollen, werden zur Wiederverwendung in eine Warteschlange eingefügt, wie hier gezeigt.](uicollectionview-images/03-cell-reuse.png)](uicollectionview-images/03-cell-reuse.png#lightbox)
 
 Die Wiederverwendung von Zellen wurde mit `UICollectionView` und vereinfacht `UITableView` . Es ist nicht mehr erforderlich, eine Zelle direkt in der Datenquelle zu erstellen, wenn Sie in der Warteschlange für die Wiederverwendung nicht verfügbar ist, da Zellen beim System registriert sind. Wenn eine Zelle nicht verfügbar ist, wenn der Befehl zum Aufheben der Warteschlange der Zelle aus der Warteschlange für die Wiederverwendung verfügbar ist, erstellt IOS diese automatisch basierend auf dem registrierten Typ oder NIB.
 Die gleiche Technik ist auch für ergänzende Ansichten verfügbar.
@@ -200,7 +200,7 @@ Wie bei der Datenquelle ist die `UICollectionViewController` standardmäßig so 
 
 Wenn eine Zelle gedrückt wird, wechselt die Zelle in einen markierten Zustand und wird erst ausgewählt, wenn der Benutzer den Finger von der Zelle anhebt. Dies ermöglicht eine temporäre Änderung der Darstellung der Zelle, bevor Sie tatsächlich ausgewählt wird. Bei Auswahl werden die Zellen `SelectedBackgroundView` angezeigt. Die folgende Abbildung zeigt den hervorgehobenen Zustand, kurz bevor die Auswahl erfolgt:
 
- [![](uicollectionview-images/04-cell-highlight.png "This figure shows the highlighted state just before the selection occurs")](uicollectionview-images/04-cell-highlight.png#lightbox)
+ [![Diese Abbildung zeigt den hervorgehobenen Zustand, kurz bevor die Auswahl erfolgt.](uicollectionview-images/04-cell-highlight.png)](uicollectionview-images/04-cell-highlight.png#lightbox)
 
 Zum Implementieren der Hervorhebung `ItemHighlighted` können die-Methode und die- `ItemUnhighlighted` Methode von `UICollectionViewDelegate` verwendet werden. Der folgende Code wendet z. b. einen gelben Hintergrund des an, `ContentView` Wenn die Zelle hervorgehoben ist, und einen weißen Hintergrund, wenn er nicht hervorgehoben ist, wie in der Abbildung oben dargestellt:
 
@@ -247,7 +247,7 @@ Jede Zelle in einem `UICollectionView` kann ein Menü zeigen, das Ausschneiden, 
 
 Der folgende Screenshot zeigt das Menü, wenn eine Zelle lange gedrückt ist:
 
- [![](uicollectionview-images/04a-menu.png "This screenshot show the menu when a cell is long pressed")](uicollectionview-images/04a-menu.png#lightbox)
+ [![Dieser Screenshot zeigt das Menü an, wenn eine Zelle lang gedrückt ist.](uicollectionview-images/04a-menu.png)](uicollectionview-images/04a-menu.png#lightbox)
 
  <a name="Layout"></a>
 
@@ -287,7 +287,7 @@ simpleCollectionViewController = new SimpleCollectionViewController (layout);
 
 Das ist alles, was zum Layoutinhalt in einem Raster benötigt wird. Wenn sich die Ausrichtung ändert, ordnet der den `UICollectionViewFlowLayout` Inhalt ebenfalls entsprechend an, wie unten dargestellt:
 
- [![](uicollectionview-images/05-layout-orientation.png "Example of the orientation changes")](uicollectionview-images/05-layout-orientation.png#lightbox)
+ [![Beispiel für die Ausrichtung von Änderungen](uicollectionview-images/05-layout-orientation.png)](uicollectionview-images/05-layout-orientation.png#lightbox)
 
  <a name="Section_Inset"></a>
 
@@ -302,7 +302,7 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 
 Dies führt zu einem Abstand um den Abschnitt, wie unten dargestellt:
 
- [![](uicollectionview-images/06-sectioninset.png "Spacing around the section as shown here")](uicollectionview-images/06-sectioninset.png#lightbox)
+ [![Abstand um den Abschnitt, wie hier gezeigt](uicollectionview-images/06-sectioninset.png)](uicollectionview-images/06-sectioninset.png#lightbox)
 
  <a name="Subclassing_UICollectionViewFlowLayout"></a>
 
@@ -310,7 +310,7 @@ Dies führt zu einem Abstand um den Abschnitt, wie unten dargestellt:
 
 In der Edition zur `UICollectionViewFlowLayout` direkten Verwendung kann Sie auch untergeordnet werden, um das Layout von Inhalten an einer Zeile weiter anzupassen. Dies kann z. b. verwendet werden, um ein Layout zu erstellen, das die Zellen nicht in ein Raster packt, sondern stattdessen eine einzelne Zeile mit einem horizontalen scrolleffekt erstellt, wie unten dargestellt:
 
- [![](uicollectionview-images/07-line-layout.png "A single row with a horizontal scrolling effect")](uicollectionview-images/07-line-layout.png#lightbox)
+ [![Eine einzelne Zeile mit einem horizontalen scrolleffekt](uicollectionview-images/07-line-layout.png)](uicollectionview-images/07-line-layout.png#lightbox)
 
 Um dies durch Unterklassen zu implementieren, ist Folgendes `UICollectionViewFlowLayout` erforderlich:
 
@@ -402,7 +402,7 @@ Folgende Schlüsselmethoden müssen überschrieben werden:
 
 Beispielsweise kann derselbe Inhalt in einem zirkulären Layout wie unten gezeigt dargestellt werden:
 
- [![](uicollectionview-images/08-circle-layout.png "A circular custom layout as shown here")](uicollectionview-images/08-circle-layout.png#lightbox)
+ [![Ein kreisförmiges benutzerdefiniertes Layout, wie hier gezeigt](uicollectionview-images/08-circle-layout.png)](uicollectionview-images/08-circle-layout.png#lightbox)
 
 Der leistungsstarke Vorteil von Layouts besteht darin, dass Sie zum Ändern des Raster ähnlichen Layouts in ein horizontales scrolllayout und anschließende anschließende zu diesem zirkulären Layout nur die Layoutklasse ändern müssen, die für die `UICollectionView` geändert wird. Nichts in der `UICollectionView` , der Delegat oder der Datenquellen Code ändert sich überhaupt.
 
@@ -412,7 +412,7 @@ In ios 9 unterstützt die Auflistungs Ansicht ( `UICollectionView` ) jetzt die N
 
 Mithilfe dieser neuen Methoden können Sie Drag to Order in der Auflistungs Ansicht problemlos implementieren und die Darstellung der Elemente in jeder Phase des Neuanordnungs Vorgangs anpassen.
 
-[![](uicollectionview-images/intro01.png "An example of the reordering process")](uicollectionview-images/intro01.png#lightbox)
+[![Ein Beispiel für den Neuanordnungs Vorgang](uicollectionview-images/intro01.png)](uicollectionview-images/intro01.png#lightbox)
 
 In diesem Artikel wird die Implementierung von Drag-to-Order in einer xamarin. IOS-Anwendung sowie einige der anderen Änderungen erläutert, die IOS 9 an der Sammlungsansicht vorgenommen hat:
 
@@ -446,7 +446,7 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 
 Starten Sie als schnelles Beispiel ein neues xamarin. IOS-Projekt, und bearbeiten Sie die Datei " **Main. Storyboard** ". Ziehen Sie einen `UICollectionViewController` auf die Entwurfs Oberfläche:
 
-[![](uicollectionview-images/quick01.png "Adding a UICollectionViewController")](uicollectionview-images/quick01.png#lightbox)
+[![Hinzufügen von uicollectionviewcontroller](uicollectionview-images/quick01.png)](uicollectionview-images/quick01.png#lightbox)
 
 Wählen Sie die Sammlungsansicht aus (Dies ist möglicherweise am einfachsten in der Dokument Gliederung). Legen Sie auf der Registerkarte Layout des Eigenschaftenpad die folgenden Größen fest, wie im folgenden Screenshot veranschaulicht:
 
@@ -456,7 +456,7 @@ Wählen Sie die Sammlungsansicht aus (Dies ist möglicherweise am einfachsten in
 - Minimaler **Abstand**: für Zellen – 8 | Für Zeilen – 8
 - **Abschnitts insets**: Top – 16 | Bottom – 16 | Left – 16 | Right – 16
 
-[![](uicollectionview-images/quick04.png "Set the Collection View sizes")](uicollectionview-images/quick04.png#lightbox)
+[![Festlegen der Größen der Sammlungsansicht](uicollectionview-images/quick04.png)](uicollectionview-images/quick04.png#lightbox)
 
 Bearbeiten Sie als nächstes die Standard Zelle:
 
@@ -464,21 +464,21 @@ Bearbeiten Sie als nächstes die Standard Zelle:
 - Fügen Sie eine Bezeichnung hinzu, die als Titel für die Zelle fungiert.
 - Festlegen des Verwendungs Bezeichners auf die **Zelle**
 
-[![](uicollectionview-images/quick02.png "Edit the default Cell")](uicollectionview-images/quick02.png#lightbox)
+[![Standard Zelle bearbeiten](uicollectionview-images/quick02.png)](uicollectionview-images/quick02.png#lightbox)
 
 Fügen Sie Einschränkungen hinzu, damit die Bezeichnung in der Zelle zentriert bleibt, wenn Sie die Größe ändert:
 
 Legen Sie im **eigenschaftenpad** für _collectionviewcell_ fest, und legen Sie die- **Klasse** auf fest `TextCollectionViewCell` :
 
-[![](uicollectionview-images/quick05.png "Set the Class to TextCollectionViewCell")](uicollectionview-images/quick05.png#lightbox)
+[![Legen Sie die Klasse auf textcollectionviewcell fest.](uicollectionview-images/quick05.png)](uicollectionview-images/quick05.png#lightbox)
 
 Legen Sie die wieder **verwendbare Ansicht** der Auflistung auf fest `Cell` :
 
-[![](uicollectionview-images/quick06.png "Set the Collection Reusable View to Cell")](uicollectionview-images/quick06.png#lightbox)
+[![Wiederverwendbare Ansicht der Sammlung auf Zelle festlegen](uicollectionview-images/quick06.png)](uicollectionview-images/quick06.png#lightbox)
 
 Wählen Sie abschließend die Bezeichnung aus, und benennen Sie Sie `TextLabel` :
 
-[![](uicollectionview-images/quick07.png "name label TextLabel")](uicollectionview-images/quick07.png#lightbox)
+[![namens Bezeichnung Text Label](uicollectionview-images/quick07.png)](uicollectionview-images/quick07.png#lightbox)
 
 Bearbeiten `TextCollectionViewCell` Sie die-Klasse, und fügen Sie die folgenden Eigenschaften hinzu:
 
@@ -674,7 +674,7 @@ Speichern Sie die an der Benutzeroberfläche vorgenommenen Änderungen, und füh
 Wenn der Benutzer ein Element aus der Liste auswählt und an einen neuen Speicherort zieht, werden die anderen Elemente automatisch animiert, wenn Sie sich nicht mehr auf das Element bewegen.
 Wenn der Benutzer das Element an einem neuen Speicherort löscht, wird er an diesem Speicherort abgelegt. Beispiel:
 
-[![](uicollectionview-images/intro01.png "An example of dragging an item to a new location")](uicollectionview-images/intro01.png#lightbox)
+[![Ein Beispiel für das Ziehen eines Elements an einen neuen Speicherort](uicollectionview-images/intro01.png)](uicollectionview-images/intro01.png#lightbox)
 
 <a name="Using-a-Custom-Gesture-Recognizer"></a>
 
@@ -1183,7 +1183,7 @@ Dadurch wird eine Instanz des benutzerdefinierten Layouts erstellt, das-Ereignis
 
 Wenn die xamarin. IOS-App erneut ausgeführt wird, sieht die Sammlungsansicht nun wie folgt aus:
 
-[![](uicollectionview-images/custom01.png "The collection view will now look like this")](uicollectionview-images/custom01.png#lightbox)
+[![Die Sammlungsansicht sieht nun wie folgt aus.](uicollectionview-images/custom01.png)](uicollectionview-images/custom01.png#lightbox)
 
 Wir können Elemente weiterhin wie zuvor per Drag & amp; Drop neu anordnen, aber die Größe der Elemente ändert sich nun, damit Sie an den neuen Speicherort angepasst werden, wenn Sie gelöscht werden.
 

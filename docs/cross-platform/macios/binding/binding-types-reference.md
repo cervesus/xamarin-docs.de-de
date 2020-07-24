@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: da6bf97bfc5769647c63b55c289293e63f50e5cb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8549e993bf46ffd3b24ad8ec495791eb25b25023
+ms.sourcegitcommit: bd49f28105218f04e978e58143bba8cdec9fd4a9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570998"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925983"
 ---
 # <a name="binding-types-reference-guide"></a>Bindungs Typen-Referenzhandbuch
 
@@ -30,7 +30,7 @@ interface MyType : [Protocol1, Protocol2] {
 }
 ```
 
-Jede-Schnittstelle in der Vertrags Definition, die über das- [`[BaseType]`](#BaseTypeAttribute) Attribut verfügt, das den Basistyp für das generierte Objekt deklariert. In der obigen Deklaration `MyType` wird ein Klassen-c#-Typ generiert, der an einen Ziel-C-Typ mit dem Namen gebunden wird `MyType` .
+Jede-Schnittstelle in der Vertrags Definition, die über das-Attribut verfügt, [`[BaseType]`](#BaseTypeAttribute) deklariert den Basistyp für das generierte Objekt. In der obigen Deklaration `MyType` wird ein Klassen-c#-Typ generiert, der an einen Ziel-C-Typ mit dem Namen gebunden wird `MyType` .
 
 Wenn Sie Typen nach dem Typnamen (im obigen Beispiel `Protocol1` und `Protocol2` ) mithilfe der Schnittstellen Vererbungs Syntax angeben, wird der Inhalt dieser Schnittstellen so Inline, als ob Sie Teil des Vertrags für gewesen wären `MyType` .
 Xamarin. IOS zeigt, dass ein Typ ein Protokoll annimmt, indem er alle Methoden und Eigenschaften, die im Protokoll deklariert wurden, in den Typ selbst einleitet.
@@ -356,7 +356,7 @@ Modelle werden in der Regel von der Protokoll Implementierung verwendet.
 Sie unterscheiden sich insofern, als die Common Language Runtime nur mit "Ziel-C" die Methoden registriert, die tatsächlich überschrieben wurden.
 Andernfalls wird die Methode nicht registriert.
 
-Dies bedeutet im Allgemeinen, dass Sie bei der Unterklasse einer Klasse, die mit gekennzeichnet wurde `ModelAttribute` , die Basis Methode nicht aufzurufen.   Wenn Sie diese Methode aufrufen, wird eine Ausnahme ausgelöst. Sie sollten das gesamte Verhalten für die Unterklasse für alle Methoden implementieren, die Sie außer Kraft setzen.
+Dies bedeutet im Allgemeinen, dass Sie bei der Unterklasse einer Klasse, die mit gekennzeichnet wurde `ModelAttribute` , die Basis Methode nicht aufzurufen.   Wenn Sie diese Methode aufrufen, wird die folgende Ausnahme ausgelöst: Foundation. You_Should_Not_Call_base_In_This_Method. Sie sollten das gesamte Verhalten für die Unterklasse für alle Methoden implementieren, die Sie außer Kraft setzen.
 
 <a name="AbstractAttribute"></a>
 

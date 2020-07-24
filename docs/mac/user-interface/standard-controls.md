@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a6e302885570f35bb8323a5504cc9a4d8256ac1
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b9e32fecab7fc5048de319d35ed1a1e55f32b96c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572103"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929804"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Standard Steuerelemente in xamarin. Mac
 
@@ -22,7 +22,7 @@ Wenn Sie mit c# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zug
 
 AppKit-Steuerelemente sind die Benutzeroberflächen Elemente, die verwendet werden, um die Benutzeroberfläche der xamarin. Mac-Anwendung zu erstellen. Sie bestehen aus Elementen wie Schaltflächen, Bezeichnungen, Text Feldern, Kontrollkästchen und segmentierten Steuerelementen und bewirken sofortige Aktionen oder sichtbare Ergebnisse, wenn ein Benutzer Sie bearbeitet.
 
-[![](standard-controls-images/intro01.png "The example app main screen")](standard-controls-images/intro01.png#lightbox)
+[![Der Beispiel-App-Hauptbildschirm](standard-controls-images/intro01.png)](standard-controls-images/intro01.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Arbeit mit AppKit-Steuerelementen in einer xamarin. Mac-Anwendung behandelt. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , durcharbeiten, da er wichtige Konzepte und Techniken behandelt, die wir in diesem Artikel verwenden werden.
 
@@ -51,7 +51,7 @@ Weitere Informationen finden Sie im Abschnitt [über Steuerelemente und Ansichte
 
 Es gibt eine Teilmenge von AppKit-Steuerelementen, die einen Anzeige Stil enthalten, mit dem Sie in den Rahmen Bereich eines Fensters eingeschlossen werden können. Ein Beispiel finden Sie auf der Symbolleiste der Mail-App:
 
-[![](standard-controls-images/mailapp.png "A Mac Window frame")](standard-controls-images/mailapp.png#lightbox)
+[![Ein Mac-Fensterrahmen](standard-controls-images/mailapp.png)](standard-controls-images/mailapp.png#lightbox)
 
 - **Runden Sie die texturierten Schaltfläche** `NSButton` mit einem Stil von `NSTexturedRoundedBezelStyle` .
 - **Segmentiertes, gerundetes segmentiertes Steuer** Element-A `NSSegmentedControl` mit einem Stil von `NSSegmentStyleTexturedRounded` .
@@ -73,15 +73,15 @@ Weitere Informationen finden Sie im Abschnitt [über Steuerelemente und Ansichte
 
 Wenn Sie eine neue xamarin. Mac-Cocoa-Anwendung erstellen, erhalten Sie standardmäßig ein Standardmäßiges leeres Standardfenster. Dieses Fenster wird in einer Datei definiert, `.storyboard` die automatisch im Projekt enthalten ist. Um den Windows-Entwurf zu bearbeiten, doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei:
 
-[![](standard-controls-images/edit01.png "Selecting the Main Storyboard in the Solution Explorer")](standard-controls-images/edit01.png#lightbox)
+[![Auswählen des Haupt Storyboards in der Projektmappen-Explorer](standard-controls-images/edit01.png)](standard-controls-images/edit01.png#lightbox)
 
 Dadurch wird das Fensterdesign in der Interface Builder von Xcode geöffnet:
 
-[![](standard-controls-images/edit02.png "Editing the storyboard in Xcode")](standard-controls-images/edit02.png#lightbox)
+[![Bearbeiten des Storyboards in Xcode](standard-controls-images/edit02.png)](standard-controls-images/edit02.png#lightbox)
 
 Um die Benutzeroberfläche zu erstellen, ziehen Sie UI-Elemente (AppKit-Steuerelemente) aus der **Bibliothek Inspektor** in den- **Schnittstellen-Editor** in Interface Builder. Im folgenden Beispiel wurde ein **vertikales geteiltes Ansichts** Steuerelement vom **Library Inspector** als Droge und im-Schnittstellen- **Editor**im Fenster abgelegt:
 
-[![](standard-controls-images/edit03.png "Selecting a Split View from the Library")](standard-controls-images/edit03.png#lightbox)
+[![Auswählen einer geteilten Ansicht aus der Bibliothek](standard-controls-images/edit03.png)](standard-controls-images/edit03.png#lightbox)
 
 Weitere Informationen zum Erstellen einer Benutzeroberfläche in Interface Builder finden Sie in der [Einführung in Xcode und Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) Dokumentation.
 
@@ -91,21 +91,21 @@ Weitere Informationen zum Erstellen einer Benutzeroberfläche in Interface Build
 
 Wenn ein Steuerelement in der Benutzeroberfläche enthalten ist, verwenden Sie den Einschränkungs- **Editor** , um seine Position und Größe festzulegen, indem Sie Werte manuell eingeben und Steuern, wie das Steuerelement automatisch positioniert und angepasst wird, wenn die Größe des übergeordneten Fensters oder der Ansicht geändert wird:
 
-[![](standard-controls-images/edit04.png "Setting the constraints")](standard-controls-images/edit04.png#lightbox)
+[![Festlegen der Einschränkungen](standard-controls-images/edit04.png)](standard-controls-images/edit04.png#lightbox)
 
 Verwenden Sie den **roten I-Balken** um die außerhalb des **autoresisierungsfelds** , um ein Steuerelement an einem angegebenen (x, y) Speicherort zu _halten_ . Beispiel: 
 
-[![](standard-controls-images/edit05.png "Editing a constraint")](standard-controls-images/edit05.png#lightbox)
+[![Bearbeiten einer Einschränkung](standard-controls-images/edit05.png)](standard-controls-images/edit05.png#lightbox)
 
 Gibt an, dass das ausgewählte Steuerelement (im Schnittstellen **Ansichts**  &  **Schnittstellen-Editor**) an der oberen und rechten Position des Fensters oder der Ansicht hängen bleibt, wenn die Größe geändert oder verschoben wird. 
 
 Andere Elemente der Editor-Steuerelement Eigenschaften, z. b. Höhe und Breite:
 
-[![](standard-controls-images/edit06.png "Setting the height")](standard-controls-images/edit06.png#lightbox)
+[![Festlegen der Höhe](standard-controls-images/edit06.png)](standard-controls-images/edit06.png#lightbox)
 
 Mit dem **Ausrichtungs-Editor**können Sie auch die Ausrichtung von Elementen mit Einschränkungen steuern:
 
-[![](standard-controls-images/edit07.png "The Alignment Editor")](standard-controls-images/edit07.png#lightbox)
+[![Der Ausrichtungs-Editor](standard-controls-images/edit07.png)](standard-controls-images/edit07.png#lightbox)
 
 > [!IMPORTANT]
 > Anders als bei IOS, wobei (0,0) die linke obere Ecke des Bildschirms ist, ist in macOS (0,0) die untere linke Ecke. Dies liegt daran, dass macOS ein mathematisches Koordinatensystem verwendet, bei dem die Zahlenwerte im Wert nach oben und nach rechts steigen. Dies müssen Sie berücksichtigen, wenn Sie AppKit-Steuerelemente auf einer Benutzeroberfläche platzieren.
@@ -197,7 +197,7 @@ namespace AppKit
 
 Wenn der obige Code vorhanden ist, können Sie ein AppKit-Steuerelement des Basistyps, den Sie erweitern, auf die Entwurfs Oberfläche ziehen (im folgenden Beispiel eine **Quell Liste**), zum **Identitäts Inspektor** wechseln und die **benutzerdefinierte Klasse** auf den Namen festlegen, den Sie für Ziel-C (Beispiel) verfügbar gemacht haben `SourceListView` :
 
-[![](standard-controls-images/edit10.png "Setting a custom class in Xcode")](standard-controls-images/edit10.png#lightbox)
+[![Festlegen einer benutzerdefinierten Klasse in Xcode](standard-controls-images/edit10.png)](standard-controls-images/edit10.png#lightbox)
 
 <a name="Exposing_Outlets_and_Actions"></a>
 
@@ -205,15 +205,15 @@ Wenn der obige Code vorhanden ist, können Sie ein AppKit-Steuerelement des Basi
 
 Bevor in c#-Code auf ein AppKit-Steuerelement zugegriffen werden kann, muss es entweder als ein **Outlet** oder eine **Aktion**verfügbar gemacht werden. Wählen Sie hierzu das angegebene Steuerelement entweder in der **Schnittstellen Hierarchie** oder im Schnittstellen- **Editor** aus, und wechseln Sie zur **Ansicht "Assistant** " (stellen Sie sicher, dass das `.h` Fenster für die Bearbeitung ausgewählt ist):
 
-[![](standard-controls-images/edit11.png "Selecting the correct file to edit")](standard-controls-images/edit11.png#lightbox)
+[![Auswählen der richtigen zu bearbeitenden Datei](standard-controls-images/edit11.png)](standard-controls-images/edit11.png#lightbox)
 
 Steuerelement: ziehen Sie vom AppKit-Steuerelement auf die Datei "Give" `.h` , um ein **Outlet** oder eine **Aktion**zu erstellen:
 
-[![](standard-controls-images/edit12.png "Dragging to create an Outlet or Action")](standard-controls-images/edit12.png#lightbox)
+[![Ziehen zum Erstellen eines Outlets oder einer Aktion](standard-controls-images/edit12.png)](standard-controls-images/edit12.png#lightbox)
 
 Wählen Sie den Typ der zu erstellenden Übersetzung aus, und geben Sie dem **Outlet** oder der **Aktion** einen **Namen** 
 
-[![](standard-controls-images/edit13.png "Configuring the Outlet or Action")](standard-controls-images/edit13.png#lightbox)
+[![Konfigurieren des Outlets oder der Aktion](standard-controls-images/edit13.png)](standard-controls-images/edit13.png#lightbox)
 
 Weitere Informationen zum Arbeiten mit **Outlets** und **Aktionen**finden Sie im Abschnitt [Outlets und Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) in unserer [Einführung in Xcode und Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) Dokumentation.
 
@@ -225,7 +225,7 @@ Wenn Sie von Xcode zurück zu Visual Studio für Mac wechseln, werden alle Ände
 
 Wenn Sie `SplitViewController.designer.cs` in der **Projektmappen-Explorer** , können Sie sehen, wie Ihr **Outlet** und Ihre **Aktion** im c#-Code verknüpft wurden:
 
-[![](standard-controls-images/sync01.png "Synchronizing Changes with Xcode")](standard-controls-images/sync01.png#lightbox)
+[![Synchronisieren von Änderungen mit Xcode](standard-controls-images/sync01.png)](standard-controls-images/sync01.png#lightbox)
 
 Beachten Sie, wie die Definition in der `SplitViewController.designer.cs` Datei:
 
@@ -269,7 +269,7 @@ Normalerweise müssen Sie das nicht selbst öffnen `SplitViewController.designer
 
 AppKit bietet verschiedene Arten von Schaltflächen, die in Ihrem Benutzeroberflächen Design verwendet werden können. Weitere Informationen finden Sie im Abschnitt " [Schalt](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1) Flächen" in den [Richtlinien für die Benutzeroberfläche von Apple OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[![](standard-controls-images/buttons01.png "An example of the different button types")](standard-controls-images/buttons01.png#lightbox)
+[![Ein Beispiel für die verschiedenen Schaltflächen Typen](standard-controls-images/buttons01.png)](standard-controls-images/buttons01.png#lightbox)
 
 Wenn eine Schaltfläche über ein **Outlet**verfügbar gemacht wurde, antwortet der folgende Code darauf, dass Sie gedrückt wird:
 
@@ -310,7 +310,7 @@ Für alle Schaltflächen, die Sie einem Design der Benutzeroberfläche hinzugef�
 
 Um eine Schaltfläche als Standard festzulegen, wählen Sie Sie in der Interface Builder von Xcode aus. Wählen Sie als nächstes im **Attribut Inspektor**das **entsprechende Schlüssel** Feld aus, und drücken Sie die **Rückgabe/Eingabe** Taste:
 
-[![](standard-controls-images/buttons03.png "Editing the Key Equivalent")](standard-controls-images/buttons03.png#lightbox)
+[![Bearbeiten des entsprechenden Schlüssels](standard-controls-images/buttons03.png)](standard-controls-images/buttons03.png#lightbox)
 
 Gleichermaßen können Sie jede beliebige Schlüssel Sequenz zuweisen, mit der die Schaltfläche mithilfe der Tastatur anstelle der Maus aktiviert werden kann. Beispielsweise durch Drücken der Befehls-C-Taste in der obigen Abbildung.
 
@@ -322,7 +322,7 @@ Wenn die app ausgeführt wird und das Fenster mit der Schaltfläche Key und foku
 
 AppKit bietet verschiedene Arten von Kontrollkästchen und Optionsfeld Gruppen, die in Ihrem Design der Benutzeroberfläche verwendet werden können. Weitere Informationen finden Sie im Abschnitt " [Schalt](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1) Flächen" in den [Richtlinien für die Benutzeroberfläche von Apple OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[![](standard-controls-images/buttons02.png "An example of the available checkbox types")](standard-controls-images/buttons02.png#lightbox)
+[![Ein Beispiel für die verfügbaren CheckBox-Typen](standard-controls-images/buttons02.png)](standard-controls-images/buttons02.png#lightbox)
 
 Kontrollkästchen und Options Felder (die über **Outlets**verfügbar gemacht werden) haben einen Zustand (z. b. ein-und **ausschalten**). der Status kann mit der-Eigenschaft **für** `State` die-Enum überprüft oder festgelegt werden `NSCellStateValue` . Beispiel:
 
@@ -349,11 +349,11 @@ partial void SelectCar (Foundation.NSObject sender) {
 
 Um eine Sammlung von Options Feldern zu erstellen, die als Gruppe fungieren und automatisch den ausgewählten Zustand verarbeiten, erstellen Sie eine neue **Aktion** , und fügen Sie alle Schaltflächen in der Gruppe an den folgenden Punkt an:
 
-![](standard-controls-images/buttons04.png "Creating a new Action")
+![Erstellen einer neuen Aktion](standard-controls-images/buttons04.png)
 
 Anschließend weisen `Tag` Sie jedem Optionsfeld im **Attribut Inspektor**einen eindeutigen zu:
 
-![](standard-controls-images/buttons05.png "Editing a radio button tag")
+![Bearbeiten eines Optionsfeld Tags](standard-controls-images/buttons05.png)
 
 Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück. Fügen Sie den Code hinzu, um die **Aktion** zu verarbeiten, an die alle Options Felder angefügt sind:
 
@@ -373,7 +373,7 @@ Sie können die- `Tag` Eigenschaft verwenden, um anzuzeigen, welches Optionsfeld
 
 AppKit stellt verschiedene Typen von Menü Steuerelementen bereit, die in Ihrem Benutzeroberflächen Design verwendet werden können. Weitere Informationen finden Sie im Abschnitt " [Menü Steuerelemente](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlswithMenus.html#//apple_ref/doc/uid/20000957-CH100-SW1) " in den [Richtlinien für die Benutzeroberfläche von Apple OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[![](standard-controls-images/menu01.png "Example menu controls")](standard-controls-images/menu01.png#lightbox)
+[![Beispiel-Menü Steuerelemente](standard-controls-images/menu01.png)](standard-controls-images/menu01.png#lightbox)
 
 <a name="Providing-Menu-Control-Data"></a>
 
@@ -427,7 +427,7 @@ Die folgenden Methoden sind verfügbar, um die Darstellung des Menü Steuer Elem
 
 Für Dropdown Typen von `NSPopupButtons` stellt das erste Menü Element den Titel für das-Steuerelement bereit. Beispiel: 
 
-[![](standard-controls-images/menu02.png "An example menu control")](standard-controls-images/menu02.png#lightbox)
+[![Ein Beispiel für ein Menü Steuerelement](standard-controls-images/menu02.png)](standard-controls-images/menu02.png#lightbox)
 
 Um den Titel zu ändern, machen Sie dieses Element als **Outlet** verfügbar, und verwenden Sie Code wie den folgenden:
 
@@ -479,7 +479,7 @@ Weitere Informationen zum Arbeiten mit Menüs und Menü Steuerelementen finden S
 
 AppKit stellt verschiedene Typen von Auswahl Steuerelementen bereit, die in Ihrem Design der Benutzeroberfläche verwendet werden können. Weitere Informationen finden Sie im Abschnitt [Auswahl Steuerelemente](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsSelection.html#//apple_ref/doc/uid/20000957-CH49-SW1) in den Richtlinien für die Benutzeroberfläche von Apple [OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[![](standard-controls-images/select01.png "Example selection controls")](standard-controls-images/select01.png#lightbox)
+[![Beispiele für Auswahl Steuerelemente](standard-controls-images/select01.png)](standard-controls-images/select01.png#lightbox)
 
 Es gibt zwei Möglichkeiten, nachvollziehen zu können, wenn ein Auswahl Steuerelement eine Benutzerinteraktion hat, indem es als **Aktion**verfügbar gemacht wird. Beispiel:
 
@@ -524,7 +524,7 @@ ImageWell.Image = NSImage.ImageNamed ("tag.png");
 
 AppKit stellt verschiedene Typen von Indikator Steuerelementen bereit, die in Ihrem Design der Benutzeroberfläche verwendet werden können. Weitere Informationen finden Sie im Abschnitt " [Indikator Steuerelemente](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsIndicators.html#//apple_ref/doc/uid/20000957-CH50-SW1) " in den [Richtlinien für die Benutzeroberfläche von Apple OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[![](standard-controls-images/level01.png "Example indicator controls")](standard-controls-images/level01.png#lightbox)
+[![Beispiele für Indikator Steuerelemente](standard-controls-images/level01.png)](standard-controls-images/level01.png#lightbox)
 
 Es gibt zwei Möglichkeiten, nachvollziehen zu können, wenn ein Indikator Steuer **Element eine Benutzer** Interaktion hat, indem es entweder als **Aktion** oder als **Outlet** bereitstellt und dem Ereignis einen Delegaten anfügt `Activated` . Beispiel:
 
@@ -555,7 +555,7 @@ Durch Aufrufen der- `StopAnimation` Methode wird die Animation beendet.
 
 AppKit stellt verschiedene Typen von Text Steuerelementen bereit, die in Ihrem Benutzeroberflächen Design verwendet werden können. Weitere Informationen finden Sie im Abschnitt [Text Steuerelemente](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsText.html#//apple_ref/doc/uid/20000957-CH51-SW1) in den Richtlinien für die Benutzeroberfläche von Apple [OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[![](standard-controls-images/text01.png "Example text controls")](standard-controls-images/text01.png#lightbox)
+[![Beispiel Text-Steuerelemente](standard-controls-images/text01.png)](standard-controls-images/text01.png#lightbox)
 
 Für Text Felder ( `NSTextField` ) können die folgenden Ereignisse verwendet werden, um die Benutzerinteraktion zu verfolgen:
 
@@ -587,7 +587,7 @@ Der SourceWriter-Code wurde vollständig kommentiert und es wurden, wenn möglic
 
 AppKit bietet verschiedene Typen von Inhalts Ansichten, die im Design der Benutzeroberfläche verwendet werden können. Weitere Informationen finden Sie im Abschnitt " [Inhalts Ansichten](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) " in den [Richtlinien für die Benutzeroberfläche von Apple OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/).
 
-[![](standard-controls-images/content01.png "An example content view")](standard-controls-images/content01.png#lightbox)
+[![Eine Beispiel Inhaltsansicht](standard-controls-images/content01.png)](standard-controls-images/content01.png#lightbox)
 
 <a name="Popovers"></a>
 
@@ -600,16 +600,16 @@ Gehen Sie folgendermaßen vor, um ein popover zu erstellen:
 1. Öffnen `.storyboard` Sie die Datei des Fensters, dem Sie ein popover hinzufügen möchten, indem Sie in der **Projektmappen-Explorer**
 2. Ziehen Sie einen **Ansichts Controller** aus der **Bibliothek Inspector** auf den **Schnittstellen-Editor**: 
 
-    [![](standard-controls-images/content02.png "Selecting a View Controller from the Library")](standard-controls-images/content02.png#lightbox)
+    [![Auswählen eines Ansichts Controllers aus der Bibliothek](standard-controls-images/content02.png)](standard-controls-images/content02.png#lightbox)
 3. Definieren Sie die Größe und das Layout der **benutzerdefinierten Ansicht**: 
 
-    [![](standard-controls-images/content04.png "Editing the layout")](standard-controls-images/content04.png#lightbox)
+    [![Bearbeiten des Layouts](standard-controls-images/content04.png)](standard-controls-images/content04.png#lightbox)
 4. Klicken Sie mit der Maustaste auf den **Ansichts Controller**, und ziehen Sie ihn von der Quelle des Popup Fensters: 
 
-    [![](standard-controls-images/content05.png "Dragging to create a segue")](standard-controls-images/content05.png#lightbox)
+    [![Ziehen zum Erstellen einer Tabelle](standard-controls-images/content05.png)](standard-controls-images/content05.png#lightbox)
 5. Wählen Sie im Popup Menü **popover** aus: 
 
-    [![](standard-controls-images/content06.png "Setting the segue type")](standard-controls-images/content06.png#lightbox)
+    [![Festlegen des Typs "Typ"](standard-controls-images/content06.png)](standard-controls-images/content06.png#lightbox)
 6. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
 <a name="Tab_Views"></a>
@@ -620,11 +620,11 @@ Registerkarten Sichten bestehen aus einer Registerkarten Liste (die einem segmen
 
 Wenn Sie mit einer Registerkarten Ansicht in der Interface Builder von Xcode arbeiten, verwenden Sie den **Attribut Inspektor** , um die Anzahl der Registerkarten festzulegen:
 
-[![](standard-controls-images/content08.png "Editing the number of tabs")](standard-controls-images/content08.png#lightbox)
+[![Bearbeiten der Anzahl von Registerkarten](standard-controls-images/content08.png)](standard-controls-images/content08.png#lightbox)
 
 Wählen Sie in der **Schnittstellen Hierarchie** jede Registerkarte aus, **um deren** **Titel** festzulegen, und fügen Sie Benutzeroberflächen Elemente zum Bereich hinzu
 
-[![](standard-controls-images/content09.png "Editing the tabs in Xcode")](standard-controls-images/content09.png#lightbox)
+[![Bearbeiten der Registerkarten in Xcode](standard-controls-images/content09.png)](standard-controls-images/content09.png#lightbox)
 
 <a name="Data_Binding_AppKit_Controls"></a>
 

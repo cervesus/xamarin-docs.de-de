@@ -6,12 +6,12 @@ ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: davidortinau
 ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: b8be06b9da4561ffc0d628b53f8daf639b5e3179
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1a71b84d1068fef1730196bafb0f0d7e2a948c5c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571095"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936915"
 ---
 # <a name="shared-projects-code-sharing"></a>Freigegebene Projekte Code Freigabe
 
@@ -27,7 +27,7 @@ Wenn Sie in der Vergangenheit Datei Verknüpfungen für die gemeinsame Nutzung v
 
 Im Gegensatz zu den meisten anderen Projekttypen verfügt ein frei gegebenes Projekt nicht über eine Ausgabe (in dll-Form), sondern der Code wird in jedes Projekt kompiliert, das darauf verweist. Dies wird im folgenden Diagramm veranschaulicht: konzeptionell wird der gesamte Inhalt des freigegebenen Projekts in jedes verweisende Projekt kopiert und so kompiliert, als wäre es ein Teil davon.
 
-![](shared-projects-images/sharedassetproject.png "Shared Project architecture")
+![Architektur des freigegebenen Projekts](shared-projects-images/sharedassetproject.png)
 
 Der Code in einem freigegebenen Projekt kann Compilerdirektiven enthalten, die Code Abschnitte abhängig vom Anwendungsprojekt, das den Code verwendet, aktivieren oder deaktivieren. Dies wird von den farbigen Platt Form Feldern im Diagramm vorgeschlagen.
 
@@ -57,7 +57,7 @@ Damit ein frei gegebenes Projekt nützlich ist, muss es von mindestens einem bui
 
 Das Hinzufügen eines Verweises auf ein frei gegebenes Projekt erfolgt auf die gleiche Weise wie das verweisen auf ein reguläres Bibliotheksprojekt. Dieser Screenshot zeigt ein xamarin. IOS-Projekt, das auf ein frei gegebenes Projekt verweist.
 
-![](shared-projects-images/xs-reference.png "Project reference to Shared Project")
+![Projekt Verweis auf frei gegebenes Projekt](shared-projects-images/xs-reference.png)
 
 Wenn von einer anderen Bibliothek oder Anwendung auf das freigegebene Projekt verwiesen wird, können Sie die Projekt Mappe erstellen und alle Fehler im Code anzeigen. Wenn von _zwei oder mehr_ anderen Projekten auf das freigegebene Projekt verwiesen wird, wird in der linken oberen Ecke des Quell Code-Editors ein Menü angezeigt, in dem Sie auswählen können, welche Projekte auf diese Datei verweisen.
 
@@ -67,7 +67,7 @@ Wenn Sie mit der rechten Maustaste auf ein frei gegebenes Projekt klicken und **
 
 Der Bildschirm **Optionen** wird unten angezeigt: der Projekt **Name** und der **Standard Namespace** sind die einzigen beiden Einstellungen, die Sie in der Regel ändern werden.
 
-![](shared-projects-images/xs-sharedprojectoptions.png "Shared Project Options")
+![Optionen für freigegebene Projekte](shared-projects-images/xs-sharedprojectoptions.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -87,13 +87,13 @@ Wählen Sie in Visual Studio 2017 die Vorlage für das frei **gegebene Projekt**
 
 Sie können einer vorhandenen Projekt Mappe auch ein neues frei gegebenes Projekt hinzufügen, indem Sie mit der rechten Maustaste auf die Projektmappendatei klicken und **> neues Projekt hinzufügen**auswählen Ein neues frei gegebenes Projekt sieht wie unten dargestellt aus (nachdem eine Klassendatei hinzugefügt wurde). Beachten Sie, dass es keine Verweise oder Komponenten Knoten gibt. Diese werden für freigegebene Projekte nicht unterstützt.
 
-![](shared-projects-images/vs-empty.png "Empty Shared Project")
+![Leeres frei gegebenes Projekt](shared-projects-images/vs-empty.png)
 
 Damit ein frei gegebenes Projekt nützlich ist, muss es von mindestens einem buildfähigen Projekt (z. b. einer IOS-oder Android-Anwendung oder-Bibliothek oder einem PCL-Projekt) referenziert werden. Ein frei gegebenes Projekt wird nicht kompiliert, wenn es nichts referenziert. Daher werden Syntax Fehler (oder andere) erst dann hervorgehoben, wenn von etwas anderem darauf verwiesen wird.
 
 Das Hinzufügen eines Verweises auf ein frei gegebenes Projekt erfolgt auf die gleiche Weise wie das verweisen auf ein reguläres Bibliotheksprojekt. Dieser Screenshot zeigt ein xamarin. IOS-Projekt, das auf ein frei gegebenes Projekt verweist.
 
-![](shared-projects-images/vs-reference.png "Project reference to Shared Project")
+![Projekt Verweis auf frei gegebenes Projekt](shared-projects-images/vs-reference.png)
 
 Wenn von einer anderen Bibliothek oder Anwendung auf das freigegebene Projekt verwiesen wird, können Sie die Projekt Mappe erstellen und alle Fehler im Code anzeigen. Wenn von _zwei oder mehr_ anderen Projekten auf das freigegebene Projekt verwiesen wird, wird in der linken oberen Ecke des Quell Code-Editors ein Menü angezeigt, um zu sehen, welche Projekte auf die aktuelle Codedatei verweisen.
 
@@ -103,7 +103,7 @@ Wenn Sie ein frei gegebenes Projekt auswählen, sind im Eigenschaften Panel weni
 
 Der **Eigenschaften** Bereich wird unten angezeigt. der Stamm **Namespace** ist die einzige Einstellung, die Sie ändern können.
 
-![](shared-projects-images/vs-sharedprojectproperties.png "Shared Project Properties")
+![Freigegebene Projekteigenschaften](shared-projects-images/vs-sharedprojectproperties.png)
 
 -----
 
@@ -117,11 +117,11 @@ Die gesamte Projektmappenstruktur ist unten dargestellt (in Visual Studio für M
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-![](shared-projects-images/xs-examplesolution.png "Visual Studio for Mac solution")
+![Visual Studio für Mac Lösung](shared-projects-images/xs-examplesolution.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-![](shared-projects-images/vs-examplesolution.png "Visual Studio solution")
+![Visual Studio-Projekt Mappe](shared-projects-images/vs-examplesolution.png)
 
 -----
 
@@ -129,7 +129,7 @@ Das Windows Phone Projekt kann innerhalb Visual Studio für Mac navigiert werden
 
 Die laufenden Anwendungen sind unten dargestellt:
 
-![](shared-projects-images/example.png "iOS, Android, Windows Phone examples")
+![IOS-, Android-Windows Phone Beispiele](shared-projects-images/example.png)
 
 ## <a name="summary"></a>Zusammenfassung
 

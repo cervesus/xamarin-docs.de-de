@@ -7,25 +7,25 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 015f0732e4d8cdf771af3e1d0b3cc3e31b6e806c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0358e1570a5e38e008894a7eb9b6ca1985a0fed0
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572258"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997253"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>watchos-Tabellen Steuerelemente in xamarin
 
 Das watchos- `WKInterfaceTable` Steuerelement ist viel einfacher als das zugehörige IOS-Gegenstück, führt jedoch eine ähnliche Rolle aus. Er erstellt eine scrollliste mit Zeilen, die benutzerdefinierte Layouts aufweisen können und auf Berührungs Ereignisse reagieren.
 
-![](table-images/table-list-sml.png "Liste der Überwachungs Tabellen") ![](table-images/table-detail-sml.png)
+![Tabelle der Überwachungs Tabelle ansehen Tabellen ](table-images/table-list-sml.png) ![ Details](table-images/table-detail-sml.png)
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 ## <a name="adding-a-table"></a>Hinzufügen einer Tabelle
 
 Ziehen Sie das **Table** -Steuerelement in eine Szene. Standardmäßig sieht Sie wie folgt aus (zeigt ein einzelnes nicht spezifiziertes Zeilen Layout an):
 
-[![](table-images/add-table-sml.png "Adding a table")](table-images/add-table.png#lightbox)
+[![Hinzufügen einer Tabelle](table-images/add-table-sml.png)](table-images/add-table.png#lightbox)
 
 Geben Sie der Tabelle einen Namen im Feld **Name** des **eigenschaftenpad** , damit Sie im Code darauf verweisen kann.
 
@@ -35,7 +35,7 @@ Die Tabelle enthält automatisch eine einzelne Zeile, die von einem Zeilen Contr
 
 Um die- **Klasse** für den Zeilen Controller festzulegen, wählen Sie die Zeile in der **Dokument** Gliederung aus, und geben Sie im **eigenschaftenpad** einen Klassennamen ein:
 
-[![](table-images/add-row-controller-sml.png "Entering a class name in the Properties pad")](table-images/add-row-controller.png#lightbox)
+[![Eingeben eines Klassen namens im eigenschaftenpad](table-images/add-row-controller-sml.png)](table-images/add-row-controller.png#lightbox)
 
 Nachdem die-Klasse für den Controller der Zeile festgelegt wurde, erstellt die IDE eine entsprechende c#-Datei im Projekt. Ziehen Sie Steuerelemente (z. b. Bezeichnungen) auf die Zeile, und geben Sie Ihnen Namen, damit Sie im Code auf Sie verweisen können.
 
@@ -107,11 +107,11 @@ Diese Daten werden in der-Methode an die Ziel Storyboard-Szene übermittelt `Awa
 
 Standardmäßig verfügt das Tabellen Steuerelement über einen einzelnen Zeilentyp, den Sie entwerfen können. Zum Hinzufügen von weiteren Zeilen "Vorlagen" verwenden Sie das Feld **Zeilen** im **eigenschaftenpad** , um weitere Zeilen Controller zu erstellen:
 
-![](table-images/prototype-rows1.png "Setting the number of Prototype rows")
+![Festlegen der Anzahl von prototypzeilen](table-images/prototype-rows1.png)
 
 Wenn Sie die **Rows** -Eigenschaft auf **3** festlegen, werden zusätzliche Zeilen Platzhalter erstellt, in die Sie Steuerelemente ziehen können. Legen Sie für jede Zeile den **Klassen** Namen im **eigenschaftenpad** fest, um sicherzustellen, dass die Row Controller-Klasse erstellt wird.
 
-![](table-images/prototype-rows2.png "The prototype rows in the designer")
+![Die prototypzeilen im Designer](table-images/prototype-rows2.png)
 
 Zum Auffüllen einer Tabelle mit unterschiedlichen Zeilen Typen verwenden Sie die- `SetRowTypes` Methode, um den für jede Zeile in der Tabelle zu verwendenden Zeilen Controllertyp anzugeben. Verwenden Sie die Bezeichner der Zeile, um anzugeben, welcher Zeilen Controller für jede Zeile verwendet werden soll.
 
@@ -142,14 +142,14 @@ for (var i = 0; i < rows.Count; i++) {
 
 watchos 3 hat ein neues Feature für Tabellen eingeführt: die Möglichkeit, einen Bildlauf durch die Detailseiten im Zusammenhang mit den einzelnen Zeilen durchführen zu können, ohne zur Tabelle zurückkehren und eine andere Zeile auswählen zu müssen. Die Detailbildschirm können durch Schwenken nach oben oder unten oder mithilfe des Digital Crown durch ein-oder heruntergefahren werden.
 
-![](table-images/table-scroll-sml.png "Beispiel für vertikales Detail Paging") ![](table-images/table-detail-sml.png)
+![Beispiel für vertikales Detail Paging](table-images/table-scroll-sml.png) ![Vertikales Paging-Detail](table-images/table-detail-sml.png)
 
 > [!IMPORTANT]
 > Diese Funktion ist zurzeit nur verfügbar, wenn das Storyboard in Xcode-Interface Builder bearbeitet wird.
 
 Um dieses Feature zu aktivieren, wählen Sie `WKInterfaceTable` auf der Entwurfs Oberfläche aus, und wählen Sie die Option für die **vertikale Detail Auslagerung** aus:
 
-![](table-images/vertical-detail-paging-sml.png "Selecting the Vertical Detail Paging option")
+![Auswählen der Option für vertikales detailpaging](table-images/vertical-detail-paging-sml.png)
 
 Wie [von Apple erläutert](https://developer.apple.com/reference/watchkit/wkinterfacetable#1682023) , muss die Tabellennavigation für das Paging-Feature für die Paging-Funktion einen anderen Aspekt verwenden. Schreiben Sie ggf. vorhandenen Code, der verwendet `PushController` , um Segues zu verwenden.
 

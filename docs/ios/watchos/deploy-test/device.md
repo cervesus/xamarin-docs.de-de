@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: cbbf8194505e9caa09587471020026d495f9f99b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: a1ff70349ca7d7b97431b2e3d07aa4c8028c38c0
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569697"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996356"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Testen auf Apple Watch Geräten
 
@@ -28,19 +28,19 @@ Nachdem Sie die [Bereitstellungs Schritte](~/ios/watchos/deploy-test/index.md) z
 
 Das Testen von IOS-apps auf einem echten iPhone oder iPad erforderte immer das Registrieren des Geräts im dev Center. Die Geräteliste sieht wie folgt aus (Klicken Sie auf das Pluszeichen **+** , um ein neues Gerät hinzuzufügen):
 
-![](device-images/devices-sml.png "The device list looks like this")
+![Die Geräteliste sieht wie folgt aus.](device-images/devices-sml.png)
 
 Uhren sind nicht anders. Sie müssen nun Ihr Apple Watch Gerät hinzufügen, bevor Sie Apps für das Gerät bereitstellen. Suchen Sie die Benutzerkontensteuerung mithilfe von **Xcode** (**Windows >-Geräte** Liste). Wenn das gekoppelte Telefon verbunden ist, werden die Überwachungsinformationen ebenfalls angezeigt:
 
-[![](device-images/xcode-devices-sml.png "Paired Watch Information")](device-images/xcode-devices.png#lightbox)
+[![Gekoppelte Überwachungsinformationen](device-images/xcode-devices-sml.png)](device-images/xcode-devices.png#lightbox)
 
 Wenn Sie das UDID der Überwachung kennen, fügen Sie es der Geräteliste im dev Center hinzu:
 
-![](device-images/devices-watch-sml.png "The Watch's UDID in the device list")
+![UDID der Überwachung in der Geräteliste](device-images/devices-watch-sml.png)
 
 Nachdem das Überwachungsgerät hinzugefügt wurde, stellen Sie sicher, dass es in neuen oder vorhandenen Entwicklungs-oder Ad-hoc-Bereitstellungs Profilen ausgewählt ist, die Sie erstellen:
 
-![](device-images/devices-provisioning.png "Available device list")
+![Liste der verfügbaren Geräte](device-images/devices-provisioning.png)
 
 Vergessen Sie nicht, wenn Sie ein vorhandenes Bereitstellungs Profil bearbeiten, um es herunterzuladen und erneut zu installieren.
 
@@ -52,17 +52,17 @@ Zum Erstellen von Tests auf Ihrem Gerät müssen Sie ein **Entwicklungs Bereitst
 
 Wenn Sie über eine Platzhalter-APP-ID verfügen, *wird nur ein Bereitstellungs Profil benötigt*. Wenn Sie jedoch über eine separate App-ID für jedes Projekt verfügen, benötigen Sie ein Bereitstellungs Profil für jede APP-ID:
 
-![](device-images/provisioningprofile-development.png "The Development Provisioning Profile")
+![Das Entwicklungs Bereitstellungs Profil](device-images/provisioningprofile-development.png)
 
 Nachdem Sie alle drei Profile erstellt haben, werden Sie in der Liste angezeigt. Denken Sie daran, die einzelnen herunterzuladen und zu installieren:
 
-![](device-images/provisioningprofiles.png "The available Development Provisioning Profiles")
+![Die verfügbaren Entwicklungs Bereitstellungs profile](device-images/provisioningprofiles.png)
 
 Sie können das Bereitstellungs Profil in den **Projektoptionen** überprüfen, indem Sie den Bildschirm zum **erstellen > IOS-Bundle-Signierung** auswählen und die iPhone-Konfiguration **Release** oder **Debug** auswählen.
 
 In der Liste der **Bereitstellungs profile** werden alle übereinstimmenden Profile angezeigt. Sie sollten die entsprechenden Profile sehen, die Sie in dieser Dropdown Liste erstellt haben:
 
-![](device-images/options-selectprofile.png "The Provisioning Profile list")
+![Die Liste der Bereitstellungs profile](device-images/options-selectprofile.png)
 
 <a name="testing"></a>
 
@@ -97,7 +97,7 @@ Dies kann bei der Erstellung im Debugmodus zur Bereitstellung auf einem Apple Wa
 
 Um dieses Problem *vorübergehend* zu umgehen, deaktivieren Sie **inkrementelle Builds** in den Optionen für das Überwachungs Erweiterungs **Projekt > Build > watchos Build** -Fensters:
 
-[![](device-images/disable-incremental-sml.png "The Incremental Builds checkbox")](device-images/disable-incremental.png#lightbox)
+[![Kontrollkästchen inkrementelle Builds](device-images/disable-incremental-sml.png)](device-images/disable-incremental.png#lightbox)
 
 Dies wird in einer zukünftigen Version korrigiert, nach der inkrementelle Builds erneut aktiviert werden können, um schnellere Buildzeiten zu nutzen.
 
@@ -112,7 +112,7 @@ Failed to install [APPNAME]
 Invalid executable/Application Verification Failed
 ```
 
-![](device-images/invalid-application-executable.png "Invalid Application Executable alert")
+![Ungültige anwendungsausführ Bare Warnung](device-images/invalid-application-executable.png)
 
 Wenn diese Nachrichten *auf dem Bildschirm überwachen* angezeigt werden, nachdem die APP versucht hat, zu installieren, können einige Probleme auftreten:
 

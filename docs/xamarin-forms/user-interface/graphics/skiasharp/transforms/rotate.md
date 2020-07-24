@@ -10,12 +10,12 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 520c4c3b61049bf17c2c964523714db196da6839
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 533cb607cc2c47bf108d5e03733f31ebfc2fe475
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132183"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934133"
 ---
 # <a name="the-rotate-transform"></a>Die Drehungstransformation
 
@@ -25,7 +25,7 @@ _Untersuchen der möglichen Auswirkungen und Animationen mit der skiasharp-Trans
 
 Mit der Transformation zum drehen werden skiasharp-Grafik Objekte von der Einschränkungs Einschränkung mit den horizontalen und vertikalen Achsen freigegeben:
 
-![](rotate-images/rotateexample.png "Text rotated around a center")
+![Text gedreht um einen Mittelpunkt](rotate-images/rotateexample.png)
 
 Zum Drehen eines grafischen Objekts um den Punkt (0, 0) unterstützt skiasharp sowohl eine [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single)) -Methode als auch eine- [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single)) Methode:
 
@@ -63,7 +63,7 @@ using (SKPaint textPaint = new SKPaint
 
 Da die Drehung um die linke obere Ecke der Canvas zentriert ist, wird der Text für die meisten Winkel, die in diesem Programm festgelegt sind, aus dem Bildschirm gedreht:
 
-[![](rotate-images/basicrotate-small.png "Triple screenshot of the Basic Rotate page")](rotate-images/basicrotate-large.png#lightbox "Triple screenshot of the Basic Rotate page")
+[![Dreifacher Screenshot der Seite "grundlegende Rotation"](rotate-images/basicrotate-small.png)](rotate-images/basicrotate-large.png#lightbox "Dreifacher Screenshot der Seite "grundlegende Rotation"")
 
 Sehr häufig sollten Sie mit den folgenden Versionen der [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single,System.Single,System.Single)) -und-Methoden etwas drehen, das sich um einen angegebenen Pivotpunkt dreht [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single,System.Single,System.Single)) :
 
@@ -91,7 +91,7 @@ using (SKPaint textPaint = new SKPaint
 
 Nun dreht sich der Text um den Punkt, der zum Positionieren des Texts verwendet wird. Dies ist die horizontale Mitte der Baseline des Texts:
 
-[![](rotate-images/centeredrotate-small.png "Triple screenshot of the Centered Rotate page")](rotate-images/centeredrotate-large.png#lightbox "Triple screenshot of the Centered Rotate page")
+[![Dreifacher Screenshot der Seite "zentriert drehen"](rotate-images/centeredrotate-small.png)](rotate-images/centeredrotate-large.png#lightbox "Dreifacher Screenshot der Seite "zentriert drehen"")
 
 Wie bei der zentrierten Version der- `Scale` Methode ist die zentrierte Version des `RotateDegrees` Aufrufes eine Verknüpfung. Hier ist die-Methode:
 
@@ -145,7 +145,7 @@ Konzeptionell werden die beiden Transformationen in der Reihenfolge angewendet, 
 
 Es gibt in der Regel mehrere Möglichkeiten, Drehung und Übersetzung zu kombinieren. Die **gedrehte Textseite** erstellt folgende Anzeige:
 
-[![](rotate-images/rotatedtext-small.png "Triple screenshot of the Rotated Text page")](rotate-images/rotatedtext-large.png#lightbox "Triple screenshot of the Rotated Text page")
+[![Dreifacher Screenshot der gedrehten Textseite](rotate-images/rotatedtext-small.png)](rotate-images/rotatedtext-large.png#lightbox "Dreifacher Screenshot der gedrehten Textseite")
 
 Hier ist der `PaintSurface` Handler der- [`RotatedTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) Klasse:
 
@@ -369,7 +369,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die Uhr ist sicherlich funktionsfähig, obwohl die Hände Recht grob sind:
 
-[![](rotate-images/uglyanalogclock-small.png "Triple screenshot of the Ugly Analog Clock Text page")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
+[![Dreifacher Screenshot der unhässlichen Seite mit der analogen Uhr](rotate-images/uglyanalogclock-small.png)](rotate-images/uglyanalogclock-large.png#lightbox "Dreifacher Screenshot der hässlichen Seite "hässlich"")
 
 Eine attraktivere Uhr finden Sie im Artikel [**SVG Path Data in skiasharp (in skiasharp**](../curves/path-data.md)).
 

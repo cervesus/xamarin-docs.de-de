@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 81ad57119ff7271094966cf9b0c372876646f81b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d8dcf64f9a905557bea69402bcaf7fcfb51fb10b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573429"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928574"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>Einschränkungen für programmatische Layouts in xamarin. IOS
 
@@ -67,9 +67,9 @@ OrangeView.TrailingAnchor.ConstraintEqualTo (margins.TrailingAnchor).Active = tr
 OrangeView.HeightAnchor.ConstraintEqualTo (OrangeView.WidthAnchor, 2.0f);
 ```
 
-Eine typische layouteinschränkung kann einfach als linearer Ausdruck ausgedrückt werden. Betrachten Sie das folgende Beispiel:
+Eine typische layouteinschränkung kann einfach als linearer Ausdruck ausgedrückt werden. Sehen Sie sich das folgende Beispiel an.
 
-[![](programmatic-layout-constraints-images/graph01.png "A Layout Constraint expressed as a linear expression")](programmatic-layout-constraints-images/graph01.png#lightbox)
+[![Eine layouteinschränkung, ausgedrückt als linearer Ausdruck.](programmatic-layout-constraints-images/graph01.png)](programmatic-layout-constraints-images/graph01.png#lightbox)
 
 Die in die folgende Zeile des c#-Codes konvertiert werden, indem layoutanker verwendet werden:
 
@@ -87,7 +87,7 @@ Die Teile des c#-Codes entsprechen den angegebenen Teilen der Gleichung wie folg
 |Oren|Der Standardwert ist 1,0, daher nicht angegeben.|
 |Item 2|Orangeansicht|
 |Attribut 2|Trailinganchor|
-|Konstante|10,0|
+|Konstante|10.0|
 
 Zusätzlich zu den Parametern, die zum Lösen einer vorgegebenen layouteinschränkungs Gleichung erforderlich sind, erzwingt jede der Layoutobjekte die Typsicherheit der an Sie übergebenen Parameter. Horizontale Einschränkungs Anker, wie z. b. `LeadingAnchor` oder `TrailingAnchor` , können nur mit anderen horizontalen Ankertypen verwendet werden, und Multiplikatoren werden nur für Größenbeschränkungen bereitgestellt.
 

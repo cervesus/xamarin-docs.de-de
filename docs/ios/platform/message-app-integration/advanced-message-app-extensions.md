@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: fb721e36a6b66b90e9660a1c7d5db9e5124e8715
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c303125ac02c8e7c47fb16928df1432c66a8e8d2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031732"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937149"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>Erweiterte Message-App-Erweiterungen in xamarin. IOS
 
@@ -49,11 +49,11 @@ Erweiterungen von Message apps werden nur auf IOS 10 unterstützt. der Inhalt, d
 
 Interaktive Nachrichten zeigen eine benutzerdefinierte Nachrichten Blase an und werden durch eine Erweiterung der Nachrichten-APP bereitgestellt. Sie ermöglichen es dem Benutzer, interaktiven Nachrichten Inhalt zu erstellen, ihn in das Eingabefeld der Nachricht einzufügen und ihn zu senden.
 
-[![](advanced-message-app-extensions-images/interactive01.png "Creating Interactive Message Content")](advanced-message-app-extensions-images/interactive01.png#lightbox)
+[![Erstellen von interaktiven Nachrichten Inhalten](advanced-message-app-extensions-images/interactive01.png)](advanced-message-app-extensions-images/interactive01.png#lightbox)
 
 Der empfangende Benutzer kann auf eine interaktive Nachricht antworten, indem er auf die Meldungs Blase im Nachrichten Verlauf tippt, um die erstellte App-Erweiterung zu laden. Die Erweiterung wird voll Bildschirm gestartet und ermöglicht dem Benutzer das Verfassen einer Antwort und das Zurücksenden an den ursprünglichen Benutzer.
 
-[![](advanced-message-app-extensions-images/interactive02.png "The Extension launched full-screen")](advanced-message-app-extensions-images/interactive02.png#lightbox)
+[![Die Vollbild-Erweiterung wurde gestartet.](advanced-message-app-extensions-images/interactive02.png)](advanced-message-app-extensions-images/interactive02.png#lightbox)
 
 Die folgenden Themen werden im folgenden ausführlich behandelt:
 
@@ -66,31 +66,31 @@ Die folgenden Themen werden im folgenden ausführlich behandelt:
 
 Wenn Sie vom Benutzer aufgerufen wird, wird unten im Nachrichten Verlauf im Compact-Ansichtsmodus eine APP-Erweiterung für Nachrichten angezeigt:
 
-[![](advanced-message-app-extensions-images/interactive03.png "Messages API Overview")](advanced-message-app-extensions-images/interactive03.png#lightbox)
+[![API-Übersicht](advanced-message-app-extensions-images/interactive03.png)](advanced-message-app-extensions-images/interactive03.png#lightbox)
 
-1. Das `MSMessageAppViewController`-Objekt in der Message-App-Erweiterung ist die Hauptklasse, die aufgerufen wird, wenn der Benutzer die Ansicht der Erweiterung angezeigt wird.
+1. Das- `MSMessageAppViewController` Objekt in der Message-App-Erweiterung ist die Hauptklasse, die aufgerufen wird, wenn der Benutzer die Ansicht der Erweiterung angezeigt wird.
 2. Die Konversation wird dem Benutzer als `MSConversation` Objektinstanz präsentiert.
-3. Die `MSMessage`-Klasse stellt eine angegebene Nachrichten Blase in der Konversation dar.
-4. `MSSession` steuert, wie eine Nachricht gesendet wird.
-5. `MSMessageTemplateLayout` steuert, wie die Meldung angezeigt wird.
+3. Die- `MSMessage` Klasse stellt eine angegebene Nachrichten Blase in der Konversation dar.
+4. `MSSession`steuert, wie eine Nachricht gesendet wird.
+5. `MSMessageTemplateLayout`steuert, wie die Meldung angezeigt wird.
 
 ## <a name="the-extension-lifecycle"></a>Der Lebenszyklus der Erweiterung
 
 Sehen Sie sich an, wie eine Nachricht-App-Erweiterung aktiv wird:
 
-[![](advanced-message-app-extensions-images/interactive04.png "The process of a Message App Extension becoming active")](advanced-message-app-extensions-images/interactive04.png#lightbox)
+[![Der Prozess, bei dem eine Erweiterung der Nachrichten-APP aktiv wird.](advanced-message-app-extensions-images/interactive04.png)](advanced-message-app-extensions-images/interactive04.png#lightbox)
 
 1. Wenn eine Erweiterung (z. b. aus der APP-Anzeige) gestartet wird, startet die Nachrichten-APP einen Prozess.
-2. Die `DidBecomeActive`-Methode wird aufgerufen und an eine `MSConversation` übermittelt, die die Konversation darstellt, in der die Erweiterung der APP-Erweiterung ausgeführt wird.
-3. Da die Erweiterung auf einer basiert, `UIViewController` sowohl `ViewWillAppear` als auch `ViewDidAppear` aufgerufen werden.
+2. Die `DidBecomeActive` -Methode wird aufgerufen und an eine übermittelt `MSConversation` , die die Konversation darstellt, in der die APP-Erweiterung der Nachricht ausgeführt wird.
+3. Da die Erweiterung auf einem basiert, wird `UIViewController` sowohl als `ViewWillAppear` auch `ViewDidAppear` aufgerufen.
 
 Betrachten Sie als nächstes den Prozess, bei dem eine Erweiterung der Nachrichten-APP deaktiviert wird:
 
-[![](advanced-message-app-extensions-images/interactive05.png "The process of a Message App Extension becoming deactivated")](advanced-message-app-extensions-images/interactive05.png#lightbox)
+[![Der Prozess, bei dem eine Erweiterung der Nachrichten-APP deaktiviert wird](advanced-message-app-extensions-images/interactive05.png)](advanced-message-app-extensions-images/interactive05.png#lightbox)
 
-1. Wenn die APP-Erweiterung der Nachricht deaktiviert wird, wird zuerst die `ViewWillDisappear`-Methode aufgerufen.
-2. Anschließend wird die `ViewDidDisappear`-Methode aufgerufen.
-3. Die `WillResignActive`-Methode wird aufgerufen und an eine `MSConversation` übermittelt, die die Konversation darstellt, in der die Erweiterung der APP-Erweiterung ausgeführt wird. An diesem Punkt werden die Verbindungen zwischen der Nachrichten-APP und der Erweiterung veröffentlicht.
+1. Wenn die APP-Erweiterung der Nachricht deaktiviert wird, `ViewWillDisappear` wird die-Methode zuerst aufgerufen.
+2. Anschließend wird die- `ViewDidDisappear` Methode aufgerufen.
+3. Die `WillResignActive` -Methode wird aufgerufen und an eine übermittelt `MSConversation` , die die Konversation darstellt, in der die APP-Erweiterung der Nachricht ausgeführt wird. An diesem Punkt werden die Verbindungen zwischen der Nachrichten-APP und der Erweiterung veröffentlicht.
 4. Zu einem späteren Zeitpunkt wird der Prozess von der Nachrichten-APP beendet.
 
 Da es sich bei einer Erweiterung um einen kurzlebigen Prozess handelt, wird Sie vom System aggressiv beendet, um Verarbeitungs-und Akkuleistung zu sparen. Der Entwickler sollte dies beim Entwerfen und Implementieren einer Erweiterung der Nachrichten-APP berücksichtigen.
@@ -120,31 +120,31 @@ MSMessage ComposeMessage (IceCream iceCream, string caption, MSSession session =
 }
 ```
 
-Mit diesem Code wird eine neue `MSMessage` erstellt und mehrere Eigenschaften festgelegt (z. b. `Url`). Obwohl die Nachricht nur unter IOS erstellt werden kann, kann Sie an IOS und macOS gesendet werden, um angezeigt zu werden.
+Mit diesem Code wird ein neuer erstellt `MSMessage` und mehrere Eigenschaften festgelegt (z `Url` . b.). Obwohl die Nachricht nur unter IOS erstellt werden kann, kann Sie an IOS und macOS gesendet werden, um angezeigt zu werden.
 
 Wenn der Benutzer in der Konversation unter macOS auf die Meldungs Blase klickt, versucht der Mac, die in der URL angegebene Adresse im Webbrowser zu öffnen. Folglich sollte die Website des Entwicklers in der Lage sein, eine Darstellung der Nachricht im Webbrowser auf macOS-basierten Computern anzuzeigen.
 
-Die `AccessibilityLabel`-Eigenschaft wird von Bildschirmlesern verwendet, um die Aufzeichnung der Konversation für den Benutzer zu lesen. Die `Layout`-Eigenschaft gibt an, wie die Meldung angezeigt wird, derzeit wird nur die `MSMessageTemplateLayout` unterstützt und sieht wie folgt aus:
+Die- `AccessibilityLabel` Eigenschaft wird von Bildschirmlesern verwendet, um die Aufzeichnung der Konversation für den Benutzer zu lesen. Die- `Layout` Eigenschaft gibt an, wie die Meldung angezeigt wird, derzeit `MSMessageTemplateLayout` wird nur der unterstützt und sieht wie folgt aus:
 
-[![](advanced-message-app-extensions-images/interactive06.png "The MSMessageTemplateLayout template")](advanced-message-app-extensions-images/interactive06.png#lightbox)
+[![Die msmessagetemplatelayout-Vorlage](advanced-message-app-extensions-images/interactive06.png)](advanced-message-app-extensions-images/interactive06.png#lightbox)
 
-Die `Image`-Eigenschaft des `MSMessageTemplateLayout` stellt Inhalt für den Haupttext der messageblase auf dem Bildschirm bereit. Die `MediaFileUrl`-Eigenschaft stellt auch Inhalt für den Textkörper der Nachrichten Blase bereit. Sie ermöglicht jedoch Inhalte, die von `UIImage` nicht unterstützt werden (z. b. eine Videodatei, die im Hintergrund Schleifen würde). Wenn die Eigenschaften `Image` und `MediaFileUrl` bereitgestellt werden, hat die Eigenschaft `Image` Vorrang. Der `MediaFileUrl` unterstützt PNG, JPEG, GIF und Video (in einem beliebigen Format, das von den Media Player Framework)-Medienformaten wiedergegeben werden kann.
+Die- `Image` Eigenschaft des-Objekts `MSMessageTemplateLayout` stellt Inhalt für den Haupttext der messageblase auf dem Bildschirm bereit. Die- `MediaFileUrl` Eigenschaft stellt auch Inhalt für den Text der Nachrichten Blase bereit. Sie ermöglicht jedoch Inhalte, die nicht von unterstützt werden (z. b. `UIImage` eine Videodatei, die eine Schleife im Hintergrund durchführt). Wenn sowohl die `Image` -Eigenschaft als auch die- `MediaFileUrl` Eigenschaft bereitgestellt werden, hat die- `Image` Eigenschaft Vorrang. `MediaFileUrl`Unterstützt PNG, JPEG, GIF und Video (in jedem Format, das von den Media Player Framework)-Medienformaten wiedergegeben werden kann.
 
 Die empfohlene Mediengröße beträgt 300 x 300 Pixel bei der 3X-Auflösung. Etwas größere und kleinere Ressourcen werden ebenfalls akzeptiert, und Apple schlägt Tests mit unterschiedlichen Größen vor, um die besten Ergebnisse zu erzielen. Die Nachrichten-APP wird herunterskaliert und skaliert diese Medien nach Bedarf.
 
 Wenn die Assets an den Empfänger gesendet werden, werden alle angeschlossenen Medien automatisch von der Nachrichten-APP transcodiert, um Sie von der Übertragung über die Netzwerke zu optimieren. Aus diesem Grund wird von Apple das Einschließen von Text in das an die Nachricht angefügte Medium verhindert, da die Medien für die Übertragung herunterskaliert und komprimiert werden, wodurch der Text möglicherweise nicht mehr lesbar ist.
 
-Die Eigenschaften `ImageTitle` und `ImageSubtitle` geben eine Beschreibung für das Medium an, das in der Nachrichten Blase angezeigt wird. Diese Eigenschaften werden als Text an das empfangende Gerät gesendet, wo Sie in der unteren linken Ecke des Bilds mit einer Skala gerendert werden.
+Die `ImageTitle` `ImageSubtitle` Eigenschaften und geben eine Beschreibung für das Medium an, das in der Meldungs Blase angezeigt wird. Diese Eigenschaften werden als Text an das empfangende Gerät gesendet, wo Sie in der unteren linken Ecke des Bilds mit einer Skala gerendert werden.
 
-Die Eigenschaften `Caption`, `SubCaption`, `TrailingCaption` und `TrailingSubcaption` beschreiben das Bild weiter und werden in einem Abschnitt unterhalb des Bilds gerendert. Wenn Sie alle diese Eigenschaften auf `null` festlegen, wird eine Nachrichten Blase ohne den Beschriftungs Bereich erstellt:
+Die `Caption` `SubCaption` Eigenschaften, `TrailingCaption` und `TrailingSubcaption` beschreiben das Bild weiter und werden in einem Abschnitt unterhalb des Bilds gerendert. Wenn Sie alle diese Eigenschaften auf festlegen, `null` wird eine Nachrichten Blase ohne den Beschriftungs Bereich erstellt:
 
-[![](advanced-message-app-extensions-images/interactive07.png "A Message Bubble without the Caption Area")](advanced-message-app-extensions-images/interactive07.png#lightbox)
+[![Eine Meldungs Blase ohne den Beschriftungs Bereich.](advanced-message-app-extensions-images/interactive07.png)](advanced-message-app-extensions-images/interactive07.png#lightbox)
 
 Beachten Sie, dass die Nachrichten-APP das Symbol der APP-Erweiterung der Nachricht in der oberen linken Ecke der Nachrichten Blase zeichnet.
 
 ## <a name="sending-a-message"></a>Senden einer Nachricht
 
-Nachdem ein `MSMessage` zusammengesetzt wurde, kann der folgende Code verwendet werden, um ihn zu senden:
+Nachdem ein `MSMessage` erstellt wurde, kann der folgende Code verwendet werden, um ihn zu senden:
 
 ```csharp
 public void SendMessage (MSMessage message)
@@ -163,15 +163,15 @@ public void SendMessage (MSMessage message)
 }
 ```
 
-Die `ActiveConversation`-Eigenschaft des `MSMessagesAppViewController` enthält die aktuelle Konversation, in der die Erweiterung der Nachrichten Erweiterung gestartet wurde.
+Die- `ActiveConversation` Eigenschaft des-Objekts enthält `MSMessagesAppViewController` die aktuelle Konversation, in der die Message-App-Erweiterung gestartet wurde.
 
-Nennen Sie den `InsertMessage` des `MSConversation`, um die Nachricht in die Konversation einzubeziehen, und behandeln Sie ggf. auftretende Fehler. Wenn die Nachricht erfolgreich eingeschlossen wurde, wird die Nachrichten Blase im Eingabefeld angezeigt.
+Nennen `InsertMessage` Sie die von `MSConversation` , um die Nachricht in die Konversation einzubeziehen, und behandeln Sie ggf. auftretende Fehler. Wenn die Nachricht erfolgreich eingeschlossen wurde, wird die Nachrichten Blase im Eingabefeld angezeigt.
 
 Darüber hinaus kann die Erweiterung verschiedene Datentypen an die Konversation senden, z. b.:
 
 - **Text** - `ActiveConversation.InsertText ("Message", (error) => {...});`
-- **Anlagen** - `ActiveConversation.InsertAttachment (new NSUrl ("path"), "filename", (error) => {...});`
-- **Aufkleber** - `ActiveConversation.InsertSticker (sticker, (obj) => {...});`, wo `sticker` ein `MSSticker`ist.
+- **Loszulassen** - `ActiveConversation.InsertAttachment (new NSUrl ("path"), "filename", (error) => {...});`
+- **Stickers**  -  Aufkleber `ActiveConversation.InsertSticker (sticker, (obj) => {...});` , wobei `sticker` ein ist `MSSticker` .
 
 Sobald sich der neue Inhalt im Eingabefeld befindet, kann der Benutzer die Nachricht senden, indem er auf die blaue **Sende** Schaltfläche tippt (genauso wie eine beliebige typische Meldung). Es gibt keine Möglichkeit, dass die Nachrichten-APP-Erweiterung Inhalt automatisch sendet, da dieser Vorgang vollständig unter der Kontrolle des Benutzers ist.
 
@@ -179,14 +179,14 @@ Sobald sich der neue Inhalt im Eingabefeld befindet, kann der Benutzer die Nachr
 
 Eine Nachrichten-APP-Erweiterung kann in einem von zwei unterschiedlichen Ansichtsmodi angezeigt werden:
 
-[![](advanced-message-app-extensions-images/interactive08.png "A Message App Extension displayed in two different view modes: Compact & Expanded")](advanced-message-app-extensions-images/interactive08.png#lightbox)
+[![Eine Nachrichten-APP-Erweiterung wird in zwei unterschiedlichen Ansichtsmodi angezeigt: Compact & erweitert](advanced-message-app-extensions-images/interactive08.png)](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
-- **Compact** : Dies ist der Standardmodus, in dem die Nachrichten-APP-Erweiterung die untersten 25% der Meldungs Ansicht annimmt. Im Compact-Modus hat die APP keinen Zugriff auf die Tastatur, den horizontalen Bildlauf oder den Schwenk Gesten Erkennungs Modul. Die APP verfügt über Zugriff auf das Eingabefeld, und Aufrufe an `InsertMessage` werden sofort dem Benutzer angezeigt.
+- **Compact** : Dies ist der Standardmodus, in dem die Nachrichten-APP-Erweiterung die untersten 25% der Meldungs Ansicht annimmt. Im Compact-Modus hat die APP keinen Zugriff auf die Tastatur, den horizontalen Bildlauf oder den Schwenk Gesten Erkennungs Modul. Die APP verfügt über Zugriff auf das Eingabefeld, und Aufrufe an werden `InsertMessage` dem Benutzer sofort angezeigt.
 - **Erweitert** : die Nachrichten-APP-Erweiterung füllt die gesamte Meldungs Ansicht aus. Er hat keinen Zugriff auf das Eingabefeld, hat jedoch Zugriff auf die Tastatur, den horizontalen Bildlauf und die Dreh Gestenerkennung.
 
 Eine Erweiterung der Nachrichten-APP kann zwischen diesen Modi jederzeit Programm gesteuert oder manuell vom Benutzer gewechselt werden und sollte sofort auf alle Änderungen im Ansichtsmodus reagiert werden.
 
-Sehen Sie sich das folgende Beispiel für die Handhabung des Schalters zwischen den beiden unterschiedlichen Ansichtsmodi an. Für jeden Zustand sind zwei verschiedene Ansichts Controller erforderlich. Die `StickerBrowserViewController` behandelt die **Compact** -Ansicht, und die `AddStickerViewController` behandelt die **Erweiterte** Ansicht:
+Sehen Sie sich das folgende Beispiel für die Handhabung des Schalters zwischen den beiden unterschiedlichen Ansichtsmodi an. Für jeden Zustand sind zwei verschiedene Ansichts Controller erforderlich. Der `StickerBrowserViewController` verarbeitet die **Compact** -Ansicht und verarbeitet `AddStickerViewController` die **Erweiterte** Ansicht:
 
 ```csharp
 using System;
@@ -357,7 +357,7 @@ namespace MessagesExtension {
 }
 ```
 
-Die `DidTransition`-Methode wird überschrieben, um den Wechsel zwischen den beiden Modi zu handhaben:
+Die- `DidTransition` Methode wird überschrieben, um den Wechsel zwischen den beiden Modi zu handhaben:
 
 ```csharp
 public override void DidTransition (MSMessagesAppPresentationStyle presentationStyle)
@@ -376,13 +376,13 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 }
 ```
 
-Optional kann die APP die `WillTransition`-Methode verwenden, um die Änderung des Ansichtsmodus zu verarbeiten, bevor Sie dem Benutzer angezeigt wird (wie dies im obigen Beispiel für das icecream Builder erfolgt). Weitere Informationen finden Sie in unserer weiteren Dokumentation zur [Aufkleber-Anpassung](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md) .
+Optional kann die APP die-Methode verwenden `WillTransition` , um die Ansichts Modusänderung zu verarbeiten, bevor Sie dem Benutzer angezeigt wird (wie dies im obigen Beispiel für das icecream Builder erfolgt). Weitere Informationen finden Sie in unserer weiteren Dokumentation zur [Aufkleber-Anpassung](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md) .
 
 ## <a name="replying-to-a-message"></a>Antworten auf eine Nachricht
 
 Es gibt zwei Fälle, in denen eine Nachrichten-APP-Erweiterung behandelt werden muss, wenn Sie auf eine Nachricht antwortet:
 
-[![](advanced-message-app-extensions-images/interactive09.png "The Message App Extension in the Inactive and Active modes")](advanced-message-app-extensions-images/interactive09.png#lightbox)
+[![Die Nachrichten-APP-Erweiterung im inaktiven und aktiven Modus](advanced-message-app-extensions-images/interactive09.png)](advanced-message-app-extensions-images/interactive09.png#lightbox)
 
 - Die **Erweiterung ist inaktiv** . in der Nachrichten Aufzeichnung gibt es eine der Nachrichten Blasen der Nachricht, die der Benutzer tippen kann, um die Erweiterungen zu aktivieren und die interaktive Konversation fortzusetzen.
 - Die **Erweiterung ist aktiv** . der Benutzer kann in der Nachrichten Aufzeichnung auf die Meldungs Blase der Message-App-Erweiterung tippen, um den erweiterten Ansichtsmodus einzugeben und den interaktiven Prozess von dort aus fortzusetzen, wo Sie aufgehört haben.
@@ -391,12 +391,12 @@ Es gibt zwei Fälle, in denen eine Nachrichten-APP-Erweiterung behandelt werden 
 
 Wenn eine Nachrichten Blase vom Benutzer in der Nachrichten Aufzeichnung getippt wird und die APP-Erweiterung der Nachricht inaktiv ist, wird der folgende Prozess ausgeführt:
 
-[![](advanced-message-app-extensions-images/interactive10.png "Handling an inactive Message Bubble")](advanced-message-app-extensions-images/interactive10.png#lightbox)
+[![Verarbeiten einer inaktiven Nachrichten Blase](advanced-message-app-extensions-images/interactive10.png)](advanced-message-app-extensions-images/interactive10.png#lightbox)
 
 1. Der Benutzer tippt auf die Meldungs Blase der Erweiterung.
 2. Wenn eine Erweiterung gestartet wird, startet die Message-APP einen Prozess.
-3. Die `DidBecomeActive`-Methode wird aufgerufen und an eine `MSConversation` übermittelt, die die Konversation darstellt, in der die Erweiterung der APP-Erweiterung ausgeführt wird.
-4. Da die Erweiterung auf einer basiert, `UIViewController` sowohl `ViewWillAppear` als auch `ViewDidAppear` aufgerufen werden.
+3. Die `DidBecomeActive` -Methode wird aufgerufen und an eine übermittelt `MSConversation` , die die Konversation darstellt, in der die APP-Erweiterung der Nachricht ausgeführt wird.
+4. Da die Erweiterung auf einem basiert, wird `UIViewController` sowohl als `ViewWillAppear` auch `ViewDidAppear` aufgerufen.
 
 Wenn der Prozess beendet ist, wird die APP-Erweiterung der Nachricht im erweiterten Ansichtsmodus angezeigt.
 
@@ -404,18 +404,18 @@ Wenn der Prozess beendet ist, wird die APP-Erweiterung der Nachricht im erweiter
 
 Wenn eine Nachrichten Blase vom Benutzer in der Nachrichten Aufzeichnung getippt wird und die APP-Erweiterung der Nachricht aktiv ist, wird der folgende Prozess ausgeführt:
 
-[![](advanced-message-app-extensions-images/interactive11.png "Handling an active Message Bubble")](advanced-message-app-extensions-images/interactive11.png#lightbox)
+[![Verarbeiten einer aktiven Nachrichten Blase](advanced-message-app-extensions-images/interactive11.png)](advanced-message-app-extensions-images/interactive11.png#lightbox)
 
 1. Der Benutzer tippt auf die Meldungs Blase der Erweiterung.
-2. Da die Nachrichten-APP-Erweiterung bereits aktiv ist, wird die `WillTransition`-Methode des `MSMessagesAppViewController` aufgerufen, um den Wechsel vom kompakten zum erweiterten Ansichtsmodus zu verarbeiten.
-3. Die `DidSelectMessage`-Methode des `MSMessagesAppViewController` wird aufgerufen, und die `MSMessage` und `MSConversation`, zu der die Nachrichten Blase gehört, übergeben.
-4. Die `DidTransition`-Methode des `MSMessagesAppViewController` wird aufgerufen, um den Wechsel vom kompakten zum erweiterten Ansichtsmodus zu verarbeiten.
+2. Da die Nachrichten-APP-Erweiterung bereits aktiv ist, wird die- `WillTransition` Methode von `MSMessagesAppViewController` aufgerufen, um den Wechsel von der Compact-zum erweiterten Ansichtsmodus zu verarbeiten.
+3. Die `DidSelectMessage` -Methode des `MSMessagesAppViewController` wird aufgerufen und übergeben `MSMessage` , und `MSConversation` die Nachrichten Blase gehört zu.
+4. Die- `DidTransition` Methode des `MSMessagesAppViewController` wird aufgerufen, um den Wechsel vom kompakten zum erweiterten Ansichtsmodus zu verarbeiten.
 
 Wenn der Prozess beendet ist, wird die APP-Erweiterung der Nachricht im erweiterten Ansichtsmodus angezeigt.
 
 ### <a name="accessing-the-selected-message"></a>Zugreifen auf die ausgewählte Nachricht
 
-Wenn der Benutzer in beiden Fällen auf eine Nachrichten Blase tippt, die zur Erweiterung der Nachrichten-APP gehört, muss er Zugriff auf das `MSMessage` erhalten, das mit der `SelectedMessage`-Eigenschaft der `MSConversation`getippt wurde.
+In beiden Fällen, wenn der Benutzer auf eine Nachrichten Blase tippt, die zur Erweiterung der Nachrichten-APP gehört, muss er Zugriff auf das erhalten, `MSMessage` das mithilfe der-Eigenschaft des-Objekts getippt wurde `SelectedMessage` `MSConversation` .
 
 Beispiel:
 
@@ -454,13 +454,13 @@ Die ausgewählte Meldung sollte in der Benutzeroberfläche der APP-Erweiterung d
 
 Beim Senden der verschiedenen Schritte einer interaktiven Konversation zwischen den beiden Benutzern in der Konversation können die teilweise abgeschlossenen Nachrichten Blasen mit dem Überladen der Nachrichten Aufzeichnung beginnen:
 
-[![](advanced-message-app-extensions-images/interactive12.png "The partially completed Message Bubbles can cluttering the Message Transcript")](advanced-message-app-extensions-images/interactive12.png#lightbox)
+[![Die teilweise abgeschlossenen Nachrichten Blasen können das Nachrichten Transkripts gruppieren.](advanced-message-app-extensions-images/interactive12.png)](advanced-message-app-extensions-images/interactive12.png#lightbox)
 
 Stattdessen sollte die APP-Erweiterung der Nachricht die vorherigen Nachrichten Blasen in einen präktkommentar in der Nachrichten Aufzeichnung reduzieren:
 
-[![](advanced-message-app-extensions-images/interactive13.png "Collapsing the previous Message Bubbles in the Message Transcript")](advanced-message-app-extensions-images/interactive13.png#lightbox)
+[![Reduzieren der vorherigen Nachrichten Blasen in der Nachrichten Aufzeichnung](advanced-message-app-extensions-images/interactive13.png)](advanced-message-app-extensions-images/interactive13.png#lightbox)
 
-Dies wird mithilfe einer `MSSession` behandelt, um alle vorhandenen Schritte zu reduzieren. Die `DidSelectMessage`-Methode der `MSMessagesAppViewController`-Klasse kann also so geändert werden, dass Sie wie folgt aussieht:
+Dies wird mithilfe von gehandhabt `MSSession` , um alle vorhandenen Schritte zu reduzieren. Daher kann die- `DidSelectMessage` Methode der- `MSMessagesAppViewController` Klasse so geändert werden, dass Sie wie folgt aussieht:
 
 ```csharp
 public override void DidSelectMessage (MSMessage message, MSConversation conversation)
@@ -495,17 +495,17 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 }
 ```
 
-Wenn die ausgewählte Nachricht bereits über einen beendenden `MSSession`verfügt, wird Sie verwendet, andernfalls wird eine neue `MSSession` erstellt. Die `SummaryText`-Eigenschaft des `MSMessage` wird verwendet, um den reduzierten vorherigen Schritten eine Beschriftung hinzuzufügen. Wenn die `SummaryText`-Eigenschaft auf `null`festgelegt ist, werden die vorherigen Schritte in der Konversation vollständig aus dem Konversations Protokoll entfernt.
+Wenn für die ausgewählte Nachricht bereits eine vorhanden ist `MSSession` , wird Sie verwendet, da eine neue `MSSession` erstellt wird. Die- `SummaryText` Eigenschaft von `MSMessage` wird verwendet, um den reduzierten vorherigen Schritten eine Beschriftung hinzuzufügen. Wenn die- `SummaryText` Eigenschaft auf festgelegt ist `null` , werden die vorherigen Schritte in der Konversation vollständig aus dem Konversation-Transkripts entfernt.
 
 ## <a name="advanced-message-api-features"></a>Erweiterte Message-API-Features
 
 Mit den grundlegenden Features der neuen Nachrichten-API, die oben ausführlich behandelt werden, untersuchen Sie als nächstes einige der erweiterten Features, die Apple in das Framework integriert hat.
 
-Erstens gibt es mehrere weitere Überschreibungs Methoden in der `MSMessagesAppViewController`-Klasse, die einen tieferen Zugriff auf die Konversation bieten:
+Erstens gibt es mehrere weitere Überschreibungs Methoden in der- `MSMessagesAppViewController` Klasse, die einen tieferen Zugriff auf die Konversation bieten:
 
-- `DidStartSendingMessage`: Diese wird aufgerufen, wenn der Benutzer auf die Schaltfläche "Senden" tippt. Dies bedeutet nicht, dass die Nachricht tatsächlich an den Empfänger gesendet wurde, nur dass der Sende Prozess gestartet wurde.
-- `DidCancelSendingMessage`: Dies geschieht, wenn der Benutzer auf die *X* -Schaltfläche in der oberen rechten Ecke der Nachrichten Blase in der Konversation der Konversation tippt.
-- `DidReceiveMessage`: Diese Methode wird aufgerufen, wenn die Erweiterung der Nachrichten-APP aktiv ist. eine neue Nachricht wurde von einem der Teilnehmer der Konversation empfangen.
+- `DidStartSendingMessage`-Dies wird aufgerufen, wenn der Benutzer auf die Schaltfläche "Senden" tippt. Dies bedeutet nicht, dass die Nachricht tatsächlich an den Empfänger gesendet wurde, nur dass der Sende Prozess gestartet wurde.
+- `DidCancelSendingMessage`-Dies ist der Fall, wenn der Benutzer auf die *X* -Schaltfläche in der oberen rechten Ecke der Nachrichten Blase in der Konversation der Konversation tippt.
+- `DidReceiveMessage`-Diese Methode wird aufgerufen, wenn die APP-Erweiterung der Nachricht aktiv ist, und eine neue Nachricht wurde von einem der Teilnehmer der Konversation empfangen.
 
 ### <a name="group-conversations"></a>Gruppen Konversationen
 
@@ -513,7 +513,7 @@ Eine Nachrichten-APP-Erweiterung kann verwendet werden, während die Benutzer an
 
 Sehen Sie sich die folgende Interaktion in einer Gruppen Konversation mit drei Benutzern an:
 
-[![](advanced-message-app-extensions-images/interactive14.png "Interaction in a group conversation with three users")](advanced-message-app-extensions-images/interactive14.png#lightbox)
+[![Interaktion in einer Gruppen Konversation mit drei Benutzern](advanced-message-app-extensions-images/interactive14.png)](advanced-message-app-extensions-images/interactive14.png#lightbox)
 
 1. Benutzer 1 sendet eine interaktive Gruppen Nachricht, in der Benutzer 2 und Benutzer 3 aufgefordert werden, ein Burger-Topping auszuwählen.
 2. Benutzer 2 wählt Tomaten aus.
@@ -528,15 +528,15 @@ Wenn der Benutzer eine Nachricht sendet, wird ein Sitzungs Token generiert und m
 
 Um auf den Bezeichner des Absenders einer Nachricht zuzugreifen, sehen Sie sich das Beispiel für eine Gruppen Konversation an:
 
-[![](advanced-message-app-extensions-images/interactive15.png "Group conversation sending Identifiers")](advanced-message-app-extensions-images/interactive15.png#lightbox)
+[![Gruppen Konversation sendende Bezeichner](advanced-message-app-extensions-images/interactive15.png)](advanced-message-app-extensions-images/interactive15.png#lightbox)
 
 1. Erneut sendet Benutzer 1 eine interaktive Gruppen Nachricht, die Benutzer 2 und Benutzer 3 auffordert, eine Burger-Topping-Topping auszuwählen.
 2. Benutzer 3 wählt Pickles aus.
 3. Die Auswahl von Benutzer 3 geht zurück an Benutzer 1, und Benutzer 2 hat noch nicht geantwortet.
-4. Da Apple mit dem Datenschutz in hohem Umfang beschäftigt ist, kennt die APP-Erweiterung der Nachricht nur einen eindeutigen Bezeichner (als `NSUUID`), der jedem Teilnehmer der Konversation zugewiesen wird. Auf dem lokalen Gerät ist nur der Bezeichner des aktuellen Benutzers bekannt.
-5. Der `MSMessage` verfügt über eine `SenderIdentifier`-Eigenschaft, die mit einem der Benutzer in der Teilnehmerliste übereinstimmt, die der Erweiterung bekannt ist.
+4. Da Apple mit dem Datenschutz in hohem Umfang beschäftigt ist, kennt die APP-Erweiterung der Nachricht nur einen eindeutigen Bezeichner (als `NSUUID` ), der jedem Teilnehmer der Konversation zugewiesen wird. Auf dem lokalen Gerät ist nur der Bezeichner des aktuellen Benutzers bekannt.
+5. Der `MSMessage` verfügt über eine- `SenderIdentifier` Eigenschaft, die mit einem der Benutzer in der Teilnehmerliste übereinstimmt, die der Erweiterung bekannt ist.
 6. Jedes Benutzergerät verfügt über eine eigene Kopie der Teilnehmerliste, in der wiederum nur der Bezeichner des lokalen Benutzers bekannt ist.
-7. Wenn eine Nachricht gesendet wird, wird die `SenderIdentifier`-Eigenschaft auch als der lokale Benutzer bezeichnet.
+7. Wenn eine Nachricht gesendet wird, `SenderIdentifier` wird die zugehörige-Eigenschaft auch als der lokale Benutzer bezeichnet.
 
 Die Absender Bezeichner können wie folgt verwendet werden:
 
@@ -544,7 +544,7 @@ Die Absender Bezeichner können wie folgt verwendet werden:
 - Wenn die Erweiterung eine Nachricht von einem Benutzer empfängt, kann Sie den Absender Bezeichner nachverfolgen. Wenn eine andere Nachricht mit dem gleichen Absender Bezeichner empfangen wird, weiß die Erweiterung, dass Sie vom gleichen Benutzer ist.
 - Sie können verwendet werden, um einen bestimmten Benutzer in der Konversation zu identifizieren.
 
-Der Absender Bezeichner kann in beliebigen Textfeldern der `MSMessageTemplateLayout` verwendet werden, indem er einem Dollarzeichen (`$`) vorangestellt wird. Beispiel:
+Der Absender Bezeichner kann in beliebigen Textfeldern von verwendet werden, `MSMessageTemplateLayout` indem er einem Dollarzeichen () vorangestellt wird `$` . Beispiel:
 
 ```csharp
 // Pass along the sender identifier
@@ -584,7 +584,7 @@ Die interaktiven Nachrichten, die von einer Erweiterung für die Nachrichten-APP
 - macOS Sierra
 - iOS 10
 
-Von den drei Plattformen ermöglicht nur IOS 10 dem Benutzer das Generieren einer interaktiven Nachricht. Wenn der Benutzer auf macOS Sierra auf eine interaktive Nachrichten Blase klickt, wird die an den `MSMessage` angefügte URL in Safari geöffnet, und dort sollte eine Darstellung der Nachricht angezeigt werden.
+Von den drei Plattformen ermöglicht nur IOS 10 dem Benutzer das Generieren einer interaktiven Nachricht. Wenn der Benutzer auf macOS Sierra auf eine interaktive Nachrichten Blase klickt, wird die an den angefügte URL `MSMessage` in Safari geöffnet, und dort sollte eine Darstellung der Nachricht angezeigt werden.
 
 Bei watchos kann die Nachrichten-APP eine interaktive Nachricht an ein angefügtes IOS-Gerät weiter senden, auf dem der Benutzer eine Antwort verfassen kann.
 
@@ -597,7 +597,7 @@ Die neue Nachrichten-API unterstützt ein Fall Back, wenn die interaktive Nachri
 Sie werden in einem Fall Back Format als zwei separate Nachrichten übermittelt:
 
 - Eine davon ist das Bild, das vom Vorlagen Layout bereitgestellt wird.
-- Die andere ist die URL, die in der `MSMessage`bereitgestellt wird.
+- Die andere ist die URL, die in der bereitgestellt wird `MSMessage` .
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fb873102bfb8568b8298a39ea2429fb6c27af175
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 785532d1a8fedfaef367c8fb8ae437220c3de9c4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137721"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938176"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>Zeichnen eines einfachen Kreises in skiasharp
 
@@ -27,7 +27,7 @@ In diesem Artikel werden die Konzepte des Zeichnens von Grafiken in Xamarin.Form
 
 Das [**skiasharpformsdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) -Programm enthält den gesamten Beispielcode für diese Reihe von skiasharp-Artikeln. Auf der ersten Seite wird der **einfache Kreis** aufgerufen und die Page-Klasse aufgerufen [`SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) . Dieser Code zeigt, wie ein Kreis in der Mitte der Seite mit einem Radius von 100 Pixeln gezeichnet wird. Die Gliederung des Kreises ist rot, und das Innere des Kreises ist blau.
 
-![](circle-images/circleexample.png "A blue circle outlined in red")
+![Ein roter Kreis, der rot dargestellt wird.](circle-images/circleexample.png)
 
 Die [`SimpleCircle`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) Page-Klasse wird von abgeleitet `ContentPage` und enthält zwei `using` Direktiven für die skiasharp-Namespaces:
 
@@ -146,7 +146,7 @@ Dieses Mal füllt der `DrawCircle` Aufruf den Kreis mithilfe der neuen Eigenscha
 
 Hier ist das Programm, das unter IOS und Android ausgeführt wird:
 
-[![](circle-images/simplecircle-small.png "Triple screenshot of the Simple Circle page")](circle-images/simplecircle-large.png#lightbox "Triple screenshot of the Simple Circle page")
+[![Dreifacher Screenshot der einfachen kreisseite](circle-images/simplecircle-small.png)](circle-images/simplecircle-large.png#lightbox "Dreifacher Screenshot der einfachen kreisseite")
 
 Wenn Sie das Programm selbst ausführen, können Sie das Telefon oder den Simulator seitwärts schalten, um zu sehen, wie die Grafik neu gezeichnet wird. Jedes Mal, wenn die Grafik neu gezeichnet werden muss, `PaintSurface` wird der Ereignishandler erneut aufgerufen.
 

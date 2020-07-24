@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 17ccc67b2976b93fbb290a1d2425168cab50228e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 497096e7f422e8337498339737ab304b0d896dfe
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568788"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938995"
 ---
 # <a name="watchos-troubleshooting"></a>Problembehandlung bei watchos
 
@@ -36,7 +36,7 @@ Diese Seite enthält weitere Informationen und Problem Umgehungen für Probleme,
 <a name="deploy"></a>
 
 - In früheren Versionen von Visual Studio für Mac fälschlicherweise eines der **applecompanionsettings** -Symbole als 88x88 Pixel angezeigt. Dies führt zu einem **fehlenden symbolfehler** , wenn Sie versuchen, eine Übermittlung an den App Store durchführen.
-    Dieses Symbol sollte 87x 87 Pixel (29 Einheiten für **@3x** Retina-Bildschirme) sein. Dies kann in Visual Studio für Mac nicht behoben werden. Bearbeiten Sie entweder das Image-Asset in Xcode, oder bearbeiten Sie die Datei " **Content. JSON** " manuell.
+    Dieses Symbol sollte 87x 87 Pixel (29 Einheiten für **@3x** Retina-Bildschirme) sein. Dies kann in Visual Studio für Mac nicht behoben werden. Bearbeiten Sie entweder das Image-Asset in Xcode, oder bearbeiten Sie die Datei **Contents.js** manuell.
 
 - Wenn die **Info. plist** -Datei des Watch-Erweiterungsprojekts > die wkapp-Bundle-ID nicht ordnungsgemäß für die **Paket-ID**der Überwachungsanwendung [festgelegt](~/ios/watchos/get-started/project-references.md) ist, kann der Debugger keine Verbindung herstellen, und Visual Studio für Mac wartet mit der Meldung "auf die Verbindung des *Debuggers wird gewartet"*.
 
@@ -47,7 +47,7 @@ Diese Seite enthält weitere Informationen und Problem Umgehungen für Probleme,
 - Sie können einem Storyboard nicht zwei hinzufügen `WKNotificationControllers` .
     Problem Umgehung: das- `notificationCategory` Element in der Storyboard-XML-Datei wird immer mit dem gleichen eingefügt `id` . Um dieses Problem zu umgehen, können Sie zwei (oder mehr) Benachrichtigungs Controller hinzufügen, die storyboarddatei in einem Text-Editor öffnen und dann das Element manuell als `id` eindeutig ändern.
 
-    [![](troubleshooting-images/duplicate-id-sml.png "Opening the storyboard file in a text editor and manually change the id element to be unique")](troubleshooting-images/duplicate-id.png#lightbox)
+    [![Öffnen Sie die storyboarddatei in einem Text-Editor, und ändern Sie das ID-Element manuell in eindeutig.](troubleshooting-images/duplicate-id-sml.png)](troubleshooting-images/duplicate-id.png#lightbox)
 
 - Wenn Sie versuchen, die APP zu starten, wird möglicherweise die Fehlermeldung "die Anwendung wurde nicht erstellt" angezeigt. Dies tritt nach einer **Bereinigung** auf, wenn das Startprojekt auf das Überwachungs Erweiterungsprojekt festgelegt ist.
     Die Lösung besteht darin, den **Build auszuwählen > alle neu zu erstellen** und dann die APP neu zu starten.
@@ -74,7 +74,7 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
 
 2. Das Dialogfeld, das angezeigt wird, enthält ein **Alpha** -Kontrollkästchen, wenn ein Alphakanal vorhanden ist.
 
-    ![](troubleshooting-images/remove-alpha-sml.png "The dialog that appears will include an Alpha checkbox if an alpha channel is present")
+    ![Das Dialogfeld, das angezeigt wird, enthält ein Alpha-Kontrollkästchen, wenn ein Alphakanal vorhanden ist.](troubleshooting-images/remove-alpha-sml.png)
 
 3. *Deaktivieren* Sie das Kontrollkästchen **Alpha** , und **Speichern** Sie die Datei am richtigen Speicherort.
 
@@ -91,15 +91,15 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
 
 1. Öffnen Sie das **Interface. Storyboard** der Watch-app in **Xcode Interface Builder**.
 
-    ![](troubleshooting-images/add-6.png "Opening the storyboard in Xcode Interface Builder")
+    ![Öffnen des Storyboards in Xcode Interface Builder](troubleshooting-images/add-6.png)
 
 2. Ziehen Sie ein neues `InterfaceController` auf das Storyboard:
 
-    ![](troubleshooting-images/add-1.png "A InterfaceController")
+    ![Ein interfakecontroller](troubleshooting-images/add-1.png)
 
 3. Nun können Sie Steuerelemente auf den Schnittstellen Controller ziehen (z. b. Bezeichnungen und Schaltflächen) Sie können jedoch noch keine Outlets oder Aktionen erstellen, da keine **h** -Header Datei vorhanden ist. Die folgenden Schritte bewirken, dass die erforderliche **. h** -Header Datei erstellt wird.
 
-    ![](troubleshooting-images/add-2.png "A button in the layout")
+    ![Eine Schaltfläche im Layout](troubleshooting-images/add-2.png)
 
 4. Schließen Sie das Storyboard, und kehren Sie zu Visual Studio für Mac zurück. Erstellen Sie eine neue c#-Datei **MyInterfaceController.cs** (oder einen beliebigen Namen) im **App-Erweiterungs** Projekt (nicht in der Watch-APP selbst, in der sich das Storyboard befindet). Fügen Sie den folgenden Code hinzu (Aktualisieren von Namespace, Klassenname und Konstruktorname):
 
@@ -158,34 +158,34 @@ Es ist ganz einfach, den Alphakanal auf Mac OS X mithilfe der **Vorschau** -APP 
     > [!TIP]
     > Sie können diese Datei (optional) zu einem untergeordneten Knoten der ersten Datei machen, indem Sie Sie auf die andere c#-Datei im Visual Studio für Mac Lösungspad ziehen. Diese wird dann wie folgt angezeigt:
 
-    ![](troubleshooting-images/add-5.png "The Solution pad")
+    ![Der lösungspad](troubleshooting-images/add-5.png)
 
 6. Wählen Sie **erstellen > alles erstellen** , damit die Xcode-Synchronisierung die neue Klasse (über das- `Register` Attribut) erkennt, die wir verwendet haben.
 
 7. Öffnen Sie das Storyboard erneut, indem Sie mit der rechten Maustaste auf die storyboarddatei Watch APP und dann auf **Öffnen mit > Xcode Interface Builder**klicken:
 
-    ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
+    ![Öffnen des Storyboards in Interface Builder](troubleshooting-images/add-6.png)
 
 8. Wählen Sie den neuen Schnittstellen Controller aus, und übergeben Sie ihm den von Ihnen definierten Klassennamen, z. b. `MyInterfaceController`.
     Wenn alles ordnungsgemäß funktioniert hat, sollte es automatisch in der Dropdown Liste **Klasse:** angezeigt werden, und Sie können es von dort aus auswählen.
 
-    ![](troubleshooting-images/add-4.png "Setting a custom class")
+    ![Festlegen einer benutzerdefinierten Klasse](troubleshooting-images/add-4.png)
 
 9. Wählen Sie in Xcode die Ansicht des **Assistenten-Editors** aus (das Symbol mit zwei überlappenden Kreisen), sodass Sie das Storyboard und den Code nebeneinander sehen können:
 
-    ![](troubleshooting-images/add-7.png "The Assistant Editor toolbar item")
+    ![Das Symbolleisten Element des Assistenten-Editors](troubleshooting-images/add-7.png)
 
     Wenn sich der Fokus im Code Bereich befindet, stellen Sie sicher, dass Sie die **. h** -Header Datei betrachten, und wenn Sie nicht mit der rechten Maustaste in die Breadcrumb-Leiste klicken und die richtige Datei auswählen (**myinterfakecontroller. h).**
 
-    ![](troubleshooting-images/add-8.png "Select MyInterfaceController")
+    ![Wählen Sie myinterfakecontroller aus.](troubleshooting-images/add-8.png)
 
 10. Nun können Sie Outlets und Aktionen durch Drücken von **Strg + Drag** & amp; Drop aus dem Storyboard in die **. h** -Header Datei erstellen.
 
-    ![](troubleshooting-images/add-9.png "Creating outlets and actions")
+    ![Erstellen von Outlets und Aktionen](troubleshooting-images/add-9.png)
 
     Wenn Sie den Zieh Vorgang freigeben, werden Sie aufgefordert, auszuwählen, ob ein Outlet oder eine Aktion erstellt werden soll, und den Namen auszuwählen:
 
-    ![](troubleshooting-images/add-a.png "The outlet and an action dialog")
+    ![Das Outlet-und ein Action-Dialogfeld](troubleshooting-images/add-a.png)
 
 11. Nachdem die storyboardänderungen gespeichert und Xcode geschlossen wurde, kehren Sie zu Visual Studio für Mac zurück. Die Header Dateiänderungen werden erkannt, und der **Designer.cs** -Datei wird automatisch Code hinzugefügt:
 

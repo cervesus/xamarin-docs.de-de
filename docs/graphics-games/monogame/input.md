@@ -129,6 +129,6 @@ Der Xbox One-Spielcontroller ist das gängigste Eingabegerät für die Xbox One.
 
 Dieses Handbuch bietet eine Übersicht über die-Klasse von monogame `GamePad` , die Implementierung von Eingabe Lese Logik und Diagramme allgemeiner `GamePad` Implementierungen.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Monogame-Gamepad](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_GamePad)

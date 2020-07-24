@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e78e7c3056d4f1e22114819f54c1df261aec70e1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 665971607d8c67f77ad5172778cddcd97bf79841
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198120"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932625"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>Einführung in die Entwicklung von Unternehmensanwendungen
 
@@ -65,7 +65,7 @@ Dieses Handbuch enthält eine Beispielanwendung, eshoponcontainers, einen Online
 
 In Abbildung 1-1 wird eine allgemeine Übersicht über die Architektur der Beispielanwendung bereitstellt.
 
-![](introduction-images/architecture.png "eShopOnContainers high-level architecture")
+![Allgemeine eshoponcontainers-Architektur](introduction-images/architecture.png)
 
 **Abbildung 1-1**: eshoponcontainers-Architektur auf hoher Ebene
 
@@ -92,7 +92,7 @@ Weitere Informationen zur Implementierung der Back-End-Dienste finden Sie unter 
 
 Dieser Leitfaden konzentriert sich auf das entwickeln plattformübergreifender Unternehmens-Apps mithilfe von Xamarin.Forms und verwendet die Mobile App "eshoponcontainers" als Beispiel. Abbildung 1-2 zeigt die Seiten aus den eshoponcontainers-Mobile App, die die zuvor beschriebenen Funktionen bereitstellen.
 
-[![](introduction-images/screenshots.png "The eShopOnContainers mobile app")](introduction-images/screenshots-large.png#lightbox "The eShopOnContainers mobile app")
+[![Der Mobile App "eshoponcontainers"](introduction-images/screenshots.png)](introduction-images/screenshots-large.png#lightbox "Der Mobile App "eshoponcontainers"")
 
 **Abbildung 1-2**: die eshoponcontainers-Mobile App
 
@@ -122,7 +122,7 @@ Außerdem werden Komponententests für einige der Klassen in den eshoponcontaine
 
 Die eshoponcontainers-Mobile App Lösung organisiert den Quellcode und andere Ressourcen in-Projekten. Alle Projekte verwenden Ordner, um den Quellcode und andere Ressourcen in Kategorien zu organisieren. In der folgenden Tabelle werden die Projekte beschrieben, aus denen sich die eshoponcontainers-Mobile App zusammenführen:
 
-|Project|Beschreibung|
+|Projekt|Beschreibung|
 |--- |--- |
 |eshoponcontainers. Core|Dieses Projekt ist das Projekt der portablen Klassenbibliothek (Portable Class Library, PCL), das den freigegebenen und den freigegebenen Benutzeroberflächen|
 |eshoponcontainers. Droid|Dieses Projekt enthält Android-spezifischen Code und ist der Einstiegspunkt für die Android-App.|
@@ -147,7 +147,7 @@ Das PCL-Projekt "eshoponcontainers. Core" enthält die folgenden Ordner:
 |Konver|Enthält Wert Konverter, die benutzerdefinierte Logik auf eine Bindung anwenden.|
 |Effekte|Enthält die- `EntryLineColorEffect` Klasse, die verwendet wird, um die Rahmenfarbe bestimmter Steuerelemente zu ändern `Entry` .|
 |Ausnahmen|Enthält die benutzerdefinierten `ServiceAuthenticationException` .|
-|Extensions|Enthält Erweiterungs Methoden für die `VisualElement` -Klasse und die- `IEnumerable` Klasse.|
+|Erweiterungen|Enthält Erweiterungs Methoden für die `VisualElement` -Klasse und die- `IEnumerable` Klasse.|
 |Hilfsmethoden|Enthält Hilfsklassen für die app.|
 |Modelle|Enthält die Modellklassen für die app.|
 |Eigenschaften|Enthält `AssemblyInfo.cs` , eine .net-assemblymetadatendatei.|

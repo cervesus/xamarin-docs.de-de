@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 102c0e7dbd2f4c903793e83d7551a84a52cac4fb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 285243c832d080d93e557deada5bb824e03f8d89
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031576"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939424"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>Suche mit Core Spotlight in xamarin. IOS
 
@@ -47,11 +47,11 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 Diese Informationen werden in einem Suchergebnis wie folgt angezeigt:
 
-[![](corespotlight-images/corespotlight01.png "Core Spotlight search result overview")](corespotlight-images/corespotlight01.png#lightbox)
+[![Übersicht über das Core Spotlight-Suchergebnis](corespotlight-images/corespotlight01.png)](corespotlight-images/corespotlight01.png#lightbox)
 
 ## <a name="restoring-an-item"></a>Wiederherstellen eines Elements
 
-Wenn der Benutzer auf ein Element tippt, das dem Suchergebnis über Core Spotlight für Ihre APP hinzugefügt wurde, wird die `AppDelegate`-Methode `ContinueUserActivity` aufgerufen (diese Methode wird auch für `NSUserActivity`verwendet). Beispiel:
+Wenn der Benutzer auf ein Element tippt, das dem Suchergebnis über Core Spotlight für Ihre APP hinzugefügt wurde, wird die- `AppDelegate` Methode `ContinueUserActivity` aufgerufen (diese Methode wird auch für verwendet `NSUserActivity` ). Beispiel:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application,
@@ -74,14 +74,14 @@ public override bool ContinueUserActivity (UIApplication application,
 }
 ```
 
-Beachten Sie, dass wir diesmal die Aktivität überprüfen, die über eine `ActivityType` `CSSearchableItem.ActionType`verfügt.
+Beachten Sie, dass dieses Mal überprüft wird, ob die Aktivität über einen `ActivityType` von verfügt `CSSearchableItem.ActionType` .
 
 ## <a name="updating-an-item"></a>Aktualisieren eines Elements
 
 Es kann vorkommen, dass ein Index Element, das wir mit Core Spotlight erstellt haben, geändert werden muss, z. b. Wenn eine Änderung des Titels oder des Miniatur Bilds erforderlich ist. Um diese Änderung vorzunehmen, verwenden wir dieselbe Methode wie zum anfänglichen Erstellen des Indexes.
-Wir erstellen eine neue `CSSearchableItem` mit derselben ID wie zum Erstellen des Elements und Anfügen eines neuen `CSSearchableItemAttributeSet` mit den geänderten Attributen:
+Wir erstellen eine neue `CSSearchableItem` mit derselben ID wie zum Erstellen des Elements und Anfügen eines neuen mit `CSSearchableItemAttributeSet` den geänderten Attributen:
 
-[![](corespotlight-images/corespotlight02.png "Updating an Item overview")](corespotlight-images/corespotlight02.png#lightbox)
+[![Aktualisieren eines Element Übersichts](corespotlight-images/corespotlight02.png)](corespotlight-images/corespotlight02.png#lightbox)
 
 Wenn dieses Element in den durchsuchbaren Index geschrieben wird, wird das vorhandene Element mit den neuen Informationen aktualisiert.
 
@@ -129,8 +129,8 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteAll((error) => {
 
 Core Spotlight verfügt über die folgenden Features, die dabei helfen, den Index genau und auf dem neuesten Stand zu halten:
 
-- **Unterstützung für Batch Updates** – Wenn Ihre APP eine große Gruppe von Indizes gleichzeitig erstellen oder ändern muss, kann der gesamte Batch in einem Aufruf an die `Index`-Methode der `CSSearchableIndex`-Klasse gesendet werden.
-- **Reagieren auf Index Änderungen** – mithilfe des `CSSearchableIndexDelegate` Ihre APP auf Änderungen und Benachrichtigungen aus dem durchsuchbaren Index reagieren kann.
+- **Unterstützung für Batch Updates** – Wenn Ihre APP eine große Gruppe von Indizes gleichzeitig erstellen oder ändern muss, kann der gesamte Batch `Index` `CSSearchableIndex` in einem Aufruf an die-Methode der-Klasse gesendet werden.
+- **Reagieren auf Index Änderungen** – die Verwendung `CSSearchableIndexDelegate` Ihrer APP kann auf Änderungen und Benachrichtigungen vom durchsuchbaren Index Antworten.
 - **Anwenden von Datenschutz** – mithilfe der Datenschutz Klassen können Sie die Sicherheit für die Elemente implementieren, die Sie mithilfe von Core Spotlight dem durchsuchbaren Index hinzufügen.
 
 ## <a name="related-links"></a>Verwandte Links

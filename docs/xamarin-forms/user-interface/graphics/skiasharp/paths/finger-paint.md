@@ -10,12 +10,12 @@ ms.date: 04/05/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 61ae651a2402204f69f642235d74d8d641b47988
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 074b782bfc5458cf89e593913b6f31de633ffd73
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139021"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938150"
 ---
 # <a name="finger-painting-in-skiasharp"></a>Finger zeichnen in skiasharp
 
@@ -25,7 +25,7 @@ _Verwenden Sie Ihre Finger, um die Zeichenfläche zu zeichnen._
 
 Ein `SKPath` Objekt kann ständig aktualisiert und angezeigt werden. Diese Funktion ermöglicht die Verwendung eines Pfads für das interaktive zeichnen, z. b. in einem fingerzeichnungs Programm.
 
-![](finger-paint-images/fingerpaintsample.png "An exercise in finger painting")
+![Eine Übung in der Finger Zeichnung](finger-paint-images/fingerpaintsample.png)
 
 Die touchunterstützung in Xamarin.Forms ermöglicht nicht das Nachverfolgen von einzelnen Fingern auf dem Bildschirm, sodass ein Fingerabdruck der Xamarin.Forms touchverfolgung entwickelt wurde, um zusätzliche touchunterstützung bereitzustellen. Dieser Effekt wird im Artikel [**Aufrufen von Ereignissen aus Effekten**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)beschrieben. Die Demos der Beispielprogramm- [**Touch-nach Verfolgungs Effekte**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) enthalten zwei Seiten, die skiasharp verwenden, einschließlich eines fingerzeichnungs Programms.
 
@@ -168,7 +168,7 @@ public partial class FingerPaintPage : ContentPage
 
 Ihre Finger Bilder sind nur durch ihr Talent eingeschränkt:
 
-[![](finger-paint-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](finger-paint-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
+[![Dreifacher Screenshot der Seite „Finger Paint“](finger-paint-images/fingerpaint-small.png)](finger-paint-images/fingerpaint-large.png#lightbox "Dreifacher Screenshot der Seite „Finger Paint“")
 
 Sie haben nun gesehen, wie Sie Linien zeichnen und Kurven mithilfe von parametrischen Gleichungen definieren. Ein späterer Abschnitt zu [**skiasharp-Kurven und-Pfaden**](../curves/index.md) behandelt die verschiedenen Arten von Kurven, die von `SKPath` unterstützt werden. Eine sinnvolle Voraussetzung ist jedoch eine Untersuchung von [**skiasharp-Transformationen**](../transforms/index.md).
 

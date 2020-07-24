@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/13/2018
-ms.openlocfilehash: 70d3e7ddc8b88651ec68552d35dbd4a3e9c90bd0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 32f145d791a40bd90e848f1124ce150cbd9c7575
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022065"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937759"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Anzeigen von Bildern mit xamarin. IOS
 
@@ -26,7 +26,7 @@ Visual Studio für Mac unterstützt auch ein spezielles Verzeichnis namens " **R
 
 Dieser Screenshot zeigt die buildaktions Optionen **, die angezeigt** werden, wenn mit der rechten Maustaste auf eine Datei geklickt wird:
 
- [![](image-images/image30a.png "Build Action menu")](image-images/image30a.png#lightbox)
+ [![Menü "Build Action"](image-images/image30a.png)](image-images/image30a.png#lightbox)
 
 Visual Studio für Mac wählt in der Regel die richtige **Buildaktion** automatisch aus, aber Sie sollten diese Einstellungen beachten, insbesondere, wenn Sie Dateien in Ihrem Projekt verschieben.
 
@@ -34,15 +34,15 @@ Visual Studio für Mac wählt in der Regel die richtige **Buildaktion** automati
 
 Wenn Sie dem Projekt eine Bilddatei hinzufügen möchten, klicken Sie zunächst mit der rechten Maustaste auf das Projekt, und wählen Sie **Dateien hinzufügen** aus.
 
- [![](image-images/image31a.png "Add Files... menu")](image-images/image31a.png#lightbox)
+ [![Dateien hinzufügen... stehen](image-images/image31a.png)](image-images/image31a.png#lightbox)
 
 Wählen Sie das Bild (oder die Bilder) aus, das Sie in das Standarddatei Dialogfeld einschließen möchten. Die Standardbuildaktion für Images lautet **bundleresource** – überschreiben Sie diesen Wert nur, wenn Sie einen bestimmten Grund haben.
 
- [![](image-images/image32a.png "Add Files dialog")](image-images/image32a.png#lightbox)
+ [![Dialogfeld Dateien hinzufügen](image-images/image32a.png)](image-images/image32a.png#lightbox)
 
 Das Bild wird dem Projekt hinzugefügt und kann im Code geladen und angezeigt werden. Dieser Screenshot zeigt ein Bild, das einem IOS-Anwendungsprojekt hinzugefügt wurde:
 
- [![](image-images/image33a.png "Image in project")](image-images/image33a.png#lightbox)
+ [![Bild im Projekt](image-images/image33a.png)](image-images/image33a.png#lightbox)
 
 ### <a name="what-is-the-resources-directory"></a>Was ist das Ressourcenverzeichnis?
 
@@ -51,7 +51,7 @@ Dateien, die im **Ressourcen** Verzeichnis abgelegt werden, werden von reguläre
 - Speichern der in den Eigenschaften der Anwendung konfigurierten Images, z. b. der standardmäßigen Start Abbilder und Anwendungs Symbole.
 - Speichern von anderen Bildern und Dateien getrennt vom Code, sodass Sie einfacher zu verwalten sind (Unterverzeichnisse bleiben erhalten, wenn der Inhalt des Ressourcen Verzeichnisses kopiert wird).
 
-Das **Ressourcen** Verzeichnis ist besonders nützlich in einem Bibliotheksprojekt, da der Code davon ausgehen kann, dass diese Bilder in den Stamm der konsumierenden Anwendung kopiert werden, sodass freigegebene Codebibliotheken, die Bild-, Sound-, Video-, XML-oder andere Dateien.
+Das **Ressourcen** Verzeichnis ist besonders nützlich in einem Bibliotheksprojekt, da der Code davon ausgehen kann, dass diese Bilder in den Stamm der konsumierenden Anwendung kopiert werden, sodass freigegebene Codebibliotheken, die Bild-, Sound-, Video-, XML-Dateien oder andere Dateien erfordern, einfacher geschrieben werden können.
 
 Das **Ressourcen** Verzeichnis muss so benannt werden, und für alle Dateien sollte die Buildaktion auf **bundleresource**festgelegt sein.
 
@@ -59,21 +59,21 @@ Das **Ressourcen** Verzeichnis muss so benannt werden, und für alle Dateien sol
 
 Verwenden Sie im IOS-Designer eine **Bildansicht** , um ein Bild oder eine animierte Reihe von Bildern anzuzeigen. Das **Bild Ansichts** Symbol aus der Toolbox wird unten angezeigt:
 
- [![](image-images/image35a.png "ImageView in Toolbox")](image-images/image35.png#lightbox)
+ [![ImageView in Toolbox](image-images/image35a.png)](image-images/image35.png#lightbox)
 
 Ziehen Sie die **Bildansicht** aus der **Toolbox** auf den Ansichts Controller. In der Dropdown Liste unter **Bildansicht > Abbildung** wird eine Liste aller verfügbaren Bilddateien in Ihrem Projekt bereitgestellt. Wählen Sie diese Option aus, um Sie der Bildansicht hinzuzufügen.
 
- [![](image-images/image36a.png "ImageView in Toolbox")](image-images/image36.png#lightbox)
+ [![ImageView in Toolbox](image-images/image36a.png)](image-images/image36.png#lightbox)
 
 ### <a name="displaying-the-image-programmatically"></a>Programm gesteuertes Anzeigen des Bilds
 
-Da sich **SF Monkey. jpg** im Stammverzeichnis des **Ressourcen** Verzeichnisses befindet, steht es zur Laufzeit im Stammverzeichnis des Anwendungspakets zur Verfügung. Verwenden Sie den folgenden Code, um dieses Bild in einem Bildansicht-Steuerelement anzuzeigen:
+Da sich **SF Monkey.jpg** im Stammverzeichnis des **Ressourcen** Verzeichnisses befindet, ist es zur Laufzeit im Stamm des Anwendungspakets verfügbar. Verwenden Sie den folgenden Code, um dieses Bild in einem Bildansicht-Steuerelement anzuzeigen:
 
 ```csharp
 imageview1.Image = UIImage.FromBundle("SF Monkey.png");
 ```
 
-Wenn Sie das Bild in **/Resources/pics/SF Monkey. jpg**eingefügt haben, enthält der Code den Ordner " **Fotos** " im Pfad:
+Wenn Sie das Bild in **/Resources/pics/SF Monkey.jpg**platziert hätten, würde der Code den Ordner " **Fotos** " im Pfad enthalten:
 
 ```csharp
 imageview1.Image = UIImage.FromBundle("Pics/SF Monkey.png");

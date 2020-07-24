@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: a31b0bcf3a61b5a1ea7e84f35131e6ceca1eef82
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f9f1b09c5cbd5660018e8e8d346aa1d25e51dab2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569880"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937383"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Arbeiten mit tvos segmentierten Steuerelementen in xamarin
 
 Ein segmentiertes Steuerelement stellt eine Reihe linearer Elemente bereit, von denen jedes ein Symbol oder einen Text enthalten kann. Sie wird verwendet, um dem Benutzer eine Reihe verwandter Optionen bereitzustellen.
 
-[![](segmented-controls-images/segment01.png "Sample segment controls")](segmented-controls-images/segment01.png#lightbox)
+[![Sample Segment-Steuerelemente](segmented-controls-images/segment01.png)](segmented-controls-images/segment01.png#lightbox)
 
 Apple hat die folgenden Vorschläge zum Arbeiten mit segmentierten Steuerelementen:
 
@@ -59,15 +59,15 @@ Die einfachste Möglichkeit, mit Segment Steuerelementen in einer xamarin. tvos-
 1. Doppelklicken Sie im **Lösungspad**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie ein **Segment-Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab: 
 
-    [![](segmented-controls-images/segment02.png "A Segment Control")](segmented-controls-images/segment02.png#lightbox)
+    [![Ein Segment Steuerelement](segmented-controls-images/segment02.png)](segmented-controls-images/segment02.png#lightbox)
 1. Auf der **Registerkarte widget** des **eigenschaftenpad**können Sie verschiedene Eigenschaften des Segment Steuer Elements anpassen, z. b. den **Stil** und den **Zustand**: 
 
-    [![](segmented-controls-images/segment03.png "The Widget Tab")](segmented-controls-images/segment03.png#lightbox)
+    [![Die Widget-Registerkarte](segmented-controls-images/segment03.png)](segmented-controls-images/segment03.png#lightbox)
 1. Verwenden Sie das Feld **Segmente** , um die Anzahl der Segmente im Controller zu steuern.
 1. Wählen Sie ein bestimmtes Segment aus der **Dropdown Liste Segment** aus, um die einzelnen Eigenschaften, z. b. **Titel** oder **Bild** , anzupassen und zu steuern, ob ein bestimmtes Segment **aktiviert** oder **ausgewählt** ist, wenn das Steuerelement angezeigt wird.
 1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie in c#-Code darauf reagieren können. Beispiel: 
 
-    [![](segmented-controls-images/segment04.png "Assign a Name")](segmented-controls-images/segment04.png#lightbox)
+    [![Zuweisen eines Namens](segmented-controls-images/segment04.png)](segmented-controls-images/segment04.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -75,15 +75,15 @@ Die einfachste Möglichkeit, mit Segment Steuerelementen in einer xamarin. tvos-
 1. Doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei, und öffnen Sie Sie zur Bearbeitung.
 1. Ziehen Sie ein **Segment-Steuer** Element aus der **Toolbox** , und legen Sie es in der Ansicht ab: 
 
-    [![](segmented-controls-images/segment02-vs.png "A Segment Control")](segmented-controls-images/segment02-vs.png#lightbox)
+    [![Ein Segment Steuerelement](segmented-controls-images/segment02-vs.png)](segmented-controls-images/segment02-vs.png#lightbox)
 1. Auf der **Registerkarte widget** des **Eigenschaften-Explorers**können Sie verschiedene Eigenschaften des Segment Steuer Elements anpassen, z. b. den **Stil** und den **Zustand**: 
 
-    [![](segmented-controls-images/segment03-vs.png "The Widget Tab")](segmented-controls-images/segment03-vs.png#lightbox)
+    [![Die Widget-Registerkarte](segmented-controls-images/segment03-vs.png)](segmented-controls-images/segment03-vs.png#lightbox)
 1. Verwenden Sie das Feld **Segmente** , um die Anzahl der Segmente im Controller zu steuern.
 1. Wählen Sie ein bestimmtes Segment aus der **Dropdown Liste Segment** aus, um die einzelnen Eigenschaften, z. b. **Titel** oder **Bild** , anzupassen und zu steuern, ob ein bestimmtes Segment **aktiviert** oder **ausgewählt** ist, wenn das Steuerelement angezeigt wird.
 1. Weisen Sie den Steuerelementen schließlich **Namen** zu, damit Sie in c#-Code darauf reagieren können. Beispiel: 
 
-    [![](segmented-controls-images/segment04-vs.png "Assign a Name")](segmented-controls-images/segment04-vs.png#lightbox)
+    [![Zuweisen eines Namens](segmented-controls-images/segment04-vs.png)](segmented-controls-images/segment04-vs.png#lightbox)
 1. Speichern Sie die Änderungen.
 
 -----

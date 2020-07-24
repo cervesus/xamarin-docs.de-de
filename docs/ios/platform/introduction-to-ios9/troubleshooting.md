@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 2d554fa2f967a966195007ea67c48506eaac1e79
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 435fe894e4082f7eddf37d100bb8b2d2ed3a166f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570881"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938007"
 ---
 # <a name="xamarinios-9--troubleshooting"></a>Xamarin. IOS 9 – Problembehandlung
 
@@ -32,7 +32,7 @@ Wenn Sie Xcode 7 (oder höher) installiert haben, werden alle IOS 8-Simulatoren 
 
 Wählen Sie in Xcode das Menü **Xcode** und dann **Einstellungen...**  >  **Downloads**:
 
-[![](troubleshooting-images/ios8.png "iOS 8 Simulators Downloads")](troubleshooting-images/ios8.png#lightbox)
+[![Downloads für IOS 8-Simulatoren](troubleshooting-images/ios8.png)](troubleshooting-images/ios8.png#lightbox)
 
 Klicken Sie auf die Schaltfläche **jetzt überprüfen und installieren** , um die IOS 8-Simulatoren erneut zu installieren.
 
@@ -139,26 +139,26 @@ Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScr
 
 Wenn Sie versuchen, die IOS 9-Version der xamarin. IOS-App auf der realen IOS-Hardware auszuführen, erhalten Sie möglicherweise eine Meldung, die besagt, dass Ihr Entwicklerkonto auf dem Gerät nicht vertrauenswürdig ist. Beispiel:
 
-[![](troubleshooting-images/untrusted01.png "Untrusted Enterprise Developer alert")](troubleshooting-images/untrusted01.png#lightbox)
+[![Warnung zu nicht vertrauenswürdigem Unternehmensentwickler](troubleshooting-images/untrusted01.png)](troubleshooting-images/untrusted01.png#lightbox)
 
 Gehen Sie folgendermaßen vor, um dieses Problem zu beheben:
 
 1. Starten Sie Xcode (die neueste Beta Version) auf dem Entwicklungs-Mac.
 2. Wählen Sie im Menü **Fenster** die Option **Geräte** aus, um das Fenster Geräte zu öffnen: 
 
-    [![](troubleshooting-images/untrusted02.png "The Devices Window")](troubleshooting-images/untrusted02.png#lightbox)
+    [![Das Fenster "Geräte"](troubleshooting-images/untrusted02.png)](troubleshooting-images/untrusted02.png#lightbox)
 3. Wählen Sie unter dem Bereich **Geräte** das Gerät aus, klicken Sie mit der rechten Maustaste, und wählen Sie **Bereitstellungs Profile anzeigen...** aus: 
 
-    [![](troubleshooting-images/untrusted03.png "SShow Provisioning Profiles")](troubleshooting-images/untrusted03.png#lightbox)
+    [![SShow-Bereitstellungs profile](troubleshooting-images/untrusted03.png)](troubleshooting-images/untrusted03.png#lightbox)
 4. Wählen Sie alle Bereitstellungs Profile auf dem Gerät aus, und klicken Sie **-** auf die Schaltfläche, um Sie zu löschen: 
 
-    [![](troubleshooting-images/untrusted04.png "Deleting a provisioning profile")](troubleshooting-images/untrusted04.png#lightbox)
+    [![Löschen eines Bereitstellungs Profils](troubleshooting-images/untrusted04.png)](troubleshooting-images/untrusted04.png#lightbox)
 5. Wählen Sie im Menü **Xcode** die Option **Einstellungen...** und **Konten**: 
 
-    [![](troubleshooting-images/untrusted05.png "Xcode account preferences")](troubleshooting-images/untrusted05.png#lightbox)
+    [![Xcode-Kontoeinstellungen](troubleshooting-images/untrusted05.png)](troubleshooting-images/untrusted05.png#lightbox)
 6. Klicken Sie auf die Schaltfläche **Details anzeigen...** und anschließend auf die Schaltfläche **alle herunterladen** : 
 
-    [![](troubleshooting-images/untrusted06.png "Download all profiles")](troubleshooting-images/untrusted06.png#lightbox)
+    [![Alle Profile herunterladen](troubleshooting-images/untrusted06.png)](troubleshooting-images/untrusted06.png#lightbox)
 7. Wenn die Aktualisierung der Liste abgeschlossen ist, klicken Sie auf die Schaltfläche **Fertig** , und schließen Sie das Fenster Einstellungen.
 8. Entfernen Sie die vorhandene Version der xamarin. IOS-APP, die Sie auf dem IOS-Gerät testen möchten.
 9. Kehren Sie zu Visual Studio für Mac zurück, führen Sie einen sauberen Build aus, und versuchen Sie, die APP auf dem Gerät erneut auszuführen.

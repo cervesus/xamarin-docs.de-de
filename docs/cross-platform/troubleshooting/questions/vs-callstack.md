@@ -6,12 +6,12 @@ ms.assetid: 64c24b09-2c4a-43ad-b94d-6cd05a1aee44
 author: davidortinau
 ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 9ed79b2273758b8051a96169d4c9b53870de1fb1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: aa8ce8791c598fa4891257b3d832478ecc5ee136
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73013025"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938800"
 ---
 # <a name="how-do-i-collect-the-current-call-stacks-of-the-visual-studio-process"></a>Wie erfasse ich die aktuellen Aufruflisten des Visual Studio-Prozesses?
 
@@ -21,22 +21,22 @@ Wenn die GUI in Visual Studio gesperrt ist (hängt von der Sperre ab), ist ein w
 
 2. Schließen Sie alle geöffneten Projektmappen in der neuen Instanz von Visual Studio.
 
-3. Klicken Sie auf **Debuggen > An den Prozess anhängen**.
+3. Wählen Sie **Debuggen > an den Prozess anhängen**.
 
-   ![](vs-callstack-images/image1.png "Select Debug > Attach to Process")
+   ![Wählen Sie Debuggen > an Prozess anhängen.](vs-callstack-images/image1.png)
 
-4. Wählen Sie in der Liste der **verfügbaren Prozesse**die ursprüngliche nicht reagierende Instanz von aus `devenv.exe` aus.
+4. Wählen Sie in `devenv.exe` der Liste der **verfügbaren Prozesse**die ursprüngliche nicht reagierende Instanz von aus.
 
-5. Wählen Sie **Debuggen > Alle abbrechen**aus.
+5. Wählen Sie **Debuggen > alle Abbrechen**aus.
 
-   ![](vs-callstack-images/image2.png "Select Debug > Break All")
+   ![Wählen Sie Debuggen > alle Abbrechen](vs-callstack-images/image2.png)
 
-6. Wählen Sie **Debuggen aus, > dump speichern**unter.
+6. Wählen Sie **Debuggen aus, > Dump speichern**unter.
 
-   ![](vs-callstack-images/image3.png "Select Debug > Save Dump As")
+   ![Wählen Sie Debuggen > Dump speichern unter.](vs-callstack-images/image3.png)
 
-7. Ändern Sie den **Dateityp** in **Minidump (\*. dmp)** . Dadurch wird eine viel kleinere Datei als **Minidump mit Heap**erzeugt, und der Heap ist in der Regel nicht für die Diagnose von friert relevant.
+7. Ändern Sie den **Dateityp** in **Minidump ( \* . dmp)**. Dadurch wird eine viel kleinere Datei als **Minidump mit Heap**erzeugt, und der Heap ist in der Regel nicht für die Diagnose von friert relevant.
 
-   ![](vs-callstack-images/image4.png "This will produce a much smaller file than Minidump with Heap, and the heap is usually not relevant for diagnosing freezes")
+   ![Dadurch wird eine viel kleinere Datei als Minidump mit Heap erzeugt, und der Heap ist normalerweise nicht für die Diagnose von friert relevant.](vs-callstack-images/image4.png)
 
 8. Speichern Sie die Dumpdatei. Wenn Sie die Datei online übermitteln, können Sie Sie zippen, um die Größe zu verringern.
