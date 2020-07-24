@@ -6,7 +6,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 10/21/2019
 ms.locfileid: "61047606"
 ---
-## <a name="firewall-configuration"></a>Firewallkonfiguration
+## <a name="firewall-configuration"></a>Firewall-Konfiguration
 
 Damit Tests an Xamarin Test Cloud übermittelt werden können, muss der Computer, der die Tests sendet, mit den Test Cloud Servern kommunizieren können. Firewalls müssen konfiguriert werden, um Netzwerk Datenverkehr zu und von den Servern unter **testcloud.xamarin.com** an den Ports 80 und 443 zuzulassen. Dieser Endpunkt wird von DNS verwaltet, und die IP-Adresse kann geändert werden. 
 
