@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b435e99180791b64e0a8ad975527fb3cb5316b7d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8ffa7ab7c9d2cebb9854ed155c3a00fe65e497c9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140217"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936135"
 ---
 # <a name="polylines-and-parametric-equations"></a>Polylinien und parametrische Formeln
 
@@ -25,7 +25,7 @@ _Verwenden Sie skiasharp zum Rendering beliebiger Zeilen, die mit parametrischen
 
 Im Abschnitt [**skiasharp-Kurven und-Pfade**](../curves/index.md) dieses Handbuchs sehen Sie die verschiedenen Methoden, die [`SKPath`](xref:SkiaSharp.SKPath) definieren, um bestimmte Arten von Kurven zu erzeugen. Es ist jedoch manchmal notwendig, eine Art von Kurve zu zeichnen, die nicht direkt von unterstützt wird `SKPath` . In einem solchen Fall können Sie eine Polylinie (eine Auflistung verbundener Linien) verwenden, um eine beliebige Kurve zu zeichnen, die Sie mathematisch definieren können. Wenn Sie die Zeilen klein genug und zahlreich genug machen, sieht das Ergebnis wie eine Kurve aus. Diese Spirale ist eigentlich 3.600 kleine Zeilen:
 
-![](polylines-images/spiralexample.png "A spiral")
+![Eine Spirale](polylines-images/spiralexample.png)
 
 Im Allgemeinen ist es am besten, eine Kurve in Bezug auf ein paar parametrischer Gleichungen zu definieren. Dabei handelt es sich um Gleichungen für X-und Y-Koordinaten, die von einer dritten Variablen abhängig sind `t` . Die folgenden parametrischen Gleichungen definieren z. b. einen Kreis mit einem Radius von 1, der am Punkt (0, 0) zentriert ist, für *t* zwischen 0 und 1:
 
@@ -120,7 +120,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Das Ergebnis wird auch als *arithmetische Spirale* bezeichnet, da der Offset zwischen den einzelnen Schleifen konstant ist:
 
-[![](polylines-images/archimedeanspiral-small.png "Triple screenshot of the Archimedean Spiral page")](polylines-images/archimedeanspiral-large.png#lightbox "Triple screenshot of the Archimedean Spiral page")
+[![Dreifacher Screenshot der Archimedischen Spiral Seite](polylines-images/archimedeanspiral-small.png)](polylines-images/archimedeanspiral-large.png#lightbox "Dreifacher Screenshot der Archimedischen Spiral Seite")
 
 Beachten Sie, dass `SKPath` in einem- `using` Block erstellt wird. Dies beansprucht `SKPath` mehr Arbeitsspeicher als die `SKPath` Objekte in den vorherigen Programmen. Dies deutet darauf hin, dass ein `using` Block besser geeignet ist, um alle nicht verwalteten Ressourcen freizugeben.
 

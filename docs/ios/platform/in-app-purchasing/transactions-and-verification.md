@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: d92de14dc42f7c20a1f25b6454623c7ad4441e8a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 605f82c90f98bb4b50e5b630a53721d186ff35a1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032283"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935758"
 ---
 # <a name="transactions-and-verification-in-xamarinios"></a>Transaktionen und Überprüfung in xamarin. IOS
 
@@ -29,7 +29,7 @@ Der Wiederherstellungs Vorgang sollte die Datensätze aktualisieren, die Sie auf
 
 ### <a name="implementing-restore"></a>Implementieren der Wiederherstellung
 
-Die Schaltfläche **Wiederherstellung** der Benutzeroberfläche Ruft die folgende Methode auf, die restorecompletedtransactions auf dem `SKPaymentQueue`auslöst.
+Mit der Schaltfläche **Wiederherstellen** der Benutzeroberfläche wird die folgende Methode aufgerufen, die restorecompletedtransactions im auslöst `SKPaymentQueue` .
 
 ```csharp
 public void Restore()
@@ -41,7 +41,7 @@ public void Restore()
 
 Storekit sendet die Restore-Anforderung asynchron an die Server von Apple.   
    
-Da der `CustomPaymentObserver` als Transaktions Beobachter registriert ist, empfängt er Nachrichten, wenn die Server von Apple Antworten. Die Antwort enthält alle Transaktionen, die dieser Benutzer jemals in dieser Anwendung ausgeführt hat (auf allen Geräten). Der Code durchläuft jede Transaktion, erkennt den wiederhergestellten Zustand und ruft die `UpdatedTransactions`-Methode auf, um Sie zu verarbeiten, wie unten dargestellt:
+Da der `CustomPaymentObserver` als Transaktions Beobachter registriert ist, empfängt er Nachrichten, wenn die Server von Apple Antworten. Die Antwort enthält alle Transaktionen, die dieser Benutzer jemals in dieser Anwendung ausgeführt hat (auf allen Geräten). Der Code durchläuft jede Transaktion, erkennt den wiederhergestellten Zustand und ruft die- `UpdatedTransactions` Methode auf, um Sie zu verarbeiten, wie unten dargestellt:
 
 ```csharp
 // called when the transaction status is updated
@@ -67,9 +67,9 @@ default:
 }
 ```
 
-Wenn der Benutzer keine wiederherstellbaren Produkte enthält, wird `UpdatedTransactions` nicht aufgerufen.   
+Wenn für den Benutzer keine wiederherstellbaren Produkte vorhanden sind, `UpdatedTransactions` wird nicht aufgerufen.   
    
-Der einfachste mögliche Code für die Wiederherstellung einer bestimmten Transaktion im Beispiel führt dieselben Aktionen aus, wie bei einem Kauf, mit der Ausnahme, dass die `OriginalTransaction`-Eigenschaft für den Zugriff auf die Produkt-ID verwendet wird:
+Der einfachste mögliche Code für die Wiederherstellung einer bestimmten Transaktion im Beispiel führt dieselben Aktionen aus, wie bei einem Kauf, mit der Ausnahme, dass die- `OriginalTransaction` Eigenschaft für den Zugriff auf die Produkt-ID verwendet wird:
 
 ```csharp
 public void RestoreTransaction (SKPaymentTransaction transaction)
@@ -82,11 +82,11 @@ public void RestoreTransaction (SKPaymentTransaction transaction)
 }
 ```
 
-Eine anspruchsvollere Implementierung kann andere `transaction.OriginalTransaction` Eigenschaften überprüfen, wie z. b. die ursprüngliche Datums-und empfangsnummer. Diese Informationen sind nützlich für einige Produkttypen (z. b. Abonnements).
+Eine anspruchsvollere Implementierung kann andere Eigenschaften überprüfen `transaction.OriginalTransaction` , z. b. das ursprüngliche Datum und die ursprüngliche empfangsnummer. Diese Informationen sind nützlich für einige Produkttypen (z. b. Abonnements).
 
 #### <a name="restore-completion"></a>Wiederherstellungs Abschluss
 
-Der `CustomPaymentObserver` verfügt über zwei zusätzliche Methoden, die von storekit aufgerufen werden, wenn der Wiederherstellungsprozess abgeschlossen wurde (entweder erfolgreich oder mit einem Fehler), wie unten gezeigt:
+`CustomPaymentObserver`Verfügt über zwei zusätzliche Methoden, die von storekit aufgerufen werden, wenn der Wiederherstellungsprozess abgeschlossen wurde (entweder erfolgreich oder mit einem Fehler), wie unten gezeigt:
 
 ```csharp
 public override void PaymentQueueRestoreCompletedTransactionsFinished (SKPaymentQueue queue)
@@ -105,11 +105,11 @@ In diesem Beispiel führen diese Methoden keine Aktionen aus. eine echte Anwendu
 
 In den beiden Beispielen in diesem Dokument wird `NSUserDefaults` zum Nachverfolgen von Käufen verwendet:   
    
- **Verbrauchsgüter** – der Saldo von Guthaben Käufen ist eine einfache `NSUserDefaults` ganzzahliger Wert, der bei jedem Einkauf inkrementiert wird.   
+ **Verbrauchsgüter** – die "Balance" von Guthaben Käufen ist ein einfacher `NSUserDefaults` ganzzahliger Wert, der bei jedem Einkauf inkrementiert wird.   
    
- **Nicht-Verbrauchs** Werte – jeder Kauf des Foto Filters wird als Schlüssel-Wert-Paar in `NSUserDefaults`gespeichert.
+ **Nicht-Verbrauchs** Werte – jeder Fotofilter Einkauf wird als Schlüssel-Wert-Paar in gespeichert `NSUserDefaults` .
 
-Wenn Sie `NSUserDefaults` verwenden, ist der Beispielcode einfach, aber es ist keine sehr sichere Lösung verfügbar, da es für technisch denkbare Benutzer möglicherweise möglich ist, die Einstellungen zu aktualisieren (Umgehung des Zahlungsmechanismus).   
+Durch `NSUserDefaults` die Verwendung von bleibt der Beispielcode einfach, aber es ist keine sehr sichere Lösung verfügbar, da es für technisch denkbare Benutzer möglicherweise möglich ist, die Einstellungen zu aktualisieren (Umgehung des Zahlungsmechanismus).   
    
 Hinweis: reale Anwendungen sollten einen sicheren Mechanismus zum Speichern erworbener Inhalte übernehmen, die nicht von Benutzer Manipulationen abhängig sind. Dabei kann es sich um Verschlüsselung und/oder andere Verfahren handeln, einschließlich der Remote Server Authentifizierung.   
    
@@ -121,7 +121,7 @@ Weitere IOS-spezifische Richtlinien finden Sie im sicheren Codierungs Handbuch v
 
 Die Beispiele in diesem Dokument haben bisher ausschließlich aus der Anwendung besteht, die direkt mit den App Store-Servern kommuniziert, um Kauf Transaktionen durchzuführen, die Features oder Funktionen entsperren, die bereits in der App codiert sind.   
    
-Apple bietet ein zusätzliches Maß an kaufsicherheit, da Kauf Bestätigungen von einem anderen Server unabhängig überprüft werden können. Dies kann nützlich sein, um eine Anforderung zu überprüfen, bevor digitale Inhalte als Teil eines Kaufs bereitgestellt werden (z. b. ein digitales Buch oder Magazine).   
+Apple bietet ein zusätzliches Maß an kaufsicherheit, da Kauf Bestätigungen von einem anderen Server unabhängig überprüft werden können. Dies kann nützlich sein, um eine Anforderung zu überprüfen, bevor digitale Inhalte als Teil eines Kaufs (z. b. ein digitales Buch oder Magazin) bereitgestellt werden.   
    
  **Integrierte Produkte** – wie die Beispiele in diesem Dokument, ist das erworbene Produkt als in der Anwendung enthaltene Funktionalität vorhanden. Ein in-App-Einkauf ermöglicht dem Benutzer den Zugriff auf die Funktionalität.
 Produkt-IDs sind hart codiert.   
@@ -137,7 +137,7 @@ Der Inhalt einiger Produkte, z. b. Bücher und Magazine (oder sogar eine Spieleb
 
 Da die Produkte Remote geliefert werden, ist es auch möglich, mehr Produkte im Zeitverlauf hinzuzufügen (ohne den App-Code zu aktualisieren), wie z. b. das Hinzufügen von weiteren Büchern oder neuen Problemen eines Magazins. Damit die Anwendung diese Nachrichten Produkte ermitteln und für den Benutzer anzeigen kann, sollte der zusätzliche Server diese Informationen speichern und bereitstellen.   
    
-[![](transactions-and-verification-images/image38.png "Getting Prices for Server-Delivered Products")](transactions-and-verification-images/image38.png#lightbox)   
+[![Preise für vom Server gelieferte Produkte erhalten](transactions-and-verification-images/image38.png)](transactions-and-verification-images/image38.png#lightbox)   
    
 1. Produktinformationen müssen an mehreren Stellen gespeichert werden: auf dem Server und in iTunes Connect. Außerdem werden jedem Produkt Inhalts Dateien zugeordnet. Diese Dateien werden nach einem erfolgreichen Kauf zugestellt.   
    
@@ -151,21 +151,21 @@ Da die Produkte Remote geliefert werden, ist es auch möglich, mehr Produkte im 
    
 6. Die iTunes-Server Antworten mit gültigen Produktinformationen (Beschreibung und aktueller Preis).   
    
-7. Der `SKProductsRequestDelegate` der Anwendung werden die Produktinformationen für die Anzeige an den Benutzer übermittelt.
+7. Der Anwendung werden `SKProductsRequestDelegate` die Produktinformationen für die Anzeige an den Benutzer übermittelt.
 
 #### <a name="purchasing-server-delivered-products"></a>Erwerb von vom Server gelieferten Produkten
 
 Da der Remote Server eine Möglichkeit zum Überprüfen erfordert, dass eine Inhalts Anforderung gültig ist (d. h. wurde bezahlt), werden die Empfangs Informationen zur Authentifizierung weitergeleitet. Der Remote Server leitet diese Daten zur Überprüfung an iTunes weiter und enthält, wenn erfolgreich, den Produktinhalt in der Antwort an die Anwendung.   
    
- [![](transactions-and-verification-images/image39.png "Purchasing Server-Delivered Products")](transactions-and-verification-images/image39.png#lightbox)   
+ [![Erwerb von vom Server gelieferten Produkten](transactions-and-verification-images/image39.png)](transactions-and-verification-images/image39.png#lightbox)   
    
-1. Die APP fügt der Warteschlange eine `SKPayment` hinzu. Falls erforderlich, wird der Benutzer zur Eingabe der Apple-ID aufgefordert und aufgefordert, die Zahlung zu bestätigen.   
+1. Die APP fügt `SKPayment` der Warteschlange ein hinzu. Falls erforderlich, wird der Benutzer zur Eingabe der Apple-ID aufgefordert und aufgefordert, die Zahlung zu bestätigen.   
    
 2. Storekit sendet die Anforderung zur Verarbeitung an den Server.   
    
 3. Wenn die Transaktion abgeschlossen ist, antwortet der Server mit einer Transaktionsbestätigung.   
    
-4. Die `SKPaymentTransactionObserver`-Unterklasse empfängt die Bestätigung und verarbeitet sie. Da das Produkt von einem Server heruntergeladen werden muss, initiiert die Anwendung eine Netzwerk Anforderung an den Remote Server.   
+4. Die `SKPaymentTransactionObserver` Unterklasse empfängt die Bestätigung und verarbeitet sie. Da das Produkt von einem Server heruntergeladen werden muss, initiiert die Anwendung eine Netzwerk Anforderung an den Remote Server.   
    
 5. Die Download Anforderung wird von den Bestätigungsdaten begleitet, damit der Remote Server überprüfen kann, ob er für den Zugriff auf den Inhalt autorisiert ist. Der Netzwerkclient der Anwendung wartet auf eine Antwort auf diese Anforderung.   
    
@@ -177,15 +177,15 @@ Da der Remote Server eine Möglichkeit zum Überprüfen erfordert, dass eine Inh
   
 9. Die Anwendung empfängt und analysiert die Antwort und speichert den Produktinhalt im Dateisystem des Geräts.   
    
-10. Die Anwendung aktiviert das Produkt und ruft dann die `FinishTransaction`storekit auf. Die Anwendung kann dann optional den erworbenen Inhalt anzeigen (z. b. die erste Seite eines erworbenen Buchs oder Magazine-Problems anzeigen).
+10. Die Anwendung aktiviert das Produkt und ruft dann storekit auf `FinishTransaction` . Die Anwendung kann dann optional den erworbenen Inhalt anzeigen (z. b. die erste Seite eines erworbenen Buchs oder Magazine-Problems anzeigen).
 
-Eine alternative Implementierung für sehr große Produkt Inhalts Dateien könnte das einfache Speichern der Transaktionsbestätigung in Schritt #9 beinhalten, sodass die Transaktion schnell abgeschlossen werden kann, und das Bereitstellen einer Benutzeroberfläche für den Benutzer zum Herunterladen der eigentlichen Produktinhalte. zu einem späteren Zeitpunkt. Die nachfolgende Download Anforderung kann die gespeicherte Bestätigung erneut senden, um auf die erforderliche Produkt Inhalts Datei zuzugreifen.
+Eine alternative Implementierung für sehr große Produkt Inhalts Dateien könnte das einfache Speichern der Transaktionsbestätigung in Schritt #9 beinhalten, sodass die Transaktion schnell abgeschlossen werden kann, und das Bereitstellen einer Benutzeroberfläche für den Benutzer, um den eigentlichen Produktinhalt zu einem späteren Zeitpunkt herunterzuladen. Die nachfolgende Download Anforderung kann die gespeicherte Bestätigung erneut senden, um auf die erforderliche Produkt Inhalts Datei zuzugreifen.
 
 ### <a name="writing-server-side-receipt-verification-code"></a>Der Server seitige Empfangs Überprüfungs Code wird geschrieben.
 
 Das Überprüfen einer Bestätigung in Server seitigem Code kann mit einer einfachen HTTP POST-Anforderung/-Antwort erfolgen, die Schritte umfasst, die durch #8 im Workflow Diagramm #5 werden.   
    
-Extrahieren Sie die `SKPaymentTansaction.TransactionReceipt`-Eigenschaft in der app. Dies sind die Daten, die zur Überprüfung an iTunes gesendet werden müssen (Schritt #5).
+Extrahieren Sie die- `SKPaymentTansaction.TransactionReceipt` Eigenschaft in der app. Dies sind die Daten, die zur Überprüfung an iTunes gesendet werden müssen (Schritt #5).
 
 Base64-Codieren der Transaktions Beleg Daten (entweder in Schritt #5 oder #6).
 
@@ -197,7 +197,7 @@ Erstellen Sie eine einfache JSON-Nutzlast wie folgt:
 }
 ```
 
-HTTP Posten Sie die JSON-Datei, um Sie für die Produktion oder [https://sandbox.itunes.apple.com/verifyReceipt](https://sandbox.itunes.apple.com/verifyReceipt) [https://buy.itunes.apple.com/verifyReceipt](https://buy.itunes.apple.com/verifyReceipt) zu testen.   
+HTTP Posten Sie den JSON-Code [https://buy.itunes.apple.com/verifyReceipt](https://buy.itunes.apple.com/verifyReceipt) für die Produktion oder [https://sandbox.itunes.apple.com/verifyReceipt](https://sandbox.itunes.apple.com/verifyReceipt) für Tests.   
    
  Die JSON-Antwort enthält die folgenden Schlüssel:
 

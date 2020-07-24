@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 5c3e486d3202a71cc82dfef8910908e5cb472cd2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d768be516b67ed23bdb851d87286a856a7269de4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574196"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935550"
 ---
 # <a name="table-views-in-xamarinmac"></a>Tabellen Ansichten in xamarin. Mac
 
@@ -22,7 +22,7 @@ Wenn Sie mit c# und .net in einer xamarin. Mac-Anwendung arbeiten, haben Sie Zug
 
 In einer Tabellen Sicht werden Daten in einem Tabellenformat angezeigt, das mindestens eine Spalte mit Informationen in mehreren Zeilen enthält. Basierend auf dem Typ der zu erstellenden Tabellenansicht kann der Benutzer nach Spalte sortieren, Spalten neu organisieren, Spalten hinzufügen, Spalten entfernen oder die in der Tabelle enthaltenen Daten bearbeiten.
 
-[![](table-view-images/intro01.png "An example table")](table-view-images/intro01.png#lightbox)
+[![Beispiel Tabelle](table-view-images/intro01.png)](table-view-images/intro01.png#lightbox)
 
 In diesem Artikel werden die Grundlagen der Arbeit mit Tabellen Sichten in einer xamarin. Mac-Anwendung behandelt. Es wird dringend empfohlen, dass Sie zunächst den Artikel [Hello, Mac](~/mac/get-started/hello-mac.md) , insbesondere die [Einführung in Xcode und die Abschnitte zu Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) und Outlets und [Aktionen](~/mac/get-started/hello-mac.md#outlets-and-actions) , durcharbeiten, da er wichtige Konzepte und Techniken behandelt, die wir in diesem Artikel verwenden werden.
 
@@ -51,23 +51,23 @@ Weitere Informationen finden Sie im Abschnitt " [Inhalts Ansichten](https://deve
 
 Wenn Sie eine neue xamarin. Mac-Cocoa-Anwendung erstellen, erhalten Sie standardmäßig ein Standardmäßiges leeres Standardfenster. Dieses Fenster wird in einer Datei definiert, `.storyboard` die automatisch im Projekt enthalten ist. Um den Windows-Entwurf zu bearbeiten, doppelklicken Sie im **Projektmappen-Explorer**auf die `Main.storyboard` Datei:
 
-[![](table-view-images/edit01.png "Selecting the main storyboard")](table-view-images/edit01.png#lightbox)
+[![Auswählen des Haupt Storyboards](table-view-images/edit01.png)](table-view-images/edit01.png#lightbox)
 
 Dadurch wird das Fensterdesign in der Interface Builder von Xcode geöffnet:
 
-[![](table-view-images/edit02.png "Editing the UI in Xcode")](table-view-images/edit02.png#lightbox)
+[![Bearbeiten der Benutzeroberfläche in Xcode](table-view-images/edit02.png)](table-view-images/edit02.png#lightbox)
 
 Geben `table` Sie im Suchfeld des **Bibliotheks Inspektors** ein, um die Suche nach den Tabellenansicht-Steuerelementen zu vereinfachen:
 
-[![](table-view-images/edit03.png "Selecting a Table View from the Library")](table-view-images/edit03.png#lightbox)
+[![Auswählen einer Tabellenansicht aus der Bibliothek](table-view-images/edit03.png)](table-view-images/edit03.png#lightbox)
 
 Ziehen Sie eine Tabellenansicht auf den Ansichts Controller im Schnittstellen-Editor, füllen Sie den Inhalts Bereich des Ansichts Controllers aus, und legen Sie ihn an der **Stelle**ab, an der er verkleinert wird und mit dem Fenster im Einschränkungs- **Editor**wächst:
 
-[![](table-view-images/edit04.png "Editing constraints")](table-view-images/edit04.png#lightbox)
+[![Bearbeitungs Einschränkungen](table-view-images/edit04.png)](table-view-images/edit04.png#lightbox)
 
 Wählen Sie die Tabellenansicht in der **Schnittstellen Hierarchie** aus, und die folgenden Eigenschaften sind im **Attribut Inspektor**verfügbar:
 
-[![](table-view-images/edit05.png "The Attribute Inspector")](table-view-images/edit05.png#lightbox)
+[![Der Attribut Inspektor](table-view-images/edit05.png)](table-view-images/edit05.png#lightbox)
 
 - **Inhalts Modus** : ermöglicht es Ihnen, `NSView` `NSCell` die Daten in den Zeilen und Spalten entweder mithilfe von Sichten () oder Zellen () anzuzeigen. Ab macOS 10,7 sollten Sie Ansichten verwenden.
 - Gleit Komma **Gruppen Zeilen** : Wenn `true` , werden in der Tabellenansicht gruppierte Zellen so gezeichnet, als wären Sie unverankert.
@@ -97,7 +97,7 @@ Wählen Sie die Tabellenansicht in der **Schnittstellen Hierarchie** aus, und di
 
 Wählen Sie eine Tabellenspalte in der **Schnittstellen Hierarchie** aus, und die folgenden Eigenschaften sind im **Attribut Inspektor**verfügbar:
 
-[![](table-view-images/edit06.png "The Attribute Inspector")](table-view-images/edit06.png#lightbox)
+[![Der Attribut Inspektor](table-view-images/edit06.png)](table-view-images/edit06.png#lightbox)
 
 - **Title** : legt den Titel der Spalte fest.
 - **Ausrichtung** : Legen Sie die Ausrichtung des Texts innerhalb der Zellen fest.
@@ -115,19 +115,19 @@ Wählen Sie in der Tabellenansicht die einzelnen Spalten aus, und geben Sie der 
 
 Wählen Sie `NSTableViewCell` in der **Schnittstellen Hierarchie** eine Tabellenzellen Ansicht () aus, und die folgenden Eigenschaften sind im **Attribut Inspektor**verfügbar:
 
-[![](table-view-images/edit07.png "The Attribute Inspector")](table-view-images/edit07.png#lightbox)
+[![Der Attribut Inspektor](table-view-images/edit07.png)](table-view-images/edit07.png#lightbox)
 
 Dabei handelt es sich um alle Eigenschaften einer Standardansicht. Sie haben auch die Möglichkeit, die Zeilen für diese Spalte hier zu ändern.
 
 Wählen Sie eine Tabellen Ansichts Zelle (standardmäßig eine `NSTextField` ) in der **Schnittstellen Hierarchie** aus, und die folgenden Eigenschaften sind im **Attribut Inspektor**verfügbar:
 
-[![](table-view-images/edit08.png "The Attribute Inspector")](table-view-images/edit08.png#lightbox)
+[![Der Attribut Inspektor](table-view-images/edit08.png)](table-view-images/edit08.png#lightbox)
 
 Sie verfügen über alle Eigenschaften eines Standard Textfelds, das hier festgelegt werden soll. Standardmäßig wird ein Standard Textfeld verwendet, um Daten für eine Zelle in einer Spalte anzuzeigen.
 
 Wählen Sie `NSTableFieldCell` in der **Schnittstellen Hierarchie** eine Tabellenzellen Ansicht () aus, und die folgenden Eigenschaften sind im **Attribut Inspektor**verfügbar:
 
-[![](table-view-images/edit09.png "The Attribute Inspector")](table-view-images/edit09.png#lightbox)
+[![Der Attribut Inspektor](table-view-images/edit09.png)](table-view-images/edit09.png#lightbox)
 
 Die wichtigsten Einstellungen finden Sie hier:
 
@@ -141,7 +141,7 @@ Die wichtigsten Einstellungen finden Sie hier:
 
 Wählen Sie die Tabellenzellen Ansicht ( `NSTableFieldCell` ) unten in einer Tabellenspalte in der **Schnittstellen Hierarchie**aus:
 
-[![](table-view-images/edit10.png "Selecting the Table Cell View")](table-view-images/edit10.png#lightbox)
+[![Auswählen der Tabellenzellen Ansicht](table-view-images/edit10.png)](table-view-images/edit10.png#lightbox)
 
 Dies ermöglicht es Ihnen, die Tabellenzellen Ansicht zu bearbeiten, die als Basis _Muster_ für alle Zellen verwendet wird, die für die jeweilige Spalte erstellt werden.
 
@@ -155,14 +155,14 @@ Der Prozess ist für jedes Tabellen Ansichts Element identisch, das wir verfügb
 
 1. Wechseln Sie zum **Assistenten-Editor** , und stellen Sie sicher, dass die `ViewController.h` Datei ausgewählt ist: 
 
-    [![](table-view-images/edit11.png "The Assistant Editor")](table-view-images/edit11.png#lightbox)
+    [![Der Assistenten-Editor](table-view-images/edit11.png)](table-view-images/edit11.png#lightbox)
 2. Wählen Sie die Tabellenansicht in der **Schnittstellen Hierarchie**aus, und ziehen Sie Sie in die `ViewController.h` Datei.
 3. Erstellen Sie ein **Outlet** für die Tabellenansicht mit dem Namen `ProductTable` : 
 
-    [![](table-view-images/edit13.png "Configuring an Outlet")](table-view-images/edit13.png#lightbox)
+    [![Konfigurieren eines Outlets](table-view-images/edit13.png)](table-view-images/edit13.png#lightbox)
 4. Erstellen Sie **Outlets** für die Tabellen Spalten ebenso wie `ProductColumn` und `DetailsColumn` : 
 
-    [![](table-view-images/edit14.png "Configuring an Outlet")](table-view-images/edit14.png#lightbox)
+    [![Konfigurieren eines Outlets](table-view-images/edit14.png)](table-view-images/edit14.png#lightbox)
 5. Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
 Als nächstes schreiben wir den Code zum Anzeigen einiger Daten für die Tabelle, wenn die Anwendung ausgeführt wird.
@@ -175,7 +175,7 @@ Wenn unsere Tabellenansicht in Interface Builder entworfen und über ein **Outle
 
 Zunächst erstellen wir eine neue Klasse, `Product` die die Informationen für die einzelnen Zeilen enthält. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie neue Datei **Hinzufügen**  >  **... aus.** Wählen Sie **Allgemeine**  >  **leere Klasse**aus, geben Sie `Product` als **Namen** ein, und klicken Sie auf die Schaltfläche **neu** :
 
-[![](table-view-images/populate01.png "Creating an empty class")](table-view-images/populate01.png#lightbox)
+[![Erstellen einer leeren Klasse](table-view-images/populate01.png)](table-view-images/populate01.png#lightbox)
 
 Erstellen Sie die `Product.cs` Datei wie folgt:
 
@@ -333,7 +333,7 @@ public override void AwakeFromNib ()
 
 Wenn die Anwendung ausgeführt wird, wird Folgendes angezeigt:
 
-[![](table-view-images/populate02.png "A sample app run")](table-view-images/populate02.png#lightbox)
+[![Eine Beispiel-App-Run](table-view-images/populate02.png)](table-view-images/populate02.png#lightbox)
 
 <a name="Sorting_by_Column"></a>
 
@@ -341,11 +341,11 @@ Wenn die Anwendung ausgeführt wird, wird Folgendes angezeigt:
 
 Lassen Sie den Benutzer das Sortieren der Daten in der Tabelle zu, indem Sie auf eine Spaltenüberschrift klicken. Doppelklicken Sie zunächst auf die `Main.storyboard` Datei, um Sie zur Bearbeitung in Interface Builder zu öffnen. Wählen Sie die `Product` Spalte aus, geben Sie für den `Title` **Sortierschlüssel** `compare:` für die **Auswahl** ein, und wählen Sie `Ascending` für die **Reihenfolge**aus:
 
-[![](table-view-images/sort01.png "Setting the sort key")](table-view-images/sort01.png#lightbox)
+[![Festlegen des Sortier Schlüssels](table-view-images/sort01.png)](table-view-images/sort01.png#lightbox)
 
 Wählen Sie die `Details` Spalte aus, geben Sie für den `Description` **Sortierschlüssel** `compare:` für die **Auswahl** ein, und wählen Sie `Ascending` für die **Reihenfolge**aus:
 
-[![](table-view-images/sort02.png "Setting the sort key")](table-view-images/sort02.png#lightbox)
+[![Festlegen des Sortier Schlüssels](table-view-images/sort02.png)](table-view-images/sort02.png#lightbox)
 
 Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
@@ -395,7 +395,7 @@ Mit der- `Sort` Methode können wir die Daten in der Datenquelle auf der Grundla
 
 Wenn Sie die Anwendung ausführen und in die Spaltenüberschriften klicken, werden die Zeilen nach dieser Spalte sortiert:
 
-[![](table-view-images/sort03.png "An example app run")](table-view-images/sort03.png#lightbox)
+[![Ein Beispiel für eine APP-Laufzeit](table-view-images/sort03.png)](table-view-images/sort03.png#lightbox)
 
 <a name="Row_Selection"></a>
 
@@ -403,7 +403,7 @@ Wenn Sie die Anwendung ausführen und in die Spaltenüberschriften klicken, werd
 
 Wenn Sie dem Benutzer die Auswahl einer einzelnen Zeile gestatten möchten, doppelklicken Sie auf die `Main.storyboard` Datei, um Sie für die Bearbeitung in Interface Builder zu öffnen. Wählen Sie die Tabellenansicht in der **Schnittstellen Hierarchie** aus, und deaktivieren Sie das Kontrollkästchen **mehrfach** im **Attribut Inspektor**:
 
-[![](table-view-images/select01.png "The Attribute Inspector")](table-view-images/select01.png#lightbox)
+[![Der Attribut Inspektor](table-view-images/select01.png)](table-view-images/select01.png#lightbox)
 
 Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
@@ -431,7 +431,7 @@ Die Tabellen Sicht ( `NSTableView` ) enthält die folgenden Methoden zum Arbeite
 
 Wenn Sie zulassen möchten, dass der Benutzer mehrere Zeilen auswählt, doppelklicken Sie `Main.storyboard` auf die Datei, um Sie für die Bearbeitung in Interface Builder zu öffnen. Wählen Sie die Tabellenansicht in der **Schnittstellen Hierarchie** aus, und aktivieren Sie das Kontrollkästchen **mehrfach** im **Attribut Inspektor**:
 
-[![](table-view-images/select02.png "The Attribute Inspector")](table-view-images/select02.png#lightbox)
+[![Der Attribut Inspektor](table-view-images/select02.png)](table-view-images/select02.png#lightbox)
 
 Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
@@ -464,7 +464,7 @@ Die Tabellen Sicht ( `NSTableView` ) enthält die folgenden Methoden zum Arbeite
 
 Wenn Sie zulassen möchten, dass der Benutzer ein Zeichen mit ausgewählter Tabellenansicht eingibt, und die erste Zeile mit diesem Zeichen auswählen, doppelklicken Sie `Main.storyboard` auf die Datei, um Sie zur Bearbeitung in Interface Builder zu öffnen. Wählen Sie die Tabellenansicht in der **Schnittstellen Hierarchie** aus, und aktivieren Sie im **Attribut Inspektor**das Kontrollkästchen **Typ auswählen** :
 
-[![](table-view-images/type01.png "Setting the selection type")](table-view-images/type01.png#lightbox)
+[![Festlegen des Auswahl Typs](table-view-images/type01.png)](table-view-images/type01.png#lightbox)
 
 Speichern Sie die Änderungen, und kehren Sie zu Visual Studio für Mac zurück, um mit Xcode zu synchronisieren.
 
@@ -490,7 +490,7 @@ Die `GetNextTypeSelectMatch` -Methode nimmt die angegebene `searchString` an und
 
 Wenn Sie die Anwendung ausführen und ein Zeichen eingeben, wird eine Zeile ausgewählt:
 
-[![](table-view-images/type02.png "A sample app run")](table-view-images/type02.png#lightbox)
+[![Eine Beispiel-App-Run](table-view-images/type02.png)](table-view-images/type02.png#lightbox)
 
 <a name="Reordering_Columns"></a>
 
@@ -498,7 +498,7 @@ Wenn Sie die Anwendung ausführen und ein Zeichen eingeben, wird eine Zeile ausg
 
 Wenn Sie zulassen möchten, dass der Benutzer die Spalten neu anordnen in der Tabellenansicht zieht, doppelklicken Sie `Main.storyboard` auf die Datei, um Sie in Interface Builder zu bearbeiten. Wählen Sie die Tabellenansicht in der **Schnittstellen Hierarchie** aus, und aktivieren Sie das Kontrollkästchen **Neuanordnen** im **Attribut Inspektor**:
 
-[![](table-view-images/reorder01.png "The Attribute Inspector")](table-view-images/reorder01.png#lightbox)
+[![Der Attribut Inspektor](table-view-images/reorder01.png)](table-view-images/reorder01.png#lightbox)
 
 Wenn wir einen Wert für die Eigenschaft **Autosave** festlegen und das Feld **Spalten Informationen** aktivieren, werden alle Änderungen, die wir am Layout der Tabelle vornehmen, automatisch für uns gespeichert und beim nächsten Ausführen der Anwendung wieder hergestellt.
 
@@ -517,7 +517,7 @@ Die- `ShouldReorder` Methode sollte `true` für jede Spalte zurückgeben, für d
 
 Wenn wir die Anwendung ausführen, können wir die Spaltenkopfzeilen verschieben, um die Spalten neu zu sortieren:
 
-[![](table-view-images/reorder02.png "An example of the reordered columns")](table-view-images/reorder02.png#lightbox)
+[![Ein Beispiel für die neu bestellten Spalten](table-view-images/reorder02.png)](table-view-images/reorder02.png#lightbox)
 
 <a name="Editing_Cells"></a>
 
@@ -573,7 +573,7 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 
 Wenn nun die Anwendung ausgeführt wird, kann der Benutzer die Zellen in der Tabellenansicht bearbeiten:
 
-[![](table-view-images/editing01.png "An example of editing a cell")](table-view-images/editing01.png#lightbox)
+[![Ein Beispiel für die Bearbeitung einer Zelle](table-view-images/editing01.png)](table-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Table_Views"></a>
 
@@ -648,7 +648,7 @@ Abhängig von den Anforderungen Ihrer APP kann es vorkommen, dass Sie eine Aktio
 
 Bearbeiten Sie zunächst die `Main.storyboard` in Xcode-Interface Builder, wählen Sie die Tabellenansicht aus, und erhöhen Sie die Anzahl der Spalten auf drei (3). Ändern Sie als nächstes den **Titel** der neuen Spalte in `Action` :
 
-[![](table-view-images/delete01.png "Editing the column name")](table-view-images/delete01.png#lightbox)
+[![Bearbeiten des Spaltennamens](table-view-images/delete01.png)](table-view-images/delete01.png#lightbox)
 
 Speichern Sie die Änderungen am Storyboard, und kehren Sie zu Visual Studio für Mac zurück, um die Änderungen zu synchronisieren.
 
@@ -895,15 +895,15 @@ In der Spalte **Aktion** werden alle untergeordneten Sichten überprüft, bis da
 
 Wenn diese Änderungen vorgenommen wurden, hat jede Zeile, wenn die app ausgeführt wird, eine **Lösch** Schaltfläche:
 
-[![](table-view-images/delete02.png "The table view with deletion buttons")](table-view-images/delete02.png#lightbox)
+[![Tabellenansicht mit Lösch Schaltflächen](table-view-images/delete02.png)](table-view-images/delete02.png#lightbox)
 
 Wenn der Benutzer auf eine **Lösch** Schaltfläche klickt, wird eine Warnung angezeigt, in der Sie aufgefordert werden, die angegebene Zeile zu löschen:
 
-[![](table-view-images/delete03.png "A delete row alert")](table-view-images/delete03.png#lightbox)
+[![Eine Warnung zum Löschen einer Zeile](table-view-images/delete03.png)](table-view-images/delete03.png#lightbox)
 
 Wenn der Benutzer löschen auswählt, wird die Zeile entfernt, und die Tabelle wird neu gezeichnet:
 
-[![](table-view-images/delete04.png "The table after the row is deleted")](table-view-images/delete04.png#lightbox)
+[![Die Tabelle nach dem Löschen der Zeile.](table-view-images/delete04.png)](table-view-images/delete04.png#lightbox)
 
 <a name="Data_Binding_Table_Views"></a>
 

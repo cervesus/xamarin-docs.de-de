@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4d934fd2155a6a088dd543658555bf104b38f302
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 501210f669c7d62eddaf7ebe3b4ebf19614589a7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138540"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936343"
 ---
 # <a name="entry-cursor-color-on-ios"></a>Eingabe Cursor Farbe unter IOS
 
@@ -47,7 +47,7 @@ Die- `Entry.On<iOS>` Methode gibt an, dass diese plattformspezifische nur unter 
 
 Das Ergebnis ist, dass die Cursor Farbe in einem [`Entry`](xref:Xamarin.Forms.Entry) auf einen bestimmten festgelegt werden kann [`Color`](xref:Xamarin.Forms.Color) :
 
-![](entry-cursor-color-images/entry-cursorcolor.png "Entry Cursor Color")
+![Farbe für Eingabecursor](entry-cursor-color-images/entry-cursorcolor.png)
 
 ## <a name="related-links"></a>Verwandte Links
 

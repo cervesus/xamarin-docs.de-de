@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e82572d88e380997fb2435179dba824c1b3f0c2f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139047"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936187"
 ---
 # <a name="the-path-fill-types"></a>Die Fülltypen für Pfade
 
@@ -23,9 +23,9 @@ ms.locfileid: "84139047"
 
 _Entdecken Sie die verschiedenen Effekte, die mit skiasharp-Pfad Füll Typen möglich sind._
 
-Zwei Kontur in einem Pfad können sich überlappen, und die Linien, die eine einzelne Kontur bilden, können sich überlappen. Alle eingeschlossenen Bereiche können möglicherweise ausgefüllt werden, Sie möchten jedoch möglicherweise nicht alle eingeschlossenen Bereiche ausfüllen. Hier sehen Sie ein Beispiel:
+Zwei Kontur in einem Pfad können sich überlappen, und die Linien, die eine einzelne Kontur bilden, können sich überlappen. Alle eingeschlossenen Bereiche können möglicherweise ausgefüllt werden, Sie möchten jedoch möglicherweise nicht alle eingeschlossenen Bereiche ausfüllen. Ein Beispiel:
 
-![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
+![Fünf-pointierte Sterne teilweise](fill-types-images/filltypeexample.png)
 
 Dies haben Sie nur wenig Kontrolle. Der Füllungs Algorithmus wird von der- [`SKFillType`](xref:SkiaSharp.SKPath.FillType) Eigenschaft von gesteuert `SKPath` , die Sie auf einen Member der- [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) Enumeration festlegen:
 
@@ -173,7 +173,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Normalerweise sollte sich der Pfad Fülltyp nur auf Füll-und nicht-Striche auswirken, aber die beiden `Inverse` Modi wirken sich sowohl auf Fill als auch auf Striche aus. Für Fill werden die Bereiche durch die beiden Typen gegenseitig `Inverse` ausgefüllt, sodass der Bereich außerhalb des Sterns ausgefüllt ist. Bei Strichen wird durch die beiden `Inverse` Typen alles außer dem Strich Farben angezeigt. Die Verwendung dieser umgekehrten Füll Typen kann zu ungeraden Effekten führen, wie der IOS-Bildschirmfoto veranschaulicht:
 
-[![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
+[![Dreifacher Screenshot der fünf-Spitze-Stern Seite](fill-types-images/fivepointedstar-small.png)](fill-types-images/fivepointedstar-large.png#lightbox "Dreifacher Screenshot der fünf-Spitze-Stern Seite")
 
 Der Android-Screenshot zeigt die typischen, geraden und auffüllenden Effekte, aber die Reihenfolge der Striche und der Füllung wirkt sich auch auf die Ergebnisse aus.
 
@@ -226,7 +226,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Es handelt sich um ein interessantes Image, das mit mindestens einem Code erstellt wurde:
 
-[![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
+[![Dreifacher Screenshot der Seite mit überlappenden Kreisen](fill-types-images/overlappingcircles-small.png)](fill-types-images/overlappingcircles-large.png#lightbox "Dreifacher Screenshot der Seite mit überlappenden Kreisen")
 
 ## <a name="related-links"></a>Verwandte Links
 

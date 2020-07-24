@@ -10,12 +10,12 @@ ms.date: 03/28/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf95427807e0179a608b428bc7e02499c9616fe7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cee301178880a62695f4208161965b01bb6f522e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139151"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938590"
 ---
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>Verwenden eines Windows Communication Foundation (WCF)-Webdiensts
 
@@ -41,7 +41,7 @@ Es gibt Unterschiede zwischen ASP.NET-Webdiensten (ASMX) und WCF, WCF unterstüt
 
 Die Beispiel Anwendungslösung umfasst einen WCF-Dienst, der lokal ausgeführt werden kann, und ist im folgenden Screenshot dargestellt:
 
-![](wcf-images/portal.png "Sample Application")
+![Beispielanwendung](wcf-images/portal.png)
 
 > [!NOTE]
 > In ios 9 und höher erzwingt App-Transport Sicherheit (app Transport Security, ATS) sichere Verbindungen zwischen Internetressourcen (z. b. dem Back-End-Server der APP) und der APP, wodurch eine versehentliche Offenlegung vertraulicher Informationen verhindert wird. Da ATS in apps, die für IOS 9 erstellt wurden, standardmäßig aktiviert ist, unterliegen alle Verbindungen den Sicherheitsanforderungen. Wenn Verbindungen diese Anforderungen nicht erfüllen, können Sie mit einer Ausnahme fehlschlagen.

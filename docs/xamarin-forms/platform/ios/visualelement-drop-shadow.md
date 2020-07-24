@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7410386e10f605fdeed452fe37755c1e48e6b9b9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b4772299421ad26f0fbe0fced8c80a7f633341c6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136993"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938449"
 ---
 # <a name="visualelement-drop-shadows-on-ios"></a>Visualelement-Ablage Schatten auf IOS
 
@@ -74,7 +74,7 @@ Die- `VisualElement.On<iOS>` Methode gibt an, dass diese plattformspezifische nu
 
 Das Ergebnis ist, dass ein Ablage Schatten für eine aktiviert werden kann [`VisualElement`](xref:Xamarin.Forms.VisualElement) :
 
-![](drop-shadow-images/drop-shadow.png "Drop shadow enabled")
+![Schlag Schatten aktiviert](drop-shadow-images/drop-shadow.png)
 
 ## <a name="related-links"></a>Verwandte Links
 

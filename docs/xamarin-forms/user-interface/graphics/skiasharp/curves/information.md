@@ -10,12 +10,12 @@ ms.date: 09/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 931b8d0946f1af5e697e581a04c0feefb31ba2d3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4fee695a20cae26537beb30513423492114e5c77
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131923"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936239"
 ---
 # <a name="path-information-and-enumeration"></a>Pfadinformationen und -enumeration
 
@@ -29,7 +29,7 @@ Es ist manchmal hilfreich, die Gesamtlänge aller Linien und Kurven zu ermitteln
 
 Manchmal ist es auch sinnvoll, alle Zeichnungsvorgänge und Punkte zu erhalten, aus denen ein Pfad besteht. Diese Anlage mag zunächst unnötig erscheinen: Wenn das Programm den Pfad erstellt hat, weiß das Programm den Inhalt bereits. Sie haben jedoch gesehen, dass Pfade auch durch [Pfad Effekte](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) und durch die Umstellung von Text Zeichenfolgen [in Pfade](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)erstellt werden können. Sie können auch alle Zeichnungsvorgänge und Punkte abrufen, die diese Pfade bilden. Eine Möglichkeit besteht darin, eine algorithmische Transformation auf alle Punkte anzuwenden, um z. b. Text um eine Hemisphäre zu umschließen:
 
-![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
+![Auf einer Hemisphäre umschließende Text](information-images/pathenumerationsample.png)
 
 ## <a name="getting-the-path-length"></a>Die Pfadlänge wird erhalten.
 
@@ -115,7 +115,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die- `Length` Eigenschaft des neu erstellten- `SKPathMeasure` Objekts erhält die Länge des Pfads. Die Pfadlänge wird durch den-Wert (d. h. `baseTextWidth` die Breite des Texts auf der Grundlage einer Textgröße von 10) dividiert und dann mit der Basis Textgröße von 10 multipliziert. Das Ergebnis ist eine neue Textgröße zum Anzeigen des Texts entlang dieses Pfads:
 
-[![](information-images/pathlength-small.png "Triple screenshot of the Path Length page")](information-images/pathlength-large.png#lightbox "Triple screenshot of the Path Length page")
+[![Dreifacher Screenshot der Pfadlängen Seite](information-images/pathlength-small.png)](information-images/pathlength-large.png#lightbox "Dreifacher Screenshot der Pfadlängen Seite")
 
 Wenn die Bézier-Kurve länger oder kürzer wird, können Sie die Änderung der Textgröße sehen.
 
@@ -141,7 +141,7 @@ Die Member der- [`SKPathMeasureMatrixFlags`](xref:SkiaSharp.SKPathMeasureMatrixF
 
 Die Seite " **Unicycle-halbpipe** " animiert eine Stift Figur in einem Unicycle, der sich entlang einer kubischen Bézier-Kurve hin-und herzieht:
 
-[![](information-images/unicyclehalfpipe-small.png "Triple screenshot of the Unicycle Half-Pipe page")](information-images/unicyclehalfpipe-large.png#lightbox "Triple screenshot of the Unicycle Half-Pipe page")
+[![Dreifacher Screenshot der Unicycle-halbpipe-Seite](information-images/unicyclehalfpipe-small.png)](information-images/unicyclehalfpipe-large.png#lightbox "Dreifacher Screenshot der Unicycle-halbpipe-Seite")
 
 Das `SKPaint` -Objekt, das zum Durchsuchen der Hälfte Pipe und des Unicycle verwendet wird, wird als ein Feld in der- `UnicycleHalfPipePage` Klasse definiert. Außerdem ist das- `SKPath` Objekt für den Unicycle definiert:
 
@@ -252,7 +252,7 @@ Das problematische Verb ist jedoch `Close` . Dieser Befehl zeichnet eine gerade 
 
 Es ist manchmal wünschenswert, eine algorithmische Transformation auf einen Pfad anzuwenden, um ihn auf irgendeine Weise zu malformen:
 
-![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
+![Auf einer Hemisphäre umschließende Text](information-images/pathenumerationsample.png)
 
 Die meisten dieser Buchstaben bestehen aus geraden Linien, aber diese geraden Linien wurden anscheinend in Kurven gedreht. Wie ist das möglich?
 
@@ -441,7 +441,7 @@ Beachten Sie, dass die-Methode den ersten Punkt jeder Kontur in der Variablen mi
 
 Das **globulartext** -Beispiel verwendet diese Erweiterungsmethode, um Text mit einer Hemisphäre in einem 3D-Effekt scheinbar zu umschließen:
 
-[![](information-images/globulartext-small.png "Triple screenshot of the Globular Text page")](information-images/globulartext-large.png#lightbox "Triple screenshot of the Globular Text page")
+[![Dreifacher Screenshot der Seite "gloshottext"](information-images/globulartext-small.png)](information-images/globulartext-large.png#lightbox "Dreifacher Screenshot der Seite "gloshottext"")
 
 Der [`GlobularTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Klassenkonstruktor führt diese Transformation aus. Er erstellt ein `SKPaint` -Objekt für den Text und ruft dann ein- `SKPath` Objekt aus der- `GetTextPath` Methode ab. Dies ist der Pfad, der der `CloneWithTransform` Erweiterungsmethode zusammen mit einer Transformations Funktion weitergegeben wird:
 

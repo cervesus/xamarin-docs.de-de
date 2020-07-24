@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: f81df8ac253e53b16c3ab09bf80d66a7b6324854
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b9b771efe338fbcc250aa6e7a83b73f35269d3bf
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571518"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996811"
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualisieren von Komponenten verweisen auf nuget
 
@@ -27,7 +27,7 @@ Eine Liste beliebter xamarin [-Plug-ins und-Bibliotheken](https://github.com/xam
 
 ## <a name="manually-removing-component-references"></a>Manuelles Entfernen von Komponenten verweisen
 
-Die Version 15,6 von Visual Studio und 7,4 Release von Visual Studio für Mac unterstützt keine Komponenten mehr in Ihrem Projekt. 
+Die Version 15,6 von Visual Studio und 7,4 Release von Visual Studio für Mac unterstützt keine Komponenten mehr in Ihrem Projekt.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -37,7 +37,7 @@ Wenn Sie ein Projekt in Visual Studio laden, wird das folgende Dialogfeld angeze
 
 So entfernen Sie eine Komponente aus dem Projekt:
 
-1. Öffnen Sie die Datei **.csproj**. Klicken Sie dazu mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Projekt entladen**aus. 
+1. Öffnen Sie die Datei **.csproj**. Klicken Sie dazu mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Projekt entladen**aus.
 
 2. Klicken Sie erneut mit der rechten Maustaste auf das entladene Projekt, und wählen Sie dann **Bearbeiten {your-Project-Name}. csproj**aus.
 
@@ -151,7 +151,7 @@ Wenn **die Registerkarte** Assemblys der Komponenten Info-Assemblys Einträge en
 
 Beachten Sie, dass die Registerkarte **Pakete** wahrscheinlich leer ist:
 
-![](component-nuget-images/packages-tab-empty-sml.png)
+![Registerkarte „Pakete“](component-nuget-images/packages-tab-empty-sml.png)
 
 _Sie kann nuget-Abhängigkeiten enthalten, aber diese können ignoriert werden._
 
@@ -179,7 +179,7 @@ Hierdurch werden die Komponente und alle Verweise gelöscht. Dadurch wird der Bu
 1. Klicken Sie mit der rechten Maustaste auf den Knoten **Pakete** , und wählen Sie **Pakete hinzufügen...** aus.
 2. Suchen Sie nach dem Namen oder dem Autor des nuget-Austauschs:
 
-    ![](component-nuget-images/nuget-search-sml.png)
+    ![Nuget-Suche](component-nuget-images/nuget-search-sml.png)
 
 3. Klicken **Sie auf Paket hinzufügen**.
 

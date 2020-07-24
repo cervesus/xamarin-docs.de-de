@@ -10,12 +10,12 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a222c3ee2234904cce94b52a14654728a1aa6d1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ae3759c1e111906b82596af80d4bdcffd5d23305
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140126"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938527"
 ---
 # <a name="global-styles-in-xamarinforms"></a>Globale Stile inXamarin.Forms
 
@@ -65,7 +65,7 @@ Das folgende Codebeispiel zeigt eine XAML `buttonStyle` -Seite, die auf die Inst
 
 Dies ergibt die in den folgenden Screenshots gezeigte Darstellung:
 
-[![](application-images/application-styles-1.png "Global Styles Example")](application-images/application-styles-1-large.png#lightbox "Global Styles Example")
+[![Beispiel für globale Stile](application-images/application-styles-1.png)](application-images/application-styles-1-large.png#lightbox "Beispiel für globale Stile")
 
 Weitere Informationen zum Erstellen von Stilen in einer Seite [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) finden Sie unter [explizite Stile](~/xamarin-forms/user-interface/styles/explicit.md) und [implizite Stile](~/xamarin-forms/user-interface/styles/implicit.md).
 
@@ -103,7 +103,7 @@ Stile niedriger in der Ansichts Hierarchie haben Vorrang vor der höheren Defini
 
 Der `buttonStyle` auf Anwendungsebene definierte ursprüngliche wird von der `buttonStyle` auf der Seitenebene definierten Instanz überschrieben. Außerdem wird der Stil auf Seitenebene von der Steuerelement Ebene überschrieben `buttonStyle` . Aus diesem Grund [`Button`](xref:Xamarin.Forms.Button) werden die Instanzen mit blauem Text angezeigt, wie in den folgenden Screenshots gezeigt:
 
-[![](application-images/application-styles-2.png "Overriding Styles Example")](application-images/application-styles-2-large.png#lightbox "Overriding Styles Example")
+[![Überschreiben von Stilen](application-images/application-styles-2.png)](application-images/application-styles-2-large.png#lightbox "Überschreiben von Stilen")
 
 ## <a name="create-a-global-style-in-c35"></a>Erstellen Sie einen globalen Stil in C-&#35;
 

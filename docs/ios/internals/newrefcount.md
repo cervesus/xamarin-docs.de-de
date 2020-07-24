@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 8d8ad5b5f79b90fc415c9e3cdf6809a4e196056f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a9d8b8fa1826c1a7dafb3d6c3e3ab45d05c1aaa8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022300"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938709"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Neues Verweis zählungs System in xamarin. IOS
 
@@ -22,13 +22,13 @@ Xamarin. IOS 9.2.1 hat das erweiterte Verweis Zählsystem standardmäßig für a
 
 Ab xamarin 9.2.1 wird das neue Verweis Zählsystem standardmäßig für **alle** Anwendungen aktiviert.
 
-Wenn Sie eine vorhandene Anwendung entwickeln, können Sie die CSPROJ-Datei überprüfen, um sicherzustellen, dass alle Vorkommen von `MtouchUseRefCounting` auf `true`festgelegt sind, wie unten dargestellt:
+Wenn Sie eine vorhandene Anwendung entwickeln, können Sie die CSPROJ-Datei überprüfen, um sicherzustellen, dass alle Vorkommen von `MtouchUseRefCounting` auf festgelegt sind `true` , wie unten dargestellt:
 
 ```xml
 <MtouchUseRefCounting>true</MtouchUseRefCounting>
 ```
 
-Wenn der Wert auf festgelegt ist `false` werden die neuen Tools von der Anwendung nicht verwendet.
+Wenn Sie auf festgelegt ist, `false` werden die neuen Tools nicht von der Anwendung verwendet.
 
 ### <a name="using-older-versions-of-xamarin"></a>Verwenden älterer Versionen von xamarin
 
@@ -38,7 +38,7 @@ Xamarin. IOS 7.2.1 und höher bietet eine erweiterte Vorschau unseres neuen Refe
 
 Aktivieren Sie zum Aktivieren dieses neuen Verweis zählungs Systems das Kontrollkästchen **Verweis Zähl Erweiterung verwenden** auf der Registerkarte **erweitert** der IOS- **Buildoptionen**Ihres Projekts, wie unten dargestellt: 
 
-[![](newrefcount-images/image1.png "Enable the new Reference Counting System")](newrefcount-images/image1.png#lightbox)
+[![Aktivieren des neuen Verweis zählungs Systems](newrefcount-images/image1.png)](newrefcount-images/image1.png#lightbox)
 
 Beachten Sie, dass diese Optionen in neueren Versionen von Visual Studio für Mac entfernt wurden.
 
@@ -49,7 +49,7 @@ Beachten Sie, dass diese Optionen in neueren Versionen von Visual Studio für Ma
 > [!IMPORTANT]
 > Eine frühere Version dieses Features ist seit MonoTouch 5,2 verfügbar, war aber nur für **Sgen** als experimentelle Vorschau verfügbar. Diese neue, erweiterte Version ist jetzt auch für den **Boehm** -Garbage Collector verfügbar.
 
-In der Vergangenheit gab es zwei Arten von Objekten, die von xamarin. IOS verwaltet werden: solche, die lediglich ein Wrapper um ein natives Objekt (Peer-Objekte) waren, und diejenigen, die neue Funktionen (abgeleitete Objekte) erweitert oder integriert haben (in der Regel durch die Beibehaltung des zusätzlichen Speicher internen Zustands). Bisher war es möglich, ein Peer Objekt mit dem Zustand zu vergrößern (z. b. durch C# Hinzufügen eines-Ereignis Handlers), aber das Objekt kann nicht referenziert und dann gesammelt werden. Dies kann später zu einem Absturz führen (z. b. wenn die Ziel-C-Laufzeit wieder in das verwaltete Objekt aufgerufen wurde).
+In der Vergangenheit gab es zwei Arten von Objekten, die von xamarin. IOS verwaltet werden: solche, die lediglich ein Wrapper um ein natives Objekt (Peer-Objekte) waren, und diejenigen, die neue Funktionen (abgeleitete Objekte) erweitert oder integriert haben (in der Regel durch die Beibehaltung des zusätzlichen Speicher internen Zustands). Bisher war es möglich, ein Peer Objekt mit dem Zustand zu vergrößern (z. b. durch Hinzufügen eines c#-Ereignis Handlers), aber das Objekt kann nicht referenziert und dann gesammelt werden. Dies kann später zu einem Absturz führen (z. b. wenn die Ziel-C-Laufzeit wieder in das verwaltete Objekt aufgerufen wurde).
 
 Das neue System aktualisiert Peer Objekte automatisch in Objekte, die von der Laufzeit verwaltet werden, wenn zusätzliche Informationen gespeichert werden.
 
@@ -71,7 +71,7 @@ class MyTableSource : UITableViewSource {
 }
 ```
 
-Ohne die Verweis Zähler Erweiterung würde dieser Code abstürzen, weil `cell` entladbar wird, und somit seinen `TouchDown` Delegaten, der in einen verbleibenden Zeiger übersetzt wird.
+Ohne die Verweis Zähler Erweiterung würde dieser Code abstürzen, weil entladbar `cell` ist, und somit seinen Delegaten `TouchDown` , der in einen verbleibenden Zeiger übersetzt wird.
 
 Die Erweiterung für Verweis Zähler stellt sicher, dass das verwaltete Objekt aktiv bleibt und seine Auflistung verhindert, vorausgesetzt, dass das systemeigene Objekt durch nativen Code beibehalten wird.
 

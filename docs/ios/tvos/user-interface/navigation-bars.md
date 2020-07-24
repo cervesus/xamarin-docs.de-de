@@ -131,7 +131,7 @@ Weitere Informationen zum Arbeiten mit Storyboards finden Sie in unserer [Hello-
 
 In diesem Artikel wurde das Entwerfen und arbeiten mit Navigationsleisten in einer xamarin. tvos-App behandelt.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [tvOS-Beispiele](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

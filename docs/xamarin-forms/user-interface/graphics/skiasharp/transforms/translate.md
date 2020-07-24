@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0eb3b4a6b37d59363984c9248cc39de91a6819e0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ed20da1005447334a99ea40c177c8f88d59d71ce
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138254"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938470"
 ---
 # <a name="the-translate-transform"></a>Die Verschiebungstransformation
 
@@ -27,7 +27,7 @@ Der einfachste Typ der Transformation in skiasharp ist die Translation *-oder* *
 
 Die Übersetzung ist auch für Animationen und einfache Texteffekte nützlich:
 
-![](translate-images/translateexample.png "Text shadow, engraving, and embossing with translation")
+![Text Schatten,-Gravur und-Prägung mit Übersetzung](translate-images/translateexample.png)
 
 Die [`Translate`](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single)) -Methode in `SKCanvas` verfügt über zwei Parameter, die bewirken, dass nachträglich gezeichnete Grafik Objekte horizontal und vertikal verschoben werden:
 
@@ -74,7 +74,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Die aufeinander folgenden Rechtecke werden auf der Seite angezeigt:
 
-[![](translate-images/accumulatedtranslate-small.png "Triple screenshot of the Accumulated Translate page")](translate-images/accumulatedtranslate-large.png#lightbox "Triple screenshot of the Accumulated Translate page")
+[![Dreifacher Screenshot der akkumulierten Übersetzungsseite](translate-images/accumulatedtranslate-small.png)](translate-images/accumulatedtranslate-large.png#lightbox "Dreifacher Screenshot der akkumulierten Übersetzungsseite")
 
 Wenn die akkumulierten Übersetzungs Faktoren `dx` und lauten `dy` und der von Ihnen in einer Zeichnungs Funktion angegebene Punkt ( `x` ,) ist `y` , wird das grafische Objekt an der Stelle ( `x'` ,) gerendert `y'` , wobei:
 
@@ -131,7 +131,7 @@ using (SKPaint textPaint = new SKPaint())
 
 In jedem der drei Beispiele `Translate` wird aufgerufen, um den Text anzuzeigen, um ihn von der Position zu versetzen, die von den `x` Variablen und angegeben wird `y` . Der Text wird in einer anderen Farbe ohne Übersetzungseffekt angezeigt:
 
-[![](translate-images/translatetexteffects-small.png "Triple screenshot of the Translate Text Effects page")](translate-images/translatetexteffects-large.png#lightbox "Triple screenshot of the Translate Text Effects page")
+[![Dreifacher Screenshot der Seite "Text Effekte übersetzen"](translate-images/translatetexteffects-small.png)](translate-images/translatetexteffects-large.png#lightbox "Dreifacher Screenshot der Seite "Text Effekte übersetzen"")
 
 Jedes der drei Beispiele zeigt eine andere Methode zum neinieren des `Translate` Aufrufens:
 
@@ -215,9 +215,9 @@ public class HendecagramArrayPage : ContentPage
 
 ```
 
-So sieht das Ergebnis aus:
+Das Ergebnis lautet wie folgt:
 
-[![](translate-images/hendecagramarray-small.png "Triple screenshot of the Hendecagram Array page")](translate-images/hendecagramarray-large.png#lightbox "Triple screenshot of the Hendecagram Array page")
+[![Dreifacher Screenshot der Seite "hendecagram Array"](translate-images/hendecagramarray-small.png)](translate-images/hendecagramarray-large.png#lightbox "Dreifacher Screenshot der Seite "hendecagram Array"")
 
 Animationen umfassen häufig Transformationen. Auf der Seite " **qudecagram Animation** " wird der 11-Spitze-Stern in einem Kreis bewegt. Die [`HendecagramAnimationPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) -Klasse beginnt mit einigen Feldern und über schreibungen der `OnAppearing` -Methode und der- `OnDisappearing` Methode, um einen Timer zu starten und anzuhalten Xamarin.Forms :
 
@@ -302,7 +302,7 @@ public class HendecagramAnimationPage : ContentPage
 
 Der `PaintSurface` Handler Ruft die `Translate` Methode zweimal auf, um zuerst in den Mittelpunkt des Zeichen Bereichs zu übersetzen und dann in den Umfang eines Kreises zu konvertieren (0,0). Der Radius des Kreises wird so groß wie möglich festgelegt, während er den Stern weiterhin innerhalb der Begrenzungen der Seite hält:
 
-[![](translate-images/hendecagramanimation-small.png "Triple screenshot of the Hendecagram Animation page")](translate-images/hendecagramanimation-large.png#lightbox "Triple screenshot of the Hendecagram Animation page")
+[![Dreifacher Screenshot der Seite "qudecagram Animation"](translate-images/hendecagramanimation-small.png)](translate-images/hendecagramanimation-large.png#lightbox "Dreifacher Screenshot der Seite "qudecagram Animation"")
 
 Beachten Sie, dass der Stern die gleiche Ausrichtung beibehält, wie er sich um den Mittelpunkt der Seite dreht. Es dreht sich überhaupt nicht. Das ist ein Auftrag für eine Transformation zum drehen.
 

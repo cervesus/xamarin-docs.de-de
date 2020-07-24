@@ -1,18 +1,18 @@
 ---
 title: System. Data in xamarin. IOS
-description: In diesem Dokument wird beschrieben, wie Sie mithilfe von "System. Data" und "Mono. Data. sqlite. dll" auf SQLite-Daten in einer xamarin. IOS-Anwendung zugreifen.
+description: In diesem Dokument wird beschrieben, wie System. Data und Mono.Data.Sqlite.dll verwendet werden, um auf SQLite-Daten in einer xamarin. IOS-Anwendung zuzugreifen.
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 736d70aebcf861b5557d5f076a42ff0a3dcfc043
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: eb3453c3475fdc2e309a888a1aa1318eccc59228
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569951"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938735"
 ---
 # <a name="systemdata-in-xamarinios"></a>System. Data in xamarin. IOS
 
@@ -34,7 +34,7 @@ Das folgende Programm erstellt eine Datenbank in `Documents/mydb.db3` , und wenn
 
 Klicken Sie zunächst mit der rechten Maustaste auf den Knoten **Verweise** , und wählen Sie **Verweise bearbeiten...** aus, und wählen Sie dann aus `System.Data` `Mono.Data.Sqlite` :
 
-[![](system.data-images/edit-references-sml.png "Adding new references")](system.data-images/edit-references.png#lightbox)
+[![Neue Verweise werden hinzugefügt](system.data-images/edit-references-sml.png)](system.data-images/edit-references.png#lightbox)
 
 ### <a name="sample-code"></a>Beispielcode
 
@@ -139,7 +139,7 @@ In " **System. Data** " und " **Mono. Data. sqlite** " fehlen einige Funktionen.
 
 ### <a name="systemdata"></a><legacyBold>System.Data</legacyBold>
 
-Die in " **System. Data. dll** " fehlenden Funktionen bestehen aus folgendem:
+Fehlende Funktionen in **System.Data.dll** bestehen aus folgendem:
 
 - Alles, was [System. CodeDom](xref:System.CodeDom) erfordert (z. b.  [System. Data. TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
 - Unterstützung der XML-Konfigurationsdatei (z. b.  [System. Data. Common. dbproviderconfigurationhandler](xref:System.Data.Common.DbProviderConfigurationHandler) )
@@ -152,7 +152,7 @@ Die in " **System. Data. dll** " fehlenden Funktionen bestehen aus folgendem:
 
 ### <a name="monodatasqlite"></a>Mono. Data. sqlite
 
-In der Zwischenzeit hat **Mono. Data. sqlite. dll** keine Quell Codeänderungen, sondern möglicherweise als Host für eine Reihe von *Lauf* Zeitproblemen, da `Mono.Data.Sqlite.dll` SQLite 3,5 bindet. IOS 8 wird in der Zwischenzeit mit SQLite 3.8.5 ausgeliefert. Es genügt, dass sich einige Dinge zwischen den beiden Versionen geändert haben.
+In der Zwischenzeit haben **Mono.Data.Sqlite.dll** keine Quell Codeänderungen vorgenommen, sondern möglicherweise eine Reihe von *Lauf* Zeitproblemen, da `Mono.Data.Sqlite.dll` SQLite 3,5 bindet. IOS 8 wird in der Zwischenzeit mit SQLite 3.8.5 ausgeliefert. Es genügt, dass sich einige Dinge zwischen den beiden Versionen geändert haben.
 
 Die ältere Version von IOS wird mit den folgenden Versionen von SQLite ausgeliefert:
 

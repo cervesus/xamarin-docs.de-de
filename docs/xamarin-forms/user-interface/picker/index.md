@@ -10,12 +10,12 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 50f605f4ad9839521fd4169531ad46d197f20dbf
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5e3153e796f26ef150dccc79d8ea6f90127c6a26
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139657"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938683"
 ---
 # <a name="xamarinforms-picker"></a>Xamarin.FormsBild
 
@@ -38,15 +38,15 @@ Alle Eigenschaften werden von Objekten unterstützt [`BindableProperty`](xref:Xa
 
 Ein [`Picker`](xref:Xamarin.Forms.Picker) zeigt beim ersten anzeigen keine Daten an. Stattdessen wird der Wert seiner- [`Title`](xref:Xamarin.Forms.Picker.Title) Eigenschaft als Platzhalter auf den IOS-und Android-Plattformen angezeigt:
 
-[![](images/picker-initial.png "Initial Picker Display")](images/picker-initial-large.png#lightbox "Initial Picker Display")
+[![Anzeige der ersten Auswahl](images/picker-initial.png)](images/picker-initial-large.png#lightbox "Anzeige der ersten Auswahl")
 
 Wenn der [`Picker`](xref:Xamarin.Forms.Picker) Fokus erreicht wird, werden seine Daten angezeigt, und der Benutzer kann ein Element auswählen:
 
-[![](images/picker-selection.png "Picker Selecting an Item")](images/picker-selection-large.png#lightbox "Picker Selecting an Item")
+[![Auswahl eines Elements](images/picker-selection.png)](images/picker-selection-large.png#lightbox "Auswahl eines Elements")
 
 Das löst ein-Ereignis aus, [`Picker`](xref:Xamarin.Forms.Picker) [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) Wenn der Benutzer ein Element auswählt. Nach der Auswahl wird das ausgewählte Element von angezeigt `Picker` :
 
-![](images/picker-after-selection.png "Picker after Selection")
+![Auswahl nach Auswahl](images/picker-after-selection.png)
 
 Es gibt zwei Verfahren zum Auffüllen eines [`Picker`](xref:Xamarin.Forms.Picker) mit Daten:
 

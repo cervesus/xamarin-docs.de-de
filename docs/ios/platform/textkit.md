@@ -162,7 +162,7 @@ Der folgende Screenshot veranschaulicht, wie sich das Textlayout um den gezeichn
 
 Beachten Sie, dass die-Eigenschaft des Layout-Managers `AllowsNonContiguousLayout` in diesem Fall auf false festgelegt ist. Dadurch wird das Layout für alle Fälle neu berechnet, in denen sich der Text ändert. Wenn diese Einstellung auf "true" festgelegt wird, kann die Leistung beeinträchtigt werden, indem eine Aktualisierung des vollständigen Layouts vermieden wird, insbesondere bei großen Dokumenten. `AllowsNonContiguousLayout`Wenn Sie jedoch auf true festlegen, wird verhindert, dass der Ausschluss Pfad das Layout in einigen Fällen aktualisiert, z. b. Wenn Text zur Laufzeit ohne nachfolgende Wagen Rücklauf Eingabe eingegeben wird, bevor der Pfad festgelegt wird.
 
-## <a name="related-links"></a>Ähnliche Themen
+## <a name="related-links"></a>Verwandte Links
 
 - [Einführung zu IOS 7 (Beispiel)](https://docs.microsoft.com/samples/xamarin/ios-samples/introtoios7)
 - [Übersicht über die iOS 7-Benutzeroberfläche](~/ios/platform/introduction-to-ios7/ios7-ui.md)

@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ee97ee2aae11e4e54a0d25e80ffd7bce301fa2f3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a98c7210f2e71f6f26d53da3555f3f9b5e016952
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137682"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935979"
 ---
 # <a name="integrating-text-and-graphics"></a>Integrieren von Text und Grafiken
 
@@ -25,7 +25,7 @@ _Siehe Ermitteln der Größe der gerenderten Text Zeichenfolge zum Integrieren v
 
 In diesem Artikel wird veranschaulicht, wie Sie Text messen, den Text auf eine bestimmte Größe skalieren und Text in andere Grafiken integrieren:
 
-![](text-images/textandgraphicsexample.png "Text surrounded by rectangles")
+![In Rechtecke eingeschlossene Text](text-images/textandgraphicsexample.png)
 
 Dieses Bild enthält auch ein abgerundetes Rechteck. Die skiasharp `Canvas` -Klasse enthält [`DrawRect`](xref:SkiaSharp.SKCanvas.DrawRect*) Methoden zum Zeichnen eines Rechtecks und [`DrawRoundRect`](xref:SkiaSharp.SKCanvas.DrawRoundRect*) von Methoden zum Zeichnen eines Rechtecks mit abgerundeten Ecken. Diese Methoden ermöglichen es, das Rechteck als- `SKRect` Wert oder auf andere Weise zu definieren.
 
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Danach ist der Rest der Methode geradlinig. Es erstellt ein weiteres `SKPaint` -Objekt für die Rahmen und ruft `DrawRoundRect` zweimal auf. Der zweite-Befehl verwendet ein Rechteck, das durch eine andere 10 Pixel aufgebraucht ist. Der erste-Befehl gibt einen Eckradius von 20 Pixeln an. Die zweite hat einen Eckradius von 30 Pixeln, sodass Sie parallel erscheinen:
 
- [![](text-images/framedtext-small.png "Triple screenshot of the Framed Text page")](text-images/framedtext-large.png#lightbox "Triple screenshot of the Framed Text page")
+ [![Dreifacher Screenshot der Seite mit Text](text-images/framedtext-small.png)](text-images/framedtext-large.png#lightbox "Dreifacher Screenshot der Seite mit Text")
 
 Sie können das Telefon oder den Simulator seitwärts drehen, um den Text und die Rahmen Vergrößerung anzuzeigen.
 
@@ -134,7 +134,7 @@ Wenn Sie nur Text auf dem Bildschirm zentrieren müssen, können Sie diesen Vorg
 
 Text kann ähnlich wie jedes andere grafische Objekt behandelt werden. Eine einfache Option besteht darin, die Gliederung der Textzeichen anzuzeigen:
 
-[![](text-images/outlinedtext-small.png "Triple screen shot of the Outlined Text page")](text-images/outlinedtext-large.png#lightbox "Triple screenshot of the Outlined Text page")
+[![Dreifacher Screenshot der dargestellten Textseite](text-images/outlinedtext-small.png)](text-images/outlinedtext-large.png#lightbox "Dreifacher Screenshot der dargestellten Textseite")
 
 Dies wird einfach durch Ändern der normalen- `Style` Eigenschaft des `SKPaint` -Objekts von der Standardeinstellung `SKPaintStyle.Fill` in `SKPaintStyle.Stroke` und durch Angeben einer Strichbreite erreicht. Der `PaintSurface` Handler der **beschriebenen Textseite** zeigt, wie er ausgeführt wird:
 

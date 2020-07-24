@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 75ef118b642a8c6a66205c6f7e3bc03089c6593c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f7149a818506611176f7c34a6fae4ec733cd2ad9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127893"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938566"
 ---
 # <a name="picker-item-selection-on-ios"></a>Auswahl Elementauswahl unter IOS
 
@@ -66,7 +66,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 Das Ergebnis ist, dass eine angegebene `UpdateMode` auf den angewendet wird [`Picker`](xref:Xamarin.Forms.Picker) , der steuert, wann die Elementauswahl erfolgt:
 
-[![](picker-selection-images/picker-updatemode.png "Picker UpdateMode Platform-Specific")](picker-selection-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Platform-Specific")
+[![Auswahl von "UpdateMode" für plattformspezifisch](picker-selection-images/picker-updatemode.png)](picker-selection-images/picker-updatemode-large.png#lightbox "Auswahl von "UpdateMode" für plattformspezifisch")
 
 ## <a name="related-links"></a>Verwandte Links
 

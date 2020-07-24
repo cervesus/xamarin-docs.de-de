@@ -10,12 +10,12 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c4fc732082a77a2e471465af448a487862b513c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a15ca2e11dabb73054f5f0a1dc3f79342d8ce7f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136291"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938605"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>Festlegen der ItemsSource-Eigenschaft einer Auswahl
 
@@ -178,7 +178,7 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 
 Die [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) Eigenschaften Daten werden an die- `SelectedMonkey` Eigenschaft des verbundenen Ansichts Modells gebunden, das vom Typ ist `Monkey` . Daher [`Picker`](xref:Xamarin.Forms.Picker) wird die- `SelectedMonkey` Eigenschaft auf das ausgewählte Objekt festgelegt, wenn der Benutzer ein Element im auswählt `Monkey` . Die `SelectedMonkey` Objektdaten werden in der Benutzeroberfläche durch die [`Label`](xref:Xamarin.Forms.Label) Ansichten und angezeigt [`Image`](xref:Xamarin.Forms.Image) :
 
-![](populating-itemssource-images/monkeys.png "Picker Item Selection")
+![Elementauswahl in Auswahlfeld](populating-itemssource-images/monkeys.png)
 
 > [!NOTE]
 > Beachten Sie, dass die [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) Eigenschaften und standardmäßig bidirektionale [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) Bindungen unterstützen.

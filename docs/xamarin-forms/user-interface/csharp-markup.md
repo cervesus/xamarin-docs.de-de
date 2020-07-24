@@ -10,16 +10,16 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 279df31eeda506d6780533bac8ae190f799424a3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137747"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936031"
 ---
 # <a name="xamarinforms-c-markup"></a>Xamarin.FormsC#-Markup
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![Vorabversion-API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
@@ -235,7 +235,7 @@ Da eine Gestenerkennung eine ist `BindableObject` , können Sie die `Bind` -und-
 
 C#-Markup umfasst eine Reihe von layouterweiterungsmethoden, die das Positionieren von Sichten in Layouts und den Inhalt in Sichten unterstützen:
 
-| type | Erweiterungsmethoden |
+| Typ | Erweiterungsmethoden |
 |---|---|
 | `FlexLayout` | `AlignSelf`, `Basis`, `Grow`, `Menu`, `Order`, `Shrink` |
 | `Grid` | `Row`, `Column`, `RowSpan`, `ColumnSpan` |
@@ -253,7 +253,7 @@ Um den korrekten Satz von linken und rechten Erweiterungs Methoden verfügbar zu
 
 Für c#-Markup, das sowohl von links nach rechts und von rechts nach links Fluss Richtung unterstützt werden soll, empfiehlt es sich, die Erweiterungs Methoden in der folgenden Tabelle anstelle eines der obigen Namespaces zu verwenden:
 
-| type | Erweiterungsmethoden |
+| Typ | Erweiterungsmethoden |
 |---|---|
 | `Label` | `TextStart`, `TextEnd` |
 | `LayoutOptions` | `Start`, `End` <br/> `StartExpand`, `EndExpand` |
@@ -357,7 +357,7 @@ new Grid
 }
 ```
 
-## <a name="fonts"></a>Fonts
+## <a name="fonts"></a>Schriftarten
 
 Mit den Steuerelementen in der folgenden Liste können `FontSize` die `Bold` `Italic` -,-,-und-Erweiterungs Methoden aufgerufen werden, `Font` um die Darstellung des vom-Steuerelement angezeigten Texts festzulegen:
 

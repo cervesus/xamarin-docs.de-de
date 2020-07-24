@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9b8f743b2c3d7f4b38feb4cfc5015b1113620562
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1161600ad9b587c30ef28be1828fdb9e3b94f665
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137097"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938553"
 ---
 # <a name="scrollview-content-touches-on-ios"></a>Inhalt von ScrollView unter IOS
 
@@ -60,7 +60,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 Das Ergebnis ist, dass ein das [`ScrollView`](xref:Xamarin.Forms.ScrollView) verzögern des empfangenden Inhalts berührt deaktivieren kann, sodass in diesem Szenario die [`Slider`](xref:Xamarin.Forms.Slider) Bewegung anstelle der [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) Seite von empfängt [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) :
 
-[![](scrollview-content-touches-images/scrollview-delay-content-touches.png "ScrollView Delay Content Touches Platform-Specific")](scrollview-content-touches-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Platform-Specific")
+[![Inhalt der ScrollView-Verzögerung berührt plattformspezifisch](scrollview-content-touches-images/scrollview-delay-content-touches.png)](scrollview-content-touches-images/scrollview-delay-content-touches-large.png#lightbox "Inhalt der ScrollView-Verzögerung berührt plattformspezifisch")
 
 ## <a name="related-links"></a>Verwandte Links
 
