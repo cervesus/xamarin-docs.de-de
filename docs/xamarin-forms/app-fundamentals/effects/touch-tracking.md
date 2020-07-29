@@ -10,12 +10,12 @@ ms.date: 12/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 892bffa4027a1a61d6c22cc26d1556fb007432d8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cc150ecffbf9b6b31ec2f533bcc33876100614dc
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136980"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936850"
 ---
 # <a name="invoking-events-from-effects"></a>Aufrufen von Ereignissen über Effekte
 
@@ -456,7 +456,7 @@ Die `Moved`-Logik verschiebt die `BoxView`, indem sie die angefügte `LayoutBoun
 
 Sie können mehrere `BoxView`-Elemente gleichzeitig mit mehreren Fingern verschieben.
 
-[![](touch-tracking-images/boxviewdragging-small.png "Triple screenshot of the BoxView Dragging page")](touch-tracking-images/boxviewdragging-large.png#lightbox "Triple screenshot of the BoxView Dragging page")
+[![Screenshot: Seite „BoxView Dragging“](touch-tracking-images/boxviewdragging-small.png)](touch-tracking-images/boxviewdragging-large.png#lightbox "Dreifacher Screenshot der Seite „BoxView Dragging“")
 
 ### <a name="subclassing-the-view"></a>Erstellen von Unterklassen für die Ansicht
 
@@ -519,7 +519,7 @@ Für die nächsten beiden Demos benötigen Sie Grafiken. Dafür wird hier SkiaSh
 
 Über die Seite **Ellipse Drawing** (Ellipse zeichnen) können Sie eine Ellipse zeichnen, indem Sie mit Ihrem Finger über den Bildschirm wischen. Je nachdem, wie Sie Ihren Finger bewegen, können Sie die Ellipse von oben links nach unten rechts oder von einer beliebigen Ecke bis hin zur gegenüberliegende Ecke zeichnen. Die Farbe und Deckkraft der Ellipse können beliebig ausgewählt werden.
 
-[![](touch-tracking-images/ellipsedrawing-small.png "Triple screenshot of the Ellipse Drawing page")](touch-tracking-images/ellipsedrawing-large.png#lightbox "Triple screenshot of the Ellipse Drawing page")
+[![Screenshot: Seite „Ellipse Drawing“](touch-tracking-images/ellipsedrawing-small.png)](touch-tracking-images/ellipsedrawing-large.png#lightbox "Dreifacher Screenshot der Seite „Ellipse Drawing“")
 
 Wenn Sie eine der Ellipsen berühren, können Sie sie an einen anderen Ort ziehen. Diese Technik wird als „hit-testing“ (Treffertest) bezeichnet und umfasst die Suche nach einem grafischen Objekt an einem bestimmten Punkt. Da es sich bei den SkiaSharp-Ellipsen nicht um Xamarin.Forms-Elemente handelt, können diese den `TouchEffect` nicht selbst verarbeiten. Der `TouchEffect` muss für das gesamte `SKCanvasView`-Objekt gelten.
 
@@ -691,7 +691,7 @@ case TouchActionType.Pressed:
 
 Das andere SkiaSharp-Beispiel stellt die Seite **Finger Paint** (Mit den Fingern malen) dar. Sie können über die beiden `Picker`-Ansichten eine Strichfarbe und -stärke auswählen und dann mit mindestens zwei Fingern zeichnen:
 
-[![](touch-tracking-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](touch-tracking-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
+[![Screenshot: Seite „Finger Paint“](touch-tracking-images/fingerpaint-small.png)](touch-tracking-images/fingerpaint-large.png#lightbox "Dreifacher Screenshot der Seite „Finger Paint“")
 
 Dieses Beispiel erfordert außerdem eine separate Klasse, um die einzelnen Linien darzustellen, die auf den Bildschirm gemalt werden:
 
@@ -799,7 +799,7 @@ Die Methoden `AddToList` und `RemoveFromList` überprüfen, ob sich die `List` v
 
 Die verschiedenen `WhiteKey`- und `BlackKey`-Elemente werden in der [XAML-Datei](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/SilentKeyboardPage.xaml) der Seite angeordnet, die am besten aussieht, wenn das Smartphone im Modus „Querformat“ verwendet wird:
 
-[![](touch-tracking-images/silentkeyboard-small.png "Triple screenshot of the Silent Keyboard page")](touch-tracking-images/silentkeyboard-large.png#lightbox "Triple screenshot of the Silent Keyboard page")
+[![Screenshot: Seite „Silent Keyboard“](touch-tracking-images/silentkeyboard-small.png)](touch-tracking-images/silentkeyboard-large.png#lightbox "Dreifacher Screenshot der Seite „Silent Keyboard“")
 
 Wenn Sie Ihren Finger über die Tasten gleiten lassen, sehen Sie anhand der minimalen Farbänderungen, dass die Touchereignisse von einer Taste zur nächsten weitergeleitet werden.
 

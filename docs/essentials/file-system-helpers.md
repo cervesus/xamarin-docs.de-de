@@ -9,12 +9,12 @@ ms.date: 11/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5fafc24d9c4bd35d4ef0010ae4530341316c878a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: eb35750372c5ccb878c7b38f9d25898b09fd7f1e
+ms.sourcegitcommit: e412858ce431b3280c88241e324fcab33066eb58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802365"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865896"
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Dateisystemhilfsprogramme
 
@@ -69,6 +69,9 @@ Fügen Sie eine beliebige Datei zum Ordner **Assets** im Android Projekt hinzu, 
 
 - **CacheDirectory**: Gibt das Verzeichnis [Library/Caches](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) zurück.
 - **AppDataDirectory**: Gibt das Verzeichnis [Library](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) zurück, das von iTunes und iCloud gesichert wird.
+
+> [!IMPORTANT]
+> Im iOS-Simulator wird die Anwendungs-ID (die Teil des Verzeichnisnamens ist) mit jedem Build geändert. Daher müssen Sie die jedes Mal die richtige ID abrufen, wenn Sie Ihre Anwendung für den Simulator erstellen.
 
 Fügen Sie eine beliebige Datei zum Ordner **Resources** im iOS-Projekt hinzu, und markieren Sie den Buildvorgang als **BundledResource**, um ihn mit `OpenAppPackageFileAsync` zu verwenden.
 

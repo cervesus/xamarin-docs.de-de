@@ -10,18 +10,18 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f71e0a67b823d92a17158a076707f606f6a4c73f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3558352c9f43b8e301492077806bbb611e9b58cf
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136109"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929310"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Einführung in Xamarin.Forms-Datenvorlagen
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
-_Mit Xamarin.Forms-Datenvorlagen können Sie die Darstellung von Daten in unterstützten Steuerelementen definieren. In diesem Artikel werden Datenvorlagen grundlegend vorgestellt, und es wird erläutert, warum sie nötig sind._
+_Xamarin.Forms-Datenvorlagen bieten die Möglichkeit, die Darstellung von Daten für unterstützte Steuerelemente zu definieren. In diesem Artikel werden Datenvorlagen grundlegend vorgestellt, und es wird erläutert, warum sie nötig sind._
 
 Nehmen wir an, Sie haben eine [`ListView`](xref:Xamarin.Forms.ListView)-Klasse, die eine Sammlung von `Person`-Objekten anzeigt. Das folgende Codebeispiel veranschaulicht die Definition der `Person`-Klasse:
 
@@ -93,7 +93,7 @@ public WithoutDataTemplatePageCS()
 
 Die [`ListView`](xref:Xamarin.Forms.ListView)-Klasse ruft beim Anzeigen der Sammlungsobjekte `ToString` auf. Da `Person.ToString` nicht außer Kraft gesetzt wird, wird für `ToString` der Typname jedes einzelnen Objekts zurückgegeben, wie in den folgenden Screenshots gezeigt:
 
-![](introduction-images/no-data-template.png "ListView without a Data Template")
+![ListView ohne Datenvorlage](introduction-images/no-data-template.png)
 
 Wie im folgenden Codebeispiel gezeigt, kann das Objekt `Person` die `ToString`-Methode überschreiben, damit aussagekräftige Daten angezeigt werden:
 
@@ -110,7 +110,7 @@ public class Person
 
 Wie im nachfolgenden Screenshot zu sehen, zeigt dadurch das Element [`ListView`](xref:Xamarin.Forms.ListView) für jedes Objekt in der Sammlung den Wert der Eigenschaft `Person.Name` an:
 
-![](introduction-images/override-tostring.png "ListView with a Data Template")
+![ListView mit einer Datenvorlage](introduction-images/override-tostring.png)
 
 Durch die Außerkraftsetzung von `Person.ToString` kann eine formatierte Zeichenfolge zurückgegeben werden, die aus den Eigenschaften `Name`, `Age` und `Location` besteht. So haben Sie jedoch nur wenig Kontrolle über die Darstellung der einzelnen Daten. Für mehr Flexibilität können Sie eine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)-Klasse erstellen, die die Darstellung der Daten definiert.
 

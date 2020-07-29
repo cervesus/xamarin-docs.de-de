@@ -10,12 +10,12 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 45b7d0d20c43aa22ebde3a17552f10ceea77a48b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5367d7933e70c59298faacff85c1d5f533bc0776
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139138"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929280"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin Hot Restart (Preview)
 
@@ -44,7 +44,7 @@ Mit Xamarin Hot Restart können Sie Änderungen an Ihrer App während der Entwic
 
 2. Wählen Sie **Lokales Gerät** in der Symbolleiste aus, und klicken Sie darauf, um den Setup-Assistenten zu starten:
 
-    [![](hot-restart-images/toolbar.png "Screenshot of the Visual Studio toolbar with local device set as the debug target.")](hot-restart-images/toolbar.png)
+    [![Screenshot: Visual Studio-Symbolleiste mit lokalem Gerät als Debugziel](hot-restart-images/toolbar.png)](hot-restart-images/toolbar.png)
 
 3. Wenn iTunes nicht installiert ist, klicken Sie auf **Download iTunes** (iTunes herunterladen), um den Installer herunterzuladen. Klicken Sie auf **Weiter**, wenn die iTunes-Installation fertiggestellt ist.
 
@@ -62,7 +62,7 @@ Nach der anfänglichen Einrichtung erscheint Ihr verbundenes Gerät im Dropdownm
 
 Sie können während des Debuggens Änderungen an Ihren Codedateien vornehmen und dann die Schaltfläche **Neu starten** in der Debugsymbolleiste drücken oder **STRG+Umschalt+F5** verwenden, um die Debugsitzung mit Ihren neuen Änderungen neu zu starten:
 
-[![](hot-restart-images/restart.png "Screenshot of the debug toolbar with the restart button highlighted.")](hot-restart-images/toolbar.png)
+[![Screenshot: Debugsymbolleiste mit der hervorgehobenen Schaltfläche „Neu starten“](hot-restart-images/restart.png)](hot-restart-images/toolbar.png)
 
 Sie können auch das Präprozessorsymbol `HOTRESTART` verwenden, um die Ausführung von bestimmtem Code beim Debuggen mit Xamarin Hot Restart zu verhindern.
 

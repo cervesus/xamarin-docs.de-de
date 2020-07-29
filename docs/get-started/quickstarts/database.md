@@ -12,12 +12,12 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a28e391c6bacd460f095c94e30b2d9433a5191e4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139801"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931793"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Speichern von Daten in einer lokalen SQLite.NET-Datenbank
 
@@ -30,8 +30,8 @@ In diesem Schnellstart lernen Sie, wie Sie:
 
 In diesem Schnellstart erfahren Sie, wie Sie Daten in einer lokalen SQLite.NET-Datenbank speichern. Die fertige Anwendung wird unten gezeigt:
 
-[![](database-images/screenshots1-sml.png "Notes Page")](database-images/screenshots1.png#lightbox "Notes Page")
-[![](database-images/screenshots2-sml.png "Note Entry Page")](database-images/screenshots2.png#lightbox "Note Entry Page")
+[![Notizenseite](database-images/screenshots1-sml.png)](database-images/screenshots1.png#lightbox "NotesPage")
+[![Notizeneintragsseite](database-images/screenshots2-sml.png)](database-images/screenshots2.png#lightbox "NoteEntryPage")
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -45,11 +45,11 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
 
 2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **Notizen** und anschließend auf **NuGet-Pakete verwalten...** :
 
-    ![](database-images/vs/add-nuget-packages.png "Add NuGet Packages")    
+    ![Hinzufügen von NuGet-Paketen](database-images/vs/add-nuget-packages.png)    
 
 3. Klicken Sie im **NuGet-Paket-Manager** auf die Registerkarte **Durchsuchen**, suchen Sie nach dem NuGet-Paket **sqlite-net-pcl**, wählen Sie es aus, und klicken Sie auf die Schaltfläche **Installieren**, um es dem Projekt hinzuzufügen:
 
-    ![](database-images/vs/add-package.png "Add Package")
+    ![Hinzufügen eines Pakets](database-images/vs/add-package.png)
 
     > [!NOTE]
     > Es gibt eine Reihe von NuGet-Paketen mit ähnlichen Namen. Das richtige Paket verfügt über die folgenden Attribute:
@@ -262,11 +262,11 @@ Sie sollten den [vorherigen Schnellstart](multi-page.md) erfolgreich abgeschloss
 
 2. Klicken Sie im **Lösungspad** mit der rechten Maustaste auf das Projekt **Notizen** und anschließend auf **Add > Add NuGet Packages...** (Hinzufügen > NuGet-Pakete hinzufügen...):
 
-    ![](database-images/vsmac/add-nuget-packages.png "Add NuGet Packages")    
+    ![Hinzufügen von NuGet-Paketen](database-images/vsmac/add-nuget-packages.png)    
 
 3. Suchen Sie im Fenster **Pakete hinzufügen** nach dem NuGet-Paket **sqlite-net-pcl**, wählen Sie es aus, und klicken Sie auf **Paket hinzufügen**, um es dem Projekt hinzuzufügen:
 
-    ![](database-images/vsmac/add-package.png "Add Package")
+    ![Hinzufügen eines Pakets](database-images/vsmac/add-package.png)
 
     > [!NOTE]
     > Es gibt eine Reihe von NuGet-Paketen mit ähnlichen Namen. Das richtige Paket verfügt über die folgenden Attribute:

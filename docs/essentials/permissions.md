@@ -9,12 +9,12 @@ ms.date: 01/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5de10511d73614570d6308b6f4deb7b4ca55549a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d594e627fed21c3c2a73770313fcae29695370c5
+ms.sourcegitcommit: a658de488a6da916145ed4aa016825565110e767
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802228"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86972557"
 ---
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials: Berechtigungen
 
@@ -148,7 +148,7 @@ public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permissi
 
 ## <a name="extending-permissions"></a>Erweitern von Berechtigungen
 
-Die Permissions-API wurde mit Blick auf Flexibilität und Erweiterbarkeit für Anwendungen entwickelt, die eine zusätzliche Überprüfung oder Berechtigungen erfordern, die nicht in Xamarin.Essentials enthalten sind. Erstellen Sie eine neue Klasse, die von `BasePermission` erbt, und implementieren Sie die erforderlichen abstrakten Methoden. Then
+Die Permissions-API wurde mit Blick auf Flexibilität und Erweiterbarkeit für Anwendungen entwickelt, die eine zusätzliche Überprüfung oder Berechtigungen erfordern, die nicht in Xamarin.Essentials enthalten sind. Erstellen Sie eine neue Klasse, die von `BasePermission` erbt, und implementieren Sie die erforderlichen abstrakten Methoden.
 
 ```csharp
 public class MyPermission : BasePermission
@@ -173,21 +173,10 @@ public class MyPermission : BasePermission
 }
 ```
 
-Bei Implementierung einer Berechtigung auf einer bestimmten Plattform kann die `BasePlatformPermission`-Klasse von dieser geerbt werden. Dies ermöglicht zusätzliche Plattformhilfsmethoden zur automatischen Überprüfung der Deklarationen. Dies kann beim Erstellen benutzerdefinierter Berechtigungen zum Vornehmen einer Gruppierung hilfreich sein. Beispielsweise können Sie mit der folgenden benutzerdefinierten Berechtigung Lese- und Schreibzugriff auf Speicher unter Android anfordern.
-
-Erstellen Sie in Ihrem Projekt eine neue Berechtigung, von der Sie Berechtigungen aufrufen.
+Bei Implementierung einer Berechtigung auf einer bestimmten Plattform kann die `BasePlatformPermission`-Klasse von dieser geerbt werden. Dies ermöglicht zusätzliche Plattformhilfsmethoden zur automatischen Überprüfung der Deklarationen. Dies kann beim Erstellen benutzerdefinierter Berechtigungen zum Vornehmen von Gruppierungen hilfreich sein. Beispielsweise können Sie mit der folgenden benutzerdefinierten Berechtigung Lese- und Schreibzugriff auf Speicher unter Android anfordern.
 
 ```csharp
-public partial class ReadWriteStoragePermission  : Xamarin.Essentials.Permissions.BasePlatformPermission
-{
-
-}
-```
-
-Erweitern Sie in Ihrem Android-Projekt die Berechtigung mit den Berechtigungen, die Sie anfordern möchten.
-
-```csharp
-public partial class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission
+public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission
 {
     public override (string androidPermission, bool isRuntime)[] RequiredPermissions => new List<(string androidPermission, bool isRuntime)>
     {
@@ -197,10 +186,49 @@ public partial class ReadWriteStoragePermission : Xamarin.Essentials.Permissions
 }
 ```
 
-Anschließend können Sie Ihre neue Berechtigung von der freigegebenen Logik abrufen.
+Anschließend können Sie Ihre neue Berechtigung über das Android-Projekt aufrufen.
 
 ```csharp
 await Permissions.RequestAsync<ReadWriteStoragePermission>();
+```
+
+Wenn Sie diese API über Ihren freigegebenen Code aufrufen möchten, könnten Sie eine Schnittstelle erstellen und einen [Abhängigkeitsdienst](https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/dependency-service/) verwenden, um die Implementierung zu registrieren und abzurufen.
+
+```csharp
+public interface IReadWritePermission
+{        
+    Task<PermissionStatus> CheckStatusAsync();
+    Task<PermissionStatus> RequestAsync();
+}
+```
+
+Implementieren Sie die Schnittstelle dann in Ihrem Plattformprojekt:
+
+```csharp
+public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission, IReadWritePermission
+{
+    public override (string androidPermission, bool isRuntime)[] RequiredPermissions => new List<(string androidPermission, bool isRuntime)>
+    {
+        (Android.Manifest.Permission.ReadExternalStorage, true),
+        (Android.Manifest.Permission.WriteExternalStorage, true)
+    }.ToArray();
+}
+```
+
+Anschließend können Sie die spezifische Implementierung registrieren:
+
+```csharp
+DependencyService.Register<IReadWritePermission, ReadWriteStoragePermission>();
+```
+Dann können Sie diese über Ihr freigegebenes Projekt auflösen und verwenden:
+
+```csharp
+var readWritePermission = DependencyService.Get<IReadWritePermission>();
+var status = await readWritePermission.CheckStatusAsync();
+if (status != PermissionStatus.Granted)
+{
+    status = await readWritePermission.RequestAsync();
+}
 ```
 
 ## <a name="platform-implementation-specifics"></a>Besonderheiten bei der plattformspezifischen Implementierung

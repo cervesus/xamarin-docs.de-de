@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms-Layout für Dual-Screen-Geräte" description: "In diesem Artikel wird beschrieben, wie Sie mit „TwoPaneView“ in Xamarin.Forms die Benutzeroberfläche Ihrer App für Dual-Screen-Geräte wie Surface Duo und Surface Neo optimieren."'
-description: 'ms.prod: xamarin ms.assetid: 17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3 ms.technology: xamarin-forms author: davidortinau ms.author: daortin ms.date: 02/08/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms-Layout für Dual-Screen-Geräte
+description: In diesem Artikel wird beschrieben, wie Sie mit „TwoPaneView“ in Xamarin.Forms die Benutzeroberfläche Ihrer App für Dual-Screen-Geräte wie Surface Duo und Surface Neo optimieren.
 ms.prod: xamarin
 ms.assetid: 17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3
 ms.technology: xamarin-forms
@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 28d4b3da44cc1a022b70c0de0720be747e047f9f
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: fb5474c7436cb985a1404b662fcf842f22cfdc0d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84138891"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937695"
 ---
-# <a name="xamarinforms-dual-screen-layout"></a>Xamarin.Forms-Layout für Dual-Screen-Geräte
+# <a name="xamarinforms-twopaneview-layout"></a>TwoPaneView-Layout von Xamarin.Forms
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![Vorabrelease der API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
@@ -27,24 +27,31 @@ Die `TwoPaneView`-Klasse stellt einen Container mit zwei Ansichten dar, die den 
 
 ## <a name="set-up-twopaneview"></a>Einrichten von TwoPaneView
 
-Die `TwoPaneView.Source`-Eigenschaft kann einen URI oder einen lokalen Dateipfad annehmen. Die Wiedergabe beginnt unmittelbar, nachdem das Medium geöffnet wurde:
+Führen Sie die folgenden Anweisungen aus, um ein Dual-Screen-Layout in Ihrer App zu erstellen:
 
-```xaml
-<ContentPage xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen">
-    <dualScreen:TwoPaneView>
-        <dualScreen:TwoPaneView.Pane1>
-            <StackLayout>
-                <Label Text="Pane1 Content" />
-            </StackLayout>
-        </dualScreen:TwoPaneView.Pane1>
-        <dualScreen:TwoPaneView.Pane2>
-            <StackLayout>
-                <Label Text="Pane2 Content" />
-            </StackLayout>
-        </dualScreen:TwoPaneView.Pane2>
-    </dualScreen:TwoPaneView>
-</ContentPage>
-```
+1. Befolgen Sie die Anweisungen zu den [ersten Schritten](index.md), um NuGet hinzuzufügen und die Android-Klasse `MainActivity` zu konfigurieren.
+1. Beginnen Sie mit einem einfachen `TwoPaneView`-Layout mithilfe des folgenden XAML-Codes:
+
+    ```xaml
+    <ContentPage 
+        xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen">
+        <dualScreen:TwoPaneView>
+            <dualScreen:TwoPaneView.Pane1>
+                <StackLayout>
+                    <Label Text="Pane1 Content" />
+                </StackLayout>
+            </dualScreen:TwoPaneView.Pane1>
+            <dualScreen:TwoPaneView.Pane2>
+                <StackLayout>
+                    <Label Text="Pane2 Content" />
+                </StackLayout>
+            </dualScreen:TwoPaneView.Pane2>
+        </dualScreen:TwoPaneView>
+    </ContentPage>
+    ```
+
+> [!TIP]
+> Im obigen XAML-Code werden viele allgemeine Attribute aus dem `ContentPage`-Element ausgelassen. Denken Sie daran, den `xmlns:dualScreen`-Namespace wie gezeigt zu deklarieren, wenn Sie ein `TwoPaneView`-Layout zu Ihrer App hinzufügen.
 
 ## <a name="understand-twopaneview-modes"></a>Grundlegendes zu den TwoPaneView-Modi
 

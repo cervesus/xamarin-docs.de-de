@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 3bcfb20d8283f621ac1d32730ee67be2b09efe50
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 28dddc35ac829cb58a40a9296bb995e119b5b6e3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303696"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937266"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Ausführliche Erläuterungen: Hallo, iOS Multiscreen
 
@@ -26,7 +26,7 @@ Außerdem wird der Navigationscontroller ausführlich beschrieben und seine Verw
 
 Im [Hallo, iOS](~/ios/get-started/hello-ios/index.md)-Tutorial wurde erklärt, dass iOS-Anwendungen nur ein *Fenster* besitzen und dass Ansichtscontroller dafür zuständig sind, ihre *Hierarchien der Inhaltsansicht* in dieses Fenster zu laden. In der zweiten exemplarischen Vorgehensweise zu Phoneword wurde der Anwendung ein zweiter Bildschirm hinzugefügt und Daten (eine Liste mit Telefonnummern) zwischen den beiden Bildschirmen übergeben. Dies wird im folgenden Diagramm veranschaulicht:
 
- [![](hello-ios-multiscreen-deepdive-images/08.png "This diagram illustrates passing data between two screens")](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
+ [![Diagramm zur Veranschaulichung der Übergabe von Daten zwischen zwei Bildschirmen](hello-ios-multiscreen-deepdive-images/08.png)](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
 
 Im Beispiel wurden Daten im ersten Bildschirm erfasst, anschließend vom ersten an den zweiten Ansichtscontroller übergeben und schließlich im zweiten Bildschirm angezeigt. Diese Trennung von Bildschirmen, Ansichtscontrollern und Daten folgt dem *MVC*-Muster. In den nächsten Abschnitten werden die Vorteile des Musters, seine Komponenten und seine Verwendung in der Phoneword-Anwendung beschrieben.
 
@@ -34,7 +34,7 @@ Im Beispiel wurden Daten im ersten Bildschirm erfasst, anschließend vom ersten 
 
 Model View Controller ist ein *Entwurfsmuster*, d.h. eine wiederverwendbare architektonische Lösung für ein häufiges Problem oder einen Anwendungsfall im Code. MVC stellt eine Architektur für Anwendungen mit einer *grafischen Benutzeroberfläche (GUI)* dar. Es weist Objekten in der Anwendung eine von drei Rollen zu: *Modell* (Daten- oder Anwendungslogik), *Ansicht* (Benutzeroberfläche) und *Controller* (CodeBehind). Das folgende Diagramm veranschaulicht die Beziehungen zwischen den drei Bestandteilen des MVC-Musters und dem Benutzer:
 
- [![](hello-ios-multiscreen-deepdive-images/00.png "This diagram illustrates the relationships between the three pieces of the MVC pattern and the user")](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
+ [![Diagramm zur Veranschaulichung der Beziehungen zwischen den drei Bestandteilen des MVC-Musters und dem Benutzer](hello-ios-multiscreen-deepdive-images/00.png)](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
 
 Das MVC-Muster ist hilfreich, da es die verschiedenen Teile einer GUI-Anwendung logisch trennt und die Wiederverwendung von Codes und Ansichten vereinfacht. Nachfolgend werden die drei Rollen ausführlicher betrachtet.
 
@@ -68,13 +68,13 @@ In der Phoneword-Anwendung wurde ein Navigationscontroller zur Verwaltung der Na
 
 Der Navigationscontroller wird häufig in iOS-Anwendungen verwendet und stellt die Navigation für wesentliche iOS-Anwendungen bereit, wie z.B. für die App **Einstellungen**. Dies wird im folgenden Screenshot veranschaulicht:
 
- [![](hello-ios-multiscreen-deepdive-images/01.png "The navigation controller provides navigation for iOS applications like the Settings app shown here")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
+ [![Der Navigationscontroller stellt die Navigation für iOS-Anwendungen wie die hier angezeigte App „Einstellungen“ bereit](hello-ios-multiscreen-deepdive-images/01.png)](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
 
 Der Navigationscontroller erfüllt drei Hauptaufgaben:
 
 - **Bereitstellen von Hooks für die Vorwärtsnavigation**: Der Navigationscontroller verwendet eine hierarchische Navigationsmetapher, bei der die Hierarchien der Inhaltsansicht auf einen *Navigationsstapel* *gepusht* werden. Ein Navigationsstapel ähnelt einem Kartenstapel, von dem nur die oberste Karte, wie im folgenden Diagramm veranschaulicht, sichtbar ist:  
 
-    [![](hello-ios-multiscreen-deepdive-images/02.png "This diagram illustrates navigation as a stack of cards")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
+    [![Diagramm zur Veranschaulichung der Navigation als Kartenstapel](hello-ios-multiscreen-deepdive-images/02.png)](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 - **Bereitstellen einer optionalen Zurück-Schaltfläche**: Wird ein neues Element auf dem Navigationsstapel abgelegt, wird in der Titelleiste automatisch eine *Zurück-Schaltfläche* angezeigt, mit der der Benutzer rückwärts navigieren kann. Durch Drücken der Schaltfläche „Zurück“ wird der aktuelle Ansichtscontroller vom Navigationsstapel *per Pop entfernt*, und es wird die vorherige Hierarchie der Inhaltsansicht im Fenster geladen:  
 
@@ -82,18 +82,18 @@ Der Navigationscontroller erfüllt drei Hauptaufgaben:
 
 - **Bereitstellen einer Titelleiste**: Der obere Teil des Navigationscontrollers wird *Titelleiste* genannt. Sie zeigt, wie im folgenden Diagramm dargestellt, den Titel des Ansichtscontroller an:  
 
-    [![](hello-ios-multiscreen-deepdive-images/04.png "The Title Bar is responsible for displaying the view controller title")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
+    [![Titel des Ansichtscontrollers in der Titelleiste](hello-ios-multiscreen-deepdive-images/04.png)](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
 ### <a name="root-view-controller"></a>Stammansichtscontroller
 
 Da ein Navigationscontroller keine Hierarchien der Inhaltsansicht verwaltet, kann er keine eigenen Inhalte anzeigen.
 Stattdessen wird ein Navigationscontroller einem *Stammansichtscontroller* zugeordnet:
 
- [![](hello-ios-multiscreen-deepdive-images/05.png "A navigation controller is paired with a Root view controller")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
+ [![Zuordnung eines Navigationscontrollers zu einem Stammansichtscontroller](hello-ios-multiscreen-deepdive-images/05.png)](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
 Der Stammansichtscontroller stellt den ersten Ansichtscontroller im Stapel des Navigationscontrollers dar. Die Hierarchie der Inhaltsansicht des Stammansichtscontrollers ist die erste Hierarchie der Inhaltsansicht, die im Fenster geladen wird. Wenn die vollständige Anwendung auf dem Stapel des Navigationscontrollers abgelegt werden soll, können Sie, wie schon zuvor in der Phoneword-Anwendung, den Sourceless Segue zum Navigationscontroller verschieben und den Ansichtscontroller des ersten Bildschirms als Stammansichtscontroller festlegen:
 
- [![](hello-ios-multiscreen-deepdive-images/06.png "The Sourceless Segue sets the first screens view controller as the Root view controller")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
+ [![„Sourceless Segue“ legt den Ansichtscontroller des ersten Bildschirms als Stammansichtscontroller fest](hello-ios-multiscreen-deepdive-images/06.png)](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
 
 ### <a name="additional-navigation-options"></a>Zusätzliche Navigationsoptionen
 
@@ -107,7 +107,7 @@ In der exemplarischen Vorgehensweise zu Phoneword wurde der Übergang zwischen z
 
 Durch das Hinzufügen eines Segues mit einer **Anzeigen**-Aktion zum Storyboard wird iOS angewiesen, den zweiten Ansichtscontroller auf den Stapel des Navigationscontrollers zu pushen:
 
- [![](hello-ios-multiscreen-deepdive-images/09.png "Setting the segue type from a dropdown list")](hello-ios-multiscreen-deepdive-images/09.png#lightbox)
+ [![Festlegen des Segue-Typs über eine Dropdownliste](hello-ios-multiscreen-deepdive-images/09.png)](hello-ios-multiscreen-deepdive-images/09.png#lightbox)
 
 Für einen einfachen Übergang zwischen zwei Bildschirmen ist das Hinzufügen eines Segues zum Storyboard ausreichend. Wenn Daten zwischen Ansichtscontrollern übergeben werden sollen, müssen Sie die `PrepareForSegue`-Methode außer Kraft setzen und die Daten selbst verarbeiten:
 

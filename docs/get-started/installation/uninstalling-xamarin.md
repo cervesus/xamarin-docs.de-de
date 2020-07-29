@@ -9,12 +9,12 @@ ms.date: 01/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4d644591ab85f185709e7bd53353580a6578d77
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1eae29e8531c9d401630f9d113b01eb3c2510689
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570109"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939164"
 ---
 # <a name="uninstall-xamarin-from-visual-studio"></a>Deinstallieren von Xamarin in Visual Studio
 
@@ -30,25 +30,25 @@ Xamarin kann mithilfe der Installer-App in Visual Studio 2017 und 2019 deinstal
 
 2. Klicken Sie auf die Schaltfläche **Ändern**, um die gewünschte Instanz zu ändern.
 
-    [![](uninstalling-xamarin-images/vs2017-02-sml.png "Press the modify button")](uninstalling-xamarin-images/vs2017-02.png#lightbox)
+    [![Klicken der Schaltfläche „Ändern“](uninstalling-xamarin-images/vs2017-02-sml.png)](uninstalling-xamarin-images/vs2017-02.png#lightbox)
 
 3. Heben Sie auf der Registerkarte **Workloads** im Abschnitt **Mobil und Gaming** die Auswahl für **Mobile-Entwicklung mit .NET** auf.
 
-    [![](uninstalling-xamarin-images/vs2017-03-sml.png "Uncheck the Mobile Development workload")](uninstalling-xamarin-images/vs2017-03.png#lightbox)
+    [![Deaktivieren der Workload „Mobile Entwicklung“](uninstalling-xamarin-images/vs2017-03-sml.png)](uninstalling-xamarin-images/vs2017-03.png#lightbox)
 
 4. Klicken Sie unten rechts im Fenster auf die Schaltfläche **Ändern**.
 
 5. Der Installer entfernt nun die Komponenten, für die die Auswahl aufgehoben wurde. Beachten Sie,dass Visual Studio 2017 geschlossen werden muss, bevor der Installer Änderungen vornehmen kann.
 
-    [![](uninstalling-xamarin-images/vs2017-04-sml.png "Press the Modify button")](uninstalling-xamarin-images/vs2017-04.png#lightbox)
+    [![Klicken der Schaltfläche „Ändern“](uninstalling-xamarin-images/vs2017-04-sml.png)](uninstalling-xamarin-images/vs2017-04.png#lightbox)
 
 Sie können einzelne Xamarin-Komponenten wie den Profiler oder Workbooks deinstallieren, indem Sie zur Registerkarte **Einzelne Komponenten** aus Schritt 3 wechseln und die Auswahl für bestimmte Komponenten aufheben:
 
-[![](uninstalling-xamarin-images/vs2017-components-sml.png "Uninstall individual components")](uninstalling-xamarin-images/vs2017-components.png#lightbox)
+[![Deinstallieren einzelner Komponenten](uninstalling-xamarin-images/vs2017-components-sml.png)](uninstalling-xamarin-images/vs2017-components.png#lightbox)
 
 Wählen Sie zur vollständigen Deinstallation von Visual Studio 2017 die Option **Deinstallieren** aus dem Hamburgermenü neben der Schaltfläche **Starten**.
 
-[![](uninstalling-xamarin-images/vs2017-uninstall-sml.png "Uninstall Visual Studio completely")](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
+[![Vollständiges Deinstallieren von Visual Studio](uninstalling-xamarin-images/vs2017-uninstall-sml.png)](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
 
 > [!IMPORTANT]
 > Wenn mindestens zwei Instanzen von Visual Studio – z.B. eine Release- und eine Vorschauversion – parallel installiert sind (SxS), kann das Deinstallieren einer Instanz dazu führen, dass einige Xamarin-Funktionen aus anderen Visual Studio-Instanzen entfernt werden. Zu diesen Funktionen zählen:
@@ -70,7 +70,7 @@ Um Visual Studio 2015 vollständig zu deinstallieren, verwenden Sie [die Support
 
 Sie können Xamarin auf einem Windows-Computer über die **Systemsteuerung** deinstallieren. Navigieren Sie zu **Programme und Funktionen** oder **Programme > Programm deinstallieren** wie unten gezeigt:
 
- [![](uninstalling-xamarin-images/image3.png "Navigate to Programs and Features or Programs  Uninstall a Program as illustrated here")](uninstalling-xamarin-images/image3.png#lightbox)
+ [![Navigation zu „Programme und Funktionen“ oder „Programme > Programm deinstallieren“](uninstalling-xamarin-images/image3.png)](uninstalling-xamarin-images/image3.png#lightbox)
 
 Deinstallieren Sie in der Systemsteuerung jedes der folgenden Elemente, sofern es vorhanden ist:
 

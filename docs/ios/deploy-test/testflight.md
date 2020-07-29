@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 86b887b7aa913572d5fb6093fe682cd2933b282e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f020219f28ce9389c3f8d5157ddfddc32af07f0f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573182"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939970"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>Verwenden von TestFlight zum Verteilen von Xamarin.iOS-Apps
 
@@ -41,7 +41,7 @@ Sie müssen ein *App Store-Verteilungsprofil* mit der neuen Betaberechtigung ers
 
 Sie können prüfen, ob das Verteilungsprofil die Beta-Berechtigung enthält wenn Sie [Ihren erstellten Xcode überprüfen](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md), wie unten gezeigt:
 
-[![](testflight-images/validate-build.png "Submitting the App to Apple")](testflight-images/validate-build.png#lightbox)
+[![Übermitteln der App an Apple](testflight-images/validate-build.png)](testflight-images/validate-build.png#lightbox)
 
 ## <a name="testflight-workflow"></a>TestFlight-Workflow
 
@@ -63,7 +63,7 @@ Der folgende Workflow beschreibt die erforderlichen Schritte zum Starten der Ver
 1. Melden Sie sich im [iTunes Connect Portal](https://itunesconnect.apple.com/) mithilfe Ihrer Apple-Entwickler-Anmeldeinformationen an.
 2. Wählen Sie **Meine Apps** aus:
 
-    [![](testflight-images/my-apps.png "Select My Apps")](testflight-images/my-apps.png#lightbox)
+    [![Auswählen von „Meine Apps“](testflight-images/my-apps.png)](testflight-images/my-apps.png#lightbox)
 
 3. Auf dem **Meine Apps**-Bildschirm, klicken Sie auf die **+** -Schaltfläche in der linken oberen Ecke des Bildschirms, um eine neue App hinzuzufügen. Wenn Sie Mac- und iOS-Entwicklerkonten besitzen, werden Sie aufgefordert, hier den neuen App-Typ auszuwählen.
 
@@ -75,8 +75,8 @@ Weitere Informationen zum Erstellen eines neuen iTunes Connect-Datensatzes finde
 
 Das Formular sollte genau die gleichen Informationen in der„Info.plist“-Datei Ihrer App wiedergeben, wie unten gezeigt:
 
-[![](testflight-images/infoplist.png "The app's Info.plist")](testflight-images/infoplist.png#lightbox)
-[![](testflight-images/newiosapp.png "The form on iTunes Connect")](testflight-images/newiosapp.png#lightbox)
+[![](testflight-images/infoplist.png "„Info.plist“-Datei der App")](testflight-images/infoplist.png#lightbox)
+[![Formular in iTunes Connect](testflight-images/newiosapp.png)](testflight-images/newiosapp.png#lightbox)
 
 - **Name**: Der beschreibende Name, der beim Einrichten des App Bundles verwendet wird. Diese Angabe muss genau mit dem **Anwendungsnamen**-Eintrag in Ihrer `Info.plist` übereinstimmen.
 - **Primary Language** (Primäre Sprache): Die Basissprache, die innerhalb der App verwendet wird. Dies ist normalerweise irgendeine von Ihnen gesprochene Sprache.
@@ -99,7 +99,7 @@ Erstellen Sie zuerst Ihren [endgültigen verteilbaren Code](~/ios/deploy-test/ap
 
  Um eine Binärdatei in Visual Studio für Mac zu erstellen, müssen Sie die _Archiv_-Funktion verwenden. Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie **Archive for Publishing** (Archivieren für die Veröffentlichung) aus, wie unten gezeigt:
 
- [![](testflight-images/new-archive.png "Select Archive for Publishing")](testflight-images/new-archive.png#lightbox)
+ [![Auswählen von „Zur Veröffentlichung archivieren“](testflight-images/new-archive.png)](testflight-images/new-archive.png#lightbox)
 
  Weitere Informationen finden Sie im Handbuch [Building the Distributable (Erstellen des Verteilbaren Codes)](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md).
 
@@ -107,11 +107,11 @@ Erstellen Sie zuerst Ihren [endgültigen verteilbaren Code](~/ios/deploy-test/ap
 
  Beim Erstellen Ihres Archivs wird automatisch die **Archivansicht** geöffnet, in der alle archivierten Projekte, gegliedert nach Projektmappe, angezeigt werden. Wählen Sie zum Signieren Ihrer App, und um diese für die Verteilung vorzubereiten **Anmelden und Verteilen...** , wie unten gezeigt:
 
-[![](testflight-images/archive-view.png "Creating an archive will automatically open the Archives View")](testflight-images/archive-view.png#lightbox)
+[![Beim Erstellen eines Archivs öffnet sich automatisch die Ansicht „Archive“](testflight-images/archive-view.png)](testflight-images/archive-view.png#lightbox)
 
  Dadurch wird der Veröffentlichungs-Assistent geöffnet. Wählen Sie den Verteilungskanal **App Store** aus, um ein Paket zu erstellen, und öffnen Sie den Application Loader: Wählen Sie auf der Seite „Bereitstellungsprofil“ Ihre Signierungsidentität sowie das entsprechende Bereitstellungsprofil aus, oder signieren Sie mit einer anderen Identität erneut. Überprüfen Sie die Details Ihres Pakets, und klicken Sie zum Speichern Ihrer `.ipa`auf **Veröffentlichen**.
 
-[![](testflight-images/group.png "Select your signing identity and provisioning profile, or re-sign with another identity")](testflight-images/group.png#lightbox)
+[![Auswählen Ihrer Signierungsidentität und Ihres Bereitstellungsprofils oder erneute Signierung mit einer anderen Identität](testflight-images/group.png)](testflight-images/group.png#lightbox)
 
  Lesen Sie den Abschnitt [Submitting your App to Apple (Übermitteln der App an Apple)](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md), um weitere Informationen zu diesen Schritten zu erhalten.
 
@@ -149,11 +149,11 @@ Nachdem Sie zum **Meine Apps**-Abschnitt von iTunes Connect zurückgekehrt sind,
 
 Navigieren Sie zum Einstieg in TestFlight zur **Vorabversion**-Registerkarte in Ihrer App. Drei Registerkarten sollten angezeigt werden, mit einer Liste von Builds, Internen Testern und externen Testern, wie unten gezeigt:
 
-[![](testflight-images/app-uploaded.png "Builds, Internal Testers, and External Testers tabs")](testflight-images/app-uploaded.png#lightbox)
+[![Registerkarten „Builds“, „Interne Tester“ und „Externe Tester“](testflight-images/app-uploaded.png)](testflight-images/app-uploaded.png#lightbox)
 
 Um Metadaten zu Ihrer App hinzuzufügen, klicken Sie auf die Buildnummer und anschließend auf TestFlight:
 
-[![](testflight-images/metadata.png "Add Metadata")](testflight-images/metadata.png#lightbox)
+[![Hinzufügen von Metadaten](testflight-images/metadata.png)](testflight-images/metadata.png#lightbox)
 
 Unter **Test Information (Testinformationen)** können Sie wichtige Informationen über Ihre App für Tester bereitstellen, wie z.B.:
 
@@ -171,11 +171,11 @@ Beachten Sie, dass diese Metadaten **nicht** für interne Tester erforderlich si
 
 Wenn Sie bereit sind mit dem Testen Ihrer App zu beginnen, schalten Sie den **TestFlight Beta-Test** für Ihre Version ein:
 
-[![](testflight-images/turn-on-testing.png "Turn on the TestFlight Beta Testing switch")](testflight-images/turn-on-testing.png#lightbox)
+[![Aktivieren der Option für TestFlight-Betatests](testflight-images/turn-on-testing.png)](testflight-images/turn-on-testing.png#lightbox)
 
 Jeder Build ist **60 Tage** vom Zeitpunkt, ab dem Sie den TestFlight Beta Switch eingeschaltet haben, aktiv. Sehen Sie die verbleibenden Tage für jeden Build auf der Seite **Test Information** (Testinformationen):
 
-[![](testflight-images/daysleft.png "The Test Information page")](testflight-images/daysleft.png#lightbox)
+[![Seite „Testinformationen“](testflight-images/daysleft.png)](testflight-images/daysleft.png#lightbox)
 
 Das Testen kann jedoch jederzeit deaktiviert werden.
 
@@ -191,25 +191,25 @@ Jeder Build kann für maximal 25 Mitglieder freigegeben werden.
 
 Navigieren Sie zum Hinzufügen von Testern zu **Benutzer und Rollen** auf dem iTunes Connect-Hauptbildschirm:
 
-[![](testflight-images/users-and-roles.png "Users and Roles on the main iTunes Connect screen")](testflight-images/users-and-roles.png#lightbox)
+[![Benutzer und Rollen auf dem iTunes Connect-Hauptbildschirm](testflight-images/users-and-roles.png)](testflight-images/users-and-roles.png#lightbox)
 
 Vorhandene iTunes Connect-Benutzer werden in der Liste angezeigt. Um diese auszuwählen, klicken Sie auf ihren Namen, aktivieren Sie den Switch **Internen Tester**, und klicken Sie auf **Speichern**:
 
-[![](testflight-images/internal-tester.png "Turn on the Internal Tester switch")](testflight-images/internal-tester.png#lightbox)
+[![Aktivieren der Option „Interner Tester“](testflight-images/internal-tester.png)](testflight-images/internal-tester.png#lightbox)
 
 Um einen Benutzer hinzuzufügen, der nicht auf der Liste ist, wählen Sie die **+** -Schaltfläche neben den *Benutzern* aus, und geben Sie einen Vornamen, Nachnamen und eine E-Mail-Adresse zum Erstellen eines Kontos an. Die Benutzer müssen ihre E-Mail zur Aktivierung des Kontos bestätigen:
 
-[![](testflight-images/add-new-user.png "Adding a user")](testflight-images/add-new-user.png#lightbox)
+[![Hinzufügen eines Benutzers](testflight-images/add-new-user.png)](testflight-images/add-new-user.png#lightbox)
 
 Wenn Sie zu **Meine Apps > Vorabversion > Interne Tester** zurückkehren, sehen Sie jetzt die Benutzer, die für TestFlight Interne Beta-Tests hinzugefügt wurden:
 
-[![](testflight-images/select-users.png "A list of users that have been added for TestFlight Internal beta testing")](testflight-images/select-users.png#lightbox)
+[![Eine Liste der Benutzer, die zu internen TestFlight-Betatests hinzugefügt wurden](testflight-images/select-users.png)](testflight-images/select-users.png#lightbox)
 
 Sie können diese Tester einladen, indem Sie ihren Namen auswählen und auf die **Einladen**-Schaltfläche klicken. Sie erhalten eine E-Mail mit einer Einladung zum Testen Ihrer App.
 
 Sie können den Status ihrer Einladung in der Statusspalte der Internen Tester Seite finden:
 
-[![](testflight-images/status-added.png "The invitation status")](testflight-images/status-added.png#lightbox)
+[![Einladungsstatus](testflight-images/status-added.png)](testflight-images/status-added.png#lightbox)
 
 ### <a name="external-testers"></a>Externe Tester
 
@@ -217,13 +217,13 @@ Bevor Sie Externe Tester zum Beta-Test Ihrer App einladen, muss diese eine Beta-
 
 Um die App zur Prüfung zu übermitteln, klicken Sie auf den Text **Submit For Beta App Review (Zur Beta-App-Prüfung übermitteln)** neben dem Build, wie in der folgenden Abbildung gezeigt:
 
-[![](testflight-images/beta-app-review.png "Submit For Beta App Review")](testflight-images/beta-app-review.png#lightbox)
+[![„Submit For Beta App Review“ (Zur Prüfung der Beta-App übermitteln)](testflight-images/beta-app-review.png)](testflight-images/beta-app-review.png#lightbox)
 
 Damit Ihre App die Prüfung besteht, müssen Sie alle erforderlichen Metadaten auf der TestFlight Beta-Informationsseite eingeben.
 
 Sie können jetzt beginnen, Einladungen vorzubereiten und über die Registerkarte „Externe Tester“ bis zu 2000 externe Tester durch Eingabe ihrer E-Mail-Adresse, ihres Vornamens und Nachnamens hinzuzufügen, wie im folgenden Screenshot dargestellt. Die eingegebene E-Mail-Adresse muss nicht ihre Apple-ID sein. Dies ist nur die E-Mail-Adresse, an welche die Einladung geschickt wird.
 
-[![](testflight-images/add-external.png "Invite testers")](testflight-images/add-external.png#lightbox)
+[![Einladen von Testern](testflight-images/add-external.png)](testflight-images/add-external.png#lightbox)
 
 Wenn Sie eine große Anzahl von externen Testern haben, können Sie den **Importdatei**-Link zum Importieren einer `CSV`-Datei verwenden, mit dem folgenden Format pro Zeile:
 
@@ -235,7 +235,7 @@ Sie können auch externe Tester zu verschiedenen Gruppen hinzufügen, um Ihre Te
 
 Wenn Sie die Details der externen Tester eingegeben haben, klicken Sie auf **Hinzufügen**, und vergewissern Sie sich, dass die Benutzer der Einladung zugestimmt haben:
 
-[![](testflight-images/confirm-consent.png "Confirm you have the users consent to invite them")](testflight-images/confirm-consent.png#lightbox)
+[![Bestätigen der Zustimmung der Benutzer zur Einladung](testflight-images/confirm-consent.png)](testflight-images/confirm-consent.png#lightbox)
 
 Nur nach erfolgreicher Prüfung der Beta-App werden Sie Einladungen an externe Tester senden können. An diesem Punkt wird der Text unter **Extern** auf der Build-Seite in **Einladungen senden** geändert. Klicken Sie auf diese Option, um Einladungen an alle Tester zu senden, die Sie bereits hinzugefügt haben.
 
@@ -245,13 +245,13 @@ Wenn Ihre App abgelehnt wurde, müssen Sie die im **Resolution Center** angezeig
 
 Nachdem Sie Ihre Tester eingeladen haben, erhalten sie eine E-Mail, ähnlich wie im folgenden Screenshot:
 
-[![](testflight-images/tester-email.png "An example invite email")](testflight-images/tester-email.png#lightbox)
+[![Beispiel einer E-Mail-Einladung](testflight-images/tester-email.png)](testflight-images/tester-email.png#lightbox)
 
 Sobald sie auf die **Öffnen in TestFlight**-Schaltfläche klicken, wird Ihre App in der TestFlight-Anwendung geöffnet, oder, wenn sie noch nicht heruntergeladen wurde, verweist sie direkt an den App Store und ermöglicht es ihnen, sie herunterzuladen.
 
 Wird Ihre App in TestFlight geöffnet, zeigt sie Details zum Test an und fordert die Tester auf, Ihre Anwendung auf ihrem iOS 8.0-Gerät (oder höher) zu installieren:
 
-[![](testflight-images/install-app.png "TestFlight will show details of what to test for")](testflight-images/install-app.png#lightbox)
+[![Details zu den Tests in TestFlight](testflight-images/install-app.png)](testflight-images/install-app.png#lightbox)
 
 Test-Builds werden auf der Startseite des Geräts durch einen orangefarbenen Punkt vor dem Namen der Anwendung angezeigt.
 
@@ -261,7 +261,7 @@ Tester können Ihr Feedback über die TestFlight-App übermitteln, und Sie werde
 
 Sobald die Beta-Tests abgeschlossen sind, können Sie jetzt Ihre App zur App Store-Review von Apple übermitteln. Dieser Prozess ist in iTunes Connect sehr unkompliziert. Klicken Sie auf die Schaltfläche **Zur Prüfung übermitteln**, wie unten gezeigt:
 
-[![](testflight-images/submit-for-review.png "Click the Submit for Review button")](testflight-images/submit-for-review.png#lightbox)
+[![Klicken der Schaltfläche „Zur Überprüfung übermitteln“](testflight-images/submit-for-review.png)](testflight-images/submit-for-review.png#lightbox)
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: 2a9260bc782d2b19e6fd74356738276e1648dcf2
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 93336f5a741cf9643288163f2bf1d8ef44ea52d2
+ms.sourcegitcommit: d42dadc6da584953865b1adb616489d91a7b25d0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104345"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86473436"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Hardwarebeschleunigung für verbesserte Leistung des Emulators (Hyper-V und HAXM)
 
@@ -49,7 +49,7 @@ Für die beste Benutzererfahrung unter Windows empfiehlt es sich, WHPX zum Besch
 - Der Emulator führt ein Systemimage aus, das für ein **x86**-basiertes virtuelles Gerät erstellt wurde.
 
 > [!IMPORTANT]
-> Sie können einen Emulator mit VM-Beschleunigung nicht innerhalb einer anderen VM ausführen, z.B. einer VM, die von VirtualBox, VMware oder Docker gehostet wird. Sie müssen den Android-Emulator [direkt auf Ihrer Systemhardware](https://developer.android.com/studio/run/emulator-acceleration.html#extensions) ausführen.
+> Sie können einen Emulator mit VM-Beschleunigung nicht innerhalb einer anderen VM ausführen, z. B. einer VM, die von VirtualBox, VMware oder Docker gehostet wird. Sie müssen den Android-Emulator [direkt auf Ihrer Systemhardware](https://developer.android.com/studio/run/emulator-acceleration.html#extensions) ausführen.
 
 Weitere Informationen zum Starten und Debuggen von Apps mit dem Android-Emulator finden Sie unter [Debuggen auf dem Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md).
 
@@ -177,7 +177,7 @@ Es empfiehlt sich, das Hypervisor-Framework zum Beschleunigen des Android-Emulat
 
 > [!IMPORTANT]
 >
-> Sie können einen Emulator mit VM-Beschleunigung nicht innerhalb einer anderen VM ausführen, z.B. einer VM, die von VirtualBox, VMware oder Docker gehostet wird. Sie müssen den Android-Emulator [direkt auf Ihrer Systemhardware](https://developer.android.com/studio/run/emulator-acceleration.html#extensions) ausführen.
+> Sie können einen Emulator mit VM-Beschleunigung nicht innerhalb einer anderen VM ausführen, z. B. einer VM, die von VirtualBox, VMware oder Docker gehostet wird. Sie müssen den Android-Emulator [direkt auf Ihrer Systemhardware](https://developer.android.com/studio/run/emulator-acceleration.html#extensions) ausführen.
 
 Weitere Informationen zum Starten und Debuggen von Apps mit dem Android-Emulator finden Sie unter [Debuggen auf dem Android-Emulator](~/android/deploy-test/debugging/debug-on-emulator.md).
 

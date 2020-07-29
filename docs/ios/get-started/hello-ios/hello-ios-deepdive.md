@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 5fadd1ba556b15cb92134471f007e41f04fce69e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 60c62bf4d2887cec3d68d44e7d384daae35c066f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303684"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929042"
 ---
 # <a name="hello-ios--deep-dive"></a>Hallo, iOS – Ausführliche Erläuterungen
 
@@ -30,7 +30,7 @@ Visual Studio für Mac ist eine kostenlose Open Source-IDE, die Funktionen von V
 
 Die Codeorganisation in Visual Studio für Mac baut auf Visual Studio auf und gliedert sich in *Projektmappen* und *Projekte*. Eine Projektmappe ist ein Container, der mindestens ein Projekt enthält. Ein Projekt kann beispielsweise eine Anwendung (z.B. für iOS oder Android), eine unterstützende Bibliothek oder eine Testanwendung sein. In der Phoneword-App wurde ein neues iPhone-Projekt mithilfe der Vorlage **Einzelansichtsanwendung** hinzugefügt. Die ursprüngliche Projektmappe sah folgendermaßen aus:
 
-![](hello-ios-deepdive-images/image30.png "A screenshot of the initial solution")
+![Screenshot der ursprünglichen Projektmappe](hello-ios-deepdive-images/image30.png)
 
 ::: zone-end
 ::: zone pivot="windows"
@@ -41,7 +41,7 @@ Visual Studio ist eine leistungsstarke IDE von Microsoft. Sie enthält z.B. eine
 
 Visual Studio organisiert Code in Projektmappen und Projekten. Eine Projektmappe ist ein Container, der mindestens ein Projekt enthält. Ein Projekt kann beispielsweise eine Anwendung (z.B. für iOS oder Android), eine unterstützende Bibliothek oder eine Testanwendung sein. In der Phoneword-App wurde ein neues iPhone-Projekt mithilfe der Vorlage **Einzelansichtsanwendung** hinzugefügt. Die ursprüngliche Projektmappe sah folgendermaßen aus:
 
-![](hello-ios-deepdive-images/vs-image30.png "A screenshot of the initial solution")
+![Screenshot der ursprünglichen Projektmappe](hello-ios-deepdive-images/vs-image30.png)
 
 ::: zone-end
 
@@ -51,14 +51,14 @@ Visual Studio organisiert Code in Projektmappen und Projekten. Eine Projektmappe
 
 Links sehen Sie den **Lösungspad**, der die Verzeichnisstruktur und alle Dateien enthält, die der Projektmappe zugeordnet sind:
 
-![](hello-ios-deepdive-images/image31.png "The solution Pad, which contains the directory structure and all the files associated with the solution")
+![Der Lösungspad, der die Verzeichnisstruktur und alle Dateien enthält, die der Projektmappe zugeordnet sind](hello-ios-deepdive-images/image31.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
 Rechts sehen Sie den **Projektmappenbereich**, der die Verzeichnisstruktur und alle Dateien enthält, die der Projektmappe zugeordnet sind:
 
-![](hello-ios-deepdive-images/vs-image31.png "The solution Pane, which contains the directory structure and all the files associated with the solution")
+![Der Projektmappenbereich, der die Verzeichnisstruktur und alle Dateien enthält, die der Projektmappe zugeordnet sind](hello-ios-deepdive-images/vs-image31.png)
 
 ::: zone-end
 
@@ -81,7 +81,7 @@ Bevor eine iOS-Anwendung eine neue Benutzeroberfläche laden kann, müssen zwei 
 
 In diesem Abschnitt werden die in der folgenden Abbildung dargestellten Beziehungen behandelt:
 
-[![](hello-ios-deepdive-images/image32.png "The Architecture and App Fundamentals relationships are illustrated in this diagram")](hello-ios-deepdive-images/image32.png#lightbox)
+[![Diagramm zu den Beziehungen der Architektur- und App-Grundlagen](hello-ios-deepdive-images/image32.png)](hello-ios-deepdive-images/image32.png#lightbox)
 
 ### <a name="main-method"></a>Main-Methode
 
@@ -146,28 +146,28 @@ Der iOS-Designer ist ein visuelles Tool zum Erstellen von Benutzeroberflächen i
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image33.png "iOS Designer Interface")
+![Schnittstelle des iOS-Designers](hello-ios-deepdive-images/image33.png)
 
 Ein *Storyboard* ist eine Datei, die visuelle Entwürfe der Bildschirme unserer Anwendung sowie Übergänge und Beziehungen zwischen den Bildschirmen enthält. Die Darstellung des Bildschirms einer Anwendung in einem Storyboard wird _Szene_ genannt. Jede Szene stellt einen Ansichtscontroller und die verwalteten Ansichten dar (Hierarchie von Inhaltsansichten). Wenn ein neues **Einzelansichtsanwendungs-Projekt** aus einer Vorlage erstellt wird, generiert Visual Studio für Mac automatisch eine Storyboarddatei namens `Main.storyboard` und füllt sie wie im folgenden Screenshot veranschaulicht mit einer einzigen Szene:
 
-![](hello-ios-deepdive-images/image34.png "Visual Studio for Mac automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
+![Visual Studio für Mac generiert automatisch eine Storyboarddatei mit der Bezeichnung „Main.storyboard“ und füllt sie mit einer einzigen Szene auf.](hello-ios-deepdive-images/image34.png)
 
 Die schwarze Leiste unten auf der Storyboardanzeige kann zur Auswahl des Ansichtscontrollers für die Szene ausgewählt werden. Der Ansichtscontroller ist eine Instanz der `UIViewController`-Klasse, die den zugrunde liegenden Code für die Hierarchie von Inhaltsansichten enthält. Eigenschaften auf diesem Ansichtscontroller können wie im folgenden Screenshot veranschaulicht im **Eigenschaftenpad** angezeigt und festgelegt werden:
 
-![](hello-ios-deepdive-images/image35.png "The Properties Pane")
+![Der Bereich „Eigenschaften“](hello-ios-deepdive-images/image35.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image33.png "iOS Designer Interface")
+![Schnittstelle des iOS-Designers](hello-ios-deepdive-images/vs-image33.png)
 
 Ein *Storyboard* ist eine Datei, die visuelle Entwürfe der Bildschirme unserer Anwendung sowie Übergänge und Beziehungen zwischen den Bildschirmen enthält. Die Darstellung des Bildschirms einer Anwendung in einem Storyboard wird _Szene_ genannt. Jede Szene stellt einen Ansichtscontroller und die verwalteten Ansichten dar (Hierarchie von Inhaltsansichten). Wenn ein neues **Einzelansichtsanwendungs-Projekt** aus einer Vorlage erstellt wird, generiert Visual Studio automatisch eine Storyboarddatei namens `Main.storyboard` und füllt sie wie im folgenden Screenshot veranschaulicht mit einer einzigen Szene:
 
-![](hello-ios-deepdive-images/vs-image34.png "Visual Studio automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
+![Visual Studio generiert automatisch eine Storyboarddatei mit der Bezeichnung „Main.storyboard“ und füllt sie mit einer einzigen Szene auf.](hello-ios-deepdive-images/vs-image34.png)
 
 Die Leiste unten auf der Storyboardanzeige kann zur Auswahl des Ansichtscontrollers für die Szene ausgewählt werden. Der Ansichtscontroller ist eine Instanz der `UIViewController`-Klasse, die den zugrunde liegenden Code für die Hierarchie von Inhaltsansichten enthält. Eigenschaften auf diesem Ansichtscontroller können wie im folgenden Screenshot veranschaulicht im **Eigenschaftenbereich** angezeigt und festgelegt werden:
 
-![](hello-ios-deepdive-images/vs-image35.png "The Properties Pane")
+![Der Bereich „Eigenschaften“](hello-ios-deepdive-images/vs-image35.png)
 
 ::: zone-end
 
@@ -175,7 +175,7 @@ Die _Ansicht_ kann durch einen Klick in den weißen Teil der Szene ausgewählt w
 
 Auf der linken Seite der Szene befindet sich wie im folgenden Screenshot veranschaulicht ein grauer Pfeil mit einem Flaggensymbol:
 
- [![](hello-ios-deepdive-images/image37.png "A gray arrow with a flag icon")](hello-ios-deepdive-images/image37.png#lightbox)
+ [![Grauer Pfeil mit einem Flaggensymbol](hello-ios-deepdive-images/image37.png)](hello-ios-deepdive-images/image37.png#lightbox)
 
 Der graue Pfeil stellt einen Storyboardübergang namens *Segue* („Segway“ ausgesprochen) dar. Da dieser Segue keinen Ursprung hat, handelt es sich um einen *Sourceless Segue*. Ein „Sourceless Segue“ verweist auf die erste Szene, deren Ansichten beim Anwendungsstart in unser Anwendungsfenster geladen werden. Die Szene und die darin enthaltenen Ansichten werden dem Benutzer als Erstes angezeigt, wenn die Anwendung geladen wird.
 
@@ -183,12 +183,12 @@ Wenn Sie eine Benutzeroberfläche erstellen, können zusätzliche Ansichten wie 
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image38.png "Additional Views can be dragged from the Toolbox onto the main View on the design surface")
+![Zusätzliche Ansichten können aus der Toolbox in die Hauptansicht der Entwurfsoberfläche gezogen werden.](hello-ios-deepdive-images/image38.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image38.png "Additional Views can be dragged from the Toolbox onto the main View on the design surface")
+![Zusätzliche Ansichten können aus der Toolbox in die Hauptansicht der Entwurfsoberfläche gezogen werden.](hello-ios-deepdive-images/vs-image38.png)
 
 ::: zone-end
 
@@ -196,12 +196,12 @@ Diese zusätzlichen Ansichten heißen *Unteransichten*. Zusammen sind die Stamma
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image39.png "The Document Outline pad")
+![Der Pad „Dokumentgliederung“](hello-ios-deepdive-images/image39.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image39.png "The Document Outline pad")
+![Der Pad „Dokumentgliederung“](hello-ios-deepdive-images/vs-image39.png)
 
 ::: zone-end
 
@@ -209,12 +209,12 @@ Im folgenden Diagramm werden die Unteransichten hervorgehoben:
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image40.png "The Subviews are highlighted in the diagram")
+![Im Diagramm werden die Unteransichten hervorgehoben.](hello-ios-deepdive-images/image40.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image40.png "The Subviews are highlighted in the diagram")
+![Im Diagramm werden die Unteransichten hervorgehoben.](hello-ios-deepdive-images/vs-image40.png)
 
 ::: zone-end
 
@@ -224,24 +224,24 @@ Im nächsten Abschnitt wird die durch diese Szene dargestellte Hierarchie von In
 
 Eine _Hierarchie von Inhaltsansichten_ besteht aus einem Stapel von Ansichten und Unteransichten, die wie im folgenden Diagramm veranschaulicht von einem einzelnen Ansichtscontroller verwaltet werden:
 
- [![](hello-ios-deepdive-images/image41.png "The Content View Hierarchy")](hello-ios-deepdive-images/image41.png#lightbox)
+ [![Hierarchie der Inhaltsansichten](hello-ios-deepdive-images/image41.png)](hello-ios-deepdive-images/image41.png#lightbox)
 
 Die Hierarchie von Inhaltsansichten von `ViewController` kann leichter angezeigt werden, indem Sie die Hintergrundfarbe der Stammansicht im Ansichtsabschnitt des **Eigenschaftenpads** wie im folgenden Screenshot veranschaulicht vorübergehend in Gelb ändern:
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image42.png "Changing the background color of the root View to yellow in the View section of the Properties Pad")
+![Ändern der Hintergrundfarbe der Stammansicht in Gelb im Ansichtsbereich des Eigenschaftenpads](hello-ios-deepdive-images/image42.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image42.png "Changing the background color of the root View to yellow in the View section of the Properties Pad")
+![Ändern der Hintergrundfarbe der Stammansicht in Gelb im Ansichtsbereich des Eigenschaftenpads](hello-ios-deepdive-images/vs-image42.png)
 
 ::: zone-end
 
 Im folgenden Diagramm werden die Beziehungen zwischen dem Fenster, den Ansichten, Unteransichten und dem Ansichtscontroller veranschaulicht, die die Benutzeroberfläche auf den Gerätebildschirm bringen:
 
-[![](hello-ios-deepdive-images/image43.png "The relationships between the Window, Views, Subviews, and view controller")](hello-ios-deepdive-images/image43.png#lightbox)
+[![Beziehungen zwischen Fenster, Ansichten, Unteransichten und dem Ansichtscontroller](hello-ios-deepdive-images/image43.png)](hello-ios-deepdive-images/image43.png#lightbox)
 
 Im nächsten Abschnitt wird erläutert, wie im Code mit Ansichten gearbeitet wird, und Sie lernen das Programmieren der Benutzerinteraktion mithilfe von Ansichtscontrollern und dem Ansichtslebenszyklus.
 
@@ -255,22 +255,22 @@ Jede Hierarchie von Inhaltsansichten verfügt über einen entsprechenden Ansicht
 
 Der Ansichtscontroller wird in einem Storyboard als Leiste am unteren Rand der Szene dargestellt. Wenn Sie den Ansichtscontroller auswählen, werden seine Eigenschaften im **Eigenschaftenpad** angezeigt:
 
-![](hello-ios-deepdive-images/image44.png "Selecting the view controller brings up its properties in the Properties Pane")
+![Wenn der Ansichtscontroller ausgewählt wird, werden seine Eigenschaften im Eigenschaftenbereich angezeigt.](hello-ios-deepdive-images/image44.png)
 
 Eine benutzerdefinierte Ansichtscontrollerklasse für die Hierarchie von Inhaltsansichten, die durch diese Szene dargestellt wird, kann durch Bearbeiten der Eigenschaft **Klasse** im Abschnitt **Identität** des **Eigenschaftenpads** festgelegt werden. Beispielsweise legt die **Phoneword**-Anwendung wie im folgenden Screenshot veranschaulicht `ViewController` als Ansichtscontroller für den ersten Bildschirm fest:
 
-![](hello-ios-deepdive-images/image45new.png "The Phoneword application sets the ViewController as the view controller")
+![Die Phoneword-Anwendung legt ViewController als Ansichtscontroller fest.](hello-ios-deepdive-images/image45new.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
 Der Ansichtscontroller wird in einem Storyboard als Leiste am unteren Rand der Szene dargestellt. Wenn Sie den Ansichtscontroller auswählen, werden seine Eigenschaften im **Eigenschaftenbereich** angezeigt:
 
-![](hello-ios-deepdive-images/vs-image44.png "Selecting the view controller brings up its properties in the Properties Pane")
+![Wenn der Ansichtscontroller ausgewählt wird, werden seine Eigenschaften im Eigenschaftenbereich angezeigt.](hello-ios-deepdive-images/vs-image44.png)
 
 Eine benutzerdefinierte Ansichtscontrollerklasse für die Hierarchie von Inhaltsansichten, die durch diese Szene dargestellt wird, kann durch Bearbeiten der Eigenschaft **Klasse** im Abschnitt **Identität** des **Eigenschaftenbereichs** festgelegt werden. Beispielsweise legt die **Phoneword**-Anwendung wie im folgenden Screenshot veranschaulicht `ViewController` als Ansichtscontroller für den ersten Bildschirm fest:
 
-![](hello-ios-deepdive-images/vs-image45.png "The Phoneword application sets the ViewController as the view controller")
+![Die Phoneword-Anwendung legt ViewController als Ansichtscontroller fest.](hello-ios-deepdive-images/vs-image45.png)
 
 ::: zone-end
 
@@ -313,7 +313,7 @@ Die wichtigste Rolle des Ansichtscontrollers ist die Reaktion auf Benutzerintera
 Sehen Sie sich genauer an, wie das funktioniert.
 Im `Phoneword_iOS`-Projekt wurde eine Schaltfläche namens `TranslateButton` zur Hierarchie von Inhaltsansichten hinzugefügt:
 
-[![](hello-ios-deepdive-images/image1.png "A button was added called TranslateButton to the Content View Hierarchy")](hello-ios-deepdive-images/image1.png#lightbox)
+[![Hinzufügen der Schaltfläche „TranslateButton“ zur Hierarchie der Inhaltsansichten](hello-ios-deepdive-images/image1.png)](hello-ios-deepdive-images/image1.png#lightbox)
 
 Wenn ein **Name** dem Steuerelement **Schaltfläche** im **Eigenschaftenpad** zugewiesen ist, wird der iOS-Designer automatisch einem Steuerelement in **ViewController.designer.cs** zugewiesen, sodass `TranslateButton` innerhalb der `ViewController`-Klasse verfügbar ist. Steuerelemente werden erstmals in der `ViewDidLoad`-Phase des Ansichtslebenszyklus verfügbar. Diese Lebenszyklusmethode wird verwendet, um auf die Toucheingabe des Benutzers zu reagieren:
 
@@ -420,18 +420,18 @@ Sobald das Gerät bereitgestellt wurde, können Sie es bereitstellen, indem Sie 
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image46new.png "Pressing Start/Play")
+![Drücken von Start/Play (Start/Wiedergabe)](hello-ios-deepdive-images/image46new.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image46.png "Pressing Start/Play")
+![Drücken von Start/Play (Start/Wiedergabe)](hello-ios-deepdive-images/vs-image46.png)
 
 ::: zone-end
 
 Die Anwendung wird auf dem iOS-Gerät bereitgestellt:
 
-[![](hello-ios-deepdive-images/image1.png "The app will deploy to the iOS device and run")](hello-ios-deepdive-images/image1.png#lightbox)
+[![Die App wird auf dem iOS-Gerät bereitgestellt und ausgeführt](hello-ios-deepdive-images/image1.png)](hello-ios-deepdive-images/image1.png#lightbox)
 
 ### <a name="generate-custom-icons-and-launch-images"></a>Generieren von benutzerdefinierten Symbolen und Startbildern
 
@@ -454,7 +454,7 @@ Weitere Informationen zu Größen und Anforderungen von Symbolen und Startbilder
 
 ## <a name="summary"></a>Zusammenfassung
 
-Herzlichen Glückwunsch! Sie sollten nun mit den Komponenten einer Xamarin.iOS-Anwendung und mit den Tools, die für die Erstellung benötigt werden, vertraut sein.
+Glückwunsch! Sie sollten nun mit den Komponenten einer Xamarin.iOS-Anwendung und mit den Tools, die für die Erstellung benötigt werden, vertraut sein.
 Im [nächsten Tutorial der Reihe „Erste Schritte“](~/ios/get-started/hello-ios-multiscreen/index.md) erweitern Sie unsere Anwendung zur Verarbeitung von mehreren Bildschirmen. Dabei implementieren Sie einen Navigationscontroller, erfahren mehr über Storyboard-Segues und implementieren das MVC-Muster (Model View Controller).
 
 ## <a name="related-links"></a>Verwandte Links

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 854fecd7945c1090b475b3571678388b8e1cf127
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1c70aca4812214b424820ecb5a769a871e7e703c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573234"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937903"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Interne Verteilung für Xamarin.iOS-Apps
 
@@ -56,15 +56,15 @@ Es ist wichtig, zu beachten, dass abgelaufene Zertifikate nicht erneuert werden 
 3. Klicken Sie auf die Schaltfläche **+** , um ein neues Zertifikat zu erstellen.
 4. Wählen Sie unter der Überschrift *Produktion* **Intern und Ad-hoc** aus:
 
-   [![](in-house-distribution-images/createcertmanually01.png "Select In-House and Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
+   [![Auswählen der Option „Intern und Ad-hoc“](in-house-distribution-images/createcertmanually01.png)](in-house-distribution-images/createcertmanually01.png#lightbox)
 
-5. Klicken Sie auf „Weiter“, und befolgen Sie die Anweisungen zur Erstellung einer Zertifikatsignieranforderung mithilfe des Keychain-Zugriffs:
+5. Klicken Sie auf „Continue“ (Weiter), und befolgen Sie die Anweisungen zur Erstellung einer Zertifikatsignieranforderung (CSR) mithilfe des Keychain-Zugriffs:
 
-   [![](in-house-distribution-images/createcertmanually02.png "Create a Certificate Signing Request via Keychain Access")](in-house-distribution-images/createcertmanually02.png#lightbox)
+   [![Eine Zertifikatsignieranforderung über Keychain-Zugriff erstellen](in-house-distribution-images/createcertmanually02.png)](in-house-distribution-images/createcertmanually02.png#lightbox)
 
 6. Sobald Sie Ihre CSR wie beschrieben erstellt haben, klicken Sie auf „Weiter“, und laden Sie Ihre CSR in das Member Center hoch:
 
-   [![](in-house-distribution-images/createcertmanually03.png "Upload the CSR to the Member Center")](in-house-distribution-images/createcertmanually03.png#lightbox)
+   [![Zertifikatsignieranforderung in das Member Center hochladen](in-house-distribution-images/createcertmanually03.png)](in-house-distribution-images/createcertmanually03.png#lightbox)
 
 7. Klicken Sie auf „Generieren“, um Ihr Zertifikat zu erstellen.
 8. Laden Sie das abgeschlossene Zertifikat herunter, und doppelklicken Sie auf die Datei, um sie zu installieren.
@@ -74,15 +74,15 @@ Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Einstellungen
 
 1. Wählen Sie das Team aus, und klicken Sie auf *Details anzeigen*:
 
-   [![](in-house-distribution-images/selectteam.png "Select your team")](in-house-distribution-images/selectteam.png#lightbox)
+   [![Auswählen Ihres Teams](in-house-distribution-images/selectteam.png)](in-house-distribution-images/selectteam.png#lightbox)
 
-2. Klicken Sie anschließend auf die Schaltfläche **Erstellen** neben **iOS-Verteilungszertifikat**:
+2. Klicken Sie anschließend auf die Schaltfläche **Create** (Erstellen) neben **iOS Distribution Certificate** (iOS-Verteilungszertifikat):
 
-   [![](in-house-distribution-images/selectcert.png "Create the iOS Distribution Certificate")](in-house-distribution-images/selectcert.png#lightbox)
+   [![Erstellen des iOS-Verteilungszertifikats](in-house-distribution-images/selectcert.png)](in-house-distribution-images/selectcert.png#lightbox)
 
-3. Klicken Sie anschließend auf die Schaltfläche **Plus (+)** , und wählen Sie **iOS App Store** aus:
+3. Klicken Sie anschließend auf die Schaltfläche **plus (+)** , und wählen Sie **iOS App Store** aus:
 
-   [![](in-house-distribution-images/selectcert.png "Select iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
+   [![Auswählen von „iOS App Store“](in-house-distribution-images/selectcert.png)](in-house-distribution-images/selectcert.png#lightbox)
 
 <a name="profile"></a>
 
@@ -104,23 +104,23 @@ Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils h
 
 1. Navigieren Sie zurück zum Apple-Bereitstellungsportal, und wählen Sie **Bereitstellung** > **Verteilung** aus:
 
-   [![](in-house-distribution-images/distribute01.png "Select Provisioning > Distribution")](in-house-distribution-images/distribute01.png#lightbox)
+   [![Auswahl von „Bereitstellung > Verteilung“](in-house-distribution-images/distribute01.png)](in-house-distribution-images/distribute01.png#lightbox)
 
 2. Klicken Sie auf die **+** -Schaltfläche, und wählen Sie den Typ des Verteilungsprofils aus, das Sie **intern** erstellen möchten:
 
-   [![](in-house-distribution-images/distribute02.png "Create an In-House Distribution Profile")](in-house-distribution-images/distribute02.png#lightbox)
+   [![Erstellen eines internen Verteilungsprofils](in-house-distribution-images/distribute02.png)](in-house-distribution-images/distribute02.png#lightbox)
 
-3. Klicken Sie auf die Schaltfläche **Weiter**, und wählen Sie aus der Dropdownliste die App-ID aus, für die Sie ein Verteilungsprofil erstellen möchten:
+3. Klicken Sie auf die Schaltfläche **Continue** (Weiter), und wählen Sie aus der Dropdownliste die App-ID aus, für die Sie ein Verteilungsprofil erstellen möchten:
 
-   [![](in-house-distribution-images/distribute03.png "Select App ID from the dropdown list")](in-house-distribution-images/distribute03.png#lightbox)
+   [![Auswahl von „App-ID“ in der Dropdownliste](in-house-distribution-images/distribute03.png)](in-house-distribution-images/distribute03.png#lightbox)
 
 4. Klicken Sie auf die Schaltfläche **Weiter**, und wählen Sie ein Verteilungszertifikat zum Signieren der Anwendung aus:
 
-   [![](in-house-distribution-images/distribute04.png "Select distribution certificate required to sign the application")](in-house-distribution-images/distribute04.png#lightbox)
+   [![Auswählen eines zum Signieren der Anwendung erforderlichen Verteilungszertifikats](in-house-distribution-images/distribute04.png)](in-house-distribution-images/distribute04.png#lightbox)
 
-5. Klicken Sie auf die Schaltfläche **Continue** (Weiter), und geben Sie unter **Name** einen Wert für das neue Verteilungsprofil ein:
+5. Klicken Sie auf die Schaltfläche **Weiter**, und geben Sie einen **Namen** für das neue Verteilungsprofil ein:
 
-   [![](in-house-distribution-images/distribute06.png "Enter a Name for the new Distribution Profile")](in-house-distribution-images/distribute06.png#lightbox)
+   [![Eingeben eines Namens für das neue Verteilungsprofil](in-house-distribution-images/distribute06.png)](in-house-distribution-images/distribute06.png#lightbox)
 
 6. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
 

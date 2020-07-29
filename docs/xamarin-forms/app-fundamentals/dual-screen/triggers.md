@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms-Trigger für Dual-Screen-Geräte" description: "In diesem Artikel wird beschrieben, wie Xamarin.Forms-Trigger für Dual-Screen-Geräte verwendet werden, um auf Änderungen der Benutzeroberfläche mit XAML zu reagieren."'
-description: 'ms.prod: xamarin ms.assetid: 2181715D-3995-4E71-9A21-6B892F0B3B59 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 02/28/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms-Trigger für Dual-Screen-Geräte
+description: In diesem Artikel wird beschrieben, wie Xamarin.Forms-Trigger für Dual-Screen-Geräte verwendet werden, um auf Änderungen der Benutzeroberfläche mit XAML zu reagieren.
 ms.prod: xamarin
 ms.assetid: 2181715D-3995-4E71-9A21-6B892F0B3B59
 ms.technology: xamarin-forms
@@ -10,16 +10,16 @@ ms.date: 02/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: df10327b2ac12d2b119f1ab558d7f27e8c319507
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 2e4d85077e1047f4158164d0c752570519c8ecdc
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84131195"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936837"
 ---
 # <a name="xamarinforms-dual-screen-triggers"></a>Xamarin.Forms-Trigger für Dual-Screen-Geräte
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![Vorabrelease der API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
 Der [`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen)-Namespace enthält zwei Zustandstrigger:
 

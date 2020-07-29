@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms – Entwurfsmuster für Dual-Screen-Geräte" description: "In diesem Artikel werden verschiedene Entwurfsmuster beschrieben, die für Dual-Screen-Geräte optimiert sind und von Xamarin.Forms unterstützt werden."'
-description: 'ms.prod: xamarin ms.assetid: 3176d792-6dba-4e00-b463-497c58678ee9 ms.technology: xamarin-forms author: davidortinau ms.author: daortin ms.date: 02/08/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms-Entwurfsmuster für Dual-Screen-Geräte
+description: In diesem Artikel werden verschiedene Entwurfsmuster beschrieben, die für Dual-Screen-Geräte optimiert sind und von Xamarin.Forms unterstützt werden.
 ms.prod: xamarin
 ms.assetid: 3176d792-6dba-4e00-b463-497c58678ee9
 ms.technology: xamarin-forms
@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 277fb67eeea465239d9340e755240288286d2359
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 79c0f41e8ed0bffce0154ee618729316aab5e8e2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84138787"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935277"
 ---
 # <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms-Entwurfsmuster für Dual-Screen-Geräte
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![Vorabrelease der API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
@@ -29,7 +29,7 @@ In diesem Artikel lernen Sie die empfohlenen Entwurfsmuster für Dual-Screen-Ger
 
 Im erweiterten Canvasmuster werden beide Bildschirme als eine große Canvas behandelt, auf der sich Karten, Bilder, Tabellen oder andere Inhalte darstellen lassen, die davon profitieren, wenn sie den größtmöglichen verfügbaren Platz verwenden können:
 
-![](design-patterns-images/extended-canvas-sample.png "Extended canvas sample")
+![Beispiel für erweiterte Canvas](design-patterns-images/extended-canvas-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
@@ -59,7 +59,7 @@ In diesem Beispiel nutzen `Grid` und dessen Inhalt den gesamten verfügbaren Bil
 
 Bei diesem Muster wählt der Benutzer aus der Masteransicht, üblicherweise eine Liste auf der linken Seite, Inhalte aus, um sich Details dazu auf der rechten Seite anzeigen zu lassen:
 
-![](design-patterns-images/master-detail-sample.png "Master detail sample")
+![Beispiel für Details zur Masteransicht](design-patterns-images/master-detail-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
@@ -85,7 +85,7 @@ In diesem Beispiel können Sie mit `TwoPaneView` festlegen, dass ein Bereich ein
 
 Dieses Muster eignet sich ideal für Inhalte wie einen Dokumentenreader, Notizen oder eine Zeichenfläche, die sich für ein Seitenlayout anbieten:
 
-![](design-patterns-images/two-page-sample.png "Two page sample")
+![Beispiel für Zwei-Seiten-Ansicht](design-patterns-images/two-page-sample.png)
 
 ```xaml
 <Grid x:Name="layout">
@@ -126,7 +126,7 @@ Die [`CollectionView`](xref:Xamarin.Forms.CollectionView)-Klasse mit einem Raste
 
 Dieses Muster mag zwar so aussehen wie das Zwei-Seiten-Muster, der Unterschied besteht jedoch im Inhalt und im Benutzerszenario. Bei diesem Muster werden Inhalte nebeneinandergelegt und verglichen, z. B. um ein Dokument oder Fotos zu bearbeiten, um Speisekarten zu vergleichen oder um einen Mergekonflikt in Codedateien zu untersuchen (diff):
 
-![](design-patterns-images/dual-view-sample.png "Dual view sample")
+![Beispiel für duale Ansicht](design-patterns-images/dual-view-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
@@ -164,7 +164,7 @@ Dieses Muster mag zwar so aussehen wie das Zwei-Seiten-Muster, der Unterschied b
 
 Beim Begleitmuster können Sie im zweiten Bildschirm sekundären Inhalt anzeigen, der mit der primären Ansicht zusammenhängt. Anwendungsfälle wären z. B. eine Zeichen-App, ein Spiel oder das Bearbeiten von Medien:
 
-![](design-patterns-images/companion-pane-sample.png "Companion pane sample")
+![Beispiel für Begleitbereich](design-patterns-images/companion-pane-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"

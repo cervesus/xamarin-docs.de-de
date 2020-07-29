@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 08ddf282c8839a6283b90c0736c0b4259bd01469
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f5796ee17e947494d1e22f750bc43ff823d56d55
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028442"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937279"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>Komponententests bei Xamarin.iOS-Apps
 
@@ -23,11 +23,11 @@ Komponententests mit Xamarin.iOS werden mithilfe des Touch.Unit-Frameworks durch
 
 Sie müssen Ihrer Projektmappe ein Projekt des Typs **iOS-Komponententestprojekt** hinzufügen, um ein Komponententestframework für Ihr Projekt einzurichten. Klicken Sie dafür mit der rechten Maustaste auf Ihre Projektmappe, und wählen Sie **Hinzufügen > Neues Projekt hinzufügen** aus. Wählen Sie aus der Liste **iOS > Tests > Unified API > iOS-Komponententestprojekt** aus. Sie können entweder C# oder F# auswählen.
 
-![](touch.unit-images/00.png "Choose either C# or F#")
+![Auswählen von C# oder F#](touch.unit-images/00.png)
 
 Dadurch wird ein einfaches Projekt erstellt, dass ein grundlegendes Runnerprogramm enthält und das auf die neue Assembly „MonoTouch.NUnitLite“ verweist. Es wird folgendermaßen aussehen:
 
-![](touch.unit-images/01.png "The project in the Solution Explorer")
+![Das Projekt im Projektmappen-Explorer](touch.unit-images/01.png)
 
 Die Klasse `AppDelegate.cs` enthält den Test Runner und sieht folgendermaßen aus:
 
@@ -105,14 +105,14 @@ Klicken Sie in Ihrer Projektmappe mit der rechten Maustaste auf das Projekt, um 
 
 Mit dem Test Runner können Sie sehen, welche Tests registriert sind, und Sie können einzeln auswählen, welche Tests ausgeführt werden können.
 
-[![](touch.unit-images/02-sml.png "The list of registered tests")](touch.unit-images/02.png#lightbox) 
-[![](touch.unit-images/03-sml.png "An individual text")](touch.unit-images/03.png#lightbox) 
+[![Die Liste der registrierten Tests](touch.unit-images/02-sml.png)](touch.unit-images/02.png#lightbox) 
+[![Individueller Text](touch.unit-images/03-sml.png)](touch.unit-images/03.png#lightbox) 
 
-[![](touch.unit-images/04-sml.png "The run results")](touch.unit-images/04.png#lightbox)
+[![Ergebnisse der Ausführung](touch.unit-images/04-sml.png)](touch.unit-images/04.png#lightbox)
 
 Sie können einzelne Prüfvorrichtungen ausführen, indem Sie sie aus den geschachtelten Ansichten auswählen, oder Sie können mit „Alles ausführen“ alle Ihre Tests ausführen. Wenn Sie den Standardtest ausführen, sollte dieser je einen Test enthalten, der je einen Test mit den Kriterien "bestanden", "fehlgeschlagen" und "ignoriert" enthalten soll. Die Berichte sehen folgendermaßen aus, und Sie können direkt einen Drilldown zu den fehlgeschlagenen Tests ausführen und mehr über den Fehler herausfinden:
 
-[![](touch.unit-images/05-sml.png "Beispielbericht")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/06-sml.png "Beispielbericht")](touch.unit-images/06.png#lightbox) [![](touch.unit-images/07-sml.png "Beispielbericht")](touch.unit-images/07.png#lightbox)
+[![Beispielbericht](touch.unit-images/05-sml.png)](touch.unit-images/05.png#lightbox) [![Beispielbericht](touch.unit-images/06-sml.png)](touch.unit-images/06.png#lightbox) [![Beispielbericht](touch.unit-images/07-sml.png)](touch.unit-images/07.png#lightbox)
 
 Im Anwendungsausgabefenster in Ihrer IDE können Sie auch die aktuell ausgeführten Tests und deren gegenwärtigen Status sehen.
 

@@ -10,12 +10,12 @@ ms.date: 11/09/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46d1566c89de763a469f30ce8ed2c6ef919f1426
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0967845ac61ddf5f8e1cc76664a50877d041f011
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135797"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939671"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>Wiederverwendbare EventToCommandBehavior-Klasse
 
@@ -201,7 +201,7 @@ Die `Command`-Eigenschaft des Verhaltens wird an die `OutputAgeCommand`-Eigensch
 
 Bei der Ausführung reagiert das Verhalten auf die Interaktion mit dem Steuerelement. Wenn ein Element in der [`ListView`](xref:Xamarin.Forms.ListView)-Klasse ausgewählt wird, wird das [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)-Ereignis ausgelöst, wodurch der `OutputAgeCommand`-Befehl der ViewModel-Klasse ausgeführt wird. Dadurch wird wiederum die `SelectedItemText`-Eigenschaft der ViewModel-Klasse aktualisiert, sodass [`Label`](xref:Xamarin.Forms.Label) wie in den folgenden Screenshots gezeigt angebunden wird:
 
-[![](event-to-command-behavior-images/screenshots-sml.png "Sample Application with EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "Sample Application with EventToCommandBehavior")
+[![Beispielanwendung mit EventToCommandBehavior](event-to-command-behavior-images/screenshots-sml.png)](event-to-command-behavior-images/screenshots.png#lightbox "Beispielanwendung mit EventToCommandBehavior")
 
 Dieses Verhalten zum Ausführen eines Befehls zu verwenden, wenn ein Ereignis ausgelöst wird, hat den Vorteil, dass Befehle mit Steuerelementen verknüpft werden können, die nicht für die Interaktion mit Befehlen konzipiert wurden. Darüber hinaus werden die Codebausteine für die Ereignisverarbeitung aus CodeBehind-Dateien entfernt.
 

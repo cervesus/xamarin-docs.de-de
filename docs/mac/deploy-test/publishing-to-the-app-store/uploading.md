@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 5569e10c059dec26137aadb814101992ed7e9f7e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 57591a6e9fcaa3c8271ab27756160ee1c46a4fa3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725050"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935927"
 ---
 # <a name="upload-to-mac-app-store"></a>Upload in den Mac App Store
 
@@ -22,57 +22,57 @@ Anwendungen werden über [iTunes Connect](https://itunesconnect.apple.com/) zur 
 
 1. Wählen Sie ein **macOS-App** aus, die Sie erstellen möchten:
 
-    [![](uploading-images/image65.png "iTunes Connect")](uploading-images/image65.png#lightbox)
+    [![iTunes Connect](uploading-images/image65.png)](uploading-images/image65.png#lightbox)
 
 2. Geben Sie den Namen der App und weitere Details ein. Der Entwickler kann sich nur für eine vorhandene **Bundle-ID** entscheiden, die bereits erstellt wurde:
 
-    [![](uploading-images/image66.png "Selecting the bundle ID")](uploading-images/image66.png#lightbox)
+    [![Auswählen der Bundle-ID](uploading-images/image66.png)](uploading-images/image66.png#lightbox)
 
 3. Wählen Sie das Verfügbarkeitsdatum und den Preis aus. Unabhängig vom vom Entwickler gewählten Verfügbarkeitsdatum wird die App erst dann zum Verkauf freigegeben, nachdem Sie genehmigt wurde. Dieser Wert kann weit in der Zukunft liegen, wenn der Entwickler mehr Kontrolle über das tatsächliche Verfügbarkeitsdatum haben möchte:
 
-    [![](uploading-images/image67.png "Setting the available date and price")](uploading-images/image67.png#lightbox)
+    [![Festlegen des Verfügbarkeitsdatums und des Preises](uploading-images/image67.png)](uploading-images/image67.png#lightbox)
 
 4. Geben Sie die App-Informationen ein, einschließlich der entsprechenden Kategorie im App Store:
 
-    [![](uploading-images/image68.png "Entering the app information")](uploading-images/image68.png#lightbox)
+    [![Eingeben der App-Informationen](uploading-images/image68.png)](uploading-images/image68.png#lightbox)
 
     Wählen Sie die entsprechenden Bewertungen aus:
 
-    [![](uploading-images/image69.png "Setting the app ratings")](uploading-images/image69.png#lightbox)
+    [![Festlegen der App-Bewertungen](uploading-images/image69.png)](uploading-images/image69.png#lightbox)
 
     Beschreibung, Schlüsselwörter und Kontakt-URLs:
 
-    [![](uploading-images/image70.png "Editing the Description, keywords and contact URLs")](uploading-images/image70.png#lightbox)
+    [![Bearbeiten der Beschreibung, Schlüsselwörter und Kontakt-URLs](uploading-images/image70.png)](uploading-images/image70.png#lightbox)
 
     Kontaktinformation und Empfehlungen für App Store-Prüfer:
 
-    [![](uploading-images/image71.png "Editing the contact information and advice for the App Store reviewers")](uploading-images/image71.png#lightbox)
+    [![Bearbeiten der Kontaktinformation und Empfehlungen für App Store-Prüfer](uploading-images/image71.png)](uploading-images/image71.png#lightbox)
 
     Und als letztes Screenshots:
 
-    [![](uploading-images/image72.png "Adding the required screenshots")](uploading-images/image72.png#lightbox)
+    [![Hinzufügen der erforderlichen Screenshots](uploading-images/image72.png)](uploading-images/image72.png#lightbox)
 
     Screenshots sollten im Format JPG, TIF oder PNG sein und 1280x800, 1440x900, 2880x1800 oder 2560x1600 Pixel aufweisen. Drücken Sie auf **Speichern**, um den Vorgang zu beenden.
 
 5. Die App-Informationen werden zur Überprüfung angezeigt. Klicken Sie auf **Details anzeigen**, um den Status zu ändern:
 
-    [![](uploading-images/image73.png "Viewing the app details")](uploading-images/image73.png#lightbox)
+    [![Anzeigen der App-Details](uploading-images/image73.png)](uploading-images/image73.png#lightbox)
 
 6. Klicken Sie in der Detailansicht auf „Ready to Upload Binary“ (Binärdatei zum Upload bereit), um die Anwendungspaketdatei einzureichen:
 
-    [![](uploading-images/image74.png "Selecting Ready to Upload Binary")](uploading-images/image74.png#lightbox)
+    [![Auswählen von „Binärdatei zum Upload bereit“](uploading-images/image74.png)](uploading-images/image74.png#lightbox)
 
 7. Beantworten Sie die Kryptografiefrage:
 
-    [![](uploading-images/image75.png "Answering the cryptography question")](uploading-images/image75.png#lightbox)
+    [![Beantworten der Kryptografiefrage](uploading-images/image75.png)](uploading-images/image75.png#lightbox)
 
 8. Die Website meldet, wenn sie bereit ist, die Anwendungspaketdatei zu akzeptieren:
 
-    [![](uploading-images/image76.png "The acceptance notification")](uploading-images/image76.png#lightbox)
+    [![Benachrichtigung zum Akzeptieren](uploading-images/image76.png)](uploading-images/image76.png#lightbox)
 
 9. Starten Sie **Transporter**, melden Sie sich mit Ihrer Apple ID an, und wählen Sie dann **APP HINZUFÜGEN** aus:
 
-    [![](uploading-images/transporter01-sml.png "The Application Loader interface")](uploading-images/transporter01.png#lightbox)
+    [![Benutzeroberfläche des Anwendungsladeprogramms](uploading-images/transporter01-sml.png)](uploading-images/transporter01.png#lightbox)
 
     Befolgen Sie die Anweisungen zum Hochladen Ihres App-Pakets in iTunes Connect.
 

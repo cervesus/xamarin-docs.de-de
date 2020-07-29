@@ -12,12 +12,12 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b3616d0cf4804dfb37d4fe65034796c672dec828
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8858a66d2caeea815bf06d5d2741bfc3623598f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127880"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933730"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>Navigieren in einer Xamarin.Forms-Multi-Page-Anwendung
 
@@ -31,8 +31,8 @@ In diesem Schnellstart lernen Sie Folgendes:
 
 In diesem Schnellstart erfahren Sie, wie Sie eine plattformübergreifende Xamarin.Forms-Single-Page-Anwendung, in der eine einzige Notiz gespeichert werden kann, in eine Multi-Page-Anwendung umwandeln, in der mehrere Notizen gespeichert werden können. Die fertige Anwendung wird unten gezeigt:
 
-[![](multi-page-images/screenshots1-sml.png "Notes Page")](multi-page-images/screenshots1.png#lightbox "Notes Page")
-[![](multi-page-images/screenshots2-sml.png "Note Entry Page")](multi-page-images/screenshots2.png#lightbox "Note Entry Page")
+[![Notizenseite](multi-page-images/screenshots1-sml.png)](multi-page-images/screenshots1.png#lightbox "NotesPage")
+[![Notizeneintragsseite](multi-page-images/screenshots2-sml.png)](multi-page-images/screenshots2.png#lightbox "NoteEntryPage")
 
 ### <a name="prerequisites"></a>Voraussetzungen
 
@@ -44,23 +44,23 @@ Sie sollten den [vorherigen Schnellstart](single-page.md) erfolgreich abgeschlos
 
 1. Starten Sie Visual Studio. Klicken Sie im Startfenster in der Liste zuletzt verwendeter Projekte/Projektmappen auf die Projektmappe **Notizen**, oder klicken Sie auf die Option **Projekt oder Projektmappe öffnen**, und wählen Sie dann im Dialogfeld **Projekt oder Projektmappe öffnen** die Projektmappendatei für das Notizenprojekt aus:
 
-    ![](multi-page-images/vs/open-solution.png "Open Project")
+    ![Projekt öffnen](multi-page-images/vs/open-solution.png)
 
 2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **Notizen**, und klicken Sie dann auf **Hinzufügen > Neuer Ordner**:
 
-    ![](multi-page-images/vs/add-new-item.png "Add New Item")
+    ![Neues Element hinzufügen](multi-page-images/vs/add-new-item.png)
 
 3. Geben Sie im **Projektmappen-Explorer** dem neuen Ordner den Namen **Modelle**:
 
-    ![](multi-page-images/vs/name-folder.png "Models Folder")
+    ![Ordner „Modelle“](multi-page-images/vs/name-folder.png)
 
 4. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Modelle**, und klicken Sie anschließend auf **Hinzufügen > Neues Element**:
 
-    ![](multi-page-images/vs/add-new-models-file.png "Add New File")
+    ![Neue Datei hinzufügen](multi-page-images/vs/add-new-models-file.png)
 
 5. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C# > Elemente > Klasse**, nennen Sie die neue Datei **Notizen**, und klicken Sie auf die Schaltfläche **Hinzufügen**:
 
-    ![](multi-page-images/vs/add-note-class.png "Add Note Class")
+    ![Klasse „Notiz“ hinzufügen](multi-page-images/vs/add-note-class.png)
 
     Dadurch wird im Ordner **Modelle** des Projekts **Notizen** eine Klasse namens **Notiz** hinzugefügt.
 
@@ -86,7 +86,7 @@ Sie sollten den [vorherigen Schnellstart](single-page.md) erfolgreich abgeschlos
 
 7. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **Notizen**, und klicken Sie auf **Hinzufügen > Neues Element**: Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Visual C#-Elemente > Xamarin.Forms > Inhaltsseite**, nennen Sie die neue Datei **NoteEntryPage**, und klicken Sie auf die Schaltfläche **Hinzufügen**:
 
-    ![](multi-page-images/vs/add-note-entry-page.png "Add Xamarin.Forms ContentPage")
+    ![Hinzufügen eines Xamarin.Forms ContentPage-Elements](multi-page-images/vs/add-note-entry-page.png)
 
     Dadurch wird im Stammordner des Projekts eine neue Seite namens **NoteEntryPage** hinzugefügt. Diese Seite ist die zweite Seite in der Anwendung.
 
@@ -327,23 +327,23 @@ Sie sollten den [vorherigen Schnellstart](single-page.md) erfolgreich abgeschlos
 
 1. Starten Sie Visual Studio für Mac. Klicken Sie auf der Startseite auf **Öffnen**, und wählen Sie im Dialogfeld die Projektmappendatei für das Notizenprojekt aus:
 
-    ![](multi-page-images/vsmac/open-solution.png "Open Solution")
+    ![Projektmappe öffnen](multi-page-images/vsmac/open-solution.png)
 
 2. Wählen Sie im **Lösungspad** das Projekt **Notes** aus, klicken Sie mit der rechten Maustaste darauf, und klicken Sie auf **Hinzufügen > Neuer Ordner**:
 
-    ![](multi-page-images/vsmac/add-new-folder.png "Add New Folder")
+    ![Neuen Ordner hinzufügen](multi-page-images/vsmac/add-new-folder.png)
 
 3. Geben Sie im **Lösungspad** dem neuen Ordner den Namen **Modelle**:
 
-    ![](multi-page-images/vsmac/name-folder.png "Models Folder")
+    ![Ordner „Modelle“](multi-page-images/vsmac/name-folder.png)
 
 4. Wählen Sie im **Lösungspad** das Projekt **Modelle** aus, klicken Sie mit der rechten Maustaste darauf, und klicken Sie auf **Hinzufügen > Neue Datei…** :
 
-    ![](multi-page-images/vsmac/add-new-models-file.png "Add New File")
+    ![Neue Datei hinzufügen](multi-page-images/vsmac/add-new-models-file.png)
 
 5. Klicken Sie im Dialogfeld **Neue Datei** auf **Allgemein > Leere Klasse**, nennen Sie die neue Datei **Notiz**, und klicken Sie auf die Schaltfläche **Neu**:
 
-    ![](multi-page-images/vsmac/add-note-class.png "Add Note Class")
+    ![Klasse „Notiz“ hinzufügen](multi-page-images/vsmac/add-note-class.png)
 
     Dadurch wird im Ordner **Modelle** des Projekts **Notizen** eine Klasse namens **Notiz** hinzugefügt.
 
@@ -369,7 +369,7 @@ Sie sollten den [vorherigen Schnellstart](single-page.md) erfolgreich abgeschlos
 
 7. Wählen Sie im **Lösungspad** das Projekt **Notizen** aus, klicken Sie mit der rechten Maustaste darauf, und klicken Sie auf **Hinzufügen > Neue Datei…** . Klicken Sie im Dialogfeld **Neue Datei** auf **Formular > XAML für Formular-ContentPage**, nennen Sie die neue Datei **NoteEntryPage**, und klicken Sie auf die Schaltfläche **Neu**:
 
-    ![](multi-page-images/vsmac/add-note-entry-page.png "Add Xamarin.Forms ContentPage")
+    ![Hinzufügen eines Xamarin.Forms ContentPage-Elements](multi-page-images/vsmac/add-note-entry-page.png)
 
     Dadurch wird im Stammordner des Projekts eine neue Seite namens **NoteEntryPage** hinzugefügt. Diese Seite ist die zweite Seite in der Anwendung.
 

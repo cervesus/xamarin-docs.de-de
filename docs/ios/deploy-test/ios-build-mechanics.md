@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 92bf7934b1ad4f6d959fc458f536cf3b3426df51
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 52a6c3c996e2d5df204b6d0df40368bc835e990f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026368"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936772"
 ---
 # <a name="ios-build-mechanics"></a>Abläufe beim Erstellen von iOS-Builds
 
@@ -32,7 +32,7 @@ So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio für Mac
 
 1. Klicken Sie auf **Visual Studio für Mac > Einstellungen...**
 2. Wählen Sie in der linken Struktur **Projekte > Build** aus.
-3. Legen Sie im rechten Bereich das Dropdownelement „Protokollausführlichkeit“ auf **Diagnose** fest:  [![](ios-build-mechanics-images/image2.png "Festlegen der Ausführlichkeit des Protokolls")](ios-build-mechanics-images/image2.png#lightbox).
+3. Legen Sie im rechten Bereich das Dropdownelement „Protokollausführlichkeit“ auf **Diagnose** fest:  [![Festlegen der Ausführlichkeit des Protokolls](ios-build-mechanics-images/image2.png)](ios-build-mechanics-images/image2.png#lightbox)
 4. Klicken Sie auf **OK**.
 5. Starten Sie Visual Studio für Mac neu.
 6. Bereinigen Sie Ihr Paket, und erstellen Sie es erneut.
@@ -44,7 +44,7 @@ So aktivieren Sie die Diagnoseausgabe von MSBuild in Visual Studio
 
 1. Klicken Sie auf **Extras > Optionen...** .
 2. Wählen Sie in der linken Struktur **Projekte und Projektmappen > Erstellen und Ausführen** aus.
-3. Legen Sie im rechten Bereich das Dropdownelement *Ausführlichkeit der MSBuild-Buildausgabe* auf **Diagnose** fest:  [![](ios-build-mechanics-images/image2-vs.png "Festlegen der Ausführlichkeit der MSBuild-Buildausgabe")](ios-build-mechanics-images/image2-vs.png#lightbox).
+3. Legen Sie im rechten Bereich das Dropdownelement *Ausführlichkeit der MSBuild-Buildausgabe* auf **Diagnose** fest:  [![Festlegen der Ausführlichkeit der MSBuild-Buildausgabe](ios-build-mechanics-images/image2-vs.png)](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. Klicken Sie auf **OK**.
 5. Bereinigen Sie Ihr Paket, und erstellen Sie es erneut.
 6. Die Diagnoseausgabe wird im Ausgabebereich angezeigt.
@@ -97,7 +97,7 @@ Unter Berücksichtigung der obigen Informationen bietet die nachstehende Liste e
 
 Der folgende Screenshot zeigt, wie Sie in Ihren iOS-Optionen diese Optionen für den Simulator festlegen:
 
-[![](ios-build-mechanics-images/image3.png "Setting the options")](ios-build-mechanics-images/image3.png#lightbox)
+[![Festlegen der Optionen](ios-build-mechanics-images/image3.png)](ios-build-mechanics-images/image3.png#lightbox)
 
 ## <a name="device-tricks"></a>Gerätetricks
 
@@ -148,7 +148,7 @@ Weitere Tipps
 
 Der folgende Screenshot zeigt, wie Sie in Ihren iOS-Optionen diese Optionen für den Simulator festlegen:
 
-[![](ios-build-mechanics-images/image4.png "Setting the options")](ios-build-mechanics-images/image4.png#lightbox)
+[![Festlegen der Optionen](ios-build-mechanics-images/image4.png)](ios-build-mechanics-images/image4.png#lightbox)
 
 ## <a name="using-the-linker"></a>Verwenden des Linkers
 

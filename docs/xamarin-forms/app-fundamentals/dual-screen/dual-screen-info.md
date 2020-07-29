@@ -10,20 +10,28 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 12f3ac86d2418c6516d000371753fc8ae65d557c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 760d03cb5667853ab7eea021e281ebd863dd8dc4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946350"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935225"
 ---
-# <a name="xamarinforms-dual-screen-device-capabilities"></a>Funktionen für Dual-Screen-Geräte in Xamarin.Forms
+# <a name="xamarinforms-dualscreeninfo-helper-class"></a>Xamarin.Forms-Hilfsklasse „DualScreenInfo“
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![Vorabrelease der API](~/media/shared/preview.png "Diese API ist derzeit als Vorabversion erhältlich.")
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 Mithilfe der `DualScreenInfo`-Klasse können Sie z. B. bestimmen, in welchem Bereich Ihre Ansicht angezeigt wird, wie groß sie ist, welche Ausrichtung das Gerät hat und welchen Öffnungsgrad das Scharnier aufweist.
+
+## <a name="configure-dualscreeninfo"></a>Konfigurieren von DualScreenInfo
+
+Führen Sie die folgenden Anweisungen aus, um ein Dual-Screen-Layout in Ihrer App zu erstellen:
+
+1. Befolgen Sie die Anweisungen zu den [ersten Schritten](index.md), um NuGet hinzuzufügen und die Android-Klasse `MainActivity` zu konfigurieren.
+1. Fügen Sie `using Xamarin.Forms.DualScreen;` zu Ihrer Klassendatei hinzu.
+1. Verwenden Sie die Klasse `DualScreenInfo.Current` in Ihrer App.
 
 ## <a name="properties"></a>Eigenschaften
 
@@ -213,7 +221,7 @@ public partial class GridUsingDualScreenInfo : ContentPage
 
 Der folgende Screenshot zeigt das Layout, das sich ergibt:
 
-![](dual-screen-info-images/grid-on-two-screens.png "Positioning Grid on Two Screens")
+![Positionieren eines Rasters auf zwei Bildschirmen](dual-screen-info-images/grid-on-two-screens.png)
 
 ## <a name="related-links"></a>Verwandte Links
 

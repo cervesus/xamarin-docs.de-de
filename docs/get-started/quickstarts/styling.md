@@ -1,6 +1,6 @@
 ---
-title: 'title: "Formatieren einer plattformübergreifenden Xamarin.Forms-Anwendung" description: "In diesem Artikel wird beschrieben, wie Sie eine plattformübergreifende Xamarin.Forms-Anwendung mit XAML-Formatvorlagen formatieren."'
-description: 'zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.assetid: CCCF8E57-D021-4542-8709-5808570FC26A ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 02/07/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Formatieren einer plattformübergreifenden Xamarin.Forms-Anwendung
+description: In diesem Artikel wird beschrieben, wie Sie eine plattformübergreifende Xamarin.Forms-Anwendung mit XAML-Formatvorlagen formatieren.
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -12,12 +12,12 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2d458bafc5bb1c8dcffc7858fd15734187f7612b
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 05560ae7c3d255140c0782e5f442dd2356d86cad
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84134068"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937422"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>Formatieren einer plattformübergreifenden Xamarin.Forms-Anwendung
 
@@ -29,8 +29,8 @@ In diesem Schnellstart lernen Sie Folgendes:
 
 In dieser Schnellstartanleitung erfahren Sie, wie Sie eine plattformübergreifende Xamarin.Forms-Anwendung mit XAML-Formatvorlagen formatieren. Die fertige Anwendung wird unten gezeigt:
 
-[![](styling-images/screenshots1-sml.png "Notes Page")](styling-images/screenshots1.png#lightbox "Notes Page")
-[![](styling-images/screenshots2-sml.png "Note Entry Page")](styling-images/screenshots2.png#lightbox "Note Entry Page")
+[![Notizenseite](styling-images/screenshots1-sml.png)](styling-images/screenshots1.png#lightbox "NotesPage")
+[![Notizeneintragsseite](styling-images/screenshots2-sml.png)](styling-images/screenshots2.png#lightbox "NoteEntryPage")
 
 ### <a name="prerequisites"></a>Voraussetzungen
 
@@ -169,7 +169,7 @@ Sie sollten den [vorherigen Schnellstart](database.md) erfolgreich abgeschlossen
 
     Speichern Sie die Änderungen an **NoteEntryPage.xaml**, indem Sie **STRG+S** drücken, und schließen Sie die Datei.
 
-5. Erstellen Sie das Projekt auf jeder Plattform, und führen Sie es aus. Weitere Informationen finden Sie unter [Erstellen des Schnellstarts](single-page.md#building-the-quickstart).
+5. Erstellen Sie das Projekt, und führen Sie es für jede Plattform aus. Weitere Informationen finden Sie unter [Erstellen des Schnellstarts](single-page.md#building-the-quickstart).
 
     Klicken Sie unter **NotesPage** auf **+** , um zur **NoteEntryPage**-Seite zu navigieren und eine Notiz einzugeben. Beobachten Sie auf jeder Seite, wie sich die Formatierung im Vergleich zum letzten Schnellstart geändert hat.
 

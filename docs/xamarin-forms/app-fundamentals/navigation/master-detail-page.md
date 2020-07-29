@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms MasterDetailPage" description: "Die Klasse „MasterDetailPage“ ist eine Xamarin.Forms-Seite, die zwei verwandte Seiten mit Informationen verwaltet. Eine davon ist die Masterseite, die Elemente darstellt, und die andere ist eine Detailseite, die Informationen zu Elementen auf der Masterseite darstellt.'
-description: 'In diesem Artikel wird erläutert, wie Sie eine MasterDetailPage-Klasse verwenden und zwischen den Seiten mit Informationen navigieren." ms.prod: xamarin ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 12/01/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Klasse „MasterDetailPage“ von Xamarin.Forms
+description: Die Klasse „MasterDetailPage“ ist eine Xamarin.Forms-Seite, die zwei verwandte Seiten mit Informationen verwaltet. Eine davon ist die Masterseite, die Elemente darstellt, und die andere ist eine Detailseite, die Informationen zu Elementen auf der Masterseite darstellt. In diesem Artikel wird erläutert, wie Sie eine MasterDetailPage-Klasse verwenden und zwischen den Seiten mit Informationen navigieren.
 ms.prod: xamarin
 ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c751a1843479f1e98739964631999dfdb0e3b634
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 3a65e9bb90f01bcb5e0b1182a21d998e2335da9a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569633"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934523"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Klasse „MasterDetailPage“ von Xamarin.Forms
 
@@ -27,7 +27,7 @@ _Die Klasse „MasterDetailPage“ ist eine Xamarin.Forms-Seite, die zwei verwan
 
 In der Regel zeigt eine Masterseite wie in den folgenden Screenshots gezeigt eine Liste von Elementen an:
 
-[![](master-detail-page-images/masterpage-components.png "Master Page Components")](master-detail-page-images/masterpage-components-large.png#lightbox "Master Page Components")
+[![Komponenten der Masterseite](master-detail-page-images/masterpage-components.png)](master-detail-page-images/masterpage-components-large.png#lightbox "Komponenten der Masterseite")
 
 Der Speicherort für die Liste der Elemente ist auf jeder Plattform identisch. Wenn Sie eines der Elemente auswählen, wird zur entsprechenden Detailseite navigiert. Darüber hinaus verfügt die Masterseite auch über eine Navigationsleiste, die eine Schaltfläche enthält, mit der Sie zur aktiven Detailseite navigieren können:
 
@@ -37,7 +37,7 @@ Der Speicherort für die Liste der Elemente ist auf jeder Plattform identisch. W
 
 Auf einer Detailseite werden Daten angezeigt, die dem auf der Masterseite ausgewählten Element entsprechen. In den folgenden Screenshots sehen Sie die Hauptkomponenten der Detailseite:
 
-![](master-detail-page-images/detailpage-components.png "Detail Page Components")
+![Komponenten der Detailseite](master-detail-page-images/detailpage-components.png)
 
 Die Detailseite enthält eine Navigationsleiste, deren Inhalt von der jeweiligen Plattform abhängen:
 
@@ -213,7 +213,7 @@ public class MasterPageCS : ContentPage
 
 In den folgenden Screenshots wird die Masterseite auf den jeweiligen Plattformen veranschaulicht:
 
-![](master-detail-page-images/masterpage.png "Master Page Example")
+![Beispiel für die Masterseite](master-detail-page-images/masterpage.png)
 
 ### <a name="creating-and-displaying-the-detail-page"></a>Erstellen und Anzeigen der Detailseite
 
@@ -248,7 +248,7 @@ Die `OnItemSelected`-Methode führt die folgenden Aktionen aus:
 
 In den folgenden Screenshots wird die Detailseite `ContactPage` gezeigt, die angezeigt wird, wenn sie auf der Masterseite ausgewählt wurde:
 
-![](master-detail-page-images/detailpage.png "Detail Page Example")
+![Beispiel für die Detailseite](master-detail-page-images/detailpage.png)
 
 ### <a name="controlling-the-detail-page-display-behavior"></a>Steuern des Anzeigeverhaltens der Detailseite
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: f05e763df58e6fafc4d4ed1d4007979859670c28
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 84a764054567bc504b3432a503a1072362e374dd
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725461"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938488"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>Signieren von Xamarin.Mac-Apps mit einer Entwickler-ID
 
@@ -24,23 +24,23 @@ Auf der Website von Apple erfahren Sie mehr über die [Entwickler-ID und Gatekee
 
 Um eine App zu erstellen, die direkt und NICHT über den Mac App Store an Benutzer verteilt werden soll, legen Sie **Signing Settings** auf **Developer ID** fest. Achten Sie darauf, die Konfiguration **Release** zu bearbeiten.
 
- [![](signing-images/config02.png "The Mac Signing options")](signing-images/config02.png#lightbox)
+ [![Die Mac-Signaturoptionen](signing-images/config02.png)](signing-images/config02.png#lightbox)
 
 ## <a name="build"></a>Build
 
 Stellen Sie vor dem Erstellen sicher, dass die richtige Konfiguration ausgewählt ist, und erstellen Sie ein Installationspaket in den Einstellungen **Mac Build**:
 
-[![](signing-images/config03.png "The build options")](signing-images/config03.png#lightbox)
+[![Die Buildoptionen](signing-images/config03.png)](signing-images/config03.png#lightbox)
 
 Während der Erstellung der App wird der Entwickler aufgefordert, beide Zertifikate zu verwenden:
 
- [![](signing-images/image57.png "Allowing keychain access")](signing-images/image57.png#lightbox)
+ [![Zulassen des Keychain-Zugriffs](signing-images/image57.png)](signing-images/image57.png#lightbox)
 
- [![](signing-images/image58.png "Allowing keychain access")](signing-images/image58.png#lightbox)
+ [![Zulassen des Keychain-Zugriffs](signing-images/image58.png)](signing-images/image58.png#lightbox)
 
 Nachdem die Anwendung erstellt wurde, kann der Entwickler mit der rechten Maustaste auf das Projekt klicken und **Enthaltenden Ordner öffnen** auswählen, um im Verzeichnis `bin/Release` nach der Paketdatei zu suchen. Diese Paketdatei enthält einen Installer für die Anwendung, damit sie für die Installation an jeden macOS-Benutzer verteilt werden kann.
 
- [![](signing-images/image59.png "Selecting the app package in Finder")](signing-images/image59.png#lightbox)
+ [![Auswählen des App-Pakets in Finder](signing-images/image59.png)](signing-images/image59.png#lightbox)
 
 ## <a name="related-links"></a>Verwandte Links
 

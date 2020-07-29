@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: davidortinau
 ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: c428d39911da9abff7d53d478fbe99dbe9a3604e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 32dec6b8fcdd5387e138a7812d8c3e2074673111
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724833"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939619"
 ---
 # <a name="mobile-software-development-lifecycle"></a>Lebenszyklus der Entwicklung mobiler Software
 
@@ -72,7 +72,7 @@ Sobald die Funktionen und Funktionalitäten der App bestimmt sind, sollten Sie s
 
 Die Benutzererfahrung (UX) wird üblicherweise mit Drahtmodellen oder Modellen mithilfe von [einem von vielen verfügbaren Entwurfstoolkits](https://docs.microsoft.com/windows/uwp/design/downloads/) entworfen. Durch UX-Modelle kann die UX entworfen werden, ohne den tatsächlichen UI-Entwurf berücksichtigen zu müssen:
 
- [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX is usually done via wireframes or mockups using tools such as Balsamiq")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
+ [![Die Benutzererfahrung (UX) wird üblicherweise mit Drahtmodellen oder Beispielmodellen mithilfe von Tools wie Balsamiq entworfen](introduction-to-mobile-sdlc-images/balsamiq.png)](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 Beim Erstellen von UX-Modellen ist es wichtig, die Richtlinien für die Benutzeroberfläche für die verschiedenen Zielplattformen der App zu berücksichtigen. Die App sollte den Anforderungen der verschiedenen Plattformen entsprechen. Die verschiedenen offiziellen Entwurfsrichtlinien für die jeweiligen Plattformen finden Sie unter:
 
@@ -84,11 +84,11 @@ Beispielsweise verfügt jede App über eine Metapher, über die man zwischen den
 
 Zudem werden UX-Entscheidungen von der Hardware an sich beeinflusst. Beispielsweise haben iOS-Geräte keine physische *Zurück-* Taste, weshalb Sie die Metapher Navigation Controller (Navigationscontroller) einfügen sollten.
 
- ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "iOS devices have no physical back button, and therefore introduce the Navigation Controller metaphor")
+ ![iOS-Geräte haben keine physische Zurück-Taste, weshalb Sie die Metapher „Navigationscontroller“ einfügen.](introduction-to-mobile-sdlc-images/01-navigation-controller.png)
 
 Auch Formfaktoren beeinflussen UX-Entscheidungen. Tablets sind viel größer als Smartphones und können daher auch mehr Informationen anzeigen. Häufig werden mehrere Anzeigen auf einem Smartphone auf Tablets auf nur eine Anzeige komprimiert.
 
- [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "Often what needs multiple screens on a phone is compressed into one for a tablet")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
+ [![Häufig werden mehrere Anzeigen auf einem Smartphone auf Tablets zu nur einer Anzeige komprimiert](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png)](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
 
 Angesichts der unzähligen bestehenden Formfaktoren gibt es häufig auch mittelgroße Formfaktoren (die zwischen einem Smartphone und einem Tablet liegen), die sie auch berücksichtigen sollten.
 
@@ -98,7 +98,7 @@ Sobald die UX bestimmt ist, muss als nächstes die UI entworfen werden. Für die
 
 Genauso wie bei der Erstellung der UX ist es wichtig zu bedenken, dass jede Plattform eine eigene Entwurfssprache hat. D.h., eine gut entworfene Anwendung wird möglicherweise trotzdem auf jeder Plattform anders aussehen.
 
- [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "A well-designed application may still look different on each platform")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
+ [![Eine überlegt entworfene Anwendung wird möglicherweise trotzdem auf jeder Plattform anders aussehen](introduction-to-mobile-sdlc-images/multiplatform-1.png)](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
 
 ### <a name="development"></a>Entwicklung
 

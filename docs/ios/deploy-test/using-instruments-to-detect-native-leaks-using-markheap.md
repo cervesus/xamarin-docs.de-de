@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 66d832f624bdd942f53c5f6d890457958969b1b7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c7cc3c74f5a26ec7e07636ebab865e9016409f89
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028423"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939177"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Erstellen von Xamarin.iOS-Anwendungsprofilen mit Instruments
 
@@ -35,13 +35,13 @@ Wählen Sie das Gerät aus, und führen Sie die Instruments-App aus:
 
 Die Instrumente werden nun geöffnet, und das folgende Dialogfeld wird angezeigt:
 
- [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Choosing a profiling template")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
+ [![Auswählen einer Profilerstellungsvorlage](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png)](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
 
 Klicken Sie auf die Profilvorlage **Allocations** (Speicherbelegungen). Sie können zwar auch eine der anderen Vorlagen auswählen, doch in diesem Artikel wird nur auf die Profilvorlage **Allocations** (Speicherbelegungen) eingegangen.
 
 Wählen Sie anschließend das Gerät und die Anwendung mit dem Menü im oberen Bereich des Fensters aus:
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "Select the device and application")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
+[![Auswählen eines Geräts und einer Anwendung](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png)](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
 
 Das iOS-Gerät sollte im Menü im oberen Bereich des Fensters ausgewählt sein. Daneben sollte außerdem die Anwendung, für die das Profil erstellt wird (**MemoryDemo** im Screenshot oben), ausgewählt sein.
 
@@ -49,13 +49,13 @@ Wenn das Gerät im Menü nicht aufgeführt wird, suchen Sie in der **Konsole** i
 
 Klicken Sie auf die Schaltfläche **Auswählen**, um sich den nächsten Bildschirm anzeigen zu lassen:
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "The profiling interface")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
+[![Die Profilerstellungsschnittstelle](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png)](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
 
 Klicken Sie auf die Schaltfläche zum Aufzeichnen (roter Kreis oben links ), um die Profilerstellung zu starten.
 
 Im folgenden Screenshot wird die Profilerstellung mit **Instruments** beispielhaft dargestellt:
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "An example of profiling using Instruments")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
+[![Beispiel für die Profilerstellung mit Instruments](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png)](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
 
 ## <a name="summary"></a>Zusammenfassung
 

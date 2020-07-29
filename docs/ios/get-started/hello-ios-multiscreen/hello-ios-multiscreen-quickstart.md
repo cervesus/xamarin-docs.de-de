@@ -9,18 +9,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: c89a3616bfa239ba919ae9750082bcef48c9f890
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1b279b125ce88a37ddb3209cfe689a7fef50a256
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73023372"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938748"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Schnellstart: Hallo, iOS Multiscreen
 
 In diesem Teil des Tutorials wird der Phoneword-Anwendung eine zweite Anzeige hinzugefügt, auf der die Liste der Telefonnummern aufgeführt wird, die mit der App angerufen wurden. Die endgültige Anwendung verfügt dann über einen zweiten Bildschirm, auf dem, wie im folgenden Screenshot veranschaulicht, die Anrufliste angezeigt wird:
 
-[![](hello-ios-multiscreen-quickstart-images/00.png "The final application will have a second screen that displays the call history, as illustrated by this screenshot")](hello-ios-multiscreen-quickstart-images/00.png#lightbox)
+[![Die endgültige Anwendung verfügt dann über eine zweite Anzeige, auf der, wie in diesem Screenshot veranschaulicht, die Anrufliste angezeigt wird](hello-ios-multiscreen-quickstart-images/00.png)](hello-ios-multiscreen-quickstart-images/00.png#lightbox)
 
 In den [entsprechenden ausführlichen Erläuterungen](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md) wird die erstellte Anwendung überprüft sowie die Architektur, Navigation und weitere neue iOS-Konzepte erläutert, denen Sie noch begegnen werden.
 
@@ -38,32 +38,32 @@ In dieser exemplarischen Vorgehensweise wird Ihrer **Phoneword**-Anwendung ein B
 
 2. Öffnen Sie im **Projektmappenpad** die Datei **Main.storyboard**:
 
-    ![](hello-ios-multiscreen-quickstart-images/02new.png "The Main.storyboard in the iOS Designer")
+    ![Die Datei „Main.storyboard“ im iOS-Designer](hello-ios-multiscreen-quickstart-images/02new.png)
 
 3. Ziehen Sie aus der **Toolbox** einen **Navigationscontroller** in die Entwurfsoberfläche (damit alle Elemente auf die Entwurfsoberfläche passen, müssen Sie die Ansicht möglicherweise verkleinern):
 
-    ![](hello-ios-multiscreen-quickstart-images/03new.png "Drag a navigation controller from the Toolbox onto the design surface")
+    ![Ziehen eines Navigationscontrollers aus der Toolbox auf die Entwurfsoberfläche](hello-ios-multiscreen-quickstart-images/03new.png)
 
 4. Ziehen Sie zum Ändern des Startpunkts der Anwendung den **Sourceless Segue** (den grauen Pfeil links neben dem Ansichtscontroller) zum **Navigationscontroller**:
 
-    ![](hello-ios-multiscreen-quickstart-images/04new.png "Drag the Sourceless Segue to the navigation controller to change the starting point of the application")
+    ![Ziehen des „Sourceless Segue“ zum Navigationscontroller zum Ändern des Startpunkts der Anwendung](hello-ios-multiscreen-quickstart-images/04new.png)
 
 5. Klicken Sie auf die untere Leiste, um den vorhandenen **Stammansichtscontroller** auszuwählen. Drücken Sie **ENTFERNEN**, um ihn aus der Entwurfsoberfläche zu entfernen.
 Verschieben Sie anschließend die **Phoneword**-Szene neben den **Navigationscontroller**:
 
-    ![](hello-ios-multiscreen-quickstart-images/05new.png "Move the Phoneword scene next to the navigation controller")
+    ![Verschieben der Phoneword-Szene neben den Navigationscontroller](hello-ios-multiscreen-quickstart-images/05new.png)
 
 6. Legen Sie den **ViewController** als **Stammansichtscontroller** des Navigationscontrollers fest. Drücken Sie die **STRG**-Taste, und klicken Sie in den **Navigationscontroller**. Eine blaue Linie wird nun angezeigt. Ziehen Sie anschließend mit gedrückter **STRG**-Taste vom **Navigationscontroller** zur **Phoneword**-Szene, und lassen Sie los. Diesen Vorgang nennt man _Ziehen mit gedrückter STRG-Taste_:
 
-    ![](hello-ios-multiscreen-quickstart-images/06.png "Drag from the navigation controller to the Phoneword scene and release")
+    ![Ziehen vom Navigationscontroller zur Phoneword-Szene und Release](hello-ios-multiscreen-quickstart-images/06.png)
 
 7. Legen Sie im Popover die Beziehung auf **Root** fest:
 
-    ![](hello-ios-multiscreen-quickstart-images/07new.png "Setting the relationship to Root")
+    ![Festlegen der Beziehung auf „Root“](hello-ios-multiscreen-quickstart-images/07new.png)
 
     Der **ViewController** ist jetzt als **Stammansichtscontroller des Navigationscontrollers** festgelegt:
 
-    ![](hello-ios-multiscreen-quickstart-images/08.png "The ViewController is now the navigation controllers Root view controller")
+    ![Der ViewController ist jetzt als Rootansichtscontroller des Navigationscontrollers festgelegt.](hello-ios-multiscreen-quickstart-images/08.png)
 
 8. Doppelklicken Sie auf die **Titel**-Leiste des **Phoneword**-Bildschirms, und ändern Sie den **Titel** in **Phoneword**:
 
@@ -71,23 +71,23 @@ Verschieben Sie anschließend die **Phoneword**-Szene neben den **Navigationscon
 
 9. Ziehen Sie aus der **Toolbox** eine **Schaltfläche**, und platzieren Sie sie unterhalb der **Anruf-Schaltfläche**. Ziehen Sie die Ziehpunkte der neuen **Schaltfläche** auf die gleiche Breite wie die **Anruf-Schaltfläche**:
 
-    ![](hello-ios-multiscreen-quickstart-images/10new.png "Make the new Button the same width as the Call Button")
+    ![Festlegen der Breite der neuen Schaltfläche auf die der Anruf-Schaltfläche](hello-ios-multiscreen-quickstart-images/10new.png)
 
 10. Ändern Sie im **Eigenschaftenpad** den **Namen** der Schaltfläche in **SchaltflächeAnrufliste**, und ändern Sie den **Titel** in **Anrufliste**:
 
-    ![](hello-ios-multiscreen-quickstart-images/11new.png "Change the Name of the Button to CallHistoryButton and change the Title to Call History")
+    ![Ändern des Namens der Schaltfläche in „CallHistoryButton“ und Ändern des Titels in „Anrufliste“](hello-ios-multiscreen-quickstart-images/11new.png)
 
 11. Erstellen Sie den Bildschirm **Anrufliste**. Ziehen Sie aus der **Toolbox** einen **Tabellenansichtscontroller** in die Entwurfsoberfläche:
 
-    ![](hello-ios-multiscreen-quickstart-images/12new.png "Drag a table view controller onto the design surface")
+    ![Ziehen eines Tabellenansichtscontrollers auf die Entwurfsoberfläche](hello-ios-multiscreen-quickstart-images/12new.png)
 
 12. Klicken Sie anschließend auf die schwarze Leiste am unteren Rand der Szene, um den **Tabellenansichtscontroller** auszuwählen. Ändern Sie im **Eigenschaftenpad** die Klasse des **Tabellenansichtscontrollers** in `CallHistoryController`, und drücken Sie die **EINGABETASTE**:
 
-    ![](hello-ios-multiscreen-quickstart-images/13new.png "Change the table view controllers class to CallHistoryController")
+    ![Ändern der Klasse des Tabellenansichtscontrollers in „CallHistoryController“](hello-ios-multiscreen-quickstart-images/13new.png)
 
     Der iOS-Designer generiert eine benutzerdefinierte Sicherungsklasse mit dem Namen `CallHistoryController`, um die Hierarchie der Inhaltsansicht auf diesem Bildschirm zu verwalten. Im **Projektmappenpad** wird die Datei **CallHistoryController.cs** angezeigt:
 
-    ![](hello-ios-multiscreen-quickstart-images/14new.png "The CallHistoryController.cs file in the Solution Pad")
+    ![Im Lösungspad wird die Datei „CallHistoryController.cs“ angezeigt.](hello-ios-multiscreen-quickstart-images/14new.png)
 
 13. Doppelklicken Sie auf die Datei **CallHistoryController.cs**, um sie öffnen. Ersetzen Sie den Inhalt durch den folgenden Code:
     
@@ -144,17 +144,17 @@ Verschieben Sie anschließend die **Phoneword**-Szene neben den **Navigationscon
 14. Erstellen Sie einen _Segue_ (einen Übergang) zwischen der **Phoneword**-Szene und der **Anrufliste**-Szene.
   Wählen Sie in der **Phoneword-Szene** die **Anrufliste-Schaltfläche** aus, und ziehen Sie mit gedrückter STRG-Taste von der **Schaltfläche** auf die **Anrufliste**-Szene:
 
-    ![](hello-ios-multiscreen-quickstart-images/15.png "Ctrl-drag from the Button to the Call History scene")
+    ![Ziehen mit gedrückter STRG-Taste von der Schaltfläche zur Anruflisten-Szene](hello-ios-multiscreen-quickstart-images/15.png)
 
     Wählen Sie im Popover **Aktion Segue** die Option **Anzeigen** aus.
 
     Der iOS-Designer fügt zwischen den beiden Szenen einen Segue hinzu:
 
-    ![](hello-ios-multiscreen-quickstart-images/17new.png "The Segue between the two scenes")
+    ![Der Segue zwischen den beiden Szenen](hello-ios-multiscreen-quickstart-images/17new.png)
 
 15. Wählen Sie zum Hinzufügen eines **Titels** zum **Tabellenansichtscontroller** die schwarze Leiste am unteren Rand der Szene aus. Ändern Sie im **Eigenschaftenpad** den **Titel des Ansichtscontrollers** in **Anrufliste**:
 
-    ![](hello-ios-multiscreen-quickstart-images/18new.png "Change the view controller title to Call History in the Properties Pad")
+    ![Ändern des Titels des Ansichtscontrollers im Eigenschaftenpad in „Anrufliste“](hello-ios-multiscreen-quickstart-images/18new.png)
 
 16. Beim Ausführen der Anwendung wird mit der **Anrufliste-Schaltfläche** der Bildschirm **Anrufliste** geöffnet. Die Tabellenansicht bleibt jedoch leer, da kein Code vorhanden ist, der nachverfolgt werden kann und der die Telefonnummern anzeigt.
 
@@ -264,7 +264,7 @@ Verschieben Sie anschließend die **Phoneword**-Szene neben den **Navigationscon
 
 18. Klicken Sie zum Starten der Anwendung im **iOS-Simulator** auf die Schaltfläche **Starten**:
 
-    ![](hello-ios-multiscreen-quickstart-images/19.png "Press the Start button to launch the application inside the iOS Simulator")
+    ![Zum Starten der Anwendung im iOS-Simulator auf die Schaltfläche „Starten“ klicken](hello-ios-multiscreen-quickstart-images/19.png)
 
 Herzlichen Glückwunsch, Sie haben die Xamarin.iOS-Multiscreen-Anwendung fertiggestellt!
 
@@ -279,38 +279,38 @@ In dieser exemplarischen Vorgehensweise wird Ihrer **Phoneword**-Anwendung ein B
 
 2. Beginnen Sie mit der Bearbeitung der Benutzeroberfläche. Öffnen Sie im **Projektmappen-Explorer** die Datei **Main.storyboard**, und stellen Sie sicher, dass **Anzeigen als** auf _iPhone 6_ festgelegt ist:
 
-    ![](hello-ios-multiscreen-quickstart-images/image1.png "The Main.storyboard in the iOS Designer")
+    ![Die Datei „Main.storyboard“ im iOS-Designer](hello-ios-multiscreen-quickstart-images/image1.png)
 
 3. Ziehen Sie einen **Navigationscontroller** aus der **Toolbox** auf die Entwurfsoberfläche:
 
-    ![](hello-ios-multiscreen-quickstart-images/image2.png "Drag a navigation controller from the Toolbox onto the design surface")
+    ![Ziehen eines Navigationscontrollers aus der Toolbox auf die Entwurfsoberfläche](hello-ios-multiscreen-quickstart-images/image2.png)
 
 4. Ziehen Sie zum Ändern des Startpunkts der Anwendung den **Sourceless Segue** (den grauen Pfeil links neben der **Phoneword**-Szene) von der **Phoneword**-Szene zum **Navigationscontroller**:
 
-    ![](hello-ios-multiscreen-quickstart-images/image3.png "Drag the Sourceless Segue to the navigation controller to change the starting point of the application")
+    ![Ziehen des „Sourceless Segue“ zum Navigationscontroller zum Ändern des Startpunkts der Anwendung](hello-ios-multiscreen-quickstart-images/image3.png)
 
 5. Klicken Sie auf die schwarze Leiste, um den **Stammansichtscontroller** auszuwählen. Drücken Sie **ENTFERNEN**, um ihn aus der Entwurfsoberfläche zu entfernen.
   Verschieben Sie anschließend die **Phoneword**-Szene neben den **Navigationscontroller**:
 
-    ![](hello-ios-multiscreen-quickstart-images/image4.png "Move the Phoneword scene next to the navigation controller")
+    ![Verschieben der Phoneword-Szene neben den Navigationscontroller](hello-ios-multiscreen-quickstart-images/image4.png)
 
 6. Legen Sie den **ViewController** als Stammansichtscontroller des Navigationscontrollers fest. Drücken Sie die **STRG**-Taste, und klicken Sie in den **Navigationscontroller**. Eine blaue Linie wird nun angezeigt. Ziehen Sie anschließend mit gedrückter **STRG**-Taste vom **Navigationscontroller** zur **Phoneword**-Szene, und lassen Sie los. Diesen Vorgang nennt man _Ziehen mit gedrückter STRG-Taste_:
 
-    ![](hello-ios-multiscreen-quickstart-images/image5.png "Drag from the navigation controller to the Phoneword scene and release")
+    ![Ziehen vom Navigationscontroller zur Phoneword-Szene und Release](hello-ios-multiscreen-quickstart-images/image5.png)
 
 7. Legen Sie im Popover die Beziehung auf **Root** fest:
 
-    ![](hello-ios-multiscreen-quickstart-images/image6.png "Set the relationship to Root")
+    ![Festlegen der Beziehung auf „Root“](hello-ios-multiscreen-quickstart-images/image6.png)
 
     Der **ViewController** ist jetzt als **Stammansichtscontroller des Navigationscontrollers** festgelegt:
 
 8. Doppelklicken Sie auf die **Titel**-Leiste des **Phoneword**-Bildschirms, und ändern Sie den **Titel** in **Phoneword**:
 
-    ![](hello-ios-multiscreen-quickstart-images/image7.png "Change the Title to Phoneword")
+    ![Ändern des Titels in „Phoneword“](hello-ios-multiscreen-quickstart-images/image7.png)
 
 9. Ziehen Sie aus der **Toolbox** eine **Schaltfläche**, und platzieren Sie sie unterhalb der **Anruf-Schaltfläche**. Ziehen Sie die Ziehpunkte der neuen **Schaltfläche** auf die gleiche Breite wie die **Anruf-Schaltfläche**:
 
-    ![](hello-ios-multiscreen-quickstart-images/image8.png "Make the new Button the same width as the Call Button")
+    ![Festlegen der Breite der neuen Schaltfläche auf die der Anruf-Schaltfläche](hello-ios-multiscreen-quickstart-images/image8.png)
 
 10. Ändern Sie im **Eigenschaften-Explorer** den **Namen** der **Schaltfläche** in `CallHistoryButton`, und ändern Sie den **Titel** in **Anrufliste**:
 
@@ -318,15 +318,15 @@ In dieser exemplarischen Vorgehensweise wird Ihrer **Phoneword**-Anwendung ein B
 
 11. Erstellen Sie den Bildschirm **Anrufliste**. Ziehen Sie aus der **Toolbox** einen **Tabellenansichtscontroller** in die Entwurfsoberfläche:
 
-    ![](hello-ios-multiscreen-quickstart-images/image10.png "Drag a table view controller onto the design surface")
+    ![Ziehen eines Tabellenansichtscontrollers auf die Entwurfsoberfläche](hello-ios-multiscreen-quickstart-images/image10.png)
 
 12. Klicken Sie auf die schwarze Leiste am unteren Rand der Szene, um den **Tabellenansichtscontroller** auszuwählen. Ändern Sie im **Eigenschaften-Explorer** die Klasse des **Tabellenansichtscontrollers** in `CallHistoryController`, und drücken Sie die **EINGABETASTE**:
 
-    ![](hello-ios-multiscreen-quickstart-images/image11.png "Change the table view controllers class to CallHistoryController")
+    ![Ändern der Klasse des Tabellenansichtscontrollers in „CallHistoryController“](hello-ios-multiscreen-quickstart-images/image11.png)
 
     Der iOS-Designer generiert eine benutzerdefinierte Sicherungsklasse mit dem Namen `CallHistoryController`, um die Hierarchie der Inhaltsansicht auf diesem Bildschirm zu verwalten. Im **Projektmappen-Explorer** wird die Datei **CallHistoryController.cs** angezeigt:
 
-    ![](hello-ios-multiscreen-quickstart-images/image12.png "The CallHistoryController.cs file in the Solution Explorer")
+    ![Im Projektmappen-Explorer wird die Datei „CallHistoryController.cs“ angezeigt.](hello-ios-multiscreen-quickstart-images/image12.png)
 
 13. Doppelklicken Sie auf die Datei **CallHistoryController.cs**, um sie öffnen. Ersetzen Sie den Inhalt durch den folgenden Code:
 
@@ -384,19 +384,19 @@ In dieser exemplarischen Vorgehensweise wird Ihrer **Phoneword**-Anwendung ein B
 14. Erstellen Sie einen _Segue_ (einen Übergang) zwischen der **Phoneword**-Szene und der **Anrufliste**-Szene.
   Wählen Sie in der **Phoneword-Szene** die **Anrufliste-Schaltfläche** aus, und ziehen Sie **mit gedrückter STRG-Taste** von der **Schaltfläche** auf die **Anrufliste**-Szene:
 
-    ![](hello-ios-multiscreen-quickstart-images/image13.png "Ctrl-drag from the Button to the Call History scene")
+    ![Ziehen mit gedrückter STRG-Taste von der Schaltfläche zur Anruflisten-Szene](hello-ios-multiscreen-quickstart-images/image13.png)
 
     Wählen Sie im Popover **Aktion Segue** die Option **Anzeigen** aus:
 
-    ![](hello-ios-multiscreen-quickstart-images/image14.png "Select Show as the segue type")
+    ![Auswählen von „Anzeigen“ als Segue-Typ](hello-ios-multiscreen-quickstart-images/image14.png)
 
     Der iOS-Designer fügt zwischen den beiden Szenen einen Segue hinzu:
 
-    ![](hello-ios-multiscreen-quickstart-images/image15.png "The Segue between the two scenes")
+    ![Der Segue zwischen den beiden Szenen](hello-ios-multiscreen-quickstart-images/image15.png)
 
 15. Wählen Sie zum Hinzufügen eines **Titels** zum **Tabellenansichtscontroller** die schwarze Leiste am unteren Rand der Szene aus. Ändern Sie im **Eigenschaften-Explorer** die Option **Ansichtscontroller > Titel** in **Anrufliste**:
 
-    ![](hello-ios-multiscreen-quickstart-images/image16.png "Change the view controller Title to Call History")
+    ![Ändern des Titels des Ansichtscontrollers in „Anrufliste“](hello-ios-multiscreen-quickstart-images/image16.png)
 
 16. Beim Ausführen der Anwendung wird mit der **Anrufliste-Schaltfläche** der Bildschirm **Anrufliste** geöffnet. Die Tabellenansicht bleibt jedoch leer, da kein Code vorhanden ist, der nachverfolgt werden kann und der die Telefonnummern anzeigt.
 
@@ -507,7 +507,7 @@ In dieser exemplarischen Vorgehensweise wird Ihrer **Phoneword**-Anwendung ein B
 
 18. Klicken Sie zum Starten der Anwendung im **iOS-Simulator** auf die Schaltfläche **Starten**:
 
-    ![](hello-ios-multiscreen-quickstart-images/19.png "The first screen of the sample app")
+    ![Der erste Bildschirm der Beispiel-App](hello-ios-multiscreen-quickstart-images/19.png)
 
 Herzlichen Glückwunsch, Sie haben die Xamarin.iOS-Multiscreen-Anwendung fertiggestellt!
 

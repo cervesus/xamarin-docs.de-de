@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms – Ausführliche Erläuterungen zum Schnellstart" description: "In diesem Artikel werden die Grundlagen der Anwendungsentwicklung mit Xamarin.Forms erläutert.'
-description: 'Zu den behandelten Themen zählen die Struktur einer Xamarin.Forms-Anwendung, die Architektur- und Anwendungsgrundlagen sowie die Benutzeroberfläche." zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.custom: video ms.assetid: 7B2340A1-6883-41D8-860C-0BB6C4E0C316 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 11/27/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms Ausführliche Erläuterungen zum Schnellstart
+description: In diesem Artikel werden die Grundlagen der Anwendungsentwicklung mit Xamarin.Forms erläutert. Zu den behandelten Themen zählen die Struktur einer Xamarin.Forms-Anwendung, die Architektur- und Anwendungsgrundlagen sowie die Benutzeroberfläche.
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -13,12 +13,12 @@ ms.date: 11/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1bfb76f71a2ac9d8bc9ae84152501909000b9623
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: d1670506fa78b39825368fc91d2452a44ddf8f03
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84132521"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939918"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms Ausführliche Erläuterungen zum Schnellstart
 
@@ -30,7 +30,7 @@ Im [Xamarin.Forms-Schnellstart](~/get-started/index.yml) wurde die Notes-Anwendu
 
 In Visual Studio wird Code in *Projektmappen* und *Projekten* organisiert. Eine Projektmappe ist ein Container, der mindestens ein Projekt enthält. Ein Projekt kann z.B. eine Anwendung, eine unterstützende Bibliothek oder eine Testanwendung sein. Die Notes-Anwendung besteht wie im folgenden Screenshot gezeigt aus einer Projektmappe mit vier Projekten:
 
-![](deepdive-images/vs/solution.png "Visual Studio Solution Explorer")
+![Projektmappen-Explorer von Visual Studio](deepdive-images/vs/solution.png)
 
 Diese Projekte sind folgende:
 
@@ -43,7 +43,7 @@ Diese Projekte sind folgende:
 
 Der folgende Screenshot zeigt den Inhalt des .NET Standard-Bibliotheksprojekts „Notes“ in Visual Studio:
 
-![](deepdive-images/vs/net-standard-project.png "Phoneword .NET Standard Project Contents")
+![Inhalt des Phoneword-Projekts für .NET Standard](deepdive-images/vs/net-standard-project.png)
 
 Das Projekt verfügt über den Knoten **Abhängigkeiten**, der die Knoten **NuGet** und **SDK** enthält:
 
@@ -57,7 +57,7 @@ Das Projekt verfügt über den Knoten **Abhängigkeiten**, der die Knoten **NuGe
 
 Die Codeorganisation in [Visual Studio für Mac](/visualstudio/mac/) baut auf Visual Studio auf und gliedert sich in *Projektmappen* und *Projekte*. Eine Projektmappe ist ein Container, der mindestens ein Projekt enthält. Ein Projekt kann z.B. eine Anwendung, eine unterstützende Bibliothek oder eine Testanwendung sein. Die Notes-Anwendung besteht wie im folgenden Screenshot gezeigt aus einer Projektmappe mit drei Projekten:
 
-![](deepdive-images/vsmac/solution.png "Visual Studio for Mac Solution Pane")
+![Visual Studio für Mac: Projektmappenbereich](deepdive-images/vsmac/solution.png)
 
 Diese Projekte sind folgende:
 
@@ -69,7 +69,7 @@ Diese Projekte sind folgende:
 
 Der folgende Screenshot zeigt den Inhalt des .NET Standard-Bibliotheksprojekts „Notes“ in Visual Studio für Mac:
 
-![](deepdive-images/vsmac/net-standard-project.png "Phoneword .NET Standard Library Project Contents")
+![Inhalt des .NET Standard-Bibliotheksprojekts „Phoneword“](deepdive-images/vsmac/net-standard-project.png)
 
 Das Projekt verfügt über den Knoten **Abhängigkeiten**, der die Knoten **NuGet** und **SDK** enthält:
 
@@ -98,12 +98,12 @@ Eine Xamarin.Forms-Anwendung ist genauso aufgebaut wie eine traditionelle plattf
 
 ::: zone pivot="windows"
 
-![](deepdive-images/vs/architecture.png "Notes Architecture")
+![Notes-Architektur](deepdive-images/vs/architecture.png)
 
 ::: zone-end
 ::: zone pivot="macos"
 
-![](deepdive-images/vsmac/architecture.png "Notes Architecture")
+![Notes-Architektur](deepdive-images/vsmac/architecture.png)
 
 ::: zone-end
 
@@ -388,7 +388,7 @@ Datenbindung wird verwendet, um zu vereinfachen, wie eine Xamarin.Forms-Anwendun
 
 Bei der Datenbindung werden zwei Objekte miteinander verbunden: die *Quelle* und das *Ziel*. Das *Quellobjekt* stellt die Daten bereit. Das *Zielobjekt* verwendet Daten aus dem Quellobjekt (und zeigt diese häufig an). Mit einem [`Editor`](xref:Xamarin.Forms.Editor) (*Zielobjekt*) wird die zugehörige Eigenschaft [`Text`](xref:Xamarin.Forms.InputView.Text) beispielsweise häufig an eine öffentliche `string`-Eigenschaft in einem *Quellobjekt* gebunden. Das folgende Diagramm veranschaulicht die Bindungsbeziehung:
 
-![](deepdive-images/data-binding.png "Data Binding")
+![Datenbindung](deepdive-images/data-binding.png)
 
 Der Hauptvorteil der Datenbindung ist, dass Sie Daten zwischen Ihren Ansichten und der Datenquelle nicht mehr synchronisieren müssen. Änderungen im *Quellobjekt* werden automatisch mithilfe von Push intern vom Bindungsframework in das *Zielobjekt* übertragen, und Änderungen im Zielobjekt können optional wieder zurück in das *Quellobjekt* übertragen werden.
 
@@ -532,7 +532,7 @@ In diesem Artikel wurden die Grundlagen der Anwendungsentwicklung mit Xamarin.Fo
 - Zudem können durch Effekte native Steuerelemente auf den einzelnen Plattformen angepasst werden. Effekte werden in plattformspezifischen Projekten erstellt, indem Unterklassen für die [`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2)-Klasse erstellt werden. Sie werden verarbeitet, indem sie an das entsprechende Xamarin.Forms-Steuerelement angefügt werden. Weitere Informationen finden Sie unter [Effekte](~/xamarin-forms/app-fundamentals/effects/index.md).
 - Freigegebener Code kann über die [`DependencyService`](xref:Xamarin.Forms.DependencyService)-Klasse auf eine native Funktion zugreifen. Weitere Informationen finden Sie unter [Accessing Native Features with DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) (Zugreifen auf native Funktionen über DependencyService).
 
-Alternativ enthält das Buch [_Creating Mobile Apps with Xamarin.Forms_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) (Erstellen von mobilen Apps mit Xamarin.Forms) von Charles Petzold weitere Informationen zu Xamarin.Forms. Das Buch ist als PDF und in zahlreichen anderen E-Book-Formaten erhältlich.
+Alternativ finden Sie weitere Informationen zu Xamarin.Forms im Buch [_Creating Mobile Apps with Xamarin.Forms_ ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) (Erstellen von mobilen Apps mit Xamarin.Forms) von Charles Petzold. Das Buch ist als PDF und in zahlreichen anderen E-Book-Formaten erhältlich.
 
 ## <a name="related-links"></a>Verwandte Links
 

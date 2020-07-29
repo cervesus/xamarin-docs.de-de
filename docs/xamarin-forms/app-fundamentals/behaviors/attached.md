@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 08b1c738dc87bb9373436a3fd96486eb15341112
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a705eef2ecd240b8944117a67a90ebeebc382bcb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139424"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933746"
 ---
 # <a name="attached-behaviors"></a>Angefügte Verhaltensweisen
 
@@ -106,7 +106,7 @@ NumericValidationBehavior.SetAttachBehavior (entry, true);
 
 Bei der Ausführung reagiert das Verhalten gemäß der Verhaltensimplementierung auf die Interaktion mit dem Steuerelement. In den folgenden Screenshots wird die Reaktion des angefügten Verhaltens auf ungültige Eingabe veranschaulicht:
 
-[![](attached-images/screenshots-sml.png "Sample Application with Attached Behavior")](attached-images/screenshots.png#lightbox "Sample Application with Attached Behavior")
+[![Beispielanwendung mit angefügtem Verhalten](attached-images/screenshots-sml.png)](attached-images/screenshots.png#lightbox "Beispielanwendung mit angefügtem Verhalten")
 
 > [!NOTE]
 > Angefügte Verhaltensweisen werden für einen spezifischen Steuerelementtyp (oder eine übergeordnete Klasse, die für mehrere Steuerelemente gelten kann) geschrieben und sollten nur zu kompatiblen Steuerelementen hinzugefügt werden. Der Versuch, ein Verhalten an ein nicht kompatibles Steuerelement anzufügen, führt zu einem unbekannten Verhalten und hängt von der Verhaltensimplementierung ab.

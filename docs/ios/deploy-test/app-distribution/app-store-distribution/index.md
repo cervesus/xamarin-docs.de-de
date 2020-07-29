@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: ee8ff58566732c6a86a339d3080c7243be4b4a4e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c9882944938b2d5136d36304c4a400208a68663a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572194"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937331"
 ---
 # <a name="app-store-distribution"></a>App Store-Verteilung
 
@@ -53,13 +53,13 @@ Sie können dieselbe **App-ID** und dieselben **Geräte** wie für das Entwicklu
 3. Klicken Sie auf die Schaltfläche **+** , um ein neues Zertifikat zu erstellen.
 4. Wählen Sie unter der Überschrift *Produktion* die Option **App Store and Ad Hoc** (App Store und Ad-hoc) aus:
 
-    [![](images/createcertmanually01.png "Select App Store and Ad Hoc")](images/createcertmanually01.png#lightbox)
+    [![Auswählen der Option „App Store und Ad-hoc“](images/createcertmanually01.png)](images/createcertmanually01.png#lightbox)
 5. Klicken Sie auf **Continue** (Weiter), und befolgen Sie die Anweisungen zum Erstellen einer Zertifikatsignieranforderung mithilfe des Keychain-Zugriffs:
 
-    [![](images/createcertmanually02.png "Create a Certificate Signing Request via Keychain Access")](images/createcertmanually02.png#lightbox)
+    [![Eine Zertifikatsignieranforderung über Keychain-Zugriff erstellen](images/createcertmanually02.png)](images/createcertmanually02.png#lightbox)
 6. Sobald Sie die CSR wie beschrieben erstellt haben, klicken Sie auf **Weiter**, und laden Sie die CSR in das Member Center hoch:
 
-    [![](images/createcertmanually03.png "Upload the CSR to the Member Center")](images/createcertmanually03.png#lightbox)
+    [![Zertifikatsignieranforderung in das Member Center hochladen](images/createcertmanually03.png)](images/createcertmanually03.png#lightbox)
 
 7. Klicken Sie auf **Generate** (Generieren), um das Zertifikat zu erstellen.
 8. Klicken Sie für das abgeschlossene Zertifikat auf **Download** (Herunterladen), und doppelklicken Sie auf die Datei, um sie zu installieren.
@@ -67,11 +67,11 @@ Sie können dieselbe **App-ID** und dieselben **Geräte** wie für das Entwicklu
 
 Alternativ ist es möglich, ein Zertifikat über das Dialogfeld „Preferences“ (Einstellungen) in Xcode anzufordern. Führen Sie dazu folgende Schritte aus:
 
-1. Wählen Sie das Team aus, und klicken Sie auf **Manage Certificates…** (Zertifikate verwalten...): [![](images/selectteam.png "Das Team auswählen und Details anzeigen")](images/selectteam.png#lightbox).
+1. Wählen Sie das Team aus, und klicken Sie auf **Manage Certificates…** (Zertifikate verwalten...):  [![Auswählen des Teams und Anzeigen von Details](images/selectteam.png)](images/selectteam.png#lightbox)
 
-2. Klicken Sie anschließend auf die Schaltfläche **Erstellen** neben **iOS Distribution Certificate** (iOS-Verteilungszertifikat): [![](images/selectcert.png "Ein iOS-Verteilungszertifikat erstellen")](images/selectcert.png#lightbox).
+2. Klicken Sie anschließend auf die Schaltfläche **Create** (Erstellen) neben **iOS Distribution Certificate** (iOS-Verteilungszertifikat):  [![Erstellen eines iOS-Verteilungszertifikats](images/selectcert.png)](images/selectcert.png#lightbox)
 
-3. Die Signierungsidentität wird wie unten dargestellt abhängig von Ihren Teamprivilegien generiert, oder Sie müssen warten, bis ein Team-Agent oder Administrator diese genehmigt: [![](images/generated.png "Die Signieridentität wird generiert und ein Dialogfeld angezeigt")](images/generated.png#lightbox).
+3. Die Signierungsidentität wird wie unten dargestellt abhängig von Ihren Teamprivilegien generiert, oder Sie müssen warten, bis ein Team-Agent oder Administrator diese genehmigt:  [![Die Signieridentität wird generiert und ein Dialogfeld wird angezeigt](images/generated.png)](images/generated.png#lightbox)
 
 <a name="creatingprofile"></a>
 
@@ -95,29 +95,29 @@ Wie bei anderen erstellten Bereitstellungsprofilen ist eine App-ID erforderlich,
 
 Wenn Sie die erforderlichen Komponenten zum Erstellen eines Verteilungsprofils haben, führen Sie die folgenden Schritte aus, um es zu erstellen:
 
-1. Navigieren Sie zurück zum Apple-Bereitstellungsportal, und wählen Sie **Provisioning** (Bereitstellung) > **Distribution** (Verteilung) aus:
+1. Navigieren Sie zurück zum Apple-Bereitstellungsportal, und wählen Sie **Bereitstellung** > **Verteilung** aus:
 
-    [![](images/distribute01.png "RSelect Provisioning > Distribution")](images/distribute01.png#lightbox)
+    [![„Bereitstellung“ > „Verteilung“ auswählen](images/distribute01.png)](images/distribute01.png#lightbox)
 
 2. Klicken Sie auf die Schaltfläche **+** , und wählen Sie als Typ des Verteilungsprofils, das Sie erstellen möchten, **App Store** aus:
 
-    [![](images/distribute02.png "Create an App Store distribution profile")](images/distribute02.png#lightbox)
+    [![Erstellen eines App Store-Verteilungsprofils](images/distribute02.png)](images/distribute02.png#lightbox)
 
 3. Klicken Sie auf die Schaltfläche **Continue** (Weiter), und wählen Sie aus der Dropdownliste die App-ID aus, für die Sie ein Verteilungsprofil erstellen möchten:
 
-    [![](images/distribute03.png "Select App ID from the dropdown list")](images/distribute03.png#lightbox)
+    [![Auswahl von „App-ID“ in der Dropdownliste](images/distribute03.png)](images/distribute03.png#lightbox)
 
 4. Klicken Sie auf die Schaltfläche **Weiter**, und wählen Sie das Zertifikat zum Signieren der Anwendung aus:
 
-    [![](images/distribute04.png "Select the certificate required to sign the application")](images/distribute04.png#lightbox)
+    [![Auswählen des erforderlichen Zertifikat zum Signieren der Anwendung](images/distribute04.png)](images/distribute04.png#lightbox)
 
 5. Klicken Sie auf die Schaltfläche **Weiter**, und wählen Sie das iOS-Gerät aus, auf dem die Xamarin.iOS-Anwendung ausgeführt werden soll:
 
-    [![](images/distribute05.png "Select the iOS devices that app will be allowed to run on")](images/distribute05.png#lightbox)
+    [![Auswählen der iOS-Geräte, auf denen die App ausgeführt werden darf](images/distribute05.png)](images/distribute05.png#lightbox)
 
 6. Klicken Sie auf die Schaltfläche **Weiter**, und geben Sie einen **Namen** für das neue Verteilungsprofil ein:
 
-    [![](images/distribute06.png "Enter a Name for the new Distribution Profile")](images/distribute06.png#lightbox)
+    [![Eingeben eines Namens für das neue Verteilungsprofil](images/distribute06.png)](images/distribute06.png#lightbox)
 
 7. Klicken Sie auf die Schaltfläche **Generieren**, um das neue Profil zu erstellen und den Prozess abzuschließen.
 
@@ -144,13 +144,13 @@ Wenn Sie bereit sind, den endgültigen Build einer Xamarin.iOS-Anwendung für de
 1. Doppelklicken Sie auf den Projektnamen im **Projektmappen-Explorer**, um das Projekt für die Bearbeitung zu öffnen.
 2. Wählen Sie aus der Dropdownliste **Konfiguration** die Optionen **iOS-Bundle-Signierung** und **Release | iPhone** aus:
 
-    ![](images/releasexs01.png "Select Release | iPhone from the Configuration dropdown")
+    ![„Release | iPhone“ in der Dropdownliste „Konfiguration“ auswählen](images/releasexs01.png)
 3. In den meisten Fällen kann für die **Signierungsidentität** und das **Bereitstellungsprofil** der Standardwert **Automatisch** beibehalten werden. Visual Studio für Mac wählt basierend auf dem Bündelbezeichner in der Datei „Info.plist“ das richtige Profil aus:
 
-    ![](images/releasexs02.png "The Signing Identity and the Provisioning Profile set to the default values of Automatic")
+    ![Signieridentität und Bereitstellungsprofil mit Standardwert „Automatisch“](images/releasexs02.png)
 4. Wählen Sie bei Bedarf die Signierungsidentität und das (zuvor erstellte) Verteilungsprofil aus den Dropdownlisten aus:
 
-    ![](images/releasexs03.png "Select the Signing Identity and Distribution Profiles")
+    ![Signieridentität und Verteilungsprofile auswählen](images/releasexs03.png)
 5. Klicken Sie auf die Schaltfläche **OK**, um die Änderungen zu speichern.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -160,13 +160,13 @@ Wenn Sie bereit sind, den endgültigen Build einer Xamarin.iOS-Anwendung für de
 1. Klicken Sie mit der rechten Maustaste im **Projektmappen-Explorer** auf den Projektnamen, und wählen Sie **Eigenschaften** aus, um das Projekt für die Bearbeitung zu öffnen.
 2. Wählen Sie aus der Dropdownliste **Konfiguration** die Optionen **iOS-Bundle-Signierung** und **Release | iPhone** aus:
 
-    ![](images/releasevs01.png "Select Release | iPhone from the Configuration dropdown")
+    ![„Release | iPhone“ in der Dropdownliste „Konfiguration“ auswählen](images/releasevs01.png)
 3. In den meisten Fällen kann für die **Signierungsidentität** und das **Bereitstellungsprofil** der Standardwert **Automatisch** beibehalten werden. Visual Studio wählt basierend auf dem Bündelbezeichner in der Datei „Info.plist“ das richtige Profil aus:
 
-    ![](images/releasevs02.png "The Signing Identity and the Provisioning Profile set to the default values of Automatic")
+    ![Signieridentität und Bereitstellungsprofil mit Standardwert „Automatisch“](images/releasevs02.png)
 4. Wählen Sie bei Bedarf die Signierungsidentität und das (zuvor erstellte) Verteilungsprofil aus den Dropdownlisten aus:
 
-    ![](images/releasevs03.png "Select the Signing Identity and Distribution Profile")
+    ![Auswählen der Signieridentität und des Verteilungsprofils](images/releasevs03.png)
 5. Speichern Sie die Änderungen an den Projekteigenschaften.
 
 -----

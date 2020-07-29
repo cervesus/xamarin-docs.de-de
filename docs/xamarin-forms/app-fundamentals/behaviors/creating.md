@@ -1,6 +1,6 @@
 ---
-title: 'title: "Erstellen von Xamarin.Forms-Verhalten“ description: „Xamarin.Forms-Verhalten werden von den Klassen „Behavior“ und „Behavior<T>“ abgeleitet.'
-description: 'In diesem Artikel wird veranschaulicht, wie Xamarin.Forms-Verhalten erstellt und verarbeitet werden." ms.prod: xamarin ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 04/06/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Erstellen von Xamarin.Forms-Verhalten
+description: Xamarin.Forms-Verhalten werden durch Erstellung von den Klassen „Behavior“ und „Behavior<T>“ erstellt. In diesem Artikel wird veranschaulicht, wie Xamarin.Forms-Verhalten erstellt und verarbeitet werden.
 ms.prod: xamarin
 ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 67db30b5caadce75a41755530db2b245562d0304
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: f265d1da894b195402c91cbf9468a11837c53bcf
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84135823"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933708"
 ---
 # <a name="create-xamarinforms-behaviors"></a>Erstellen von Xamarin.Forms-Verhalten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
-_Xamarin.Forms-Verhalten werden von der Klasse „Behavior“ oder „Behavior&lt;T&gt; abgeleitet. In diesem Artikel wird veranschaulicht, wie Xamarin.Forms-Verhalten erstellt und verarbeitet werden._
+_Xamarin.Forms-Verhaltensweisen werden durch eine Ableitung von den Klassen „Behavior“ oder „Behavior&lt;T&gt;“ erstellt. In diesem Artikel wird veranschaulicht, wie Xamarin.Forms-Verhalten erstellt und verarbeitet werden._
 
 ## <a name="overview"></a>Übersicht
 
@@ -113,7 +113,7 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 Bei der Ausführung reagiert das Verhalten gemäß der Verhaltensimplementierung auf die Interaktion mit dem Steuerelement. In den folgenden Screenshots wird die Reaktion des Verhaltens auf ungültige Eingabe veranschaulicht:
 
-[![](creating-images/screenshots-sml.png "Sample Application with Xamarin.Forms Behavior")](creating-images/screenshots.png#lightbox "Sample Application with Xamarin.Forms Behavior")
+[![Beispielanwendung mit Xamarin.Forms-Verhalten](creating-images/screenshots-sml.png)](creating-images/screenshots.png#lightbox "Beispielanwendung mit Xamarin.Forms-Verhalten")
 
 > [!NOTE]
 > Verhalten werden für einen spezifischen Steuerelementtyp (oder eine übergeordnete Klasse, die für mehrere Steuerelemente gelten kann) geschrieben und sollten nur zu kompatiblen Steuerelementen hinzugefügt werden. Wenn ein Verhalten an ein inkompatibles Steuerelement angefügt wird, wird eine Ausnahme ausgelösten.

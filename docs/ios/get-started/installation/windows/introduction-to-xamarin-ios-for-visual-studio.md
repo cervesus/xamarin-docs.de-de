@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: ae32588d75ec3152a1b8b8558d40abbe2e76d1b4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2650bda7115cd132e87bf669914320f63214e295
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022475"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933223"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Einführung in Xamarin.iOS für Visual Studio
 
@@ -53,7 +53,7 @@ Die Funktionen dieser Symbolleisten werden unten erläutert.
 
 Die für die Xamarin.iOS-Entwicklung relevanten Steuerelemente sind rot markiert:
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "The controls relevant to Xamarin iOS development are circled in red")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "The controls relevant to Xamarin iOS development are circled in red")
+[![Die für die Xamarin.iOS-Entwicklung relevanten Steuerelemente sind rot markiert](introduction-to-xamarin-ios-for-visual-studio-images/03.png)](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "Die für die Xamarin.iOS-Entwicklung relevanten Steuerelemente sind rot markiert.")
 
 - **Start**: startet das Debuggen oder Ausführen der Anwendung auf der ausgewählten Plattform. Es muss eine Verbindung zu einem Mac vorhanden sein (Statusanzeige in der iOS-Symbolleiste).
 - **Projektmappenkonfiguration**: zur Auswahl der Konfiguration (z.B. Debug, Release)
@@ -63,7 +63,7 @@ Die für die Xamarin.iOS-Entwicklung relevanten Steuerelemente sind rot markiert
 
 Die iOS-Symbolleiste in Visual Studio sieht in jeder Visual Studio-Version ähnlich aus. Sie sind alle unten dargestellt:
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS Toolbar")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
+[![iOS-Symbolleiste](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png)](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
 
 Jedes Element wird unten erläutert:
 
@@ -79,31 +79,31 @@ Im Bereich *Ausgabe* stehen Optionen zur Verfügung, die Sie zum Anzeigen von Me
 
 Der unten stehende Screenshot zeigt die verfügbaren Ausgabefenster, die sich je nach Projekttyp unterscheiden können:
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "The available output windows")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
+[![Die verfügbaren Ausgabefenster](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
 
 - **Xamarin**: enthält nur Informationen zu Xamarin, wie etwa die Verbindung zum Mac und der Aktivierungsstatus
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "Information relating solely to Xamarin, such as the connection to the Mac and activation status")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![Informationen ausschließlich zu Xamarin, wie etwa die Verbindung zum Mac und der Aktivierungsstatus](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 - **Xamarin-Diagnose**: zeigt detailliertere Angaben zu Ihrem Xamarin-Projekt an, wie etwa die Interaktionen mit und für Android
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Detailed information about the Xamarin project")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![Detaillierte Informationen zum Xamarin-Projekt](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 Andere Standardausgabebereiche von Visual Studio, wie z.B. Debug und Build, sind immer noch über die Ausgabeansicht verfügbar. Sie werden für die Debugging- und MSBuild-Ausgabe verwendet:
 
 - **Debuggen**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "Debugging Output")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
+  [![Debugausgabe](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
 
 - **Build** & **Buildreihenfolge**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild Output")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
+  [![MSBuild-Ausgabe](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
 ## <a name="ios-project-properties"></a>iOS-Projekteigenschaften
 
 Sie können auf die Projekteigenschaften von Visual Studio zugreifen, indem Sie mit der rechten Maustaste auf dem Projektnamen und anschließend im Kontextmenü auf *Eigenschaften* klicken. So können Sie Ihre iOS-Anwendung wie im unten stehenden Screenshot konfigurieren:
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "Configuring an iOS application")
+![Eine iOS-Anwendung konfigurieren](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png)
 
 - *iOS-Bundle-Signierung*: stellt eine Verbindung mit dem Mac her, um die Codesignierungsidentitäten und Bereitstellungsprofile aufzufüllen:
 
@@ -133,11 +133,11 @@ Storyboard- und XIB-Dateien können in Visual Studio mit dem iOS-Designer bearbe
 
 Um mit der Erstellung oder Bearbeitung des Storyboards zu beginnen, doppelklicken Sie auf `Main.storyboard`, um es im iOS-Designer zu öffnen:
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png "The Main.storyboard in the iOS Designer")
+![Die Datei „Main.storyboard“ im iOS-Designer](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png)
 
 Um Ihrer Ansicht Objekte hinzuzufügen, fügen Sie über den Bereich **Toolbox** per Drag & Drop Elemente auf Ihrer Designoberfläche ein. Klicken Sie auf **Ansicht > Toolbox**, um die Toolbox hinzuzufügen, wenn sie noch nicht vorhanden ist. Objekteigenschaften können wie unten dargestellt über den Bereich **Eigenschaften** bearbeitet, ihre Layouts angepasst und Ereignisse erstellt werden:
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/properties.png "The Properties pane")
+![Bereich „Eigenschaften“](introduction-to-xamarin-ios-for-visual-studio-images/properties.png)
 
  Weitere Informationen zur Verwendung des iOS Designers finden Sie in den Leitfäden zum [Designer](~/ios/user-interface/designer/index.md).
 
@@ -163,7 +163,7 @@ Damit die Gerät in der ComboBox angezeigt werden, muss ein iOS-Projekt geladen 
 
 Breakpoints können überall in Ihrer Anwendung festgelegt werden, um dem Debugger anzuzeigen, dass er dort die Ausführung des Programms vorübergehend anhalten soll. Klicken Sie zum Festlegen eines Breakpoints in Visual Studio im Randbereich Ihres Editors neben die Zeilennummer des Codes, wo Sie unterbrechen möchten:
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/image18.png "Setting a debug point")
+![Einen Debugpunkt festlegen](introduction-to-xamarin-ios-for-visual-studio-images/image18.png)
 
 Beginnen Sie mit dem Debuggen, und verwenden Sie den Simulator oder das Gerät, um Ihre Anwendung zu einem Breakpoint zu navigieren. Wenn Sie einen Breakpoint erreichen, wird die Zeile gekennzeichnet und das normale Debuggingverhalten von Visual Studio wird aktiviert: Sie können in den Code springen, Code überspringen oder aus diesem heraus springen, lokale Variablen untersuchen oder das Direktfenster verwenden.
 

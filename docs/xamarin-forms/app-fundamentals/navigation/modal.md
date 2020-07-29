@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms – Modale Seiten" description: "Xamarin.Forms unterstützt modale Seiten.'
-description: 'Eine modale Seite ermutigt Benutzer, eine eigenständige Aufgabe auszuführen. Dabei kann erst dann die Ansicht gewechselt werden, wenn die Aufgabe abgeschlossen oder abgebrochen wurde. In diesem Artikel wird das Navigieren zu modalen Seiten veranschaulicht." ms.prod: xamarin ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 12/01/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Modale Xamarin.Forms-Seiten
+description: Xamarin.Forms verfügt über Unterstützung für modale Seiten. Eine modale Seite ermutigt Benutzer, eine eigenständige Aufgabe auszuführen. Dabei kann erst dann die Ansicht gewechselt werden, wenn die Aufgabe abgeschlossen oder abgebrochen wurde. In diesem Artikel wird das Navigieren zu modalen Seiten veranschaulicht.
 ms.prod: xamarin
 ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aecab26efaed9815ec6916877b5f42297821582c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: ea0d38946a773dc7571a08f999be5eb6500bfc9b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569607"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934497"
 ---
 # <a name="xamarinforms-modal-pages"></a>Modale Xamarin.Forms-Seiten
 
 [![Beispiel herunterladen](~/media/shared/download.png) Das Beispiel herunterladen](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
 
-_Xamarin.Forms bietet Unterstützung für modale Seiten. Eine modale Seite ermutigt Benutzer, eine eigenständige Aufgabe auszuführen. Dabei kann erst dann die Ansicht gewechselt werden, wenn die Aufgabe abgeschlossen oder abgebrochen wurde. In diesem Artikel wird das Navigieren zu modalen Seiten veranschaulicht._
+_Xamarin.Forms unterstützt modale Seiten. Eine modale Seite ermutigt Benutzer, eine eigenständige Aufgabe auszuführen. Dabei kann erst dann die Ansicht gewechselt werden, wenn die Aufgabe abgeschlossen oder abgebrochen wurde. In diesem Artikel wird das Navigieren zu modalen Seiten veranschaulicht._
 
 In diesem Artikel werden die folgenden Themen behandelt:
 
@@ -32,11 +32,11 @@ In diesem Artikel werden die folgenden Themen behandelt:
 
 Eine modale Seite kann jeder von Xamarin.Forms unterstützte Typ von [Seite](~/xamarin-forms/user-interface/controls/pages.md) sein. Wenn eine modale Seite angezeigt werden soll, überträgt die Anwendung diese Seite per Push in den modalen Stapel, wo sie dann zur aktiven Seite wird. Dieser Vorgang wird im folgenden Diagramm veranschaulicht:
 
-![](modal-images/pushing.png "Pushing a Page to the Modal Stack")
+![Übertragen von Seiten auf den modalen Stapel](modal-images/pushing.png)
 
 Um zu vorherigen Seite zurückzukehren, entfernt die Anwendung die aktuelle Seite per Pop vom modalen Stapel, und die neue oberste Seite wird zur aktiven Seite. Dieser Vorgang wird im folgenden Diagramm veranschaulicht:
 
-![](modal-images/popping.png "Popping a Page from the Modal Stack")
+![Entfernen von Seiten per Pop aus dem modalen Stapel](modal-images/popping.png)
 
 ## <a name="performing-navigation"></a>Ausführen der Navigation
 
@@ -64,7 +64,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 
 Dies bewirkt, dass die `ModalPage`-Instanz per Push an den modalen Stapel übertragen wird, wo sie zur aktiven Seite wird, wenn in den [`ListView`](xref:Xamarin.Forms.ListView) ein Element auf der `MainPage`-Instanz ausgewählt wurde. Die `ModalPage`-Instanz wird in den folgenden Screenshots dargestellt:
 
-![](modal-images/modalpage.png "Modal Page Example")
+![Beispiel für die modale Seite](modal-images/modalpage.png)
 
 Wenn [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) aufgerufen wird, treten die folgenden Ereignisse auf:
 

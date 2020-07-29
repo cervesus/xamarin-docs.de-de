@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 141d268e7a5670f9ba8002ae9edda828538a01a4
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8dc70cc8f1bf29a58cb20540fa538be2025b2ba4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571791"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935628"
 ---
 # <a name="debugging-xamarinios-apps"></a>Debuggen von Xamarin.iOS-Apps
 
@@ -33,11 +33,11 @@ Wenn Sie bereit sind, das Debuggen der Anwendung zu beginnen, legen Sie im erste
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging1.png "Setting Breakpoints")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
+[![Festlegen von Breakpoints](debugging-in-xamarin-ios-images/debugging1.png)](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging1a.png "Setting Breakpoints")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
+[![Festlegen von Breakpoints](debugging-in-xamarin-ios-images/debugging1a.png)](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
 
 -----
 
@@ -45,13 +45,13 @@ Sie können sich alle festgelegten Haltepunkte in Ihrem Code anzeigen lassen, in
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/image0a.png "The Breakpoints pad")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
+[![Das Pad „Breakpoints“](debugging-in-xamarin-ios-images/image0a.png)](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  Wenn das Pad für Haltepunkte nicht automatisch angezeigt wird, können Sie es sichtbar machen, indem Sie Folgendes auswählen: _Ansicht > Debuggen > Fenster > Haltepunkte_
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/image0.png "The Breakpoints pad")](debugging-in-xamarin-ios-images/image0.png#lightbox)
+[![Das Pad „Breakpoints“](debugging-in-xamarin-ios-images/image0.png)](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
  Wenn das Pad für Haltepunkte nicht automatisch angezeigt wird, können Sie es sichtbar machen, indem Sie folgendes auswählen: _Debuggen > Fenster > Haltepunkte_
 
@@ -61,13 +61,13 @@ Bevor Sie das Debuggen einer Anwendung beginnen, stellen Sie immer sicher, dass 
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging7.png "Debugging on simulator")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
-[![](debugging-in-xamarin-ios-images/debugging7a.png "Debugging on a physical device")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
+[![Debuggen im Simulator](debugging-in-xamarin-ios-images/debugging7.png)](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
+[![Debuggen auf einem physischen Gerät](debugging-in-xamarin-ios-images/debugging7a.png)](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging7c.png "Debugging on simulator")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
-[![](debugging-in-xamarin-ios-images/debugging7d.png "Debugging on a physical device")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
+[![Debuggen im Simulator](debugging-in-xamarin-ios-images/debugging7c.png)](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
+[![Debuggen auf einem physischen Gerät](debugging-in-xamarin-ios-images/debugging7d.png)](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
 
 -----
 
@@ -76,11 +76,11 @@ Wählen Sie zum Starten des Debuggens das Zielgerät oder Ähnliches in Ihrer ID
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio für Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging7b.png "Select the target device")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
+[![Auswählen des Zielgeräts](debugging-in-xamarin-ios-images/debugging7b.png)](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging7e.png "Select the target device")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
+[![Auswählen des Zielgeräts](debugging-in-xamarin-ios-images/debugging7e.png)](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
 
 -----
 
@@ -88,11 +88,11 @@ Stellen Sie Ihre Anwendung dann bereit, indem Sie auf die Schaltfläche **Wieder
 
 Wenn Sie einen Haltepunkt erreichen, wird der Code gelb hervorgehoben:
 
-[![](debugging-in-xamarin-ios-images/image2.png "The code will be highlighted yellow")](debugging-in-xamarin-ios-images/image2.png#lightbox)
+[![Der Code wird gelb hervorgehoben](debugging-in-xamarin-ios-images/image2.png)](debugging-in-xamarin-ios-images/image2.png#lightbox)
 
 Debugtools wie zum Beispiel das, was zur Überprüfung der Werte eines Objekts verwendet wurde, können an dieser Stelle verwendet werden, um weitere Informationen zu den Vorgängen in Ihrem Code zu erhalten:
 
-[![](debugging-in-xamarin-ios-images/image3.png "Displaying a color value")](debugging-in-xamarin-ios-images/image3.png#lightbox)
+[![Anzeigen eines Farbwerts](debugging-in-xamarin-ios-images/image3.png)](debugging-in-xamarin-ios-images/image3.png#lightbox)
 
 ## <a name="conditional-breakpoints"></a>Bedingte Haltepunkte
 
@@ -104,25 +104,25 @@ Greifen Sie auf das **Fenster für Haltepunkteigenschaften** zu, um einen beding
 
 - Um einen neuen bedingten Haltepunkt hinzuzufügen, klicken Sie mit der rechten Maustaste links der Zeilennummer des Codes, an der Sie einen Haltepunkt setzen möchten, auf den Rand des Editors, und wählen Sie „Neuer Haltepunkt“:
 
-  [![](debugging-in-xamarin-ios-images/image4.png "Select New Breakpoint")](debugging-in-xamarin-ios-images/image4.png#lightbox)
+  [![Auswählen der Option „Neuer Breakpoint“](debugging-in-xamarin-ios-images/image4.png)](debugging-in-xamarin-ios-images/image4.png#lightbox)
 
 - Klicken Sie mit der rechten Maustaste auf den Haltepunkt, und klicken Sie auf **Haltepunkteigenschaften**, oder wählen Sie im **Pad für Haltepunkte** die unten dargestellte Schaltfläche „Einstellungen“ aus, um eine Bedingung zu einem bestehenden Haltepunkt hinzuzufügen.
 
-  [![](debugging-in-xamarin-ios-images/image5.png "The Breakpoints Pad")](debugging-in-xamarin-ios-images/image5.png#lightbox)
+  [![Das Pad „Breakpoints“](debugging-in-xamarin-ios-images/image5.png)](debugging-in-xamarin-ios-images/image5.png#lightbox)
 
 Anschließend können Sie die Bedingung eingeben, unter der der Haltepunkt auftreten soll:
 
-[![](debugging-in-xamarin-ios-images/image6.png "Enter the condition for the breakpoint to occur")](debugging-in-xamarin-ios-images/image6.png#lightbox)
+[![Eingeben der Bedingung für den Breakpoint](debugging-in-xamarin-ios-images/image6.png)](debugging-in-xamarin-ios-images/image6.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Legen Sie zum Festlegen eines bedingten Breakpoints in Visual Studio zunächst [einen normalen Breakpoint fest](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint). Klicken Sie mit der rechten Maustaste auf den Haltepunkt, um das Kontextmenü anzuzeigen:
 
- [![](debugging-in-xamarin-ios-images/image4vs.png "The breakpoint context menu")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
+ [![Kontextmenü des Breakpoints](debugging-in-xamarin-ios-images/image4vs.png)](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
 Wählen Sie **Bedingungen...** aus, um das Menü _Haltepunkteinstellungen_ anzuzeigen:
 
- [![](debugging-in-xamarin-ios-images/image6vs.png "The Breakpoint Settings menu")](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
+ [![Menü „Breakpointeinstellungen“](debugging-in-xamarin-ios-images/image6vs.png)](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
 
 Hier können Sie die Bedingungen eingeben, unter denen der Haltepunkt auftreten soll
 
@@ -138,7 +138,7 @@ Wenn ein Haltepunkt erreicht wird, gewähren Ihnen die Debugtools die Kontrolle 
 
 In Visual Studio für Mac sehen diese wie folgt aus:
 
- [![](debugging-in-xamarin-ios-images/image7.png "The Debug tools enable the developer to get control over the program’s execution")](debugging-in-xamarin-ios-images/image7.png#lightbox)
+ [![Die Debugtools ermöglichen dem Entwickler die Kontrolle über die Ausführung des Programms](debugging-in-xamarin-ios-images/image7.png)](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
 Diese lauten wie folgt:
 
@@ -151,7 +151,7 @@ Diese lauten wie folgt:
 
 In Visual Studio sehen diese wie folgt aus:
 
-[![](debugging-in-xamarin-ios-images/image7vs.png "The Debug tools enable the developer to get control over the program’s execution")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
+[![Die Debugtools ermöglichen dem Entwickler die Kontrolle über die Ausführung des Programms](debugging-in-xamarin-ios-images/image7vs.png)](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
 Diese lauten wie folgt:
 
