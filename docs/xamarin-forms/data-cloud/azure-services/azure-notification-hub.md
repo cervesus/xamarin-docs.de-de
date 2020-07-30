@@ -445,27 +445,31 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
             Debug.WriteLine($"Unable to call unregister {error}");
             return;
         }
-
-        var tags = new NSSet(AppConstants.SubscriptionTags.ToArray());
-        Hub.RegisterNative(deviceToken, tags, (errorCallback) =>
-        {
-            if (errorCallback != null)
-            {
-                Debug.WriteLine($"RegisterNativeAsync error: {errorCallback}");
-            }
-        });
-
-        var templateExpiration = DateTime.Now.AddDays(120).ToString(System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
-        Hub.RegisterTemplate(deviceToken, "defaultTemplate", AppConstants.APNTemplateBody, templateExpiration, tags, (errorCallback) =>
-        {
-            if (errorCallback != null)
-            {
-                if (errorCallback != null)
+        
+          Device.BeginInvokeOnMainThread(() =>
                 {
-                    Debug.WriteLine($"RegisterTemplateAsync error: {errorCallback}");
-                }
-            }
-        });
+                    var tags = new NSSet(AzurePushSettings.SubscriptionTags.ToArray());
+
+                    _hub.RegisterNative(PushAzure.DeviceToken, tags, (errorCallback) =>
+                    {
+                        if (errorCallback != null)
+                        {
+                            Debug.WriteLine($"RegisterNativeAsync error: {errorCallback}");
+                            return;
+                        }
+                    });
+
+
+                    var templateExpiration = DateTime.Now.AddDays(120).ToString(System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
+                    _hub.RegisterTemplate(PushAzure.DeviceToken, "defaultTemplate", AzurePushSettings.APNTemplateBody, templateExpiration, tags, (errorCallback) =>
+                    {
+                        if (errorCallback != null)
+                        {
+                            Debug.WriteLine($"RegisterTemplateAsync error: {errorCallback}");
+                        }
+                    });
+                });
+        
     });
 }
 ```
